@@ -123,9 +123,15 @@ b^n \sqrt{2\pi n} \left(\frac{n}{e}\right)^n \left(1+\frac{1}{n}\right) \prod_{i
 
 
 \paragraph{Теорема 4.}
-$F(2^n)<A_n$ для всех $n\in\mathbb{N}$.
+$$
+ \max\left( \frac{n-5}{8}, 7  \right) \leq \left( \frac{b (1+\log_2 n )\ln (1 + \log_2 n)}{e}\right)^{1+\log_2 n}
+$$
+для всех $n\in\mathbb{N}$.
 
 \paragraph{Доказательство.}
+Для доказательства верхней оценки докажем сначала, что
+$F(2^n)<A_n$ для всех $n\in\mathbb{N}$.
+
 Через $S$ обозначим множество подмножеств $\{1,2,..,n\}$ и каждому $I\in S$ поставим в соответствие числа $c_I=\prod\limits_{c\in I}p_i, b_I=\frac{1}{2}\left(c_I-\frac{A_n}{c_I}\right)$.
 Так как $c_I$ и $\frac{A_n}{c_I}$ нечётны, то $b_I$ --- целые числа.
 
@@ -133,7 +139,6 @@ $F(2^n)<A_n$ для всех $n\in\mathbb{N}$.
 \begin{equation}\label{konstrukcia_primorialy}
 M_I=\{(b_I,0), I\in S\}, N=(0, \sqrt{A_n})
 \end{equation}
-
 
 Если $I,J \in S, I \neq J$, то $M_I \neq M_J$.
 Поэтому множество (\ref{konstrukcia_primorialy}) содержит $2^n+2$ элементов.
@@ -170,16 +175,7 @@ $$
 где $d(k)$ --- количество делителей числа $k$ (дивизор-функция Рамануджана?),
 растёт медленнее любого полинома.
 
-\paragraph{Теорема 5.}
-
-$$
- \max\left( \frac{n-5}{8} \right) \leq \left( \frac{b (1+\log_2 n )\ln (1 + \log_2 n)}{e}\right)^{1+\log_2 n}
-$$
-для всех $n\in\mathbb{N}$.
-
-\paragraph{Доказательство.}
-Верхняя оценка непосредственно следует из \ref{ocenka_primoryaly}.
-
+Докажем теперь нижнюю оценку.
 Пусть $\left(M_1, M_2, ..., M_n\right) \in C_n$.
 Найдём такое $m\in \mathbb{N}$, что
 $$
@@ -189,7 +185,7 @@ $$
 Пусть $d$ --- сторона минимального квадрата, содержащего все точки $M_i, 1\leq i \leq m^2+1$.
 Используя монотонность последовательности $F(n)$ и лемму 3, получаем для $n\geq 17$
 $$
-F(n) \leq F\left(2m^2+1\right)\geq d \geq \frac{1}{2}m^2 > \frac{1}{2}\left(\left(\frac{n-1}{2}\right)^\frac{1}{2} - 1 \right)
+F(n) \geq F\left(2m^2+1\right)\geq d \geq \frac{1}{2}m^2 > \frac{1}{2}\left(\left(\frac{n-1}{2}\right)^\frac{1}{2} - 1 \right)
 $$
 
 Простые оценки показывают, что
@@ -202,8 +198,9 @@ $$
 \frac{n-5}{8}<F(n)
 $$
 
-Для $3 \leq n < 15$ значения $F(n)$ были вычислены на ЭВМ (см. далее).
+Для $3 \leq n < 17$ значения $F(n)$ были вычислены на ЭВМ (см. далее).
 $\Box$
+
 
 В ходе численного расчёта были вычислены значения $F(n)$ для $4\leq n \leq 42$.
 
