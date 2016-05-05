@@ -42,10 +42,13 @@
 
 \paragraph{Теорема 1.} Пусть $\{M_1,M_2\}$ --- счётное множество точек на плоскости и расстояние $|M_i,M_j|\in \mathbb{N}$ для всех $1\leq i < j <\infty$, где $\mathbb{N}$ --- множество натуральных чисел. Тогда найдется такая прямая на плоскости $l$, что $M_i\in l$ для всех $i \in \mathbb{N}$.
 
-Формулировка теоремы и идея её доказательства приведены в \cite{Newman}. Полное доказательство можно найти в \cite{angem1kurs}. Там же показано, что для любого $n\in \mathbb{N}$ существует такое множество $\{M_1,M_2,...,M_n\}\subset \mathbb{R}^2$, что $|M_i,M_j|$ для всех $1\leq i < j  \leq n$ и $M_1, M_2, ..., M_n$ не лежат на прямой. Изучению таких подмножеств посвящена настоящая работа.
+Формулировка теоремы и идея её доказательства приведены в \cite{Newman}, problem 29. Полное доказательство можно найти в \cite{angem1kurs}.
+Там же показано, что для любого $n\in \mathbb{N}$ существует такое множество $\{M_1,M_2,...,M_n\}\subset \mathbb{R}^2$, что $|M_i,M_j|$ для всех $1\leq i < j  \leq n$ и $M_1, M_2, ..., M_n$ не лежат на прямой.
+Изучению таких подмножеств посвящена настоящая работа.
 
 
-Для заданного $n\in \mathbb{N}$ обозначим через $C_n$ множество таких последовательностей $M_1,M_2,...,M_n \in \mathbb{R}^2$, что $|M_i,M_j|\in\mathbb{N}$ для всех $1\leq i < j  \leq n$ и  $M_1,M_2,...,M_n$ не принадлежат никакой прямой. Положим
+Для заданного $n\in \mathbb{N}$ обозначим через $C_n$ множество таких последовательностей $M_1,M_2,...,M_n \in \mathbb{R}^2$, что $|M_i,M_j|\in\mathbb{N}$ для всех $1\leq i < j  \leq n$ и  $M_1,M_2,...,M_n$ не принадлежат никакой прямой.
+Положим
 $$
 F(n)=\min\limits_{A\in C_n} d(A),
 $$
@@ -100,7 +103,7 @@ $\Box$
 
 
 Обозначим через $p_i, i\in\mathbb{N}$ простые числа, начиная с 3.
-По теореме Чебышева (\cite{Buhshtab}) $p_i \leq bi\ln(i+1)$ для некоторого $b>0$ и всех $i\in\mathbb{N}$.
+По теореме Чебышева (\cite{Buhshtab}, теорема 325) $p_i \leq bi\ln(i+1)$ для некоторого $b>0$ и всех $i\in\mathbb{N}$.
 Обозначим
 $$
 A_n=\prod_{i=1}^{n} p_i, n\in\mathbb{N}
@@ -112,17 +115,18 @@ A_n\leq b^n n! \prod_{i=1}^{n} \ln(i+1)
 $$
 
 и по формуле Стирлинга
-\begin{equation*}\label{ocenka_Stirling}
+\begin{equation}\label{ocenka_Stirling}
 A_n <
 b^n \sqrt{2\pi n} \left(\frac{n}{e}\right)^n \left(1+\frac{1}{n}\right) \prod_{i=1}^{n} \ln(i+1)
 \leq \left(\frac{bn\ln (n+1)}{e}\right)^n
-\end{equation*}
+\end{equation}
 
 
 \paragraph{Теорема 4.}
 $F(2^n)<A_n$ для всех $n\in\mathbb{N}$.
 
-\paragraph{Доказательство.} Через $S$ обозначим множество подмножеств $\{1,2,..,n\}$ и каждому $I\in S$ поставим в соответствие числа $c_I=\prod\limits_{c\in I}p_i, b_I=\frac{1}{2}\left(c_I-\frac{A_n}{c_I}\right)$.
+\paragraph{Доказательство.}
+Через $S$ обозначим множество подмножеств $\{1,2,..,n\}$ и каждому $I\in S$ поставим в соответствие числа $c_I=\prod\limits_{c\in I}p_i, b_I=\frac{1}{2}\left(c_I-\frac{A_n}{c_I}\right)$.
 Так как $c_I$ и $\frac{A_n}{c_I}$ нечётны, то $b_I$ --- целые числа.
 
 Рассмотрим подмножество точек на плоскости
@@ -134,12 +138,11 @@ M_I=\{(b_I,0), I\in S\}, N=(0, \sqrt{A_n})
 Если $I,J \in S, I \neq J$, то $M_I \neq M_J$.
 Поэтому множество (\ref{konstrukcia_primorialy}) содержит $2^n+2$ элементов.
 Так как
-\begin{multline*}
-	|M_I,N|=\left(\frac{1}{4}\left( c_I^2 - 2 A_n + \frac{A_n^2}{c_I^2} \right)+A_n\right)^\frac{1}{2}=\\
+\begin{equation*}
+	|M_I,N|=\left(\frac{1}{4}\left( c_I^2 - 2 A_n + \frac{A_n^2}{c_I^2} \right)+A_n\right)^\frac{1}{2}=
 	\left(\frac{1}{4}\left( c_I^2 - 2 A_n + \frac{A_n^2}{c_I^2} \right)+A_n\right)^\frac{1}{2}=
 	\frac{c_I+\frac{A_n}{C_I}}{2} \in \mathbb{N},
-\end{multline*}
-
+\end{equation*}
 то все расстояния между точками множества (\ref{konstrukcia_primorialy}) есть целые числа.
 Диаметр множества (\ref{konstrukcia_primorialy}) достигается на паре точек $M_{(1,2,...,n)}$ и $M_{\varnothing}$, для которых
 $$
@@ -170,7 +173,7 @@ $$
 \paragraph{Теорема 5.}
 
 $$
- \max\left( \frac{n-5}{8} \right) \geq F(n) \leq \left( \frac{b \log_2(n+1) \ln \log_2 (n+1)}{e}\right)^{\log_2(n+1)}
+ \max\left( \frac{n-5}{8} \right) \leq F(n) \leq \left( \frac{b \log_2(n+1) \ln \log_2 (n+1)}{e}\right)^{\log_2(n+1)}
 $$
 для всех $n\in\mathbb{N}$.
 
@@ -274,14 +277,13 @@ $$
 \addcontentsline{toc}{chapter}{Литература}
 \begin{thebibliography}{99}
 
-\bibitem{Newman} Donald J. Newman. A Problem Seminar. Springer - Verlag.1982. Problem 29.
+\bibitem{Newman} Donald J. Newman. A Problem Seminar. Springer - Verlag.1982.
 
 \bibitem{angem1kurs} Аналитическая геометрия на плоскости / Е.М. Семенов, С.Н. Уксусов. – Воронеж : Воронежский государственный университет, 2016. – 100с.
 
-\bibitem{Buhshtab} Теория чисел / А.А. Бухштаб. --- М., 1966 (теорема 325)
+\bibitem{Buhshtab} Теория чисел / А.А. Бухштаб. --- М., 1966.
 
 \bibitem{Ramanujan} Highly composite numbers. Proceedings of the London Mathematical Society, 2, XIV, 1915, 347 – 409 (http://ramanujan.sirinudi.org/Volumes/published/ram15.pdf)
-
 
 \end{thebibliography}
 
