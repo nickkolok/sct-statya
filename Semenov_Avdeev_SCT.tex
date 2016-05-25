@@ -1,0 +1,502 @@
+\documentclass{article}
+
+
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[tbtags]{amsmath}
+\usepackage{amsfonts,amssymb}
+
+\hoffset -10mm
+\voffset -7mm
+
+
+\usepackage{mathrsfs}
+\usepackage[short]{mz2ewin}
+\usepackage{graphicx}
+
+\usepackage{float} % Иначе ругается на таблицу
+
+\let\rom=\textup
+
+\theoremstyle{plain}
+
+\newtheorem{condition}{Условие}
+\newtheorem{lemma}{Лемма}
+\newtheorem{theorem}{Теорема}
+\newtheorem{propos}{Предложение}
+\newtheorem{corol}{Следствие}
+\newtheorem{notation}{Обозначения}
+\newtheorem{definit}{Определение}
+
+\theoremstyle{definition}
+\newtheorem{proof}{Доказательство}\def\theproof{}
+\newtheorem{remark}{Замечание}
+
+
+
+\overfullrule5pt
+\mag1300
+\begin{document}
+
+\udk{511.95 + 514.112}
+
+\date{\\
+Исправленный вариант\\ }
+
+\author{Н.\,Н.~Авдеев}
+\address{Воронежский госуниверситет}
+\email{avdeev@math.vsu.ru}
+
+
+\author{Е.\,М.~Семёнов}
+\address{Воронежский госуниверситет}
+%\email{ivanov@gmail.com}
+
+
+\title{О множествах точек на плоскости с целочисленными расстояниями}
+
+
+
+\maketitle
+\begin{fulltext}
+
+%\begin{abstract}
+
+%\end{abstract}
+
+
+\footnotetext{Работа выполнена в Воронежском университете при поддержке РНФ, грант 16-11-101-25.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\paragraph{\S 1} % Махровейшее вордописчество =(
+Известна следующая
+
+\begin{theorem}
+	Пусть $\{M_1,M_2\}$ --- счётное множество точек на плоскости и расстояние $|M_i,M_j|\in \mathbb{N}$ для всех $1\leq i < j <\infty$, где $\mathbb{N}$ --- множество натуральных чисел. Тогда найдется такая прямая на плоскости $l$, что $M_i\in l$ для всех $i \in \mathbb{N}$.
+\end{theorem}
+
+Формулировка теоремы и идея её доказательства приведены в \cite{Newman}, problem 29. Полное доказательство можно найти в \cite{angem1kurs}.
+Там же показано, что для любого $n\in \mathbb{N}$ существует такое множество $\{M_1,M_2,...,M_n\}\subset \mathbb{R}^2$, что $|M_i,M_j|\in\mathbb{N}$ для всех $1\leq i < j  \leq n$ и $M_1, M_2, ..., M_n$ не лежат на прямой.
+Изучению таких подмножеств посвящена настоящая работа.
+
+
+Для заданного $n\in \mathbb{N}, n\geq 3$ обозначим через $C_n$ множество таких последовательностей $M_1,M_2,...,M_n \in \mathbb{R}^2$, что $|M_i,M_j|\in\mathbb{N}$ для всех $1\leq i < j  \leq n$ и  $M_1,M_2,...,M_n$ не принадлежат никакой прямой.
+Положим
+$$
+F(n)=\min\limits_{A\in C_n} d(A),
+$$
+где $d(A)$ --- диаметр $A$, т. е.
+$$
+d(A)=\max\limits_{x,y\in A}|x,y|
+$$
+
+Точную асимптотику последовательности  $F(n)$ найти не удалось, получены лишь верхняя и нижняя оценки и найдены $F(n)$ для $3\leq n \leq 43$.
+
+\paragraph{\S 2}
+Число элементов множества $A$ обозначим через $|A|$.
+В \cite{angem1kurs} была доказана
+
+\begin{lemma}
+	Пусть $A=(M_1, M_2, ..., M_n) \in C_n$ для некоторого $n\in \mathbb{N}$ и $M_1, M_2, M_3$ не принадлежат прямой.
+	Тогда $n\leq (a+1)(b+1)+3$, где $a=|M_1,M_2|$, $b=|M_2,M_3|$.
+\end{lemma}
+
+Аналогичное утверждение справедливо, когда $M_1,M_2,M_3$ принадлежат некоторой прямой и $M_2$ лежит между $M_1$ и $M_3$.
+В этом случае
+\begin{equation}\label{ocenka_iz_lemmy_2}
+	n\leq (a+1)(b+1)+3+d(A).
+\end{equation}
+
+
+
+\begin{lemma}
+	Пусть $m\in\mathbb{N}, m\geq 4$, последовательность $(M_1,M_2,...,M_{2m^2+1})$ принадлежит $C_{2m^2+1}$ и
+	содержится в квадрате со стороной $d$.
+	Тогда $d>\frac{1}{2}m^2$.
+\end{lemma}
+
+\begin{proof}
+	Разобьём квадрат со стороной $d$ на $m^2$ квадратов со стороной $\frac{d}{m}$.
+	Тогда по крайней мере один из маленьких квадратов содержит некоторые три точки исходной последовательности.
+	Без ограничения общности $M_1,M_2,M_3$ содержатся в квадрате со стороной $\frac{d}{m}$.
+	Поэтому $|M_1,M_2|,|M_2,M_3| \leq \frac{d}{m}\sqrt{2}$.
+	В силу (\ref{ocenka_iz_lemmy_2})
+	$$
+	2m^2+1 \leq\left(\frac{d}{m}\sqrt{2}+1\right)^2+3+d\sqrt{2}
+	$$
+
+	Положим $d=\lambda m^2$.
+	Тогда
+	$$
+	2m^2+1 \leq \left(\lambda m \sqrt2 + 1 \right)^2 + 3 + \lambda m^2 \sqrt2
+	$$
+	и
+	$$
+	0\leq \left( 2\lambda^2 + \sqrt2 \lambda - 2 \right)m^2 + 2\sqrt2 \lambda m + 3
+	$$
+
+	Для $m\geq 4$ это неравенство не выполнено, если $\lambda \leq \frac{1}{2}$.
+	Поэтому $\lambda > \frac{1}{2}$ и $d>\frac{m^2}{2}$.
+\end{proof}
+
+
+Обозначим через $p_i, i\in\mathbb{N}$ простые числа, начиная с 3.
+По теореме Чебышева (\cite{Buhshtab}, теорема 325) $p_i \leq bi\ln(i+1)$ для некоторого $b>0$ и всех $i\in\mathbb{N}$.
+Обозначим
+$$
+A_n=\prod_{i=1}^{n} p_i, n\in\mathbb{N}
+$$
+
+Тогда
+$$
+A_n\leq b^n n! \prod_{i=1}^{n} \ln(i+1)
+$$
+
+и по формуле Стирлинга
+\begin{equation}\label{ocenka_Stirling}
+	A_n <
+	b^n \sqrt{2\pi n} \left(\frac{n}{e}\right)^n \left(1+\frac{1}{n}\right) \prod_{i=1}^{n} \ln(i+1)
+	\leq \left(\frac{bn\ln (n+1)}{e}\right)^n
+\end{equation}
+
+
+\begin{theorem}
+	Неравенства
+	$$
+		\max\left( \frac{n-5}{8}, 1 \right) \leq F(n) \leq \left( \frac{b (1+\log_2 n )\ln (1 + \log_2 n)}{e}\right)^{1+\log_2 n},
+	$$
+	где $b$ --- константа из неравенств Чебышева, справедливы для всех $n\in\mathbb{N}$, $n \geq 3$.
+\end{theorem}
+
+\begin{proof}
+	Докажем сначала, что
+	$F(2^n)<A_n$ для всех $n\in\mathbb{N}, n \geq 3$.
+
+	Через $S$ обозначим множество подмножеств $\{1,2,..,n\}$ и каждому $I\in S$ поставим в соответствие числа
+	$c_I=\prod\limits_{c\in I}p_i, b_I=\frac{1}{2}\left(c_I-\frac{A_n}{c_I}\right)$,
+	полагая $c_\varnothing = 1$.
+	Так как $c_I$ и $\frac{A_n}{c_I}$ нечётны, то $b_I$ --- целые числа.
+
+	Рассмотрим подмножество точек на плоскости
+	\begin{equation}\label{konstrukcia_primorialy}
+	M_I=\{(b_I,0), I\in S\}, N=(0, \sqrt{A_n})
+	\end{equation}
+
+	Если $I,J \in S, I \neq J$, то $M_I \neq M_J$.
+	Поэтому множество (\ref{konstrukcia_primorialy}) содержит $2^n+1$ элементов.
+	Так как
+	\begin{multline*}
+		|M_I,N|=\left(\frac{1}{4}\left( c_I^2 - 2 A_n + \frac{A_n^2}{c_I^2} \right)+A_n\right)^\frac{1}{2}=
+\\=
+		\left(\frac{1}{4}\left( c_I^2 - 2 A_n + \frac{A_n^2}{c_I^2} \right)+A_n\right)^\frac{1}{2}=
+		\frac{c_I+\frac{A_n}{C_I}}{2} \in \mathbb{N},
+	\end{multline*}
+	то все расстояния между точками множества (\ref{konstrukcia_primorialy}) есть целые числа.
+	Диаметр множества (\ref{konstrukcia_primorialy}) достигается на паре точек $M_{(1,2,...,n)}$ и $M_{\varnothing}$, для которых
+	$$
+		|M_{(1,2,...,n)},M_{\varnothing}|=\frac{1}{2}(A_n-1)-\frac{1}{2}(1-A_n) = A_n-1 < A_n
+	$$
+
+	Поэтому 
+	$$
+		F(2^n+1) < A_n
+	$$
+
+	Отсюда, из (\ref{ocenka_Stirling}) и монотонности $F(n)$ вытекает, что
+	\begin{equation}\label{ocenka_primoryaly}
+		F(n) \leq \left( \frac{b (1+\log_2 n )\ln (1 + \log_2 n)}{e}\right)^{1+\log_2 n}
+	\end{equation}
+	для всех $n\in \mathbb{N}$.
+
+
+	Докажем теперь нижнюю оценку.
+	Пусть $\left(M_1, M_2, ..., M_n\right) \in C_n$.
+	Найдём такое $m\in \mathbb{N}$, что
+	$$
+		2m^2+1 \leq n < 2(m+1)^2 +1
+	$$
+
+	Пусть $d$ --- сторона минимального квадрата, содержащего все точки $M_i, 1\leq i \leq m^2+1$.
+	Используя монотонность последовательности $F(n)$ и лемму 3, получаем
+	$$
+		F(n) \geq F\left(2m^2+1\right)\geq d \geq \frac{1}{2}m^2 > \frac{1}{2}\left(\left(\frac{n-1}{2}\right)^\frac{1}{2} - 1 \right)
+	$$
+
+	Простые оценки показывают, что
+	$$
+		\frac{1}{2}\left(\left(\frac{n-1}{2}\right)^\frac{1}{2} -1 \right) > \frac{n-5}{8}
+	$$
+
+	Для $n\geq 17$ отсюда вытекает, что
+	$$
+		\frac{n-5}{8}<F(n)
+	$$
+
+	Для $4 \leq n < 17$ значения $F(n)$ были вычислены на ЭВМ (см. далее).
+\end{proof}
+
+
+Заметим, что подобная конструкция не позволяет получить верхнюю оценку $F(n)$ в виде полинома.
+Это вызвано тем, что количество точек в множестве подобного типа (подмножество прямой и точка, на ней не лежащая)
+ограничено числом $p(2\mu^2)+2$, где $\mu$ --- расстояние от точки до прямой,
+$$
+	p(n)=\max\limits_{1\leq k \leq n} D(k),
+$$
+$D(k)$ --- количество делителей числа $k$ (дивизор-функция Рамануджана).
+В \cite{Ramanujan} (формулы 198-200) показано, что $p(n)$
+растёт медленнее степенной функции.
+
+
+
+\paragraph{\S 3}
+%\begin{definit}
+	Множество точек $B=\{M_1, M_2, ..., M_n\}$ называется оптимальным, если $B \in C_n$ и $d(B) = F(n)$.
+%\end{definit}
+Ясно, что любое оптимальное множество определяется с точностью до движения.
+Пусть $B_n \in C_n$ и оптимально.
+Пример правильного треугольника со стороной 1 показывает, что $F(3)=1$.
+Для нахождения оптимальных множеств и вычисления $F(n)$ была создана программа, которую удалось реализовать на ЭВМ.
+
+
+Результаты численного эксперимента.
+
+\begin{enumerate}
+
+\item.
+Были вычислены значения $F(n)$ для $4\leq n \leq 42$.
+
+\begin{table}[H]
+\caption{Значения $F(n)$}
+\label{tabular:pc_counted}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{n}    &  3 & 4 & 5 & 6 &  7 &  8 &  9 & 10 & 11 & 12 & 13 \\
+\hline
+\textbf{F(n)} &  1 & 4 & 7 & 8 & 17 & 21 & 29 & 40 & 51 & 63 & 74  \\
+\hline
+\hline
+\textbf{n}    &  14 &  15 &  16 &  17 &  18 &  19 &  20 &  21 &  22 &  23 &  24 \\
+\hline
+\textbf{F(n)} &  91 & 104 & 121 & 134 & 153 & 164 & 196 & 212 & 234 & 256 & 286  \\
+\hline
+\hline
+\textbf{n}    &  25 &  26 &  27 &  28 &  29 &  30 &  31 &  32 &  33 &  34 &  35 \\
+\hline
+\textbf{F(n)} & 304 & 338 & 370 & 384 & 414 & 448 & 464 & 494 & 524 & 553 & 578  \\
+\hline
+\end{tabular}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{n}    &  36 &  37 &  38 &  39 &  40 &  41 &  42 &  43 & 44 \\
+\hline
+\textbf{F(n)} & 608 & 642 & 667 & 692 & 754 & 816 & 897 & 959 & >963 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Например,
+$$
+B_4=\left\{( 0 ; 0 ); ( 1 ; 0 ); ( 4 ; 0 ); \left(  \frac{1}{2}  ; \frac{\sqrt{15}}{2} \right) \right\}
+$$
+
+\item.
+Оптимальные множества не принадлежат целочисленной решётке.
+Однако координаты любого множества из $C_n$ с точностью до движения имеют вид
+$$
+	\left(
+		\left\{\pm\frac{\sqrt{p}}{q}\right\};
+		\left\{\pm\frac{\sqrt{r}}{s}\right\}
+	\right),
+$$
+где $p,q,r,s \in \mathbb{N}$.
+
+\item.
+В большинстве случаев оптимальное множество с точностью до движения определяется однозначно.
+Тем не менее, например, для $n=18$ имеем два оптимальных набора:
+
+\begin{multline*}
+\{( 0 ; 0 ); ( 153 ; 0 ); ( 144 ; 0 ); ( 130 ; 0 ); ( 115 ; 0 ); ( 111 ; 0 );\\
+( 104 ; 0 ); ( 98 ; 0 ); ( 88 ; 0 ); ( 76 ; 0 ); ( 66 ; 0 ); ( 60 ; 0 ); ( 53 ; 0 );\\
+( 49 ; 0 ); ( 34 ; 0 ); ( 20 ; 0 ); ( 11 ; 0 ); ( 82 ; \sqrt{2880})\}
+\end{multline*}
+и
+\begin{multline*}
+\{( 0 ; 0 ); ( 153 ; 0 ); ( 134 ; 0 ); ( 121 ; 0 ); ( 104 ; 0 ); ( 98 ; 0 );\\
+( 93 ; 0 ); ( 85 ; 0 ); ( 76 ; 0 ); ( 69 ; 0 ); ( 65 ; 0 ); ( 58 ; 0 ); ( 49 ; 0 );\\
+( 41 ; 0 ); ( 36 ; 0 ); ( 30 ; 0 ); ( 13 ; 0 ); ( 67 ; \sqrt{1440} )\}
+\end{multline*}
+
+\item.
+Для $N \geq 9$ оптимальное множество имеет вид, описанный в теореме 4:
+$n-1$ точек лежат на оси иксов с целыми координатами и одна точка не принадлежит оси иксов, её вторая координата иррациональна.
+Для меньших $n$ эта закономерность не выполняется.
+
+\item.
+Если $ 25 \leq n \leq 42$, то $B_n \subset B_{43}$.
+
+\item.
+Время, требуемое для вычисления $F(n)$ разработанными алгоритмами, растёт, как установлено эмпирически, не медленнее, чем $n^4$.
+Так, нахождение $F(n)$ для $n \leq 5$ занимает менее секунды, а для вычисления $F(41)$ при известном (вычисленном ранее) $F(40)$ потребовалось больше суток.
+
+\end{enumerate}
+
+Авторы благодарят проф. Ю.\,А.~Брудного за информацию о работе \cite{Newman} и ценные замечания.
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+%Замечание
+%\begin{remark} Отметим, что доказательство теоремы \ref{theo1} 
+%может быть распространено на случай ...
+%\end{remark}
+
+%Определение
+%\begin{definit} Будем называть ...
+%\end{definit}
+
+%Предложение
+%\begin{propos} Пусть выполняются следующие неравенства...
+%\end{propos}
+
+%\begin{figure}[ht]
+%\centering
+%\includegraphics{1kriv80}
+%\caption{Многообразие точек смены кратности.}
+%\end{figure}
+
+
+%===============Список литературы==================
+\end{fulltext}
+
+\begin{thebibliography}{99}
+
+\Bibitem{Newman}
+\by D.J. Newman
+\book A Problem Seminar
+\publ Springer -- Verlag
+\yr 1982
+
+
+\RBibitem{angem1kurs}
+\by Е.М. Семенов, С.Н. Уксусов
+\book Аналитическая геометрия на плоскости
+\publaddr Воронеж
+\publ Воронежский государственный университет
+\yr 2016
+%\totalpages 130
+
+\RBibitem{Buhshtab}
+\by А.А. Бухштаб 
+\book Теория чисел
+\publaddr М
+\yr 1966
+
+\Bibitem{Ramanujan}
+\by Ramanujan S.
+\paper Highly composite numbers
+\jour Proceedings of the London Mathematical Society
+\vol {2,~XIV}
+\yr 1915
+
+
+
+
+
+%\RBibitem{1}
+%\by И.\,Я.~Арефьева, И.\,В.~Волович, Е.\,В.~Писковский
+%\paper Скатывание в модели Хиггса и эллиптические функции
+%\jour Теоретическая и математическая физика
+%\vol 172
+%\issue 1 
+%\yr 2012 
+%\pages 138--154  
+
+
+%\RBibitem{2}
+%\by В.\,П.~Маслов
+%\book Теория возмущений и асимптотические методы
+%\publaddr М.
+%\publ Изд-во Московского университета
+%\yr 1965
+
+%\Bibitem{3}
+%\by B.~Hellfer
+%\paper Theorie spectrale pour des operateurs elliptiques
+%\jour Asterisque
+%\vol 90
+%\pages 1--15
+%\yr 1984
+
+
+%\RBibitem{4} 
+%\by С.\,Ю.~Доброхотов,
+%А.\,И.~Шафаревич 
+%\paper Квазиклассическое квантование инвариантных изотропных многообразий гамильтоновых систем 
+%\inbook Топологические методы в теории гамильтоновых систем 
+%\publaddr М.
+%\publ Факториал 
+%\yr 1998
+
+%Электронный препринт в arXiv
+%\RBibitem{5} 
+%\by Ph.~Barbe
+%\eprint Approximation of integrals over asymptotic sets with applications 
+%to probability and statistics \eprintinfo 
+%\href{http://arxiv.org/abs/math/0312132}{http://arxiv.org/abs/math/0312132}
+%\yr 2003 
+
+ 
+%Статья в трудах конференции
+%\RBibitem{6} 
+%\by J.\,R.~Isbell
+%\paper Epimorphisms and dominions
+%\inbook Proceedings of the Conference on Categorical Algebra
+%\publ Springer 
+%\publaddr New York 
+%\yr 1966 
+%\pages 232--246
+
+%Препринт
+%\RBibitem{7} 
+%\by В.\,В.~Кузенов, С.\,В.~Рыжков
+%\preprint Математическая модель взаимодействия лазерных пучков высокой энергии с плазменной мишенью в магнитном поле
+%\preprintinfo Препринт ИПМех РАН, \No 942
+%\publaddr М.
+%\yr 2010
+%\totalpages 57
+
+%\RBibitem{8} 
+%\by K.\,O.~Friedrichs
+%\book Perturbation of spectra in Hilbert space
+%\publaddr Providence
+%\publ American Mathematical Society
+%\yr 1965
+
+
+\end{thebibliography}
+
+
+\end{document}
