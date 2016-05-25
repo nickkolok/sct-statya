@@ -1,0 +1,434 @@
+% Стилевой файл для журнала "Математические заметки"
+%   Последнее исправление 23 октября 2007
+
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+
+\ifx\undefined \pdfgentounicode
+\else
+\input{glyphtounicode} \pdfgentounicode=1
+\fi
+
+\newif\if@paper
+\newif\if@short
+\newif\if@contents
+\newif\if@misc
+\newif\if@dataonly
+\newif\if@hyper
+\newif\if@index
+
+\@paperfalse
+\@shortfalse
+\@contentsfalse
+\@miscfalse
+\@dataonlyfalse
+\@hyperfalse
+\@indexfalse
+
+
+\DeclareOption{paper}{\@papertrue}
+\DeclareOption{short}{\@shorttrue}
+\DeclareOption{contents}{\@contentstrue}
+\DeclareOption{misc}{\@misctrue}
+\DeclareOption{dataonly}{\@dataonlytrue}
+\DeclareOption{hyper}{\@hypertrue}
+\DeclareOption{index}{\@indextrue}
+\DeclareOption*{\@papertrue}
+
+\ProcessOptions
+
+\newif\if@@Short
+\@@Shorttrue
+
+
+\def\href#1#2{#2}
+
+\def\thesubsection{\arabic{subsection}}
+
+
+\if@index
+\global\let\z@Z=n
+\RequirePackage{color}
+
+\evensidemargin0pt
+\oddsidemargin0pt
+\topmargin-7mm
+\textheight 204mm
+\textwidth 135mm
+\columnsep 6mm
+\topskip0pt
+\headsep12pt
+\footskip20pt
+\headheight9pt
+\parindent12pt
+
+\makeatletter
+
+\def\ps@myheadings{%
+    \def\@evenhead{\small\thepage\hfill\scriptsize\leftmark\hfill}%
+    \def\@oddhead{\hfill{\scriptsize\rightmark}\hfill\small\thepage}%
+    \let\@mkboth\@gobbletwo
+    \let\sectionmark\@gobble
+    \let\subsectionmark\@gobble
+    \let\@evenfoot\@empty
+    \let\@oddfoot\@empty
+}
+
+\def\ps@plain{%
+    \def\@evenhead{}%
+    \let\@oddhead\@evenhead
+    \let\@mkboth\@gobbletwo
+    \let\sectionmark\@gobble
+    \let\subsectionmark\@gobble
+   \def\@evenfoot{\hfill{\small\thepage}\hfill}
+   \def\@oddfoot{\hfill{\small\thepage}\hfill}
+}
+
+\def\thefootnote{\ifnum\c@footnote>0 \arabic{footnote}\fi}
+
+\def\mz@author@item #1 \endmz@author@item{\noindent#1\par}
+
+\def\bbb#1{\vskip2mm plus 0.5mm\par\noindent%
+{\small\bf\hskip21mm #1}\par\nopagebreak\vskip1mm\nopagebreak}
+
+\AtBeginDocument{
+\pagestyle{myheadings}
+\thispagestyle{plain}
+\markboth{ИМЕННОЙ УКАЗАТЕЛЬ АВТОРОВ}{ИМЕННОЙ УКАЗАТЕЛЬ АВТОРОВ}
+\vglue 0mm
+\noindent\hbox to 0pt{\small\bf ИМЕННОЙ УКАЗАТЕЛЬ АВТОРОВ\hss}
+\bigskip
+\footnotetext[0]{Первая цифра означает выпуск,
+\newline
+числа в скобках -- страницы. Краткие
+\newline
+сообщения помечаются звездочкой.}
+\small
+\makeatletter
+}
+
+\fi
+
+
+\if@paper
+\RequirePackage{mzart}
+\fi
+
+\if@short
+\RequirePackage{mzsh}
+\small
+\fi
+
+
+\@addtoreset{enumi}{section}
+\@addtoreset{enumii}{section}
+\@addtoreset{enumiii}{section}
+\@addtoreset{enumiv}{section}
+
+
+\global\itemsep0mm
+\global\parsep0mm
+\global\parskip0mm
+\global\partopsep0mm
+\global\@outerparskip0mm
+
+
+%\let\@listi\relax
+
+
+\def\AmSTeX{{$\mathcal A$}\kern-.1667em\lower.5ex\hbox
+{$\mathcal M$}\kern-.125em{$\mathcal S$}-\TeX}
+\def\AmSLaTeX{{$\mathcal A$}\kern-.1667em\lower.5ex\hbox
+{$\mathcal M$}\kern-.125em{$\mathcal S$}-\LaTeX}
+
+
+\let\@listi=\relax
+
+\newdimen\contenstopskip
+\contenstopskip=8.5cm
+
+\if@contents
+
+
+\RequirePackage{mzart}
+
+
+\textwidth114mm%
+\textheight153mm%
+%\topmargin-20mm
+\topmargin-0mm
+\headheight15pt
+\headsep20pt
+\evensidemargin12mm
+\oddsidemargin12mm
+
+
+\pagestyle{empty}
+\setcounter{page}{1}
+
+\textheight 20.3cm
+
+\AtBeginDocument{%\@@Head@Line
+%\vglue-1cm
+\centerline{\hfill\footnotesize\bf Математические заметки,
+том~{\VOLUME} \ выпуск~{\ISSUE} \Months\ {\YEAR}}
+%\hrule
+\bigskip
+\centerline{\bf\small СОДЕРЖАНИЕ}
+\small
+\makeatletter
+\medskip
+}
+
+
+\AtEndDocument{\newpage\pagestyle{empty}
+%\vglue-15mm
+\parindent0pt
+ЖУРНАЛ ОСНОВАН В 1967 г.
+\\[8mm]
+Выходит 12 раз в год
+\\[28mm]
+Главный редактор
+\\[3mm]
+{\large В.\,П.~МАСЛОВ}%
+\\[6mm]
+РЕДАКЦИОННАЯ КОЛЛЕГИЯ:
+\\[3mm]
+С.\,И.~АДЯН,
+\\
+Д.\,В.~АНОСОВ (заместитель главного редактора),
+\\
+С.\,Ю.~ДОБРОХОТОВ (заместитель главного редактора),
+\\
+В.\,Н.~ДУБИНИН,
+В.\,И.~ИВАНОВ,
+А.\,А.~КАРАЦУБА,
+\\
+Б.\,С.~КАШИН (заместитель главного редактора),
+\\
+В.\,В.~КОЗЛОВ,
+С.\,С.~КУТАТЕЛАДЗЕ,
+\\
+А.\,С.~МИЩЕНКО,
+Д.\,О.~ОРЛОВ,
+В.\,Л.~ПОПОВ,
+\\
+С.\,И.~ПОХОЖАЕВ,
+А.\,Б.~СОСИНСКИЙ,
+\\
+И.\,А.~ТАЙМАНОВ,
+В.\,Е.~ТАРАКАНОВ,
+Д.\,В.~ТРЕЩЁВ,
+\\
+А.\,М.~ЧЕБОТАРЕВ (ответственный секретарь),
+\\
+А.\,А.~ШКАЛИКОВ
+\vskip3.1cm
+
+
+
+\centerline{Учредитель: Российская академия наук}
+\centerline{Журнал осуществляет свою деятельность}
+\centerline{под руководством Отделения математических наук РАН}
+\vskip5mm
+
+\centerline{Москва}
+\centerline{Издательство <<Наука>>}
+\vskip2.5mm
+
+\hrule
+\vskip2mm
+\vsize 190mm
+
+\hbox to\hsize{\small\copyright \ Российская академия наук, \YEAR\,г.\hfill}
+\vskip-.5mm
+\hbox to\hsize{\small\copyright \ Редколлегия журнала <<Математические заметки>>
+(составитель), \YEAR\,г.\hfill}
+\newpage
+
+{\small
+\centerline{ISSN 0025--567 X. <<Математические заметки>>. \YEAR. Т. \VOLUME.
+Вып. \ISSUE. }%
+
+\vskip15mm
+
+\centerline{ISSN 0025--567 X. <<Математические заметки>>. \YEAR. Т. \VOLUME.
+Вып. \ISSUE. }%
+
+\vskip15mm
+
+\centerline{ISSN 0025--567 X. <<Математические заметки>>. \YEAR. Т. \VOLUME.
+Вып. \ISSUE. }%
+
+\vskip15mm
+
+\centerline{ISSN 0025--567 X. <<Математические заметки>>. \YEAR. Т. \VOLUME.
+Вып. \ISSUE. }%
+
+\vskip15mm
+
+\centerline{ISSN 0025--567 X. <<Математические заметки>>. \YEAR. Т. \VOLUME.
+Вып. \ISSUE. }%
+}
+\newpage
+\catcode`\@=11
+\baselineskip 7mm
+\def\@mz@paper@item #1[Vol:#2, Issue:#3](#4-#5)#6(#7) #8\end@mz@paper@item{%
+\item #1}
+
+\def\@mz@short@item #1[Vol:#2, Issue:#3](#4-#5)#6(#7) #8\end@mz@short@item{%
+\item #1}
+
+\large
+\raggedcenter@
+{\Large Математические заметки}
+\medskip
+
+Том \VOLUME, \No~\ISSUE, \MONTHS, \YEAR
+\medskip
+
+{\bf   заголовки для оттисков}%
+\vskip1cm
+%\Bad
+\leftskip1cm\rightskip=-.5\hsize plus\hsize
+\begin{enumerate}
+\renewcommand\labelenumi{\theenumi)}
+\input mztoc.tex
+\end{enumerate}
+\nobreak
+\vfill
+\nobreak
+Всего --- \theenumi\ статей.
+\vfill
+}
+
+
+%\parskip2mm
+\def\baselinestretch{1.00}
+\fboxrule0.6pt
+\fboxsep1.5pt
+
+\def\ps@norunningheads{%
+\def\@evenhead{}%
+\def\@oddhead{}%
+\let\@mkboth\@gobbletwo
+\let\sectionmark\@gobble
+\let\subsectionmark\@gobble
+\def\@oddfoot{}
+\def\@evenfoot{}
+}
+
+\def\@@Short@@{\medskip\noindent{\footnotesize\bf КРАТКИЕ СООБЩЕНИЯ}\hfill\nobreak\endgraf\smallskip}
+
+
+\pagestyle{norunningheads}
+
+\let\@@Boxed=\relax
+
+
+\def\@contents@format{\let\\=\relax \tolerance3000
+\parindent -1.5pc\rightskip 2pc%plus5pt
+\leftskip 1.5pc
+\parfillskip -2pc}
+
+
+\def\@mz@paper@item #1[Vol:#2, Issue:#3](#4-#5)#6(#7) #8\end@mz@paper@item{%
+{\@contents@format
+{\footnotesize\bf #1}
+{\footnotesize\fontseries{b}\selectfont #8}\dotfill
+\kern3mm\hbox to6mm{\hfil #4}\par}}
+
+
+\def\@mz@short@item #1[Vol:#2, Issue:#3](#4-#5)#6(#7) #8\end@mz@short@item{%
+\if@@Short \@@Short@@ \fi
+\@@Shortfalse
+{\@contents@format
+{\footnotesize\bf #1}
+{\footnotesize\fontseries{b}\selectfont #8}\dotfill
+\kern3mm\hbox to6mm{\hfil #4}\par}}
+
+\global\let\z@Z=n
+
+\fi
+
+
+\if@misc
+\RequirePackage{mzart}
+\global\let\z@Z=n
+\fi
+
+
+\newenvironment{fulltext}{}{}
+
+\if@dataonly
+\RequirePackage{verbatim}
+\global\let\z@Z=n
+\let\endRefs\relax
+\let\save@@def\maketitle
+\def\maketitle{\save@@def\pagestyle{empty}\thispagestyle{empty}}
+
+\def\fulltext{\global\pagestyle{empty}\@bsphack
+\let\do\@makeother\dospecials\catcode`\^^M\active
+\let\verbatim@startline\relax
+\let\verbatim@addtoline\@gobble
+\let\verbatim@processline\relax
+\let\verbatim@finish\relax
+\verbatim@}
+\let\endfulltext=\@esphack
+
+\def\pnktunbox@#1{\ppunbox@\empty\space{#1}\empty}%
+
+\def\finalpunct{\ifnum\lastkern=\m@ne\unkern\else\fi
+       \refquotes@\refbreak@}%
+\fi
+%!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+\RequirePackage{graphicx}
+
+\newif\if@finalinfo
+\@finalinfotrue
+
+\def\crossref#1{\edef\next{#1}\ifx\empty\next \ignorespaces\else\if@dataonly\if@finalinfo\@@finalinfo \@finalinfofalse\fi\href{#1}{\includegraphics[height=3mm]{crossref}}\else\unskip\unskip\fi\fi}
+\def\mathscinet#1{\edef\next{#1}\ifx\empty\next \ignorespaces\else\if@dataonly\if@finalinfo\@@finalinfo \@finalinfofalse\fi\href{#1}{\includegraphics[height=3mm]{ams}}\else\unskip\unskip\fi\fi}
+\def\mathnet#1{\edef\next{#1}\ifx\empty\next \ignorespaces\else\if@dataonly\if@finalinfo\@@finalinfo \@finalinfofalse\fi\href{#1}{\includegraphics[height=3mm]{mi}}\else\unskip\unskip\fi\fi}
+\def\zmath#1{\edef\next{#1}\ifx\empty\next  \ignorespaces\else\if@dataonly\if@finalinfo\@@finalinfo \@finalinfofalse\fi\href{#1}{\includegraphics[height=3mm]{zmath}}\else\unskip\unskip\fi\fi}
+\def\adsnasa#1{\edef\next{#1}\ifx\empty\next  \ignorespaces\else\if@dataonly\if@finalinfo\@@finalinfo \@finalinfofalse\fi\href{#1}{\includegraphics[height=3mm]{ads}}\else\unskip\unskip\fi\fi}
+
+\def\@Color{\if@dataonly\color[rgb]{0,0,1}\else
+\if@hyper\color[rgb]{0,0,1}\fi\fi}
+\def\@No@Color{\color[rgb]{0,0,0}}
+
+\long\def\@makefntext#1{\@No@Color\parindent 12pt%\noindent
+ $^{\@thefnmark}$#1}
+
+\def\thefootnote{\@No@Color\ifnum\c@footnote>0 \arabic{footnote}\else\fi}
+\def\footnoterule{\@No@Color\kern-3\p@
+  \hrule \@width 2in \kern 2.6\p@} % the \hrule is .4pt high
+
+%\def\thepage{\@No@Color\arabic{page}}
+\def\@@copyright#1{\insert\copyright@insert{\@No@Color%
+\rightline{\normalsize\rmfamily\textcopyright\ \
+\scriptsize\scshape #1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AtBeginDocument{\nonfrenchspacing}
+\def~{\relax\ifmmode\errmessage{!!! Tilde \string~ in math mode!!!}\else\unskip\nobreak\ \ignorespaces\fi}
+\gdef\No{{\select@language{russian}\textnumero}}
+
+
+\lefthyphenmin=3
+\widowpenalty=10000
+\clubpenalty=10000
+\brokenpenalty=5000
+\exhyphenpenalty10000
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\theenumi{\textup{\@arabic\c@enumi}}
+\renewcommand\theenumii{\textup{\@alph\c@enumii}}
+\renewcommand\theenumiii{\textup{\@roman\c@enumiii}}
+
+% Это параметры \item'ов, которые для старых номеров можно закомментировать
+\leftmargini 3em
+\leftmarginii 1.5em
+
+
+
+\endinput

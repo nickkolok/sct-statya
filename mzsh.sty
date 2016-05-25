@@ -1,0 +1,1715 @@
+%           Стилевой файл MZSH.STY - стиль "краткие сообщения"
+%                 журнала "Математические заметки"
+%
+%                   для LaTeX2e под MikTeX
+%
+%            Последнее исправление 23 октября 2007
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newif\if@multiple
+\@multiplefalse
+
+\newif\if@@bookmarks
+\@@bookmarksfalse
+
+\newread\@@Read
+\newread\@@Short@Read
+\newwrite\@@Write
+\newwrite\@@Short@Write
+
+
+\textheight 202mm
+\textwidth 132mm
+\normalbaselineskip=12.5pt %4.39mm
+
+\renewcommand\normalsize{%
+   \@setfontsize\normalsize\@xpt\normalbaselineskip
+   \abovedisplayskip 10\p@ \@plus2\p@ \@minus5\p@
+   \abovedisplayshortskip \z@ \@plus3\p@
+   \belowdisplayshortskip 6\p@ \@plus3\p@ \@minus3\p@
+   \belowdisplayskip \abovedisplayskip
+   \let\@listi\@listI}
+\normalsize
+
+\evensidemargin0pt
+\oddsidemargin0pt
+\topmargin-7mm
+\topskip0pt
+\headsep12pt
+\footskip20pt
+\headheight9pt
+\parindent12pt
+\let\ge\geqslant
+\let\geq\geqslant
+\let\le\leqslant
+\let\leq\leqslant
+
+
+
+\tolerance200
+
+\newcount\Count@
+\newcount\PGcount@
+\newcount\@first@short@PGcount@
+\newcount\Finalpage@
+\newcount\@mark@@
+
+\newcount\Volume
+\newcount\Issue
+\newcount\IIssue
+\newcount\Year
+\newcount\lastpageno % it is the last page number of the previous issue
+                     % of journal; it should be given by hands
+
+\@first@short@PGcount@=1
+
+
+\let\z@Z=n
+\def\bef@rall{\immediate\openin\@@Read=info.txt \relax
+\ifeof\@@Read\let\z@Z=n\else \let\z@Z=e
+\immediate\read\@@Read to\next\Count@\next\Volume=\Count@\xdef\VOLUME{\number\Volume}\fi
+\ifeof\@@Read\let\z@Z=n\PGcount@=1\else \let\z@Z=e
+\immediate\read\@@Read to\next\Count@\next \Issue=\Count@\xdef\ISSUE{\number\Issue}\fi
+\ifeof\@@Read\let\z@Z=n\immediate\closein\@@Read\else \let\z@Z=e \read\@@Read to\next\global\PGcount@\next
+\global\lastpageno\PGcount@ \fi
+\ifeof\@@Read\else\read\@@Read to\next\next\fi
+\immediate\closein\@@Read\ifx n\z@Z\fi
+\immediate\openin\@@Read=pdfrefs.txt \relax
+\ifeof\@@Read \else\global\@dataonlytrue\fi
+\immediate\closein\@@Read
+\immediate\openin\@@Read=pdfs.txt \relax
+\ifeof\@@Read \else\global\@hypertrue \fi
+\immediate\closein\@@Read
+\let\bef@rall\relax}
+
+
+\bef@rall
+
+
+
+\advance\lastpageno by -3
+%\advance\lastpageno by -5 %!!!!!!! Только в этом номере!!!!!
+
+\newtoks\@@tmptoks
+\newtoks\Journal@toks
+\newtoks\JOURNAL@TOKS
+\newtoks\norma@toks
+\newtoks\minute@toks
+\newtoks\firstwarning@toks
+\newtoks\secondwarning@toks
+\newtoks\thirdwarning@toks
+\firstwarning@toks={Нет ~ между фамилией и инициалами!}
+\secondwarning@toks={Тильда ~ в математической моде!!!}
+\thirdwarning@toks={Пробел \ в математической моде!!!}
+\minute@toks={^^JМинуточку}
+\norma@toks={Норма  }
+\Journal@toks={Математические \ \ заметки}
+\JOURNAL@TOKS={МАТЕМАТИЧЕСКИЕ ЗАМЕТКИ}
+
+\let\date@@\relax
+
+
+
+\Count@=\Volume
+ \advance \Count@ by3933 \divide\Count@ by2
+ \Year=\Count@
+
+\xdef\VOLUME{\number\Volume}
+\xdef\ISSUE{\number\Issue}
+\xdef\IISSUE{\number\IIssue}
+\xdef\YEAR{\number\Year}
+
+\Count@=\Volume
+\newcount\@@month
+\@@month=\Issue
+
+\ifodd\Volume\else\advance\@@month by 6\fi
+
+\def\Months{\ifcase
+ \@@month\or январь\or февраль\or март\or апрель\or май\or июнь\or
+ июль\or август\or сентябрь\or октябрь\or ноябрь\or декабрь\fi}
+
+\def\MONTHS{\ifcase
+ \@@month\or ЯНВАРЬ\or ФЕВРАЛЬ\or МАРТ\or АПРЕЛЬ\or МАЙ\or ИЮНЬ\or
+ ИЮЛЬ\or АВГУСТ\or СЕНТЯБРЬ\or ОКТЯБРЬ\or НОЯБРЬ\or ДЕКАБРЬ\fi}
+
+
+\def\@@Head@Line{\vbox{\parindent0pt
+\begin{center}
+\hbox to\textwidth{{\fontseries{b}\huge \selectfont
+\the\Journal@toks}\hfill \
+\lower 1.8mm\hbox{\vrule width0mm height 8mm }\hss}
+\vspace{2mm}
+\hrule height 0.5pt
+\vspace{3mm}
+\hbox to\textwidth{\large
+Том~{\VOLUME} \
+выпуск~{\ISSUE}
+\Months\ {\YEAR}\hfill}
+\end{center}
+}}
+
+
+
+%%%%%%%%%%%%%%%%       \author, title etc                %%%%%%
+\def\udk#1{\def\@udk{#1}}
+
+\udk{????}
+
+\newtoks\hyper@title@toks
+
+\def\title{\@ifnextchar(\@Title\@@Title}
+
+\def\@@Title{\def\title@##1{\R@title@={##1}%
+\hyper@title@toks={##1}%
+\def\@R@title@{%\uppercasetext@
+{##1}}}\title@}
+
+\def\@Title(#1){\def\title@##1{\R@title@={##1}%
+\hyper@title@toks={#1}%
+\def\@R@title@{%\uppercasetext@
+{##1}}}\title@}
+
+%
+%
+\newtoks\R@AuI@F    \newtoks\R@AuF@I
+\newtoks\R@title@
+\newbox\authorbox@
+\newtoks\R@SZ@tokl\newtoks\R@SZ@tok\newtoks\R@SZ@tokr
+
+
+\def\@@concatenate#1#2{#1\expandafter\expandafter\expandafter{\expandafter
+\the\expandafter #1\the #2}}
+
+\def\@@add@to#1#2{#1\expandafter\expandafter\expandafter{\expandafter
+\the\expandafter #1#2}}
+
+\newtoks\@temp@authtoks
+\@temp@authtoks={}
+\newtoks\@temp@addrtoks
+\@temp@addrtoks={}
+
+\newtoks\@temp@if@toks
+\newtoks\@temp@fi@toks
+\@temp@if@toks={\bf}
+\@temp@fi@toks={\\ \rm}
+
+\newif\if@@addr
+\@@addrfalse
+
+\newtoks\@@AuthorToks
+\newtoks\@@Eng@AuthorToks
+\newtoks\@@AddrToks
+\@@Eng@AuthorToks={}
+\@@AuthorToks={}
+\@@AddrToks={}
+
+\def\author{\@ifnextchar[\@author\@@author}
+
+\def\@@author#1{\@temp@authtoks={#1}%
+\@@Eng@AuthorToks={}%
+\edef\@@ttemp{\the\@@AuthorToks}%
+\ifx\empty\@@ttemp
+ \@@AuthorToks=\expandafter{\the\@temp@authtoks}%
+\else
+ \@@add@to\@@AuthorToks{, }%
+ \@@concatenate\@@AuthorToks\@temp@authtoks
+\fi
+}
+
+\def\@author[#1]#2{\@@Eng@AuthorToks={#1}%
+\@temp@authtoks={#2}%
+\edef\@@ttemp{\the\@@AuthorToks}%
+\ifx\empty\@@ttemp
+ \@@AuthorToks=\expandafter{\the\@temp@authtoks}%
+\else
+ \@@add@to\@@AuthorToks{, }%
+ \@@concatenate\@@AuthorToks\@temp@authtoks
+\fi
+}
+
+\def\address#1{\@@addrtrue
+\@temp@addrtoks={#1}%
+\edef\@@ttemp{\the\@@AddrToks}
+\edef\@eatemp{\the\@@Eng@AuthorToks}%
+\ifx\empty\@@ttemp
+ \@@concatenate\@@AddrToks\@temp@if@toks
+ \@@concatenate\@@AddrToks\@temp@authtoks
+ \ifx\empty\@eatemp
+ \else
+  \@@add@to\@@AddrToks{ (}%
+  \@@concatenate\@@AddrToks\@@Eng@AuthorToks
+  \@@add@to\@@AddrToks{)}%
+ \fi
+ \@@concatenate\@@AddrToks\@temp@fi@toks
+ \@@concatenate\@@AddrToks\@temp@addrtoks
+\else
+ \@@add@to\@@AddrToks{ \\[2mm]\bf}
+ \@@add@to\@@AddrToks{\relax\color[rgb]{0,0,0}\relax}
+ \@@concatenate\@@AddrToks\@temp@authtoks
+ \ifx\empty\@eatemp
+ \else
+  \@@add@to\@@AddrToks{ (}%
+  \@@concatenate\@@AddrToks\@@Eng@AuthorToks
+  \@@add@to\@@AddrToks{)}%
+ \fi
+ \@@concatenate\@@AddrToks\@temp@fi@toks
+ \@@concatenate\@@AddrToks\@temp@addrtoks
+\fi
+}
+
+\def\email{\@ifnextchar[\@email\@@email}
+
+\def\@@email#1{\@temp@addrtoks={ #1}%
+\edef\@@ttemp{\the\@@AddrToks}%
+\edef\@eatemp{\the\@@Eng@AuthorToks}%
+\if@@addr\else
+ \@@add@to\@@AddrToks{\\[2mm]\bf}
+ \@@add@to\@@AddrToks{\relax\color[rgb]{0,0,0}\relax}
+ \@@concatenate\@@AddrToks\@temp@authtoks
+ \ifx\empty\@eatemp
+ \else
+  \@@add@to\@@AddrToks{ (}%
+  \@@concatenate\@@AddrToks\@@Eng@AuthorToks
+  \@@add@to\@@AddrToks{)}%
+ \fi
+\fi
+\ifx\empty\@@ttemp
+ \@@AddrToks=\expandafter{\expandafter\bf\the\@temp@authtoks}
+ \ifx\empty\@eatemp
+ \else
+  \@@add@to\@@AddrToks{ (}%
+  \@@concatenate\@@AddrToks\@@Eng@AuthorToks
+  \@@add@to\@@AddrToks{)}%
+ \fi
+ \@@add@to\@@AddrToks{\\{\it E-mail\/}: \tt\ignorespaces}
+ \@@add@to\@@AddrToks{\color[rgb]{0,0,0}}
+ \@@add@to\@@AddrToks{\href{mailto:#1}{#1}}
+ \@@add@to\@@AddrToks{\color[rgb]{0,0,0}\relax}
+\else
+ \@@add@to\@@AddrToks{\\{\it E-mail\/}: \tt\ignorespaces}
+ \@@add@to\@@AddrToks{\color[rgb]{0,0,0}}
+ \@@add@to\@@AddrToks{\href{mailto:#1}{#1}}
+ \@@add@to\@@AddrToks{\color[rgb]{0,0,0}\relax}
+\fi
+\@@addrfalse
+}
+
+\def\@email[#1]#2{\@temp@addrtoks={ #1}%
+\edef\@@ttemp{\the\@@AddrToks}
+\edef\@eatemp{\the\@@Eng@AuthorToks}%
+\if@@addr\else
+ \@@add@to\@@AddrToks{\\[2mm]\bf}
+ \@@add@to\@@AddrToks{\relax\color[rgb]{0,0,0}\relax}
+ \@@concatenate\@@AddrToks\@temp@authtoks
+ \ifx\empty\@eatemp
+ \else
+  \@@add@to\@@AddrToks{ (}%
+  \@@concatenate\@@AddrToks\@@Eng@AuthorToks
+  \@@add@to\@@AddrToks{)}%
+ \fi
+\fi
+\ifx\empty\@@ttemp
+ \@@AddrToks=\expandafter{\expandafter\bf\the\@temp@authtoks}
+ \ifx\empty\@eatemp
+ \else
+  \@@add@to\@@AddrToks{ (}%
+  \@@concatenate\@@AddrToks\@@Eng@AuthorToks
+  \@@add@to\@@AddrToks{)}%
+ \fi
+ \@@add@to\@@AddrToks{\\{\it E-mail\/}: \tt\ignorespaces}
+ \@@add@to\@@AddrToks{\color[rgb]{0,0,0}}
+ \@@add@to\@@AddrToks{\href{mailto:#1}{#2}}
+ \@@add@to\@@AddrToks{\color[rgb]{0,0,0}\relax}
+\else
+ \@@add@to\@@AddrToks{\\{\it E-mail\/}: \tt\ignorespaces}
+ \@@add@to\@@AddrToks{\color[rgb]{0,0,0}}
+ \@@add@to\@@AddrToks{\href{mailto:#1}{#2}}
+ \@@add@to\@@AddrToks{\color[rgb]{0,0,0}\relax}
+\fi
+\@@addrfalse
+}
+
+%
+%
+%\SZ@test#1#2#3 ищет в #3 подстроку #2, после чего #1 - часть #1 до первого
+% вхождения #2 , а #3 - часть #1 после #2; если не найдено, то #1:=#3,
+%  \resp=N, иначе \resp=Y.
+\def\R@SZ@end{{{{{{{}}}}}}}
+\def\R@SZ@rsp{\ifx\next\R@SZ@end\let\R@resp=N\let\next
+\R@SZ@N\else\let\R@resp=Y\let\next\R@SZ@Y\fi\next}%
+\def\R@SZ@test#1#2#3{%
+\def\R@SZ@N##1\R@SZ@end{\expandafter#1\expandafter{\the#3}}%
+\def\R@SZ@Y##1#2\R@SZ@end{#3{##1}}%
+\def\R@SZ@t##1#2{#1{##1}\futurelet\next\R@SZ@rsp}
+\expandafter\R@SZ@t\the #3#2\R@SZ@end
+}%
+\def\R@SZ@coma{\R@SZ@test\R@SZ@tokl,\R@SZ@tokr\let\cR@resp\R@resp
+\R@SZ@test\R@SZ@tok\\\R@SZ@tokl
+\R@SZ@test\R@SZ@tok\Boxed\R@SZ@tokl
+\let\bR@resp\R@resp\if Y \R@resp{\Boxed##1{##1}\expandafter\expandafter
+		\expandafter\global\expandafter\expandafter
+		\expandafter\R@SZ@tokl\expandafter\expandafter
+		\expandafter{\expandafter\Boxed\the\R@SZ@tokl}}\fi
+\R@SZ@test\R@SZ@tok~\R@SZ@tokl
+\if N\R@resp \message{^^J!!! \the\R@SZ@tok! - \the\firstwarning@toks}\fi
+\edef\enext{\if Y\bR@resp\noexpand\Boxed\noexpand{\fi\the\R@SZ@tokl\space
+\if Y\R@resp\the\R@SZ@tok\fi\if Y\bR@resp\noexpand}\fi
+\if Y\cR@resp, \fi}\expandafter
+\expandafter\expandafter\global\expandafter
+\expandafter\expandafter\R@AuF@I\expandafter\expandafter\expandafter
+{\expandafter\the\expandafter\R@AuF@I\enext}
+\if Y\cR@resp\R@SZ@coma\fi}
+%
+\let\relaxnext@=\relax
+%
+\def\raggedcenter@{\leftskip1pt plus.4\hsize \rightskip\leftskip
+\parfillskip\z@ \parindent\z@ \spaceskip.3333em \xspaceskip.5em
+\pretolerance9999\tolerance9999 \exhyphenpenalty\@M
+\hyphenpenalty\@M \def\newline{\linebreak\vphantom{Й}}
+%
+\def\@newline[##1]{\let \reserved@e \vadjust
+                   \@gnewline {\vskip ##1}}
+\def\@gnewline ##1{%
+  \ifvmode
+    \@nolnerr
+  \else
+    \unskip \reserved@e {\reserved@f##1}\vphantom{Й}\break
+  \fi}
+}
+%
+\def\raggedright@{\leftskip0pt \rightskip0.015pt plus.4\hsize
+\parfillskip\z@ \parindent\z@ \spaceskip.3333em \xspaceskip.5em
+\pretolerance9999\tolerance9999 \exhyphenpenalty\@M
+\hyphenpenalty\@M \def\newline{\linebreak\vphantom{Й}}
+\def\@newline[##1]{\let \reserved@e \vadjust
+                   \@gnewline {\vskip ##1}}
+\def\@gnewline ##1{%
+  \ifvmode
+    \@nolnerr
+  \else
+    \unskip \reserved@e {\reserved@f##1}\vphantom{Й}\break
+  \fi}
+}
+
+%
+%%%%%%%%%%%%%%%%      \date                    %%%%%%
+\def\date#1{\def\@date@{#1}}
+%%%%%%%%%%%%%%%%%% Новое определение \maketitle %%%%%%%%%%%%%%%%%%%%
+
+\newif\if@first@communication
+\@first@communicationfalse
+\def\First{\@first@communicationtrue\thispagestyle{norunningheads}}
+
+
+\def\@@Head@@{
+\if@first@communication
+\vbox{
+\vglue-\headheight
+\vglue-\headsep
+\vglue-\baselineskip
+\relax
+\@@Head@Line
+\vskip12mm
+\begin{flushleft}
+{\bf КРАТКИЕ СООБЩЕНИЯ}
+\end{flushleft}
+\vskip5mm
+}
+\else
+\fi}
+
+\def\maketitle{
+\R@SZ@tokr=\expandafter{\the\@@AuthorToks}%
+\global\R@AuI@F=\expandafter{\the\@@AuthorToks}\R@SZ@coma
+\if@dataonly
+\hypersetup{%
+pdfauthor=\expandafter{\the\R@AuI@F},
+pdftitle=\expandafter{\the\hyper@title@toks},
+pdfsubject={Список литературы}
+}
+\vglue-\headheight
+\vglue-\headsep
+{\raggedright\noindent
+{\the\R@AuI@F}\\[1mm]
+{\bf\the\R@title@}\\[1mm]
+{\small\the\Journal@toks, \YEAR, т.~\VOLUME, \No~\ISSUE,
+с.~\@@start@page--\@@final@page}
+}
+\smallskip
+\hrule
+\bigskip
+\pagestyle{empty}\thispagestyle{empty}
+\else
+\if@hyper
+\hypersetup{pdfauthor=\expandafter{\the\R@AuI@F},%
+pdftitle=\expandafter{\the\hyper@title@toks}}
+\fi
+\@@Head@@
+\relax
+{\raggedright@
+{\ifx\@R@title@\undefined\else
+\vspace{1.2mm}
+%\small
+\bfseries
+%\uppercasetext@
+{\normalsize\@R@title@}\fi}
+\endgraf
+\vspace{2mm}
+\edef\ttemp{\the\@@AuthorToks}%
+\ifx\empty\ttemp \vskip3pt\relax
+\else
+\@@copyright{\the\R@AuI@F,\quad\YEAR}
+{\small\normalfont\bfseries
+\the\R@AuI@F\endgraf}
+\vspace{5mm}
+\fi
+}\fi}
+
+%%%%%%%%%%%%%%%%      \abstracts               %%%%%%
+
+\def\abstract{\errmessage{^^JNo abstract in Short Communications!!!}}
+
+\def\endabstract{}
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Далее идет набор макросов, взятый из стилевого файла
+% С.Знаменского mzpaper.sty, который (набор) предназначен для автоматического
+% составления содержания номера, как русского, так и английского.
+%
+%
+
+\def\Define@Jobname{\expandafter\uppercase\expandafter
+                     {\expandafter
+                      \edef\expandafter
+                           \Jobname\expandafter
+                                   {\expandafter
+                                    \csname\jobname\endcsname}}}
+\Define@Jobname
+\edef\@@Jobname{\jobname}
+
+
+\def\TestSZ@#1{\expandafter
+            \uppercase\expandafter
+                     {\expandafter
+                      \edef\expandafter
+                           \next\expandafter
+                            {\expandafter
+                             \csname#1\endcsname}}%
+     \ifx\next\Jobname\let\@@res y\else\let\@@res n\fi}%
+
+
+\newif\if@shpage@marked
+\@shpage@markedfalse
+
+
+\def\Define@Test@short@item{
+\def\@mz@short@item ##1[Vol:##2, Issue:##3](##4-##5)##6(##7)##8\end@mz@short@item{%
+\if@shpage@marked \else
+\@first@short@PGcount@=\PGcount@
+\@shpage@markedtrue\fi
+\TestSZ@{##7}\if y\@@res\csname endinput\endcsname
+\def\@@start@page{##4}%
+\def\@@final@page{##5}%
+\else\advance\PGcount@ by ##6 \fi}}
+
+
+\def\Define@Test@paper@item{
+\def\@mz@paper@item ##1[Vol:##2, Issue:##3](##4)##5(##6)##7\end@mz@paper@item{%
+\advance\PGcount@ by ##5%
+}}
+
+
+\Define@Test@paper@item
+\Define@Test@short@item
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifnum\PGcount@=1\else
+\immediate\openin\@@Read=mztoc.tex
+\ifeof\@@Read\PGcount@=1\else\@@input mztoc.tex
+\fi\immediate\closein\@@Read\fi
+\global\c@page\PGcount@
+\xdef\Firstpage@{\number\c@page}
+%
+\def\R@in@jobn{\if n\R@uzh@
+\immediate\write\@@Write{%
+\noexpand\@mz@short@item
+\the\R@AuF@I[Vol:\the\Volume, Issue:\the\Issue]%
+(\Firstpage@-\number\Finalpage@)\number\Count@(\jobname)
+\the\R@title@\noexpand\end@mz@short@item}%
+\def\R@uzh@{y}\fi}
+
+
+\newtoks\toksauthor
+\newtoks\tokstitle
+
+\def\Define@Write@short@toc@item{%
+\def\@mz@short@item ##1[Vol:##2, Issue:##3](##4)##5(##6)##7\end@mz@short@item{%
+\toksauthor={##1} \tokstitle={##7}
+\TestSZ@{##6}\if\@@res y\let\next@\relax
+\R@in@jobn\def\@@res{n}\else
+\immediate\write\@@Write{\noexpand\@mz@short@item \the\toksauthor[Vol:##2, Issue:##3](##4)##5(##6) \the\tokstitle \noexpand\end@mz@short@item}\fi}
+}
+
+\def\Define@Copy@short@toc@item{%
+\def\@mz@short@item ##1\end@mz@short@item{%
+\@short@writtentrue
+\@@tmptoks={\@mz@short@item ##1\end@mz@short@item}%
+\immediate\write\@@Write{\the\@@tmptoks}}
+}
+
+\def\Define@Copy@paper@toc@item{%
+\def\@mz@paper@item ##1\end@mz@paper@item{%
+\@@tmptoks={\@mz@paper@item ##1\end@mz@paper@item}%
+\immediate\write\@@Write{\the\@@tmptoks}}
+}
+
+\def\Define@NoWrite@short@toc@item{%
+\def\@mz@short@item ##1[Vol:##2, Issue:##3](##4)##5(##6)##7\end@mz@short@item{}
+}
+
+\def\Define@Mark@short@toc@item{%
+\def\@mz@short@item ##1[Vol:##2, Issue:##3](##4)##5(##6)##7\end@mz@short@item{%
+\immediate\write\@@Write{\noexpand\@@Short}%
+\Define@NoWrite@short@toc@item
+}}
+
+
+\def\Define@Write@paper@toc@item{%
+\def\@mz@paper@item ##1[Vol:##2, Issue:##3](##4)##5(##6)##7\end@mz@paper@item{%
+\toksauthor={##1} \tokstitle={##7}
+\immediate\write\@@Write{\noexpand\@mz@paper@item \the\toksauthor[Vol:##2, Issue:##3](##4)##5(##6) \the\tokstitle \noexpand\end@mz@paper@item}}
+}
+
+
+\Define@Write@short@toc@item
+\Define@Write@paper@toc@item
+
+\def\skipmath@#1$#2${\MakeUppercase{#1}%
+\ifx\skipmath@#2\else$#2$\expandafter\skipmath@\fi}
+%
+\def\uppercasetext@#1{%
+{\spaceskip1.3\fontdimen2\the\font plus1.3\fontdimen3\the\font
+\skipmath@#1$\skipmath@$}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newbox\datebox@  \newbox\addressemailbox@
+%\def\address#1{\def\@address@{#1}}
+%\def\email#1{\def\@email@{#1}}
+\def\presentedby#1{\def\@presentedby@{#1}}
+%
+%
+\def\endRefs{\nobreak\vskip3mm
+\nobreak\par
+\color[rgb]{0,0,0}
+\selectlanguage{russian}
+\interlinepenalty10000
+\def\newline{\break\vphantom{Й}}%
+\penalty10000%
+\setbox\addressemailbox@\vtop{\hsize=0.7\hsize
+\let\@@par=\@@@par
+\raggedright@\small
+\@No@Color
+\the\@@AddrToks
+}\relax
+\setbox\datebox@\vtop{\hsize=0.39\hsize
+\leftskip 0ptplus1fill\parfillskip0pt\parindent0pt
+\small
+\@No@Color
+\ifx\undefined\@presentedby@\else
+Представлено~\@presentedby@\\ \fi
+\ifx\undefined\@date@\else Поступило\\ \@date@\fi}%
+\nobreak
+\hbox to\hsize{%
+\ifvoid\addressemailbox@\else\box\addressemailbox@\fi
+\hss \ifvoid\datebox@\else\box\datebox@\fi}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Макросы для оформления списка литературы:
+
+
+\newif\if@item@
+\@item@false
+
+\let\@save@item=\item
+\let\@@@par=\@@par
+
+\def\myrefname{Список цитированной литературы}
+
+\newcounter{aux@counter}
+
+
+\renewenvironment{thebibliography}[1]
+     {\refstepcounter{aux@counter}
+      \if@hyper\if@@bookmarks\pdfbookmark[1]{\myrefname}{bibliography}\fi\fi
+      \section*{\small\rm\MakeUppercase{\myrefname}}\medskip%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+			\small
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+			 \baselineskip3.6mm
+			 \parindent12pt
+       \global\@newlistfalse
+			 \def\@biblabel##1{[##1]}
+			 \def\makelabel##1{##1}%
+			 \if@dataonly
+			 \def\@biblabel##1{[##1]}
+			 \raggedright
+       \else
+			 \let\@@@par=\@@par
+			 \let\@@par=\relax
+       \parshape 0 \@totalleftmargin \linewidth %!!!!!
+			 \def\@item[##1]{\if@item@\allowbreak\hskip1em plus 0.5em minus 0.5em\else\fi
+       \refstepcounter\@listctr\@item@true
+       {\selectlanguage{russian}\bfseries ##1}~\kern0.001mm\ignorespaces
+       }%
+       \fi
+      \sfcode`\.\@m}
+     {\nobreak\@@@par\def\@noitemerr{}\global\advance\@listdepth\m@ne\nobreak\@No@Color\endRefs}
+
+
+
+\def\eat@#1{}
+
+\newif\ifbook@
+\newif\ifprocpaper@
+\RequirePackage{color}
+\newif\if@Hrefs
+\global\@Hrefsfalse
+
+\def\Hrefs#1{\ifhmode\unskip\fi\if@dataonly\global\@Hrefsfalse\else
+\if@hyper
+\global\@Hrefstrue
+\color[rgb]{0,0,1}\gdef\@Href{#1}\fi\fi\ignorespaces}
+
+\def\nofrills{%
+  \expandafter\ifx\envir@end\end@@ref
+    \let\do\relax
+    \xdef\nofrills@list{\nofrills@list\do\curbox}%
+  \else\errmessage{\Invalid@@ \string\nofrills}%
+  \fi}%
+
+\newif\if@Ref@
+\@Ref@false
+\newif\ifmoreref@
+\newif\if@kern
+
+\def\test@Ref@{\if@Ref@\else\@@Ref\fi}
+
+\def\@@Ref{\ifhmode\unskip\else\leavevmode\fi
+  \begingroup \@Ref@true
+  \def\envir@end{\end@@ref}%
+  \let\par\end@@ref
+  \global\let\nofrills@list\empty
+  \refbreaks%
+  \procpaper@false \book@false \moreref@false
+  \def\curbox{\z@}\setbox\z@\vbox\bgroup
+}
+\let\keyhook@\empty
+
+
+\def\jour@true{\global\book@false\global\procpaper@false}%
+
+
+\newbox\translbox@
+\newbox\holdoverbox
+\newbox\bybox@
+
+\gdef\page@text{\pagetext}%
+\gdef\by{\makerefbox\bybox@{\empty\byfont}}
+\gdef\with{\makerefbox\withbox@{\empty\withfont}} \newbox\withbox@
+\let\manyby\by % for backward compatibility
+\def\bysame{\by\hbox to3em{\hrulefill}\thinspace\kern\z@}%
+\def\paper{\makerefbox\paperbox@\empty} \newbox\paperbox@
+\def\paperinfo{\makerefbox\paperinfobox@\empty} \newbox\paperinfobox@
+\gdef\jour{\makerefbox\jourbox@{\it\aftergroup\jour@true}}%
+\newbox\jourbox@
+\def\issue{\makerefbox\issuebox@\empty} \newbox\issuebox@
+\def\yr{\makerefbox\yrbox@\empty} \newbox\yrbox@
+\def\pages{\makerefbox\pagesbox@\empty} \newbox\pagesbox@
+\def\page{\gdef\page@text{\pagestext}\makerefbox\pagesbox@\empty}%
+\def\page{\makerefbox\pagesbox@\empty}%
+\def\ed{\makerefbox\edbox@\empty} \newbox\edbox@
+\def\eds{\ed}%
+\def\book{\makerefbox\bookbox@{\it\aftergroup\book@true}}%
+\newbox\bookbox@
+\def\publ{\makerefbox\publbox@\empty} \newbox\publbox@
+\def\publaddr{\makerefbox\publaddrbox@\empty} \newbox\publaddrbox@
+\gdef\inbook{\makerefbox\bookbox@{\it\aftergroup\procpaper@true}}
+\def\procinfo{\makerefbox\procinfobox@\empty} \newbox\procinfobox@
+\def\finalinfo{\makerefbox\finalinfobox@\empty} \newbox\finalinfobox@
+\def\@@finalinfo{\makerefbox\@@finalinfobox@\empty} \newbox\@@finalinfobox@
+\def\miscnote{\makerefbox\miscnotebox@\empty} \newbox\miscnotebox@
+\def\toappear{\miscnote \t@appear}%
+\def\lang{\makerefbox\langbox@\empty} \newbox\langbox@
+\def\vol{\makerefbox\volbox@{\bf}}%
+\newbox\volbox@
+\def\bookinfo{\makerefbox\bookinfobox@{\aftergroup\procpaper@true\rm}} \newbox\bookinfobox@
+\def\serial{\makerefbox\serialbox@{\aftergroup\procpaper@true\rm}} \newbox\serialbox@
+
+\def\misc@{\makerefbox\misc@box@\empty\ifx\cyrillicencoding\@undefined\else\selectlanguage{russian}\fi} \newbox\misc@box@
+
+\let\preprint=\book
+\def\preprintinfo{\makerefbox\bookinfobox@{\aftergroup\book@true\rm
+\let\@my@href=\href\relax\def\href##1##2{\@my@href{##1}{{\tt ##2}}}}}
+
+\let\thesis=\preprint
+\let\thesisinfo=\preprintinfo
+
+\let\eprint=\preprint
+\let\eprintinfo=\preprintinfo
+
+
+
+\def\makerefbox#1#2{\test@Ref@\endgraf
+  \setbox\z@\lastbox
+  \global\setbox\@ne\hbox{\unhbox\holdoverbox
+    \ifvoid\z@\else\unhbox\z@\unskip\unskip\unpenalty\fi}%
+  \egroup
+  \setbox\curbox\box\ifdim\wd\@ne>\z@ \@ne \else\voidb@x\fi
+  \def\curbox{#1}\setbox#1\vbox\bgroup \hsize\maxdimen \noindent
+  #2\leftskip0truemm\relax}
+
+
+\def\refbreaks{%
+\def\refconcat##1{\setbox\z@\lastbox \setbox\holdoverbox\hbox{%
+\unhbox\holdoverbox \unhbox\z@\unskip\unskip\unpenalty##1}}%
+\def\holdover##1{%
+\RIfM@
+%      Break the current line, adding \null to ensure proper spacing
+%      for a preceding mathrel or mathbin.
+\penalty -\@M\null
+%      Put a temporary ending of the current math formula on the next
+%      line, by itself.
+\hfil$\clubpenalty\z@\widowpenalty\z@\interlinepenalty\z@
+\offinterlineskip\endgraf
+%      Now remove that unwanted extra line and the preceding \lineskip
+%      (of 0pt) and any  penalty.  There shouldn't be any penalty,
+%      actually, because the relevant penalties were set to 0 above;
+%      but the \unpenalty is harmless and perhaps there is an
+%      overlooked eventuality that it will catch.
+\setbox\z@\lastbox\unskip \unpenalty
+\refconcat{##1}%
+\noindent
+%      Since we did a temporary end of the current math formula there
+%      remains some more math coming up; therefore we need to shift
+%      into math mode again.  By breaking immediately after the
+%      beginning of the math formula we leave the unwanted extra
+%      \mathon item in a line by itself; this will be ignored because
+%      in the unpacking process we will only take the last line out of
+%      the current \vbox.
+$\hfil\penalty -\@M
+%      No \null here because we don't need to do anything extra to
+%      affect the math spacing of the following item.
+\else {\parfillskip0pt
+\endgraf}\refconcat{##1}\noindent
+\fi}%
+\def\break{\holdover{\penalty -\@M}}%
+\def\linebreak{\holdover{\penalty -\@M}}%
+\def\newline{\holdover{\hfill\penalty -\@M}}%
+\let\vadjust@\vadjust
+\def\vadjust##1{\holdover{\vadjust@{##1}}}%
+%      It seems unlikely that \newpage will be needed inside of a
+%      \ref...\endref construction (more likely it will occur between
+%      references, if at all).  So we provide only a very simple
+%      alternate version using \vadjust.
+\def\newpage{\vadjust{\vfill\break}}%
+}%
+
+
+\def\finalpunct{\ifnum\lastkern=\m@ne\unkern\else.\fi
+       \refquotes@\refbreak@}%
+\def\continuepunct#1#2#3#4{}%
+
+
+\def\end@@ref{\makerefbox \z@ {%\endgraf
+\egroup }\end@ref@ %\endgraf
+\endgroup
+\keyhook@ \global \let \keyhook@ \empty\color[rgb]{0,0,0}}
+
+\def\end@ref@{%
+\def\nofrillscheck##1{%
+\def\do####1{\ifx##1####1\let\frills@\eat@\fi}%
+\let\frills@\identity@ \nofrills@list}%
+\@ref}
+
+\gdef\@ref{%\spaceskip 0.5 emplus.5em minus0.2em%
+%\tolerance1000%
+\@kernfalse
+\ifmoreref@
+    \commaunbox@\translbox@
+\else
+    \@kerntrue
+\fi
+\if@Hrefs
+\href{\@Href}{\if@kern\kern-\tw@ sp\kern\m@ne sp\fi \@@ref}%
+\global\@Hrefsfalse\color[rgb]{0,0,0}%
+\else
+\if@kern\kern-\tw@ sp\kern\m@ne sp\fi \@@ref
+\fi
+\color[rgb]{0,0,0}}
+
+
+\gdef\@@ref{%
+\ppunbox@\empty\space\misc@box@\empty%
+\ppunbox@\empty\space\bybox@\empty%
+\ifbook@% Case 1: \book etc.
+\ppunbox@{,}{ }\bookbox@\empty
+\ppunbox@{,}{ }\bookinfobox@{}%
+\ppunbox@{}{ (}\procinfobox@)%
+\ppunbox@{,}{ }\serialbox@{}%
+\ppunbox@{,}{ \voltext}\volbox@\empty%
+\ppunbox@{,}{ \edtext~}\edbox@ \empty%
+\ifvoid\publaddrbox@
+\ppunbox@{,}{ }\publbox@ \empty
+\else
+\ppunbox@{,}{ }\publbox@ \empty
+\ppunbox@{,}{ }\publaddrbox@{}%
+\fi%
+\ppunbox@,{ }\yrbox@{}%
+\else
+\ifprocpaper@ % Case 2: \paper ... \inbook
+\ppunbox@{,}{ ``}\paperbox@{''}%
+\ppunbox@{,}{ }\paperinfobox@{}%
+\ppunbox@{,}{ \inbook@text }\bookbox@\empty
+\ppunbox@{,}{ }\bookinfobox@\empty
+\ppunbox@{}{ (}\procinfobox@)%
+\ppunbox@{,}{ }\serialbox@{}%
+\ppunbox@{,}{ \voltext}\volbox@\empty
+\ifvoid\volbox@
+\ppunbox@,{ \issuetext }\issuebox@\empty
+\else
+\ppunbox@,{ \issuetext }\issuebox@\empty
+\fi
+\ppunbox@{,}{ \edtext~}\edbox@ \empty%
+\ifvoid\publaddrbox@\ppunbox@{,}{ }\publbox@ \empty%
+\else
+\ppunbox@{,}{ }\publbox@ \empty
+\ppunbox@{,}{ }\publaddrbox@{}%
+\fi%
+\ppunbox@,{ }\yrbox@{}%
+\ppunbox@{,}{ \pagestext}\pagesbox@\empty
+\else % Case 3: \paper ... \jour
+\ppunbox@{,}{ ``}\paperbox@{''}%
+\ppunbox@{,}{ }\paperinfobox@{}%
+\ppunbox@{,}{ }\jourbox@{}%
+\ifvoid\volbox@
+\ppunbox@{,}{ }\yrbox@{}%
+\ppunbox@{,}{ \issuetext}\issuebox@\empty
+\else
+\ppunbox@{,}{ \voltext}\volbox@\empty
+\ppunbox@:{}\issuebox@\empty
+\ppunbox@{}{ (}\yrbox@{)}%
+\fi
+\ppunbox@,{ \pagestext }\pagesbox@\empty
+\fi
+\fi
+\ppunbox@\empty{ (}\miscnotebox@)%
+\ppunbox@\empty{ (\withtext}\withbox@)%
+\ppunbox@\empty{ \ (}\langbox@{)}%
+\ppunbox@{,}{ }\finalinfobox@\empty
+\ppunbox@\empty{ }\@@finalinfobox@\empty
+\finalpunct
+}%
+
+\def\moreref{\transl}
+\def\morerref{\rtransl}
+
+
+\def\transl{%
+\makerefbox\z@{\endgraf\egroup}%
+\let\savedef@\finalpunct  \let\finalpunct\empty
+\end@ref@
+\book@false\procpaper@false
+\defaultreftexts
+\def\punct@##1##2{\unskip ##2{\@No@Color;}\allowbreak\ }%
+\global\let\nofrills@list\empty%
+\let\finalpunct\savedef@
+\moreref@true
+\def\curbox{\translbox@}%
+\setbox\translbox@\vbox\bgroup \hsize\maxdimen \noindent
+\misc@\nofrills}%
+
+\def\rtransl{%
+\makerefbox\z@{\endgraf\egroup}%
+\let\savedef@\finalpunct  \let\finalpunct\empty
+\end@ref@
+\book@false\procpaper@false
+\defaultrusreftexts
+\def\punct@##1##2{\unskip ##2{\@No@Color;}\allowbreak\ }%
+\global\let\nofrills@list\empty%
+\let\finalpunct\savedef@
+\moreref@true
+\def\curbox{\translbox@}%
+\setbox\translbox@\vbox\bgroup \hsize\maxdimen \noindent
+\misc@\nofrills}%
+
+
+%
+\def\punct@#1{#1}
+\def\ppunbox@#1#2#3#4{\ifvoid#3\else
+  \let\prespace@\relax
+  \ifnum\lastkern=\m@ne \unkern\let\punct@\eat@
+    \ifnum\lastkern=-\tw@ \unkern\let\prespace@\ignorespaces \fi
+  \fi
+  \nofrillscheck#3%
+  \punct@{#1}\refquotes@\refbreak@
+  \let\punct@\identity@
+  \prespace@
+  \frills@{#2\eat@}\space
+  \unhbox#3\breakcheck
+  \frills@{#4\eat@}{\kern\m@ne sp}\fi}
+
+\def\commaunbox@#1{\ppunbox@,\space{#1}\empty}
+
+\def\pnktunbox@#1{\ppunbox@.\space{#1}\empty}%
+
+
+\def\breakcheck{\edef\refbreak@{\ifnum\lastpenalty=\z@\else
+  \penalty\the\lastpenalty\relax\fi}\unpenalty}
+\def\endquotes{\def\refquotes@{''\let\refquotes@\empty}}
+\let\refquotes@\empty
+\let\refbreak@\empty
+
+
+
+\def\defaultreftexts{\selectlanguage{english}%
+\color[rgb]{0,0,0}%
+\frenchspacing
+\gdef\edtext{ed.}\gdef\pagetext{}\gdef\pagestext{}%
+\gdef\voltext{}\gdef\issuetext{\No\,}\gdef\t@appear{to appear}%
+\def\eds{\gdef\edtext{eds.}\makerefbox\edbox@\empty}%
+%\def\inbook@text{In:}}%
+\def\inbook@text{}\def\withtext{with }}%
+
+
+\def\eds{\gdef\edtext{eds}\makerefbox\edbox@\empty}%
+
+\def\defaultrusreftexts{\selectlanguage{russian}%
+\color[rgb]{0,0,0}%
+\frenchspacing
+\gdef\edtext{ред.}\gdef\pagestext{}%
+\gdef\pagestext{}%
+%\def\inbook@text{В~сб.:}%
+\def\inbook@text{}%
+\def\eds{\gdef\edtext{ред.}\makerefbox\edbox@\empty}%
+\gdef\voltext{}\gdef\issuetext{\No\,}\gdef\t@appear{в~печати}%
+\def\withtext{совм.\ с~}}%
+
+
+
+\def\identity@#1{#1}
+\def\nofrills@@#1{%
+ \DN@{#1}%
+ \ifx\next\nofrills \let\frills@\eat@
+   \expandafter\expandafter\expandafter\next@\expandafter\eat@
+  \else \let\frills@\identity@\expandafter\next@\fi}
+
+\def\nofrillscheck#1{\def\nofrills@{\nofrills@@{#1}}%
+  \futurelet\next\nofrills@}
+
+\def\add@missing#1{\expandafter\ifx\envir@end#1%
+  \Err@{You seem to have a missing or misspelled
+  \expandafter\string\envir@end ...}%
+  \envir@end
+\fi}
+
+\def\err@#1{\errmessage{Error: #1}}
+
+\newhelp\defaulthelp@{Sorry, I already gave what help I could...^^J
+Maybe you should try asking a human?^^J
+An error might have occurred before I noticed any problems.^^J
+``If all else fails, read the instructions.''}
+
+\def\Err@{\errhelp\defaulthelp@\err@}
+
+\def\Bibitem{\par\defaultreftexts\bibitem}
+\def\RBibitem{\par\defaultrusreftexts\bibitem}
+
+\def\refname{Список литературы}
+
+\def\byfont{\rm}
+\def\withfont{\rmfamily}
+%\def\byfont{\slshape}
+%\def\byfont{\itshape}
+%   Конец макросов для оформления списка литературы
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%% Кусок с определением копирайта %%%%%%%%%%%%%%%%
+\newinsert\copyright@insert
+\count\copyright@insert=2000
+\dimen\copyright@insert=1in
+\skip\copyright@insert=\bigskipamount
+
+\def\copyright@rule{}% No rule
+
+\def\@@copyright#1{\insert\copyright@insert{%
+\rightline{\normalsize\rmfamily\textcopyright\ \
+\scriptsize\scshape #1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%% Кусок с определениями \footnote %%%%%%%%%
+\long\def\@makefntext#1{\parindent 12pt%\noindent
+ $^{\@thefnmark}$#1}
+
+\def\thefootnote{\ifnum\c@footnote>0 \arabic{footnote}\else\fi}
+
+%%%%%%%%%%%%%%%% Кусок \output'а с исправлениями %%%%%%%%%%%%%%%%%
+\def\@makecol{\setbox\@outputbox\vbox{%
+\boxmaxdepth \maxdepth
+\unvbox\@cclv
+\ifvoid\footins
+   \else\vskip\skip\footins\footnoterule\unvbox\footins
+\fi
+\ifvoid\copyright@insert
+   \else\vskip\skip\copyright@insert\copyright@rule\unvbox\copyright@insert
+\fi
+}%
+   \xdef\@freelist{\@freelist\@midlist}%
+   \global \let \@midlist \@empty
+   \@combinefloats
+   \ifvbox\@kludgeins
+     \@makespecialcolbox
+   \else
+     \setbox\@outputbox \vbox to\@colht {%
+       \@texttop
+       \dimen@ \dp\@outputbox
+       \unvbox \@outputbox
+       \vskip -\dimen@
+       \@textbottom
+       }%
+   \fi
+   \global \maxdepth \@maxdepth
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%% RUNNING MARKS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifmarks  \markstrue
+\newif\ifmark@@@
+\newif\ifmark@@
+\newcount\mark@@
+\mark@@=1
+\newif\ifmark@@@\newif\ifmark@@
+\newcount\mark@@\newcount\mark@@@
+%
+\newcount\@@@pageno  % it is the number of the page in a given issue,
+										 % it equals the number of the page in a volume
+										 % minus the last page number of the previous issue
+
+\def\testmark@@{\@@@pageno=\c@page
+\advance\@@@pageno by -\lastpageno
+\mark@@@false\mark@@false\ifnum\mark@@@=\@@@pageno\mark@@true\fi
+  \ifnum\mark@@@<\@@@pageno\global \advance\mark@@@ by 2
+    \ifnum\mark@@@=\@@@pageno\mark@@@true\else\global\advance\mark@@@ by30
+      \global\advance\mark@@ by1\testmark@@\fi\fi}
+
+
+%
+\def\mark@font{\selectlanguage{russian}\footnotesize\rm}
+
+
+\@twosidetrue
+
+\def\ps@runningheads{%
+    \def\@evenhead{\@No@Color\small\thepage\hfill\scriptsize\leftmark\hfill}%
+    \def\@oddhead{\@No@Color\hfill{\scriptsize\rightmark}\hfill\small\thepage}%
+    \let\@mkboth\@gobbletwo
+    \let\sectionmark\@gobble
+    \let\subsectionmark\@gobble
+    \let\@evenfoot\@empty
+    \def\@oddfoot{\centerline{\@No@Color
+\mark@@=2\mark@@@=33
+\def\testmark@@{\@@@pageno=\c@page
+\advance\@@@pageno by -\lastpageno
+\mark@@@false\mark@@false\ifnum\mark@@@=\@@@pageno\mark@@true\fi
+ \ifnum\mark@@@<\@@@pageno\global \advance\mark@@@ by 2\relax
+   \ifnum\mark@@@=\@@@pageno\mark@@@true\else\global\advance\mark@@@ by30\relax
+     \global\advance\mark@@ by1\testmark@@\fi\fi}%
+\testmark@@\vtop to0pt{%\vskip0.5pc
+\ifmarks
+	          \ifmark@@
+             \message{<\the\norma@toks\number\mark@@\space\the\Journal@toks>}\relax
+              \centerline{\selectlanguage{russian}%
+                          \mark@font {\bf\number\mark@@}\qquad
+                {\sf\the\Journal@toks, т.~\VOLUME, \ вып.~\ISSUE}\hfill}
+            \else
+             \ifmark@@@
+              \message{<\the\norma@toks \number\mark@@\space*>}
+              \centerline{\selectlanguage{russian}%
+                          \hfill{\normalsize\bf\number\mark@@*}}
+							\else
+              \centerline{\hfill}
+             \fi\fi
+\else
+		 {\hfil}
+\fi
+\vss}}}}
+
+\def\ps@norunningheads{%
+    \def\@evenhead{}%
+    \def\@oddhead{}%
+    \let\@mkboth\@gobbletwo
+    \let\sectionmark\@gobble
+    \let\subsectionmark\@gobble
+    \def\@oddfoot{\centerline{\@No@Color%
+\mark@@=2\mark@@@=33%
+\def\testmark@@{\@@@pageno=\c@page
+\advance\@@@pageno by -\lastpageno
+\mark@@@false\mark@@false\ifnum\mark@@@=\@@@pageno\mark@@true\fi
+    \ifnum\mark@@@<\@@@pageno\global \advance\mark@@@ by 2\relax
+        \ifnum\mark@@@=\@@@pageno\mark@@@true\else
+            \global\advance\mark@@@ by30\relax
+\global\advance\mark@@ by1\testmark@@\fi\fi}%
+\testmark@@\vtop to0pt{%\vskip0.5pc
+\ifmarks
+            \ifmark@@
+            \message{<\the\norma@toks\number\mark@@\space\the\Journal@toks>}\relax
+              \centerline{\selectlanguage{russian}%
+                          \unskip\ignorespaces
+                \mark@font {\normalsize\bfseries\number\mark@@}\qquad
+                {\sf\the\Journal@toks, т.~\VOLUME, \ в.~\ISSUE}\hfill}
+            \else
+             \ifmark@@@
+              \message{<\the\norma@toks \number\mark@@\space*>}
+              \centerline{\selectlanguage{russian}%
+                          \hfill\mark@font{\normalsize\bf\number\mark@@*}}%
+							\else
+              \centerline{\hfill{\small\thepage}\hfill}
+             \fi\fi
+\else
+		 \centerline{\hfill{\small\thepage}\hfill}
+\fi
+\vss}}}
+\def\@evenfoot{\centerline{\@No@Color\small\thepage}}
+%\def\@evenfoot{}
+}
+
+\let\@@End@@Document=\enddocument
+
+\let\@@END=\@@end
+\let\@@@END=\@@end
+\outer\def\bye{\par\vfill\@@@END}
+
+\newif\if@short@written
+\@short@writtenfalse
+
+\gdef\@@write@toc{%
+\message{\the\minute@toks . . .   }%
+\begingroup
+\if e\z@Z
+\if@multiple
+\immediate\closeout\@@Write
+\immediate\closeout\@@Short@Write
+\def\@@Short{\immediate\openin\@@Short@Read=mzshort.tmp
+\Define@Copy@short@toc@item
+\ifeof\@@Short@Read\else\makeatletter\input mzshort.tmp \fi
+\immediate\closein\@@Short@Read}
+\else
+\catcode`\@=11
+\global\Finalpage@=\c@page
+\advance\Finalpage@ by -1
+\Count@\Finalpage@\advance\Count@ by-\Firstpage@ \advance\Count@ by 1
+\immediate\openout\@@Write=mztoc.tmp \def\@@res{n}\def\next{n}\def\R@uzh@{n}
+\immediate\openin\@@Read=mztoc.tex
+\ifeof\@@Read\else\input mztoc.tex\fi\immediate\closein\@@Read \R@in@jobn
+\immediate\closeout\@@Write
+\fi
+%
+\Define@Copy@paper@toc@item
+\Define@Copy@short@toc@item
+%
+\immediate\openout\@@Write=mztoc.tex
+\immediate\openin\@@Read=mztoc.tmp
+\ifeof\@@Read\else\makeatletter \input mztoc.tmp \fi
+\if@short@written \else\@@Short
+\fi
+\immediate\closein\@@Read
+\immediate\closeout\@@Write\relax
+\global\R@AuF@I{}\global\R@AuI@F{}%
+\fi
+\endgroup
+}
+
+\def\@@end{\@@write@toc\vfill\@@END}
+
+
+%%%%%%%%%%%%%% Это для оформления подписей под рисунками %%%%%%%%%%%%%%%%%%%
+%\let\@@save@caption@def=\caption
+
+%\AtBeginDocument{\makeatletter\let\@@save@caption@def=\caption\def\caption#1{
+%\def\@@tt@@{#1}%
+%\xdef\@DOT{\ifx \@@tt@@\empty \else. \ \fi}%
+%\@@save@caption@def{#1}}\makeatother}
+
+%\let\@DOT\relax
+\newbox\@caption@box
+
+\long\def\@makecaption#1#2{%
+\setbox\@caption@box=\hbox{#2}%
+%\edef\@DOT{\ifx \@@ttt@@\empty \else. \ \fi}%
+\edef\@DOT{\ifdim\wd\@caption@box>0pt. \ \else \fi}%
+\newdimen{\my@@@hsize}
+\my@@@hsize=\hsize
+\addtolength{\my@@@hsize}{-1cm}
+ \vskip 10pt
+ \setbox\@tempboxa\hbox{\small {\scshape #1}\@DOT #2}
+ \ifdim \wd\@tempboxa >\my@@@hsize
+\leftskip1cm\rightskip\leftskip
+\indent{\small{\scshape #1}\@DOT #2}
+\par
+\else \hbox to\hsize{\hfil\box\@tempboxa\hfil}
+ \fi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% Это чтобы цитирования были прямым шрифтом %%%%%%%%%%%%%%%%%%%
+\def\@cite#1#2{{\rm [{#1\if@tempswa ; #2\fi}]}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% Это для оформления теорем %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\@ifundefined{theorem@style}{\RequirePackage{theorem}}{}
+
+\def\UndefEnv#1{\expandafter\let \csname #1\endcsname=\undefined
+\expandafter\let \csname end#1\endcsname=\undefined
+\expandafter\let \csname c@#1\endcsname=\undefined
+}
+
+%\let\@@@newtheorem=\newtheorem
+
+%\def\newtheorem#1{\UndefEnv{#1}\@@@newtheorem{#1}}
+
+
+\gdef\@xnthm#1#2[#3]{%
+%\expandafter\@ifdefinable\csname #1\endcsname
+   {%
+    \@definecounter{#1}\@newctr{#1}[#3]%
+    \expandafter\xdef\csname the#1\endcsname
+      {\expandafter \noexpand \csname the#3\endcsname
+       \@thmcountersep \@thmcounter{#1}}%
+    \def\@tempa{\global\@namedef{#1}}%
+    \expandafter \@tempa \expandafter{%
+      \csname th@\the \theorem@style
+            \expandafter \endcsname \the \theorem@bodyfont
+     \@thm{#1}{#2}}%
+    \global \expandafter \let \csname end#1\endcsname \@endtheorem
+   }}
+
+\gdef\@ynthm#1#2{%
+%\expandafter\@ifdefinable\csname #1\endcsname
+   {\@definecounter{#1}%
+    \expandafter\xdef\csname the#1\endcsname{\@thmcounter{#1}}%
+    \def\@tempa{\global\@namedef{#1}}\expandafter \@tempa
+     \expandafter{\csname th@\the \theorem@style \expandafter
+     \endcsname \the\theorem@bodyfont \@thm{#1}{#2}}%
+    \global \expandafter \let \csname end#1\endcsname \@endtheorem}}
+
+\gdef\@othm#1[#2]#3{%
+%  \expandafter\ifx\csname c@#2\endcsname\relax
+%   \@nocounterr{#2}%
+%  \else
+%   \expandafter\@ifdefinable\csname #1\endcsname
+   {\expandafter \xdef \csname the#1\endcsname
+     {\expandafter \noexpand \csname the#2\endcsname}%
+    \def\@tempa{\global\@namedef{#1}}\expandafter \@tempa
+     \expandafter{\csname th@\the \theorem@style \expandafter
+     \endcsname \the\theorem@bodyfont \@thm{#2}{#3}}%
+    \global \expandafter \let \csname end#1\endcsname \@endtheorem}%
+%  \fi
+}
+
+
+
+\def\@ythm#1#2[#3]{\@opargbegintheorem {#2}{\csname the#1\endcsname }{#3}\
+\ignorespaces}
+
+\@ifundefined{theorem@style}{\RequirePackage{theorem}}{}
+\gdef\th@plain{
+  \def\@begintheorem##1##2{%
+        \item[\hskip\parindent\hskip\labelsep\theorem@headerfont ##1\ ##2\unskip.]%
+        \normalfont\it}%
+\def\@opargbegintheorem##1##2##3{%
+   \item[\hskip\parindent
+   \ifx\empty##1\else\hskip\labelsep\fi\theorem@headerfont ##1\ ##2\unskip]
+   {\theorem@headerfont ##3.}%
+   \normalfont\it}
+}
+
+\gdef\th@definition{\normalfont\upshape
+  \def\@begintheorem##1##2{%
+        \item[\hskip\parindent\hskip\labelsep\theorem@headerfont ##1\ ##2\unskip.]}%
+\def\@opargbegintheorem##1##2##3{%
+   \item[\hskip\parindent
+   \ifx\empty##1\else\hskip\labelsep\fi\theorem@headerfont ##1\ ##2\unskip]
+   {\theorem@headerfont ##3.}}}
+
+\theorempreskipamount=\medskipamount
+\theorempostskipamount=\medskipamount
+\let\theorem@headerfont=\sc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% Это всякие макросы для оформления заголовков %%%%%%%%%%%%%%%%
+\let\c@section\undefined
+
+\newcounter{chapter}
+\newcounter{section}[chapter]
+\newcommand*\chaptermark[1]{}
+\renewcommand \thechapter {\Roman{chapter}}
+\newcommand\@chapapp{\chaptername}
+
+\def\@afterheading{\nobreak}
+
+\newcommand\chapter{\par \@afterindenttrue\secdef\@chapter\@schapter}
+\def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
+                         \refstepcounter{chapter}%
+                         \addcontentsline{toc}{chapter}%
+                           {{\chaptername~\thechapter}. #1}%
+                    \else
+                      \addcontentsline{toc}{chapter}{#1}%
+                    \fi
+                    \chaptermark{#1}%
+                      \@makechapterhead{#2}%
+                      \@afterheading
+}
+\def\@makechapterhead#1{%
+		\vskip 3.5ex plus 1ex minus .2ex\relax
+  {\parindent \z@ \raggedcenter@ \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+        \bfseries \@chapapp\space \thechapter.
+    \fi
+    \interlinepenalty\@M
+    \bfseries #1\nobreak\par\nobreak
+    \vglue2.3ex
+  \nobreak}}
+
+\def\@schapter#1{\@makeschapterhead{#1}\@afterheading}
+
+\def\@makeschapterhead#1{%
+                      \addcontentsline{toc}{chapter}{#1}%
+		\vskip 3.5ex plus 1ex minus .2ex\relax
+  {\parindent \z@ \raggedcenter@
+    \normalfont
+    \interlinepenalty\@M
+    \bfseries  #1\nobreak\par\nobreak
+		\vglue2.3ex \nobreak}}
+
+
+\def\part{\par \@afterindenttrue \secdef\@part\@spart}
+
+\def\@part[#1]#2{\ifnum \c@secnumdepth >\m@ne \refstepcounter{part}
+\addcontentsline{toc}{part}{\thepart \hspace{1em}#1}\else
+\addcontentsline{toc}{part}{#1}\fi { \parindent 0pt \raggedright
+ \ifnum \c@secnumdepth >\m@ne
+\Large \bfseries Part \thepart \par \nobreak \fi \huge
+\bfseries #2\markboth{}{}\par } \nobreak \vskip 3ex \@afterheading }
+
+\def\@spart#1{\ifnum \c@secnumdepth >\m@ne
+\addcontentsline{toc}{part}{#1}\fi
+{\parindent 0pt \raggedright
+ \huge \bfseries  #1\par} \nobreak \vskip 3ex \@afterheading }
+
+\def\section{\global\@@bookmarkstrue
+\@@@startsection{section}{1}{\z@}{2.7ex plus 0.5ex minus 1.7ex}
+{.1ex plus .2ex minus .1ex}{\raggedright@\normalfont\bfseries}}
+
+\def\@@@startsection#1#2#3#4#5#6{\if@noskipsec \leavevmode \fi
+   \par \@tempskipa #4\relax
+   \@afterindenttrue
+   \ifdim \@tempskipa <\z@
+     \@tempskipa -\@tempskipa \@afterindentfalse
+   \fi
+   \if@nobreak \everypar{}\else
+     \addpenalty\@secpenalty\addvspace\@tempskipa
+   \fi
+   \@ifstar
+     {\@ssect@@{#3}{#4}{#5}{#6}}%
+     {\@dblarg{\@sect@@{#1}{#2}{#3}{#4}{#5}{#6}}}}
+
+\newbox\@section@box@
+
+\def\@ssect@@#1#2#3#4#5{\@tempskipa #3\relax
+   \ifdim \@tempskipa>\z@
+     \begingroup #4\@hangfrom{\hskip #1}
+                    {\interlinepenalty \@M {#5}\par}%
+     \endgroup
+   \else \def\@svsechd{#4\hskip #1\relax {#5}}\fi
+    \@xsect{#3}}
+
+\def\@seccntformat#1{%
+  \protect\textup{\csname the#1\endcsname\@secnumpunct}%
+}
+
+\def\@sect@@#1#2#3#4#5#6[#7]#8{%
+\setbox\@section@box@=\hbox{#8}%
+\edef\@secnumpunct{\ifdim\wd\@section@box@>0pt{.\enspace}\fi}%
+\ifnum #2>\c@secnumdepth
+     \let\@svsec\@empty\else
+     \refstepcounter{#1}%
+     \protected@edef\@svsec{\@seccntformat{#1}\relax}%
+     \fi
+     \@tempskipa #5\relax
+      \ifdim \@tempskipa>\z@
+        \begingroup #6\relax
+\@svsec \interlinepenalty \@M  {#8}\par
+        \endgroup
+       \csname #1mark\endcsname{#7}\addcontentsline
+         {toc}{#1}{\ifnum #2>\c@secnumdepth \else
+                      \protect\numberline{\csname the#1\endcsname}\fi
+                    #7}\else
+        \def\@svsechd{#6\hskip #3\relax  %% \relax added 2 May 90
+                   \@svsec {#8}\csname #1mark\endcsname
+                      {#7}\addcontentsline
+                           {toc}{#1}{\ifnum #2>\c@secnumdepth \else
+                             \protect\numberline{\csname the#1\endcsname}\fi
+                       #7}}\fi
+     \@xsect{#5}}
+
+
+\def\subsection{\global\@@bookmarkstrue
+\@startsection{subsection}{2}{\z@}{1.5ex plus 1ex minus
+ .2ex}{-1.5ex plus -.2ex}{\indent\normalfont\bfseries}}
+\def\subsubsection{\@startsection{subsubsection}{3}{\z@}
+{-1ex plus -1ex minus -.2ex}{-1.5ex plus -.2ex}{\normalsize\indent\normalfont\slshape}}
+\def\paragraph{\@startsection
+ {paragraph}{4}{\z@}{0.5ex plus .5ex minus .2ex}{-1em}
+{\normalsize\indent\normalfont\slshape}}
+\def\subparagraph{\@startsection
+ {subparagraph}{4}{\parindent}{0.25ex plus 0.2ex minus
+ .2ex}{-1em}{\normalsize\indent\slshape}}
+
+\def\@ssect#1#2#3#4#5{\@tempskipa #3\relax
+   \ifdim \@tempskipa>\z@
+     \begingroup #4\@hangfrom{\hskip #1}{\interlinepenalty \@M #5\par}%
+     \endgroup
+   \else \def\@svsechd{#4\hskip #1\relax #5.}\fi
+    \@xsect{#3}}
+
+\newbox\@subsection@box@
+
+\def\@sect#1#2#3#4#5#6[#7]#8{%
+\setbox\@subsection@box@=\hbox{#8}%
+     \ifnum #2>\c@secnumdepth
+     \let\@svsec\@empty\else
+     \refstepcounter{#1}\protected@edef\@svsec{\csname the#1\endcsname.}%
+     \fi
+     \@tempskipa #5\relax
+      \ifdim \@tempskipa>\z@
+        \begingroup #6\relax
+          \@hangfrom{\hskip #3\relax\textup{\@svsec}}{\interlinepenalty \@M #8\par}%
+        \endgroup
+       \csname #1mark\endcsname{#7}\addcontentsline
+         {toc}{#1}{\ifnum #2>\c@secnumdepth \else
+                      \protect\numberline{\csname the#1\endcsname}\fi
+                    #7}\else
+        \def\@svsechd{#6\hskip #3\relax%% \relax added 2 May 90
+                   \textup{\@svsec}%
+									 \ifdim\wd\@subsection@box@>0pt\enspace #8.\fi
+                   \csname #1mark\endcsname
+                      {#7}\addcontentsline
+                           {toc}{#1}{\ifnum #2>\c@secnumdepth \else
+                             \protect\numberline{\csname the#1\endcsname}\fi
+                       #7}}\fi
+     \@xsect{#5}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\let\Markboth=\markboth
+\def\markboth#1#2{\pagestyle{runningheads}%
+\Markboth{\uppercasetext@{#1}}{\uppercasetext@{#2}}%
+}
+
+\flushbottom
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%% Переопределение \documentclass и т.п. %%%%%%%%%%%%%%%%%%%%%%%%%
+\gdef\@null@input@i#1{\relax}
+\gdef\@null@input@ii[#1]#2{\relax}
+
+\newif\if@short@toc@write
+\@short@toc@writefalse
+
+\gdef\document@class@{%
+	\R@SZ@test\@@filetoks.\@@temptoks
+	\R@SZ@test\@@dirtoks/\@@filetoks
+	\edef\jobname{\the\@@filetoks}%
+	\Define@Jobname
+  \let\usepackage=\use@package@
+  \let\document\@@document
+%
+\global\@multipletrue
+\if@short@toc@write
+\else
+\global\c@page=\@first@short@PGcount@
+\Define@Mark@short@toc@item
+%
+\def\@mz@paper@item ##1[Vol:##2, Issue:##3](##4)##5(##6)##7\end@mz@paper@item{%
+\toksauthor={##1} \tokstitle={##7}
+\immediate\write\@@Write{\noexpand\@mz@paper@item \the\toksauthor[Vol:##2, Issue:##3](##4)##5(##6) \the\tokstitle \noexpand\end@mz@paper@item}}%
+%
+\immediate\openout\@@Write=mztoc.tmp \def\@@res{n}\def\next{n}\gdef\R@uzh@{n}
+\immediate\openout\@@Short@Write=mzshort.tmp
+\immediate\openin\@@Read=mztoc.tex
+\ifeof\@@Read\else\makeatletter\input mztoc.tex\fi\immediate\closein\@@Read
+\global\@short@toc@writetrue
+\fi
+\edef\Firstpage@{\number\c@page}
+\@ifnextchar[%]
+{\@null@input@ii}
+{\@null@input@i}
+}
+
+
+\gdef\use@package@{%
+\@ifnextchar[%]
+{\@null@input@ii}
+{\@null@input@i}
+}
+
+\newtoks\@@dirtoks
+\newtoks\@@filetoks
+\newtoks\@@temptoks
+
+
+\def\@@end@@document{\global\makeatletter
+  \newpage
+  \global\Finalpage@=\c@page
+  \advance\Finalpage@ by -1
+  \Count@\Finalpage@\advance\Count@ by-\Firstpage@ \advance\Count@ by 1
+  \if n\R@uzh@
+  \immediate\write\@@Short@Write{%
+  \noexpand\@mz@short@item
+  \the\R@AuF@I[Vol:\the\Volume, Issue:\the\Issue]%
+  (\Firstpage@-\number\Finalpage@)\number\Count@(\jobname)
+  \the\R@title@\noexpand\end@mz@short@item}%
+  \def\R@uzh@{y}
+  \global\R@AuF@I{}\global\R@AuI@F{}%
+  \fi
+\global\let\jobname=\@@Jobname
+\let\enddocument=\@@End@@Document
+\setcounter{section}{0}
+\setcounter{subsection}{0}
+\setcounter{equation}{0}
+ \global\makeatother}%
+
+\gdef\@@document{\let\enddocument=\@@end@@document}
+
+\let\documentclass=\document@class@
+
+
+\def\@iinput#1{%
+	\@@temptoks={#1}%
+	  \InputIfFileExists{#1}{}%
+  {\filename@parse{#1}%
+   \edef\reserved@a{\noexpand\@missingfileerror
+     {\filename@area\filename@base}%
+     {\ifx\filename@ext\relax tex\else\filename@ext\fi}}%
+   \reserved@a}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\NoBlackBoxes{\overfullrule0pt}
+\def\BlackBoxes{\overfullrule5pt}
+\NoBlackBoxes
+
+
+\def\@preamblecmds{}
+
+\def\RunHead{Краткие сообщения}
+
+
+\markboth{\RunHead}{\RunHead}
+
+\AtBeginDocument{\small}
+
+\pagestyle{runningheads}
+
+
+\DeclareTextCommandDefault{\textcopyright}{\textcircled{{\small\sc c}}}
+
+%%%%%%%%%%%%%%%%%%% Переопределение отступов в item'ах %%%%%%%%%%%%%%%
+\def\@listi{\leftmargin\leftmargini
+
+            \parsep 0\p@ \@plus1\p@
+            \topsep 0\p@
+            \itemsep0\p@ }
+\let\@listI\@listi
+\@listi
+\def\@listii {\leftmargin\leftmarginii
+              \labelwidth\leftmarginii
+              \advance\labelwidth-\labelsep
+							\parsep 0\p@ \@plus1\p@
+              \topsep 0\p@
+              \itemsep0\p@
+              \itemsep   \parsep}
+\def\@listiii{\leftmargin\leftmarginiii
+              \labelwidth\leftmarginiii
+              \advance\labelwidth-\labelsep
+							\parsep 0\p@ \@plus1\p@
+              \topsep 0\p@
+							\partopsep \p@ \@plus\z@ \@minus\p@
+              \itemsep   \topsep}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AtBeginDocument{\nonfrenchspacing}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\theenumi{\textup{\@arabic\c@enumi}}
+\renewcommand\theenumii{\textup{\@alph\c@enumii}}
+\renewcommand\theenumiii{\textup{\@roman\c@enumiii}}
+
+
+\ifx\pdfoutput\undefined\else
+\ifnum\pdfoutput=1
+\paperwidth158mm
+\paperheight 244mm
+\advance\evensidemargin by -14mm
+\advance\oddsidemargin by -14mm
+\advance\topmargin by -8mm
+\fi
+\fi
+
+\gdef\No{{\select@language{russian}\textnumero}}
+
+
+\if@hyper
+\RequirePackage[unicode]{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+citecolor=blue,
+urlcolor=blue,
+filecolor=blue,
+bookmarksnumbered=true,
+pdfpagemode=None,
+pdfstartview=FitH,
+pdfhighlight=/N
+}
+\fi
+
+\if@dataonly
+\RequirePackage[unicode]{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=blue,
+citecolor=blue,
+urlcolor=blue,
+filecolor=blue,
+pdfpagemode=None,
+pdfstartview=FitH,
+pdfhighlight=/N
+}
+\fi
+
+\if@dataonly \let\pagebreak=\relax  \fi
+\endinput
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

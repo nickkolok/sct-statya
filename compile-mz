@@ -1,0 +1,3 @@
+pdflatex Semenov_Avdeev_SCT.tex
+pdflatex Semenov_Avdeev_SCT.tex
+evince   Semenov_Avdeev_SCT.pdf
