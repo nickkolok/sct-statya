@@ -168,3 +168,6 @@ TSWLatexianTemp*
 #.gitrevision
 # for date
 #.builddate
+
+# No binaries in repo by default
+*.pdf
