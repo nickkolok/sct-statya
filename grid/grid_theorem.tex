@@ -2,7 +2,7 @@
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel} %используем русский и английский языки с переносами
-\usepackage{amssymb,amsfonts,amsmath,mathtext,cite,enumerate,float,amsthm} %подключаем нужные пакеты расширений
+\usepackage{amssymb,amsfonts,amsmath,mathtext,enumerate,float,amsthm} %подключаем нужные пакеты расширений
 \usepackage[pdftex,unicode,colorlinks=true,citecolor=black,linkcolor=black]{hyperref}
 %\usepackage[pdftex,unicode,colorlinks=true,linkcolor=blue]{hyperref}
 \usepackage{indentfirst} % включить отступ у первого абзаца
@@ -30,6 +30,10 @@
 
 
 \renewcommand\normalsize{\fontsize{14}{25.2pt}\selectfont}
+
+\usepackage[backend=biber,style=gost-numeric,sorting=none]{biblatex}
+\addbibresource{../common/notmy.bib}
+
 
 \begin{document}
 \renewcommand{\bibname}{Список цитированной литературы}
@@ -169,5 +173,8 @@ $M_1=(\tilde{x}_1, 0)$, $M_3=(\tilde{x}_3, 0)$, $M_2=(\tilde{x}_2, \tilde{y}_2)$
 
 Так как $q$ b $\tilde{q}$ свободны от квадратов, то $\frac{q}{\tilde{q}} = 1$, т.е. $q = \tilde{q}$,
 что и требовалось доказать.
+
+
+\printbibliography
 
 \end{document}
