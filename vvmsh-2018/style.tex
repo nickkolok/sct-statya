@@ -1,0 +1,20 @@
+\newcommand{\tezislarge}{\normalsize}
+\providecommand{\No}{\textnumero}
+\newcommand{\me}[1]{#1\index{#1}}
+
+\newcounter{first}
+\newcommand{\tezis}[8][1]{\protect\setcounter{first}{\thepage}%
+\begin{center}\tezislarge\textbf{#2}%
+\ifthenelse{\not\equal{#3}{}}{{}}{}%
+%\setcounter{theorem}{0}\setcounter{teo}{0}\setcounter{lemma}{0}\setcounter{figure}{0}%
+\ifthenelse{\not\equal{#3}{}}{\footnote{#3}}{}%
+\\*\textbf{#4}%
+%\index{#5}%
+\footnotemark\ #6\\*%\addcontentsline{loa}{author}{#3}\\*%
+\footnotetext{\copyright\ #5, 2018}
+\ifthenelse{\not\equal{#7}{}}{{#7}}{}\\%
+\ifthenelse{\not\equal{#8}{}}{\textit{#8}}{}%
+\end{center}\setcounter{equation}{0}%\addcontentsline{toc}{section}{#3, #1}%
+}
+
+\newcommand{\liter}{\smallskip\centerline{\textbf{Литература}}\nopagebreak}
