@@ -1,0 +1,1442 @@
+%ë‚®´Ï ·Æß§†≠ É´•°Æ¨ ÑÔ‚´Æ¢Î¨
+%§´Ô †¢‚Æ¨†‚®ß†Ê®® Ø‡Æ®ß¢Æ§·‚¢† ‰†©´Æ¢ ë®°®‡·™Æ£Æ ¨†‚•¨†‚®Á•·™Æ£Æ
+%¶„‡≠†´† §´Ô ‡†·Ø‡Æ·‚‡†≠•≠®Ô ¢ à≠‚•‡≠•‚
+% SIBMATZH.STY                            September 1997
+%
+% This is the AMS pre-print style file for use with AMS-TeX 2.0.
+% American Mathematical Society, Technical Support Group, P. O. Box 6248,
+%        Providence, RI 02940
+% 800-321-4AMS or 401-455-4080;  Internet: Tech-Support@Math.AMS.com
+%
+% Copyright (C) 1990, American Mathematical Society.
+% All rights reserved.  Copying of this file is authorized only if either:
+%       (1) you make absolutely no changes to your copy including name; OR
+%       (2) if you do make changes, you first rename it to some other name.
+% For technical documentation refer to the file AMSPPT.DOC, which is
+% distributed along with AMSPPT.STY.
+\def\next{SibMatZh}\ifx\styname\next \endinput\fi
+\catcode`\@=11
+\def\styname{SibMatZh}
+\def\styversion{0.987} % May 19, 2003
+\def\styversion{0.9876} % May 26, 2003, \def\postdoc{}
+\def\styversion{0.98765} % August 1, 2003, fixed \boldmath to treat Greek letters
+\def\styversion{0.987654} % August 5, 2003, Eearlier I put some stuff to treat Senya's
+                          % annotations, but it had a bug. So I have to remove it 
+                          % for a while.
+\def\styversion{0.9876543} % February 20, 2004, Fixed pdfams.bat and amstex.bat
+\def\styversion{0.98765432} % September 10, 2004, Fixed \boldmath, \boldsymbol, \miprefix, etc.
+\def\styversion{0.987654321} % April 25, 2005, Changed colon for dot
+
+{\W@{\styname.STY - Version \styversion}\W@{}}
+\Invalid@\nofrills
+\Invalid@\usualspace
+\let\enddocument=\relax
+\newif\ifproofmode \proofmodetrue
+\def\pf{\proofmodefalse\overfullrule=0pt }
+\newif\ifnofrills@
+\def\nofrills@#1#2{\relaxnext@
+  \DN@{\ifx\next\nofrills
+    \nofrills@true\let#2\relax\DN@\nofrills{\nextii@}%
+  \else
+    \nofrills@false\def#2{#1}\let\next@\nextii@\fi
+\next@}}
+\def\usualspace@#1{\ifnofrills@\def\usualspace{#1}\fi}
+\def\addto#1#2{\csname \expandafter\eat@\string#1@\endcsname
+  \expandafter{\the\csname \expandafter\eat@\string#1@\endcsname#2}}
+\def\input@#1{\openin3 #1 \ifeof3 \W@{No file #1...}
+  \else\closein3 \relax\input #1 \fi}
+\def\filename{}
+\def\Input#1.{\def\filename{#1}\input #1.}
+\newdimen\bigsize@
+\def\big@#1#2{{\hbox{$\left#2\vcenter to#1\bigsize@{}%
+  \right.\nulldelimiterspace\z@\m@th$}}}
+\def\big{\big@\@ne}
+\def\Big{\big@{1.5}}
+\def\bigg{\big@\tw@}
+\def\Bigg{\big@{2.5}}
+\def\raggedcenter@{\leftskip.5in plus.4\hsize \rightskip\leftskip
+ \parfillskip\z@ \parindent\z@ \spaceskip.3333em \xspaceskip.5em
+ \pretolerance9999\tolerance9999 \exhyphenpenalty\@M
+ \hyphenpenalty\@M \let\\\linebreak}
+\def\upperspecialchars{\def\ss{SS}\let\i=I\let\j=J\let\ae\AE\let\oe\OE
+  \let\o\O\let\aa\AA\let\l\L}
+\def\uppercasetext@#1{%
+  {\spaceskip1.2\fontdimen2\the\font plus1.2\fontdimen3\the\font
+   \upperspecialchars\uctext@#1$\m@th\aftergroup\eat@$}}
+\def\uctext@#1$#2${\endash@#1-\endash@$#2$\uctext@}
+\def\endash@#1-#2\endash@{\uppercase{#1}\if\notempty{#2}--\endash@#2\endash@\fi}
+\def\runaway@#1{\DN@{#1}\ifx\envir@\next@
+  \Err@{You seem to have a missing or misspelled \string\end#1 ...}%
+  \let\envir@\empty\fi}
+\newif\iftemp@
+\def\notempty#1{TT\fi\def\test@{#1}\ifx\test@\empty\temp@false
+  \else\temp@true\fi \iftemp@}
+
+\ifx\fontprefix\undefined \def\fontprefix{cm} \fi
+\ifx\miprefix\undefined \def\miprefix{cm} \fi
+\def\fontprefixlh{lh}
+\def\fontprefixla{la}
+\def\miprefixex{ex}
+
+\ifx\fontprefix\fontprefixlh
+\font@\tenrm=\fontprefix r10 % roman text
+\font@\ninerm=\fontprefix r9
+\font@\eightrm=\fontprefix r8 % preloaded in plain.tex
+\font@\sevenrm=\fontprefix r7
+\font@\sixrm=\fontprefix r6 % preloaded in plain.tex
+\font@\fiverm=\fontprefix r5
+
+\font@\teni=cmmi10 % math italic
+\font\preloaded=cmmi9
+\font@\eighti=cmmi8     \skewchar\eighti='177 % preloaded
+\font@\seveni=cmmi7
+\font@\sixi=cmmi6       \skewchar\sixi='177   % preloaded
+\font@\fivei=cmmi5
+
+\font@\tensf=\fontprefix ss10 % sans serif
+\font@\eightsf=\fontprefix ss8
+
+\font@\xiibf=\fontprefix bx12 % boldface extended
+\font@\tenbf=\fontprefix bx10
+\font@\ninebf=\fontprefix bx9
+\font@\eightbf=\fontprefix bx8 % preloaded in plain.tex
+\font@\sevenbf=\fontprefix bx7
+\font@\sixbf=\fontprefix bx6   % preloaded in plain.tex
+\font@\fivebf=\fontprefix bx5
+
+\font@\tensl=\fontprefix sl10 % slanted roman
+%\font\preloaded=\fontprefix sl9
+\font@\eightsl=\fontprefix sl8 % preloaded in plain.tex
+
+\font@\tenit=\fontprefix ti10 % text italic
+\font\preloaded=\fontprefix ti9
+\font@\eightit=\fontprefix ti8 % preloaded in plain.tex
+\font@\sevenit=\fontprefix ti7
+
+\font@\tentt=\fontprefix tt10 % preloaded in plain.tex
+\font@\eighttt=\fontprefix tt8 % preloaded in plain.tex
+
+\font\tencmmib=cmmib10 % bold math italic
+\font\sevencmmib=cmmib7 % bold math italic
+\font\fivecmmib=cmmib5 % bold math italic
+
+\font@\tensmc=\fontprefix csc10
+\font@\eightsmc=\fontprefix csc8
+
+\font@\Itensl=\fontprefix sl10 scaled \magstep1
+
+\font@\Itenrm=\fontprefix r10 scaled \magstep1
+\font@\Isevenrm=\fontprefix r7 scaled \magstep1
+\font@\Ifiverm=\fontprefix r5 scaled \magstep1
+
+\font@\Iteni=cmmi10 scaled \magstep1
+\font@\Iseveni=cmmi7 scaled \magstep1
+\font@\Ifivei=cmmi5 scaled \magstep1
+
+\font@\Itenit=\fontprefix ti10 scaled \magstep1
+\font@\Isevenit=\fontprefix ti7 scaled \magstep1
+%\font@\Ifiveit=\fontprefix ti5 scaled \magstep1
+
+\font@\Itenbf=\fontprefix bx10 scaled \magstep1
+\font@\Isevenbf=\fontprefix bx7 scaled \magstep1
+\font@\Ifivebf=\fontprefix bx5 scaled \magstep1
+
+\font@\Itencmmib=cmmib10 scaled \magstep1
+\font@\Isevencmmib=cmmib7 scaled \magstep1
+\font@\Ifivecmmib=cmmib5 scaled \magstep1
+
+\font@\Itensmc=\fontprefix csc10 scaled \magstep1
+\font@\Itensf=\fontprefix ss10 scaled \magstep1
+\font@\IVtensf=\fontprefix ss10 scaled \magstep4
+
+\chardef\No="FC
+\fi
+
+\ifx\fontprefix\fontprefixla
+\font@\tenrm=\fontprefix rm1000 % roman text
+\font@\ninerm=\fontprefix rm0900
+\font@\eightrm=\fontprefix rm0800 % preloaded in plain.tex
+\font@\sevenrm=\fontprefix rm0700
+\font@\sixrm=\fontprefix rm0600 % preloaded in plain.tex
+\font@\fiverm=\fontprefix rm0500
+
+\font@\teni=\miprefix mi10 % math italic
+\font\preloaded=\miprefix mi9
+\font@\eighti=\miprefix mi8     \skewchar\eighti='177 % preloaded
+\font@\seveni=\miprefix mi7
+\font@\sixi=\miprefix mi6       \skewchar\sixi='177   % preloaded
+\font@\fivei=\miprefix mi5
+
+\font@\tensf=\fontprefix ss1000 % sans serif
+\font@\eightsf=\fontprefix ss0800
+
+\font@\xiibf=\fontprefix bx1200 % boldface extended
+\font@\tenbf=\fontprefix bx1000
+\font@\ninebf=\fontprefix bx0900
+\font@\eightbf=\fontprefix bx0800 % preloaded in plain.tex
+\font@\sevenbf=\fontprefix bx0700
+\font@\sixbf=\fontprefix bx0600   % preloaded in plain.tex
+\font@\fivebf=\fontprefix bx0500
+
+\font@\tensl=\fontprefix sl1000 % slanted roman
+\font@\eightsl=\fontprefix sl0800 % preloaded in plain.tex
+\font@\sevensl=\fontprefix sl0700 % preloaded in plain.tex
+%\font@\fivesl=\fontprefix sl0500 % preloaded in plain.tex
+
+\font@\tenit=\fontprefix ti1000 % text italic
+\font@\eightit=\fontprefix ti0800 % preloaded in plain.tex
+\font@\sevenit=\fontprefix ti0700
+\font@\fiveit=\fontprefix ti0500
+
+\font@\tentt=\fontprefix tt1000 % preloaded in plain.tex
+\font@\eighttt=\fontprefix tt0800 % preloaded in plain.tex
+
+\font\tencmmib=cmmib10 % bold math italic
+\font\sevencmmib=cmmib7 % bold math italic
+\font\fivecmmib=cmmib5 % bold math italic
+
+\font@\tensmc=\fontprefix cc1000
+\font@\eightsmc=\fontprefix cc0800
+
+\font@\Itensl=\fontprefix sl1000 scaled \magstep1
+
+\font@\Itenrm=\fontprefix rm1000 scaled \magstep1
+\font@\Isevenrm=\fontprefix rm0700 scaled \magstep1
+\font@\Ifiverm=\fontprefix rm0500 scaled \magstep1
+
+\font@\Iteni=\miprefix mi10 scaled \magstep1
+\font@\Iseveni=\miprefix mi7 scaled \magstep1
+\font@\Ifivei=\miprefix mi5 scaled \magstep1
+
+\font@\Itenit=\fontprefix ti1000 scaled \magstep1
+\font@\Isevenit=\fontprefix ti0700 scaled \magstep1
+%\font@\Ifiveit=\fontprefix ti0500 scaled \magstep1
+
+\font@\Itenbf=\fontprefix bx1000 scaled \magstep1
+\font@\Isevenbf=\fontprefix bx0700 scaled \magstep1
+\font@\Ifivebf=\fontprefix bx0500 scaled \magstep1
+
+\font@\Itencmmib=cmmib10 scaled \magstep1
+\font@\Isevencmmib=cmmib7 scaled \magstep1
+\font@\Ifivecmmib=cmmib5 scaled \magstep1
+
+\font@\Itensmc=\fontprefix cc1000 scaled \magstep1
+\font@\Itensf=\fontprefix ss1000 scaled \magstep1
+\font@\IVtensf=\fontprefix ss1000 scaled \magstep4
+
+\chardef\No="9D
+\fi
+
+\newfam\exmifam % for bold Greek letters in \boldmath; 31.07.03
+\edef\exmifam@{\hexnumber@\exmifam}
+
+\ifx\miprefix\miprefixex
+% the following redefines the Greek letters, taking them in the \exmifam,
+% because they are absent in cmmib which is now the first family
+\def\boldgreek{%
+  \mathchardef\Gamma=  "0\exmifam@ A8  
+  \mathchardef\Delta=  "0\exmifam@ A9  
+  \mathchardef\Theta=  "0\exmifam@ AA  
+  \mathchardef\Lambda= "0\exmifam@ AB  
+  \mathchardef\Xi=     "0\exmifam@ AC  
+  \mathchardef\Pi=     "0\exmifam@ AD  
+  \mathchardef\Sigma=  "0\exmifam@ AE  
+  \mathchardef\Upsilon="0\exmifam@ AF  
+  \mathchardef\Phi=    "0\exmifam@ B0  
+  \mathchardef\Psi=    "0\exmifam@ B1  
+  \mathchardef\Omega=  "0\exmifam@ B2
+}
+
+\def\boldmath{\textfont0=\tenbf\scriptfont0=\sevenbf\scriptscriptfont0=\fivebf
+  \textfont1=\tencmmib \scriptfont1=\sevencmmib \scriptscriptfont1=\fivecmmib
+  \textfont2=\tencmbsy \scriptfont2=\sevencmbsy \scriptscriptfont2=\fivecmbsy
+  %\textfont3=\tencmbex \scriptfont3=\sevencmbex \scriptscriptfont3=\fivecmbex
+  \boldgreek
+}
+\let\@boldsymbol=\boldsymbol
+\def\boldsymbol#1{%
+  \ifx#1\Gamma\mathchar"0\exmifam@ A8 \else
+  \ifx#1\Delta\mathchar"0\exmifam@ A9 \else
+  \ifx#1\Theta\mathchar"0\exmifam@ AA \else
+  \ifx#1\Lambda\mathchar"0\exmifam@ AB \else
+  \ifx#1\Xi\mathchar"0\exmifam@ AC \else
+  \ifx#1\Pi\mathchar"0\exmifam@ AD \else
+  \ifx#1\Sigma\mathchar"0\exmifam@ AE \else
+  \ifx#1\Upsilon\mathchar"0\exmifam@ AF  \else
+  \ifx#1\Phi\mathchar"0\exmifam@ B0 \else
+  \ifx#1\Psi\mathchar"0\exmifam@ B1  \else
+  \ifx#1\Omega\mathchar"0\exmifam@ B2\else 
+  \@boldsymbol #1\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi}
+\else
+\def\boldmath{\textfont0=\tenbf\scriptfont0=\sevenbf\scriptscriptfont0=\fivebf
+  \textfont1=\tencmmib \scriptfont1=\sevencmmib \scriptscriptfont1=\fivecmmib
+  \textfont2=\tencmbsy \scriptfont2=\sevencmbsy \scriptscriptfont2=\fivecmbsy
+  %\textfont3=\tencmbex \scriptfont3=\sevencmbex \scriptscriptfont3=\fivecmbex
+}
+\fi
+
+%% common fonts 
+\font@\tensy=cmsy10 % math symbols
+\font\preloaded=cmsy9
+\font@\eightsy=cmsy8    \skewchar\eightsy='60 % preloaded
+\font@\sevensy=cmsy7
+\font@\sixsy=cmsy6      \skewchar\sixsy='60   % preloaded
+\font@\fivesy=cmsy5
+
+\font@\tenex=cmex10 % math extension
+\font@\eightex=cmex8
+\font@\sevenex=cmex8
+
+\font@\Itensy=cmsy10 scaled \magstep1
+\font@\Isevensy=cmsy7 scaled \magstep1
+\font@\Ifivesy=cmsy5 scaled \magstep1
+
+\font@\Itenex=cmex10 scaled \magstep1
+\font@\Isevenex=cmex7 scaled \magstep1
+%\font@\Ifiveex=cmex5 scaled \magstep1
+
+\font\tencmbsy=cmbsy10 % bold math symbols
+\font\sevencmbsy=cmbsy7 % bold math symbols
+\font\fivecmbsy=cmbsy5 % bold math symbols
+
+\font@\Itencmbsy=cmbsy10 scaled \magstep1
+\font@\Isevencmbsy=cmbsy7 scaled \magstep1
+\font@\Ifivecmbsy=cmbsy5 scaled \magstep1
+
+\font\IItenrsfs=rsfs10 scaled \magstep2 % new calligraphic letters
+\font\Itenrsfs=rsfs10 scaled \magstep1 
+\font\tenrsfs=rsfs10
+\font\Ininersfs=rsfs9 scaled \magstep1 
+\font\ninersfs=rsfs9
+\font\Isevenrsfs=rsfs7 scaled \magstep1 
+\font\sevenrsfs=rsfs7
+\font\fiversfs=rsfs5
+
+\font@\Itenmsa=msam10 scaled \magstep1
+\font@\Isevenmsa=msam7 scaled \magstep1
+\font@\Ifivemsa=msam5 scaled \magstep1
+
+\font@\Itenmsb=msbm10 scaled \magstep1
+\font@\Isevenmsb=msbm7 scaled \magstep1
+\font@\Ifivemsb=msbm5 scaled \magstep1
+
+\font@\Iteneufm=eufm10 scaled \magstep1
+\font@\Iseveneufm=eufm7 scaled \magstep1
+\font@\Ifiveeufm=eufm5 scaled \magstep1
+
+%\font@\Itencmmib=cmmib10 scaled \magstep1
+%\font@\Isevencmmib=cmmib7 scaled \magstep1
+%\font@\Ifivecmmib=cmmib5 scaled \magstep1
+%\font@\Itencmbsy=cmbsy10 scaled \magstep1
+%\font@\Isevencmbsy=cmbsy7 scaled \magstep1
+%\font@\Ifivecmbsy=cmbsy5 scaled \magstep1
+
+\newfam\rsfsfam
+\def\xCal{\RIfM@\expandafter\xCal@\else
+ \expandafter\nonmatherr@\expandafter\xCal\fi}
+\let\Cal=\xCal
+\def\xCal@#1{{\xCal@@{#1}}}
+\def\xCal@@#1{\noaccents@\fam\rsfsfam#1}
+
+
+
+\loadeufm
+\loadbold
+\UseAMSsymbols
+\TagsOnRight
+\newtoks\xiipoint@
+\def\xiipoint{\normalbaselineskip14.4\p@
+ \abovedisplayskip12\p@ plus3\p@ minus9\p@
+ \belowdisplayskip\abovedisplayskip
+ \abovedisplayshortskip\z@ plus3\p@
+ \belowdisplayshortskip7\p@ plus3\p@ minus4\p@
+ \textonlyfont@\rm\Itenrm \textonlyfont@\it\Itenit
+ \textonlyfont@\sl\Itensl \textonlyfont@\bf\Itenbf
+ \textonlyfont@\smc\Itensmc \textonlyfont@\sf\Itensf
+  \let\sc=\smc
+ \ifsyntax@ \def\big##1{{\hbox{$\left##1\right.$}}}%
+  \let\Big\big \let\bigg\big \let\Bigg\big
+ \else
+  \textfont\z@=\Itenrm  \scriptfont\z@=\Isevenrm  \scriptscriptfont\z@=\Ifiverm
+  \textfont\@ne=\Iteni  \scriptfont\@ne=\Iseveni  \scriptscriptfont\@ne=\Ifivei
+  \textfont\tw@=\Itensy \scriptfont\tw@=\Isevensy \scriptscriptfont\tw@=\Ifivesy
+  \textfont\thr@@=\Itenex \scriptfont\thr@@=\Isevenex
+        \scriptscriptfont\thr@@=\Isevenex
+  \textfont\itfam=\Itenit \scriptfont\itfam=\Isevenit
+        \scriptscriptfont\itfam=\Isevenit
+  \textfont\bffam=\Itenbf \scriptfont\bffam=\Isevenbf
+        \scriptscriptfont\bffam=\Ifivebf
+  \textfont\rsfsfam=\Itenrsfs \scriptfont\rsfsfam=\ninersfs \scriptscriptfont\rsfsfam=\sevenrsfs
+  \textfont\exmifam=\Iteni \scriptfont\exmifam=\eighti \scriptscriptfont\exmifam=\seveni
+  \setbox\strutbox\hbox{\vrule height9.5\p@ depth4.5\p@ width\z@}%
+  \setbox\strutbox@\hbox{\lower.5\normallineskiplimit\vbox{%
+        \kern-\normallineskiplimit\copy\strutbox}}%
+ \setbox\z@\vbox{\hbox{$($}\kern\z@}\bigsize@=1.2\ht\z@
+ \fi
+ \normalbaselines\rm\ex@.2326ex\jot3\ex@\the\xiipoint@}
+
+\newtoks\tenpoint@
+\def\tenpoint{\normalbaselineskip12\p@
+ \abovedisplayskip8\p@ plus3\p@ minus6\p@
+ \belowdisplayskip\abovedisplayskip
+ \abovedisplayshortskip\z@ plus3\p@
+ \belowdisplayshortskip5\p@ plus3\p@ minus4\p@
+ \textonlyfont@\rm\tenrm \textonlyfont@\it\tenit
+ \textonlyfont@\sl\tensl \textonlyfont@\bf\tenbf
+ \textonlyfont@\smc\tensmc \textonlyfont@\tt\tentt \let\sc=\smc
+ \ifsyntax@ \def\big##1{{\hbox{$\left##1\right.$}}}%
+  \let\Big\big \let\bigg\big \let\Bigg\big
+ \else
+  \textfont\z@=\tenrm  \scriptfont\z@=\sevenrm  \scriptscriptfont\z@=\fiverm
+  \textfont\@ne=\teni  \scriptfont\@ne=\seveni  \scriptscriptfont\@ne=\fivei
+  \textfont\tw@=\tensy \scriptfont\tw@=\sevensy \scriptscriptfont\tw@=\fivesy
+  \textfont\thr@@=\tenex \scriptfont\thr@@=\sevenex
+        \scriptscriptfont\thr@@=\sevenex
+  \textfont\itfam=\tenit \scriptfont\itfam=\sevenit
+        \scriptscriptfont\itfam=\sevenit
+  \textfont\bffam=\tenbf \scriptfont\bffam=\sevenbf
+        \scriptscriptfont\bffam=\fivebf
+  \textfont\rsfsfam=\tenrsfs \scriptfont\rsfsfam=\sevenrsfs \scriptscriptfont\rsfsfam=\fiversfs
+  \textfont\exmifam=\teni \scriptfont\exmifam=\seveni \scriptscriptfont\exmifam=\fivei
+  \setbox\strutbox\hbox{\vrule height8.5\p@ depth3.5\p@ width\z@}%
+  \setbox\strutbox@\hbox{\lower.5\normallineskiplimit\vbox{%
+        \kern-\normallineskiplimit\copy\strutbox}}%
+ \setbox\z@\vbox{\hbox{$($}\kern\z@}\bigsize@=1.2\ht\z@
+ \fi
+ \normalbaselines\rm\ex@.2326ex\jot3\ex@\the\tenpoint@}
+\newtoks\eightpoint@
+\def\eightpoint{\normalbaselineskip10\p@
+ \abovedisplayskip10\p@ plus2.4\p@ minus7.2\p@
+ \belowdisplayskip\abovedisplayskip
+ \abovedisplayshortskip\z@ plus2.4\p@
+ \belowdisplayshortskip5.6\p@ plus2.4\p@ minus3.2\p@
+ \textonlyfont@\rm\eightrm \textonlyfont@\it\eightit
+ \textonlyfont@\sl\eightsl \textonlyfont@\bf\eightbf
+ \textonlyfont@\smc\eightsmc \textonlyfont@\tt\eighttt \let\sc=\smc
+ \ifsyntax@\def\big##1{{\hbox{$\left##1\right.$}}}%
+  \let\Big\big \let\bigg\big \let\Bigg\big
+ \else
+  \textfont\z@=\eightrm \scriptfont\z@=\sixrm \scriptscriptfont\z@=\fiverm
+  \textfont\@ne=\eighti \scriptfont\@ne=\sixi \scriptscriptfont\@ne=\fivei
+  \textfont\tw@=\eightsy \scriptfont\tw@=\sixsy \scriptscriptfont\tw@=\fivesy
+  \textfont\thr@@=\eightex \scriptfont\thr@@=\sevenex
+   \scriptscriptfont\thr@@=\sevenex
+  \textfont\itfam=\eightit \scriptfont\itfam=\sevenit
+   \scriptscriptfont\itfam=\sevenit
+  \textfont\bffam=\eightbf \scriptfont\bffam=\sixbf
+   \scriptscriptfont\bffam=\fivebf
+  \textfont\rsfsfam=\ninersfs \scriptfont\rsfsfam=\fiversfs \scriptscriptfont\rsfsfam=\fiversfs
+  \textfont\exmifam=\eighti \scriptfont\exmifam=\fivei \scriptscriptfont\exmifam=\fivei
+ \setbox\strutbox\hbox{\vrule height7\p@ depth3\p@ width\z@}%
+ \setbox\strutbox@\hbox{\raise.5\normallineskiplimit\vbox{%
+   \kern-\normallineskiplimit\copy\strutbox}}%
+ \setbox\z@\vbox{\hbox{$($}\kern\z@}\bigsize@=1.2\ht\z@
+ \fi
+ \normalbaselines\eightrm\ex@.2326ex\jot3\ex@\the\eightpoint@}
+%\parindent1pc
+
+\def\?{?\vadjust{\vbox to 0pt{\vss\hbox{\kern\hsize\kern1em\xiibf ?!}}}}
+\normallineskiplimit\p@
+\newdimen\indenti \indenti=\parindent
+\def\pageheight#1{\vsize#1}
+\def\pagewidth#1{\hsize#1%
+   \captionwidth@\hsize \advance\captionwidth@-2\indenti}
+\pagewidth{128mm} \pageheight{210mm}
+\hoffset=210mm \advance\hoffset by-\hsize \hoffset=.5\hoffset
+\voffset=297mm \advance\voffset by-\vsize \voffset=.5\voffset
+\advance\hoffset by -1in \advance\voffset by -1in
+\newcount\@issueyear \newcount\@volume
+\newcount\@totalnumber \newcount\@issuenumber 
+\def\issueyear#1{\@issueyear=#1 \@volume=-1959 \advance\@volume by \@issueyear}
+\def\issuenumber#1{\@issuenumber=#1} \issueyear{1960} \issuenumber0
+\def\shortyear@{\count@=\@issueyear \divide\count@ by 100%
+ \multiply\count@ by 100%
+ \count@@=\@issueyear \advance\count@@ by - \count@
+ \ifnum\count@@<10 0\fi\number\count@@}
+
+\def\@issuemonths{\ifcase\@issuenumber ********\or
+  ü≠¢†‡Ï---‰•¢‡†´Ï\or å†‡‚---†Ø‡•´Ï\or å†©---®Ó≠Ï\or àÓ´Ï---†¢£„·‚\or
+  ë•≠‚Ô°‡Ï---Æ™‚Ô°‡Ï\or çÆÔ°‡Ï---§•™†°‡Ï\else ********\fi}
+
+\def\calcvolume{\@totalnumber=\@volume \advance\@totalnumber by -1
+  \multiply\@totalnumber by 6 \advance\@totalnumber by \@issuenumber
+  \advance\@totalnumber by -2}
+\def\topmatter@{%\openannot
+ \opentoc
+ \ifnum\@issuenumber>0 \openhtmltoc\fi\mark{\infobox}
+ \addresscount@\z@\datecount@\z@}
+\def\topmatter{\calcvolume
+ \ifx\undefined\msafam
+ \else\font@\eightmsa=msam8 \font@\sixmsa=msam6
+   \ifsyntax@\else \addto\xiipoint{\textfont\msafam=\Itenmsa
+              \scriptfont\msafam=\Isevenmsa \scriptscriptfont\msafam=\Ifivemsa}%
+     \addto\tenpoint{\textfont\msafam=\tenmsa
+              \scriptfont\msafam=\sevenmsa \scriptscriptfont\msafam=\fivemsa}%
+     \addto\eightpoint{\textfont\msafam=\eightmsa \scriptfont\msafam=\sixmsa
+              \scriptscriptfont\msafam=\fivemsa}%
+   \fi
+ \fi
+ \ifx\undefined\msbfam
+ \else\font@\eightmsb=msbm8 \font@\sixmsb=msbm6
+   \ifsyntax@\else \addto\xiipoint{\textfont\msbfam=\Itenmsb
+         \scriptfont\msbfam=\Isevenmsb \scriptscriptfont\msbfam=\Ifivemsb}%
+     \addto\tenpoint{\textfont\msbfam=\tenmsb
+         \scriptfont\msbfam=\sevenmsb \scriptscriptfont\msbfam=\fivemsb}%
+     \addto\eightpoint{\textfont\msbfam=\eightmsb \scriptfont\msbfam=\sixmsb
+         \scriptscriptfont\msbfam=\fivemsb}%
+   \fi
+ \fi
+ \ifx\undefined\eufmfam
+ \else \font@\eighteufm=eufm8 \font@\sixeufm=eufm6
+   \ifsyntax@\else \addto\xiipoint{\textfont\eufmfam=\Iteneufm
+       \scriptfont\eufmfam=\Iseveneufm \scriptscriptfont\eufmfam=\Ifiveeufm}%
+     \addto\tenpoint{\textfont\eufmfam=\teneufm
+       \scriptfont\eufmfam=\seveneufm \scriptscriptfont\eufmfam=\fiveeufm}%
+     \addto\eightpoint{\textfont\eufmfam=\eighteufm
+       \scriptfont\eufmfam=\sixeufm \scriptscriptfont\eufmfam=\fiveeufm}%
+   \fi
+ \fi
+ \ifx\undefined\eufbfam
+ \else \font@\eighteufb=eufb8 \font@\sixeufb=eufb6
+   \ifsyntax@\else \addto\tenpoint{\textfont\eufbfam=\teneufb
+      \scriptfont\eufbfam=\seveneufb \scriptscriptfont\eufbfam=\fiveeufb}%
+    \addto\eightpoint{\textfont\eufbfam=\eighteufb
+      \scriptfont\eufbfam=\sixeufb \scriptscriptfont\eufbfam=\fiveeufb}%
+   \fi
+ \fi
+ \ifx\undefined\eusmfam
+ \else \font@\eighteusm=eusm8 \font@\sixeusm=eusm6
+   \ifsyntax@\else \addto\tenpoint{\textfont\eusmfam=\teneusm
+       \scriptfont\eusmfam=\seveneusm \scriptscriptfont\eusmfam=\fiveeusm}%
+     \addto\eightpoint{\textfont\eusmfam=\eighteusm
+       \scriptfont\eusmfam=\sixeusm \scriptscriptfont\eusmfam=\fiveeusm}%
+   \fi
+ \fi
+ \ifx\undefined\eusbfam
+ \else \font@\eighteusb=eusb8 \font@\sixeusb=eusb6
+   \ifsyntax@\else \addto\tenpoint{\textfont\eusbfam=\teneusb
+       \scriptfont\eusbfam=\seveneusb \scriptscriptfont\eusbfam=\fiveeusb}%
+     \addto\eightpoint{\textfont\eusbfam=\eighteusb
+       \scriptfont\eusbfam=\sixeusb \scriptscriptfont\eusbfam=\fiveeusb}%
+   \fi
+ \fi
+ \ifx\undefined\eurmfam
+ \else \font@\eighteurm=eurm8 \font@\sixeurm=eurm6
+   \ifsyntax@\else \addto\tenpoint{\textfont\eurmfam=\teneurm
+       \scriptfont\eurmfam=\seveneurm \scriptscriptfont\eurmfam=\fiveeurm}%
+     \addto\eightpoint{\textfont\eurmfam=\eighteurm
+       \scriptfont\eurmfam=\sixeurm \scriptscriptfont\eurmfam=\fiveeurm}%
+   \fi
+ \fi
+ \ifx\undefined\eurbfam
+ \else \font@\eighteurb=eurb8 \font@\sixeurb=eurb6
+   \ifsyntax@\else \addto\tenpoint{\textfont\eurbfam=\teneurb
+       \scriptfont\eurbfam=\seveneurb \scriptscriptfont\eurbfam=\fiveeurb}%
+    \addto\eightpoint{\textfont\eurbfam=\eighteurb
+       \scriptfont\eurbfam=\sixeurb \scriptscriptfont\eurbfam=\fiveeurb}%
+   \fi
+ \fi
+ \ifx\undefined\cmmibfam
+ \else \font@\eightcmmib=cmmib8 \font@\sixcmmib=cmmib6
+   \ifsyntax@\else \addto\xiipoint{\textfont\cmmibfam=\Itencmmib
+       \scriptfont\cmmibfam=\Isevencmmib \scriptscriptfont\cmmibfam=\Ifivecmmib}%
+    \addto\tenpoint{\textfont\cmmibfam=\tencmmib
+       \scriptfont\cmmibfam=\sevencmmib \scriptscriptfont\cmmibfam=\fivecmmib}%
+    \addto\eightpoint{\textfont\cmmibfam=\eightcmmib
+       \scriptfont\cmmibfam=\sixcmmib \scriptscriptfont\cmmibfam=\fivecmmib}%
+   \fi
+ \fi
+ \ifx\undefined\cmbsyfam
+ \else \font@\eightcmbsy=cmbsy8 \font@\sixcmbsy=cmbsy6
+   \ifsyntax@\else \addto\xiipoint{\textfont\cmbsyfam=\Itencmbsy
+      \scriptfont\cmbsyfam=\Isevencmbsy \scriptscriptfont\cmbsyfam=\Ifivecmbsy}%
+    \addto\tenpoint{\textfont\cmbsyfam=\tencmbsy
+      \scriptfont\cmbsyfam=\sevencmbsy \scriptscriptfont\cmbsyfam=\fivecmbsy}%
+    \addto\eightpoint{\textfont\cmbsyfam=\eightcmbsy
+      \scriptfont\cmbsyfam=\sixcmbsy \scriptscriptfont\cmbsyfam=\fivecmbsy}%
+   \fi
+ \fi
+ \let\topmatter\topmatter@\topmatter@}
+\newbox\titlebox@
+\newtoks\titletoks@
+\def\title{\nofrills@{\uppercasetext@}\title@%
+ \DNii@##1\endtitle{\titletoks@={##1}
+ \global\setbox\titlebox@\vtop{\xiipoint\sf
+ \raggedcenter@\ignorespaces
+ \baselineskip1.3\baselineskip\title@{##1\unskip}\thanksmark@\endgraf}%
+ %\edef\next{\the\rightheadtoks}\ifx\next\empty
+ \rightheadtext{##1}%\fi
+ }\FN@\next@}
+\newbox\authorbox@
+\newtoks\authortoks@
+\newtoks\xauthortoks@
+\def\author#1\endauthor{\authortoks@={#1}\global\setbox\authorbox@
+ \vbox{\xiipoint\bf\raggedcenter@\ignorespaces
+ #1\endgraf}\relaxnext@ %\edef\next{\the\leftheadtoks}\ifx\next\empty
+ \leftheadtext{#1}}%\fi}
+\def\xauthor#1\endxauthor{\xauthortoks@={#1}}
+\newcount\addresscount@
+\addresscount@\z@
+\def\address#1\endaddress{\global\advance\addresscount@\@ne
+  \expandafter\gdef\csname address\number\addresscount@\endcsname
+  {\eightpoint\it\ignorespaces#1\par}}
+\def\affil#1\endaffil{\expandafter\gdef\csname affil\number\addresscount@\endcsname
+  {\eightpoint\it\ignorespaces#1\par}}
+\def\email#1\endemail{\expandafter\gdef\csname email\number\addresscount@\endcsname
+  {\eightpoint\tt\ignorespaces#1\par}}
+\newcount\datecount@
+\datecount@\z@
+\def\date#1\enddate{\global\advance\datecount@\@ne
+  \expandafter\gdef\csname date\number\datecount@\endcsname
+  {\eightpoint\it\ignorespaces#1\unskip\par}}
+\def\thethanks@{}
+\def\thanksmark@{\ifx\thethanks@\empty\gdef\thanksmark@@{}\else
+ \gdef\thanksmark@@{${}^{*)}$}\fi\thanksmark@@}
+\def\thanks#1\endthanks{\gdef\thethanks@{\eightpoint\ignorespaces#1\unskip}}
+\def\keywords#1\endkeywords{\def\thekeywords@{#1}}
+\def\subjclass#1\endsubjclass{}
+\def\UDclass#1\endUDclass{\def\theUDclass@{\ignorespaces#1\unskip}}
+%%%
+\newif\iftocopen \tocopenfalse
+\newwrite\tocfile
+\def\opentoc{\iftocopen\else\tocopentrue
+  \immediate\openout\tocfile cont\number\@issuenumber.tex
+  \write\tocfile{\string\documentstyle{SibMatZh}}
+  \write\tocfile{\string\issueyear{\number\@issueyear}}
+  \write\tocfile{\string\issuenumber{\number\@issuenumber}}
+  \write\tocfile{\space}
+  %\write\tocfile{\string\document}
+  \write\tocfile{\string\toc}\fi}
+\def\closetoc{\iftocopen\write\tocfile{\string\endtoc}
+ \write\tocfile{\string\enddocument}
+%\write\tocfile{\string\end}
+ \closeout\tocfile\tocopenfalse\fi}
+%\def\Filename{\llap\bgroup\tt\catcode`\_=12 }
+\def\writetoc{\write\tocfile{\string\title
+ %\ifproofmode\string\Filename\space
+ %\filename\string\qquad\string\egroup\fi
+ \string\bf\space
+  \the\xauthortoks@\string\quad}
+ \write\tocfile{\space\string\sl\space\the\titletoks@}
+ \write\tocfile{\space\string\page{\number\pageno}\string\endtitle}}
+\def\xwritetoc#1{\write\tocfile{\string\title\space#1\string\endtitle}}
+\newbox\tocheadbox@ \newbox\tocsubheadbox@ \newbox\tocbox@
+\def\jtitle{\vglue-1cm
+ \centerline{\tensf ëàÅàêëäéÖ éíÑÖãÖçàÖ êéëëàâëäéâ ÄäÄÑÖåàà çÄìä}
+ \smallskip
+ \centerline{\tensf àçëíàíìí åÄíÖåÄíàäà ®¨.~ë. ã. ëéÅéãÖÇÄ ëé êÄç}
+ \medskip
+ %\centerline{\eightsf çÄìóçé-íÖéêÖíàóÖëäàâ}
+ \nointerlineskip\bigskip\bigskip
+ \centerline{\IVtensf ëàÅàêëäàâ}
+ \vskip2pt
+ \centerline{\IVtensf åÄíÖåÄíàóÖëäàâ ÜìêçÄã}
+ \bigskip\bigskip
+ \line{\eightsf\strut éëçéÇÄç Ç åÄÖ 1960 ÉéÑÄ\hfil ÇõïéÑàí 6 êÄá Ç ÉéÑ}
+ \smallskip
+ \hrule height .6pt
+ \medskip
+ \line{\xiibf íÆ¨~\number\@volume,\enspace\No~\number\@issuenumber\
+ (\number\@totalnumber)\hfil
+ \@issuemonths,\enspace\number\@issueyear}
+ \medskip
+ \hrule height .6pt
+ \bigskip\bigskip\bigskip\bigskip
+ \centerline{\Itensl ëéÑÖêÜÄçàÖ}
+ \bigskip}
+\def\titleinsert{\insert\titleins{\bigskip
+ \centerline{\ninebf çéÇéëàÅàêëä}
+ \centerline{\ninebf àáÑÄíÖãúëíÇé àçëíàíìíÄ åÄíÖåÄíàäà}
+ \centerline{\ninebf\number\@issueyear}}}
+\def\maketoc{\global\endcount@=2\input@{cont\number\@issuenumber}}
+\def\toc{\calcvolume\titleinsert\jtitle\mark{ }%
+  \writemakealltoc
+  \bgroup\newtocdefs}
+\def\newtocdefs{\def\\{\unskip\space\ignorespaces}%
+   \rightskip=2pc plus1fil
+   \def \title##1\endtitle
+       {\penaltyandskip@\z@\smallskipamount
+        \hangindent2pc\noindent{\bf##1}}%
+  \def\page##1%
+       {\unskip\penalty\@M\quad\dotfill
+        \rlap{\hbox to2pc{\hfil\bf##1}}\penalty\@M}%
+   \def\chapter##1{}%
+   \def\specialhead##1\endspecialhead{}%
+   \def\head##1 ##2\endhead{}%
+   \def\subhead##1 ##2\endsubhead{}%
+   \def\subsubhead##1 ##2\endsubsubhead{}}
+\def\endtoc{\par\egroup\vfill\mark{\relax}
+  \line{\hfill\vtop{\halign{\ninerm##&\ninerm##\hfil\cr
+              &{\sc Ä§‡•· ‡•§†™Ê®®:}\cr
+              \noalign{\vskip2pt}
+              &Ø‡.~Ä™†§•¨®™† äÆØ‚Ó£†, 4, çÆ¢Æ·®°®‡·™ 630090\cr
+              %&\cr
+              &í•´•‰Æ≠: 33--34--93;\quad e-mail: smz@math.nsc.ru\cr
+             \noalign{\vskip24pt}
+             \copyright\quad &à≠·‚®‚„‚ ¨†‚•¨†‚®™® ®¨.~ë.~ã.~ëÆ°Æ´•¢† ëé êÄç,
+               \number\@issueyear\cr}}}
+  \eject}
+%%%
+\newif\ifhtmltocopen
+\newwrite\htmltocfile
+\def\openhtmltoc{\ifhtmltocopen\else\htmltocopentrue
+  \immediate\openout\htmltocfile c\number\@issuenumber.txt \fi}
+
+\def\writehtmltocb{\ifhtmltocopen
+  \immediate\write\htmltocfile{\the\xauthortoks@ @@\the\titletoks@ 
+  @@\number\pageno}\fi}
+
+\def\writehtmltoce{\ifhtmltocopen\fi}
+
+\def\closehtmltoc{\ifhtmltocopen
+ \count@@\pageno \advance\count@@ by -1
+ \write\htmltocfile{! \number\count@@}%
+ \write\htmltocfile{####}%
+ \closeout\htmltocfile\htmltocopenfalse\fi}
+
+%%%
+\newif\iftableopen
+\newwrite\tablefile
+\begingroup\catcode`\#=12
+\gdef\opentable{\iftableopen\else\tableopentrue
+  \immediate\openout\tablefile tab\number\@issuenumber_\number\@volume.ams
+  \immediate\write\tablefile{}%\string\magnification1200}
+  \immediate\write\tablefile{\string\def\string\5{\string\rlap{.5}}}
+  \immediate\write\tablefile{\string\centerline{\string\bf\space
+   Ä¢‚Æ‡·™®© £Æ≠Æ‡†‡ ëåÜ ß† \string\char252\string~\number\@issuenumber,
+   íÆ¨\string~\number\@volume, \number\@issueyear}}
+  \immediate\write\tablefile{\string\bigskip\string\bigskip}
+  \immediate\write\tablefile{$$\string\vbox\string\bgroup
+   \string\offinterlineskip\string\halign\space to\string\hsize\string\bgroup
+   \string\vrule\space height10pt depth5pt
+   \string\quad#\string\quad\string\hfil\string\tabskip=0pt plus1fil
+    &\vrule\string\hskip2cm#&
+   \vrule\string\quad#\string\quad\string\hfil&
+   \vrule\string\hskip2cm#&\vrule\string\quad\string\hfil#\string\quad\vrule
+   \string\tabskip=0pt \string\cr}
+  \immediate\write\tablefile{\string\noalign{\string\hrule}}
+  %\write\tablefile{}
+  %\write\tablefile{}
+  %\write\tablefile{}
+\fi}
+\endgroup
+
+\def\writetableb{\iftableopen\begingroup
+  \let\eightpoint\empty \let\it\empty \let\ignorespaces\empty
+  \let~\space \let\par\empty
+  \immediate\write\tablefile{\the\xauthortoks@& &}
+  \count@@\z@ \loop\ifnum\count@@<\addresscount@\advance\count@@\@ne
+  \immediate\write\tablefile{\csname address\number\count@@\endcsname\space}
+  \repeat
+  \endgroup
+\fi}
+
+\def\writetablee{\iftableopen
+  \count@@=\number\pageno \advance\count@@-\firstp@ge
+  \write\tablefile{&&\number\count@@\string\cr}
+  \write\tablefile{\string\noalign{\string\hrule}}
+\fi}
+
+\def\closetable{\iftableopen
+ \write\tablefile{\string\egroup\string\egroup$$}
+ \write\tablefile{\string\end}
+ \closeout\tablefile\tableopenfalse\fi}
+
+
+%%%
+\newwrite\annotfile
+\newif\ifannotopen \annotopenfalse
+\def\openannot{\ifannotopen\else\annotopentrue
+  \immediate\openout\annotfile=annot\number\@issuenumber
+  \immediate\write\annotfile{\string\documentstyle{SibMatZh}}
+  \immediate\write\annotfile{\string\issueyear{\number\@issueyear}}
+  \immediate\write\annotfile{\string\issuenumber{\number\@issuenumber}}
+  \immediate\write\annotfile{\space}
+  %\immediate\write\annotfile{\string\document}
+  \immediate\write\annotfile{\string\annot}\fi}
+\def\closeannot{\ifannotopen\annotopenfalse
+   \immediate\write\annotfile{\space}
+   \immediate\write\annotfile{\string\endannot}
+   \immediate\write\annotfile{\string\enddocument}
+   %\immediate\write\annotfile{\string\end}
+   \immediate\closeout\annotfile\fi}
+\def\makeannot{\global\endcount@=2\input@{annot\number\@issuenumber}\vfill\eject}
+\def\annot{\calcvolume\mark{\infobox}\pageno=-1
+ \leftheadtext{Ä≠≠Æ‚†Ê®®}\rightheadtext{Ä≠≠Æ‚†Ê®®}
+ %\xwritetoc{Ä≠≠Æ‚†Ê®® \string\page{\folio}}
+ \vglue24pt plus 2pt\centerline{\Itensl ÄççéíÄñàà}\bigskip\bigskip
+ \bgroup\eightpoint}
+\def\endannot{\egroup}
+\long\outer\def\xabstract#1\endabstract{\def\theabstract@{#1}}
+\outer\def\abstract{\immediate\write\annotfile{}
+  \begingroup \setupcopy
+  \immediate\write\annotfile{\string\beginannot
+    {\the\titletoks@}{\the\authortoks@}{\theUDclass@}}
+  \copyannot}
+\def\setupcopy{\def\do##1{\catcode`##1=12}\dospecials
+  \catcode`\|=12 \catcode`\@=12 \obeylines}
+{\obeylines \gdef\copyannot#1
+  {\def\next{#1}%
+  \ifx\next\empty\let\next=\endgroup\else
+  \ifx\next\endabstract@\let\next=\endgroup
+  \else\immediate\write\annotfile{\next} \let\next=\copyannot\fi\fi\next}}
+{\catcode`\|=0\catcode`\\=12 |gdef|endabstract@{\endabstract}}
+\def\beginannot#1#2#3{\bigbreak\leftline{\sl ìÑä~#3}\penalty\@M\vskip 3pt
+  \begingroup\baselineskip=11pt\parindent=\z@ \rightskip=\z@ plus 1fil
+  \def\\{\unskip\space\ignorespaces}
+  \uppercasetext@{\ignorespaces#1\unskip}.\
+  {\sl\ignorespaces#2\unskip}.
+  --- ë®°. ¨†‚. ¶„‡≠., \number\@issueyear,
+  ‚.~\number\@volume,~\No\thinspace\number\@issuenumber.
+  \par\penalty\@M\vskip 3pt plus 1pt\endgroup}
+%%%
+\def\widestnumber#1#2{\begingroup\let\head\null\let\subhead\empty
+   \let\subsubhead\subhead
+   \ifx#1\head\global\setbox\tocheadbox@\hbox{#2.\enspace}%
+   \else\ifx#1\subhead\global\setbox\tocsubheadbox@\hbox{#2.\enspace}%
+   \else\ifx#1\key\bgroup\let\endrefitem@\egroup
+        \key#2\endrefitem@\global\refindentwd\wd\keybox@
+   \else\ifx#1\no\bgroup\let\endrefitem@\egroup
+        \no#2\endrefitem@\global\refindentwd\wd\nobox@
+   \else\ifx#1\page\global\setbox\pagesbox@\hbox{\quad\bf#2}%
+   \else\ifx#1\item\setboxz@h{#2}\global\rosteritemwd\wdz@
+        \global\advance\rosteritemwd by.5\parindent
+   \else\message{\string\widestnumber is not defined for this option
+   (\string#1)}%
+\fi\fi\fi\fi\fi\fi\endgroup}
+\let\varindent@\indent
+%%%
+\newcount\artnumber
+\newwrite\annfile
+\let\pretitle\relax
+\let\preauthor\relax
+\let\preaffil\relax
+\let\predate\relax
+\let\preabstract\relax
+\let\prepaper\relax
+\def\dedicatory #1\enddedicatory{}
+\def\translator#1\endtranslator{}
+\outer\def\endtopmatter{\runaway@{abstract}%
+ \writemakeall
+ %\advance\artnumber by 1     % There are some problems with implementation
+                              % of this feature... It expands! ....
+ %\immediate\openout\annfile a\the\@issuenumber_\the\artnumber
+ %\immediate\write\annfile{\theabstract@}%
+ %\immediate\closeout\annfile
+ \global\endcount@=1
+ \edef\next{\the\leftheadtoks}\ifx\next\empty
+  \expandafter\leftheadtext\expandafter{\the\rightheadtoks}\fi
+  \writetoc\writehtmltocb\writetableb
+  \makeind@xline\edef\firstp@ge{\number\pageno}%
+  \ifx\thethanks@\empty\else \makefootnote@{\thanksmark@@}{\thethanks@}\fi
+  \insert\crightins{\noindent\ninebf
+    \copyright\ \number\@issueyear\ \the\xauthortoks@}
+  \leftline{\tensl ìÑä~\theUDclass@}
+  \pretitle\vskip.5in
+  \box\titlebox@
+  \preauthor\vskip9\p@
+  \box\authorbox@
+  \bigskip 
+    \prepaper
+  \vskip15.5\p@ plus5\p@
+  \ifx\theabstract@\undefined\else
+   {\narrower\eightpoint\noindent
+   {\bf Ä≠≠Æ‚†Ê®Ô.}\enspace\theabstract@\par}\medskip 
+  \fi
+  \ifx\thekeywords@\undefined\bigskip\else
+   {\narrower\eightpoint\noindent
+   {\bf ä´ÓÁ•¢Î• ·´Æ¢†:}\enspace\thekeywords@\par}\bigskip\medskip 
+  \fi
+}
+\def\document{\let\fontlist@\relax\let\alloclist@\relax\tenpoint}
+\newskip\aboveheadskip       \aboveheadskip\bigskipamount
+\newdimen\belowheadskip      \belowheadskip6\p@
+\def\headfont@{\bf\boldmath}
+\def\penaltyandskip@#1#2{\relax\ifdim\lastskip<#2\relax\removelastskip
+      \ifnum#1=\z@\else\penalty@#1\relax\fi\vskip#2%
+  \else\ifnum#1=\z@\else\penalty@#1\relax\fi\fi}
+\def\nobreak{\penalty\@M}
+ % \ifvmode\def\penalty@{\let\penalty@\penalty\count@@@}%
+ % \everypar{\let\penalty@\penalty\everypar{}}\fi}
+\let\penalty@\penalty
+\def\heading#1\endheading{\head#1\endhead}
+\def\subheading#1{\subhead#1\endsubhead}
+\def\specialheadfont@{\bf}
+\outer\def\specialhead{\par\penaltyandskip@{-200}\aboveheadskip
+  \begingroup\interlinepenalty\@M\rightskip\z@ plus\hsize \let\\\linebreak
+  \specialheadfont@\noindent\ignorespaces}
+\def\endspecialhead{\par\endgroup\nobreak\vskip\belowheadskip}
+\outer\def\head#1\endhead{\par\penaltyandskip@{-200}\aboveheadskip
+ {\headfont@\raggedcenter@\interlinepenalty\@M
+ \ignorespaces#1\endgraf}\nobreak
+ \vskip\belowheadskip
+ \headmark{#1}}
+\let\headmark\eat@
+\newskip\subheadskip       \subheadskip\medskipamount
+\def\subheadfont@{\bf}
+\outer\def\subhead{\nofrills@{.\enspace}\subhead@
+ \DNii@##1\endsubhead{\par\penaltyandskip@{-100}\subheadskip
+  \varindent@{\usualspace@{{\subheadfont@\enspace}}%
+ \subheadfont@\ignorespaces##1\unskip\subhead@}\ignorespaces}%
+ \FN@\next@}
+\outer\def\subsubhead{\nofrills@{.\enspace}\subsubhead@
+ \DNii@##1\endsubsubhead{\par\penaltyandskip@{-50}\medskipamount
+      {\usualspace@{{\it\enspace}}%
+  \it\ignorespaces##1\unskip\subsubhead@}\ignorespaces}%
+ \FN@\next@}
+\def\proclaimheadfont@{\bf}
+\outer\def\proclaim{\runaway@{proclaim}\def\envir@{proclaim}%
+  \nofrills@{.\enspace}\proclaim@
+ \DNii@##1{\penaltyandskip@{-100}\medskipamount\varindent@
+   \usualspace@{{\proclaimheadfont@\enspace}}\proclaimheadfont@
+   \ignorespaces##1\unskip\proclaim@
+  \sl\ignorespaces}%
+ \FN@\next@}
+\outer\def\endproclaim{\let\envir@\relax\par\rm
+  \penaltyandskip@{55}\smallskipamount}
+\def\demoheadfont@{\smc}
+\def\demo{\runaway@{proclaim}\nofrills@{.\enspace}\demo@
+     \DNii@##1{\par\penaltyandskip@\z@\smallskipamount
+  {\usualspace@{{\demoheadfont@\enspace}}%
+  \varindent@\demoheadfont@\ignorespaces##1\unskip\demo@}\rm
+  \ignorespaces}\FN@\next@}
+\def\enddemo{\par\medskip}
+\def\qed{\ifhmode\unskip\nobreak\fi\quad\ifmmode\square\else$\m@th\square$\fi}
+\let\remark\demo
+\def\endremark{}
+\def\definitionheadfont@{\smc}
+\def\definition{\runaway@{proclaim}%
+  \nofrills@{.\definitionheadfont@\enspace}\definition@
+        \DNii@##1{\penaltyandskip@{-100}\medskipamount
+        {\usualspace@{{\definitionheadfont@\enspace}}%
+        \varindent@\definitionheadfont@\ignorespaces##1\unskip\definition@}%
+        \rm \ignorespaces}\FN@\next@}
+\def\enddefinition{\par\medskip}
+\let\example\definition
+\let\endexample\enddefinition
+\newdimen\rosteritemwd
+\newcount\rostercount@
+\newif\iffirstitem@
+\let\plainitem@\item
+\newtoks\everypartoks@
+\def\par@{\everypartoks@\expandafter{\the\everypar}\everypar{}}
+\def\roster{\edef\leftskip@{\leftskip\the\leftskip}%
+ \relaxnext@
+ \rostercount@\z@
+ \def\item{\FN@\rosteritem@}%
+ \DN@{\ifx\next\runinitem\let\next@\nextii@\else
+  \let\next@\nextiii@\fi\next@}%
+ \DNii@\runinitem
+  {\unskip
+   \DN@{\ifx\next[\let\next@\nextii@\else
+    \ifx\next"\let\next@\nextiii@\else\let\next@\nextiv@\fi\fi\next@}%
+   \DNii@[####1]{\rostercount@####1\relax
+    \enspace{\rm(\number\rostercount@)}~\ignorespaces}%
+   \def\nextiii@"####1"{\enspace{\rm####1}~\ignorespaces}%
+   \def\nextiv@{\enspace{\rm(1)}\rostercount@\@ne~}%
+   \par@\firstitem@false
+   \FN@\next@}%
+ \def\nextiii@{\par\par@
+  \penalty\@m\smallskip\vskip-\parskip
+  \firstitem@true}%
+ \FN@\next@}
+\def\rosteritem@{\iffirstitem@\firstitem@false\else\par\vskip-\parskip\fi
+ \leftskip3\parindent\noindent
+ \DNii@[##1]{\rostercount@##1\relax
+  \llap{\hbox to2.5\parindent{\hss\rm(\number\rostercount@)}%
+   \hskip.5\parindent}\ignorespaces}%
+ \def\nextiii@"##1"{%
+  \llap{\hbox to2.5\parindent{\hss\rm##1}\hskip.5\parindent}\ignorespaces}%
+ \def\nextiv@{\advance\rostercount@\@ne
+  \llap{\hbox to2.5\parindent{\hss\rm(\number\rostercount@)}%
+   \hskip.5\parindent}}%
+ \ifx\next[\let\next@\nextii@\else\ifx\next"\let\next@\nextiii@\else
+  \let\next@\nextiv@\fi\fi\next@}
+\def\therosteritem#1{{\rm(\ignorespaces#1\unskip)}}
+\newif\ifnextRunin@
+\def\endroster{\relaxnext@
+ \par\leftskip@
+ \penalty-50 \vskip-\parskip\smallskip
+ \DN@{\ifx\next\Runinitem\let\next@\relax
+  \else\nextRunin@false\let\item\plainitem@
+   \ifx\next\par
+    \DN@\par{\everypar\expandafter{\the\everypartoks@}}%
+   \else
+    \DN@{\noindent\everypar\expandafter{\the\everypartoks@}}%
+  \fi\fi\next@}%
+ \FN@\next@}
+\newcount\rosterhangafter@
+\def\Runinitem#1\roster\runinitem{\relaxnext@
+ \rostercount@\z@
+ \def\item{\FN@\rosteritem@}%
+ \def\runinitem@{#1}%
+ \DN@{\ifx\next[\let\next\nextii@\else\ifx\next"\let\next\nextiii@
+  \else\let\next\nextiv@\fi\fi\next}%
+ \DNii@[##1]{\rostercount@##1\relax
+  \def\item@{{\rm(\number\rostercount@)}}\nextv@}%
+ \def\nextiii@"##1"{\def\item@{{\rm##1}}\nextv@}%
+ \def\nextiv@{\advance\rostercount@\@ne
+  \def\item@{{\rm(\number\rostercount@)}}\nextv@}%
+ \def\nextv@{\setbox\z@\vbox
+  {\ifnextRunin@\noindent\fi
+  \runinitem@\unskip\enspace\item@~\par
+  \global\rosterhangafter@\prevgraf}%
+  \firstitem@false
+  \ifnextRunin@\else\par\fi
+  \hangafter\rosterhangafter@\hangindent3\parindent
+  \ifnextRunin@\noindent\fi
+  \runinitem@\unskip\enspace
+  \item@~\ifnextRunin@\else\par@\fi
+  \nextRunin@true\ignorespaces}%
+ \FN@\next@}
+\def\footmarkform@#1{$\m@th^{#1}$}
+\let\thefootnotemark\footmarkform@
+\def\makefootnote@#1#2{\insert\footins
+ {\interlinepenalty\interfootnotelinepenalty
+ \eightpoint\splittopskip\ht\strutbox\splitmaxdepth\dp\strutbox
+ \floatingpenalty\@MM\leftskip\z@\rightskip\z@\spaceskip\z@\xspaceskip\z@
+ \leavevmode{#1}\footstrut\ignorespaces#2\unskip\lower\dp\strutbox
+ \vbox to\dp\strutbox{}}}
+\newcount\footmarkcount@
+\footmarkcount@\z@
+\def\footnotemark{\let\@sf\empty\relaxnext@
+ \ifhmode\edef\@sf{\spacefactor\the\spacefactor}\/\fi
+ \DN@{\ifx[\next\let\next@\nextii@\else
+  \ifx"\next\let\next@\nextiii@\else
+  \let\next@\nextiv@\fi\fi\next@}%
+ \DNii@[##1]{\footmarkform@{##1}\@sf}%
+ \def\nextiii@"##1"{{##1}\@sf}%
+ \def\nextiv@{\iffirstchoice@\global\advance\footmarkcount@\@ne\fi
+  \footmarkform@{\number\footmarkcount@}\@sf}%
+ \FN@\next@}
+\def\footnotetext{\relaxnext@
+ \DN@{\ifx[\next\let\next@\nextii@\else
+  \ifx"\next\let\next@\nextiii@\else
+  \let\next@\nextiv@\fi\fi\next@}%
+ \DNii@[##1]##2{\makefootnote@{\footmarkform@{##1}}{##2}}%
+ \def\nextiii@"##1"##2{\makefootnote@{##1}{##2}}%
+ \def\nextiv@##1{\makefootnote@{\footmarkform@{\number\footmarkcount@}}{##1}}%
+ \FN@\next@}
+\def\footnote{\let\@sf\empty\relaxnext@
+ \ifhmode\edef\@sf{\spacefactor\the\spacefactor}\/\fi
+ \DN@{\ifx[\next\let\next@\nextii@\else
+  \ifx"\next\let\next@\nextiii@\else
+  \let\next@\nextiv@\fi\fi\next@}%
+ \DNii@[##1]##2{\footnotemark[##1]\footnotetext[##1]{##2}}%
+ \def\nextiii@"##1"##2{\footnotemark"##1"\footnotetext"##1"{##2}}%
+ \def\nextiv@##1{\footnotemark\footnotetext{##1}}%
+ \FN@\next@}
+\def\adjustfootnotemark#1{\advance\footmarkcount@#1\relax}
+\def\footnoterule{\kern-3\p@
+  \hrule width 5pc\kern 2.6\p@}
+\def\captionfont@{\smc}
+\def\topcaption#1#2\endcaption{%
+  {\dimen@\hsize \advance\dimen@-\captionwidth@
+   \rm\raggedcenter@ \advance\leftskip.5\dimen@ \rightskip\leftskip
+  {\captionfont@#1}%
+  \if\notempty{#2}.\enspace\ignorespaces#2\fi
+  \endgraf}\nobreak\bigskip}
+\def\botcaption#1#2\endcaption{%
+  \nobreak\bigskip
+  \setboxz@h{\captionfont@#1\if\notempty{#2}.\enspace\rm#2\fi}%
+  {\dimen@\hsize \advance\dimen@-\captionwidth@
+   \leftskip.5\dimen@ \rightskip\leftskip
+   \noindent \ifdim\wdz@>\captionwidth@
+   \else\hfil\fi
+  {\captionfont@#1}\if\notempty{#2}.\enspace\rm#2\fi\endgraf}}
+\def\@ins{\par\begingroup\def\vspace##1{\vskip##1\relax}%
+  \def\captionwidth##1{\captionwidth@##1\relax}%
+  \setbox\z@\vbox\bgroup} % start a \vbox
+\def\block{\RIfMIfI@\nondmatherr@\block\fi
+       \else\ifvmode\vskip\abovedisplayskip\noindent\fi
+        $$\def\endblock{\par\egroup$$}\fi
+  \vbox\bgroup\advance\hsize-2\indenti\noindent}
+\def\endblock{\par\egroup}
+\def\cite#1{{\rm[{\citefont@\m@th#1}]}}
+\let\citefont@=\rm
+
+\newcount\endcount@ \endcount@=0  % 0 - \end, 1 - article, 2 - toc, annot
+\def\enddocument{\ifcase\endcount@
+ \def\next{\end}\or                                     % 1 - end
+ \ifnum\@issuenumber>0                                  % 2 - article
+  \def\next{\writehtmltoce\writetablee\closedocument}\else 
+  \def\next{\closedocument\postdoc\end}\fi\or           
+ \def\next{\endinput}\fi\next}                          % 3 - toc, annot
+%\def\postdoc{\closeannot\postdoc\closetoc\vfill}
+\def\postdoc{}
+\def\closedocument{\penalty\@M\vskip0.2in
+ \vbox{\let\\\linebreak%\parskip=2\p@
+ \leftskip=\parindent \parindent=0\p@ \rightskip\z@ plus 1fil
+ \count@\z@ \loop\ifnum\count@<\datecount@\advance\count@\@ne
+ \csname date\number\count@\endcsname
+ \repeat
+ \medskip
+ \count@\z@ \loop\ifnum\count@<\addresscount@\advance\count@\@ne
+ \csname address\number\count@\endcsname
+ \csname affil\number\count@\endcsname
+ \csname email\number\count@\endcsname
+ \smallskip
+ \repeat}
+ \def\thethanks@{}\def\filename{}\vfill\supereject}
+
+\newinsert\crightins
+\skip\crightins=\bigskipamount
+\count\crightins=1000
+\dimen\crightins=\vsize
+\newinsert\titleins
+\skip\titleins=\bigskipamount
+\count\titleins=1000
+\dimen\titleins=\vsize
+\def\pagecontents{\ifvoid\topins\else\unvbox\topins\fi
+  \dimen@=\dp\@cclv \unvbox\@cclv % open up \box255
+  \ifvoid\footins
+    \ifvoid\crightins\else\vskip\skip\crightins\footnoterule\unvbox\crightins\fi
+  \else
+    \vskip\skip\footins\footnoterule\unvbox\footins
+    \ifvoid\crightins\else\vskip\skip\crightins\unvbox\crightins\fi
+  \fi
+  \ifvoid\titleins\else\vskip\skip\titleins\unvbox\titleins\fi}
+
+\def\folio{\ifnum\pageno<\z@ \romannumeral-\pageno
+ \else\number\pageno \fi}
+\def\makeheadline{\vbox to .8cm{%
+  {\let\else=\relax \xdef\next@{\firstmark}\xdef\next@@{\topmark}}
+  \ifx\next@\next@@
+     \hbox to\hsize{\strut\ifodd\pageno \rightheadline\else\leftheadline\fi}
+     \kern .4pt\hrule
+  \else
+     \firstmark
+  \fi\vfill}
+  \nointerlineskip}
+\def\leftheadline{\rlap{\tenrm\folio}\hfill \iftrue\botmark\fi \hfill}
+\def\rightheadline{\hfill \expandafter\iffalse\botmark\fi
+  \hfill \llap{\tenrm\folio}}
+\def\infobox{\ifproofmode\rightline{\tentt\jobname}
+      \else\vbox{\baselineskip=8.5\p@
+       \rightline{\eightsl ë®°®‡·™®© ¨†‚•¨†‚®Á•·™®© ¶„‡≠†´}
+       \rightline{\eightsl \@issuemonths,~\number\@issueyear.\
+       íÆ¨~\number\@volume, \No~\number\@issuenumber}}
+      \fi}
+\newtoks\leftheadtoks
+\newtoks\rightheadtoks
+\def\leftheadtext{\nofrills@{\tenpoint\sl}\lht@
+  \DNii@##1{\leftheadtoks\expandafter{{\lht@##1}}%
+    \mark{\the\leftheadtoks\noexpand\else\the\rightheadtoks}
+    \ifsyntax@\setboxz@h{\def\\{\unskip\space\ignorespaces}%
+        \headlinefont@##1}\fi}%
+  \FN@\next@}
+\def\rightheadtext{\nofrills@{\tenpoint\sl}\rht@
+  \DNii@##1{\rightheadtoks\expandafter{{\rht@##1}}%
+    \mark{\the\leftheadtoks\noexpand\else\the\rightheadtoks}%
+    \ifsyntax@\setboxz@h{\def\\{\unskip\space\ignorespaces}%
+        \headlinefont@##1}\fi}%
+  \FN@\next@}
+\def\NoRunningHeads{}
+\def\NoPageNumbers{\gdef\folio{}}
+\output={\output@}
+\def\output@{\shipout\vbox{\makeheadline\pagebody}%
+ \advancepageno \ifnum\outputpenalty>-\@MM\else\dosupereject\fi}
+
+%%%%% biblio
+\newskip\aboveheadskip       \aboveheadskip\bigskipamount
+\newdimen\belowheadskip      \belowheadskip6\p@
+\newdimen\comm@skip
+
+\def\volfont@{\rm}
+\def\authorfont@{\sl}
+\def\nofont@{\bf}
+\def\jourfont@{\rm}
+\def\refsfont{\eightpoint}
+
+\def\penaltyandskip@#1#2{\relax\ifdim\lastskip<#2\relax\removelastskip
+      \ifnum#1=\z@\else\penalty#1\relax\fi\vskip#2%
+  \else\ifnum#1=\z@\else\penalty#1\relax\fi\fi}
+
+\def\endRefs{\par\endgroup}
+
+\newbox\nobox@            \newbox\keybox@           \newbox\bybox@
+\newbox\paperbox@         \newbox\paperinfobox@     \newbox\jourbox@
+\newbox\volbox@           \newbox\issuebox@         \newbox\yrbox@
+\newbox\pagesbox@         \newbox\bookbox@          \newbox\bookinfobox@
+\newbox\publbox@          \newbox\publaddrbox@      \newbox\finalinfobox@
+\newbox\edsbox@           \newbox\langbox@          \newbox\translbox@
+\newbox\toappearbox@      \newbox\inbookbox@        \newbox\preprintbox@
+\newbox\dtbox@
+
+\newdimen\refindentwd
+\setbox\z@\hbox{\nofont@ 00.\enspace}
+\refindentwd\wd\z@
+
+\def\Refs{\relaxnext@
+ \setbox\z@=\hbox{\refsfont\jourfont@.}\comm@skip=\wd\z@
+ \def\next@{\ifx\next\nofrills\def\next@\nofrills{\nextii@}
+            \else\def\next@{\nextii@{ãàíÖêÄíìêÄ}}\fi\next@}%
+ \def\nextii@##1{\if##1\empty\else\penaltyandskip@{-200}\aboveheadskip
+                 \line{\hfil\sl\ignorespaces##1\unskip\hfil}\nobreak
+                 \vskip\belowheadskip\fi
+                 \begingroup\refsfont\sfcode`.=998}%
+ \futurelet\next\next@}
+
+\def\ref{\begingroup\noindent\hangindent\refindentwd
+ \bgroup\let\endrefitem@\egroup\ignorespaces}
+
+\def\endrefitem@{\unskip\egroup}
+
+\def\fixlang@ #1{\def\next{#1}\def\test{a}%
+  \ifcat\next\test\def\next{`#1}\ifnum\lccode\next<128\relax
+    \gdef\pp@{P.~}\gdef\vv@{V.~}\gdef\no@{N~}\fi
+  \fi #1}
+
+\def\pp@{ë.~} \def\vv@{í.~} \def\no@{\No~} \def\preprint@{è‡•Ø‡®≠‚}
+
+\def\no{\endrefitem@\setbox\nobox@\hbox\bgroup\nofont@
+ \def\endrefitem@{\unskip.\enspace\egroup}\ignorespaces}
+
+%% ???
+\def\key#1{\endrefitem@
+  \expandafter\ifx\csname-#1\endcsname\null\immediate\write\citefile
+  {\string\expandafter\string\def\string\csname+#1\string\endcsname
+    {\the\refno}}\def\next{+}\else\def\next{-}\fi
+  \setbox\nobox@\hbox\bgroup\nofont@\def\endrefitem@{\unskip.\enspace\egroup}%
+  \ifproofmode{\sevenrm#1$^\next$\ }\fi\number\refno\ignorespaces}
+
+\def\by{\endrefitem@\setbox\bybox@\hbox\bgroup\authorfont@
+ \def\endrefitem@{\unskip\egroup}\ignorespaces\fixlang@}
+
+\def\paper{\endrefitem@\setbox\paperbox@\hbox\bgroup
+ \def\endrefitem@{\unskip\egroup}\ignorespaces}
+
+\def\preprint{\endrefitem@\setbox\preprintbox@\hbox\bgroup
+ \def\endrefitem@{\unskip\egroup}\def\nofrills{\gdef\preprint@{}}\ignorespaces}
+
+\def\jour{\endrefitem@\setbox\jourbox@\hbox\bgroup\jourfont@
+  \def\endrefitem@{\ifnum\spacefactor=998%
+   \unskip\hskip-\comm@skip\else\unskip\fi\egroup}\ignorespaces\fixlang@}
+
+\def\vol{\endrefitem@\setbox\volbox@\hbox\bgroup\volfont@
+  \def\endrefitem@{\unskip\egroup}\def\nofrills{\gdef\vv@{}}\ignorespaces}
+
+\def\issue{\endrefitem@\setbox\issuebox@\hbox\bgroup
+  \def\endrefitem@{\unskip\egroup}\def\nofrills{\gdef\no@{}}\ignorespaces}
+
+\def\yr{\endrefitem@\setbox\yrbox@\hbox\bgroup
+  \def\endrefitem@{\unskip\egroup}\ignorespaces}
+
+\def\pages{\endrefitem@\setbox\pagesbox@\hbox\bgroup
+  \def\endrefitem@{\unskip\egroup}\def\nofrills{\gdef\pp@{}}\ignorespaces}
+
+\def\page{\endrefitem@\setbox\pagesbox@\hbox\bgroup
+  \def\endrefitem@{\unskip\egroup}\def\nofrills{\gdef\pp@{}}\ignorespaces}
+
+\def\book{\endrefitem@\setbox\bookbox@\hbox\bgroup
+  \def\endrefitem@{\unskip\egroup}\ignorespaces}
+
+\def\inbook{\endrefitem@\setbox\inbookbox@\hbox\bgroup
+  \def\endrefitem@{\ifnum\spacefactor=998
+   \unskip\hskip-\comm@skip\else\unskip\fi\egroup}\ignorespaces\fixlang@}
+
+\def\transl{\endrefitem@\setbox\translbox@\hbox\bgroup
+  \def\endrefitem@{\unskip\egroup}\ignorespaces}
+
+\def\dt{\endrefitem@\setbox\dtbox@\hbox\bgroup
+  \def\endrefitem@{\unskip\egroup}\ignorespaces}
+
+\def\publ{\endrefitem@\setbox\publbox@\hbox\bgroup
+  \def\endrefitem@{\unskip\egroup}\ignorespaces}
+
+\def\publaddr{\endrefitem@\setbox\publaddrbox@\hbox\bgroup
+  \def\endrefitem@{\unskip\egroup}\ignorespaces}
+
+\def\lang{\endrefitem@\setbox\langbox@\hbox\bgroup
+  \def\endrefitem@{\unskip\egroup}\ignorespaces}
+
+\def\toappear{\endrefitem@\setbox\toappearbox@\hbox\bgroup
+  \def\endrefitem@{\unskip\egroup}\ignorespaces(¢ Ø•Á†‚®)}
+
+\def\finalinfo{}
+\def\eds{}
+\def\ed{}
+\def\bookinfo{}
+
+
+\def\endref{\endrefitem@\ifvoid\nobox@\ifvoid\keybox@\indent\fi
+      \else\hbox to\refindentwd{\hss\unhbox\nobox@}\fi
+  \ifvoid\keybox@\else \ifdim\wd\keybox@>\refindentwd
+                          \box\keybox@
+                       \else
+                          \hbox to\refindentwd{\unhbox\keybox@\hfil}%
+                       \fi
+  \fi
+  \ifvoid\jourbox@\else                          % article
+    \unhbox\bybox@\ \unhbox\paperbox@~/\kern-.1em/\ \unhbox\jourbox@{\jourfont@.}\
+   \ifvoid\toappearbox@
+    \unhbox\yrbox@.
+    \ifvoid\volbox@
+          \ifvoid\issuebox@\else\no@\box\issuebox@. \fi
+       \else\vv@\unhbox\volbox@
+       \ifvoid\issuebox@\else, \no@\box\issuebox@\fi.
+    \fi
+    \pp@\box\pagesbox@
+   \else\box\toappearbox@\fi.
+  \fi
+  \ifvoid\bookbox@\else\ifvoid\paperbox@        % book & thesis
+    \ifvoid\bybox@\else\unhbox\bybox@\ \fi\unhbox\bookbox@.
+    \unhbox\publaddrbox@\ifvoid\publbox@\else: \unhbox\publbox@\fi,
+    \unhbox\yrbox@. \ifvoid\volbox@\else\vv@\unhbox\volbox@.\fi
+  \fi\fi
+  \ifvoid\inbookbox@\else\ifvoid\paperbox@\else    % in book & conf
+    \unhbox\bybox@\ \unhbox\paperbox@~/\kern-.1em/\
+    \unhbox\inbookbox@. \unhbox\publaddrbox@
+    \ifvoid\publbox@\else: \unhbox\publbox@\fi, \unhbox\yrbox@.
+    \ifvoid\volbox@\else\vv@\unhbox\volbox@. \fi
+    \pp@\box\pagesbox@.
+  \fi\fi
+  \ifvoid\preprintbox@\else                        % preprint
+    \unhbox\bybox@\ \unhbox\preprintbox@.
+    \unhbox\publaddrbox@, \unhbox\yrbox@.
+    \box\pagesbox@\ (\preprint@/\unhbox\publbox@; \no@\box\issuebox@).
+  \fi
+  \ifvoid\paperbox@\else\ifvoid\inbookbox@\ifvoid\publbox@\else  % VINITI
+    \unhbox\bybox@\ \unhbox\paperbox@~/\ \unhbox\publbox@.
+    \unhbox\publaddrbox@, \unhbox\yrbox@. \box\pagesbox@\
+    Ñ•Ø. ¢ Çàçàíà~\box\dtbox@, \no@~\box\issuebox@.
+  \fi\fi\fi
+\par\endgroup\gdef\pp@{ë.~}\gdef\vv@{í.~}\gdef\no@{\No~}%
+\gdef\preprint@{è‡•Ø‡®≠‚}}
+
+
+\def\mref#1{\begingroup\noindent\hangindent\refindentwd
+ \hbox to\refindentwd{\hss#1\enspace}\ignorespaces}
+
+\def\endmref{\par\endgroup}
+
+%%%%%%%%%%%%%% Index
+\message{index,}
+\newif\ifopind@x \opind@xfalse
+\newwrite\ind@xfile
+\outer\def\openindex{%
+  \ifopind@x\else
+    \opind@xtrue\immediate\openout\ind@xfile index\number\@issuenumber.tex
+    \relax\immediate\write\ind@xfile{\noexpand\message{à≠§•™·}}%
+  \fi}
+
+\def\closeindex{\ifopind@x\closeout\ind@xfile\W@{Index is
+  written on index\number\@issuenumber.tex}\opind@xfalse\fi}
+
+\def\makeindex{\mark{\infobox}%
+  \xwritetoc{ì™†ß†‚•´Ï\string\page{\folio}}%
+  \rightheadtext{ì™†ß†‚•´Ï}\leftheadtext{ì™†ß†‚•´Ï}%
+  \vglue24pt plus 2pt\centerline{\Itensl ìäÄáÄíÖãú}\bigskip\bigskip
+  \line{\hfil\bf çÆ¨•‡}\smallskip
+ {\ninerm\baselineskip=10.5pt\catcode`\@=11
+  \input@{ind\number\@issueyear.tex}\vfill\eject}}
+
+\def\makeind@xline{\ifopind@x
+  \write\ind@xfile{\the\xauthortoks@\space
+  \string\ind@xline{\the\xauthortoks@}{\the\titletoks@}{\number\@issuenumber}{\the\count0}}
+  \fi}
+
+\def\ind@xline#1#2#3#4{\smallskip\line{%
+  \vtop{\hsize=.32\hsize\parindent=0pt\relax
+  \rightskip=0pt plus 1fil\let\\=\break\ninebf#1\par}\hfil
+  \vtop{\hsize=.62\hsize\raggedright\noindent#2}\hfil
+  \hbox to .05\hsize{\hfil\ninebf#3}}\smallbreak}
+
+%%%%%% makepdf, dvi, ps, 
+{\catcode`\|=0 \catcode`\\=12 |gdef|bslash{\}}
+\def\pdfamsline{pdfams.bat}
+\def\amstexline{amstex.bat}
+\def\dvipsline{dvips}
+\def\dostowinline{dos2win.exe}
+\def\TeXdrive{D}
+\def\GetP#1#2#3{\proofmodefalse\overfullrule=0pt
+                \issueyear{#1}\issuenumber{#2}\pageno=#3 }
+\ifx\pdfpageheight\undefined\else\pdfpageheight=11in
+                                 \pdfpagewidth=8.5in \fi
+\newwrite\makepdffile \newwrite\makedvifile \newwrite\makepsfile
+\newwrite\makeWINfile
+\newwrite\makeallfile 
+\newif\ifmakeallopen
+\def\openmakeall{\makeallopentrue
+  \openout\makeallfile makeall.bat
+%   \write\makeallfile{call make1251.bat}%
+   \write\makeallfile{call makedvi.bat}%
+   \write\makeallfile{call makeps.bat}%
+   \write\makeallfile{call makepdf.bat}%
+%  \openout\makeWINfile make1251.bat
+%   \write\makeWINfile{if not exist 1251 md 1251}%
+%   \write\makeWINfile{copy \space "\TeXdrive:\bslash localtexmf\bslash tex\bslash
+%                      local\bslash SibMatZh.sty" test.sty}%
+%   \write\makeWINfile{\dostowinline\space  test.sty SMZh.sty}%
+%   \write\makeWINfile{if exist test.sty del test.sty}%
+  \openout\makepdffile makepdf.bat
+   \write\makepdffile{if not exist pdf md pdf}%
+  \openout\makedvifile makedvi.bat
+   \write\makedvifile{if not exist dvi md dvi}%
+  \openout\makepsfile makeps.bat
+   \write\makepsfile{if not exist ps md ps}}
+\def\closemakeall{\makeallopenfalse \closeout\makepdffile
+\closeout\makedvifile \closeout\makepsfile }
+
+\def\writemakealltoc{\ifmakeallopen 
+%  \write\makeWINfile{\dostowinline\space cont\the\@issuenumber.tex
+%                     1251\bslash cont\the\@issuenumber.win}%
+  \write\makepdffile{call \pdfamsline\space 
+    --output-directory=pdf %--translate-file=866-1251.tcx
+    --job-name=toc0\the\@volume0\the\@issuenumber\space
+    \string\documentstyle{SibMatZh}%
+    \string\input\space cont\the\@issuenumber.tex}%
+  \write\makedvifile{call \amstexline\space
+    --output-directory=dvi %--translate-file=866-1251.tcx
+    --job-name=toc0\the\@volume0\the\@issuenumber\space
+    \string\documentstyle{SibMatZh}%
+    \string\input\space cont\the\@issuenumber.tex}%
+  \write\makepsfile{call \dvipsline\space dvi\bslash toc0\the\@volume0\the\@issuenumber.dvi
+    -ops\bslash toc0\the\@volume0\the\@issuenumber.ps}
+\fi}
+
+\def\writemakeall{\ifmakeallopen
+%  \write\makeWINfile{\dostowinline\space \filename.ams 1251\bslash\filename.win}%
+  \write\makepdffile{call \pdfamsline\space
+    --output-directory=pdf %--translate-file=866-1251.tcx
+    --job-name=\filename\space
+    \string\documentstyle{SibMatZh}
+    \string\GetP{\the\@issueyear}{\the\@issuenumber}{\the\pageno}\space
+    \string\input\space\filename.ams\string\end}%
+  \write\makedvifile{call \amstexline\space
+    --output-directory=dvi %--translate-file=866-1251.tcx
+    --job-name=\filename\space
+    \string\documentstyle{SibMatZh}
+    \string\GetP{\the\@issueyear}{\the\@issuenumber}{\the\pageno}\space
+    \string\input\space\filename.ams\string\end}%
+  \write\makepsfile{call \dvipsline\space dvi\bslash\filename.dvi
+    -ops\bslash\filename.ps}%
+\fi}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% smzhmac:
+%%%%%%%%%% 5 ·‚. „¢•´®Á•≠®Ô
+\def\n@space{\nulldelimiterspace=0pt }
+\def\biggg#1{{\hbox{$\left#1\vbox to 20.5pt{}\right.\n@space$}}}
+\def\bigggl{\mathopen\biggg}
+\def\bigggr{\mathclose\biggg}
+
+\def\fraction#1/#2{\leavevmode\kern.1em
+\raise.5ex\hbox{\the\scriptfont0 #1}\kern-.1em
+/\kern-.15em\lower.25ex\hbox{\the\scriptfont0 #2}}
+
+\def\leftbbr{\mathopen{\kern1pt \vrule height8pt depth2pt width1pt\kern1.5pt}}
+\def\leftbbrr{\mathopen{\kern1pt\vrule height10pt depth3pt width1pt\kern1.5pt}}
+\def\rightbbrr {\mathclose{\kern1.5pt \vrule height10pt depth3pt width1pt\kern1pt}}
+\def\rightbbr {\mathclose{\kern1.5pt \vrule height8pt depth2pt width1pt\kern1pt}}
+
+\let\emptyset=\varnothing
+\let\widebar=\overline
+
+\input@{smzhmac.tex}
+\tenpoint
+\catcode`\@=\active
+
+\let\abstract=\xabstract
+
+
+\endinput
