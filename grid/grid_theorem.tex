@@ -1,0 +1,173 @@
+\documentclass[a4paper,14pt]{article} %размер бумаги устанавливаем А4, шрифт 12пунктов
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel} %используем русский и английский языки с переносами
+\usepackage{amssymb,amsfonts,amsmath,mathtext,cite,enumerate,float,amsthm} %подключаем нужные пакеты расширений
+\usepackage[pdftex,unicode,colorlinks=true,citecolor=black,linkcolor=black]{hyperref}
+%\usepackage[pdftex,unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{indentfirst} % включить отступ у первого абзаца
+\usepackage[dvips]{graphicx} %хотим вставлять рисунки?
+\graphicspath{{illustr/}}%путь к рисункам
+
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.} % Заменяем библиографию с квадратных скобок на точку:
+\makeatother %Смысл этих трёх строчек мне непонятен, но поверим "Запискам дебианщика"
+
+\usepackage{geometry} % Меняем поля страницы.
+\geometry{left=4cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=2cm}% верхнее поле
+\geometry{bottom=2cm}% нижнее поле
+
+\renewcommand{\theenumi}{\arabic{enumi}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumi}{\arabic{enumi}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\theenumii}{.\arabic{enumii}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\theenumiii}{.\arabic{enumiii}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}% Меняем везде перечисления на цифра.цифра
+
+\sloppy
+
+
+\renewcommand\normalsize{\fontsize{14}{25.2pt}\selectfont}
+
+\begin{document}
+\renewcommand{\bibname}{Список цитированной литературы}
+\renewcommand\refname{\bibname}
+% !!!
+% Здесь начинается реальный ТеХ-код
+% Всё, что выше - беллетристика
+
+\paragraph{Определение.}
+Системой Эрдёша называется множество точек $\{M_1, M_2, ..., M_n\}$ на плоскости, не содержащееся ни в какой прямой,
+такое, что для любых $i\neq j$ расстояние $|M_i M_j| \in \mathbb{N}$,
+т.е. является натуральным числом.
+
+\paragraph{Лемма 1.}
+
+Для любой системы Эрдёша $S=\{M_1, M_2, ..., M_n\}$ существует такое целое число $m$, не превосходящее её диаметра $diam(S)$,
+что можно выбрать систему координат способом, при котором координаты каждой точки системы будут иметь вид
+\begin{equation}
+	M_i = \left(
+		\frac{p_i}{2m}
+		;
+		\frac{\pm\sqrt{q_i}}{2m}
+	\right),
+\end{equation}
+где $p_i \in \mathbb{Z}, q_i \in \mathbb{N}$.
+
+
+\paragraph{Доказательство.}
+Пусть $|M_1 M_2| = m$, тогда, очевидно, $m \leq diam(S)$.
+Введём систему координат так, что $M_1=(-m/2, 0)$, $M_2=(m/2, 0)$
+Рассмотрим некоторую другую точку $M_i=(x, y)\in S$.
+Обозначим $M_i M_1 = a$, $M_i M_2 = b$.
+Тогда $M_i$ лежит на пересечении двух окружностей,
+задаваемых уравнениями
+\begin{gather}
+	\left(-\frac{m}{2} - x\right)^2 + y ^2 = a^2,
+\\
+	\left( \frac{m}{2} - x\right)^2 + y ^2 = b^2.
+\end{gather}
+
+Решив её, имеем
+\begin{gather}
+	x = \frac{a^2 - b^2}{2 m} = \frac{p_i}{2m},
+\\
+%	y = \frac{\pm \sqrt{-(a^2 - b^2)^2 + m^2 (2 a^2 + 2 b^2  - m^2)} }{2m}.
+	y = \pm\sqrt{a^2 - \left(\frac{m}{2}+x\right)^2} =
+	\pm\sqrt{a^2 - \left(\frac{m}{2}+\frac{p_i}{2m}\right)^2} =
+	\frac{\pm\sqrt{q_i}}{2m},
+\end{gather}
+что и требовалось доказать.
+
+\paragraph{Лемма 2.}
+
+Для любой системы Эрдёша $S=\{M_1, M_2, ..., M_n\}$ существует такое целое число $m$, не превосходящее её диаметра $diam(S)$,
+и такое натуральное число $q$, свободное от квадратов (ссылка!!),
+что можно выбрать систему координат способом, при котором координаты каждой точки системы будут иметь вид
+\begin{equation}
+	M_i = \left(
+		\frac{p_i}{2m}
+		;
+		\frac{s_i\sqrt{q}}{2m}
+	\right),
+\end{equation}
+где $p_i, s_i \in \mathbb{Z}$.
+
+\paragraph{Доказательство.}
+Рассмотрим две точки $M_1, M_2 \in S$.
+По лемме 1 их координаты (при введении соответствующей системы координат) выражаются в виде
+\begin{equation}
+	M_1 = \left(
+		\frac{p_1}{2m}
+		;
+		\frac{\pm\sqrt{q_1}}{2m}
+	\right),
+	M_2 = \left(
+		\frac{p_2}{2m}
+		;
+		\frac{\pm\sqrt{q_2}}{2m}
+	\right),
+\end{equation}
+где $p_i \in \mathbb{Z}, q_i \in \mathbb{N}$, $i=1,2$.
+
+Тогда
+\begin{equation}
+	|M_1 M_2| = \frac{1}{2m} \sqrt{p_1^2 + p_2^2 - 2p_1p_2 + q_1 + q_2 - 2\sqrt{q_1 q_2}}
+\end{equation}
+Для того, чтобы расстояние $|M_1 M_2| \in \mathbb{N}$, необходимо,
+чтобы $|M_1 M_2|^2 \in \mathbb{N}$, для чего, в свою очередь, необходимо, чтобы
+$p_1^2 + p_2^2 - 2p_1p_2 + q_1 + q_2 - 2\sqrt{q_1 q_2} \in \mathbb{N}$,
+что влечёт $\sqrt{q_1 q_2} \in \mathbb{N}$,
+что, в свою очередь, требует соотношения
+$q_1 = s_1^2 \sqrt{q}$, $q_2 = s_2^2 \sqrt{q}$.
+Лемма доказана.
+
+\paragraph{Лемма 3.}
+Число $q$ в лемме 2 не зависит от выбора <<опорных>> точек для системы координат в лемме 1.
+
+\paragraph{Доказательство.}
+Покажем для простоты, что при замене <<опорной>> точки $M_2$ на $M_3$ число $q$ сохраняется.
+Пусть в системе координат с <<опорными>> точками $M_1$ и $M_2$ имеем
+$M_1=(x_1, 0)$, $M_2=(x_2, 0)$, $M_3=(x_3, y_3)$,
+где $x_1, x_2, x_3$~--- рациональные, $y_3 = \frac{s_3\sqrt{q}}{2m}$ по лемме 2;
+и пусть в системе координат с <<опорными>> точками $M_1$ и $M_3$ имеем
+$M_1=(\tilde{x}_1, 0)$, $M_3=(\tilde{x}_3, 0)$, $M_2=(\tilde{x}_2, \tilde{y}_2)$,
+где $\tilde{x}_1, \tilde{x}_2, \tilde{x}_3$~--- рациональные, $\tilde{y}_2 = \frac{s_2\sqrt{\tilde{q}}}{2\tilde{m}}$ по лемме 2.
+Тогда площадь треугольника $M_1 M_2 M_3$ двумя способами выражается как полупроизведение основания на высоту:
+\begin{equation}
+	\frac{1}{2} |y_3| \cdot |x_1 - x_2|
+	=
+	\frac{1}{2} |\tilde{y}_2| \cdot |\tilde{x}_1 - \tilde{x}_3|,
+\end{equation}
+откуда имеем
+\begin{equation}
+	|y_3|
+	=
+	|\tilde{y}_2| \frac{ |\tilde{x}_1 - \tilde{x}_3|}{|x_1 - x_2|},
+\end{equation}
+или, подставив выражения для $\tilde{y}_2$ и $y_3$,
+\begin{equation}
+	\left|\frac{s_3\sqrt{q}}{2m}\right|
+	=
+	\left|\frac{s_2\sqrt{\tilde{q}}}{2\tilde{m}}\right| \frac{ |\tilde{x}_1 - \tilde{x}_3|}{|x_1 - x_2|},
+\end{equation}
+
+Сгруппировав иррациональные множители в левой части, а рациональные~--- в правой, получим
+\begin{equation}
+	\left|\frac{\sqrt{q}}{\sqrt{\tilde{q}}}\right|
+	=
+	\left|\frac{s_2}{2\tilde{m}}\right| \frac{ |\tilde{x}_1 - \tilde{x}_3|\cdot|2m|}{|s_3|\cdot|x_1 - x_2|},
+\end{equation}
+или, что то же самое,
+\begin{equation}
+	\sqrt{\frac{q}{\tilde{q}}}
+	=
+	\left|\frac{s_2}{2\tilde{m}}\right| \frac{ |\tilde{x}_1 - \tilde{x}_3|\cdot|2m|}{|s_3|\cdot|x_1 - x_2|},
+\end{equation}
+
+Так как $q$ b $\tilde{q}$ свободны от квадратов, то $\frac{q}{\tilde{q}} = 1$, т.е. $q = \tilde{q}$,
+что и требовалось доказать.
+
+\end{document}
