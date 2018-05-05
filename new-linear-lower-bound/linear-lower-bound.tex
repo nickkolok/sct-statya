@@ -1,0 +1,92 @@
+\documentclass[a4paper,14pt]{article} %размер бумаги устанавливаем А4, шрифт 12пунктов
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel} %используем русский и английский языки с переносами
+\usepackage{amssymb,amsfonts,amsmath,mathtext,enumerate,float,amsthm} %подключаем нужные пакеты расширений
+\usepackage[pdftex,unicode,colorlinks=true,citecolor=black,linkcolor=black]{hyperref}
+%\usepackage[pdftex,unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{indentfirst} % включить отступ у первого абзаца
+\usepackage[dvips]{graphicx} %хотим вставлять рисунки?
+\graphicspath{{illustr/}}%путь к рисункам
+
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.} % Заменяем библиографию с квадратных скобок на точку:
+\makeatother %Смысл этих трёх строчек мне непонятен, но поверим "Запискам дебианщика"
+
+\usepackage{geometry} % Меняем поля страницы.
+\geometry{left=4cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=2cm}% верхнее поле
+\geometry{bottom=2cm}% нижнее поле
+
+\renewcommand{\theenumi}{\arabic{enumi}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumi}{\arabic{enumi}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\theenumii}{.\arabic{enumii}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\theenumiii}{.\arabic{enumiii}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}% Меняем везде перечисления на цифра.цифра
+
+\sloppy
+
+
+\renewcommand\normalsize{\fontsize{14}{25.2pt}\selectfont}
+
+\usepackage[backend=biber,style=gost-numeric,sorting=none]{biblatex}
+\addbibresource{../common/notmy.bib}
+\addbibresource{../common/my.bib}
+
+
+\begin{document}
+\renewcommand{\bibname}{Список цитированной литературы}
+\renewcommand\refname{\bibname}
+% !!!
+% Здесь начинается значащий текст
+% Всё, что выше - беллетристика
+
+\paragraph{Определение.}
+Системой Эрдёша называется множество точек $\{M_1, M_2, ..., M_n\}$ на плоскости, не содержащееся ни в какой прямой,
+такое, что для любых $i\neq j$ расстояние $|M_i M_j| \in \mathbb{N}$,
+т.е. является натуральным числом.
+
+\paragraph{Лемма 1.}
+В системе Эрдёша $S$ не может быть точек $M_1$, $M_2$, $M_3$, $M_4$,
+лежащих на одной прямой $m$ и таких, что $|M_1 M_2| = |M_3 M_4| = 1$.
+
+\paragraph{Доказательство.}
+Обозначим через $m_{12}$ и $m_{34}$ серединные перпендикуляры к отрезкам $M_1 M_2$ и $m_3 M_4$ соответственно.
+
+Пусть точка $M\in S$.
+Тогда либо $|MM_1| - |MM_2| = 0$ и $M\in m_{12}$, либо $\left||MM_1| - |MM_2|\right| = 1$ и $M\in m$,
+т.е. в любом случае $M\in m \cup m_{12}$.
+Аналогично $M\in m \cup m_{34}$.
+Следовательно, $M\in (m \cup m_{12}) \cap (m \cup m_{34}) = m \cup (m_{12} \cap m_{34}) = m$,
+т.к. $m_{12} \cap m_{34} = \varnothing$ (перпендикуляры к одной прямой, проведённые в разных точках, не пересекаются между собой).
+
+В силу произвольности выбора $M \in S$ получаем $S \subset m$, чего быть не должно.
+
+
+\paragraph{Следствие 1.1.}
+Пусть $S$~--- система Эрдёша, $\mathop{diam} S = d$.
+Тогда ни на какой прямой не лежит более $(d+3)/2$ точек из $S$.
+
+\paragraph{Доказательство.}
+Предположим проивное.
+Очевидно, что на прямой $m$ может быть не более $d+1$ точек системы $S$.
+
+Пусть сначала $d$ чётно.
+Тогда из каждой пары соседних точек, кроме, быть может, одной пары,
+нужно выбросить хотя бы одну точку в силу леммы 1.
+Итого мы выбросим не менее $d/2$ точек,
+останется не более $(d+2)/2$ точек.
+
+Пусть теперь $d$ нечётно.
+Тогда нужно выбросить не менее $(d-1)/2$ точек.
+Останется не более $(d+3)/2$ точек.
+
+
+
+
+\cite{our-mz-rus}
+\printbibliography
+
+\end{document}
