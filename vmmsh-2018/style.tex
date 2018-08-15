@@ -1,43 +1,58 @@
- \documentclass[a4paper,10pt]{book}
- \usepackage{amsmath, amsfonts, amssymb}
- \usepackage{amscd}
- \usepackage[russian]{babel}
+\documentclass[a4paper,10pt]{book}
 
 
- \input diagxy
- \sloppy
- \textheight = 165mm
- \textwidth = 110mm
- \topmargin = -7mm
- \oddsidemargin=-10mm
- \evensidemargin=-10mm
+\usepackage{amsthm}
+\newtheoremstyle{VMMSHtheorem}% name of the style to be used
+	{\topsep}% measure of space to leave above the theorem. E.g.: 3pt
+	{\topsep}% measure of space to leave below the theorem. E.g.: 3pt
+	{\sl}% name of font to use in the body of the theorem
+	{\parindent}% measure of space to indent
+	{\bfseries}% name of head font
+	{.}% punctuation between head and body
+	{ }% space after theorem head; " " = normal interword space
+	{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
 
- \begin{document}
+\theoremstyle{VMMSHtheorem}
+\newtheorem{theorem}{Теорема}
 
- \makeatletter%{@}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{amscd}
+\usepackage[russian]{babel}
 
-  \newcommand{\Title}[1]{\begin{center}\large\uppercase{#1}\end{center}\par}
+\input diagxy
+\sloppy
+\textheight = 165mm
+\textwidth = 110mm
+\topmargin = -7mm
+\oddsidemargin=-10mm
+\evensidemargin=-10mm
 
- \newcommand{\Author}[2]{\begin{center}\textbf{\large #1} \end{center} \medskip
-                    \renewcommand{\@evenhead}{\raisebox{1mm}[\headheight][0pt]%
-                    {\vbox{\hbox to\textwidth{\thepage \hfill\strut {\small #2}\hfill}\hrule}}} }
+\begin{document}
 
- \newcommand{\shorttitle}[1]{\renewcommand{\@oddhead}{\raisebox{1mm}[\headheight][0pt]%
-                    {\vbox{\hbox to\textwidth{\strut \hfill{\small #1}\hfill\thepage}\hrule}}} }
- \headsep=2mm
+\makeatletter%{@}
 
-  \newcommand{\l@abcd}[2]{{\begin{center}\par\medskip\normalsize\par\smallskip\noindent\hangindent5pt\hangafter=1{\bf #1}\end{center}}\par\medskip}
+\newcommand{\Title}[1]{\begin{center}\large\uppercase{#1}\end{center}\par}
 
- \renewcommand{\section}{\@startsection{section}{1}{\parindent}
-                        {3ex plus 1ex minus .2ex}{2ex plus .2ex}{\bf\centering}}
- \renewcommand{\l@section}[2]{\small\leftskip0pt\par\noindent\hangindent27pt\hangafter=1{\qquad#1} \dotfill~~#2\par}
+\newcommand{\Author}[2]{\begin{center}\textbf{\large #1} \end{center} \medskip
+				\renewcommand{\@evenhead}{\raisebox{1mm}[\headheight][0pt]%
+				{\vbox{\hbox to\textwidth{\thepage \hfill\strut {\small #2}\hfill}\hrule}}} }
 
- \renewcommand{\l@part}[2]{\normalsize\leftskip0pt\par\smallskip\noindent\hangindent17pt\hangafter=1{\bf #1} \normalsize\dotfill~~#2\smallskip\par}
+\newcommand{\shorttitle}[1]{\renewcommand{\@oddhead}{\raisebox{1mm}[\headheight][0pt]%
+				{\vbox{\hbox to\textwidth{\strut \hfill{\small #1}\hfill\thepage}\hrule}}} }
+\headsep=2mm
 
- \makeatother%@
+\newcommand{\l@abcd}[2]{{\begin{center}\par\medskip\normalsize\par\smallskip\noindent\hangindent5pt\hangafter=1{\bf #1}\end{center}}\par\medskip}
 
- \newcommand{\affiliation}[1]{{\itshape #1}}
- \newcommand{\email}[1]{\texttt{#1}}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\section}{\@startsection{section}{1}{\parindent}
+					{3ex plus 1ex minus .2ex}{2ex plus .2ex}{\bf\centering}}
+\renewcommand{\l@section}[2]{\small\leftskip0pt\par\noindent\hangindent27pt\hangafter=1{\qquad#1} \dotfill~~#2\par}
 
- \newcommand{\bib}[2]{{\leftskip-10pt\baselineskip=11pt\footnotesize\item{}\textsl{#1}~#2\par}}
+\renewcommand{\l@part}[2]{\normalsize\leftskip0pt\par\smallskip\noindent\hangindent17pt\hangafter=1{\bf #1} \normalsize\dotfill~~#2\smallskip\par}
+
+\makeatother%@
+
+\newcommand{\affiliation}[1]{{\itshape #1}}
+\newcommand{\email}[1]{\texttt{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\bib}[2]{{\leftskip-10pt\baselineskip=11pt\footnotesize\item{}\textsl{#1}~#2\par}}
