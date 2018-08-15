@@ -242,6 +242,33 @@ $|M|=n$ и $M \not\subset L$ дл€ любой пр€мой $L \subset\mathbb{R}^2$.
 	то можно построить множество из $\mathfrak{M}_{n+2}$.
 \end{proof}
 
+ƒругим примером множества из $\mathfrak{M}_{n+2}$ €вл€етс€ множество
+\begin{equation*}
+	M = \{M_i, i =0,1,...,n+1\},
+\end{equation*}
+где
+$M_k = (2^{n-k}-2^k,0)$, $k=0,1,...,n$;
+$M_{n+1} = (2^{n+1},0)$.
+ќчевидно, дл€ $0\leqslant i \leqslant j \leqslant n$ выполнено
+$|M_i- M_j|\in\mathbb{N}$.
+«аметим, что дл€ $k=0,1,...,n$
+\begin{multline*}
+	|M_{n+1} - M_k| =
+	\sqrt{(2^{n+1})^2 + (2^{n-k}-2^k)^2}
+	=
+	\\=
+	\sqrt{(2^{n+1})^2 + (2^{n-k})^2 - 2\cdot 2^k \cdot 2^{n-k} + (2^k)^2}
+	=
+	\\=
+	\sqrt{4\cdot (2^{n})^2 + (2^{n-k})^2 - 2\cdot 2^{n} + (2^k)^2}
+	=
+	\\=
+	\sqrt{(2^{n-k})^2 + 2\cdot 2^{n} + (2^k)^2}
+	=
+	2^{n-k} + 2^k
+	\in\mathbb{N}
+	.
+\end{multline*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
