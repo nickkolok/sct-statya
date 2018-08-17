@@ -1,5 +1,6 @@
 \documentclass[a4paper,10pt]{book}
 
+\usepackage{cite}
 
 \usepackage{amsthm}
 \newtheoremstyle{VMMSHtheorem}% name of the style to be used
@@ -41,6 +42,33 @@
 \newtheorem{example}[theorem]{Пример}
 \newtheorem*{example*}{Пример}
 
+
+
+
+\newcommand{\vmmshbibcaption}[1]{
+	\par\bigskip\centerline{\bf #1}\smallskip
+}
+% Setting the desired design for bibliographies
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}
+  {\chapter*}
+  {\vmmshbibcaption}
+  {}
+  {}
+
+
+
+\makeatletter%{@}
+
+\newcommand{\vmmshnothing}[2]{}
+
+\patchcmd{\thebibliography}
+  {\@mkboth}
+  {\vmmshnothing}
+  {}
+  {}
+
+\makeatother%{@}
 
 
 \newcommand{\prepareThesis}{
@@ -96,3 +124,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\bib}[2]{{\leftskip-10pt\baselineskip=11pt\footnotesize\item{}\textsl{#1}~#2\par}}
+
+
+\addto\captionsenglish{
+	\renewcommand\bibname{References}
+}
+
