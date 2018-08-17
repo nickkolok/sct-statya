@@ -1,5 +1,8 @@
 \documentclass[a4paper,10pt]{book}
 
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+
 \usepackage{cite}
 
 \usepackage{amsthm}
@@ -15,14 +18,14 @@
 
 \theoremstyle{VMMSHtheorem}
 
-\newtheorem{theorem}{Теорема}
-\newtheorem*{theorem*}{Теорема}
-\newtheorem{lemma}[theorem]{Лемма}
-\newtheorem*{lemma*}{Лемма}
-\newtheorem{proposition}[theorem]{Утверждение}
-\newtheorem*{proposition*}{Утверждение}
-\newtheorem{corollary}[theorem]{Следствие}
-\newtheorem*{corollary*}{Следствие}
+\newtheorem{theorem}{РўРµРѕСЂРµРјР°}
+\newtheorem*{theorem*}{РўРµРѕСЂРµРјР°}
+\newtheorem{lemma}[theorem]{Р›РµРјРјР°}
+\newtheorem*{lemma*}{Р›РµРјРјР°}
+\newtheorem{proposition}[theorem]{РЈС‚РІРµСЂР¶РґРµРЅРёРµ}
+\newtheorem*{proposition*}{РЈС‚РІРµСЂР¶РґРµРЅРёРµ}
+\newtheorem{corollary}[theorem]{РЎР»РµРґСЃС‚РІРёРµ}
+\newtheorem*{corollary*}{РЎР»РµРґСЃС‚РІРёРµ}
 
 \newtheoremstyle{VMMSHremark}% name of the style to be used
 	{\topsep}% measure of space to leave above the theorem. E.g.: 3pt
@@ -35,12 +38,12 @@
 	{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
 
 \theoremstyle{VMMSHremark}
-\newtheorem{definition}[theorem]{Определение}
-\newtheorem*{definition*}{Определение}
-\newtheorem{remark}[theorem]{Замечание}
-\newtheorem*{remark*}{Замечание}
-\newtheorem{example}[theorem]{Пример}
-\newtheorem*{example*}{Пример}
+\newtheorem{definition}[theorem]{РћРїСЂРµРґРµР»РµРЅРёРµ}
+\newtheorem*{definition*}{РћРїСЂРµРґРµР»РµРЅРёРµ}
+\newtheorem{remark}[theorem]{Р—Р°РјРµС‡Р°РЅРёРµ}
+\newtheorem*{remark*}{Р—Р°РјРµС‡Р°РЅРёРµ}
+\newtheorem{example}[theorem]{РџСЂРёРјРµСЂ}
+\newtheorem*{example*}{РџСЂРёРјРµСЂ}
 
 
 
@@ -99,7 +102,7 @@
 
 \makeatletter%{@}
 
-\newcommand{\Title}[1]{\begin{center}\large\uppercase{#1}\end{center}\prepareThesis\par}
+\newcommand{\Title}[1]{\begin{center}\large\MakeUppercase{#1}\end{center}\prepareThesis\par}
 
 \newcommand{\Author}[2]{\begin{center}\textbf{\large #1} \end{center} \medskip
 				\renewcommand{\@evenhead}{\raisebox{1mm}[\headheight][0pt]%
