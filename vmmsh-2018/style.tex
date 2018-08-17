@@ -42,6 +42,19 @@
 \newtheorem*{example*}{Пример}
 
 
+
+\newcommand{\prepareThesis}{
+	\setcounter{equation}{0}
+	\setcounter{figure}{0}
+	\setcounter{table}{0}
+	\setcounter{footnote}{0}
+	\setcounter{theorem}{0}
+	\renewcommand{\theenumi}{\arabic{enumi}}
+	\renewcommand{\labelenumi}{\theenumi)} % Yes, we have encountered such problems!
+	\selectlanguage{russian} % To avoid problems if the language was switched to English (e.g. in the bibliography).
+}
+
+
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage{amscd}
 \usepackage[english,russian]{babel}
@@ -58,7 +71,7 @@
 
 \makeatletter%{@}
 
-\newcommand{\Title}[1]{\begin{center}\large\uppercase{#1}\end{center}\par}
+\newcommand{\Title}[1]{\begin{center}\large\uppercase{#1}\end{center}\prepareThesis\par}
 
 \newcommand{\Author}[2]{\begin{center}\textbf{\large #1} \end{center} \medskip
 				\renewcommand{\@evenhead}{\raisebox{1mm}[\headheight][0pt]%
