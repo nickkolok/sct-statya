@@ -196,19 +196,19 @@ $|M|=n$ и $M \not\subset L$ для любой прямой $L \subset\mathbb{R}
 \end{equation*}
 где
 $M_i = (2^{n-i}-2^i,0)$, $i=0,1,...,n$;
-$M_{n+1} = (2^{n+1},0)$.
+$M_{n+1} = (0,\sqrt{2^{n+2}})$.
 Очевидно, для $0\leqslant i \leqslant j \leqslant n$ выполнено
 $|M_i- M_j|\in\mathbb{N}$.
 Заметим, что для $i=0,1,...,n$
 \begin{multline*}
 	|M_{n+1} - M_i| =
-	\sqrt{(2^{n+1})^2 + (2^{n-i}-2^i)^2}
+	\sqrt{2^{n+2} + (2^{n-i}-2^i)^2}
 	=
 	\\=
-	\sqrt{(2^{n+1})^2 + (2^{n-i})^2 - 2\cdot 2^i \cdot 2^{n-i} + (2^i)^2}
+	\sqrt{2^{n+2} + (2^{n-i})^2 - 2\cdot 2^i \cdot 2^{n-i} + (2^i)^2}
 	=
 	\\=
-	\sqrt{4\cdot (2^{n})^2 + (2^{n-i})^2 - 2\cdot 2^{n} + (2^i)^2}
+	\sqrt{4\cdot 2^{n} + (2^{n-i})^2 - 2\cdot 2^{n} + (2^i)^2}
 	=
 	\\=
 	\sqrt{(2^{n-i})^2 + 2\cdot 2^{n} + (2^i)^2}
