@@ -101,14 +101,14 @@ $
 	есть объединение $n$ кривых второго порядка.
 \end{proof}
 
-\begin{proof}[Доказатльство теоремы \ref{thmErdos}]
+\begin{proof}[Доказательство теоремы \ref{thmErdos}]
 	Предположим противное,
 	т.е. $\{M_1, M_2, ... \}\in\mathfrak{M}$
 	и точки $M_1$, $M_2$, $M_3$ не лежат на одной прямой.
 	Применяя лемму~\ref{thm:quadCurveFamily}
 	к паре точек $M_1, M_2$ и к паре точек $M_1, M_3$,
 	найдём такие кривые 2-го порядка
-	$Q_1, Q_2,...,.Q_n$ и $R_1, R_2,...,.R_n$, что
+	$Q_1, Q_2,...,.Q_n$ и $R_1, R_2,...,.R_m$, что
 	\begin{equation*}
 		\left\{
 			M: |M-M_1|\in\mathbb{N}, |M-M_2|\in\mathbb{N}
@@ -120,7 +120,7 @@ $
 		\left\{
 			M: |M-M_1|\in\mathbb{N}, |M-M_3|\in\mathbb{N}
 		\right\}
-		=\bigcup_{i=1}^n R_i
+		=\bigcup_{j=1}^m R_j
 		.
 	\end{equation*}
 	Отсюда
@@ -166,6 +166,7 @@ $
 $|M|=n$ и $M \not\subset L$ для любой прямой $L \subset\mathbb{R}^2$.
 
 \begin{theorem}
+	\label{thm:power_exist}
 	Для любого $n\in\mathbb{N}$ выполнено $\mathfrak{M}_n\neq\varnothing$.
 \end{theorem}
 
@@ -190,31 +191,6 @@ $|M|=n$ и $M \not\subset L$ для любой прямой $L \subset\mathbb{R}
 	то можно построить множество из $\mathfrak{M}_{n+2}$.
 \end{proof}
 
-Другим примером множества из $\mathfrak{M}_{n+2}$ является множество
-\begin{equation*}
-	M = \{M_i, i =0,1,...,n+1\},
-\end{equation*}
-где
-$M_i = (2^{n-i}-2^i,0)$, $i=0,1,...,n$;
-$M_{n+1} = (0,\sqrt{2^{n+2}})$.
-Очевидно, для $0\leqslant i \leqslant j \leqslant n$ выполнено
-$|M_i- M_j|\in\mathbb{N}$.
-Заметим, что для $i=0,1,...,n$
-\begin{multline*}
-	|M_{n+1} - M_i| =
-	\sqrt{2^{n+2} + (2^{n-i}-2^i)^2}
-	=
-	\\=
-	\sqrt{2^{n+2} + (2^{n-i})^2 - 2\cdot 2^i \cdot 2^{n-i} + (2^i)^2}
-	=
-	\\=
-	\sqrt{4\cdot 2^{n} + (2^{n-i})^2 - 2\cdot 2^{n} + (2^i)^2}
-	=
-	\\=
-	\sqrt{(2^{n-i})^2 + 2\cdot 2^{n} + (2^i)^2}
-	=
-	2^{n-i} + 2^i
-	\in\mathbb{N}
-	.
-\end{multline*}
-
+Другой пример множества из $\mathfrak{M}_{n}$ для заданного $n$
+можно найти в доказательстве теоремы~\ref{thm:power_char_exist},
+уверждение которой усиливает утверждение теоремы~\ref{thm:power_exist}.
