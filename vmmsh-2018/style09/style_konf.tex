@@ -1,0 +1,237 @@
+ \documentclass[a5paper,10pt]{book}%,landscape
+ \usepackage{amsmath, amsfonts, amssymb}
+\usepackage[english,russian]{babel}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{calrsfs}  %красивая каллиграфия
+\usepackage{bbm}
+\usepackage{bbold}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{amscd}
+
+%\usepackage{pst-node}
+% \documentclass[11pt]{book}
+%\usepackage{amsmath, amsfonts, amssymb, bbm}
+%\usepackage[russian]{babel}
+%\usepackage{epsfig, epic}
+%%\usepackage{eepic, rotating}
+%\usepackage{graphicx}
+%\usepackage{wrapfig}
+%\usepackage{calrsfs}
+%%\usepackage {curves, eepic, epic}
+%\usepackage{amsxtra,latexsym, amscd,amsthm}
+%\input diagxy
+%\usepackage{mathrsfs}
+%\usepackage{bbm}
+
+
+
+ %\usepackage[mirror]{crop}% зеркальное изображение
+ \input diagxy
+ \sloppy
+ \textheight = 165mm
+ \textwidth = 110mm
+ \topmargin = -7mm
+ \oddsidemargin=-10mm
+ \evensidemargin=-10mm
+ \makeindex
+ \newcommand{\indexentry}[2]{\noindent\hangindent=20pt\hangafter=1 #1, #2\par}
+
+% \NeedsTeXFormat{LaTeX2e} \ProvidesPackage{bbold}[1994/04/06 Bbold symbol package]
+% \newcommand{\bbfamily}{\fontencoding{U}\fontfamily{bbold}\selectfont}
+% \newcommand{\textbb}[1]{{\bbfamily#1}}
+% %\DeclareMathAlphabet{\mathbbt}{U}{bbold}{m}{n}
+
+ \begin{document}
+
+ \makeatletter%{@}
+
+ \newcommand{\Author}[2]{\begin{center}\textbf{\large #1} \end{center} \medskip
+  \renewcommand{\@evenhead}
+  {\raisebox{0pt}[\headheight][0pt]%
+ {\vbox{\hbox to\textwidth{\thepage \hfill\strut {\sl #2}}\hrule}}}}
+
+ %\newcommand{\shorttitle}[1]{\renewcommand{\@oddhead}{\raisebox{1mm}[\headheight][0pt]%
+%                    {\vbox{\hbox to\textwidth{\strut \hfill{\small #1}\hfill\thepage}\hrule}}} }
+
+ \newcommand{\shorttitle}[1]{\renewcommand{\@oddhead}{\raisebox{0pt}[\headheight][0pt]%
+ {\vbox{\hbox to\textwidth{\strut {\sl #1}%\rightmark
+ \hfill\thepage}\hrule}}} }
+
+ \headsep=2mm
+
+  %\newcommand{\l@abcd}[2]{\centering{\par\medskip\normalsize\par\smallskip\noindent\hangindent5pt\hangafter=1{\bf #1}}}\par\medskip}
+\newcommand{\l@abcd}[2]{\begin{center}\par\normalsize\par\noindent\hangindent5pt\hangafter=1{\bf
+#1}\end{center}\par\smallskip}
+
+ \renewcommand{\section}{\@startsection{section}{1}{\parindent}
+                        {3ex plus 1ex minus .2ex}{2ex plus .2ex}{\bf\centering}}
+ \renewcommand{\l@section}[2]{\small\leftskip0pt\par\noindent\hangindent27pt\hangafter=1{\qquad#1} \dotfill~~#2\par}
+
+ \renewcommand{\l@part}[2]{\normalsize\leftskip0pt\par\noindent
+ \hangindent17pt\hangafter=1{\bf #1} \normalsize\dotfill~~#2\par}
+
+ \newcommand{\Adress}[1]{\par\bigskip\baselineskip=11pt\hangindent17pt\hangafter=0\noindent{\footnotesize#1\par}\normalsize}
+ \newcommand{\UDC}[1]{\begingroup\newpage\thispagestyle{empty}\begin{flushleft}УДК #1\end{flushleft}}
+ \newcommand{\Abstract}[1]{\hangindent17pt\hangafter=0\noindent{\footnotesize#1}\bigskip\par\medskip}
+
+ \renewcommand{\@cite}[2]{{[#1\if@tempswa, #2\fi]}}
+
+
+ \makeatother%@
+
+ \newcommand{\Title}[1]{\begin{center}\large\uppercase{#1}\end{center}\par}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\renewcommand{\@cite}[2]{{#1\if@tempswa, #2\fi}}
+
+ \def\subsec#1{\smallskip\textbf{#1}}
+ \newcommand{\bib}[2]{{\leftskip-10pt\baselineskip=11pt\footnotesize\item{}\textsl{#1}~#2\par}}
+
+\newcommand{\Endproc}{\rm}
+\newcommand{\Proclaim}[1]{\smallskip{\textbf{#1\/~}}\sl}
+\newcommand{\proclaim}[1]{{\textbf{#1\/~}}\sl}
+\newcommand{\Teorema}[1]{\smallskip{\textbf{Теорема#1.\/~}}\sl}
+\newcommand{\teorema}[1]{{\textbf{Теорема#1.\/~}}\sl}
+\newcommand{\Sledstvie}[1]{\smallskip{\textbf{Следствие#1.\/~}}\sl}
+\newcommand{\sledstvie}[1]{{\textbf{Следствие#1.\/~}}\sl}
+\newcommand{\Lema}[1]{\smallskip\textbf{{Лемма#1}.\/~}\sl}
+\newcommand{\lema}[1]{\textbf{{Лемма#1}.\/~}\sl}
+\newcommand{\Predl}[1]{\smallskip\textbf{{Предложение#1}.\/~}\sl}
+\newcommand{\predl}[1]{\textbf{{Предложение#1}.\/~}\sl}
+\newcommand{\Utv}[1]{\smallskip\textbf{{Утверждение#1}.\/~}\sl}
+\newcommand{\utv}[1]{\textbf{{Утверждение#1}.\/~}\sl}
+%-----------------
+\newcommand{\Def}[1]{\smallskip{\sc Определение#1.}}
+\newcommand{\deff}[1]{{\sc Определение#1.}}
+\newcommand{\Zam}[1]{\smallskip{\sc Замечание#1.}}
+\newcommand{\zam}[1]{{\sc Замечание#1.}}
+\newcommand{\Primer}[1]{\smallskip{\sc Пример#1.}}
+\newcommand{\primer}[1]{{\sc Пример#1.}}
+\newcommand{\Zadacha}[1]{\smallskip{\sc Задача#1.}}
+\newcommand{\zadacha}[1]{{\sc Задача#1.}}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%     English
+\newcommand{\Lemma}[1]{\smallskip\textbf{{Lemma#1}.\/~}\sl}
+\newcommand{\lemma}[1]{\textbf{{Lemma#1}.\/~}\sl}
+\newcommand{\Theorem}[1]{\smallskip\textbf{{Theorem#1}.\/ }\sl}
+\newcommand{\theorem}[1]{{\textbf{Theorem#1.\/~}}\sl}
+\newcommand{\Corollary}[1]{\smallskip\textbf{{Corollary#1}.\/~}\sl}
+\newcommand{\corollary}[1]{\textbf{{Corollary#1}.\/~}\sl}
+\newcommand{\Proposition}[1]{\smallskip\textbf{{Proposition#1}.\/~}\sl}
+\newcommand{\proposition}[1]{\textbf{{Proposition#1}.\/~}\sl}
+\newcommand{\Crit}[1]{\smallskip\textbf{{Criterion#1}.\/ }\sl}
+%-------------
+\newcommand{\defin}[1]{{\sc Definition#1.}}
+\newcommand{\Definition}[1]{\smallskip{\sc Definition#1.}}
+\newcommand{\Remark}[1]{\smallskip{\sc Remark#1.}~}
+\newcommand{\Ex}[1]{\smallskip{\sc Example#1.}}
+\newcommand{\Problem}[1]{{\sc Problem#1:}}
+\newcommand{\Note}[1]{{\sc Note#1.}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\def\beginproof{\par\mbox{$\vartriangleleft$}}
+\def\endproof{\text{$\vartriangleright$}\smallskip}
+\def\Endproof{\text{$\vartriangleright$}}
+
+%%%%%%%%%%%%%    неравенства
+\renewcommand{\le}{\leqslant}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\to}{\rightarrow}
+
+%%%%%%%%%%%%%% o-lim  и др.
+\def\osum{\mathop{o\text{\/-}\!\sum}}  %\def\osum{o\text{-}\!\sum}
+\def\bosum{bo\text{-}\!\sum}
+\def\olim{\mathop{o\text{-}{\fam0 lim}}} %\def\olim{\mathop{o\text{-}\!\lim}}
+\def\bolim{\mathop{bo\text{-}\!\lim}}
+\def\rlim{\mathop{r\text{-}{\fam0 lim}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Vogt
+\newcommand{\R}{\mathbb{R}}        % real field  +++
+\newcommand{\N}{\mathbb{N}}        % natural numbers +++
+%\newcommand{\F}[1][]{Fr\'echet space#1}            % Frechet space(s) +++
+\newcommand{\FH}[1][]{Fr\'echet--Hilbert space#1}  % Frechet-Hilbertspace(s) +++
+\newcommand{\FHS}[1][]{Fr\'echet--Hilbert--Schwartz space#1}   % Frechet-Hilbertspace(s) +++
+%\newcommand{\B}[1][]{Banach space#1}               % Banach space(s) +++
+\newcommand{\Hb}[1][]{Hilbert space#1}             % Hilbert space(s) +++
+\newcommand{\DN}{{\rm(DN)}}                        %+
+\newcommand{\id}{\operatorname{id}}                %+
+\newcommand{\Span}{\operatorname{span}}            %+
+\newcommand{\eps}{\varepsilon}                     %+
+\newcommand{\vp}{\varphi}                          %+
+\newcommand{\Om}{{\rm (}\Omega{\rm )}}             %+
+\newcommand{\Lam}{\Lambda}                         %+
+\newcommand{\Lama}{\Lambda_\infty(\alpha)}         %+
+\newcommand{\Lamb}{\Lambda_\infty(\beta)}          %+
+\newcommand{\Lamg}{\Lambda_\infty(\gamma)}         %+
+\newcommand{\lama}{\Lama}                          %+
+\newcommand{\tP}{\widetilde{P}}                    %+
+\newcommand{\tQ}{\widetilde{Q}}                    %+
+\newcommand{\io}{\iota}                            %+
+\newcommand{\To}{\longrightarrow}                  %+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% Операторы
+\def\card{\mathop{\fam0 card}}
+\def\co{\mathop{\fam0 co}}
+\def\Dom{\mathop{\fam0 Dom}}
+\def\dom{\mathop{\fam0 dom}}
+\def\End{\mathop{\fam0 End}}
+\def\Fin{\mathop{\fam0 fin}\nolimits}
+\def\fin{\mathop{\fam0 fin}\nolimits}
+\def\Id{\mathop{\fam0 Id}}
+\def\Im{\mathop{\fam0 Im}}
+\def\ind{\mathop{\fam0 ind}}
+\def\Ker{\mathop{\fam0 Ker}}
+\def\loc{\mathop{\fam0 loc}}
+\def\const{\mathop{\fam0 const}}
+\def\Exp{\mathop{\fam0 Exp}}
+\def\grad{\mathop{\fam0 grad}}
+\def\proj{\mathop{\fam0 proj}}
+\def\im{\mathop{\fam0 im}}
+\def\rot{\mathop{\fam0 rot}}
+\def\Lip{\mathop{\fam0 Lip}}
+\def\mod{\mathop{\fam0 mod}}
+\def\On{\mathop{\fam0 On}}
+\def\Orth{\mathop{\fam0 Orth}}
+\def\rank{\mathop{\fam0 rank}}
+\def\sa{\mathop{\fam0 sa}}
+\def\SC{\mathop{\fam0 SC}}
+\def\sign{\mathop{\fam0 sign}}
+\def\St{\mathop{\fam0 St}}
+\def\supp{\mathop{\fam0 supp}}
+\def\Re{\mathop{\fam0 Re}}
+\def\Div{\mathop{\fam0 div}}
+\def\tv@rt{{\vert\mkern-2mu\vert\mkern-2mu\vert}}
+\def\tvert#1\tvert{\mathopen\tv@rt#1\mathclose\tv@rt}
+%%%тройные нормы
+\def\tnorm{|\hspace{-1pt}|\hspace{-1pt}|}                        %|||
+\def\bigtnorm{\big|\hspace{-1.5pt}\big|\hspace{-1.5pt}\big|}     %\big|||
+\def\biggtnorm{\bigg|\hspace{-1.5pt}\bigg|\hspace{-1.5pt}\bigg|} %\bigg|||
+
+
+\def\bnorml{\mathopen{\kern1pt \vrule height9pt depth2.5pt width1pt\kern1.5pt}}
+\def\bnormr{\mathclose{\kern1.5pt\vrule height9pt depth2.5pt width1pt\kern1pt}}
+
+\let\mathbbt\mathbb
+\let\mathbbm\mathbb
+
+
+%%%%%%%%% математические шрифты
+\def\Cal#1{\mathcal{#1}}   %калиграфия (подключить пакет calrsfs)
+\def\goth#1{\mathfrak{#1}} %готика
+%\mathbbm --- полые буквы (\mathbb другой полый шрифт)
+\def\bbold#1{{\mathbbt #1}} %полые цифры
+
+\newcommand{\shortpage}{\enlargethispage{-\baselineskip}}
+ \newcommand{\Signatura}[3]{\begin{picture}(0,0)\put(#2,#3){\makebox{{#1}}}\end{picture}}
