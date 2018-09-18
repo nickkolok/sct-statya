@@ -99,7 +99,7 @@
 
 \begin{hypothesis}
 	Не существует такого числа $\gamma < 1$,
-	что любое множество из $M\in \mathfrak{M}_n$, $\geq 3$,
+	что любое множество из $M\in \mathfrak{M}_n$, $n\geq 3$,
 	содержится в квадрате со стороной $\gamma \cdot \operatorname{diam} M$.
 \end{hypothesis}
 
@@ -117,10 +117,8 @@
 	\label{proposition:intervals_cross}
 	Если интервалы $M_1 M_2$ и $M_3 M_4$ не пересекаются,
 	$M_1 \neq M_2$, $M_3 \neq M_4$,
-	то $cr(M_1,M_2) \cap cr(M_3,M_4)$~--- либо не более 4 точек, либо прямая.
+	то множество $cr(M_1,M_2) \cap cr(M_3,M_4)$~--- либо прямая, либо содержит не более 4 точек.
 \end{proposition}
-
-TODO: напротив этого утверждения стояла галочка, но мы её не обсудили.
 
 \begin{proof}
 	Пересечением $cr(M_1,M_2) \cap cr(M_3,M_4)$ может быть либо от 2 до 4 точек, либо прямая,
@@ -175,7 +173,7 @@ TODO: напротив этого утверждения стояла галоч
 чтобы расстояние между любыми двумя точками было не менее $\varphi_k$.
 Проблема отыскания $\varphi_k$ носит название проблемы упаковки точек в квадрат~\cite{locatelli2002packing,costa2013valid}.
 
-\begin{theorem}[\cite{costa2013valid}]
+\begin{theorem}%[\cite{costa2013valid}]
 	\label{thm:varphi_k_bounds}
 	\cite{costa2013valid}
 	Для $k\geq 2$ выполнено
@@ -343,7 +341,7 @@ $\mu_k > 0.3584$.
 	\operatorname{diam} M \geq 0.3584 \cdot |M|
 \end{equation}
 Кроме того, для $M \in \mathfrak{M}_n$, $n \geq 122$ выполнено
-$\operatorname{diam} M \geq 9905$.
+$\operatorname{diam} M \geq 9905$ (см. утверждение~\ref{proposition:d(2,n)}).
 Следовательно, для $4 \leq n \leq 27636$ выполнено~\eqref{eq:linear_bound_10}.
 Тогда с учётом следствия~\ref{corollary:common_linear_bound} получаем
 \begin{proposition}
