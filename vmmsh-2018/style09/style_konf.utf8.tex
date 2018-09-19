@@ -54,6 +54,27 @@
 % \newcommand{\textbb}[1]{{\bbfamily#1}}
 % %\DeclareMathAlphabet{\mathbbt}{U}{bbold}{m}{n}
 
+
+
+%Блок, отвечающий за локализацию меток в пределах одной статьи
+\makeatletter
+\AtBeginDocument{%
+  \let\origlabel@in@display\label@in@display
+  \let\origref\ref \let\origpageref\pageref \let\origlabel\label
+  \newcommand\locallabels[1]{%
+    \renewcommand\label[1]{\origlabel{#1##1}}% ← notice the change here:
+    \renewcommand\ref[1]{\origref{#1##1}}% ##1#1, not #1##1
+    \renewcommand\pageref[1]{\origpageref{#1##1}}%
+    \renewcommand\label@in@display[1]{\origlabel@in@display{#1##1}}%
+  }}
+\makeatother
+
+\newcounter{locallabelscnt}
+\newcommand{\newlabelscope}{
+	\locallabels{\arabic{locallabelscnt}}
+	\addtocounter{locallabelscnt}{1}
+}
+
  \begin{document}
 
  \makeatletter%{@}
@@ -105,6 +126,7 @@
 	\renewcommand{\theenumi}{\arabic{enumi}}
 	\renewcommand{\labelenumi}{\theenumi)} % Yes, we have encountered such problems!
 	\selectlanguage{russian} % To avoid problems if the language was switched to English (e.g. in the bibliography).
+	\newlabelscope % Изоляция меток
 }
 
 
