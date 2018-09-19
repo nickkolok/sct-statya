@@ -92,7 +92,23 @@
 
  \makeatother%@
 
- \newcommand{\Title}[1]{\begin{center}\large\uppercase{#1}\end{center}\par}
+
+%Автоматический сброс счётчиков по заголовку
+
+\newcommand{\prepareThesis}{
+	\setcounter{equation}{0}
+	\setcounter{section}{0}
+	\setcounter{figure}{0}
+	\setcounter{table}{0}
+	\setcounter{footnote}{0}
+	%\setcounter{theorem}{0}
+	\renewcommand{\theenumi}{\arabic{enumi}}
+	\renewcommand{\labelenumi}{\theenumi)} % Yes, we have encountered such problems!
+	\selectlanguage{russian} % To avoid problems if the language was switched to English (e.g. in the bibliography).
+}
+
+
+ \newcommand{\Title}[1]{\begin{center}\large\uppercase{#1}\end{center}\prepareThesis\par}
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
