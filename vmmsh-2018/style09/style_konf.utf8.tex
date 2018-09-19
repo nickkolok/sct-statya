@@ -149,6 +149,9 @@
 \def\endproof{\text{$\vartriangleright$}\smallskip}
 \def\Endproof{\text{$\vartriangleright$}}
 
+%Переопределяем стандартное окружение из amsthm
+\let\proof\beginproof
+
 %%%%%%%%%%%%%    неравенства
 \renewcommand{\le}{\leqslant}
 \renewcommand{\leq}{\leqslant}
