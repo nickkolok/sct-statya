@@ -33,6 +33,58 @@
 
 %Цитаты и библиография с автоматической нумерацией
 \usepackage{cite}
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1)} % Заменяем библиографию с квадратных скобок на скобку
+\makeatother
+
+% Заголовок библиографии
+\newcommand{\vmmshbibcaption}[1]{
+	\par\bigskip\centerline{\bf #1}\smallskip
+}
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}
+  {\chapter*}
+  {\vmmshbibcaption}
+  {}
+  {}
+
+% Библиография не влияет на колонтитулы
+\makeatletter%{@}
+\newcommand{\vmmshnothing}[2]{}
+\patchcmd{\thebibliography}
+  {\@mkboth}
+  {\vmmshnothing}
+  {}
+  {}
+\makeatother%{@}
+
+% Шрифты и междустрочные интервалы в библиографии
+% Вероятно, можнодостичь той же цели несколько изящнее
+\AtBeginEnvironment{thebibliography}{
+  \footnotesize
+  \baselineskip=7pt
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+}
+\patchcmd{\thebibliography}
+  {\settowidth}
+  {
+    \footnotesize
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \baselineskip=0pt
+    \settowidth
+  }
+  {}{}
+
+% Английский заголовок библиографии
+\addto\captionsenglish{
+	\renewcommand\bibname{References}
+}
+
+
+
+
 
 %Теоремы с автоматической нумерацией
 \usepackage{amsthm}
