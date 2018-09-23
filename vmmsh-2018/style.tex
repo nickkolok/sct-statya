@@ -3,11 +3,6 @@
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 
-
-%\usepackage[backend=biber,style=gost-numeric,sorting=none]{biblatex}
-%\addbibresource{../common/notmy.bib}
-%\addbibresource{../common/my.bib}
-
 \usepackage{cite}
 \makeatletter
 \renewcommand{\@biblabel}[1]{#1)} % Заменяем библиографию с квадратных скобок на скобку:
@@ -68,13 +63,7 @@
 \usepackage{etoolbox}
 \patchcmd{\thebibliography}
   {\chapter*}
-  {
-    \vmmshbibcaption
-    \footnotesize
-    \baselineskip=11pt
-    \setlength{\itemsep}{0pt}
-    \setlength{\parskip}{0pt}
-  }
+  {\vmmshbibcaption}
   {}
   {}
 
