@@ -4,11 +4,15 @@
 \usepackage[utf8]{inputenc}
 
 
-\usepackage[backend=biber,style=gost-numeric,sorting=none]{biblatex}
-\addbibresource{../common/notmy.bib}
-\addbibresource{../common/my.bib}
+%\usepackage[backend=biber,style=gost-numeric,sorting=none]{biblatex}
+%\addbibresource{../common/notmy.bib}
+%\addbibresource{../common/my.bib}
 
-%\usepackage{cite}
+\usepackage{cite}
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1)} % Заменяем библиографию с квадратных скобок на скобку:
+\makeatother
+
 
 \usepackage{amsthm}
 \newtheoremstyle{VMMSHtheorem}% name of the style to be used
@@ -64,7 +68,13 @@
 \usepackage{etoolbox}
 \patchcmd{\thebibliography}
   {\chapter*}
-  {\vmmshbibcaption}
+  {
+    \vmmshbibcaption
+    \footnotesize
+    \baselineskip=11pt
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+  }
   {}
   {}
 
@@ -82,7 +92,23 @@
 
 \makeatother%{@}
 
+%\AtBeginEnvironment{thebibliography}{
+%    \baselineskip=11pt
+%    \setlength{\itemsep}{0pt}%
+%}
 
+
+\patchcmd{\thebibliography}
+  {\settowidth}
+  {
+%    \setlength{\itemsep}{0pt plus 0.1pt}
+%    \setlength{\parskip}{0pt plus 0.1pt}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \baselineskip=7pt
+    \settowidth
+  }
+  {}{}
 \newcommand{\prepareThesis}{
 	\setcounter{equation}{0}
 	\setcounter{figure}{0}

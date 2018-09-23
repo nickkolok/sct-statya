@@ -40,25 +40,6 @@
 
 
 
-\defbibenvironment{thebibliography}
-  {\textbackslash begin\{thebibliography\}\{99\}
-   % Page numbers and page headings are not wanted when copying
-   \thispagestyle{empty}
-   \pagestyle{empty}
-   \hyphenpenalty=10000
-   \exhyphenpenalty=10000
-   \renewcommand*{\&}{\textbackslash \symbol{38}}%
-   \renewcommand*{\mkbibemph}[1]{\textbackslash emph\{##1\}}%
-   \renewcommand*{\mkbibitalic}[1]{\textbackslash textit\{##1\}}%
-   \renewcommand*{\mkbibbold}[1]{\textbackslash textbf\{##1\}}%
-   \list{}{}}
-  {\endlist
-   \textbackslash end\{thebibliography\}
-   \thispagestyle{empty}
-   \pagestyle{empty}
-  }
-  {\item\textbackslash bibitem\{\printfield{entrykey}\}\\}
-
 
 %
 % Авторы
@@ -86,13 +67,20 @@
 
 {\small Работа выполнена в Воронежском университете при поддержке РНФ, грант 16-11-10125.}
 
+{
+	\footnotesize
+	\baselineskip=11pt
+	\setlength{\itemsep}{0pt}
+	\setlength{\parskip}{0pt}
+	\input{blg.tex}
+}
 
-\printbibliography
+%\printbibliography
 
-\printbibliography[env=thebibliography]
+%\printbibliography[env=thebibliography]
 
 
-\end{document}
+%\end{document}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -104,7 +92,7 @@
 \end{theorem}
 
 
- \textbf{Теорема 1.} \textsl{Текст формулировки теоремы.}
+% \textbf{Теорема 1.} \textsl{Текст формулировки теоремы.}
 %
 % Утверждения и следствия оформляются так же, как и теоремы.
 %
@@ -114,9 +102,9 @@
 % следующий образец
 %
 
-\begin{remark*}
-	Всякое
-\end{remark*}
+%\begin{remark*}
+%	Всякое
+%\end{remark*}
 
 
 \textsc{Замечание.} Текст замечания.
