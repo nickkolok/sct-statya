@@ -12,13 +12,13 @@
 
 Мы сейчас дадим другое доказательство, дающее лучшее значение константы $c$.
 
-\begin{lemma}
+\begin{aLema}
 	\label{lemma_points_on_line}
 	Пусть $S\in\mathfrak{M}_n$ для некоторого $n \geqslant 3$,
 	$\{M_1, M_2, M_3, M_4\} \subset S$, как минимум три из этих точек различны,
 	$|M_1 - M_2| = |M_3 - M_4| = 1$.
 	Тогда никакая прямая $m$ не содержит точки $M_1$, $M_2$, $M_3$ и $M_4$ одновременно.
-\end{lemma}
+\end{aLema}
 
 \begin{proof}
 	Предположим противное.
@@ -34,11 +34,11 @@
 	В силу произвольности выбора $M \in S$ получаем $S \subset m$, что противоречит $S\in\mathfrak{M}_n$.
 \end{proof}
 
-\begin{corollary}
+\begin{aSledstvie}
 	\label{corollary:max_points_on_line}
 	Пусть $S\in\mathfrak{M}_n$, $\operatorname{diam} S = d$.
 	Тогда ни на какой прямой не лежит более $(d+3)/2$ точек из $S$.
-\end{corollary}
+\end{aSledstvie}
 
 \begin{proof}
 	Предположим противное, т.е на прямой $m$ лежит $k$ точек из $S$ и $k > (d+3)/2$.
@@ -66,11 +66,11 @@
 	чего быть не может.
 \end{proof}
 
-\begin{lemma}
+\begin{aLema}
 	\label{lemma:square_container}
 	Пусть $S\in\mathfrak{M}_n$, $\operatorname{diam} S = d$.
 	Тогда $S$ содержится в квадрате со стороной $d$.
-\end{lemma}
+\end{aLema}
 
 \begin{proof}
 	Пусть $M_1, M_2 \in S$, $|M_1 - M_2| = d$,
@@ -97,28 +97,28 @@
 	$y=y_{\max}$, $y=y_{\max} - d$.
 \end{proof}
 
-\begin{hypothesis}
+\begin{aGipot}
 	Не существует такого числа $\gamma < 1$,
 	что любое множество из $M\in \mathfrak{M}_n$, $n\geq 3$,
 	содержится в квадрате со стороной $\gamma \cdot \operatorname{diam} M$.
-\end{hypothesis}
+\end{aGipot}
 
 В пользу этой гипотезы говорят часто встречающиеся конструкции множеств $M\in\mathfrak{M}_n$,
 расположенных на окружности~\cite{anning1915discussions,harborth1993upper,piepmeyer1996maximum,kurz2008bounds,our-vvmsh-2018}.
 
-\begin{definition}
+\begin{aDef}
 	Крестом точек $M_1$ и $M_2$ будем называть объединение прямой,
 	проходящей через эти точки,
 	и серединного перпендикуляра к отрезку $M_1 M_2$
 	и обозначать $cr(M_1,M_2)$.
-\end{definition}
+\end{aDef}
 
-\begin{proposition}
+\begin{aUtv}
 	\label{proposition:intervals_cross}
 	Если интервалы $M_1 M_2$ и $M_3 M_4$ не пересекаются,
 	$M_1 \neq M_2$, $M_3 \neq M_4$,
 	то множество $cr(M_1,M_2) \cap cr(M_3,M_4)$~--- либо прямая, либо содержит не более 4 точек.
-\end{proposition}
+\end{aUtv}
 
 \begin{proof}
 	Пересечением $cr(M_1,M_2) \cap cr(M_3,M_4)$ может быть либо от 2 до 4 точек, либо прямая,
@@ -127,7 +127,7 @@
 	совпасть не могут, т.к. интервалы $M_1 M_2$ и $M_3 M_4$ не пересекаются по условию.
 \end{proof}
 
-\begin{lemma}
+\begin{aLema}
 	\label{lemma_preliminary_size}
 	Пусть $S\in\mathfrak{M}_n$,
 	$M_1, M_2, M_3, M_4 \in S$,
@@ -135,7 +135,7 @@
 	интервалы $M_1 M_2$ и $M_3 M_4$ не пересекаются,
 	$d = \operatorname{diam} S > 5$.
 	Тогда $|S| \leq 4 \cdot |M_1 - M_2| \cdot |M_3 - M_4| + \frac{d-5}{2}$.
-\end{lemma}
+\end{aLema}
 
 \begin{proof}
 	Если $|(cr(M_1, M_2) \cap cr(M_3, M_4))| < \infty$,
@@ -173,7 +173,7 @@
 чтобы расстояние между любыми двумя точками было не менее $\varphi_k$.
 Проблема отыскания $\varphi_k$ носит название проблемы упаковки точек в квадрат~\cite{locatelli2002packing,costa2013valid}.
 
-\begin{theorem}%[\cite{costa2013valid}]
+\begin{aTeorema}%[\cite{costa2013valid}]
 	\label{thm:varphi_k_bounds}
 	\cite{costa2013valid}
 	Для $k\geq 2$ выполнено
@@ -189,15 +189,15 @@
 			\frac{2}{(k-1)\sqrt{3}}
 		}
 	\end{equation*}
-\end{theorem}
+\end{aTeorema}
 
 Нам потребуется вспомогательная
-\begin{lemma}
+\begin{aLema}
 	\label{lemma:quadr_diag_edges}
 	Пусть $ABCD$~--- выпуклый четырёхугольник на плоскости.
 	Тогда $\max\{AC,BD\}>\min\{AB,BC,CD,DA\}$,
 	т.е. хотя бы одна диагональ больше хотя бы одной стороны.
-\end{lemma}
+\end{aLema}
 \begin{proof}
 	Предположим, что любая диагональ меньше любой стороны.
 	Тогда в каждом треугольнике, образованном диагональю и двумя сторонами,
@@ -209,7 +209,7 @@
 
 Докажем теперь линейную оценку снизу на диаметр множеств из $\mathfrak{M}_n$,
 где $n$ имеет специальный вид.
-\begin{lemma}
+\begin{aLema}
 	Пусть $S\in\mathfrak{M}_n$,
 	$d = \operatorname{diam} S > 5$,
 	$k \geq 2$,
@@ -224,7 +224,7 @@
 	\begin{equation}
 		\mu_k = \frac{\sqrt{64\varphi_k^2 (k-1)+1}-1}{16\varphi_k^2 (k-1)}
 	\end{equation}
-\end{lemma}
+\end{aLema}
 
 \begin{proof}
 	Множество $S$ содержится в квадрате со стороной $d$ (см. лемму~\ref{lemma:square_container}).
@@ -313,11 +313,11 @@
 во-первых, она справедлива лишь для мощности специального вида,
 во-вторых, зависит от $\varphi_k$.
 
-\begin{corollary}
+\begin{aSledstvie}
 	\label{corollary:common_linear_bound}
 	Пусть $S\in\mathfrak{M}_n$, $$ (k-1)m^2 + 2 \leq n \leq (k-1)(m+1)^2 + 1.$$
 	Тогда $\operatorname{diam} S \geq \frac{m^2}{(m+1)^2} \mu_k \cdot |S|$.
-\end{corollary}
+\end{aSledstvie}
 
 Выбор $k$ во многом произволен.
 Так, например, для $k=29$ имеем $\varphi_k=0.226882900744209089183505212941...$
@@ -325,10 +325,10 @@
 %(округление здесь и далее осуществляется в сторону уменьшения $\mu_k$, чтобы не испортить неравенство)
 и $\mu_k > 0.3753$.
 Следовательно, верно
-\begin{proposition}
+\begin{aUtv}
 	\label{proposition:linear_bound_29}
 	Для достаточно больших $n$ диаметр любого множества $M\in\mathfrak{M}_n$ не менее $\frac{3}{8}n$.
-\end{proposition}
+\end{aUtv}
 Заметим, что для $n=3$ эта оценка, очевидно, неверна.
 
 Выбрав другое $k$, можно получить оценку, применимую, начиная с некоторого известного $n$.
@@ -346,7 +346,7 @@ $\operatorname{diam} M \geq 9905$ (см. утверждение~\ref{proposition:d(2,n)}).
 Следовательно, для $4 \leq n \leq 27636$ выполнено~\eqref{eq:linear_bound_10}.
 Если $n \geq 27636$, то $ (k-1)m^2 + 2 \leq n \leq (k-1)(m+1)^2 + 1$ для $k=10$ и некоторого $m \geq 55$.
 Тогда с учётом следствия~\ref{corollary:common_linear_bound} получаем
-\begin{proposition}
+\begin{aUtv}
 	\label{proposition:linear_bound_10}
 	Для всех $n \geq 4$, $M\in\mathfrak{M}$
 	\begin{equation*}
@@ -355,19 +355,19 @@ $\operatorname{diam} M \geq 9905$ (см. утверждение~\ref{proposition:d(2,n)}).
 		0.3457 \cdot |M|
 		.
 	\end{equation*}
-\end{proposition}
+\end{aUtv}
 
-\begin{remark}
+\begin{aZam}
 	Нахождение $\varphi_k$ для $k > 30$ может позволить улучшить оценку
 	в утверждениях~\ref{proposition:linear_bound_29} и~\ref{proposition:linear_bound_10},
 	равно как и вычисление точных нижних оценок на диаметр для конкретных $n>122$ (в утверждении~\ref{proposition:linear_bound_10}),
 	но лишь до определённого предела, поскольку $\mu_k$ зависит от $\varphi_k$ и $k$
 	только в составе выражения $\varphi_k^2 (k-1)$,
 	которое ограничено в силу теоремы~\ref{thm:varphi_k_bounds}.
-\end{remark}
+\end{aZam}
 
-\begin{remark}
+\begin{aZam}
 	Де-факто нам требуется не произвольная расстановка точек в единичном квадрате,
 	а такая расстановка, при которой все расстояния между точками~--- рациональные числа.
 	Это требование уже имеет отношение к проблеме Улама-Эрдёша (см. гипотезу~\ref{hypot:Ulam}).
-\end{remark}
+\end{aZam}

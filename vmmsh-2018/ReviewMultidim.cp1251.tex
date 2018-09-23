@@ -2,12 +2,12 @@
 
 %В пространствах более высокой размерности можно построить множества, аналогичные $\mathfrak{M}$.
 
-\begin{definition}
+\begin{aDef}
 	Пусть $m \geq 2$, $n \geq m + 1$.
 	Через $\mathfrak{M}(m,n)$ будем обозначать множество таких подмножеств $m$--мерного евклидова пространства
 	$M\subset\mathbb{R}^m$, что $|M| = n$, для любых $M_1,M_2 \in M$ выполнено $|M_1 - M_2| \in\mathbb{N}$
 	и $M$ не содержится ни в какой $(m-1)$--мерной гиперплоскости.
-\end{definition}
+\end{aDef}
 
 Более того, конструкцию $\mathfrak{M}_n$ можно распространить и на $\mathbb{Z}^m_n$~\cite{Kohnert2006IntegralPS}.
 %Более того, аналогичные множества были построены в $\mathbb{Z}^m_n$~\cite{Kohnert2006IntegralPS}.
@@ -23,10 +23,10 @@
 	.
 \end{equation*}
 
-\begin{definition}
+\begin{aDef}
 	Множество $M\in\mathfrak{M}(m,n)$ называется оптимальным,
 	если $\operatorname{diam} M = d(m,n)$.
-\end{definition}
+\end{aDef}
 
 Приведём известные оценки на $d(m,n)$
 (за основу взят список из~\cite{kurz2008bounds}):
@@ -70,9 +70,9 @@
 %В (TODO: ссылка!) отмечено, что важно перепроверять вычисленные значения независимо составленными программами для ЭВМ.
 Приведём некоторые известные значения:
 
-\begin{proposition}
+\begin{aUtv}
 \label{proposition:d(2,n)}
-\end{proposition}
+\end{aUtv}
 $(d(2, n))_{n=3,...,122} = 1$, 4, 7, 8, 17, 21, 29, 40, 51, 63, 74, 91, 104, 121,
 134, 153, 164,
 196, 212, 228, 244, 272, 288, 319, 332, 364, 396, 437, 464, 494, 524, 553, 578, 608,
@@ -86,29 +86,29 @@ $(d(2, n))_{n=3,...,122} = 1$, 4, 7, 8, 17, 21, 29, 40, 51, 63, 74, 91, 104, 121
 .
 
 Для многомерного случая были вычислены~\cite{piepmeyer1988raumliche,harborth1998integral,kurz2005characteristic,kurz2006konstruktion,kurz2008bounds} следующие значения.
-\begin{proposition}~
-\end{proposition}
+\begin{aUtv}~
+\end{aUtv}
 $(d(3, n))_{n=4,...,24} = 1$, 3, 4, 8, 13, 16, 17, 17, 17, 56, 65, 77, 86, 99, 112, 133, 154,
 195, 212, 228, 244.
 
-\begin{hypothesis}
+\begin{aGipot}
 	Для любого $n\geq 3$ выполнено $d(2,n) < d(2,n+1)$.
-\end{hypothesis}
+\end{aGipot}
 В пользу этой гипотезы говорят известные значения $d(2,n)$.
 Для больших размерностей утверждение гипотезы неверно: так, $d(3,10) = d(3,11) = 17$.
 
-\begin{hypothesis}
+\begin{aGipot}
 	Никакое оптимальное множество $M\in\mathfrak{M}$ не лежит на целочисленной решётке.
-\end{hypothesis}
+\end{aGipot}
 В пользу этой гипотезы говорят реузльтаты вычислений для $m=2$, $3 \leq n \leq 43$.
 
 Примечательно, что для $m=2$, $n=4$ и $n=18$ оптимальные множества не единственны.
 В~\cite{kurz2008bounds} установлено, что для $9 \leq n \leq 122$ оптимальное множество является веерным, т.е. содержится
 в объединении прямой и точки (все точки, кроме одной, лежат на некоторой прямой).
 
-\begin{hypothesis}
+\begin{aGipot}
 	Все оптимальные множества из $n$ точек на плоскости, $n\geq 9$, являются веерными.
-\end{hypothesis}
+\end{aGipot}
 
 
 
@@ -120,12 +120,12 @@ $(d(3, n))_{n=4,...,24} = 1$, 3, 4, 8, 13, 16, 17, 17, 17, 56, 65, 77, 86, 99, 1
 Это результат указывает на возможность улучшения оценки в следствии~\ref{corollary:max_points_on_line}.
 
 В работе~\cite{kurz2008minimum} высказана
-\begin{hypothesis}
+\begin{aGipot}
 	\label{hypot:log_lower_bound}
 	Существует такая константа $c$,
 	что для любого $n\geq 3$ и $M\in\mathfrak{M}_n$ выполнено
 	$\operatorname{diam} M \geq n^{c \log \log n}$.
-\end{hypothesis}
+\end{aGipot}
 
 Заметим, что неравенство в гипотезе~\ref{hypot:log_lower_bound}
 совпадает с верхней оценкой~\eqref{upper_bound_d_m_n_log_log} на $d(2,n)$
@@ -198,12 +198,12 @@ $(d(3, n))_{n=4,...,24} = 1$, 3, 4, 8, 13, 16, 17, 17, 17, 56, 65, 77, 86, 99, 1
 TODO: спрямить ссылки!
 
 
-\begin{definition}
+\begin{aDef}
 	\cite{kurz2008minimum} Множество $M\in\mathfrak{M}(m,n)$ называется множеством полуобщего положения,
 	если ни через какие $m+1$ точек из $M$ нельзя провести $(m-1)$--мерную гиперплоскость.
 	Множество всех множеств полуобщего положения мощности $n$ в $\mathbb{R}^m$ будем обозначать $\overline{\mathfrak{M}}(m,n)$.
 	Для краткости обозначим $\overline{\mathfrak{M}}_n=\overline{\mathfrak{M}}(2,n)$.
-\end{definition}
+\end{aDef}
 
 В \cite{harborth1993upper} показано, что $\overline{\mathfrak{M}}_n\neq\varnothing$ для любого $n \geq 3$
 и приведены примеры множеств из $\overline{\mathfrak{M}}_n$, содержащихся в окружности.
@@ -223,12 +223,12 @@ $\bigl(\overline{d}(2, n)\bigr)_{n=3,...,36} = 1,$
 1995, 1995, 1995, 1995, 1995, 1995, 9555, 9555, 9555, 10672,
 13975, 13975, 13975, 13975, 13975, 13975, 13975, 13975.
 
-\begin{definition}
+\begin{aDef}
 	\cite{kurz2008minimum} Множество $M\in\overline{\mathfrak{M}}(m,n)$, $n\geq 4$ называется множеством общего положения,
 	если ни через какие $m+2$ точек из $M$ нельзя провести сферу.
 	Множество всех множеств общего положения мощности $n$ будем обозначать $\dot{\mathfrak{M}}(m,n)$.
 	Для краткости обозначим $\dot{\mathfrak{M}}_n=\dot{\mathfrak{M}}(2,n)$.
-\end{definition}
+\end{aDef}
 
 В отличие от $\mathfrak{M}_n$ и $M\in\overline{\mathfrak{M}}_n$,
 существование множеств из $\dot{\mathfrak{M}}_n$ является достаточно сложным вопросом.
@@ -246,17 +246,17 @@ $\bigl(\dot{d}(2,n)\bigr)_{n=3,...,7}
 Вопрос о существовании множеств из $\dot{\mathfrak{M}}_8$
 остаётся открытым.
 
-\begin{hypothesis}
+\begin{aGipot}
 	\label{hypot:general_position_nonempty}
 	Для любого $n\geq 4$ непусто $\dot{\mathfrak{M}}_n$.
-\end{hypothesis}
+\end{aGipot}
 
 
-\begin{definition}
+\begin{aDef}
 	\cite{noll1989nclusters,kurz2013constructing}
 	$n$--кластером называется множество $M\in\dot{\mathfrak{M}}_n$,
 	содержащееся в целочисленной решётке.
-\end{definition}
+\end{aDef}
 Существование $n$--кластера эквивалентно существованию множества $M\in\dot{\mathfrak{M}}_n$
 характеристики 1.
 В~\cite{noll1989nclusters} показано существование 6--кластеров,
@@ -272,11 +272,11 @@ c минимальной длиной ребра 1.
 Все известные примеры являются веерными~\cite{harborth1993upper}.
 Существуют ли множества произвольной мощности с длиной ребра 1,
 неизвестно, однако легко доказать следующее
-\begin{proposition}
+\begin{aUtv}
 	\label{prop:edge_one}
 	Для $n \geq 4$ не существует таких $M\in\overline{\mathfrak{M}}_n$,
 	что для некоторых $M_1, M_2$ выполнено $|M_1 - M_2| = 1$.
-\end{proposition}
+\end{aUtv}
 \begin{proof}
 	Пусть $M\in\overline{\mathfrak{M}}_n$ и для некоторых $M_1, M_2$ выполнено $|M_1 - M_2| = 1$.
 	Тогда все точки множества $M$ лежат на $cr(M_1,M_2)$.
@@ -353,12 +353,12 @@ $m+2\equiv 0 (\operatorname{mod} 16)$.
 
 
 С исследованием множеств $\mathfrak{M}_n$ тесно связаны ещё две гипотезы о расстояниях на плоскости.
-\begin{hypothesis}[Улам, \cite{ulam1960collection}]
+\begin{aGipot}[Улам, \cite{ulam1960collection}]
 	\label{hypot:Ulam}
 	Существует всюду плотное подмножество $U\subset\mathbb{R}^2$, такое,
 	что для любых $U_1, U_2 \in U$ выполнено $|U_1 - U_2|\in\mathbb{Q}$,
 	где $\mathbb{Q}$~--- множество рациональных чисел.
-\end{hypothesis}
+\end{aGipot}
 Если гипотеза~\ref{hypot:Ulam} справедлива, то для любого $n\geq 4$ множество $\dot{\mathfrak{M}}_n$ непусто
 (гипотеза~\ref{hypot:general_position_nonempty}).
 Неизвестно, следует ли из
@@ -368,11 +368,11 @@ $m+2\equiv 0 (\operatorname{mod} 16)$.
 В работах~\cite{garibaldi2005erdos,garibaldi2011erdos} исследуется связь множеств $\mathfrak{M}_n$ и
 проблемы Эрдёша о числе различных расстояний~\cite{erdos1946sets}.
 В работе~\cite{guth2015erdos} эта проблема в своей изначальной постановке была решена и доказана следующая
-\begin{theorem}
+\begin{aTeorema}
 	Пусть $G\subset{R}^2$, $|G| = n$.
 	Тогда количество различных расстояний $|G_i - G_j|, G_i,G_j \in G$
 	не менее $cn/\log n $.
-\end{theorem}
+\end{aTeorema}
 
 
 
