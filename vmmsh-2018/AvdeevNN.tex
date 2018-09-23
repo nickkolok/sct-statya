@@ -40,6 +40,26 @@
 
 
 
+\defbibenvironment{thebibliography}
+  {\textbackslash begin\{thebibliography\}\{99\}
+   % Page numbers and page headings are not wanted when copying
+   \thispagestyle{empty}
+   \pagestyle{empty}
+   \hyphenpenalty=10000
+   \exhyphenpenalty=10000
+   \renewcommand*{\&}{\textbackslash \symbol{38}}%
+   \renewcommand*{\mkbibemph}[1]{\textbackslash emph\{##1\}}%
+   \renewcommand*{\mkbibitalic}[1]{\textbackslash textit\{##1\}}%
+   \renewcommand*{\mkbibbold}[1]{\textbackslash textbf\{##1\}}%
+   \list{}{}}
+  {\endlist
+   \textbackslash end\{thebibliography\}
+   \thispagestyle{empty}
+   \pagestyle{empty}
+  }
+  {\item\textbackslash bibitem\{\printfield{entrykey}\}\\}
+
+
 %
 % Авторы
 
@@ -69,6 +89,7 @@
 
 \printbibliography
 
+\printbibliography[env=thebibliography]
 
 
 \end{document}
