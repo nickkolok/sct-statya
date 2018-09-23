@@ -92,10 +92,12 @@
 
 \makeatother%{@}
 
-%\AtBeginEnvironment{thebibliography}{
-%    \baselineskip=11pt
-%    \setlength{\itemsep}{0pt}%
-%}
+\AtBeginEnvironment{thebibliography}{
+  \footnotesize
+  \baselineskip=7pt
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+}
 
 
 \patchcmd{\thebibliography}
@@ -103,9 +105,10 @@
   {
 %    \setlength{\itemsep}{0pt plus 0.1pt}
 %    \setlength{\parskip}{0pt plus 0.1pt}
+    \footnotesize
     \setlength{\itemsep}{0pt}
     \setlength{\parskip}{0pt}
-    \baselineskip=7pt
+    \baselineskip=0pt
     \settowidth
   }
   {}{}
