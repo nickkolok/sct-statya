@@ -48,19 +48,1140 @@
 
 
 
-\input{IntroBySemenov.cp1251.tex}
+Oбозначим через $\mathfrak{M}$ множество таких подмножеств
+$
+	M = \{M_1, M_2, ... \}\subset \mathbb{R}^2
+$,
+что
+$
+	|M_i - M_j|\in\mathbb{N}
+$
+для всех $i$, $j$, где $\mathbb{N}$~--- множество натуральных чисел
+и $|M_i - M_j|$~--- расстояние между точками $M_i$ и $M_j$.
+П. Эрдёш доказал~\cite{erdos1945integral},
+что справедлива следующая
 
-\input{BetterLinearBound.cp1251.tex}
+\begin{aTeorema}
+	\label{thmErdos}
+	Всякое бесконечное подмножество $M\in\mathfrak{M}$
+	содержится в некоторой прямой $L\in\mathbb{R}^2$.
+\end{aTeorema}
 
-\input{ReviewChar.cp1251.tex}
+Теорему~\ref{thmErdos} можно доказать, основываясь на двух элементарных леммах.
+Интересно, что работа~\cite{erdos1945integral} была опубликована через несколько
+месяцев после совместной работы Эннинга и Эрдёша~\cite{anning1945integral},
+в которой было дано другое, более сложное доказательство.
 
-\input{ReviewMultidim.cp1251.tex}
+\begin{aLema}
+	\label{thmQuadCurves}
+	Пусть $A$ и $B$~--- две кривые второго порядка на плоскости и $A$ не является парой прямых.
+	Тогда $A\cap B$ содержит не более 4 точек.
+\end{aLema}
+
+\begin{proof}
+	Без ограничения общности кривая $A$ определяется уравнением
+	\begin{equation*}
+		x^2 = ay^2 + by +c
+		,
+	\end{equation*}
+	а кривая $B$ определяется уравнением второго порядка общего вида.
+	Система этих двух уравнений легко сводится к уравнению с одной неизвестной 4-го порядка.
+	Если это уравнение не является тривиальным, то оно имеет не более 4 корней.
+\end{proof}
+
+Если $A$ и $B$~--- пары прямых $xy=0$ и $xy=x$,
+то $A\cap B$ содержит ось игреков.
+Поэтому предположение в лемме~\ref{thmQuadCurves} о том,
+что одна из кривых не является парой прямых, существенно.
+
+\begin{aLema}
+	\label{thm:quadCurveFamily}
+	Пусть $M_1, M_2 \in \mathbb{R}^2$ и
+	$|M_1 - M_2| = n \in \mathbb{N}$.
+	Тогда
+	\begin{equation}
+		\label{eq:quadCurveFamily}
+		\left\{
+			M: |M-M_1|\in\mathbb{N}, |M-M_2|\in\mathbb{N}
+		\right\}
+		=\bigcup_{i=1}^n Q_i
+		,
+	\end{equation}
+	где $Q_1$ есть пара взаимно перпендикулярных прямых (крест)
+	и $Q_2, Q_3,...,Q_n$~--- гиперболы.
+\end{aLema}
+
+\begin{proof}
+	По неравенству треугольника
+	\begin{equation*}
+		\bigl| |M-M_1| - |M-M_2| \bigr|
+		\leqslant
+		|M_1 - M_2| = n
+		.
+	\end{equation*}
+	Так как $\bigl| |M-M_1| - |M-M_2| \bigr|$
+	есть целое неотрицательное число, то
+	\begin{equation*}
+		\bigl| |M-M_1| - |M-M_2| \bigr|
+		\in\{0,1,2,...,n\}
+		.
+	\end{equation*}
+	Ясно, что множество
+	\begin{equation}
+		\label{eq:centrPerp}
+		\left\{ M: \bigl| |M-M_1| - |M-M_2| \bigr| = 0 \right\}
+	\end{equation}
+	принадлежит прямой, проходящей через середину отрезка
+	$[M_1, M_2]$ перпендикулярно этому отрезку,
+	\begin{equation}
+		\label{eq:tails}
+		\left\{ M: \bigl| |M-M_1| - |M-M_2| \bigr| = n \right\}
+	\end{equation}
+	содержится в прямой, проходящей через точки $M_1, M_2$,
+	\begin{equation}
+		\label{eq:hyperbola}
+		\left\{ M: \bigl| |M-M_1| - |M-M_2| \bigr| = k \right\}
+	\end{equation}
+	есть гипербола для любого $k=1,2,...,n-1$.
+	Обозначая объединение множеств \eqref{eq:centrPerp} и \eqref {eq:tails}
+	через $Q_1$,
+	а множества \eqref{eq:hyperbola} через $Q_i$,
+	мы получаем требуемое представление.
+	Таким образом, \eqref{eq:quadCurveFamily}
+	есть объединение $n$ кривых второго порядка.
+\end{proof}
+
+\begin{proof}[Доказательство теоремы \ref{thmErdos}]
+	Предположим противное,
+	т.е. $\{M_1, M_2, ... \}\in\mathfrak{M}$
+	и точки $M_1$, $M_2$, $M_3$ не лежат на одной прямой.
+	Применяя лемму~\ref{thm:quadCurveFamily}
+	к паре точек $M_1, M_2$ и к паре точек $M_1, M_3$,
+	найдём такие кривые 2-го порядка
+	$Q_1, Q_2,...,.Q_n$ и $R_1, R_2,...,.R_m$, что
+	\begin{equation*}
+		\left\{
+			M: |M-M_1|\in\mathbb{N}, |M-M_2|\in\mathbb{N}
+		\right\}
+		=\bigcup_{i=1}^n Q_i
+		,
+	\end{equation*}
+	\begin{equation*}
+		\left\{
+			M: |M-M_1|\in\mathbb{N}, |M-M_3|\in\mathbb{N}
+		\right\}
+		=\bigcup_{j=1}^m R_j
+		.
+	\end{equation*}
+	Отсюда
+	\begin{multline*}
+		\left\{
+			M:
+			|M-M_1|\in\mathbb{N},
+			|M-M_2|\in\mathbb{N},
+			|M-M_3|\in\mathbb{N}
+		\right\}
+		\subset
+		\\ \subset
+		\left(\bigcup_{i=1}^n Q_i\right)
+		\cap
+		\left(\bigcup_{j=1}^m R_j\right)
+		=
+		\bigcup_{i=1}^n \bigcup_{j=1}^m \left( Q_i \cap R_i \right)
+		.
+	\end{multline*}
+	Из предположения о том, что $M_1$, $M_2$, $M_3$
+	не лежат на одной прямой, вытекает,
+	что $Q_1\cap R_1$ не содержит прямую.
+	Поэтому $|Q_1\cap R_1|\leqslant 4$,
+	и, следовательно, в силу леммы~\ref{thmQuadCurves}
+	$|Q_i\cap R_j|\leqslant 4$
+	для всех $i=1,2,...,n$, $j=1,2,...,m$.
+	Отсюда
+	\begin{equation*}
+		|M| \leqslant 4nm
+		,
+	\end{equation*}
+	т.е. $M$ конечно,
+	что противоречит предположению о бесконечности $M$.
+	Полученное проиворечие доказывает, что все точки $M$
+	принадлежат некоторой прямой $L$.
+	В качестве $L$ можно взять прямую,
+	проходящую через пару любых точек из $M$.
+\end{proof}
+
+Предположение о бесконечности $M$ в теореме~\ref{thmErdos} существенно.
+Для заданного $n\in\mathbb{N}$ обозначим через $\mathfrak{M}_n$
+множество таких $M\in\mathfrak{M}$, что
+$|M|=n$ и $M \not\subset L$ для любой прямой $L \subset\mathbb{R}^2$.
+
+\begin{aTeorema}
+	\label{thm:power_exist}
+	Для любого $n\in\mathbb{N}$ выполнено $\mathfrak{M}_n\neq\varnothing$.
+\end{aTeorema}
+
+\begin{proof}
+	Из теоремы Пифагора следует, что треугольник со сторонами
+	$2k+1$, $2k^2+2k$, $2k^2+2k+1$
+	является прямоугольным для любого $k\in\mathbb{N}$.
+	Выпишем стороны первых трёх треугольников,
+	а затем стороны подобных им треугольников с совпадающей первой стороной:
+	\begin{equation}
+		\label{eq:PifagTriangles}
+		\begin{array}{ll}
+			3,  4,  5 & \quad 105, 140, 175 \\
+			5, 12, 13 & \quad 105, 252, 273 \\
+			7, 24, 25 & \quad 105, 360, 375.
+		\end{array}
+	\end{equation}
+	Ясно, точки $(0,0)$, $(0,105)$, $(140,0)$, $(252,0)$, $(360,0)$
+	образуют множество из $\mathfrak{M}_5$.
+	Очевидно, если взять не 3, а $n$ точек, и затем найти подобные
+	прямоугольные треугольники с совпадающей первой стороной,
+	то можно построить множество из $\mathfrak{M}_{n+2}$.
+\end{proof}
+
+Другой пример множества из $\mathfrak{M}_{n}$ для заданного $n$
+можно найти в доказательстве теоремы~\ref{thm:power_char_exist},
+уверждение которой усиливает утверждение теоремы~\ref{thm:power_exist}.
+
+Для конечного дискретного подмножества плоскости $M\subset \mathbb{R}^2$
+естественным образом определяется диаметр:
+\begin{equation*}
+	\operatorname{diam} M = \max_{A,B\in M} |A-B|
+	.
+\end{equation*}
+
+Солимоси~\cite{solymosi2003note} показал существование такой константы $c$,
+что для любого $S\in\mathfrak{M}_n$ выполнено $\operatorname{diam} M \geq c n$.
+Солимоси не привёл значения этой константы, однако из его доказательства можно вывести,
+что эта константа равна $1/24$.
+
+Мы сейчас дадим другое доказательство, дающее лучшее значение константы $c$.
+
+\begin{aLema}
+	\label{lemma_points_on_line}
+	Пусть $S\in\mathfrak{M}_n$ для некоторого $n \geqslant 3$,
+	$\{M_1, M_2, M_3, M_4\} \subset S$, как минимум три из этих точек различны,
+	$|M_1 - M_2| = |M_3 - M_4| = 1$.
+	Тогда никакая прямая $m$ не содержит точки $M_1$, $M_2$, $M_3$ и $M_4$ одновременно.
+\end{aLema}
+
+\begin{proof}
+	Предположим противное.
+	Обозначим через $m_{12}$ и $m_{34}$ серединные перпендикуляры к отрезкам $M_1 M_2$ и $M_3 M_4$ соответственно.
+
+	Пусть точка $M\in S$.
+	Тогда либо $|M - M_1| - |M - M_2| = 0$ и $M\in m_{12}$, либо $\Bigl||M - M_1| - |M - M_2|\Bigr| = 1$ и $M\in m$,
+	т.е. в любом случае $M\in m \cup m_{12}$.
+	Аналогично $M\in m \cup m_{34}$.
+	Следовательно, $M\in (m \cup m_{12}) \cap (m \cup m_{34}) = m \cup (m_{12} \cap m_{34}) = m$,
+	т.к. $m_{12} \cap m_{34} = \varnothing$ (перпендикуляры к одной прямой, проведённые в разных точках, не пересекаются между собой).
+
+	В силу произвольности выбора $M \in S$ получаем $S \subset m$, что противоречит $S\in\mathfrak{M}_n$.
+\end{proof}
+
+\begin{aSledstvie}
+	\label{corollary:max_points_on_line}
+	Пусть $S\in\mathfrak{M}_n$, $\operatorname{diam} S = d$.
+	Тогда ни на какой прямой не лежит более $(d+3)/2$ точек из $S$.
+\end{aSledstvie}
+
+\begin{proof}
+	Предположим противное, т.е на прямой $m$ лежит $k$ точек из $S$ и $k > (d+3)/2$.
+	Пусть $\rho_i$, $i = 1,...,k-1$~--- расстояния между соседними точками,
+	пронумерованные в порядке возрастания.
+	Из леммы~\ref{lemma_points_on_line} получаем $\rho_{k-1}\geq...\geq\rho_2\geq 2$.
+	Значит,
+	\begin{equation*}
+		\sum_{i=1}^{k-1} \rho_i
+		=
+		\rho_1 + \sum_{i=2}^{k-1} \rho_i
+		\geq
+		1 + \sum_{i=2}^{k-1} \rho_i
+		\geq
+		1 + 2(k-2)
+		=
+		2k-3
+		>
+		d+3-3
+		=
+		d
+		,
+	\end{equation*}
+	т.е. расстояние между крайними точками превосходит диаметр системы,
+	чего быть не может.
+\end{proof}
+
+\begin{aLema}
+	\label{lemma:square_container}
+	Пусть $S\in\mathfrak{M}_n$, $\operatorname{diam} S = d$.
+	Тогда $S$ содержится в квадрате со стороной $d$.
+\end{aLema}
+
+\begin{proof}
+	Пусть $M_1, M_2 \in S$, $|M_1 - M_2| = d$,
+	т.е. диаметр системы $S$ достигается на $M_1 M_2$.
+	Введём прямоугольную декартову систему координат на плоскости таким образом, что
+	$M_1 = (-d/2; 0)$, $M_2 = (d/2; 0)$.
+
+	Тогда прочие точки $M_i \in S$ имеют координаты $M_i=(x_i, y_i)$.
+	Очевидно, что для $i>2$ имеем $|x_i| < d/2$
+	(иначе $|M_i - M_1| > d$ или $|M_i - M_2| > d$).
+	Более того, $|y_i| < d$ (иначе $|M_i - M_1| > d$ или $|M_i - M_2| > d$).
+
+	Пусть $y_{\max} = \max_{i} y_i$, $y_{\min} = \min_{i} y_i$, $M_{\max}=(x_{\max}, y_{\max})$, $M_{\min}=(x_{\min}, y_{\min})$
+	(если максимум достигается на нескольких точках, возьмём любые из них).
+	Тогда
+	\begin{multline}
+		d \geq |M_{\max} - M_{\min}| = \sqrt{(x_{\max} - x_{\min})^2 + (y_{\max} - y_{\min})^2}
+		\geq
+		\\\geq
+		\sqrt{(y_{\max} - y_{\min})^2} =
+		y_{\max} - y_{\min}
+	\end{multline}
+	Следовательно, $S$ содержится в квадрате со сторонами $x=\pm d/2$,
+	$y=y_{\max}$, $y=y_{\max} - d$.
+\end{proof}
+
+\begin{aGipot}
+	Не существует такого числа $\gamma < 1$,
+	что любое множество из $M\in \mathfrak{M}_n$, $n\geq 3$,
+	содержится в квадрате со стороной $\gamma \cdot \operatorname{diam} M$.
+\end{aGipot}
+
+В пользу этой гипотезы говорят часто встречающиеся конструкции множеств $M\in\mathfrak{M}_n$,
+расположенных на окружности~\cite{anning1915discussions,harborth1993upper,piepmeyer1996maximum,kurz2008bounds,our-vvmsh-2018}.
+
+\begin{aDef}
+	Крестом точек $M_1$ и $M_2$ будем называть объединение прямой,
+	проходящей через эти точки,
+	и серединного перпендикуляра к отрезку $M_1 M_2$
+	и обозначать $cr(M_1,M_2)$.
+\end{aDef}
+
+\begin{aUtv}
+	\label{proposition:intervals_cross}
+	Если интервалы $M_1 M_2$ и $M_3 M_4$ не пересекаются,
+	$M_1 \neq M_2$, $M_3 \neq M_4$,
+	то множество $cr(M_1,M_2) \cap cr(M_3,M_4)$~--- либо прямая, либо содержит не более 4 точек.
+\end{aUtv}
+
+\begin{proof}
+	Пересечением $cr(M_1,M_2) \cap cr(M_3,M_4)$ может быть либо от 2 до 4 точек, либо прямая,
+	либо, если эти кресты совпадают, их пересечение совпадает с каждым из этих крестов.
+	Но $cr(M_1,M_2) \neq cr(M_3,M_4)$, потому что середины отрезков $M_1 M_2$ и $M_3 M_4$
+	совпасть не могут, т.к. интервалы $M_1 M_2$ и $M_3 M_4$ не пересекаются по условию.
+\end{proof}
+
+\begin{aLema}
+	\label{lemma_preliminary_size}
+	Пусть $S\in\mathfrak{M}_n$,
+	$M_1, M_2, M_3, M_4 \in S$,
+	$M_1 \neq M_2$, $M_3 \neq M_4$,
+	интервалы $M_1 M_2$ и $M_3 M_4$ не пересекаются,
+	$d = \operatorname{diam} S > 5$.
+	Тогда $|S| \leq 4 \cdot |M_1 - M_2| \cdot |M_3 - M_4| + \frac{d-5}{2}$.
+\end{aLema}
+
+\begin{proof}
+	Если $|(cr(M_1, M_2) \cap cr(M_3, M_4))| < \infty$,
+	то (см. доказательство теоремы~\ref{thmErdos} или~\cite[часть 2, неравенство (1)]{solymosi2003note})
+	$|S| \leq 4 \cdot |M_1 - M_2| \cdot |M_3 - M_4|$.
+	Иначе (в силу утверждения~\ref{proposition:intervals_cross}) $cr(M_1, M_2) \cap cr(M_3, M_4) = m$,
+	где $m$~--- прямая.
+	В силу следствия~\ref{corollary:max_points_on_line} на этой прямой лежит не более $(d+3)/2$ точек;
+	кроме того, из общего количества точек нужно вычесть 4,
+	которые бы дали эти 2 креста в случае дискретного переcечения.
+	Получаем верхнюю оценку
+	\begin{multline}
+		|S| \leq 4 \cdot |M_1 - M_2| \cdot |M_3 - M_4| - 4 + \frac{d+3}{2}
+		=
+		\\=
+		4 \cdot |M_1 - M_2| \cdot |M_3 - M_4| + \frac{d-5}{2}
+		.
+	\end{multline}
+\end{proof}
+
+Определим теперь коэффициенты упаковки точек в квадрат $\varphi_k$.
+Пусть
+\begin{equation*}
+	\Phi_k = \{ P \subset [0;1]^2 : |P|=k\}
+	,
+\end{equation*}
+где $[0;1]^2$~--- замкнутый единичный квадрат на плоскости.
+Тогда
+\begin{equation*}
+	\varphi_k = \max_{P \in \Phi_k} \min_{A,B \in P} |A - B|
+	.
+\end{equation*}
+Иначе говоря, через $\varphi_k$ будем обозначать наибольшее число, такое,
+что в единичном квадрате нельзя разместить $k$ точек так,
+чтобы расстояние между любыми двумя точками было не менее $\varphi_k$.
+Проблема отыскания $\varphi_k$ носит название проблемы упаковки точек в квадрат~\cite{locatelli2002packing,costa2013valid}.
+
+\begin{aTeorema}%[\cite{costa2013valid}]
+	\label{thm:varphi_k_bounds}
+	\cite{costa2013valid}
+	Для $k\geq 2$ выполнено
+	\begin{equation*}
+		\sqrt{\frac{2}{k\sqrt{3}}}
+		\leq
+		\varphi_k
+		\leq
+		\frac{1}{k-1} +
+		\sqrt{
+			\frac{1}{(k-1)^2}
+			+
+			\frac{2}{(k-1)\sqrt{3}}
+		}
+	\end{equation*}
+\end{aTeorema}
+
+Нам потребуется вспомогательная
+\begin{aLema}
+	\label{lemma:quadr_diag_edges}
+	Пусть $ABCD$~--- выпуклый четырёхугольник на плоскости.
+	Тогда $\max\{AC,BD\}>\min\{AB,BC,CD,DA\}$,
+	т.е. хотя бы одна диагональ больше хотя бы одной стороны.
+\end{aLema}
+\begin{proof}
+	Предположим, что любая диагональ меньше любой стороны.
+	Тогда в каждом треугольнике, образованном диагональю и двумя сторонами,
+	меньший угол лежит против меньшей стороны,
+	т.е. угол между сторонами, лежащий против диагонали, острый.
+	Таким образом, получаем, что все 4 угла четырёхугольника~---
+	острые, чего быть не может.
+\end{proof}
+
+Докажем теперь линейную оценку снизу на диаметр множеств из $\mathfrak{M}_n$,
+где $n$ имеет специальный вид.
+\begin{aLema}
+	Пусть $S\in\mathfrak{M}_n$,
+	$d = \operatorname{diam} S > 5$,
+	$k \geq 2$,
+	$m \geq 2$,
+	$ |S| = (k-1)m^2 + 2$.
+
+	Тогда
+	\begin{equation}
+		d \geq \mu_k (|S| - 2),
+	\end{equation}
+	где
+	\begin{equation}
+		\mu_k = \frac{\sqrt{64\varphi_k^2 (k-1)+1}-1}{16\varphi_k^2 (k-1)}
+	\end{equation}
+\end{aLema}
+
+\begin{proof}
+	Множество $S$ содержится в квадрате со стороной $d$ (см. лемму~\ref{lemma:square_container}).
+	Разобьём этот квадрат на $m^2$ маленьких квадратов со стороной $d/m$.
+	Тогда по принципу Дирихле либо:
+
+	а) хотя бы в два маленьких квадрата $Q_1$ и $Q_2$ попало не менее, чем по $k$ точек;
+
+	б) хотя бы в один маленький квадрат $Q_1$ попало не менее, чем $k+1$ точка.
+	\\
+	В случае (а) в $Q_1$ выберем точки $M_1$ и $M_2$,
+	а в $Q_2$ выберем точки $M_3$ и $M_4$
+	так, что $|M_1 - M_2| \leq \varphi_k d /m$, $|M_3 - M_4| \leq \varphi_k d/m$
+	(это всегда можно сделать в силу определения $\varphi_k$).
+
+	В случае (б) в $Q_1$ выберем точки $M_1$ и $M_2$ так, что
+	$|M_1 - M_2| \leq \varphi_{k+1} d /m \leq \varphi_k d /m$.
+	Из всех точек, кроме $M_1$, выберем $M_3$ и $M_4$ так, что
+	$|M_3 - M_4| \leq \varphi_k d/m$.
+	В силу леммы~\ref{lemma:quadr_diag_edges} это всегда можно сделать так,
+	чтобы интервалы $M_1 M_2$ и $M_3 M_4$ не пересекались.
+	Возможное совпадение $M_2$ и $M_3$ не помешает дальнейшему доказательству.
+
+	По лемме~\ref{lemma_preliminary_size}
+	\begin{equation}
+		|S| \leq 4 \left( \frac{d}{m} \varphi_k \right)^2 + \frac{d}{2} - \frac{5}{2}
+	\end{equation}
+	или, с учётом того, что $ |S| = (k-1)m^2 + 2$,
+	\begin{equation}
+		 4 \left( \frac{d}{m} \varphi_k \right)^2 + \frac{d}{2} - \left( (k-1)m^2 + \frac{9}{2}\right) \geq 0
+	\end{equation}
+
+	Положим $d = \lambda m$:
+	\begin{equation}
+		 4 \lambda^2 \varphi_k^2 + \frac{m}{2} \lambda - \left( (k-1)m^2 + \frac{9}{2}\right) \geq 0
+	\end{equation}
+
+	Решим это квадратное неравенство относительно $\lambda$,
+	зная, что $\lambda > 0$.
+	Непосредственно выпишем дискриминант:
+	\begin{multline}
+		D =
+		\frac{m^2}{4} + 4 \cdot 4 \varphi_k^2 \cdot \left( (k-1)m^2 + \frac{9}{2}\right)
+		=
+		\frac{m^2}{4} + 16 \varphi_k^2 \cdot \left( (k-1)m^2 + \frac{9}{2}\right)
+		>\\>
+		\frac{m^2}{4} + 16 \varphi_k^2 \cdot (k-1)m^2
+		=
+		\frac{m^2}{4} \cdot (1 + 64 \varphi_k^2 \cdot (k-1))
+		> 0
+	\end{multline}
+
+	Итак,
+	\begin{multline}
+		\frac{d}{m} = \lambda >
+		\frac{-\frac{m}{2} + \sqrt{\frac{m^2}{4} \cdot (1 + 64 \varphi_k^2 \cdot (k-1))} }{8 \varphi_k^2}
+		=\\=
+		\frac{-m + \sqrt{m^2  (1 + 64 \varphi_k^2 \cdot (k-1))} }{16 \varphi_k^2}
+		=
+		m\frac{ \sqrt{ 64 \varphi_k^2 (k-1) + 1} -1 }{16 \varphi_k^2}
+	\end{multline}
+	Разделим обе части неравенства на положительное число $m(k-1)$:
+	\begin{equation}
+		\frac{d}{(k-1)m^2}
+		>
+		\frac{ \sqrt{ 64 \varphi_k^2 (k-1) + 1} -1 }{16 \varphi_k^2 (k-1)}
+	\end{equation}
+	Положим
+	\begin{equation}
+		\mu_k = \frac{ \sqrt{ 64 \varphi_k^2 (k-1) + 1} -1 }{16 \varphi_k^2 (k-1)},
+	\end{equation}
+	тогда
+	\begin{equation}
+		\frac{d}{(k-1)m^2}
+		>
+		\mu_k
+	\end{equation}
+	откуда незамедлительно
+	\begin{equation}
+		d > \mu_k \cdot (|S|-2)
+		.
+	\end{equation}
+\end{proof}
+
+У только что полученной оценки есть две существенных особенности:
+во-первых, она справедлива лишь для мощности специального вида,
+во-вторых, зависит от $\varphi_k$.
+
+\begin{aSledstvie}
+	\label{corollary:common_linear_bound}
+	Пусть $S\in\mathfrak{M}_n$, $$ (k-1)m^2 + 2 \leq n \leq (k-1)(m+1)^2 + 1.$$
+	Тогда $\operatorname{diam} S \geq \frac{m^2}{(m+1)^2} \mu_k \cdot |S|$.
+\end{aSledstvie}
+
+Выбор $k$ во многом произволен.
+Так, например, для $k=29$ имеем $\varphi_k=0.226882900744209089183505212941...$
+~\cite{markot2005newverified}
+%(округление здесь и далее осуществляется в сторону уменьшения $\mu_k$, чтобы не испортить неравенство)
+и $\mu_k > 0.3753$.
+Следовательно, верно
+\begin{aUtv}
+	\label{proposition:linear_bound_29}
+	Для достаточно больших $n$ диаметр любого множества $M\in\mathfrak{M}_n$ не менее $\frac{3}{8}n$.
+\end{aUtv}
+Заметим, что для $n=3$ эта оценка, очевидно, неверна.
+
+Выбрав другое $k$, можно получить оценку, применимую, начиная с некоторого известного $n$.
+Например, $\varphi_{10} = 0.42127954398390343276882176065...$
+(для этого числа неизвестно выражение в радикалах)~\cite{degroot1990optimal10points} и
+$\mu_k > 0.3584$.
+Для $4 \leq n \leq 122$ вычислены точные нижние оценки на диаметр (см. утверждение~\ref{proposition:d(2,n)}) и верно, что
+\begin{equation}
+	\label{eq:linear_bound_10}
+	\operatorname{diam} M \geq 0.3584 \cdot |M|
+\end{equation}
+Кроме того, для $M \in \mathfrak{M}_n$, $n \geq 122$ выполнено
+$\operatorname{diam} M \geq 9905$ (см. утверждение~\ref{proposition:d(2,n)}).
+Разделив 9905 на 0.3584  и округлив результат до меньшего целого, получаем 27636.
+Следовательно, для $4 \leq n \leq 27636$ выполнено~\eqref{eq:linear_bound_10}.
+Если $n \geq 27636$, то $ (k-1)m^2 + 2 \leq n \leq (k-1)(m+1)^2 + 1$ для $k=10$ и некоторого $m \geq 55$.
+Тогда с учётом следствия~\ref{corollary:common_linear_bound} получаем
+\begin{aUtv}
+	\label{proposition:linear_bound_10}
+	Для всех $n \geq 4$, $M\in\mathfrak{M}$
+	\begin{equation*}
+		\operatorname{diam} M \geq \frac{55^2}{56^2} \cdot 0.3584 \cdot |M|
+		>
+		0.3457 \cdot |M|
+		.
+	\end{equation*}
+\end{aUtv}
+
+\begin{aZam}
+	Нахождение $\varphi_k$ для $k > 30$ может позволить улучшить оценку
+	в утверждениях~\ref{proposition:linear_bound_29} и~\ref{proposition:linear_bound_10},
+	равно как и вычисление точных нижних оценок на диаметр для конкретных $n>122$ (в утверждении~\ref{proposition:linear_bound_10}),
+	но лишь до определённого предела, поскольку $\mu_k$ зависит от $\varphi_k$ и $k$
+	только в составе выражения $\varphi_k^2 (k-1)$,
+	которое ограничено в силу теоремы~\ref{thm:varphi_k_bounds}.
+\end{aZam}
+
+\begin{aZam}
+	Де-факто нам требуется не произвольная расстановка точек в единичном квадрате,
+	а такая расстановка, при которой все расстояния между точками~--- рациональные числа.
+	Это требование уже имеет отношение к проблеме Улама-Эрдёша (см. гипотезу~\ref{hypot:Ulam}).
+\end{aZam}
+
+
+
+Конструкцию $\mathfrak{M}_n$ можно распространить на пространства более высокой размерности.
+
+%В пространствах более высокой размерности можно построить множества, аналогичные $\mathfrak{M}$.
+
+\begin{aDef}
+	Пусть $m \geq 2$, $n \geq m + 1$.
+	Через $\mathfrak{M}(m,n)$ будем обозначать множество таких подмножеств $m$--мерного евклидова пространства
+	$M\subset\mathbb{R}^m$, что $|M| = n$, для любых $M_1,M_2 \in M$ выполнено $|M_1 - M_2| \in\mathbb{N}$
+	и $M$ не содержится ни в какой $(m-1)$--мерной гиперплоскости.
+\end{aDef}
+
+Более того, конструкцию $\mathfrak{M}_n$ можно распространить и на $\mathbb{Z}^m_n$~\cite{Kohnert2006IntegralPS}.
+%Более того, аналогичные множества были построены в $\mathbb{Z}^m_n$~\cite{Kohnert2006IntegralPS}.
+
+Характеристика (наряду с диаметром и мощностью) обобщается на случай, когда множество точек с целочисленными расстояниями
+рассматривается в $\mathbb{R}^m$~\cite{kurz2005characteristic}.
+
+При изучении множеств $\mathfrak{M}(m,n)$ возникает закономерный вопрос
+о минимальном диаметре для заданных размерности и мощности.
+Говоря формально, определим функцию
+\begin{equation*}
+	d(m,n) = \min_{M\in\mathfrak{M}(m,n)} \operatorname{diam} M
+	.
+\end{equation*}
+
+\begin{aDef}
+	Множество $M\in\mathfrak{M}(m,n)$ называется оптимальным,
+	если $\operatorname{diam} M = d(m,n)$.
+\end{aDef}
+
+Приведём известные оценки на $d(m,n)$
+(за основу взят список из~\cite{kurz2008bounds}):
+
+%, дополненный результатом работы~\cite{nozaki2013lower}
+%и результатом, полученным в данной статье.
+
+\begin{align}
+	& d(m, n - 1) \leq d(m,n) \\
+	& d(n, n + 1) = 1 \\
+	& d(m, n) \leq \begin{cases}
+		2^{n-m+1} -2 & \mbox{~для~} n-m \equiv 0 \mod 2
+		\\
+		3(2^{n-m} -1) & \mbox{~для~} n-m \equiv 1 \mod 2
+	\end{cases} \qquad \mbox{\cite{harborth1985diameters}} \\
+	& d(2,n) \geq \frac{3}{8}n \qquad \mbox{для достаточно больших $n$ (утверждение~\ref{proposition:linear_bound_29})} \\
+	& d(2,n) > 0.3457 n \qquad \mbox{для $n\geq 4$ (утверждение~\ref{proposition:linear_bound_10})} \\
+	& d(m,n) \leq (n-m)^{c \log \log (n-m)} \mbox{~для некоторого $c$} \qquad \mbox{\cite{harborth1993upper}} \label{upper_bound_d_m_n_log_log}\\
+	& d(m,n) > \sqrt{\frac{3}{2m}} n^{1/m} \mbox{~\cite{kanold1981punktmengen}, в частных случаях улучшена в \cite{nozaki2013lower}} \\
+	& d(3,n) > \frac{1}{\sqrt{14}}n^{1/2} \mbox{~для~} n \geq 5 \quad \mbox{\cite{kanold1981punktmengen}} \\
+	& d(m, 2m + 1) \leq 8 \qquad \mbox{\cite{piepmeyer1988raumliche}} \\
+	& d(m, 2m + 2) \leq 13 \qquad \mbox{\cite{piepmeyer1988raumliche}} \\
+	& d(m, 3m    ) \leq 109 \qquad \mbox{\cite{kemnitz1988punktmengen}} \\
+	& d(m, m^2 + m) \leq 17 \qquad \mbox{\cite{kurz2008bounds}} \\
+	& 3 \leq d(m, n) \leq 4 \mbox{~для~} m + 2 \leq n \leq 2m \mbox{~и~} d(m, 2m) = 4 ~ \mbox{\cite{piepmeyer1988raumliche,harborth1991point}}\\
+\end{align}
+
+Кроме того, в~\cite{kurz2008bounds} выдвинуто предположение, что $d(m - 1, n) \geq d(m, n)$.
+
+
+
+
+Существуют алгоритмы вычисления $d(m,n)$ на ЭВМ, однако они требуют большого количества машинного времени,
+причём требуемое время быстро растёт с ростом $m$ и $n$.
+Первые несколько значений $d(2,n)$ были получены в~\cite{harborth1998integral},
+следующие известные значения~--- в \cite{kurz2005characteristic,kurz2006konstruktion,kurz2008minimum,kurz2008bounds,our-mz-rus}.
+Алгоритм, основанный на переборе,
+может быть существенно оптимизирован с применением характеристики~\cite{kurz2005characteristic,kreisel2008heptagon}.
+Однако сложность вычисления максимальной возможной мощности для заданного диаметра $d$, по оценке~\cite{kreisel2008heptagon},
+составлет $O(d^3)$ (в двумерном случае).
+%В (TODO: ссылка!) отмечено, что важно перепроверять вычисленные значения независимо составленными программами для ЭВМ.
+Приведём некоторые известные значения:
+
+\begin{aUtv}
+\label{proposition:d(2,n)}
+\end{aUtv}
+$(d(2, n))_{n=3,...,122} = 1$, 4, 7, 8, 17, 21, 29, 40, 51, 63, 74, 91, 104, 121,
+134, 153, 164,
+196, 212, 228, 244, 272, 288, 319, 332, 364, 396, 437, 464, 494, 524, 553, 578, 608,
+642, 667, 692, 754, 816, 897, 959, 1026, 1066, 1139, 1190,  1248, 1306, 1363, 1410,
+1460, 1514, 1564, 1614, 1675, 1727, 1770, 1817, 1887, 1906, 2060, 2140, 2169,
+2231, 2299, 2432, 2494, 2556, 2624, 2692, 2827, 2895, 2993, 3098, 3196, 3294,
+3465, 3575, 3658, 3749, 3885, 3922, 4223, 4380, 4437, 4559, 4693, 4883,
+5018, 5109, 5264, 5332, 5480, 5603, 5738, 5938, 5995, 6052,
+6324, 6432, 6630, 6738, 6939, 7061, 7245, 7384, 7568, 7752, 7935, 8119, 8321,
+8406, 8648, 8729, 8927, 9052, 9211, 9423, 9534, 9794, 9905
+.
+
+Для многомерного случая были вычислены~\cite{piepmeyer1988raumliche,harborth1998integral,kurz2005characteristic,kurz2006konstruktion,kurz2008bounds} следующие значения.
+\begin{aUtv}~
+\end{aUtv}
+$(d(3, n))_{n=4,...,24} = 1$, 3, 4, 8, 13, 16, 17, 17, 17, 56, 65, 77, 86, 99, 112, 133, 154,
+195, 212, 228, 244.
+
+\begin{aGipot}
+	Для любого $n\geq 3$ выполнено $d(2,n) < d(2,n+1)$.
+\end{aGipot}
+В пользу этой гипотезы говорят известные значения $d(2,n)$.
+Для больших размерностей утверждение гипотезы неверно: так, $d(3,10) = d(3,11) = 17$.
+
+\begin{aGipot}
+	Никакое оптимальное множество $M\in\mathfrak{M}$ не лежит на целочисленной решётке.
+\end{aGipot}
+В пользу этой гипотезы говорят реузльтаты вычислений для $m=2$, $3 \leq n \leq 43$.
+
+Примечательно, что для $m=2$, $n=4$ и $n=18$ оптимальные множества не единственны.
+В~\cite{kurz2008bounds} установлено, что для $9 \leq n \leq 122$ оптимальное множество является веерным, т.е. содержится
+в объединении прямой и точки (все точки, кроме одной, лежат на некоторой прямой).
+
+\begin{aGipot}
+	Все оптимальные множества из $n$ точек на плоскости, $n\geq 9$, являются веерными.
+\end{aGipot}
+
+
+
+
+При изучении множеств из $\mathfrak{M}_n$ часто возникают множества специальных видов.
+Наиболее простым примером являются веерные множества.
+Курц и Вассерман~\cite{kurz2008minimum} показали, что диаметр веерного множества мощности $n$
+не менее, чем $n^{c \log \log n}$, где $c$~--- некоторая константа.
+Это результат указывает на возможность улучшения оценки в следствии~\ref{corollary:max_points_on_line}.
+
+В работе~\cite{kurz2008minimum} высказана
+\begin{aGipot}
+	\label{hypot:log_lower_bound}
+	Существует такая константа $c$,
+	что для любого $n\geq 3$ и $M\in\mathfrak{M}_n$ выполнено
+	$\operatorname{diam} M \geq n^{c \log \log n}$.
+\end{aGipot}
+
+Заметим, что неравенство в гипотезе~\ref{hypot:log_lower_bound}
+совпадает с верхней оценкой~\eqref{upper_bound_d_m_n_log_log} на $d(2,n)$
+с точностью до константы.
+
+
+Возникает закономерный вопрос: а какие бывают множества из $\mathfrak{M}_n$,
+кроме веерных?
+
+Положив $p=1$ в доказательстве теоремы~\ref{thm:power_char_exist} и добавив к построеннному множеству
+точку $M_{n+2} = (0, -\sqrt{2^{n+1}})$, где $n$ нечётно,
+получим множество из $n+2$ точек, из которых $n$ лежат на некоторой прямой и 2 вне её.
+
+В~\cite{our-vvmsh-2018} приведены примеры различных множеств из $\mathfrak{M}_n$:
+\begin{itemize}
+	\item
+		$
+		\left\{
+		(\pm 21/2, 0);
+		(\pm 4, 3\sqrt{35}/2);
+		(\pm 5/2, 0);
+		(\pm 11/2, 0);
+		\right\}
+		$~---
+		содержится в двух параллельных прямых (2 точки на одной, 6 на другой);
+
+
+
+	\item
+		$
+		\left\{
+		\left( {57/34} ; -{12\sqrt{35}/17}\right);
+		\left( {44/17} ; {39\sqrt{35}/34}\right);
+		\left( -{72/17} ;
+		{15\sqrt{35}/34}\right);
+		\right.$ \\ $\left.
+		\left( -{175/34} ; -{24\sqrt{35}/17}\right);
+		\left( -{57/34} ; {12\sqrt{35}/17}\right);
+		%\right.$ \\ $\left.
+		\left( \pm{17/2} ; 0\right);
+		\right\}
+		$~---
+		содержится в двух параллельных прямых (3 точки на одной, 4 на другой);
+
+	\item
+		$
+		\left\{
+		(0,0);(\pm 50, 0); (\pm 14, \pm 48)
+		\right\}
+		$~---
+		содержится в объединении окружности с её центром (7~точек);
+
+	\item
+		$
+		\left\{
+		\left( \pm30 ; 0\right);
+		%\left( 30 ; 0\right);
+		\left( \pm{15/2} ; {25\sqrt{7}/2}\right);
+		%\left( {15/2} ; {25\sqrt{7}/2}\right);
+		%\left( {33/2} ; {9\sqrt{7}/2}\right);
+		\left( 0 ; {10\sqrt{7}/1}\right);
+		\left( \pm{33/2} ; {9\sqrt{7}/2}\right);
+		\right\}
+		$~---
+		содержится в двух прямых, пересекающихся под острым углом (7~точек).
+\end{itemize}
+
+Информация о некоторых других конструкциях может быть найдена в~\cite[\S 5.11]{brass2006research},~\cite[\S D20]{guy2013unsolved}.
+
+TODO: спрямить ссылки!
+
+
+\begin{aDef}
+	\cite{kurz2008minimum} Множество $M\in\mathfrak{M}(m,n)$ называется множеством полуобщего положения,
+	если ни через какие $m+1$ точек из $M$ нельзя провести $(m-1)$--мерную гиперплоскость.
+	Множество всех множеств полуобщего положения мощности $n$ в $\mathbb{R}^m$ будем обозначать $\overline{\mathfrak{M}}(m,n)$.
+	Для краткости обозначим $\overline{\mathfrak{M}}_n=\overline{\mathfrak{M}}(2,n)$.
+\end{aDef}
+
+В \cite{harborth1993upper} показано, что $\overline{\mathfrak{M}}_n\neq\varnothing$ для любого $n \geq 3$
+и приведены примеры множеств из $\overline{\mathfrak{M}}_n$, содержащихся в окружности.
+На эти множествах достигается верхняя оценка~\eqref{upper_bound_d_m_n_log_log} на $d(2,n)$
+с некоторой константой.
+
+Определим функцию~\cite{kurz2008minimum}
+\begin{equation*}
+	\overline{d}(m,n) = \min_{M\in\overline{\mathfrak{M}}(m,n)} \operatorname{diam} M
+	.
+\end{equation*}
+
+В работе~\cite{kurz2008minimum} вычислено, что
+\\
+$\bigl(\overline{d}(2, n)\bigr)_{n=3,...,36} = 1,$
+4, 8, 8, 33, 56, 56, 105, 105, 105, 532, 532, 735, 735, 735, 735,
+1995, 1995, 1995, 1995, 1995, 1995, 9555, 9555, 9555, 10672,
+13975, 13975, 13975, 13975, 13975, 13975, 13975, 13975.
+
+\begin{aDef}
+	\cite{kurz2008minimum} Множество $M\in\overline{\mathfrak{M}}(m,n)$, $n\geq 4$ называется множеством общего положения,
+	если ни через какие $m+2$ точек из $M$ нельзя провести сферу.
+	Множество всех множеств общего положения мощности $n$ будем обозначать $\dot{\mathfrak{M}}(m,n)$.
+	Для краткости обозначим $\dot{\mathfrak{M}}_n=\dot{\mathfrak{M}}(2,n)$.
+\end{aDef}
+
+В отличие от $\mathfrak{M}_n$ и $M\in\overline{\mathfrak{M}}_n$,
+существование множеств из $\dot{\mathfrak{M}}_n$ является достаточно сложным вопросом.
+Множество из $\dot{\mathfrak{M}}_6$ предъявлено в~\cite{noll1989nclusters},
+множество из $\dot{\mathfrak{M}}_7$~--- в~\cite{kurz2008minimum}.
+Определим функцию~\cite{kurz2008minimum}
+\begin{equation*}
+	\dot{d}(m,n) = \min_{M\in\dot{\mathfrak{M}}(m,n)} \operatorname{diam} M
+	.
+\end{equation*}
+Согласно~\cite{kurz2008minimum},
+$\bigl(\dot{d}(2,n)\bigr)_{n=3,...,7}
+= 1,$ 8, 73, 174, 22270.
+
+Вопрос о существовании множеств из $\dot{\mathfrak{M}}_8$
+остаётся открытым.
+
+\begin{aGipot}
+	\label{hypot:general_position_nonempty}
+	Для любого $n\geq 4$ непусто $\dot{\mathfrak{M}}_n$.
+\end{aGipot}
+
+
+\begin{aDef}
+	\cite{noll1989nclusters,kurz2013constructing}
+	$n$--кластером называется множество $M\in\dot{\mathfrak{M}}_n$,
+	содержащееся в целочисленной решётке.
+\end{aDef}
+Существование $n$--кластера эквивалентно существованию множества $M\in\dot{\mathfrak{M}}_n$
+характеристики 1.
+В~\cite{noll1989nclusters} показано существование 6--кластеров,
+в~\cite{kurz2013constructing}~--- 7--кластеров.
+
+
+Солимоси построил~\cite{solymosi2003note} для любого $n\geq 3$ конструкцию множества $M\in\mathfrak{M}_n$
+такого, что для некоторых $M_1, M_2 \in M$ выполнено $|M_1 - M_2| = 2$.
+Полученное им множество также является веерным.
+
+Известно, что для $3\leq n \leq 5$ существуют множества из $\mathfrak{M}_n$
+c минимальной длиной ребра 1.
+Все известные примеры являются веерными~\cite{harborth1993upper}.
+Существуют ли множества произвольной мощности с длиной ребра 1,
+неизвестно, однако легко доказать следующее
+\begin{aUtv}
+	\label{prop:edge_one}
+	Для $n \geq 4$ не существует таких $M\in\overline{\mathfrak{M}}_n$,
+	что для некоторых $M_1, M_2$ выполнено $|M_1 - M_2| = 1$.
+\end{aUtv}
+\begin{proof}
+	Пусть $M\in\overline{\mathfrak{M}}_n$ и для некоторых $M_1, M_2$ выполнено $|M_1 - M_2| = 1$.
+	Тогда все точки множества $M$ лежат на $cr(M_1,M_2)$.
+	$cr(M_1,M_2)$ есть объединение двух прямых, на каждой из которых может быть не более 2 точек в силу того, что
+	$M\in\overline{\mathfrak{M}}_n$,
+	откуда непосредственно следует требуемое утверждение для $n\geq 5$.
+
+	Пусть теперь $n=4$.
+	Предположим противное.
+	Пусть $M=\{M_1, M_2, M_3, M_4\} \in \overline{\mathfrak{M}}_4$,
+	$M_1 = (-1/2, 0)$, $M_2 = (1/2, 0)$, $O=(0,0)$.
+	Тогда $M_3$ и $M_4$ лежат на оси ординат (см. выше).
+	Так как $|M_3 - M_4| \in \mathbb{Z}$,
+	то площадь треугольника $M_1 M_3 M_4$ есть рациональное число.
+	По определению~\ref{def_char_classic} это означает, что $\operatorname{char} M = 1$.
+	Тогда по определению~\ref{def_char_lattice} имеем $M_3 = (0, a/2)$.
+	Понятно, что $a \neq 0$.
+	Не теряя общности, положим $a\in\mathbb{N}$.
+	Пусть $|M_1 - M_3| = b$.
+	Применяя теорему Пифагора к треугольнику $O M_1 M_3$, получим уравнение
+	\begin{equation*}
+		\frac{1}{4} + \frac{a^2}{4} = b^2
+		,
+	\end{equation*}
+	или, что то же самое,
+	\begin{equation*}
+		(2b)^2 - a^2 = 1
+		.
+	\end{equation*}
+	Это уравнение не имеет решений в натуральных числах.
+	Полученное противоречие завершает доказательство.
+\end{proof}
+Условие $n \geq 4$ в утверждении~\ref{prop:edge_one} существенно.
+Для $n=3$ существует контрпример: равносторонний треугольник со стороной 1.
+
+
+
+Если $M\in\mathfrak{M}(m,n)$ и все рёбра $M$ имеют чётную длину,
+то понятно, что множество $H$, полученное из $M$ сжатием в два раза,
+также будет принадлежать $\mathfrak{M}(m,n)$.
+Выполняя такую операцию, мы рано или поздно получим множество из $\mathfrak{M}(m,n)$ такое,
+что для некоторых $M_1,M_2\in M$ расстояние $|M_1 - M_2|$ нечётно.
+Возникает закономерный вопрос: сколько может быть нечётных расстояний?
+
+В~\cite{graham1974there} доказано, что
+для существования множества $M\in\mathfrak{M}(m,m+2)$ такого, что для любых
+$M_i,M_j\in M$, $i\neq j$ расстояние $|M_i-M_j|$ нечётно,
+необходимо и достаточно, чтобы
+$m+2\equiv 0 (\operatorname{mod} 16)$.
+В частности, не существует такого множества $M\in\mathfrak{M}_4$,
+что все его рёбра имеют нечётную длину.
+На основе этого факта в работе~\cite{piepmeyer1996maximum} с использованием результатов теории графов доказано,
+что количество рёбер нечётной длины в множестве $M\in\mathfrak{M}_n$ не превосходит
+\begin{equation}
+	\frac{n^2}{3} + \frac{r(r - 3)}{6}, \mbox{~где~} r = 1, 2, 3 \mbox{~и~} n \equiv r (\operatorname{mod} 3)
+\end{equation}
+и конструктивно показана точность этой оценки.
+Множество, на котром эта оценка достигается, лежит на окружности.
+
+Отдельные оценки количества рёбер нечётной длины для множеств из $\dot{\mathfrak{M}}_n$
+авторам неизвестны.
+
+
+
+
+
+
+
+
+Перспективными направлениями исследований являются, кроме непосредственно отыскания как можно более точных оценок на $d(m,n)$,
+например, поиск систем из $\mathfrak{M}_n$, содержащихся в двух прямых (параллельных или пересекающихся).
+
+
+
+
+С исследованием множеств $\mathfrak{M}_n$ тесно связаны ещё две гипотезы о расстояниях на плоскости.
+\begin{aGipot}[Улам, \cite{ulam1960collection}]
+	\label{hypot:Ulam}
+	Существует всюду плотное подмножество $U\subset\mathbb{R}^2$, такое,
+	что для любых $U_1, U_2 \in U$ выполнено $|U_1 - U_2|\in\mathbb{Q}$,
+	где $\mathbb{Q}$~--- множество рациональных чисел.
+\end{aGipot}
+Если гипотеза~\ref{hypot:Ulam} справедлива, то для любого $n\geq 4$ множество $\dot{\mathfrak{M}}_n$ непусто
+(гипотеза~\ref{hypot:general_position_nonempty}).
+Неизвестно, следует ли из
+гипотезы~\ref{hypot:general_position_nonempty} гипотеза~\ref{hypot:Ulam}.
+
+
+В работах~\cite{garibaldi2005erdos,garibaldi2011erdos} исследуется связь множеств $\mathfrak{M}_n$ и
+проблемы Эрдёша о числе различных расстояний~\cite{erdos1946sets}.
+В работе~\cite{guth2015erdos} эта проблема в своей изначальной постановке была решена и доказана следующая
+\begin{aTeorema}
+	Пусть $G\subset{R}^2$, $|G| = n$.
+	Тогда количество различных расстояний $|G_i - G_j|, G_i,G_j \in G$
+	не менее $cn/\log n $.
+\end{aTeorema}
+
+
+
+
+TODO: Примеры множеств - рисунки (если будет время и место).
+
 
 
 {\small Работа выполнена в Воронежском университете при поддержке РНФ, грант 16-11-10125.}
 
 
-\input{blg.cp1251.tex}
+\begin{thebibliography}{99}
+	\bibitem{erdos1945integral}
+	\textsl{Erd\"{o}s} \textsl{P.} Integral distances /\!/ Bulletin of the
+	American Mathematical Society. --- 1945. --- Т. 51, No 12. --- С. 996.
+	\bibitem{anning1945integral}
+	\textsl{Anning} \textsl{N. H.}, \textsl{Erd\"{o}s} \textsl{P.}
+	Integral distances /\!/ Bulletin of the American Mathematical
+	Society. --- 1945. --- Т. 51, No 8. --- С. 598---600.
+	\bibitem{solymosi2003note}
+	\textsl{Solymosi} \textsl{J.} Note on integral distances /\!/
+	Discrete \& Computational Geometry. --- 2003. --- Т. 30, No 2. ---
+	С. 337---342.
+	\bibitem{anning1915discussions}
+	\textsl{Anning} \textsl{N.} Discussions: Relating to a Geometric
+	Representation of Integral Solutions of Certain Quadratic
+	Equations /\!/ The American Mathematical Monthly. --- 1915. ---
+	Т. 22, No 9. --- С. 321---321.
+	\bibitem{harborth1993upper}
+	\textsl{Harborth} \textsl{H.},
+	\textsl{M\"{o}ller} \textsl{M.} An
+	diameter of integral point sets
+	Geometry. --- 1993. --- Т. 9, No 4.
+	\textsl{Kemnitz} \textsl{A.},
+	upper bound for the minimum
+	/\!/ Discrete \& Computational Geometry
+	--- С. 427---432.\bibitem{piepmeyer1996maximum}
+	\textsl{Piepmeyer} \textsl{L.} The maximum number of odd
+	integral distances between points in the plane /\!/ Discrete \&
+	Computational Geometry. --- 1996. --- Т. 16, No 1. --- С. 113---115.
+	\bibitem{kurz2008bounds}
+	\textsl{Kurz} \textsl{S.}, \textsl{Laue} \textsl{R.} Bounds for
+	the minimum diameter of integral point sets /\!/ arXiv preprint
+	arXiv:0804.1296. --- 2008.
+	\bibitem{our-vvmsh-2018}
+	\textsl{Авдеев} \textsl{Н. Н.} Некоторые примеры систем
+	Эрдёша /\!/ Современные методы теории краевых задач :
+	материалы международной конференции <<Понтрягинские
+	чтения --- XXIX>>, посвященной 90-летию Владимира
+	Александровича Ильина (2--6 мая 2018 г.) --- 2018. --- С. 30---31.
+	\bibitem{locatelli2002packing}
+	\textsl{Locatelli} \textsl{M.}, \textsl{Raber} \textsl{U.} Packing
+	equal circles in a square: a deterministic global optimization
+	approach /\!/ Discrete Applied Mathematics. --- 2002. --- Т. 122,
+	No 1---3. --- С. 139---166.
+	\bibitem{costa2013valid}
+	\textsl{Costa} \textsl{A.} Valid constraints for the point packing
+	in a square problem /\!/ Discrete Applied Mathematics. --- 2013. ---
+	Т. 161, No 18. --- С. 2901---2909.
+	\bibitem{markot2005newverified}
+	\textsl{Mark\'{o}t} \textsl{M. C.}, \textsl{Csendes} \textsl{T.} A
+	new verified optimization technique for the "packing circles in
+	a unit square" problems /\!/ SIAM Journal on Optimization. ---
+	2005. --- Т. 16, No 1. --- С. 193---219.
+	\bibitem{degroot1990optimal10points}
+	\textsl{DeGroot} \textsl{C.}, \textsl{Peikert} \textsl{R.},
+	\textsl{W\"{u}rtz} \textsl{D.} The optimal packing of ten equal
+	circles in a square. --- Eidgen\"{o}ssische Technische Hochschule
+	Z\"{u}rich, Interdisziplin\"{a}res Projektzentrum f\"{u}r Supercomputing,
+	1990.\bibitem{kemnitz1988punktmengen}
+	\textsl{Kemnitz} \textsl{A.} Punktmengen mit ganzzahligen
+	Abst\"{a}nden. --- 1988.
+	\bibitem{Bukhstab-number-theory}
+	\textsl{Бухштаб} \textsl{А.} Теория чисел. --- 1966. --- С. 384.
+	\bibitem{our-mkmitu-2016}
+	\textsl{Авдеев} \textsl{Н. Н.} Об отыскании множеств точек на
+	плоскости с целочисленными расстояниями /\!/ Математическое
+	и компьютерное моделирование, информационные технологии
+	управления: сб. тр. Школы для студентов, аспирантов и
+	молодых ученых <<МКМИТУ-2016>>. --- 2016. --- С. 15---19.
+	\bibitem{our-ped-2017}
+	\textsl{Авдеев} \textsl{Н. Н.} О множествах точек на
+	плоскости с целочисленными расстояниями и алгоритмах их
+	отыскания /\!/ Некоторые вопросы анализа, алгебры, геометрии
+	и математического образования: материалы международной
+	молодежной научной школы <<Актуальные направления
+	математического анализа и смежные вопросы>>. --- 2017. --- Т. 7,
+	No I. --- С. 9---10.
+	\bibitem{polygons-on-lattices}
+	\textsl{Вавилов} \textsl{В.}, \textsl{Устинов}
+	Многоугольники на решетках. --- 2006.
+	\textsl{А.}
+	\bibitem{Kohnert2006IntegralPS}
+	\textsl{Kohnert} \textsl{A.}, \textsl{Kurz} \textsl{S.} Integral
+	point sets over $Z^m_n$
+	/\!/ Discrete Applied Mathematics. --- 2006. ---
+	Т. 157 (2009). --- С. 2105---2117.
+	\bibitem{kurz2005characteristic}
+	\textsl{Kurz} \textsl{S.} On the characteristic of integral point
+	sets in /\!/ arXiv preprint math/0511704. --- 2005.
+	\bibitem{harborth1985diameters}
+	\textsl{Harborth} \textsl{H.}, \textsl{Kemnitz} \textsl{A.}
+	Diameters of integral point sets /\!/ Colloquia Mathematica
+	Societatis Jano Bolyai. Т. 48. --- 1985.
+	\bibitem{kanold1981punktmengen}
+	\textsl{Kanold}
+	\textsl{H.-J.}
+	\"{U}ber
+	Punktmengen
+	im
+	$k$-dimensionalen euklidischen Raum /\!/ Abh. Braunschw. Wiss.
+	Ges. --- 1981. --- Т. 32, No 55---65. --- С. 252.
+	\bibitem{nozaki2013lower}
+	\textsl{Nozaki} \textsl{H.} Lower bounds for the minimum
+	diameter of integral point sets /\!/ Australasian Journal of
+	Combinatorics. --- 2013. --- Т. 56. --- С. 139---143.
+	\bibitem{piepmeyer1988raumliche}
+	\textsl{Piepmeyer}
+	\textsl{L.}
+	R\"{a}umliche
+	ganzzahlige
+	Punktmengen: дис. . . . канд. / Piepmeyer L. --- Master’s
+	thesis, TU Braunschweig, 1988.
+	\bibitem{harborth1991point}
+	\textsl{Harborth} \textsl{H.}, \textsl{Piepmeyer} \textsl{L.}
+	Point sets with small integral distances /\!/ Applied geometry and
+	discrete mathematics: the Victor Klee Festschrift. Т. 4. --- American
+	Mathematical Soc., 1991.
+	\bibitem{harborth1998integral}
+	\textsl{Harborth} \textsl{H.} Integral distances in point sets /\!/
+	Karl der Grosse und sein Nachwirken. 1200 Jahre Kultur und
+	Wissenschaft in Europa: Band II, Mathematisches Wissen. ---
+	1998. --- С. 213---224.
+	\bibitem{kurz2006konstruktion}
+	\textsl{Kurz} \textsl{S.} Konstruktion und Eigenschaften
+	ganzzahliger Punktmengen: дис. . . . канд. / Kurz Sascha. --- 2006.
+	\bibitem{kurz2008minimum}
+	\textsl{Kurz} \textsl{S.}, \textsl{Wassermann} \textsl{A.} On
+	the minimum diameter of plane integral point sets /\!/ arXiv
+	preprint arXiv:0804.1307. --- 2008.
+	\bibitem{our-mz-rus}
+	\textsl{Авдеев} \textsl{Н. Н.}, \textsl{Семёнов} \textsl{Е. М.}
+	О множествах точек на плоскости с целочисленными
+	расстояниями /\!/ Математические заметки. --- 2016. --- Т. 100,
+	No 5. --- С. 757---761.\bibitem{kreisel2008heptagon}
+	\textsl{Kreisel} \textsl{T.}, \textsl{Kurz} \textsl{S.} There are
+	integral heptagons, no three points on a line, no four on a circle /\!/
+	Discrete \& Computational Geometry. --- 2008. --- Т. 39, No 4. ---
+	С. 786---790.
+	\bibitem{brass2006research}
+	\textsl{Brass} \textsl{P.}, \textsl{Moser} \textsl{W. O.},
+	\textsl{Pach} \textsl{J.} Research problems in discrete
+	geometry. --- Springer Science \& Business Media, 2006.
+	\bibitem{guy2013unsolved}
+	\textsl{Guy} \textsl{R.} Unsolved problems in number theory. Т.
+	1. --- Springer Science \& Business Media, 2013.
+	\bibitem{noll1989nclusters}
+	\textsl{Noll} \textsl{L. C.}, \textsl{Bell} \textsl{D. I.} n-clusters
+	for $1 < n < 7$ /\!/ Mathematics of Computation. --- 1989. --- Т. 53,
+	No 187. --- С. 439---444.
+	\bibitem{kurz2013constructing}
+	Constructing 7-clusters / S. Kurz [и др.] /\!/ arXiv preprint
+	arXiv:1312.2318. --- 2013.
+	\bibitem{graham1974there}
+	\textsl{Graham} \textsl{R.}, \textsl{Rothschild} \textsl{B.},
+	\textsl{Straus} \textsl{E.} Are there $n + 2$ points in $E^n$ with odd
+	integral distances? /\!/ The American Mathematical Monthly. ---
+	1974. --- Т. 81, No 1. --- С. 21---25.
+	\bibitem{ulam1960collection}
+	\textsl{Ulam} \textsl{S. M.} A collection of mathematical
+	problems. Т. 8. --- Interscience Publishers, 1960.
+	\bibitem{garibaldi2005erdos}
+	\textsl{Garibaldi} \textsl{J.}, \textsl{Iosevich} \textsl{A.} The
+	Erdos distance problem: lecture notes. --- 2005.
+	\bibitem{garibaldi2011erdos}
+	\textsl{Garibaldi} \textsl{J.}, \textsl{Iosevich} \textsl{A.},
+	\textsl{Senger} \textsl{S.} The Erd\"{o}s Distance Problem. Т. 56. ---
+	American Mathematical Soc., 2011.\bibitem{erdos1946sets}
+	\textsl{Erd\"{o}s} \textsl{P.} On sets of distances of n points /\!/
+	The American Mathematical Monthly. --- 1946. --- Т. 53, No 5. ---
+	С. 248---250.
+	\bibitem{guth2015erdos}
+	\textsl{Guth} \textsl{L.}, \textsl{Katz} \textsl{N. H.} On the
+	Erdos distinct distances problem in the plane /\!/ Annals of
+	Mathematics. --- 2015. --- Т. 181. --- С. 155---190.
+\end{thebibliography}
 
 
  \Adress{\textsc{Авдеев Николай Николаевич}\\
