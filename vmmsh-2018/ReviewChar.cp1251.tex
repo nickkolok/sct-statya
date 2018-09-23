@@ -1,0 +1,122 @@
+Итак, каждому множеству $M\in\mathfrak{M}_n$ сопоставлены
+два натуральных числа: мощность и диаметр.
+Кемнитц~\cite{kemnitz1988punktmengen} обнаружил и третье,
+которое назвал характеристикой.
+
+\begin{definition}
+	\cite[гл. 34, п. 3]{Bukhstab-number-theory}
+	Натуральное число называется свободным от квадратов,
+	если оно не делится ни на один квадрат простого числа.
+\end{definition}
+
+\begin{definition}
+	\label{def_char_classic}
+	Характеристикой множества $M\in\mathfrak{M}_n$ называется свободное от квадратов
+	число $p$, такое, что площадь любого треугольника $ABC$, где $A,B,C\in M$,
+	соизмерима с $\sqrt{p}$.
+\end{definition}
+
+Корректность определения~\ref{def_char_classic} показана в~\cite{kemnitz1988punktmengen}.
+
+Пусть $\mathbb{Z}$~--- множество целых чисел;
+ребром множества $M\in\mathfrak{M}$
+будем называть любой отрезок $M_1 M_2$,
+где $M_1, M_2 \in M$.
+
+Опираясь на работы~\cite{our-mkmitu-2016,our-ped-2017},
+можно доказать, что определение~\ref{def_char_classic} равносильно следующему определению.
+\begin{definition}
+	\label{def_char_lattice}
+	Характеристикой множества $M\in\mathfrak{M}_n$ называется свободное от квадратов
+	число $p$, такое, что множество $M$ может быть размещена на решётке
+\begin{equation}\label{grid_for_Erdosh_system}
+	\left\{\left(
+		\frac{a_i}{2m}
+		;
+		\frac{b_i\sqrt{p}}{2m}
+	\right)\right\},
+\end{equation}
+где $a_i, b_i \in \mathbb{Z}$,
+в качестве $m$ можно взять длину любого ребра $M$.
+\end{definition}
+
+\begin{theorem}
+	Определения~\ref{def_char_classic} и~\ref{def_char_lattice} эквивалентны.
+\end{theorem}
+\begin{proof}
+	Пусть $M\in\mathfrak{M}_n$, $M_1,M_2,M_3 \in M$ и не лежат на одной прямой.
+	Пусть сначала $M_1,M_2,M_3$ лежат на решётке~\eqref{grid_for_Erdosh_system}.
+	Тогда по формуле Пика~\cite[теорема 3.1]{polygons-on-lattices} площадь треугольника $M_1 M_2 M_3$
+	соизмерима с $\sqrt{p}$.
+	Пусть теперь площадь треугольника $M_1 M_2 M_3$ соизмерима с $\sqrt{p}$ и $|M_1 - M_2|=m$.
+	Введём систему координат так, что $M_1 = (0,0)$,
+	$M_2 = (|M_1 - M_2|, 0)$,
+	$M_3 = (x_3, y_3)$.
+	Тогда площадь треугольника $M_1 M_2 M_3$ равна $\frac{1}{2} |M_1 - M_2| y_3$,
+	откуда $y_3$ соизмерим с $\sqrt{p}$.
+	Более того, выполнены равенства
+	\begin{gather*}
+		x_3^2 + y_3^2 = |M_1 - M_3|^2
+		\\
+		(m^2 - x_3^2)^2 = |M_2 - M_3|^2
+		.
+	\end{gather*}
+	Вычитая одно из другого, получаем $2mx_3 = a$, где $a$~--- целое число.
+\end{proof}
+
+Характеристика для данного множества $M\in\mathfrak{M}_n$ определяется единственным образом и обозначается $\operatorname{char}M$.
+Заметим, что понятие характеристики можно обобщить и на множества $M\in\mathfrak{M}$,
+содержащиеся в некоторой прямой.
+В таком случае логично полагать $\operatorname{char} M = 0$.
+
+
+
+\begin{theorem}
+	\label{thm:power_char_exist}
+	Для любого $n\geq 3$ и любого свободного от квадратов числа $p$
+	существует множество $M\in\mathfrak{M}_n$ такое, что $\operatorname{char} M = p$.
+\end{theorem}
+
+\begin{proof}
+	Не теряя общности положим, что $n$ нечётно.
+	Пусть
+	\begin{equation*}
+		M = \{M_i, i =0,1,...,n+1\},
+	\end{equation*}
+	где
+	$M_i = (2^{n-i}-p\cdot 2^{i-1},0)$, $i=0,1,...,n$;
+	$M_{n+1} = (0,\sqrt{p \cdot 2^{n+1}})$.
+	Очевидно, для $0\leqslant i \leqslant j \leqslant n$ выполнено
+	$|M_i- M_j|\in\mathbb{N}$.
+	Заметим, что для $i=1,...,n$
+	\begin{multline*}
+		|M_{n+1} - M_i| =
+		\sqrt{p\cdot 2^{n+1} + (2^{n-i}-p\cdot2^{i-1})^2}
+		=
+		\\=
+		\sqrt{4p\cdot 2^{n-1} + (2^{n-i})^2 - 2 \cdot 2^{n-i} \cdot p \cdot 2^{i-1} + (p\cdot 2^{i-1})^2}
+		=
+		\\=
+		\sqrt{4p\cdot 2^{i-1} \cdot 2^{n-i} + (2^{n-i})^2 - 2 \cdot 2^{n-i} \cdot p \cdot 2^{i-1} + (p\cdot 2^{i-1})^2}
+		=
+		\\=
+		\sqrt{(2^{n-i})^2 + 2 \cdot 2^{n-i} \cdot p \cdot 2^{i-1} + (p\cdot 2^{i-1})^2}
+		=
+		%\\=
+		%\sqrt{(2^{n-i})^2 + 2 \cdot 2^{n-i} \cdot p \cdot 2^{i-1} + (p\cdot 2^{i-1})^2}
+		%=
+		2^{n-i} + p\cdot 2^{i-1}
+		\in\mathbb{N}
+		.
+	\end{multline*}
+\end{proof}
+
+
+
+В отличие от диаметра и мощности, характеристика в некотором смысле локальна:
+если $S\in\mathfrak{M}_n$, $H \subset S$, $H\in\mathfrak{M}_{p}$, $p<n$,
+то
+\begin{equation*}
+	|H| < |S|, \quad \operatorname{diam} H \leq \operatorname{diam} S, \quad \operatorname{char} H = \operatorname{char} S
+	.
+\end{equation*}

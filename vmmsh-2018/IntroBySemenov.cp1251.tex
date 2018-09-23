@@ -1,0 +1,196 @@
+Oбозначим через $\mathfrak{M}$ множество таких подмножеств
+$
+	M = \{M_1, M_2, ... \}\subset \mathbb{R}^2
+$,
+что
+$
+	|M_i - M_j|\in\mathbb{N}
+$
+для всех $i$, $j$, где $\mathbb{N}$~--- множество натуральных чисел
+и $|M_i - M_j|$~--- расстояние между точками $M_i$ и $M_j$.
+П. Эрдёш доказал~\cite{erdos1945integral},
+что справедлива следующая
+
+\begin{theorem}
+	\label{thmErdos}
+	Всякое бесконечное подмножество $M\in\mathfrak{M}$
+	содержится в некоторой прямой $L\in\mathbb{R}^2$.
+\end{theorem}
+
+Теорему~\ref{thmErdos} можно доказать, основываясь на двух элементарных леммах.
+Интересно, что работа~\cite{erdos1945integral} была опубликована через несколько
+месяцев после совместной работы Эннинга и Эрдёша~\cite{anning1945integral},
+в которой было дано другое, более сложное доказательство.
+
+\begin{lemma}
+	\label{thmQuadCurves}
+	Пусть $A$ и $B$~--- две кривые второго порядка на плоскости и $A$ не является парой прямых.
+	Тогда $A\cap B$ содержит не более 4 точек.
+\end{lemma}
+
+\begin{proof}
+	Без ограничения общности кривая $A$ определяется уравнением
+	\begin{equation*}
+		x^2 = ay^2 + by +c
+		,
+	\end{equation*}
+	а кривая $B$ определяется уравнением второго порядка общего вида.
+	Система этих двух уравнений легко сводится к уравнению с одной неизвестной 4-го порядка.
+	Если это уравнение не является тривиальным, то оно имеет не более 4 корней.
+\end{proof}
+
+Если $A$ и $B$~--- пары прямых $xy=0$ и $xy=x$,
+то $A\cap B$ содержит ось игреков.
+Поэтому предположение в лемме~\ref{thmQuadCurves} о том,
+что одна из кривых не является парой прямых, существенно.
+
+\begin{lemma}
+	\label{thm:quadCurveFamily}
+	Пусть $M_1, M_2 \in \mathbb{R}^2$ и
+	$|M_1 - M_2| = n \in \mathbb{N}$.
+	Тогда
+	\begin{equation}
+		\label{eq:quadCurveFamily}
+		\left\{
+			M: |M-M_1|\in\mathbb{N}, |M-M_2|\in\mathbb{N}
+		\right\}
+		=\bigcup_{i=1}^n Q_i
+		,
+	\end{equation}
+	где $Q_1$ есть пара взаимно перпендикулярных прямых (крест)
+	и $Q_2, Q_3,...,Q_n$~--- гиперболы.
+\end{lemma}
+
+\begin{proof}
+	По неравенству треугольника
+	\begin{equation*}
+		\bigl| |M-M_1| - |M-M_2| \bigr|
+		\leqslant
+		|M_1 - M_2| = n
+		.
+	\end{equation*}
+	Так как $\bigl| |M-M_1| - |M-M_2| \bigr|$
+	есть целое неотрицательное число, то
+	\begin{equation*}
+		\bigl| |M-M_1| - |M-M_2| \bigr|
+		\in\{0,1,2,...,n\}
+		.
+	\end{equation*}
+	Ясно, что множество
+	\begin{equation}
+		\label{eq:centrPerp}
+		\left\{ M: \bigl| |M-M_1| - |M-M_2| \bigr| = 0 \right\}
+	\end{equation}
+	принадлежит прямой, проходящей через середину отрезка
+	$[M_1, M_2]$ перпендикулярно этому отрезку,
+	\begin{equation}
+		\label{eq:tails}
+		\left\{ M: \bigl| |M-M_1| - |M-M_2| \bigr| = n \right\}
+	\end{equation}
+	содержится в прямой, проходящей через точки $M_1, M_2$,
+	\begin{equation}
+		\label{eq:hyperbola}
+		\left\{ M: \bigl| |M-M_1| - |M-M_2| \bigr| = k \right\}
+	\end{equation}
+	есть гипербола для любого $k=1,2,...,n-1$.
+	Обозначая объединение множеств \eqref{eq:centrPerp} и \eqref {eq:tails}
+	через $Q_1$,
+	а множества \eqref{eq:hyperbola} через $Q_i$,
+	мы получаем требуемое представление.
+	Таким образом, \eqref{eq:quadCurveFamily}
+	есть объединение $n$ кривых второго порядка.
+\end{proof}
+
+\begin{proof}[Доказательство теоремы \ref{thmErdos}]
+	Предположим противное,
+	т.е. $\{M_1, M_2, ... \}\in\mathfrak{M}$
+	и точки $M_1$, $M_2$, $M_3$ не лежат на одной прямой.
+	Применяя лемму~\ref{thm:quadCurveFamily}
+	к паре точек $M_1, M_2$ и к паре точек $M_1, M_3$,
+	найдём такие кривые 2-го порядка
+	$Q_1, Q_2,...,.Q_n$ и $R_1, R_2,...,.R_m$, что
+	\begin{equation*}
+		\left\{
+			M: |M-M_1|\in\mathbb{N}, |M-M_2|\in\mathbb{N}
+		\right\}
+		=\bigcup_{i=1}^n Q_i
+		,
+	\end{equation*}
+	\begin{equation*}
+		\left\{
+			M: |M-M_1|\in\mathbb{N}, |M-M_3|\in\mathbb{N}
+		\right\}
+		=\bigcup_{j=1}^m R_j
+		.
+	\end{equation*}
+	Отсюда
+	\begin{multline*}
+		\left\{
+			M:
+			|M-M_1|\in\mathbb{N},
+			|M-M_2|\in\mathbb{N},
+			|M-M_3|\in\mathbb{N}
+		\right\}
+		\subset
+		\\ \subset
+		\left(\bigcup_{i=1}^n Q_i\right)
+		\cap
+		\left(\bigcup_{j=1}^m R_j\right)
+		=
+		\bigcup_{i=1}^n \bigcup_{j=1}^m \left( Q_i \cap R_i \right)
+		.
+	\end{multline*}
+	Из предположения о том, что $M_1$, $M_2$, $M_3$
+	не лежат на одной прямой, вытекает,
+	что $Q_1\cap R_1$ не содержит прямую.
+	Поэтому $|Q_1\cap R_1|\leqslant 4$,
+	и, следовательно, в силу леммы~\ref{thmQuadCurves}
+	$|Q_i\cap R_j|\leqslant 4$
+	для всех $i=1,2,...,n$, $j=1,2,...,m$.
+	Отсюда
+	\begin{equation*}
+		|M| \leqslant 4nm
+		,
+	\end{equation*}
+	т.е. $M$ конечно,
+	что противоречит предположению о бесконечности $M$.
+	Полученное проиворечие доказывает, что все точки $M$
+	принадлежат некоторой прямой $L$.
+	В качестве $L$ можно взять прямую,
+	проходящую через пару любых точек из $M$.
+\end{proof}
+
+Предположение о бесконечности $M$ в теореме~\ref{thmErdos} существенно.
+Для заданного $n\in\mathbb{N}$ обозначим через $\mathfrak{M}_n$
+множество таких $M\in\mathfrak{M}$, что
+$|M|=n$ и $M \not\subset L$ для любой прямой $L \subset\mathbb{R}^2$.
+
+\begin{theorem}
+	\label{thm:power_exist}
+	Для любого $n\in\mathbb{N}$ выполнено $\mathfrak{M}_n\neq\varnothing$.
+\end{theorem}
+
+\begin{proof}
+	Из теоремы Пифагора следует, что треугольник со сторонами
+	$2k+1$, $2k^2+2k$, $2k^2+2k+1$
+	является прямоугольным для любого $k\in\mathbb{N}$.
+	Выпишем стороны первых трёх треугольников,
+	а затем стороны подобных им треугольников с совпадающей первой стороной:
+	\begin{equation}
+		\label{eq:PifagTriangles}
+		\begin{array}{ll}
+			3,  4,  5 & \quad 105, 140, 175 \\
+			5, 12, 13 & \quad 105, 252, 273 \\
+			7, 24, 25 & \quad 105, 360, 375.
+		\end{array}
+	\end{equation}
+	Ясно, точки $(0,0)$, $(0,105)$, $(140,0)$, $(252,0)$, $(360,0)$
+	образуют множество из $\mathfrak{M}_5$.
+	Очевидно, если взять не 3, а $n$ точек, и затем найти подобные
+	прямоугольные треугольники с совпадающей первой стороной,
+	то можно построить множество из $\mathfrak{M}_{n+2}$.
+\end{proof}
+
+Другой пример множества из $\mathfrak{M}_{n}$ для заданного $n$
+можно найти в доказательстве теоремы~\ref{thm:power_char_exist},
+уверждение которой усиливает утверждение теоремы~\ref{thm:power_exist}.

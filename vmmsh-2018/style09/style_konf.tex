@@ -1,4 +1,5 @@
  \documentclass[a5paper,10pt]{book}%,landscape
+
  \usepackage{amsmath, amsfonts, amssymb}
 \usepackage[english,russian]{babel}
 \usepackage{latexsym}
@@ -28,6 +29,171 @@
 %\usepackage{bbm}
 
 
+%Цитаты и библиография с автоматической нумерацией
+\usepackage{cite}
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1)} % Заменяем библиографию с квадратных скобок на скобку
+\makeatother
+
+% Заголовок библиографии
+\newcommand{\vmmshbibcaption}[1]{
+	\par\bigskip\centerline{\bf #1}\smallskip
+}
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}
+  {\chapter*}
+  {\vmmshbibcaption}
+  {}
+  {}
+
+% Библиография не влияет на колонтитулы
+\makeatletter%{@}
+\newcommand{\vmmshnothing}[2]{}
+\patchcmd{\thebibliography}
+  {\@mkboth}
+  {\vmmshnothing}
+  {}
+  {}
+\makeatother%{@}
+
+% Шрифты и междустрочные интервалы в библиографии
+% Вероятно, можнодостичь той же цели несколько изящнее
+\AtBeginEnvironment{thebibliography}{
+  \footnotesize
+  \baselineskip=7pt
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+}
+\patchcmd{\thebibliography}
+  {\settowidth}
+  {
+    \footnotesize
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \baselineskip=0pt
+    \settowidth
+  }
+  {}{}
+
+% Английский заголовок библиографии
+\addto\captionsenglish{
+	\renewcommand\bibname{References}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Теоремы с автоматической нумерацией
+\usepackage{amsthm}
+
+%Стиль для теорем и т.д.
+\newtheoremstyle{VMMSHtheorem}% name of the style to be used
+	{\topsep}% measure of space to leave above the theorem. E.g.: 3pt
+	{\topsep}% measure of space to leave below the theorem. E.g.: 3pt
+	{\sl}% name of font to use in the body of the theorem
+	{\parindent}% measure of space to indent
+	{\bfseries}% name of head font
+	{.}% punctuation between head and body
+	{ }% space after theorem head; " " = normal interword space
+	{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+
+%Стиль для определений и т.д.
+\newtheoremstyle{VMMSHremark}% name of the style to be used
+	{\topsep}% measure of space to leave above the theorem. E.g.: 3pt
+	{\topsep}% measure of space to leave below the theorem. E.g.: 3pt
+	{}% name of font to use in the body of the theorem
+	{\parindent}% measure of space to indent
+	{\sc}% name of head font
+	{.}% punctuation between head and body
+	{ }% space after theorem head; " " = normal interword space
+	{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+
+
+% Начинаем определять окружения
+% Без звёздочки - нумеруется, со звёздочкой - нет.
+
+\newcounter{theorem}
+
+\theoremstyle{VMMSHtheorem}
+
+\newtheorem {aTeorema}[theorem]  {Теорема}
+\newtheorem*{aTeorema*}          {Теорема}
+
+\newtheorem {aSledstvie}[theorem]{Следствие}
+\newtheorem*{aSledstvie*}        {Следствие}
+
+\newtheorem {aLema}     [theorem]{Лемма}
+\newtheorem*{aLema*}             {Лемма}
+
+\newtheorem {aUtv}      [theorem]{Утверждение}
+\newtheorem*{aUtv*}              {Утверждение}
+
+\newtheorem {aGipot}    [theorem]{Гипотеза}
+\newtheorem*{aGipot*}            {Гипотеза}
+
+\newtheorem {aPredl}    [theorem]{Предложение}
+\newtheorem*{aPredl*}            {Предложение}
+
+%-----------------
+\theoremstyle{VMMSHremark}
+
+\newtheorem {aDef}    [theorem]{Определение}
+\newtheorem*{aDef*}            {Определение}
+
+\newtheorem {aZam}    [theorem]{Замечание}
+\newtheorem*{aZam*}            {Замечание}
+
+\newtheorem {aPrimer} [theorem]{Пример}
+\newtheorem*{aPrimer*}         {Пример}
+
+\newtheorem {aZadacha}[theorem]{Задача}
+\newtheorem*{aZadacha*}        {Задача}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%     English
+\theoremstyle{VMMSHtheorem}
+
+\newtheorem {aLemma}     [theorem]{Lemma}
+\newtheorem*{aLemma*}             {Lemma}
+
+\newtheorem {aTheorem}    [theorem]{Theorem}
+\newtheorem*{aTheorem*}            {Theorem}
+
+\newtheorem {aCorollary}  [theorem]{Corollary}
+\newtheorem*{aCorollary*}          {Corollary}
+
+\newtheorem {aCriterion}  [theorem]{Criterion}
+\newtheorem*{aCriterion*}          {Criterion}
+
+\newtheorem {aProposition}[theorem]{Proposition}
+\newtheorem*{aProposition*}        {Proposition}
+
+%-------------
+\theoremstyle{VMMSHremark}
+
+\newtheorem {aDefinition}[theorem]{Definition}
+\newtheorem*{aDefinition*}        {Definition}
+
+\newtheorem {aRemark}    [theorem]{Remark}
+\newtheorem*{aRemark*}            {Remark}
+
+\newtheorem {aExample}   [theorem]{Example}
+\newtheorem*{aExample*}           {Example}
+
+\newtheorem {aProblem}   [theorem]{Problem}
+\newtheorem*{aProblem*}           {Problem}
+
+\newtheorem {aNote}      [theorem]{Note}
+\newtheorem*{aNote*}              {Note}
+
+\newtheorem {aHypothesis}[theorem]{Hypothesis}
+\newtheorem*{aHypothesis*}        {Hypothesis}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 
  %\usepackage[mirror]{crop}% зеркальное изображение
  \input diagxy
@@ -44,6 +210,27 @@
 % \newcommand{\bbfamily}{\fontencoding{U}\fontfamily{bbold}\selectfont}
 % \newcommand{\textbb}[1]{{\bbfamily#1}}
 % %\DeclareMathAlphabet{\mathbbt}{U}{bbold}{m}{n}
+
+
+
+%Блок, отвечающий за локализацию меток в пределах одной статьи
+\makeatletter
+\AtBeginDocument{%
+  \let\origlabel@in@display\label@in@display
+  \let\origref\ref \let\origpageref\pageref \let\origlabel\label
+  \newcommand\locallabels[1]{%
+    \renewcommand\label[1]{\origlabel{#1##1}}% notice the change here:
+    \renewcommand\ref[1]{\origref{#1##1}}% ##1#1, not #1##1
+    \renewcommand\pageref[1]{\origpageref{#1##1}}%
+    \renewcommand\label@in@display[1]{\origlabel@in@display{#1##1}}%
+  }}
+\makeatother
+
+\newcounter{locallabelscnt}
+\newcommand{\newlabelscope}{
+	\locallabels{\arabic{locallabelscnt}}
+	\addtocounter{locallabelscnt}{1}
+}
 
  \begin{document}
 
@@ -83,7 +270,24 @@
 
  \makeatother%@
 
- \newcommand{\Title}[1]{\begin{center}\large\uppercase{#1}\end{center}\par}
+
+%Автоматический сброс счётчиков по заголовку
+
+\newcommand{\prepareThesis}{
+	\setcounter{equation}{0}
+	\setcounter{section}{0}
+	\setcounter{figure}{0}
+	\setcounter{table}{0}
+	\setcounter{footnote}{0}
+	%\setcounter{theorem}{0}
+	\renewcommand{\theenumi}{\arabic{enumi}}
+	\renewcommand{\labelenumi}{\theenumi)} % Yes, we have encountered such problems!
+	\selectlanguage{russian} % To avoid problems if the language was switched to English (e.g. in the bibliography).
+	\newlabelscope % Изоляция меток
+}
+
+
+ \newcommand{\Title}[1]{\begin{center}\large\uppercase{#1}\end{center}\prepareThesis\par}
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -139,6 +343,9 @@
 \def\beginproof{\par\mbox{$\vartriangleleft$}}
 \def\endproof{\text{$\vartriangleright$}\smallskip}
 \def\Endproof{\text{$\vartriangleright$}}
+
+%Переопределяем стандартное окружение из amsthm
+\let\proof\beginproof
 
 %%%%%%%%%%%%%    неравенства
 \renewcommand{\le}{\leqslant}

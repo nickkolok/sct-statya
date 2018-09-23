@@ -1,0 +1,373 @@
+Для конечного дискретного подмножества плоскости $M\subset \mathbb{R}^2$
+естественным образом определяется диаметр:
+\begin{equation*}
+	\operatorname{diam} M = \max_{A,B\in M} |A-B|
+	.
+\end{equation*}
+
+Солимоси~\cite{solymosi2003note} показал существование такой константы $c$,
+что для любого $S\in\mathfrak{M}_n$ выполнено $\operatorname{diam} M \geq c n$.
+Солимоси не привёл значения этой константы, однако из его доказательства можно вывести,
+что эта константа равна $1/24$.
+
+Мы сейчас дадим другое доказательство, дающее лучшее значение константы $c$.
+
+\begin{lemma}
+	\label{lemma_points_on_line}
+	Пусть $S\in\mathfrak{M}_n$ для некоторого $n \geqslant 3$,
+	$\{M_1, M_2, M_3, M_4\} \subset S$, как минимум три из этих точек различны,
+	$|M_1 - M_2| = |M_3 - M_4| = 1$.
+	Тогда никакая прямая $m$ не содержит точки $M_1$, $M_2$, $M_3$ и $M_4$ одновременно.
+\end{lemma}
+
+\begin{proof}
+	Предположим противное.
+	Обозначим через $m_{12}$ и $m_{34}$ серединные перпендикуляры к отрезкам $M_1 M_2$ и $M_3 M_4$ соответственно.
+
+	Пусть точка $M\in S$.
+	Тогда либо $|M - M_1| - |M - M_2| = 0$ и $M\in m_{12}$, либо $\Bigl||M - M_1| - |M - M_2|\Bigr| = 1$ и $M\in m$,
+	т.е. в любом случае $M\in m \cup m_{12}$.
+	Аналогично $M\in m \cup m_{34}$.
+	Следовательно, $M\in (m \cup m_{12}) \cap (m \cup m_{34}) = m \cup (m_{12} \cap m_{34}) = m$,
+	т.к. $m_{12} \cap m_{34} = \varnothing$ (перпендикуляры к одной прямой, проведённые в разных точках, не пересекаются между собой).
+
+	В силу произвольности выбора $M \in S$ получаем $S \subset m$, что противоречит $S\in\mathfrak{M}_n$.
+\end{proof}
+
+\begin{corollary}
+	\label{corollary:max_points_on_line}
+	Пусть $S\in\mathfrak{M}_n$, $\operatorname{diam} S = d$.
+	Тогда ни на какой прямой не лежит более $(d+3)/2$ точек из $S$.
+\end{corollary}
+
+\begin{proof}
+	Предположим противное, т.е на прямой $m$ лежит $k$ точек из $S$ и $k > (d+3)/2$.
+	Пусть $\rho_i$, $i = 1,...,k-1$~--- расстояния между соседними точками,
+	пронумерованные в порядке возрастания.
+	Из леммы~\ref{lemma_points_on_line} получаем $\rho_{k-1}\geq...\geq\rho_2\geq 2$.
+	Значит,
+	\begin{equation*}
+		\sum_{i=1}^{k-1} \rho_i
+		=
+		\rho_1 + \sum_{i=2}^{k-1} \rho_i
+		\geq
+		1 + \sum_{i=2}^{k-1} \rho_i
+		\geq
+		1 + 2(k-2)
+		=
+		2k-3
+		>
+		d+3-3
+		=
+		d
+		,
+	\end{equation*}
+	т.е. расстояние между крайними точками превосходит диаметр системы,
+	чего быть не может.
+\end{proof}
+
+\begin{lemma}
+	\label{lemma:square_container}
+	Пусть $S\in\mathfrak{M}_n$, $\operatorname{diam} S = d$.
+	Тогда $S$ содержится в квадрате со стороной $d$.
+\end{lemma}
+
+\begin{proof}
+	Пусть $M_1, M_2 \in S$, $|M_1 - M_2| = d$,
+	т.е. диаметр системы $S$ достигается на $M_1 M_2$.
+	Введём прямоугольную декартову систему координат на плоскости таким образом, что
+	$M_1 = (-d/2; 0)$, $M_2 = (d/2; 0)$.
+
+	Тогда прочие точки $M_i \in S$ имеют координаты $M_i=(x_i, y_i)$.
+	Очевидно, что для $i>2$ имеем $|x_i| < d/2$
+	(иначе $|M_i - M_1| > d$ или $|M_i - M_2| > d$).
+	Более того, $|y_i| < d$ (иначе $|M_i - M_1| > d$ или $|M_i - M_2| > d$).
+
+	Пусть $y_{\max} = \max_{i} y_i$, $y_{\min} = \min_{i} y_i$, $M_{\max}=(x_{\max}, y_{\max})$, $M_{\min}=(x_{\min}, y_{\min})$
+	(если максимум достигается на нескольких точках, возьмём любые из них).
+	Тогда
+	\begin{multline}
+		d \geq |M_{\max} - M_{\min}| = \sqrt{(x_{\max} - x_{\min})^2 + (y_{\max} - y_{\min})^2}
+		\geq
+		\\\geq
+		\sqrt{(y_{\max} - y_{\min})^2} =
+		y_{\max} - y_{\min}
+	\end{multline}
+	Следовательно, $S$ содержится в квадрате со сторонами $x=\pm d/2$,
+	$y=y_{\max}$, $y=y_{\max} - d$.
+\end{proof}
+
+\begin{hypothesis}
+	Не существует такого числа $\gamma < 1$,
+	что любое множество из $M\in \mathfrak{M}_n$, $n\geq 3$,
+	содержится в квадрате со стороной $\gamma \cdot \operatorname{diam} M$.
+\end{hypothesis}
+
+В пользу этой гипотезы говорят часто встречающиеся конструкции множеств $M\in\mathfrak{M}_n$,
+расположенных на окружности~\cite{anning1915discussions,harborth1993upper,piepmeyer1996maximum,kurz2008bounds,our-vvmsh-2018}.
+
+\begin{definition}
+	Крестом точек $M_1$ и $M_2$ будем называть объединение прямой,
+	проходящей через эти точки,
+	и серединного перпендикуляра к отрезку $M_1 M_2$
+	и обозначать $cr(M_1,M_2)$.
+\end{definition}
+
+\begin{proposition}
+	\label{proposition:intervals_cross}
+	Если интервалы $M_1 M_2$ и $M_3 M_4$ не пересекаются,
+	$M_1 \neq M_2$, $M_3 \neq M_4$,
+	то множество $cr(M_1,M_2) \cap cr(M_3,M_4)$~--- либо прямая, либо содержит не более 4 точек.
+\end{proposition}
+
+\begin{proof}
+	Пересечением $cr(M_1,M_2) \cap cr(M_3,M_4)$ может быть либо от 2 до 4 точек, либо прямая,
+	либо, если эти кресты совпадают, их пересечение совпадает с каждым из этих крестов.
+	Но $cr(M_1,M_2) \neq cr(M_3,M_4)$, потому что середины отрезков $M_1 M_2$ и $M_3 M_4$
+	совпасть не могут, т.к. интервалы $M_1 M_2$ и $M_3 M_4$ не пересекаются по условию.
+\end{proof}
+
+\begin{lemma}
+	\label{lemma_preliminary_size}
+	Пусть $S\in\mathfrak{M}_n$,
+	$M_1, M_2, M_3, M_4 \in S$,
+	$M_1 \neq M_2$, $M_3 \neq M_4$,
+	интервалы $M_1 M_2$ и $M_3 M_4$ не пересекаются,
+	$d = \operatorname{diam} S > 5$.
+	Тогда $|S| \leq 4 \cdot |M_1 - M_2| \cdot |M_3 - M_4| + \frac{d-5}{2}$.
+\end{lemma}
+
+\begin{proof}
+	Если $|(cr(M_1, M_2) \cap cr(M_3, M_4))| < \infty$,
+	то (см. доказательство теоремы~\ref{thmErdos} или~\cite[часть 2, неравенство (1)]{solymosi2003note})
+	$|S| \leq 4 \cdot |M_1 - M_2| \cdot |M_3 - M_4|$.
+	Иначе (в силу утверждения~\ref{proposition:intervals_cross}) $cr(M_1, M_2) \cap cr(M_3, M_4) = m$,
+	где $m$~--- прямая.
+	В силу следствия~\ref{corollary:max_points_on_line} на этой прямой лежит не более $(d+3)/2$ точек;
+	кроме того, из общего количества точек нужно вычесть 4,
+	которые бы дали эти 2 креста в случае дискретного переcечения.
+	Получаем верхнюю оценку
+	\begin{multline}
+		|S| \leq 4 \cdot |M_1 - M_2| \cdot |M_3 - M_4| - 4 + \frac{d+3}{2}
+		=
+		\\=
+		4 \cdot |M_1 - M_2| \cdot |M_3 - M_4| + \frac{d-5}{2}
+		.
+	\end{multline}
+\end{proof}
+
+Определим теперь коэффициенты упаковки точек в квадрат $\varphi_k$.
+Пусть
+\begin{equation*}
+	\Phi_k = \{ P \subset [0;1]^2 : |P|=k\}
+	,
+\end{equation*}
+где $[0;1]^2$~--- замкнутый единичный квадрат на плоскости.
+Тогда
+\begin{equation*}
+	\varphi_k = \max_{P \in \Phi_k} \min_{A,B \in P} |A - B|
+	.
+\end{equation*}
+Иначе говоря, через $\varphi_k$ будем обозначать наибольшее число, такое,
+что в единичном квадрате нельзя разместить $k$ точек так,
+чтобы расстояние между любыми двумя точками было не менее $\varphi_k$.
+Проблема отыскания $\varphi_k$ носит название проблемы упаковки точек в квадрат~\cite{locatelli2002packing,costa2013valid}.
+
+\begin{theorem}%[\cite{costa2013valid}]
+	\label{thm:varphi_k_bounds}
+	\cite{costa2013valid}
+	Для $k\geq 2$ выполнено
+	\begin{equation*}
+		\sqrt{\frac{2}{k\sqrt{3}}}
+		\leq
+		\varphi_k
+		\leq
+		\frac{1}{k-1} +
+		\sqrt{
+			\frac{1}{(k-1)^2}
+			+
+			\frac{2}{(k-1)\sqrt{3}}
+		}
+	\end{equation*}
+\end{theorem}
+
+Нам потребуется вспомогательная
+\begin{lemma}
+	\label{lemma:quadr_diag_edges}
+	Пусть $ABCD$~--- выпуклый четырёхугольник на плоскости.
+	Тогда $\max\{AC,BD\}>\min\{AB,BC,CD,DA\}$,
+	т.е. хотя бы одна диагональ больше хотя бы одной стороны.
+\end{lemma}
+\begin{proof}
+	Предположим, что любая диагональ меньше любой стороны.
+	Тогда в каждом треугольнике, образованном диагональю и двумя сторонами,
+	меньший угол лежит против меньшей стороны,
+	т.е. угол между сторонами, лежащий против диагонали, острый.
+	Таким образом, получаем, что все 4 угла четырёхугольника~---
+	острые, чего быть не может.
+\end{proof}
+
+Докажем теперь линейную оценку снизу на диаметр множеств из $\mathfrak{M}_n$,
+где $n$ имеет специальный вид.
+\begin{lemma}
+	Пусть $S\in\mathfrak{M}_n$,
+	$d = \operatorname{diam} S > 5$,
+	$k \geq 2$,
+	$m \geq 2$,
+	$ |S| = (k-1)m^2 + 2$.
+
+	Тогда
+	\begin{equation}
+		d \geq \mu_k (|S| - 2),
+	\end{equation}
+	где
+	\begin{equation}
+		\mu_k = \frac{\sqrt{64\varphi_k^2 (k-1)+1}-1}{16\varphi_k^2 (k-1)}
+	\end{equation}
+\end{lemma}
+
+\begin{proof}
+	Множество $S$ содержится в квадрате со стороной $d$ (см. лемму~\ref{lemma:square_container}).
+	Разобьём этот квадрат на $m^2$ маленьких квадратов со стороной $d/m$.
+	Тогда по принципу Дирихле либо:
+
+	а) хотя бы в два маленьких квадрата $Q_1$ и $Q_2$ попало не менее, чем по $k$ точек;
+
+	б) хотя бы в один маленький квадрат $Q_1$ попало не менее, чем $k+1$ точка.
+	\\
+	В случае (а) в $Q_1$ выберем точки $M_1$ и $M_2$,
+	а в $Q_2$ выберем точки $M_3$ и $M_4$
+	так, что $|M_1 - M_2| \leq \varphi_k d /m$, $|M_3 - M_4| \leq \varphi_k d/m$
+	(это всегда можно сделать в силу определения $\varphi_k$).
+
+	В случае (б) в $Q_1$ выберем точки $M_1$ и $M_2$ так, что
+	$|M_1 - M_2| \leq \varphi_{k+1} d /m \leq \varphi_k d /m$.
+	Из всех точек, кроме $M_1$, выберем $M_3$ и $M_4$ так, что
+	$|M_3 - M_4| \leq \varphi_k d/m$.
+	В силу леммы~\ref{lemma:quadr_diag_edges} это всегда можно сделать так,
+	чтобы интервалы $M_1 M_2$ и $M_3 M_4$ не пересекались.
+	Возможное совпадение $M_2$ и $M_3$ не помешает дальнейшему доказательству.
+
+	По лемме~\ref{lemma_preliminary_size}
+	\begin{equation}
+		|S| \leq 4 \left( \frac{d}{m} \varphi_k \right)^2 + \frac{d}{2} - \frac{5}{2}
+	\end{equation}
+	или, с учётом того, что $ |S| = (k-1)m^2 + 2$,
+	\begin{equation}
+		 4 \left( \frac{d}{m} \varphi_k \right)^2 + \frac{d}{2} - \left( (k-1)m^2 + \frac{9}{2}\right) \geq 0
+	\end{equation}
+
+	Положим $d = \lambda m$:
+	\begin{equation}
+		 4 \lambda^2 \varphi_k^2 + \frac{m}{2} \lambda - \left( (k-1)m^2 + \frac{9}{2}\right) \geq 0
+	\end{equation}
+
+	Решим это квадратное неравенство относительно $\lambda$,
+	зная, что $\lambda > 0$.
+	Непосредственно выпишем дискриминант:
+	\begin{multline}
+		D =
+		\frac{m^2}{4} + 4 \cdot 4 \varphi_k^2 \cdot \left( (k-1)m^2 + \frac{9}{2}\right)
+		=
+		\frac{m^2}{4} + 16 \varphi_k^2 \cdot \left( (k-1)m^2 + \frac{9}{2}\right)
+		>\\>
+		\frac{m^2}{4} + 16 \varphi_k^2 \cdot (k-1)m^2
+		=
+		\frac{m^2}{4} \cdot (1 + 64 \varphi_k^2 \cdot (k-1))
+		> 0
+	\end{multline}
+
+	Итак,
+	\begin{multline}
+		\frac{d}{m} = \lambda >
+		\frac{-\frac{m}{2} + \sqrt{\frac{m^2}{4} \cdot (1 + 64 \varphi_k^2 \cdot (k-1))} }{8 \varphi_k^2}
+		=\\=
+		\frac{-m + \sqrt{m^2  (1 + 64 \varphi_k^2 \cdot (k-1))} }{16 \varphi_k^2}
+		=
+		m\frac{ \sqrt{ 64 \varphi_k^2 (k-1) + 1} -1 }{16 \varphi_k^2}
+	\end{multline}
+	Разделим обе части неравенства на положительное число $m(k-1)$:
+	\begin{equation}
+		\frac{d}{(k-1)m^2}
+		>
+		\frac{ \sqrt{ 64 \varphi_k^2 (k-1) + 1} -1 }{16 \varphi_k^2 (k-1)}
+	\end{equation}
+	Положим
+	\begin{equation}
+		\mu_k = \frac{ \sqrt{ 64 \varphi_k^2 (k-1) + 1} -1 }{16 \varphi_k^2 (k-1)},
+	\end{equation}
+	тогда
+	\begin{equation}
+		\frac{d}{(k-1)m^2}
+		>
+		\mu_k
+	\end{equation}
+	откуда незамедлительно
+	\begin{equation}
+		d > \mu_k \cdot (|S|-2)
+		.
+	\end{equation}
+\end{proof}
+
+У только что полученной оценки есть две существенных особенности:
+во-первых, она справедлива лишь для мощности специального вида,
+во-вторых, зависит от $\varphi_k$.
+
+\begin{corollary}
+	\label{corollary:common_linear_bound}
+	Пусть $S\in\mathfrak{M}_n$, $$ (k-1)m^2 + 2 \leq n \leq (k-1)(m+1)^2 + 1.$$
+	Тогда $\operatorname{diam} S \geq \frac{m^2}{(m+1)^2} \mu_k \cdot |S|$.
+\end{corollary}
+
+Выбор $k$ во многом произволен.
+Так, например, для $k=29$ имеем $\varphi_k=0.226882900744209089183505212941...$
+~\cite{markot2005newverified}
+%(округление здесь и далее осуществляется в сторону уменьшения $\mu_k$, чтобы не испортить неравенство)
+и $\mu_k > 0.3753$.
+Следовательно, верно
+\begin{proposition}
+	\label{proposition:linear_bound_29}
+	Для достаточно больших $n$ диаметр любого множества $M\in\mathfrak{M}_n$ не менее $\frac{3}{8}n$.
+\end{proposition}
+Заметим, что для $n=3$ эта оценка, очевидно, неверна.
+
+Выбрав другое $k$, можно получить оценку, применимую, начиная с некоторого известного $n$.
+Например, $\varphi_{10} = 0.42127954398390343276882176065...$
+(для этого числа неизвестно выражение в радикалах)~\cite{degroot1990optimal10points} и
+$\mu_k > 0.3584$.
+Для $4 \leq n \leq 122$ вычислены точные нижние оценки на диаметр (см. утверждение~\ref{proposition:d(2,n)}) и верно, что
+\begin{equation}
+	\label{eq:linear_bound_10}
+	\operatorname{diam} M \geq 0.3584 \cdot |M|
+\end{equation}
+Кроме того, для $M \in \mathfrak{M}_n$, $n \geq 122$ выполнено
+$\operatorname{diam} M \geq 9905$ (см. утверждение~\ref{proposition:d(2,n)}).
+Разделив 9905 на 0.3584  и округлив результат до меньшего целого, получаем 27636.
+Следовательно, для $4 \leq n \leq 27636$ выполнено~\eqref{eq:linear_bound_10}.
+Если $n \geq 27636$, то $ (k-1)m^2 + 2 \leq n \leq (k-1)(m+1)^2 + 1$ для $k=10$ и некоторого $m \geq 55$.
+Тогда с учётом следствия~\ref{corollary:common_linear_bound} получаем
+\begin{proposition}
+	\label{proposition:linear_bound_10}
+	Для всех $n \geq 4$, $M\in\mathfrak{M}$
+	\begin{equation*}
+		\operatorname{diam} M \geq \frac{55^2}{56^2} \cdot 0.3584 \cdot |M|
+		>
+		0.3457 \cdot |M|
+		.
+	\end{equation*}
+\end{proposition}
+
+\begin{remark}
+	Нахождение $\varphi_k$ для $k > 30$ может позволить улучшить оценку
+	в утверждениях~\ref{proposition:linear_bound_29} и~\ref{proposition:linear_bound_10},
+	равно как и вычисление точных нижних оценок на диаметр для конкретных $n>122$ (в утверждении~\ref{proposition:linear_bound_10}),
+	но лишь до определённого предела, поскольку $\mu_k$ зависит от $\varphi_k$ и $k$
+	только в составе выражения $\varphi_k^2 (k-1)$,
+	которое ограничено в силу теоремы~\ref{thm:varphi_k_bounds}.
+\end{remark}
+
+\begin{remark}
+	Де-факто нам требуется не произвольная расстановка точек в единичном квадрате,
+	а такая расстановка, при которой все расстояния между точками~--- рациональные числа.
+	Это требование уже имеет отношение к проблеме Улама-Эрдёша (см. гипотезу~\ref{hypot:Ulam}).
+\end{remark}

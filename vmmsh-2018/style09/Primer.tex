@@ -1,9 +1,8 @@
 \input style_konf.tex
 
-\setcounter{footnote}{0}
- \setcounter{equation}{0}
 
 \UDC{???}
+
 
 
 \Title{НАЗВАНИЕ СТАТЬИ}
@@ -34,11 +33,22 @@
 
 
 
+\begin{proof}
+Очевидно.
+\end{proof}
 
 
+\begin{equation}
+	\label{eq:main}
+	\sin^2 t + \cos^2 t = 1
+\end{equation}
 
+\begin{equation}
+	\label{eq:aux}
+	\sin^2 t = 1 - \cos^2 t
+\end{equation}
 
-
+Уравнение \eqref{eq:main} написано раньше уравнения (\ref{eq:aux}).
 
 
 
@@ -95,5 +105,85 @@
 
 {\hangindent17pt\hangafter=0\noindent\footnotesize {\bf Key
  words:}~Ключевые слова на английском языке.\par}
+
+
+
+\Title{НАЗВАНИЕ СТАТЬИ}
+
+
+
+
+
+ \Author{ФИО}
+
+\Abstract{Текст аннотации. \par}
+
+{\hangindent17pt\hangafter=0\noindent\footnotesize{\bf Ключевые
+ слова:} ключевое слово 1, ключевое слово 2, \ldots\par}
+
+
+
+\section*{1. Название параграфа}
+
+
+\begin{aTeorema}
+	\label{thm1}
+	Текст теоремы.
+\end{aTeorema}
+
+\begin{proof}
+	Текст доказательства.
+\end{proof}
+
+\begin{aLema}
+	\label{lem2}
+	Текст леммы.
+\end{aLema}
+
+\begin{proof}
+	Очевидно.
+\end{proof}
+
+Из теоремы~\ref{thm1} и леммы~\ref{lem2} cледует
+\begin{aTeorema*}
+	Текст теоремы.
+\end{aTeorema*}
+
+
+
+
+\begin{equation}
+	\label{eq:aux}
+	\sin^2 t = 1 - \cos^2 t
+\end{equation}
+
+\begin{equation}
+	\label{eq:main}
+	\sin^2 t + \cos^2 t = 1
+\end{equation}
+
+
+Уравнение \eqref{eq:aux} написано раньше уравнения \eqref{eq:main}.
+
+Ссылки на работы \cite{Polyanin2001,Kipryanov1976} и \cite{Ilin2005}
+
+\begin{thebibliography}{99}
+  \bibitem{Polyanin2001}
+    \textsl{Полянин А.~Д.}
+	Справочник по линейным уравнениям математической фи\-зи\-ки.\,---\,М.: Физматлит, 2001.\,---\,576~c.
+
+  \bibitem{Kipryanov1976}
+    \textsl{Киприянов И.~А., Катрахов В.~В., Ляпин В.~М.}
+    О краевых задачах в области общего вида для сингулярных
+    параболических систем уравнений~/\!/ Докл. АН СССР.\,---\,1976.\,---\,Т.~230, No~6.\,---\,С.~1271--1274.
+
+  \bibitem{Ilin2005}
+    \textsl{Ильин В.~А., Позняк Э.~Г.}
+    Основы математического анализа.  Ч.~1: Учеб. для вузов~/ 7-е изд.\,---\,М.:
+    Физматлит, 2005.\,---\,648~с.
+
+\end{thebibliography}
+
+
 
 \end{document}
