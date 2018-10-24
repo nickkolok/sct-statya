@@ -21,7 +21,7 @@
 
 
 
- \Author{Авдеев Н.Н., Семeнов Е.М.}
+ \Author{Н.Н. Авдеев, Е.М. Семeнов}
 
 
 
@@ -150,10 +150,11 @@ $
 	есть объединение $n$ кривых второго порядка.
 \end{proof}
 
-\begin{proof}[Доказательство теоремы \ref{thmErdos}]
+\begin{proof}%[Доказательство теоремы \ref{thmErdos}]
 	Предположим противное,
 	т.е. $\{M_1, M_2, ... \}\in\mathfrak{M}$
 	и точки $M_1$, $M_2$, $M_3$ не лежат на одной прямой.
+	Обозначим $|M_1 - M_2| = n$ и $|M_1 - M_3| = m$.
 	Применяя лемму~\ref{thm:quadCurveFamily}
 	к паре точек $M_1, M_2$ и к паре точек $M_1, M_3$,
 	найд\"{e}м такие кривые 2-го порядка
@@ -533,26 +534,26 @@ $|M|=n$ и $M \not\subset L$ для любой прямой $L \subset\mathbb{R}^2$.
 		m\frac{ \sqrt{ 64 \varphi_k^2 (k-1) + 1} -1 }{16 \varphi_k^2}
 	\end{multline}
 	Разделим обе части неравенства на положительное число $m(k-1)$:
-	\begin{equation}
+	\begin{equation*}
 		\frac{d}{(k-1)m^2}
 		>
 		\frac{ \sqrt{ 64 \varphi_k^2 (k-1) + 1} -1 }{16 \varphi_k^2 (k-1)}
-	\end{equation}
+	\end{equation*}
 	Положим
-	\begin{equation}
+	\begin{equation*}
 		\mu_k = \frac{ \sqrt{ 64 \varphi_k^2 (k-1) + 1} -1 }{16 \varphi_k^2 (k-1)},
-	\end{equation}
+	\end{equation*}
 	тогда
-	\begin{equation}
+	\begin{equation*}
 		\frac{d}{(k-1)m^2}
 		>
 		\mu_k
-	\end{equation}
+	\end{equation*}
 	откуда незамедлительно
-	\begin{equation}
+	\begin{equation*}
 		d > \mu_k \cdot (|S|-2)
 		.
-	\end{equation}
+	\end{equation*}
 \end{proof}
 
 У только что полученной оценки есть две существенных особенности:
@@ -605,11 +606,12 @@ $\operatorname{diam} M \geq 9905$ (см. утверждение~\ref{proposition:d(2,n)}).
 
 \begin{aZam}
 	Нахождение $\varphi_k$ для $k > 30$ может позволить улучшить оценку
-	в утверждениях~\ref{proposition:linear_bound_29} и~\ref{proposition:linear_bound_10},
-	равно как и вычисление точных нижних оценок на диаметр для конкретных $n>122$ (в утверждении~\ref{proposition:linear_bound_10}),
-	но лишь до определ\"{e}нного предела, поскольку $\mu_k$ зависит от $\varphi_k$ и $k$
+	в утверждениях~\ref{proposition:linear_bound_29} и~\ref{proposition:linear_bound_10}.
+	Вычисление точных нижних оценок на диаметр для конкретных $n>122$~--- в утверждении~\ref{proposition:linear_bound_10}.
+	Однако оценки таким образом можно улучшить
+	лишь до определ\"{e}нного предела, поскольку $\mu_k$ зависит от $\varphi_k$ и $k$
 	только в составе выражения $\varphi_k^2 (k-1)$,
-	которое ограничено в силу теоремы~\ref{thm:varphi_k_bounds}.
+	ограниченого в силу теоремы~\ref{thm:varphi_k_bounds}.
 \end{aZam}
 
 \begin{aZam}
@@ -650,7 +652,7 @@ $\operatorname{diam} M \geq 9905$ (см. утверждение~\ref{proposition:d(2,n)}).
 \begin{aDef}
 	\label{def_char_lattice}
 	Характеристикой множества $M\in\mathfrak{M}_n$ называется свободное от квадратов
-	число $p$, такое, что множество $M$ может быть размещена на решётке
+	число $p$, такое, что множество $M$ может быть размещено на реш\"{e}тке
 \begin{equation}\label{grid_for_Erdosh_system}
 	\left\{\left(
 		\frac{a_i}{2m}
@@ -667,11 +669,11 @@ $\operatorname{diam} M \geq 9905$ (см. утверждение~\ref{proposition:d(2,n)}).
 \end{aTeorema}
 \begin{proof}
 	Пусть $M\in\mathfrak{M}_n$, $M_1,M_2,M_3 \in M$ и не лежат на одной прямой.
-	Пусть сначала $M_1,M_2,M_3$ лежат на решётке~\eqref{grid_for_Erdosh_system}.
+	Пусть сначала $M_1,M_2,M_3$ лежат на реш\"{e}тке~\eqref{grid_for_Erdosh_system}.
 	Тогда по формуле Пика~\cite[теорема 3.1]{polygons-on-lattices} площадь треугольника $M_1 M_2 M_3$
 	соизмерима с $\sqrt{p}$.
 	Пусть теперь площадь треугольника $M_1 M_2 M_3$ соизмерима с $\sqrt{p}$ и $|M_1 - M_2|=m$.
-	Введём систему координат так, что $M_1 = (0,0)$,
+	Введ\"{e}м систему координат так, что $M_1 = (0,0)$,
 	$M_2 = (|M_1 - M_2|, 0)$,
 	$M_3 = (x_3, y_3)$.
 	Тогда площадь треугольника $M_1 M_2 M_3$ равна $\frac{1}{2} |M_1 - M_2| y_3$,
@@ -700,7 +702,7 @@ $\operatorname{diam} M \geq 9905$ (см. утверждение~\ref{proposition:d(2,n)}).
 \end{aTeorema}
 
 \begin{proof}
-	Не теряя общности положим, что $n$ нечётно.
+	Не теряя общности положим, что $n$ неч\"{e}тно.
 	Пусть
 	\begin{equation*}
 		M = \{M_i, i =0,1,...,n+1\},
@@ -757,7 +759,7 @@ $\operatorname{diam} M \geq 9905$ (см. утверждение~\ref{proposition:d(2,n)}).
 	и $M$ не содержится ни в какой $(m-1)$--мерной гиперплоскости.
 \end{aDef}
 
-Более того, конструкцию $\mathfrak{M}_n$ можно распространить и на $\mathbb{Z}^m_n$~\cite{Kohnert2006IntegralPS}.
+Конструкцию $\mathfrak{M}_n$ можно распространить и на более широкие классы пространств~\cite{Kohnert2006IntegralPS}.
 %Более того, аналогичные множества были построены в $\mathbb{Z}^m_n$~\cite{Kohnert2006IntegralPS}.
 
 Характеристика (наряду с диаметром и мощностью) обобщается на случай, когда множество точек с целочисленными расстояниями
@@ -799,7 +801,7 @@ $\operatorname{diam} M \geq 9905$ (см. утверждение~\ref{proposition:d(2,n)}).
 	& d(m, 2m + 2) \leq 13 \qquad \mbox{\cite{piepmeyer1988raumliche}} \\
 	& d(m, 3m    ) \leq 109 \qquad \mbox{\cite{kemnitz1988punktmengen}} \\
 	& d(m, m^2 + m) \leq 17 \qquad \mbox{\cite{kurz2008bounds}} \\
-	& 3 \leq d(m, n) \leq 4 \mbox{~для~} m + 2 \leq n \leq 2m \mbox{~и~} d(m, 2m) = 4 ~ \mbox{\cite{piepmeyer1988raumliche,harborth1991point}}\\
+	& 3 \leq d(m, n) \leq 4 \mbox{~для~} m + 2 \leq n \leq 2m \mbox{~и~} d(m, 2m) = 4 ~ \mbox{\cite{piepmeyer1988raumliche,harborth1991point}}
 \end{align}
 
 Кроме того, в~\cite{kurz2008bounds} выдвинуто предположение, что $d(m - 1, n) \geq d(m, n)$.
@@ -832,7 +834,7 @@ $(d(2, n))_{n=3,...,122} = 1$, 4, 7, 8, 17, 21, 29, 40, 51, 63, 74, 91, 104, 121
 8406, 8648, 8729, 8927, 9052, 9211, 9423, 9534, 9794, 9905
 .
 
-Для многомерного случая были вычислены~\cite{piepmeyer1988raumliche,harborth1998integral,kurz2005characteristic,kurz2006konstruktion,kurz2008bounds} следующие значения.
+Для многомерного случая были вычислены в~\cite{piepmeyer1988raumliche,harborth1998integral,kurz2005characteristic,kurz2006konstruktion,kurz2008bounds} следующие значения.
 \begin{aUtv}~
 \end{aUtv}
 $(d(3, n))_{n=4,...,24} = 1$, 3, 4, 8, 13, 16, 17, 17, 17, 56, 65, 77, 86, 99, 112, 133, 154,
@@ -847,7 +849,7 @@ $(d(3, n))_{n=4,...,24} = 1$, 3, 4, 8, 13, 16, 17, 17, 17, 56, 65, 77, 86, 99, 1
 \begin{aGipot}
 	Никакое оптимальное множество $M\in\mathfrak{M}$ не лежит на целочисленной реш\"{e}тке.
 \end{aGipot}
-В пользу этой гипотезы говорят реузльтаты вычислений для $m=2$, $3 \leq n \leq 43$.
+В пользу этой гипотезы говорят результаты вычислений для $m=2$, $3 \leq n \leq 43$.
 
 Примечательно, что для $m=2$, $n=4$ и $n=18$ оптимальные множества не единственны.
 В~\cite{kurz2008bounds} установлено, что для $9 \leq n \leq 122$ оптимальное множество является веерным, т.е. содержится
@@ -1009,8 +1011,8 @@ $\bigl(\dot{d}(2,n)\bigr)_{n=3,...,7}
 в~\cite{kurz2013constructing}~--- 7--кластеров.
 
 
-Солимоси построил~\cite{solymosi2003note} для любого $n\geq 3$ конструкцию множества $M\in\mathfrak{M}_n$
-такого, что для некоторых $M_1, M_2 \in M$ выполнено $|M_1 - M_2| = 2$.
+Солимоси построил~\cite{solymosi2003note} для любого $n\geq 3$ множество $M\in\mathfrak{M}_n$
+такое, что для некоторых $M_1, M_2 \in M$ выполнено $|M_1 - M_2| = 2$.
 Полученное им множество также является веерным.
 
 Известно, что для $3\leq n \leq 5$ существуют множества из $\mathfrak{M}_n$
@@ -1026,7 +1028,7 @@ c минимальной длиной ребра 1.
 \begin{proof}
 	Пусть $M\in\overline{\mathfrak{M}}_n$ и для некоторых $M_1, M_2$ выполнено $|M_1 - M_2| = 1$.
 	Тогда все точки множества $M$ лежат на $cr(M_1,M_2)$.
-	$cr(M_1,M_2)$ есть объединение двух прямых, на каждой из которых может быть не более 2 точек в силу того, что
+	Крест есть объединение двух прямых, на каждой из которых может быть не более 2 точек в силу того, что
 	$M\in\overline{\mathfrak{M}}_n$,
 	откуда непосредственно следует требуемое утверждение для $n\geq 5$.
 
@@ -1211,7 +1213,7 @@ $m+2\equiv 0 (\operatorname{mod} 16)$.
 	\textsl{А.}
 	\bibitem{Kohnert2006IntegralPS}
 	\textsl{Kohnert} \textsl{A.}, \textsl{Kurz} \textsl{S.} Integral
-	point sets over $Z^m_n$
+	point sets over $\mathbb{Z}^m_n$
 	/\!/ Discrete Applied Mathematics. --- 2006. ---
 	Т. 157 (2009). --- С. 2105---2117.
 	\bibitem{kurz2005characteristic}
@@ -1326,7 +1328,7 @@ $m+2\equiv 0 (\operatorname{mod} 16)$.
   Avdeev N.N., Semenov E.M.
  \end{center}
 
-\Abstract{We considered such a sets of points on the plane
+\Abstract{We considered such sets of points on the plane
 	that the distance between any two points is integral
 	and the set isn't contained in any straight line.
 	Minimal diameter of such sets is estimated.
