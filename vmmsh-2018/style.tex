@@ -3,11 +3,13 @@
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 
-\usepackage{cite}
-\makeatletter
-\renewcommand{\@biblabel}[1]{#1)} % Заменяем библиографию с квадратных скобок на скобку
-\makeatother
+\usepackage{graphicx}
 
+\usepackage[backend=biber,style=gost-numeric,sorting=none]{biblatex}
+\addbibresource{../common/notmy.bib}
+\addbibresource{../common/my.bib}
+
+%\usepackage{cite}
 
 \usepackage{amsthm}
 \newtheoremstyle{VMMSHtheorem}% name of the style to be used
@@ -81,26 +83,7 @@
 
 \makeatother%{@}
 
-\AtBeginEnvironment{thebibliography}{
-  \footnotesize
-  \baselineskip=7pt
-  \setlength{\itemsep}{0pt}
-  \setlength{\parskip}{0pt}
-}
 
-
-\patchcmd{\thebibliography}
-  {\settowidth}
-  {
-%    \setlength{\itemsep}{0pt plus 0.1pt}
-%    \setlength{\parskip}{0pt plus 0.1pt}
-    \footnotesize
-    \setlength{\itemsep}{0pt}
-    \setlength{\parskip}{0pt}
-    \baselineskip=0pt
-    \settowidth
-  }
-  {}{}
 \newcommand{\prepareThesis}{
 	\setcounter{equation}{0}
 	\setcounter{figure}{0}
