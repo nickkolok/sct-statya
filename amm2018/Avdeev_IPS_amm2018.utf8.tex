@@ -14,7 +14,7 @@
 \noindent УДК 511.95 + 514.112
 
 \begin{center}
-\textbf{Об отыскании целоудалённых множеств специального вида} \\[3mm]
+\textbf{ОБ ОТЫСКАНИИ ЦЕЛОУДАЛЁННЫХ МНОЖЕСТВ СПЕЦИАЛЬНОГО ВИДА} \\[3mm]
 \textbf{Н.~Н.~Авдеев}\\[2mm]
 \emph{ВГУ}
 \end{center}
@@ -75,7 +75,7 @@ $$
 б) в объединении окружности с её центром;
 в) в паре перпендикулярных прямых.
 
-Для отыскания ЦМ используется алгоритм, описанный в [TODO: строяк],
+Для отыскания ЦМ используется алгоритм, описанный в [7],
 со следующими изменениями.
 Во-первых, нахождение ЦМ с заданным диаметром и мощностью не приводит к прекращению процесса поиска.
 Во-вторых, в модифицированном алгоритме Брона-Кербоша за начальную клику
@@ -85,10 +85,10 @@ $$
 
 Все найденные таким алгоритмом ЦМ подвергаются проверке на выполнение одного из условий (а)--(в);
 если ни одно из условий не выполнено, информация о ЦМ записывается в файл и строится визуализация найденного ЦМ с помощью gnuplot
-[TODO: ссылочку бы].
+[8,9].
 
 Ниже приводятся иллюстрированные примеры найденных ЦМ из числа наиболее интересных.
-Для облегчения восприятия иногда применяется запись вида
+Для облегчения восприятия применяется запись вида
 $\sqrt{p}/q * \{ (x_1,y_1), ...,$ $ (x_n, y_n)  \}$,
 означающая, что каждую абсциссу нужно умножить на $1/q$,
 а каждую ординату~--- умножить на $\sqrt{p}/q$, т.е.
@@ -145,16 +145,69 @@ $
 	\parbox{.48\linewidth}{\caption{ЦМ мощности 7, диаметр 56}\label{Avdeev_7_56_1538484851696.eps}}
 \end{figure}
 
+\item
+$
+\sqrt{39}/8 *
+\{
+( \pm240 , 0),
+( -91 , -15),
+( -35 , -55),
+( -140 , 20),
+( -112 , 0),
+( -16 , 0)
+\}
+$
+(рис.~\ref{Avdeev_7_60_1538484853808.eps}).
+Ещё один пример с двумя пересекающимися прямыми.
+
+\item
+$
+\sqrt{7}/2 *
+\{
+( \pm60 , 0),
+( \pm15 , -25),
+( \pm33 , -9),
+( 0 , -20)
+\}
+$
+(рис.~\ref{Avdeev_7_60_1538484854748.eps}).
+Прямые не перпендикулярны, как может показаться.
 
 \begin{figure}[htbp]
 	\includegraphics[width=.48\linewidth]{Avdeev_7_60_1538484853808.eps}
 	\hfill
 	\includegraphics[width=.48\linewidth]{Avdeev_7_60_1538484854748.eps}
 	\\
-	\parbox{.48\linewidth}{\caption{}\label{Avdeev_7_60_1538484853808.eps}}
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 7, диаметр 60}\label{Avdeev_7_60_1538484853808.eps}}
 	\hfill
-	\parbox{.48\linewidth}{\caption{}\label{Avdeev_7_60_1538484854748.eps}}
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 7, диаметр 60}\label{Avdeev_7_60_1538484854748.eps}}
 \end{figure}
+
+\item
+$
+\sqrt{7}/2 *
+\{
+( \pm64 , 0),
+( \pm45 , 15),
+( \pm19 , 15),
+( 0 , 0)
+\}
+$
+(рис.~\ref{Avdeev_7_64_1538484861024.eps}).
+
+\item
+$
+\sqrt{3}/2 *
+\{
+( \pm75 , 0),
+( 29 , -24),
+( -35 , 40),
+( 40 , -35),
+( 5 , 0),
+( 53 , 0)
+\}
+$
+(рис.~\ref{Avdeev_7_75_1538484880810.eps}).
 
 
 \begin{figure}[htbp]
@@ -162,22 +215,236 @@ $
 	\hfill
 	\includegraphics[width=.48\linewidth]{Avdeev_7_75_1538484880810.eps}
 	\\
-	\parbox{.48\linewidth}{\caption{}\label{Avdeev_7_64_1538484861024.eps}}
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 7, диаметр 64}\label{Avdeev_7_64_1538484861024.eps}}
 	\hfill
-	\parbox{.48\linewidth}{\caption{}\label{Avdeev_7_75_1538484880810.eps}}
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 7, диаметр 75}\label{Avdeev_7_75_1538484880810.eps}}
 \end{figure}
+
+\item
+$
+\sqrt{15}/2 *
+\{
+( \pm77 , 0),
+( 0 , 13),
+( \pm28 , -15),
+( \pm11 , 24)
+\}
+$
+(рис.~\ref{Avdeev_7_77_1538484885363.eps}).
+
+\item
+$
+\sqrt{15}/4 *
+\{
+( \pm156 , 0),
+( -9 , -45),
+( -145 , 11),
+( 112 , -12),
+( 128 , -28),
+( 68 , 32)
+\}
+$
+(рис.~\ref{Avdeev_7_78_1538484891588.eps}).
 
 
 \begin{figure}[htbp]
-%	\includegraphics[width=.48\linewidth]{}
+	\includegraphics[width=.48\linewidth]{Avdeev_7_77_1538484885363.eps}
 	\hfill
-%	\includegraphics[width=.48\linewidth]{}
+	\includegraphics[width=.48\linewidth]{Avdeev_7_78_1538484891588.eps}
 	\\
-	\parbox{.48\linewidth}{\caption{}\label{}}
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 7, диаметр 77}\label{Avdeev_7_77_1538484885363.eps}}
 	\hfill
-	\parbox{.48\linewidth}{\caption{}\label{}}
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 7, диаметр 78}\label{Avdeev_7_78_1538484891588.eps}}
 \end{figure}
 
+
+\item
+$
+\sqrt{455}/2 *
+\{
+( \pm87 , 0),
+( \pm64 , -3),
+( 0 , -3),
+( \pm23 , 0)
+\}
+$
+(рис.~\ref{Avdeev_7_87_1538484975645.eps}).
+
+\item
+$
+\sqrt{15}/4 *
+\{
+( \pm180 , 0),
+( 135 , 45),
+( -33 , 21),
+( 44 , 32),
+( 76 , 0),
+( -12 , 0)
+\}
+$
+(рис.~\ref{Avdeev_7_90_1538485007759.eps}).
+
+\begin{figure}[htbp]
+	\includegraphics[width=.48\linewidth]{Avdeev_7_87_1538484975645.eps}
+	\hfill
+	\includegraphics[width=.48\linewidth]{Avdeev_7_90_1538485007759.eps}
+	\\
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 7, диаметр 87}\label{Avdeev_7_87_1538484975645.eps}}
+	\hfill
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 7, диаметр 90}\label{Avdeev_7_90_1538485007759.eps}}
+\end{figure}
+
+
+
+\item
+$
+\sqrt{35}/1 *
+\{
+( \pm27 , 8),
+( 0 , 8),
+( \pm46 , 0),
+( \pm19 , 0)
+\}
+$
+(рис.~\ref{Avdeev_7_92_1538485051452.eps}).
+
+\item
+$
+\sqrt{15}/2 *
+\{
+( -95 , 0),
+( 95 , 0),
+( -84 , -11),
+( -52 , 21),
+( -7 , -24),
+( -73 , 0),
+( -31 , 0)
+\}
+$
+(рис.~\ref{Avdeev_7_95_1538485087074.eps}).
+
+\begin{figure}[htbp]
+	\includegraphics[width=.48\linewidth]{Avdeev_7_92_1538485051452.eps}
+	\hfill
+	\includegraphics[width=.48\linewidth]{Avdeev_7_95_1538485087074.eps}
+	\\
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 7, диаметр 92}\label{Avdeev_7_92_1538485051452.eps}}
+	\hfill
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 7, диаметр 95}\label{Avdeev_7_95_1538485087074.eps}}
+\end{figure}
+
+
+\item
+$
+\sqrt{15}/8 *
+\{
+( -384 , 0),
+( 384 , 0),
+( -100 , -28),
+( 155 , 77),
+( -253 , -91),
+( -32 , 0),
+( 96 , 0)
+\}
+$
+(рис.~\ref{Avdeev_7_96_1538485207044.eps}).
+
+
+\item
+$
+\sqrt{91}/2 *
+\{
+( \pm99 , 0),
+( 0 , 17),
+( \pm75 , -8),
+( \pm24 , 9)
+\}
+$
+(рис.~\ref{Avdeev_7_99_1538485281307.eps}).
+
+
+\begin{figure}[htbp]
+	\includegraphics[width=.48\linewidth]{Avdeev_7_96_1538485207044.eps}
+	\hfill
+	\includegraphics[width=.48\linewidth]{Avdeev_7_99_1538485281307.eps}
+	\\
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 7, диаметр 96}\label{Avdeev_7_96_1538485207044.eps}}
+	\hfill
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 7, диаметр 99}\label{Avdeev_7_99_1538485281307.eps}}
+\end{figure}
+
+
+\item
+$
+\sqrt{91}/2 *
+\{
+( \pm99 , 0),
+( 0 , 17),
+( \pm24 , 9),
+( 75 , -8),
+( 51 , 0)
+\}
+$
+(рис.~\ref{Avdeev_7_99_1538485281335.eps}).
+
+\item
+$
+\sqrt{91}/2 *
+\{
+( \pm99 , 0),
+( 0 , 17),
+( \pm24 , 9),
+( \pm51 , 0)
+\}
+$
+(рис.~\ref{Avdeev_7_99_1538485281337.eps}).
+
+
+\begin{figure}[htbp]
+	\includegraphics[width=.48\linewidth]{Avdeev_7_99_1538485281335.eps}
+	\hfill
+	\includegraphics[width=.48\linewidth]{Avdeev_7_99_1538485281337.eps}
+	\\
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 7, диаметр 99}\label{Avdeev_7_99_1538485281335.eps}}
+	\hfill
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 7, диаметр 99}\label{Avdeev_7_99_1538485281337.eps}}
+\end{figure}
+
+
+
+\item
+$
+\sqrt{3003}/82 *
+\{
+( \pm5043 , 0),
+( 3640 , 23),
+( 1200 , 63),
+( 2277 , -120),
+( -163 , -80),
+( 2603 , 40),
+$ \\ $
+( -2603 , -40)
+\}
+$
+(рис.~\ref{Avdeev_8_123_1538485378899.eps}).
+ЦМ лежит на двух прямых, по 4 точки на каждой.
+
+\item
+$
+\sqrt{3003}/82 *
+\{
+( \pm5043 , 0),
+( -1240 , -103),
+( 3640 , -23),
+( 1200 , -63),
+( -163 , 80),
+( 163 , -80),
+$ \\ $
+( -2603 , 40)
+\}
+$
+(рис.~\ref{Avdeev_8_123_1538485378698.eps}).
+ЦМ лежит на двух прямых, 3 точки на одной и 5 на другой.
 
 
 \begin{figure}[htbp]
@@ -185,24 +452,81 @@ $
 	\hfill
 	\includegraphics[width=.48\linewidth]{Avdeev_8_123_1538485378698.eps}
 	\\
-	\parbox{.48\linewidth}{\caption{}\label{Avdeev_8_123_1538485378899.eps}}
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 8, диаметр 123}\label{Avdeev_8_123_1538485378899.eps}}
 	\hfill
-	\parbox{.48\linewidth}{\caption{}\label{Avdeev_8_123_1538485378698.eps}}
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 8, диаметр 123}\label{Avdeev_8_123_1538485378698.eps}}
 \end{figure}
 
 
+\item
+$
+\sqrt{210}/73 *
+\{
+( \pm5329 , 0),
+( -3783 , -272),
+( 3922 , -42),
+( 1309 , -120),
+( -2376 , -230),
+$ \\ $
+( 237 , -152),
+( 3515 , 264)
+\}
+$
+(рис.~\ref{Avdeev_8_146_1538486493354.eps}).
+
+\item
+$
+\sqrt{2}/27 *
+\{
+( \pm2187 , 0),
+( 1309 , 1520),
+( 899 , -560),
+( 623 , -680),
+( -665 , -1240),
+( 1428 , -330),
+$ \\ $
+( 94 , -910)
+\}
+$
+(рис.~\ref{Avdeev_8_162_1538488466583.eps}).
 
 \begin{figure}[htbp]
 	\includegraphics[width=.48\linewidth]{Avdeev_8_146_1538486493354.eps}
 	\hfill
 	\includegraphics[width=.48\linewidth]{Avdeev_8_162_1538488466583.eps}
 	\\
-	\parbox{.48\linewidth}{\caption{}\label{Avdeev_8_146_1538486493354.eps}}
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 8, диаметр 146}\label{Avdeev_8_146_1538486493354.eps}}
 	\hfill
-	\parbox{.48\linewidth}{\caption{}\label{Avdeev_8_162_1538488466583.eps}}
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 8, диаметр 162}\label{Avdeev_8_162_1538488466583.eps}}
 \end{figure}
 
 
+\item
+$
+\sqrt{1}/1 *
+\{
+( \pm84 , 0),
+( \pm24 , 45),
+( 0 , 63),
+( 0 , 13),
+( 0 , 35),
+( 0 , 0)
+\}
+$
+(рис.~\ref{Avdeev_8_168_1538490487450.eps}).
+ЦМ лежит на целочисленной решётке.
+
+\item
+$
+\sqrt{231}/2 *
+\{
+( \pm171 , 0),
+( \pm96 , 9),
+( \pm125 , -8),
+( \pm21 , 0)
+\}
+$
+(рис.~\ref{Avdeev_8_171_1538491142044.eps}).
 
 
 \begin{figure}[htbp]
@@ -210,9 +534,9 @@ $
 	\hfill
 	\includegraphics[width=.48\linewidth]{Avdeev_8_171_1538491142044.eps}
 	\\
-	\parbox{.48\linewidth}{\caption{}\label{Avdeev_8_168_1538490487450.eps}}
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 8, диаметр 168}\label{Avdeev_8_168_1538490487450.eps}}
 	\hfill
-	\parbox{.48\linewidth}{\caption{}\label{Avdeev_8_171_1538491142044.eps}}
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 8, диаметр 171}\label{Avdeev_8_171_1538491142044.eps}}
 \end{figure}
 
 
@@ -220,34 +544,68 @@ $
 
 
 
+\item
+$
+\sqrt{3003}/82 *
+\{
+( \pm5043 , 0),
+( -163 , -80),
+( 163 , 80),
+( 2603 , 40),
+( -2603 , -40),
+$ \\ $
+( 1240 , -103),
+( -1200 , -63),
+( -3640 , -23)
+\}
+$
+(рис.~\ref{Avdeev_9_123_1538485102263.eps}).
 
 
+\item
+$
+\sqrt{210}/107 *
+\{
+( \pm11449 , 0),
+( -3795 , -296),
+( -7812 , -374),
+( 4033 , -144),
+( -9975 , -416),
+$ \\ $
+( 1870 , -186),
+( -2147 , -264),
+( 2147 , 264)
+\}
+$
+(рис.~\ref{Avdeev_9_214_1538495187150.eps}).
 
 \begin{figure}[htbp]
 	\includegraphics[width=.48\linewidth]{Avdeev_9_123_1538485102263.eps}
 	\hfill
 	\includegraphics[width=.48\linewidth]{Avdeev_9_214_1538495187150.eps}
 	\\
-	\parbox{.48\linewidth}{\caption{}\label{Avdeev_9_123_1538485102263.eps}}
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 9, диаметр 123}\label{Avdeev_9_123_1538485102263.eps}}
 	\hfill
-	\parbox{.48\linewidth}{\caption{}\label{Avdeev_9_214_1538495187150.eps}}
+	\parbox{.48\linewidth}{\caption{ЦМ мощности 9, диаметр 214}\label{Avdeev_9_214_1538495187150.eps}}
 \end{figure}
 
 
 
 
 
-\begin{figure}[htbp]
-	\includegraphics[width=.48\linewidth]{Avdeev_10_158_1538485325776.eps}
-	\hfill
-	\includegraphics[width=.48\linewidth]{Avdeev_10_222_1538488624864.eps}
-	\\
-	\parbox{.48\linewidth}{\caption{}\label{F1}}
-	\hfill
-	\parbox{.48\linewidth}{\caption{}\label{F2}}
-\end{figure}
+%\begin{figure}[htbp]
+%	\includegraphics[width=.48\linewidth]{Avdeev_10_158_1538485325776.eps}
+%	\hfill
+%	\includegraphics[width=.48\linewidth]{Avdeev_10_222_1538488624864.eps}
+%	\\
+%	\parbox{.48\linewidth}{\caption{ЦМ мощности 10, диаметр 158}\label{Avdeev_10_158_1538485325776.eps}}
+%	\hfill
+%	\parbox{.48\linewidth}{\caption{ЦМ мощности 10, диаметр 222}\label{Avdeev_10_222_1538488624864.eps}}
+%\end{figure}
 
 \end{itemize}
+
+{\small Работа выполнена в Воронежском университете при поддержке РНФ, грант 16-11-10125.}
 
 
 \bigskip\centerline{\bf Литература}
@@ -281,7 +639,17 @@ $
 6.	\emph{Guy~R.} Unsolved problems in number theory. Т.
 	1. --- Springer Science \& Business Media, 2013.
 
-{\small Работа выполнена в Воронежском университете при поддержке РНФ, грант 16-11-10125.}
+7.	\emph{Авдеев~Н. Н.} Об отыскании множеств точек на
+	плоскости с целочисленными расстояниями /\!/ Математическое
+	и компьютерное моделирование, информационные технологии
+	управления: сб. тр. Школы для студентов, аспирантов и
+	молодых ученых <<МКМИТУ-2016>>. --- 2016. --- С. 15---19.
+
+8.	\emph{Балдин Е.} Gnuplot. Графики заказывали? //Системный администратор. – 2007. – №. 4. – С. 72-77.
+
+9.	\emph{Алексеев Е. Р., Демин П. А., Костюк Д. А.} Возможности графического вывода результатов в последовательных и
+	параллельных кроссплатформенных вычислительных приложениях на Фортране и С(С++) // Advanced science, 2017, №3.
+
 
 
 {\bf Авдеев Николай Николаевич},
