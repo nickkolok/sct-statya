@@ -1,0 +1,153 @@
+\documentclass[11pt]{article}
+\usepackage[left=20mm, right=20mm, top=20mm, bottom=20mm, includefoot, a5paper]{geometry}
+\usepackage[cp1251]{inputenc}
+\usepackage[english,russian]{babel} %ѕоправлено. ѕозволит нормально переносить слова в английском тексте.
+\usepackage[intlimits]{amsmath}
+\interdisplaylinepenalty=2500
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\pagestyle{empty}
+
+\usepackage{graphicx} % ј как иначе вставл€ть картинки??
+
+
+\begin{document}
+
+\addcontentsline{toc}{section}{
+	Avdeev N.\,N.
+	On integral point sets in special position
+}
+
+\small UDC 511.95 + 514.112
+\begin{center}
+\bf
+ON INTEGRAL POINT SETS IN SPECIAL POSITION%
+\footnote{This work was supported by the Russian Science
+Foundation under grant 16-11-10125.}\\
+\small Avdeev N.\,N.\\
+\small Voronezh State University\\
+\small avdeev@math.vsu.ru, nickkolok@mail.ru\\
+\end{center}
+
+% ќбнул€ю счЄтчик на вс€кий случай
+\setcounter{equation}{0}
+
+% Switching to English
+\selectlanguage{english}
+\setcounter{figure}{0}
+
+\textbf{Definition 1.}
+A planar integral point set (PIPS) is a set $M$ of noncollinear points in plane $\mathbb{R}^2$
+such that for any pair of points $M_1, M_2\in M$ the distance between $M_1$ and $M_2$ is integral.
+Every PIPS is finite [1].
+
+Some general constructions of PIPS are known,
+e.g. a concyclic PIPS of an arbitrary power [2]
+and a PIPS of an arbitrary power $n$ such that $(n-1)$ points are collinear [3].
+However, there is no known algorithm to construct a PIPS of arbitrary power $n$ which is contained in 2 parallel straight lines,
+no more than $n-2$ points on each line.
+
+Examples of such PIPS for $n=7,8,9$ can be found in [4,5].
+Below an example for $n=10$ is given.
+We use notation
+\begin{equation*}
+	\sqrt{p}/q * \{ (x_1,y_1), ..., (x_n, y_n)  \}
+	:=
+	\left\{ \left(\frac{x_1}{q},\frac{y_1\sqrt{p}}{q}\right), ..., \left(\frac{x_n}{q},\frac{y_n\sqrt{p}}{q}\right)  \right\}
+	.
+\end{equation*}
+\\
+Figure~\ref{Avdeev_10_158_1538485325776.crop.eps}: $
+\sqrt{70}/79 *
+\{
+( \pm6241 , 0),
+( -873 , -528),
+( 2093 , 408),
+( 4838 , 138),
+$\\$
+( -3275 , 936),
+( -1872 , 798),
+( 5265 , 96),
+( -2299 , 840),
+( 873 , 528)
+\}
+$.
+%\\
+%Figure~\ref{Avdeev_10_222_1538488624864.crop.eps}
+%
+%$
+%\sqrt{70}/37 *
+%\{
+%( -4107 , 0),
+%( 4107 , 0),
+%( 840 , 198)
+%$\\$
+%( -2622 , -90),
+%( -1599 , -152),
+%( -246 , -234),
+%$\\$
+%( 381 , -272),
+%( 1206 , -322),
+%( 1833 , -360),
+%( 3186 , -442),
+%\}
+%$
+
+
+
+\begin{figure}[h]
+\center
+	\includegraphics[width=0.7\linewidth]{Avdeev_10_158_1538485325776.eps}
+	\caption{PIPS of power 10 and diameter 158}\label{Avdeev_10_158_1538485325776.crop.eps}%-converted-to-crop.ps}
+\end{figure}
+
+
+
+%\begin{figure}[h!]
+%	\center
+%	\includegraphics[width=0.7\linewidth]{Avdeev_10_222_1538488624864.eps}
+%	\caption{PIPS of power 10 and diameter 222}\label{Avdeev_10_222_1538488624864.crop.eps}%-converted-to-crop.ps}
+%\end{figure}
+
+
+
+
+ \centerline{\bf References}
+
+1.
+Erd\"{o}s P. Integral distances //Bulletin of the American Mathematical Society. Ц 1945. Ц V. 51. Ц No. 12. Ц P. 996.
+
+2.
+Harborth H., Kemnitz A., M\"{o}ller M. An upper bound for the minimum diameter of integral point sets
+//Discrete \& Computational Geometry. Ц 1993. Ц V. 9. Ц No. 4. Ц P. 427-432.
+
+3.
+Solymosi J. Note on integral distances //Discrete \& Computational Geometry. Ц 2003. Ц V. 30. Ц No. 2. Ц P. 337-342.
+
+\selectlanguage{russian}
+4.
+јвдеев Ќ.\,Ќ.
+ќб отыскании целоудалЄнных множеств специального вида
+//
+—б. тр. ћеждународной конференции Ђјктуальные проблемы прикладной математики, информатики и механикиї
+Ц ¬оронеж, 2018. Ц в печати. (in Russian)
+
+\selectlanguage{english}
+
+5.
+Guy~R. Unsolved problems in number theory. V.
+	1. --- Springer Science \& Business Media, 2013.
+
+{\bf Avdeev Nikolai Nikolaevich},
+master student of department of functional analysis and operator equations, Voronezh State University.
+%магистрант каф. функционального анализа и операторных уравнений математического факультета ‘√Ѕќ” ¬ќ <<¬√”>>
+
+% ќбнул€ю счЄтчик за собой
+\setcounter{equation}{0}
+\setcounter{figure}{0}
+
+
+
+\end{document}
+
