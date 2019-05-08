@@ -1,0 +1,128 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage[backend=biber,style=gost-numeric,sorting=none]{biblatex}
+\addbibresource{../common/notmy.bib}
+\addbibresource{../common/my.bib}
+
+%\usepackage{cite}
+
+\usepackage{amsthm}
+\newtheoremstyle{VMMSHtheorem}% name of the style to be used
+	{\topsep}% measure of space to leave above the theorem. E.g.: 3pt
+	{\topsep}% measure of space to leave below the theorem. E.g.: 3pt
+	{\sl}% name of font to use in the body of the theorem
+	{\parindent}% measure of space to indent
+	{\bfseries}% name of head font
+	{.}% punctuation between head and body
+	{ }% space after theorem head; " " = normal interword space
+	{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+
+\theoremstyle{VMMSHtheorem}
+
+\newtheorem{theorem}{Теорема}
+\newtheorem*{theorem*}{Теорема}
+\newtheorem{lemma}[theorem]{Лемма}
+\newtheorem*{lemma*}{Лемма}
+\newtheorem{proposition}[theorem]{Утверждение}
+\newtheorem*{proposition*}{Утверждение}
+\newtheorem{corollary}[theorem]{Следствие}
+\newtheorem*{corollary*}{Следствие}
+\newtheorem{hypothesis}[theorem]{Гипотеза}
+\newtheorem*{hypothesis*}{Гипотеза}
+
+\newtheoremstyle{VMMSHremark}% name of the style to be used
+	{\topsep}% measure of space to leave above the theorem. E.g.: 3pt
+	{\topsep}% measure of space to leave below the theorem. E.g.: 3pt
+	{}% name of font to use in the body of the theorem
+	{\parindent}% measure of space to indent
+	{\sc}% name of head font
+	{.}% punctuation between head and body
+	{ }% space after theorem head; " " = normal interword space
+	{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+
+\theoremstyle{VMMSHremark}
+\newtheorem{definition}[theorem]{Определение}
+\newtheorem*{definition*}{Определение}
+\newtheorem{designation}[theorem]{Обозначение}
+\newtheorem*{designation*}{Обозначение}
+\newtheorem{remark}[theorem]{Замечание}
+\newtheorem*{remark*}{Замечание}
+\newtheorem{example}[theorem]{Пример}
+\newtheorem*{example*}{Пример}
+
+
+
+
+
+
+
+
+
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{amscd}
+\usepackage[english,russian]{babel}
+
+
+\sloppy
+
+\begin{document}
+
+
+
+{
+\center{МНОЖЕСТВА ТОЧЕК С ЦЕЛОЧИСЛЕННЫМИ РАССТОЯНИЯМИ НА ПЛОСКОСТИ И В ЕВКЛИДОВОМ ПРОСТРАНСТВЕ} % обязательное поле!
+}
+
+\vspace{2cm}
+
+Множеством с целочисленными расстояниями будет называть такое подмножество плоскости $\mathbb{R}^2$,
+не содержащееся ни в какой прямой,
+что расстояние между любыми двумя точками $M$ есть целое число.
+
+В \cite{anning1945integral,erdos1945integral} доказано, что любое МЦР конечно.
+Следовательно, для МЦР естественным образом определяется диаметр:
+$$
+	diam(M) = \max_{A,B\in M} |A-B|,
+$$
+где $|A-B|$~--- обычное расстояние между $A$ и $B$.
+
+Пусть $\mathfrak{M}_n$~--- множество всех МЦР, состоящих ровно из $n$ точек.
+В~\cite{harborth1993upper} была рассмотрена функция
+$$
+	f(n) = \min_{M\in\mathfrak{M}_n} diam(M)
+$$
+и найдена верхняя оценка на эту функцию.
+Кроме того, там же вычислены значения $f(n)$ для первых нескольких $n$.
+
+В~\cite{solymosi2003note} была доказана нижняя оценка на $f(n)$:
+\begin{equation}\label{Solymosi}
+f(n) \geqslant \frac{1}{24} n
+.
+\end{equation}
+В~\cite{our-mz-rus} коэффициент при $n$ был улучшен до 1/8.
+
+Планируется:
+\begin{itemize}
+\item
+ещё более улучшить оценку~\eqref{Solymosi};
+\item
+изучить связь задачи об отыскании $f(n)$ и задачи об упаковке точек в квадрат~\cite{locatelli2002packing};
+\item
+построить частные случаи оценки~\eqref{Solymosi}:
+например, для МЦР, содержащихся в окружности, гиперболе и семействе софокусных гипербол;
+\item
+изучить такие МЦР $M\in\mathfrak{M}_n$, что $diam(M)=f(n)$.
+\end{itemize}
+
+
+
+
+\printbibliography
+
+
+
+\end{document}
