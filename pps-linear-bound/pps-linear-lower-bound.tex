@@ -118,13 +118,28 @@ firstly, we obtain a greater constant $c$ in Theorem (TODO: the number of theore
 using the combined approach with the Point Packing in a Square problem;
 then, we prove that $l(m,n)=1$ for all possible $m$ and $n$.
 
-
-TODO: definition of facher IPS somewhere.
-
 \section{Lower bound for the diameter}
 
 
 \section{Constructing integral point sets}
+
+\begin{definition}
+	A set $M\in\mathfrak{M}(2,n)$ is called \textit{facher}
+	if $M$ consists of $n-1$ points on a straight line
+	and one point out of the line.
+\end{definition}
+
+\begin{definition}
+	A set $M\in\mathfrak{M}(m,n)$ is called \textit{optimal}
+	if $\operatorname{diam}M=d(m,n)$.
+\end{definition}
+
+
+Facher sets are the simplest ones of planar integral point sets.
+It is shown that for $9\leq n \leq 122$ all the optimal sets are facher~\cite{kurz2008minimum}.
+For every cardinality $n$ (and every characteristic $q$~--- see~\cite{kurz2005characteristic} for details)
+there exists a facher set $M\in\mathfrak{M}(2,n)$ (with the desired characteristic).
+
 For every integer $n\geq 3$ Solymosi~\cite{solymosi2003note} gives a construction of facher planar integral point set $M$
 such as $|M| = n$ and for some $M_1, M_2 \in M$ holds $|M_1 - M_2| = 2$.
 The construted set has both odd and even distances.
