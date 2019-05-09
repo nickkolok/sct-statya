@@ -44,6 +44,7 @@
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{construction}[theorem]{Construction}
+\newtheorem{remark}[theorem]{Remark}
 
 
 \begin{document}
@@ -230,9 +231,27 @@ Now we will improve the Solymosi's result.
 \end{construction}
 
 
-TODO: $k=2$ and construction from~\cite{harborth1993upper}
+TODO: get rid of $H_{1,2}$; write signs $\pm$ to $M_J$; recalculate the cardinality; allow $k=1$.
 
-TODO: remark on taking $k=1$.
+\begin{remark}
+	Taking $k=1$ for Construction~\ref{con:planar_set_with_minimeter_1},
+	we obtain 3 points which form a right triangle with side length 1.
+	This triangle is obviously the optimal set in $\mathfrak{M}(2,3)$.
+\end{remark}
+
+\begin{remark}
+	Taking $k=2$ for Construction~\ref{con:planar_set_with_minimeter_1},
+	we obtain the optimal set in $\mathfrak{M}(2,5)$ presented in~\cite[Fig. 1]{harborth1993upper}.
+	If we truncate one point from it,
+	then we get on of the two optimal sets in $\mathfrak{M}(2,4)$.
+\end{remark}
+
+\begin{hypothesis}
+	Every set $M\in\mathfrak{M}(2,n)$, $n\geq 6$, such that for some $M_1,M_2$ equality $|M_1 - M_2|=1$ holds,
+	is not optimal.
+\end{hypothesis}
+
+
 
 Summing up the construction 1 above and~\cite[lemma 3 and proposition 6]{our-vmmsh-2018},
 we obtain the following
