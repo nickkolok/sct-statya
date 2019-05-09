@@ -58,6 +58,53 @@ where $M$ contains points $M_1$ and $M_2$ such that distance between $M_1$ and $
 
 
 \section{Introduction.}
+Let $\mathbb{N}$ be the set of all positive integers and let $|M_1 - M_2|$ denote the Euclidean distance
+between points $M_1$ and $M_2$ in a finite-dimensional space $\mathbb{R}^m$.
+An \textit{integral point set} in $m$-dimensional Euclidean space is such a point set $M$ that all the distances between the
+points of $M$ are integers and $M$ is not situated on an $(m-1)$-dimensional hyperplane.
+Erd\"os and Anning proved~\cite{anning1945integral,erdos1945integral} that every integral point set consists of a finite number of points.
+Taking the fact into account, we will denote the set of all integral point sets of $n$ points in $m$-dimensional Euclidean space with
+$\mathfrak{M}(m,n)$ (following the notation of~\cite{our-vmmsh-2018}).
+The symbol $|M|$ will be used for cardinality of $M$, i.e. the quantity of points in $M$ in our case.
+
+For every finite point set, its diameter is naturally defined as
+\begin{equation}
+	\operatorname{diam} M = \max_{A,B\in M} |A-B|
+	.
+\end{equation}
+The next emerging question is: how the diameter of an integral point set depends on its cardinality?
+One can easily see that every $M\in\mathfrak{M}(m,n)$ with $\operatorname{diam} M = h$
+can be stretched to $M_p\in\mathfrak{M}(m,n)$ with $\operatorname{diam} M = ph$
+for every $p\in\mathbb{N}$.
+So, the question above should be rephrased:
+how \textit{the least possible} diameter of an integral point set depends on its cardinality?
+To answer it, the following function was introduced~\cite{kurz2008bounds,kurz2008minimum}:
+\begin{equation}
+	d(m,n) = \min_{M\in\mathfrak{M}(m,n)} \operatorname{diam} M = \min_{M\in\mathfrak{M}(m,n)} \max_{A,B\in M} |A-B|
+	.
+\end{equation}
+We also refer to~\cite{kurz2008bounds} for a list of known exact values of $d(m,n)$
+and estimations; in the present paper, the case of $m=2$ will mostly be in the focus.
+
+The most significant breakthrough on case of $m=2$ was done by Solymosi~\cite{solymosi2003note},
+who proved that $cn \leq d(2,n)$ for a sufficiently small constant $c$.
+Followed the details of Solymosi's proof carefully,
+one can know out that the inequality holds at least for $c = 1/24$.
+The constant was improved in~\cite{our-mz-rus,our-vmmsh-2018}
+to $1/8$ for all $n$ and $3/8$ for sufficiently big $n$, respectively.
+
+The paper~\cite{solymosi2003note} contained one more interesting result.
+Let us define a function which is ``dual'' to $d(m,n)$ in some sense:
+\begin{equation}
+	l(m,n) = \min_{M\in\mathfrak{M}(m,n)} \min_{A,B\in M} |A-B|
+	.
+\end{equation}
+Solymosi proved that $l(2,n)\leq 2$.
+
+In the present paper we improve Solymosi's results:
+firstly, we obtain a greater constant $c$ in Theorem (TODO: the number of theorem and the exact constant),
+using the combined approach with the Point Packing in a Square problem;
+then, we prove that $l(m,n)=1$ for all $m$ and $n$ which it is correctly defined on.
 
 
 \section{Lower bound for the diameter.}
