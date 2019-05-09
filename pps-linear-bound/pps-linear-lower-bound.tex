@@ -36,6 +36,10 @@
 \addbibresource{../common/my.bib}
 
 
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+
+
 \begin{document}
 \renewcommand{\bibname}{Список цитированной литературы}
 \renewcommand\refname{\bibname}
@@ -240,10 +244,11 @@ If we have an integral point set with distance 1 occuring,
 then we can easily stretch it to turn 1 into the desired distance.
 These facts, together with theorem 3.1, give the following
 
-\paragraph{Theorem 3.2.}
-For arbitrary integers $m \geq 2$, $n \geq m+1$, $d \geq 1$
-there is an integral point set $M$ of $n$ points in $m$-dimensional Euclidean space,
-so that for some $M_1, M_2\in M$ distance between $M_1$ and $M_2$ is exactly $d$.
+\begin{theorem}
+	For arbitrary integers $m \geq 2$, $n \geq m+1$, $d \geq 1$
+	there is an integral point set $M$ of $n$ points in $m$-dimensional Euclidean space,
+	so that for some $M_1, M_2\in M$ distance between $M_1$ and $M_2$ is exactly $d$.
+\end{theorem}
 
 \paragraph{Definition.}
 We will call an integral point set $M$ \textit{irreducible}, if the greatest common divisor
