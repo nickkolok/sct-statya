@@ -245,7 +245,8 @@ Now we will improve the Solymosi's result.
 	We take $d_j = 2^{2^j} + 1$ for $1 \leq j \leq k-1$.
 	Then $d_j \equiv 1 \mod 4$.
 
-	Let $c_J = \prod_{j\in J} d_j$ for every subset of indexes $J\subset I = \{1,2,...,k-1\}$.
+	Let $c_J = \prod_{j\in J} d_j$ for every subset of indexes $J\subset I = \{1,2,...,k-1\}$
+	(and  $c_\varnothing = 1$).
 	We get
 	\begin{equation}
 		\label{eq:c_J_equiv_1_mod_4}
@@ -297,9 +298,7 @@ Now we will improve the Solymosi's result.
 		\in\mathbb{N}
 		.
 	\end{equation}
-	In particular, for $k>1$ and $H = \{k-1\}$ we obtain $C_H = 2^{2^{k-1}}+1$
-	(for $k=1$, we consider $H=\varnothing$ and $c_H = 1$).
-	Moreover
+	In particular, for $H = \{k-1\}$ we obtain $C_H = 2^{2^{k-1}}+1$ and
 	\begin{equation}
 		b_H =
 		\left( 2^{2^{k-1}}+1 - \frac{a}{2^{2^{k-1}}+1} \right)/2
@@ -327,11 +326,12 @@ Now we will improve the Solymosi's result.
 \end{construction}
 
 
-TODO: get rid of $H_{1,2}$; write signs $\pm$ to $M_J$; recalculate the cardinality; allow $k=1$.
+TODO: recalculate the cardinality.
 
 \begin{remark}
-	For $k=1$ in Construction~\ref{con:planar_set_with_minimeter_1},
-	we obtain 3 points which form a right triangle with side length 1.
+	Applying Construction~\ref{con:planar_set_with_minimeter_1} to $k=1$ literally,
+	we get $a = 3$, $I=\varnothing$, $b_\varnothing = -1$ and then
+	obtain a right triangle with side length 1.
 	This triangle is obviously the optimal set in $\mathfrak{M}(2,3)$.
 \end{remark}
 
