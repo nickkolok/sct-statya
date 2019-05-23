@@ -45,7 +45,7 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{construction}[theorem]{Construction}
 \newtheorem{remark}[theorem]{Remark}
-
+\newtheorem{problem}[theorem]{Problem}
 
 \begin{document}
 \renewcommand{\bibname}{Список цитированной литературы}
@@ -124,7 +124,44 @@ then, we prove that $l(m,n)=1$ for all possible $m$ and $n$.
 
 \section{Lower bound for the diameter}
 
-We will need the following results and notions from~\cite{our-vmmsh-2018}.
+In this section,
+we improve a better lower bound for minimum diameter of planar integral point sets by
+involving Point Packing in a Square problem.
+Below we introduce the problem, basic notions and results.
+
+\begin{problem}[Point Packing in a Square (PPS)\cite{locatelli2002packing,costa2013valid}]
+	\label{problem:PPS}
+	Given an integer $k > 1$, place $k$ points in the unit square $U = [ 0 , 1 ]^2$ such that their
+	minimum pairwise distance $m$ is maximal.
+\end{problem}
+
+\begin{definition}
+	For each $k > 1$, the corresponding maximal distance $m$ from Problem~\ref{problem:PPS}
+	is called the $k$-th PPS coefficient and denoted by $\varphi_k$.
+\end{definition}
+So, it's impossible to place $k$ points in a unit square such that each pairwise distance of the points is greater than $\varphi_k$.
+
+
+\begin{theorem}
+	\label{thm:varphi_k_bounds}
+	\cite{costa2013valid}
+	For every $k\geq 2$ the following inequality holds:
+	\begin{equation*}
+		\sqrt{\frac{2}{k\sqrt{3}}}
+		\leq
+		\varphi_k
+		\leq
+		\frac{1}{k-1} +
+		\sqrt{
+			\frac{1}{(k-1)^2}
+			+
+			\frac{2}{(k-1)\sqrt{3}}
+		}
+	\end{equation*}
+\end{theorem}
+
+
+For building the bound, we also require the following results and notions from~\cite{our-vmmsh-2018}.
 
 \begin{lemma}
 	\cite[Corollary 1]{our-vmmsh-2018}
@@ -160,41 +197,6 @@ We will need the following results and notions from~\cite{our-vmmsh-2018}.
 	i.e. at least one diagonal is greater than at least one side.
 \end{lemma}
 
-
-Определим теперь коэффициенты упаковки точек в квадрат $\varphi_k$.
-Пусть
-\begin{equation*}
-	\Phi_k = \{ P \subset [0;1]^2 : |P|=k\}
-	,
-\end{equation*}
-где $[0;1]^2$~--- замкнутый единичный квадрат на плоскости.
-Тогда
-\begin{equation*}
-	\varphi_k = \max_{P \in \Phi_k} \min_{A,B \in P} |A - B|
-	.
-\end{equation*}
-Иначе говоря, через $\varphi_k$ будем обозначать наибольшее число, такое,
-что в единичном квадрате нельзя разместить $k$ точек так,
-чтобы расстояние между любыми двумя точками было не менее $\varphi_k$.
-Проблема отыскания $\varphi_k$ носит название проблемы упаковки точек в квадрат~\cite{locatelli2002packing,costa2013valid}.
-
-\begin{theorem}%[\cite{costa2013valid}]
-	\label{thm:varphi_k_bounds}
-	\cite{costa2013valid}
-	Для $k\geq 2$ выполнено
-	\begin{equation*}
-		\sqrt{\frac{2}{k\sqrt{3}}}
-		\leq
-		\varphi_k
-		\leq
-		\frac{1}{k-1} +
-		\sqrt{
-			\frac{1}{(k-1)^2}
-			+
-			\frac{2}{(k-1)\sqrt{3}}
-		}
-	\end{equation*}
-\end{theorem}
 
 
 
