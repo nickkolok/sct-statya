@@ -120,6 +120,79 @@ then, we prove that $l(m,n)=1$ for all possible $m$ and $n$.
 
 \section{Lower bound for the diameter}
 
+We will need the following results and notions from~\cite{our-vmmsh-2018}.
+
+\begin{lemma}
+	\cite[Corollary 1]{our-vmmsh-2018}
+	\label{lem:max_points_on_line}
+	Let $M\in\mathfrak{M}(2,n)$, $\operatorname{diam} M = d$.
+	Then there is no straight line which contains more than $(d+3)/2$ points of $M$.
+\end{lemma}
+
+\begin{lemma}
+	\cite[Lemma 4]{our-vmmsh-2018}
+	\label{lem:square_container}
+	Let $M\in\mathfrak{M}(2,n)$, $\operatorname{diam} M = d$.
+	Then $M$ is situated in a square with side length $d$.
+\end{lemma}
+
+\begin{definition}
+	\textit{Cross} for points $M_1$ and $M_2$, denoted by $cr(M_1,M_2)$, is union of two straight lines:
+	the line which the points $M_1$ and $M_2$ are situated on,
+	and the bisector of line segment $M_1 M_2$.
+\end{definition}
+
+\begin{lemma}
+	\label{lem:intervals_cross}
+	If \textbf{open} line segments $M_1 M_2$ and $M_3 M_4$ does not intersect,
+	$M_1 \neq M_2$, $M_3 \neq M_4$,
+	then the set $cr(M_1,M_2) \cap cr(M_3,M_4)$ is either a straight line or contains not more than 4 points.
+\end{lemma}
+
+\begin{lemma}
+	\label{lemma:quadr_diag_edges}
+	Let $ABCD$ be a convex quadrilateral on the plane.
+	Then $\max\{AC,BD\}>\min\{AB,BC,CD,DA\}$,
+	i.e. at least one diagonal is greater than at least one side.
+\end{lemma}
+
+
+Определим теперь коэффициенты упаковки точек в квадрат $\varphi_k$.
+Пусть
+\begin{equation*}
+	\Phi_k = \{ P \subset [0;1]^2 : |P|=k\}
+	,
+\end{equation*}
+где $[0;1]^2$~--- замкнутый единичный квадрат на плоскости.
+Тогда
+\begin{equation*}
+	\varphi_k = \max_{P \in \Phi_k} \min_{A,B \in P} |A - B|
+	.
+\end{equation*}
+Иначе говоря, через $\varphi_k$ будем обозначать наибольшее число, такое,
+что в единичном квадрате нельзя разместить $k$ точек так,
+чтобы расстояние между любыми двумя точками было не менее $\varphi_k$.
+Проблема отыскания $\varphi_k$ носит название проблемы упаковки точек в квадрат~\cite{locatelli2002packing,costa2013valid}.
+
+\begin{theorem}%[\cite{costa2013valid}]
+	\label{thm:varphi_k_bounds}
+	\cite{costa2013valid}
+	Для $k\geq 2$ выполнено
+	\begin{equation*}
+		\sqrt{\frac{2}{k\sqrt{3}}}
+		\leq
+		\varphi_k
+		\leq
+		\frac{1}{k-1} +
+		\sqrt{
+			\frac{1}{(k-1)^2}
+			+
+			\frac{2}{(k-1)\sqrt{3}}
+		}
+	\end{equation*}
+\end{theorem}
+
+
 
 \section{Constructing integral point sets}
 
