@@ -75,8 +75,9 @@ where $M$ contains points $M_1$ and $M_2$ such that distance between $M_1$ and $
 
 
 \section{Introduction}
-Let $\mathbb{N}$ be the set of all positive integers and let $|M_1 - M_2|$ denote the Euclidean distance
-between points $M_1$ and $M_2$ in a finite-dimensional space $\mathbb{R}^m$.
+Let $\mathbb{N}$ be the set of all positive integers and let $|M_1 M_2|$ denote the Euclidean distance
+between points $M_1$ and $M_2$ in a finite-dimensional space $\mathbb{R}^m$
+(and, more generally, let $|\Delta|$ denote the length of line segment $\Delta$).
 An \textit{integral point set} in $m$-dimensional Euclidean space is a point set $M$ such that all the distances between the
 points of $M$ are integers and $M$ is not situated on an $(m-1)$-dimensional hyperplane.
 Erd\"os and Anning proved~\cite{anning1945integral,erdos1945integral} that every integral point set consists of a finite number of points.
@@ -86,7 +87,7 @@ The symbol $\# M$ will be used for cardinality of $M$, i.e. the quantity of poin
 
 For every finite point set, its diameter is naturally defined as
 \begin{equation}
-	\operatorname{diam} M = \max_{A,B\in M} |A-B|
+	\operatorname{diam} M = \max_{A,B\in M} |AB|
 	.
 \end{equation}
 The next emerging question is: how the diameter of an integral point set depends on its cardinality?
@@ -97,7 +98,7 @@ So, the question above should be rephrased:
 how \textit{the least possible} diameter of an integral point set depends on its cardinality?
 To answer it, the following function was introduced~\cite{kurz2008bounds,kurz2008minimum}:
 \begin{equation}
-	d(m,n) = \min_{M\in\mathfrak{M}(m,n)} \operatorname{diam} M = \min_{M\in\mathfrak{M}(m,n)} \max_{A,B\in M} |A-B|
+	d(m,n) = \min_{M\in\mathfrak{M}(m,n)} \operatorname{diam} M = \min_{M\in\mathfrak{M}(m,n)} \max_{A,B\in M} |AB|
 	.
 \end{equation}
 We also refer to~\cite{kurz2008bounds} for a list of known exact values of $d(m,n)$
@@ -114,7 +115,7 @@ to $3/8$ for sufficiently big $n$.
 The paper~\cite{solymosi2003note} contained one more interesting result.
 Let us define a function which is ``dual'' to $d(m,n)$ in some sense:
 \begin{equation}
-	l(m,n) = \min_{M\in\mathfrak{M}(m,n)} \min_{A,B\in M} |A-B|
+	l(m,n) = \min_{M\in\mathfrak{M}(m,n)} \min_{A,B\in M} |AB|
 	.
 \end{equation}
 Solymosi proved that $l(2,n)\leq 2$.
@@ -224,16 +225,16 @@ In [TODO:cite], TODO: theorem about sublinear quantity of points on the line.
 However, we need the values of all the constants in such an estimate.
 
 \begin{definition}
-	A $\rho(k,M_1 M_2)$-curve, where $-|M_1 - M_2| < k < |M_1 - M_2|$ and $k$ is integer, is the set of points $N$,
+	A $\rho(k,M_1 M_2)$-curve, where $-|M_1 M_2| < k < |M_1 M_2|$ and $k$ is integer, is the set of points $N$,
 	such that for given points $M_1$ and $M_2$
-	the equality $|N - M_1| - |N-M_2|$ holds.
+	the equality $|N M_1| - |N M_2|$ holds.
 \end{definition}
 So, $\rho(k,M_1 M_2)$-curve is a branch of a hyperbola for $k\neq 0$ and the bisector of line segment $M_1 M_2$ for $k=0$.
 
 \begin{observation}
 	\label{obs:rho_curves}
 	If points $M_1,M_2,M_3,M_4$ are situated on a straight line,
-	and equality $|M_1 - M_2| = |M_3 - M_4|$ holds but line segments $M_1 M_2$ and $M_3 M_4$ do not coincide,
+	and equality $|M_1 M_2| = |M_3 M_4|$ holds but line segments $M_1 M_2$ and $M_3 M_4$ do not coincide,
 	then for a fixed $k$ the $\rho(k,M_1 M_2)$-curve and $\rho(k,M_3 M_4)$-curve
 	do not intersect.
 \end{observation}
@@ -321,9 +322,9 @@ Now we are ready to proof the main theorem of the section.
 	For $4 \leq n \leq 21491$, the claim of the theorem follows immediately from Observation~\ref{obs:4_leq_n_leq_21491}.
 	Let us consider $M\in \mathfrak{M}(2,n)$, $n \geq 21492$, $\operatorname{diam} M = b$.
 	Lemma~\ref{lem:square_container} yields that $M$ is situated in a square with side length $b$.
-	Let $M_1, M_2, M_3, M_4$ be points of $M$ such that the distances $|M_1-M_2|$ and $|M_3-M_4|$
+	Let $M_1, M_2, M_3, M_4$ be points of $M$ such that the distances $|M_1 M_2|$ and $|M_3 M_4|$
 	are minimal in $M$ ($M_2$ and $M_3$ may be the same point).
-	Then $|M_1-M_2| \leq b\varphi_{n-1}$ and $|M_3-M_4| \leq b\varphi_{n-1}$.
+	Then $|M_1 M_2| \leq b\varphi_{n-1}$ and $|M_3 M_4| \leq b\varphi_{n-1}$.
 	Due to Lemma~\ref{lemma:quadr_diag_edges}, open line segments $M_1 M_2$ and $M_3 M_4$ do not intersect
 	(otherwise they are not minimal).
 
@@ -332,14 +333,14 @@ Now we are ready to proof the main theorem of the section.
 
 	a) $N$ belongs to $C$~--- totally at most $\gamma_2 b + 6$ points due to Lemma~\ref{lem:intervals_cross} and Observation~\ref{obs:estimate_points_on_straight_line};
 
-	b) $N$ belongs to the intersection of one of $|M_1 - M_2| - 1$ hyperbolas
-	with one of $|M_3 - M_4| - 1$ hyperbolas~--- totally at most $4 (|M_1 - M_2| - 1)(|M_3 - M_4| - 1)$ points;
+	b) $N$ belongs to the intersection of one of $|M_1 M_2| - 1$ hyperbolas
+	with one of $|M_3 M_4| - 1$ hyperbolas~--- totally at most $4 (|M_1 M_2| - 1)(|M_3 M_4| - 1)$ points;
 
-	c) $N$ belongs to the intersection of one of $|M_1 - M_2| - 1$ hyperbolas and $cr(M_3 M_4)$~---
-	totally at most $4 (|M_1 - M_2| - 1)$ points;
+	c) $N$ belongs to the intersection of one of $|M_1 M_2| - 1$ hyperbolas and $cr(M_3 M_4)$~---
+	totally at most $4 (|M_1 M_2| - 1)$ points;
 
-	d) $N$ belongs to the intersection of one of $|M_3 - M_4| - 1$ hyperbolas and $cr(M_1 M_2)$~---
-	totally at most $4 (|M_3 - M_4| - 1)$ points;
+	d) $N$ belongs to the intersection of one of $|M_3 M_4| - 1$ hyperbolas and $cr(M_1 M_2)$~---
+	totally at most $4 (|M_3 M_4| - 1)$ points;
 
 	(see~\cite[]{erdos1945integral} for details).
 
@@ -422,7 +423,7 @@ In~\cite{antonov2008maximal}, the facher sets of characteristic 1 were investiga
 
 For every integer $n\geq 3$ Solymosi presented~\cite{solymosi2003note} a construction of a facher integral point set
 $M\in\mathfrak{M}(2,n)$
-such that equality $|M_1 - M_2| = 2$ holds for some $M_1, M_2 \in M$.
+such that equality $|M_1 M_2| = 2$ holds for some $M_1, M_2 \in M$.
 The constructed set has both odd and even distances.
 
 Now we will improve the Solymosi's result.
@@ -476,7 +477,7 @@ Now we will improve the Solymosi's result.
 	\end{equation}
 	Then the distances are:
 	\begin{multline}
-		|N - M_{J\pm}|
+		|N M_{J\pm}|
 		=
 		\left(\frac{b_J^2}{4} + \frac{a}{4}\right)^{1/2}
 		=
@@ -497,7 +498,7 @@ Now we will improve the Solymosi's result.
 		,
 	\end{multline}
 	\begin{equation}
-		|M_{J_1 \pm} - M_{J_2 \pm}|
+		|M_{J_1 \pm}  M_{J_2 \pm}|
 		=
 		\left|\frac{b_{J_1}}{2} \pm \frac{b_{J_2}}{2}\right|
 		=
@@ -517,7 +518,7 @@ Now we will improve the Solymosi's result.
 	\end{equation}
 	Then, one of the distances is
 	\begin{equation}
-		|M_{H+} - M_{H-}|
+		|M_{H+}  M_{H-}|
 		=
 		\left|\frac{b_{H}}{2} - \frac{-b_{H}}{2}\right|
 		=
@@ -554,7 +555,7 @@ Now we will improve the Solymosi's result.
 \end{remark}
 
 \begin{hypothesis}
-	Every set $M\in\mathfrak{M}(2,n)$, $n\geq 6$, such that for some $M_1,M_2$ equality $|M_1 - M_2|=1$ holds,
+	Every set $M\in\mathfrak{M}(2,n)$, $n\geq 6$, such that for some $M_1,M_2$ equality $|M_1 M_2|=1$ holds,
 	is not optimal.
 \end{hypothesis}
 
@@ -581,11 +582,11 @@ TODO: write the translated version of the results here
 \begin{theorem}
 	\label{thm:minimeter_1_planar}
 	For every $n\geq 3$ there is a planar intergal set $M$ of $n$ points
-	such that for some $M_1,M_2 \in M$ equality $|M_1 - M_2|=1$ holds.
+	such that for some $M_1,M_2 \in M$ equality $|M_1 M_2|=1$ holds.
 	This set consists of $n-1$ points, including $M_1$ and $M_2$, on a straight line and one point out of the line.
 
 	And vice versa, if $M$ is a planar integral point set of $n$ points
-	such that for some $M_1,M_2 \in M$ equality $|M_1 - M_2|=1$ holds,
+	such that for some $M_1,M_2 \in M$ equality $|M_1 M_2|=1$ holds,
 	then $M$ consists of $n-1$ points, including $M_1$ and $M_2$, on a straight line,
 	and one point out of the line, on the bisector of line segment $M_1 M_2$.
 	There is only one maximal integral point set $M' \supseteq M$,
@@ -603,7 +604,7 @@ These facts, together with Theorem~\ref{thm:minimeter_1_planar}, give the follow
 \begin{theorem}
 	For arbitrary integers $m \geq 2$, $n \geq m+1$, $d \geq 1$
 	there exists $M\in\mathfrak{M}(m,n)$,
-	such that for some $M_1, M_2\in M$ equality $|M_1 - M_2| = d$ holds.
+	such that for some $M_1, M_2\in M$ equality $|M_1 M_2| = d$ holds.
 \end{theorem}
 
 TODO: construction with unique minimum edge?
