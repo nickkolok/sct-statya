@@ -607,7 +607,6 @@ These facts, together with Theorem~\ref{thm:minimeter_1_planar}, give the follow
 	such that for some $M_1, M_2\in M$ equality $|M_1 M_2| = d$ holds.
 \end{theorem}
 
-TODO: construction with unique minimum edge?
 
 \begin{definition}
 	\cite{noll1989nclusters}
@@ -635,6 +634,23 @@ So, the set consists of $m+1$ or more points and has distance 1 occuring in it.
 As distance 1 occurs in the obtained set, it is prime.
 
 So, Conjecture~\ref{hyp:prime_planar} needs proof only for $m=2$.
+For $m>2$, a bit more strong result can also be claimed.
+
+\begin{theorem}
+	For arbitrary integers $m > 2$, $n \geq m+1$, $d \geq 1$
+	there exists a prime set $M\in\mathfrak{M}(m,n)$,
+	such that for some $M_1, M_2\in M$ equality $|M_1 M_2| = d$ holds,
+	the distance $d$ is minimal and occurs in $M$ only once.
+\end{theorem}
+
+\begin{proof}
+	Exploit Construction~\ref{con:planar_set_with_minimeter_1} to get $M'\in \mathfrak{M}(2,n-m+2)$
+	with $M'_1, M'_2 \in M'$ and $|M'_1 M'_2| = 1$.
+	Dilate $M'$ to $M''$ in such a way that $M'_1$ and $M'_2$ turn into $M''_1$ and $M''_2$ resp.
+	and $|M''_1 M''_2| = d$.
+	Then ``blow up'' $M''$ to $M\in \mathfrak{M}(m,n)$ using a simplex of side length $d+1$.
+	The greatest common divisor of $d$ and $d+1$ is $1$, so $M$ is prime.
+\end{proof}
 
 \section{Acknowledgements}
 Author thanks Prof. E.M. Semenov for the fruitful discussion and ideas
