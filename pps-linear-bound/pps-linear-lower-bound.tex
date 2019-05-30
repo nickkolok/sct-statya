@@ -220,8 +220,164 @@ one can make the following
 	\end{equation}
 \end{observation}
 
+In [TODO:cite], TODO: theorem about sublinear quantity of points on the line.
+However, we need the values of all the constants in such an estimate.
 
-We can improve the constant in Theorem~(TODO: ref) if new exact values of $d(2,n)$ are found;
+\begin{definition}
+	A $\rho(k,M_1 M_2)$-curve, where $-|M_1 - M_2| < k < |M_1 - M_2|$ and $k$ is integer, is the set of points $N$,
+	such that for given points $M_1$ and $M_2$
+	the equality $|N - M_1| - |N-M_2|$ holds.
+\end{definition}
+So, $\rho(k,M_1 M_2)$-curve is a branch of a hyperbola for $k\neq 0$ and the bisector of line segment $M_1 M_2$ for $k=0$.
+
+\begin{observation}
+	\label{obs:rho_curves}
+	If points $M_1,M_2,M_3,M_4$ are situated on a straight line,
+	and equality $|M_1 - M_2| = |M_3 - M_4|$ holds but line segments $M_1 M_2$ and $M_3 M_4$ do not coincide,
+	then for a fixed $k$ the $\rho(k,M_1 M_2)$-curve and $\rho(k,M_3 M_4)$-curve
+	do not intersect.
+\end{observation}
+
+\begin{lemma}
+	\label{lem:2k-1_segments}
+	Let $M \in \mathfrak{M}(2,n)$ for some $n$ and let $m$ be a straight line.
+	Then for every $k\in\mathbb{N}$ there are at most $2k-1$ segments $\Delta_i \subset m$,
+	such that the length of $\Delta_i$ is exactly $k$.
+\end{lemma}
+\begin{proof}
+	Consider a point $N\in M \setminus m$.
+	Then for each $\Delta_i$ there is a $\rho(n_i,\Delta_i)$-curve containing $N$.
+	Due to Observation~\ref{obs:rho_curves}, all $n_i$ are distinct;
+	otherwise $\rho(n_i,\Delta_i)$-curve and $\rho(n_i,\Delta_j)$-curve, $j\neq i$, do not intersect.
+	There can be only $2k-1$ different values for $n_i$,
+	so there are at most $2k-1$ distinct segments $\Delta_i$.
+\end{proof}
+
+TODO: different vs. distinct
+
+\begin{lemma}
+	Let $\Delta$ be a straight line segment of length $l$, $M \in \mathfrak{M}(2,n)$ for some $n$.
+	Let $|\Delta \cap M| = n^2 + 1$.
+	Then $l \geq \frac{2}{3}n^3+\frac{1}{2}n^2-\frac{1}{6}n$
+	.
+\end{lemma}
+
+TODO: $|\cdot|$ for length, $\#$ for cardinality?
+
+\begin{proof}
+	$n^2+1$ points, including the ends of $\Delta$, split the segment $\Delta$ into $n^2$
+	sequential segments $\Delta_i$.
+	Due to Lemma~\ref{lem:2k-1_segments}, there is at most one segment of length 1,
+	at most three segments of length 2 etc.
+	The following two values of sums conclude the proof:
+	\begin{equation}
+		1 + \sum_{k=1}^n (2k-1) = n^2 + 1
+		,
+	\end{equation}
+	\begin{equation}
+		\sum_{k=1}^n k(2k-1) = \frac{2}{3}n^3+\frac{1}{2}n^2-\frac{1}{6}n
+		.
+	\end{equation}
+\end{proof}
+
+Now we will estimate the length of a line segment, which shares an arbitrary number of points
+with an integral point set.
+
+\begin{lemma}
+	Let $\Delta$ be a straight line segment of length $l$, $M \in \mathfrak{M}(2,n)$ for some $n>122$.
+	Let $|\Delta \cap M| = k > 10000$.
+	Then $l\geq \gamma_1 k^{3/2}$,
+	where
+
+	TODO!
+\end{lemma}
+
+This lemma leads to the following observation.
+
+\begin{observation}
+	\label{obs:estimate_points_on_straight_line}
+	Let $\Delta$ be a straight line segment of length $l$, $M \in \mathfrak{M}(2,n)$ for some $n>21491$.
+	Let $|\Delta \cap M| = k > 10000$.
+	Then $k \leq \gamma_2 b + 6$,
+	where
+
+	TODO!
+\end{observation}
+
+Now we are ready to proof the main theorem of the section.
+
+\begin{theorem}
+	\label{thm:main_estimate}
+	If $n\geq 4$, then $d(2,n) \geq \gamma (n - 2)$,
+	where
+	\begin{equation}
+		\gamma = ... < \frac{3^{1/4}}{2^{3/2}}
+	\end{equation}
+	TODO!
+\end{theorem}
+
+\begin{proof}
+	For $4 \leq n \leq 21491$, the claim of the theorem follows immediately from Observation~\ref{obs:4_leq_n_leq_21491}.
+	Let us consider $M\in \mathfrak{M}(2,n)$, $n \geq 21492$, $\operatorname{diam} M = b$.
+	Lemma~\ref{lem:square_container} yields that $M$ is situated is a square with side length $b$.
+	Let $M_1, M_2, M_3, M_4$ be points of $M$ such that the distances $|M_1-M_2|$ and $|M_3-M_4|$
+	are minimal in $M$ ($M_2$ and $M_3$ may be the same point).
+	Then $|M_1-M_2| \leq b\varphi_{n-1}$ and $|M_3-M_4| \leq b\varphi_{n-1}$.
+	Due to Lemma~\ref{lemma:quadr_diag_edges}, open line segments $M_1 M_2$ and $M_3 M_4$ do not intersect
+	(otherwise they are not minimal).
+
+	Let $C = cr(M_1 M_2) \cap cr(M_3 M_4)$.
+	Each point of $n\in M$ satisfies one of the following conditions:
+
+	a) $N$ belongs to $C$~--- totally at most $\gamma_2 b + 6$ points due to Lemma~\ref{lem:intervals_cross} and Observation~\ref{obs:estimate_points_on_straight_line};
+
+	b) $N$ belongs to the intersection of one of $|M_1 - M_2| - 1$ hyperbolas
+	with one of $|M_3 - M_4| - 1$ hyperbolas~--- totally at most $4 (|M_1 - M_2| - 1)(|M_3 - M_4| - 1)$ points;
+
+	c) $N$ belongs to the intersection of one of $|M_1 - M_2| - 1$ hyperbolas and $cr(M_3 M_4)$~---
+	totally at most $4 (|M_1 - M_2| - 1)$ points;
+
+	d) $N$ belongs to the intersection of one of $|M_3 - M_4| - 1$ hyperbolas and $cr(M_1 M_2)$~---
+	totally at most $4 (|M_3 - M_4| - 1)$ points;
+
+	(see~\cite[]{erdos1945integral} for details).
+
+	Summing up the cases above, we get the following estimate:
+	\begin{equation}
+		\label{eq:estimate_n_varphi_n_squared}
+		n \leq 4 b^2 \varphi_{n-1}^2 - 4 + \gamma_2 b + 6
+		.
+	\end{equation}
+	Observation~\ref{varphi_n_where_n_geq_21492} turns estimate~\eqref{eq:estimate_n_varphi_n_squared}
+	into the following:
+	\begin{equation}
+		\label{eq:estimate_n_sqrt_n-2}
+		n-2 \leq 4 b^2 \frac{\beta^2}{n-2} + \gamma_2 b
+		,
+	\end{equation}
+	which obviously leads to inequality
+	\begin{equation}
+		1 \leq 4\beta^2 \left(\frac{b}{n-2}\right)^2  + \gamma_2 \frac{b}{n-2}
+		.
+	\end{equation}
+	Let us denote $\lambda = b/(n-2)$ and solve the following square inequality with respect to $\lambda$:
+	\begin{equation}
+		\label{eq:square_inequality_lambda}
+		4\beta^2 \lambda^2  + \gamma_2 \lambda - 1 \geq 0
+		.
+	\end{equation}
+	The discriminant is $\gamma_2^2 + 16 \cdot \beta^2$,
+	so we obtain the following estimate:
+	\begin{equation}
+		\frac{b}{n-2} = \lambda \geq \frac{-\gamma_2 + \sqrt{\gamma_2^2 + 16 \cdot \beta^2}}{8\beta^2}
+		.
+	\end{equation}
+	Calculating the expression above for our $\beta$ and $\gamma_2$, we conclude the proof.
+\end{proof}
+
+
+
+We can improve the constant in Theorem~\ref{thm:main_estimate} if new exact values of $d(2,n)$ are found;
 however, the obtained constant is bounded by $3^{1/4}\cdot2^{-3/2}$.
 To be precise, we have the following
 
