@@ -131,7 +131,7 @@ we improve a better lower bound for minimum diameter of planar integral point se
 involving Point Packing in a Square problem.
 Below we introduce the problem, basic notions and results.
 
-\begin{problem}[Point Packing in a Square (PPS)\cite{locatelli2002packing,costa2013valid}]
+\begin{problem}[Point Packing in a Square (PPS)~\cite{locatelli2002packing,costa2013valid}]
 	\label{problem:PPS}
 	Given an integer $k > 1$, place $k$ points in the unit square $U = [ 0 , 1 ]^2$ such that their
 	minimum pairwise distance $m$ is maximal.
@@ -204,7 +204,7 @@ Basing on the exact values of $d(2,n)$ for $ 3 \leq n\leq 122$ and the estimate 
 	holds for $4 \leq n \leq 21491$.
 \end{observation}
 
-Performing some trivial manipulations with the upper bound in Theorem~\ref{thm:varphi_k_bounds},
+Performing some simple manipulations with the upper bound in Theorem~\ref{thm:varphi_k_bounds},
 one can make the following
 \begin{observation}
 	\label{varphi_n_where_n_geq_21492}
@@ -268,7 +268,7 @@ TODO: $|\cdot|$ for length, $\#$ for cardinality?
 	$n^2+1$ points, including the ends of $\Delta$, split the segment $\Delta$ into $n^2$
 	sequential segments $\Delta_i$.
 	Due to Lemma~\ref{lem:2k-1_segments}, there is at most one segment of length 1,
-	at most three segments of length 2 etc.
+	at most three segments of length 2, etc.
 	The following two values of sums conclude the proof:
 	\begin{equation}
 		1 + \sum_{k=1}^n (2k-1) = n^2 + 1
@@ -319,7 +319,7 @@ Now we are ready to proof the main theorem of the section.
 \begin{proof}
 	For $4 \leq n \leq 21491$, the claim of the theorem follows immediately from Observation~\ref{obs:4_leq_n_leq_21491}.
 	Let us consider $M\in \mathfrak{M}(2,n)$, $n \geq 21492$, $\operatorname{diam} M = b$.
-	Lemma~\ref{lem:square_container} yields that $M$ is situated is a square with side length $b$.
+	Lemma~\ref{lem:square_container} yields that $M$ is situated in a square with side length $b$.
 	Let $M_1, M_2, M_3, M_4$ be points of $M$ such that the distances $|M_1-M_2|$ and $|M_3-M_4|$
 	are minimal in $M$ ($M_2$ and $M_3$ may be the same point).
 	Then $|M_1-M_2| \leq b\varphi_{n-1}$ and $|M_3-M_4| \leq b\varphi_{n-1}$.
@@ -327,7 +327,7 @@ Now we are ready to proof the main theorem of the section.
 	(otherwise they are not minimal).
 
 	Let $C = cr(M_1 M_2) \cap cr(M_3 M_4)$.
-	Each point of $n\in M$ satisfies one of the following conditions:
+	Each point of $N\in M$ satisfies one of the following conditions:
 
 	a) $N$ belongs to $C$~--- totally at most $\gamma_2 b + 6$ points due to Lemma~\ref{lem:intervals_cross} and Observation~\ref{obs:estimate_points_on_straight_line};
 
@@ -419,7 +419,7 @@ For every cardinality $n$ and every characteristic $q$
 there exists a facher set $M\in\mathfrak{M}(2,n)$ with characteristic $q$~\cite[Theorem 5]{our-vmmsh-2018}.
 In~\cite{antonov2008maximal}, the facher sets of characteristic 1 were investigated; they were called \textit{semi-crabs}.
 
-For every integer $n\geq 3$ Solymosi~\cite{solymosi2003note} gives a construction of a facher integral point set
+For every integer $n\geq 3$ Solymosi presented~\cite{solymosi2003note} a construction of a facher integral point set
 $M\in\mathfrak{M}(2,n)$
 such that equality $|M_1 - M_2| = 2$ holds for some $M_1, M_2 \in M$.
 The constructed set has both odd and even distances.
@@ -526,8 +526,8 @@ Now we will improve the Solymosi's result.
 	\end{equation}
 
 	Note that all the points $M_{J\pm}$ are distinct:
-	the equality $b_J = b_K$ implies $J=K$;
-	the equality $b_J = b_K$ implies $c_J = -c_K$ or $c_J = a / c_k$.
+	the equality $b_J =  b_K$ implies $J=K$;
+	the equality $b_J = -b_K$ implies $c_J = -c_K$ or $c_J = a / c_K$.
 	The first case is impossible because both $c_J$ and $c_K$ are positive;
 	the second case contradicts with~\eqref{eq:a_equiv_3_mod_4} and~\eqref{eq:c_J_equiv_1_mod_4}.
 
@@ -535,7 +535,7 @@ Now we will improve the Solymosi's result.
 	So, $M = \{ M_{J\pm}, N\}$ is indeed a planar integral point set of $2^k+1$ points,
 	and distance 1 occurs in $M$.
 	Reminding that $k$ can be taken arbitrary large, we conclude that we can construct
-	a planar integral point set of arbitary large count of points so that the distance 1 occurs in that set.
+	a planar integral point set of arbitrary large count of points so that the distance 1 occurs in that set.
 \end{construction}
 
 \begin{remark}
