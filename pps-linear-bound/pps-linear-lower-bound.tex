@@ -243,7 +243,7 @@ So, a $\rho(k,M_1 M_2)$-curve is a branch of a hyperbola for $k\neq 0$ and the b
 	\label{lem:2k-1_segments}
 	Let $M \in \mathfrak{M}(2,n)$ for some $n$ and let $m$ be a straight line.
 	Then for every $k\in\mathbb{N}$ there are at most $2k-1$ segments $\Delta_i \subset m$,
-	such that the length of $\Delta_i$ is exactly $k$.
+	such that $|\Delta_i| = k$.
 \end{lemma}
 \begin{proof}
 	Consider a point $N\in M \setminus m$.
@@ -257,7 +257,7 @@ So, a $\rho(k,M_1 M_2)$-curve is a branch of a hyperbola for $k\neq 0$ and the b
 TODO: different vs. distinct
 
 \begin{lemma}
-	Let $\Delta$ be a straight line segment of length $l$, $M \in \mathfrak{M}(2,n)$ for some $n$.
+	Let $\Delta$ be a straight line segment, $|\Delta|=l$ and $M \in \mathfrak{M}(2,n)$ for some $n$.
 	Let $\#(\Delta \cap M) = n^2 + 1$.
 	Then $l \geq \frac{2}{3}n^3+\frac{1}{2}n^2-\frac{1}{6}n$
 	.
@@ -283,7 +283,7 @@ Now we will estimate the length of a line segment, which shares an arbitrary num
 with an integral point set.
 
 \begin{lemma}
-	Let $\Delta$ be a straight line segment of length $l$, $M \in \mathfrak{M}(2,n)$ for some $n>122$.
+	Let $\Delta$ be a straight line segment, $|\Delta| = l$ and $M \in \mathfrak{M}(2,n)$ for some $n>122$.
 	Let $\#(\Delta \cap M) = k > 10000$.
 	Then $l\geq \gamma_1 k^{3/2}$,
 	TODO: why 10 000 ???
@@ -296,7 +296,7 @@ This lemma leads to the following observation.
 
 \begin{observation}
 	\label{obs:estimate_points_on_straight_line}
-	Let $\Delta$ be a straight line segment of length $l$, $M \in \mathfrak{M}(2,n)$ for some $n>21491$.
+	Let $\Delta$ be a straight line segment, $|\Delta| = l$ and $M \in \mathfrak{M}(2,n)$ for some $n>21491$.
 	Let $\#(\Delta \cap M) = k > 10000$.
 	Then $k \leq \gamma_2 b + 6$,
 	where
