@@ -40,6 +40,7 @@
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{observation}[theorem]{Observation}
 
 \theoremstyle{definition}
@@ -591,11 +592,63 @@ the points with distance 1 should be $(\pm 1/2, 0)$.
 %	such that $M \subset M'$.
 %\end{definition}
 
-Summing up Construction~\ref{con:planar_set_with_minimeter_1} above with~\cite[lemma 3 and proposition 6]{our-vmmsh-2018}
-and~\cite[Section 6]{antonov2008maximal},
-we obtain the following
 
-TODO: write the translated version of the results here
+
+If the take $k=1$ in Lemma~\ref{lem:2k-1_segments},
+we obtan the following result (which is exactly~\cite[Lemma 3]{our-vmmsh-2018}).
+\begin{corollary}
+	\label{cor:only_one_distance_1_on_straight_line}
+	Let $M \in \mathfrak{M}(2,n)$ for some $n$ and let $m$ be a straight line.
+	Then there is at most one pair of points $M_1,M_2\in M \cap m$
+	such that $|M_1 M_2| = 1$.
+\end{corollary}
+
+To describe all the sets $M \in \mathfrak{M}(2,n)$ with distance 1,
+we will need~\cite[Proposition 6]{our-vmmsh-2018}.
+For the sake of completeness, we will give here a slightly rephrased version of it with the proof as
+\begin{lemma}
+	\label{lem:no_4_points_in_semigeneral_position_with_distance_1}
+	Let $M=\{M_1,M_2,M_3,M_4\}\in \mathfrak{M}(2,4)$ such that $|M_1 M_2|=1$
+	and let $l$ be the straight line containing points $M_1$ and $M_2$.
+	Then one of the points $M_3$ or $M_4$ belongs to $l$.
+\end{lemma}
+
+\begin{proof}
+	Let $m$ denote the bisector of line segment $M_1 M_2$.
+	Due to the triangle inequality, there are two possibilities to place each of points $M_i$, $i=3,4$:
+
+	a) $M_i$ belongs to $l$ and $|M_i M_1|-|M_i M_2| = \pm 1$;
+
+	b) $M_i$ belongs to $m$ and $|M_i M_1| = |M_i M_2|$.
+
+	If (a) is true for both points, then $M\subset l$ and thus $M$ is not an integral point set.
+	If (a) is true for one point and (b) is true for another, then the claim of the lemma follows.
+	So, suppose the contrary, i.e. both points $M_3$ and $M_4$ belong to $m$.
+
+	The area of the triangle $M_1 M_3 M_4$ is rational because $|M_3 - M_4| \in \mathbb{Z}$.
+	Thus, the set $M$ is of characteristic 1,
+	and there is a Cartesian coordinate system such that $M_1=(-1/2,0)$, $M_2=(1/2,0)$, $M_3=(0, a/2)$.
+	(TODO: ref?)
+	It is clear that $a\neq 0$.
+	We set $b = |M_1 - M_3|$ and $O=(0,0)$.
+	Applying the Pythagorean theorem to triangle $OM_1M_3$, we obtain the following Diophantine equation:
+	\begin{equation}
+		\frac{1}{4} + \frac{a^2}{4} = b^2
+		,
+	\end{equation}
+	or, which is the same,
+	\begin{equation}
+		1 + a^2 = (2b)^2
+		,
+	\end{equation}
+	that has no integral solutions.
+	This contradiction concludes the proof.
+\end{proof}
+
+Using Construction~\ref{con:planar_set_with_minimeter_1},
+Lemma~\ref{lem:no_4_points_in_semigeneral_position_with_distance_1} and Corollary~\ref{cor:only_one_distance_1_on_straight_line}
+together with results of~\cite[Section 6]{antonov2008maximal},
+we obtain the following
 
 \begin{theorem}
 	\label{thm:minimeter_1_planar}
