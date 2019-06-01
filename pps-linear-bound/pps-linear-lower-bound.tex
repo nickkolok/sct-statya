@@ -324,15 +324,32 @@ This lemma leads to the following observation.
 
 \begin{observation}
 	\label{obs:estimate_points_on_straight_line}
-	Let $\Delta$ be a straight line segment, $|\Delta| = l$ and $M \in \mathfrak{M}(2,n)$ for some $n>21491$.
-	Let $\#(\Delta \cap M) = k > 10000$.
+	Let $\Delta$ be a straight line segment, $|\Delta| = b$ and $M \in \mathfrak{M}(2,n)$ for some $n$.
+	Let $\#(\Delta \cap M) = k$ and $b>10000$.
 	Then $k \leq \gamma_2 b + 6$,
 	where
-
-	TODO!
+	\begin{equation}
+		\gamma_2 = \frac{3846}{2593 \sqrt{647}-5823}
+	\end{equation}
 \end{observation}
 
-Now we are ready to proof the main theorem of the section.
+\begin{proof}
+	We are interested in integral $t$ such that estimate~\eqref{eq:estimate_for_segment_length}
+	yields to $b > 10000$, because we know the maximum quantity of points for integral point sets of diameters at most $10000$.
+	So, let us consider $t\geq 647$ and find a coefficient $\gamma_2$,
+	such that the inequality
+	\begin{equation}
+		\label{eq:inequality_for_linear_estimate_of_segment_length}
+		\frac{2}{3}t^{3/2}-\frac{3}{2}t+\frac{5 }{6}t^{1/2} \geq \frac{t-6}{\gamma_2}
+	\end{equation}
+	holds for all $t\geq 647$.
+	For these $t$,
+	the left part of~\eqref{eq:inequality_for_linear_estimate_of_segment_length} obviously grows faster than the right one.
+	Turning~\eqref{eq:inequality_for_linear_estimate_of_segment_length} into the same equality
+	and solving it for $t=647$, we obtain the claimed estimate.
+\end{proof}
+
+Now we are ready to prove the main theorem of the section.
 
 \begin{theorem}
 	\label{thm:main_estimate}
