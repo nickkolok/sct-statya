@@ -1,0 +1,77 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 15.08.2 ] */
+
+/* [wxMaxima: input   start ] */
+expr:2/3*(sqrt(t)-1)^3 + 1/2*(sqrt(t)-1)^2 - 1/6*(sqrt(t)-1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+e2:radcan(expr);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+assume(m>0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+e3: ev(e2, t:m^2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ratsimp(e3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+expand(%);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ev(%,m:sqrt(t));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f:%;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ev(f,t:646,numer);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+eq1:ev((2*t^(3/2))/3-(3*t)/2+(5*sqrt(t))/6 = (t-6)/x,t:647);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(eq1,x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+3846/(2593*sqrt(647)-5823), numer;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l1:(-x + sqrt(x^2+16*y^2))/(8*y^2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+1/sqrt(21490) + sqrt(2/sqrt(3) + 1/21490);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l2:ev(l1, x: 3846/(2593*sqrt(647)-5823) , y: 1/sqrt(21490) + sqrt(2/sqrt(3) + 1/21490));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+l3:ev(l2,numer);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+11/24, numer;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+5/11, numer;
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$
