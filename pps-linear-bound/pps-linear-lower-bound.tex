@@ -223,9 +223,20 @@ one can make the following
 	\end{equation}
 \end{observation}
 
-In [TODO:cite], TODO: theorem about sublinear quantity of points on the line.
-However, we need the values of all the constants in such an estimate.
-To obtain such values, we will now prove a generalization of~\cite[lemma 3]{our-vmmsh-2018}.
+Now we need to estimate the quanity of points in an intersection of an integral point set and a line segment.
+There is the following estimate for minimum diameter of planar integral point sets with many collinear points:
+\begin{theorem}~\cite[Theorem 4]{kurz2008minimum}
+	For $\delta > 0$, $\varepsilon > 0$, and $P\in\mathfrak{M}(2,n)$ with
+	at least $n^\delta$ collinear points there exists a $n_0 (\varepsilon)$
+	such that for all $n \geq n_0 (\varepsilon)$ we have
+	\begin{equation}
+		\operatorname{diam} P \geq n^{\frac{\delta}{4 log 2(1+\varepsilon)}\log \log n}
+		.
+	\end{equation}
+\end{theorem}
+However, the estimate is rather unsuitable for our needs,
+as it does not provide the values of all the constants.
+To obtain the desired estimate, we will now prove a generalization of~\cite[lemma 3]{our-vmmsh-2018}.
 
 \begin{definition}
 	For a line segment $M_1 M_2$ and an integer $k$, $-|M_1 M_2| < k < |M_1 M_2|$,
