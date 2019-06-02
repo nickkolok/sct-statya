@@ -620,25 +620,6 @@ Now we will improve the Solymosi's result.
 	then we get one of the two optimal sets in $\mathfrak{M}(2,4)$.
 \end{remark}
 
-\begin{conjecture}
-	\label{con:no_optimal_with_edge_1}
-	Every set $M\in\mathfrak{M}(2,n)$, $n\geq 6$, such that for some $M_1,M_2$ equality $|M_1 M_2|=1$ holds,
-	is not optimal.
-\end{conjecture}
-
-The motivation of Conjecture~\ref{con:no_optimal_with_edge_1} is based on the results of~\cite[Section 5]{kurz2008minimum},
-especially the following theorem.
-
-\begin{theorem}
-	For every $12 \leq n \leq 122$, there exist a facher optimal sets $M_n\in\mathfrak{M}(2,n)$
-	that consist of $n-1$ points $\{ (b_1,0), ..., (b_{n-1},0)\}$
-	and the point $(0,\sqrt{A_n})$,
-	where $b_1,...,b_{n-1}, A_n$ are integer and $\sqrt{A_n}\notin\mathbb{N}$.
-\end{theorem}
-Such a set can not contain distance 1: due to Theorem~\ref{thm:minimeter_1_planar} below,
-the points with distance 1 should be $(\pm 1/2, 0)$.
-
-
 
 
 %Now we need two more definitions.
@@ -794,7 +775,102 @@ For $m>2$, a bit more strong result can also be claimed.
 	The derivation of tight bounds for the minimum diameter $d(2, n)$
 	is still a challenging task for the future~\cite[Section 7]{kurz2008minimum}.
 \end{remark}
-TODO: should I give the known upper bound here?
+The known upper bound is $d(2,n)\leq 2^{c \log n \log \log n}$~\cite{harborth1993upper}.
+However, we hope that the present article can give a framework for future better estimates.
+
+\begin{conjecture}
+	The approach of Theorem~\ref{thm:main_estimate} can be generalized to higher dimensions.
+\end{conjecture}
+For the overview of current lower bounds for higher dimensions, we refer the reader to~\cite{nozaki2013lower}.
+
+There are also the following ways to improve the current bound,
+based on Lemma~\ref{lem:square_container}.
+
+\begin{problem}
+	\label{prb:square_side_length_and_diameter_power}
+	Is there a number $\delta < 1$ such that any planar integral point set $M$ with $\operatorname{diam} M = d$
+	belongs to a square of side length $d^\delta$?
+\end{problem}
+If the answer for Problem~\ref{prb:square_side_length_and_diameter_power} is affirmative,
+then we can build an estimate better than linear.
+
+\begin{problem}
+	\label{prb:square_side_length_and_diameter_linear}
+	What are the maximal numbers $\delta \leq 1$ and $h \leq 0$
+	such that any planar integral point set $M$ with $\operatorname{diam} M = d$
+	belongs to a square of side length $\delta d - h$?
+\end{problem}
+
+If the answer for Problem~\ref{prb:square_side_length_and_diameter_linear} is not $\delta = 1$ and $h = 0$,
+then the linear estimate can be slightly improved.
+
+However, Problems~\ref{prb:square_side_length_and_diameter_power} and~\ref{prb:square_side_length_and_diameter_linear}
+do not seem to show the way for improving the estimate
+due to the following well-known theorem (TODO: refs!).
+\begin{theorem}
+	\label{thm:rational_set_on_circle}
+	There exists a dense subset $P$ of the unit circle such that for any $P_1, P_2 \in P$
+	the distance $|P_1 P_2|$ is rational.
+\end{theorem}
+We conjecture that thorough investigation of existing examples of circular integral point sets
+(TODO: refs!)
+will lead to the negative answers for the
+Problems~\ref{prb:square_side_length_and_diameter_power} and~\ref{prb:square_side_length_and_diameter_linear}.
+
+Another possibility to increase the constant in out lower bound is introduced by the following problem.
+
+\begin{problem}
+	\label{prb:minimal_shape}
+	What is the minimal shape $\mathcal{S}$ such that any planar integral point set $M$ with $\operatorname{diam} M = d$
+	belongs to $\mathcal{S}$?
+\end{problem}
+This problem in another generalization of Lemma~\ref{lem:square_container}.
+We know that $\mathcal{S}$ is not a circle of diameter $d$
+(the counterexample is a right triangle of side length $d$)
+and we conjecture that $\mathcal{S}$ is not a Reuleaux triangle of width $d$
+(the probable counterexample belongs to a circle of diameter $d$, see Theorem~\ref{thm:rational_set_on_circle}).
+
+The solution of Problem~\ref{prb:minimal_shape} (if ever found) will lead to sophisticated packing problem,
+something like ``How to put $n$ points in a convex hull of concentric circle and Reuleaux triangle?''
+Obviously, Problem~\ref{prb:minimal_shape} can be generalized to higher dimensions.
+
+
+For $n=3,4,5$, there are optimal sets in $\mathfrak{M}(2,n)$ that contain distance 1
+(see Remarks~\ref{rem:planar_set_with_minimeter_1_of_3_points} and~\ref{rem:planar_set_with_minimeter_1_of_4_and_5_points}).
+However, we can put forward the following conjecture.
+\begin{conjecture}
+	\label{con:no_optimal_with_edge_1}
+	Every set $M\in\mathfrak{M}(2,n)$, $n\geq 6$, such that for some $M_1,M_2$ equality $|M_1 M_2|=1$ holds,
+	is not optimal.
+\end{conjecture}
+
+The motivation of Conjecture~\ref{con:no_optimal_with_edge_1} is based on the results of~\cite[Section 5]{kurz2008minimum},
+especially the following theorem.
+
+\begin{theorem}
+	For every $12 \leq n \leq 122$, there exist a facher optimal sets $M_n\in\mathfrak{M}(2,n)$
+	that consist of $n-1$ points $\{ (b_1,0), ..., (b_{n-1},0)\}$
+	and the point $(0,\sqrt{A_n})$,
+	where $b_1,...,b_{n-1}, A_n$ are integer and $\sqrt{A_n}\notin\mathbb{N}$.
+\end{theorem}
+Such a set can not contain distance 1: due to Theorem~\ref{thm:minimeter_1_planar},
+the points with distance 1 should be $(\pm 1/2, 0)$.
+
+When we talk about integral point sets containing distance 1, another problem arises.
+
+\begin{problem}
+	For $M\in\mathfrak{M}(m,n)$, how many times can the distance 1 occur in $M$?
+\end{problem}
+The answer for $m=2$ is given by Theorem~\ref{thm:minimeter_1_planar}.
+For greater $m$, we will be brave enough to put forward
+\begin{conjecture}
+	Consider $M\in\mathfrak{M}(m,n)$, $M_1,M_2\in M$, $|M_1 M_2| =1$.
+	Then either $n = m+1$ or $M$ is a ``blowup'' of a facher set and distance 1 occurs in $m$
+	not more than $1+\frac{m^2 - m}{2}$ times.
+\end{conjecture}
+Such as estimate is based on the quantity of edges in $(m-1)$-dimensional simplex.
+
+
 
 
 \section{Language issues to be resolved before publication}
