@@ -732,26 +732,28 @@ These facts, together with Theorem~\ref{thm:minimeter_1_planar}, give the follow
 If an integral point set is prime,
 then it cannot be squashed to an integral point set of the same power and structure but smaller diameter.
 
-\begin{conjecture}
-	\label{hyp:prime_planar}
-	For every $m \geq 2$, $n \geq m+1$, $d \geq 1$ there exists an \textbf{prime}
-	integral point set $M\in\mathfrak{M}(m,n)$ which
-	contains points $M_1$ and $M_2$ such that distance between $M_1$ and $M_2$ is exactly $d$.
-\end{conjecture}
-
-For $m \geq 3$, Conjecture~\ref{hyp:prime_planar} can be easily proved:
-indeed, we can just take a facher integral point set according to Construction~\ref{con:planar_set_with_minimeter_1}
-with sufficiently large height and then apply the ``blowing up'' procedure described in~\cite[Theorem 1.3]{kurz2008bounds},
-replacing the out-of-line point with an $(m-2)$-dimensional simplex of proper side length.
-That simplex will consist of $m-1$ points;
-we can throw out up to all points $M_J$, except the two points with distance 1.
-So, the set consists of $m+1$ or more points and has distance 1 occuring in it.
-As distance 1 occurs in the obtained set, it is prime.
-
-So, Conjecture~\ref{hyp:prime_planar} needs proof only for $m=2$.
-For $m>2$, a bit more strong result can also be claimed.
 
 \begin{theorem}
+	\label{thm:prime_with_desired_distance}
+	For every $m \geq 3$, $n \geq m+1$, $d \geq 1$ there exists an \textbf{prime}
+	integral point set $M\in\mathfrak{M}(m,n)$ which
+	contains points $M_1$ and $M_2$ such that distance between $M_1$ and $M_2$ is exactly $d$.
+\end{theorem}
+
+\begin{proof}
+	Take a facher integral point set according to Construction~\ref{con:planar_set_with_minimeter_1}
+	with sufficiently large height and then apply the ``blowing up'' procedure described in~\cite[Theorem 1.3]{kurz2008bounds},
+	replacing the out-of-line point with an $(m-2)$-dimensional simplex of proper side length.
+	That simplex will consist of $m-1$ points;
+	we can throw out up to all points $M_J$, except the two points with distance 1.
+	So, the set consists of $m+1$ or more points and has distance 1 occuring in it.
+	As distance 1 occurs in the obtained set, it is prime.
+\end{proof}
+
+A bit more strong result can also be claimed.
+
+\begin{theorem}
+	\label{thm:prime_with_unique_desired_distance}
 	For arbitrary integers $m > 2$, $n \geq m+1$, $d \geq 1$
 	there exists a prime set $M\in\mathfrak{M}(m,n)$,
 	such that for some $M_1, M_2\in M$ equality $|M_1 M_2| = d$ holds,
@@ -868,9 +870,19 @@ For greater $m$, we will be brave enough to put forward
 	Then either $n = m+1$ or $M$ is a ``blowup'' of a facher set and distance 1 occurs in $m$
 	not more than $1+\frac{m^2 - m}{2}$ times.
 \end{conjecture}
-Such as estimate is based on the quantity of edges in $(m-1)$-dimensional simplex.
+Such as estimate is based on the quantity of edges in $(m-2)$-dimensional simplex.
+
+We want to end the list of conjectures with the one which looks the easiest to deal with.
 
 
+\begin{conjecture}
+	\label{hyp:prime_planar}
+	For every $n \geq 3$, $d \geq 1$ there exists an \textbf{prime}
+	set $M\in\mathfrak{M}(2,n)$ which
+	contains points $M_1$ and $M_2$ such that distance between $M_1$ and $M_2$ is exactly $d$.
+\end{conjecture}
+This conjecture gives the same claim with Theorem~\ref{thm:prime_with_desired_distance}, but for $m=2$.
+Obviously, Theorem~\ref{thm:prime_with_unique_desired_distance} can be generalized (for $m=2$) into a similar conjecture.
 
 
 \section{Language issues to be resolved before publication}
