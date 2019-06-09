@@ -73,5 +73,17 @@ l3:ev(l2,numer);
 5/11, numer;
 /* [wxMaxima: input   end   ] */
 
+/* [wxMaxima: input   start ] */
+ineq1:0.45557*(n -2) = 5/11*n;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(ineq1, n);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+1002254/1127, numer;
+/* [wxMaxima: input   end   ] */
+
 /* Maxima can't load/batch files which end with a comment! */
 "Created with wxMaxima"$
