@@ -41,7 +41,7 @@
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{observation}[theorem]{Observation}
+\newtheorem{proposition}[theorem]{Proposition}
 
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
@@ -198,18 +198,18 @@ For building the bound, we also require the following results and notions from~\
 
 Basing on the exact values of $d(2,n)$ for $ 3 \leq n\leq 122$ and the estimate $d(2,123)>10000$
 \cite{kurz2008bounds}, we derive
-\begin{observation}
+\begin{proposition}
 	\label{obs:4_leq_n_leq_21491}
 	The inequality
 	\begin{equation}
 		d(2,n) \geq 3^{1/4}\cdot2^{-3/2} \cdot n
 	\end{equation}
 	holds for $4 \leq n \leq 21491$.
-\end{observation}
+\end{proposition}
 
 Performing some simple manipulations with the upper bound in Theorem~\ref{thm:varphi_k_bounds},
 one can make the following
-\begin{observation}
+\begin{proposition}
 	\label{varphi_n_where_n_geq_21492}
 	For $n \geq 21492$ we have
 	\begin{equation}
@@ -221,7 +221,7 @@ one can make the following
 		\beta = \frac{1}{\sqrt{21490}} + \sqrt{ \frac{2}{\sqrt{3}} + \frac{1}{21490} } < 1.07464
 		.
 	\end{equation}
-\end{observation}
+\end{proposition}
 
 Now we need to estimate the quanity of points in an intersection of an integral point set and a line segment.
 There is the following estimate for minimum diameter of planar integral point sets with many collinear points:
@@ -246,13 +246,13 @@ To obtain the desired estimate, we will now prove a generalization of~\cite[lemm
 So, in the planar case a $\rho(k,M_1 M_2)$-curve
 is a branch of a hyperbola for $k\neq 0$ and the bisector of line segment $M_1 M_2$ for $k=0$.
 
-\begin{observation}
+\begin{proposition}
 	\label{obs:rho_curves}
 	If points $M_1,M_2,M_3,M_4$ are situated on a straight line,
 	and equality $|M_1 M_2| = |M_3 M_4|$ holds but line segments $M_1 M_2$ and $M_3 M_4$ do not coincide,
 	then for a fixed $k$ the $\rho(k,M_1 M_2)$-curve and $\rho(k,M_3 M_4)$-curve
 	do not intersect.
-\end{observation}
+\end{proposition}
 
 \begin{lemma}
 	\label{lem:2k-1_segments}
@@ -263,7 +263,7 @@ is a branch of a hyperbola for $k\neq 0$ and the bisector of line segment $M_1 M
 \begin{proof}
 	Consider a point $N\in M \setminus m$.
 	Then for each $\Delta_i$ there is a $\rho(n_i,\Delta_i)$-curve containing $N$.
-	Due to Observation~\ref{obs:rho_curves}, all $n_i$ are distinct;
+	Due to Proposition~\ref{obs:rho_curves}, all $n_i$ are distinct;
 	otherwise $\rho(n_i,\Delta_i)$-curve and $\rho(n_i,\Delta_j)$-curve, $j\neq i$, do not intersect.
 	There can be only $2k-1$ distinct values for $n_i$,
 	so there are at most $2k-1$ distinct segments $\Delta_i$.
@@ -331,9 +331,9 @@ with an integral point set.
 	\end{equation}
 \end{proof}
 
-This lemma leads to the following observation.
+This lemma leads to the following proposition.
 
-\begin{observation}
+\begin{proposition}
 	\label{obs:estimate_points_on_straight_line}
 	Let $\Delta$ be a straight line segment, $|\Delta| = b$ and $M \in \mathfrak{M}(2,n)$ for some $n$.
 	Let $\#(\Delta \cap M) = k$ and $b>10000$.
@@ -342,7 +342,7 @@ This lemma leads to the following observation.
 	\begin{equation}
 		\gamma_2 = \frac{3846}{2593 \sqrt{647}-5823} = 0.063958...
 	\end{equation}
-\end{observation}
+\end{proposition}
 
 \begin{proof}
 	We are interested in integral $t$ such that estimate~\eqref{eq:estimate_for_segment_length}
@@ -379,7 +379,7 @@ Now we are ready to prove the main theorem of the section.
 \end{theorem}
 
 \begin{proof}
-	For $4 \leq n \leq 21491$, the claim of the theorem follows immediately from Observation~\ref{obs:4_leq_n_leq_21491}.
+	For $4 \leq n \leq 21491$, the claim of the theorem follows immediately from Proposition~\ref{obs:4_leq_n_leq_21491}.
 	Let us consider $M\in \mathfrak{M}(2,n)$, $n \geq 21492$, $\operatorname{diam} M = b$.
 	Lemma~\ref{lem:square_container} yields that $M$ is situated in a square of side length $b$.
 	Let $M_1, M_2, M_3, M_4$ be points of $M$ such that the distances $|M_1 M_2|$ and $|M_3 M_4|$
@@ -391,7 +391,7 @@ Now we are ready to prove the main theorem of the section.
 	Let $C = cr(M_1 M_2) \cap cr(M_3 M_4)$.
 	Each point of $N\in M$ satisfies one of the following conditions:
 
-	a) $N$ belongs to $C$~--- totally at most $\gamma_2 b + 6$ points due to Lemma~\ref{lem:intervals_cross} and Observation~\ref{obs:estimate_points_on_straight_line};
+	a) $N$ belongs to $C$~--- totally at most $\gamma_2 b + 6$ points due to Lemma~\ref{lem:intervals_cross} and Proposition~\ref{obs:estimate_points_on_straight_line};
 
 	b) $N$ belongs to the intersection of one of $|M_1 M_2| - 1$ hyperbolas
 	with one of $|M_3 M_4| - 1$ hyperbolas~--- totally at most $4 (|M_1 M_2| - 1)(|M_3 M_4| - 1)$ points;
@@ -409,7 +409,7 @@ Now we are ready to prove the main theorem of the section.
 		n \leq 4 b^2 \varphi_{n-1}^2 - 4 + \gamma_2 b + 6
 		.
 	\end{equation}
-	Observation~\ref{varphi_n_where_n_geq_21492} turns estimate~\eqref{eq:estimate_n_varphi_n_squared}
+	Proposition~\ref{varphi_n_where_n_geq_21492} turns estimate~\eqref{eq:estimate_n_varphi_n_squared}
 	into the following:
 	\begin{equation}
 		\label{eq:estimate_n_sqrt_n-2}
@@ -441,7 +441,7 @@ Now we are ready to prove the main theorem of the section.
 \end{corollary}
 
 \begin{proof}
-	For $4 \leq n \leq 21491$, the claim follows from Observation~\ref{obs:4_leq_n_leq_21491} immediately.
+	For $4 \leq n \leq 21491$, the claim follows from Proposition~\ref{obs:4_leq_n_leq_21491} immediately.
 	For $n > 21491$, the inequality $0.45557(n-2) > \frac{5}{11}n$ holds.
 \end{proof}
 
@@ -911,9 +911,6 @@ Obviously, Theorem~\ref{thm:prime_with_unique_desired_distance} can be generaliz
 		OR
 		intersection of ... with ...
 		?
-
-	\item
-		Observation -> Proposition
 
 	\item
 		estimate vs. bound vs. estimation
