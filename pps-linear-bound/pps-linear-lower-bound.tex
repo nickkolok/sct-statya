@@ -83,7 +83,8 @@ An \textit{integral point set} in $m$-dimensional Euclidean space is a point set
 points of $M$ are integers and $M$ is not situated on an $(m-1)$-dimensional hyperplane.
 Erd\"os and Anning proved~\cite{anning1945integral,erdos1945integral} that every integral point set consists of a finite number of points.
 Taking the fact into account, we will denote the set of all integral point sets of $n$ points in $m$-dimensional Euclidean space with
-$\mathfrak{M}(m,n)$ (following the notation of~\cite{our-vmmsh-2018}).
+$\mathfrak{M}(m,n)$ (using the notation in~\cite{our-vmmsh-2018}),
+and let the symbol $\mathfrak{M}(m,\mathbb{N})$ stand for the set of all integral point sets in $m$-dimensional Euclidean space.
 The symbol $\# M$ will be used for cardinality of $M$, i.e. the quantity of points in $M$ in our case.
 
 For every finite point set, its diameter is naturally defined as
@@ -260,7 +261,7 @@ is a branch of a hyperbola for $k\neq 0$ and the bisector of line segment $M_1 M
 
 \begin{lemma}
 	\label{lem:2k-1_segments}
-	Let $M \in \mathfrak{M}(2,n)$ for some $n$ and let $m$ be a straight line.
+	Let $M \in \mathfrak{M}(2,\mathbb{N})$ and let $m$ be a straight line.
 	Then for every $k\in\mathbb{N}$ there are at most $2k-1$ segments $\Delta_i \subset m$,
 	such that $|\Delta_i| = k$.
 \end{lemma}
@@ -275,7 +276,7 @@ is a branch of a hyperbola for $k\neq 0$ and the bisector of line segment $M_1 M
 
 \begin{lemma}
 	\label{lem:line_segment_with n_squared_plus_one_points}
-	Let $\Delta$ be a straight line segment, $|\Delta|=l$ and $M \in \mathfrak{M}(2,n)$ for some $n$.
+	Let $\Delta$ be a straight line segment, $|\Delta|=l$ and $M \in \mathfrak{M}(2,\mathbb{N})$.
 	Let $\#(\Delta \cap M) = n^2 + 1$.
 	Then
 	\begin{equation}
@@ -304,7 +305,7 @@ Now we will estimate the length of a line segment that shares an arbitrary numbe
 with an integral point set.
 
 \begin{lemma}
-	Let $\Delta$ be a straight line segment, $|\Delta| = b$ and $M \in \mathfrak{M}(2,n)$ for some $n$.
+	Let $\Delta$ be a straight line segment, $|\Delta| = b$ and $M \in \mathfrak{M}(2,\mathbb{N})$.
 	Let $\#(\Delta \cap M) = t$.
 	Then
 	\begin{equation}
@@ -339,7 +340,7 @@ This lemma leads to the following proposition.
 
 \begin{proposition}
 	\label{obs:estimate_points_on_straight_line}
-	Let $\Delta$ be a straight line segment, $|\Delta| = b$ and $M \in \mathfrak{M}(2,n)$ for some $n$.
+	Let $\Delta$ be a straight line segment, $|\Delta| = b$ and $M \in \mathfrak{M}(2,\mathbb{N})$.
 	Let $\#(\Delta \cap M) = k$ and $b>10000$.
 	Then $k \leq \gamma_2 b + 6$,
 	where
@@ -480,12 +481,11 @@ To be precise, we have the following
 
 \begin{definition}
 	\cite{kurz2005characteristic}
-	Let $M$ be a planar integral point set.
-	A squarefree number $q$ is called the \textit{characteristic} of $M$,
+	A squarefree number $q$ is called the \textit{characteristic} of $M\in\mathfrak{M}(2,\mathbb{N})$,
 	if for any points $M_1, M_2, M_3 \in M$ the area of triangle $M_1 M_2 M_3$
 	is $p_{1,2,3}\sqrt{q}$ for some rational $p_{1,2,3}$.
 \end{definition}
-For given integral point set, the characteristic is determined uniquely.
+For given $M\in\mathfrak{M}(2,\mathbb{N})$, the characteristic is determined uniquely.
 
 Facher sets are the simplest ones of planar integral point sets.
 It is shown that for $9\leq n \leq 122$ all the optimal sets are facher~\cite{kurz2008minimum}.
@@ -650,7 +650,7 @@ If the take $k=1$ in Lemma~\ref{lem:2k-1_segments},
 we obtain the following result (which is exactly~\cite[Lemma 3]{our-vmmsh-2018}).
 \begin{corollary}
 	\label{cor:only_one_distance_1_on_straight_line}
-	Let $M \in \mathfrak{M}(2,n)$ for some $n$ and let $m$ be a straight line.
+	Let $M \in \mathfrak{M}(2,\mathbb{N})$ and let $m$ be a straight line.
 	Then there is at most one pair of points $M_1,M_2\in M \cap m$
 	such that $|M_1 M_2| = 1$.
 \end{corollary}
@@ -798,7 +798,7 @@ based on Lemma~\ref{lem:square_container}.
 
 \begin{problem}
 	\label{prb:square_side_length_and_diameter_power}
-	Is there a number $\delta < 1$ such that any planar integral point set $M$ with $\operatorname{diam} M = d$
+	Is there a number $\delta < 1$ such that any $M\in\mathfrak{M}(2,\mathbb{N})$ with $\operatorname{diam} M = d$
 	belongs to a square of side length $d^\delta$?
 \end{problem}
 If the answer for Problem~\ref{prb:square_side_length_and_diameter_power} is affirmative,
@@ -807,7 +807,7 @@ then we can build an estimate better than linear.
 \begin{problem}
 	\label{prb:square_side_length_and_diameter_linear}
 	What are the maximal numbers $\delta \leq 1$ and $h \leq 0$
-	such that any planar integral point set $M$ with $\operatorname{diam} M = d$
+	such that any $M\in\mathfrak{M}(2,\mathbb{N})$ with $\operatorname{diam} M = d$
 	belongs to a square of side length $\delta d - h$?
 \end{problem}
 
@@ -832,7 +832,7 @@ Another possibility to increase the constant in our lower bound is introduced by
 
 \begin{problem}
 	\label{prb:minimal_shape}
-	What is the minimal shape $\mathcal{S}$ such that any planar integral point set $M$ with $\operatorname{diam} M = d$
+	What is the minimal shape $\mathcal{S}$ such that any $M\in\mathfrak{M}(2,\mathbb{N})$ with $\operatorname{diam} M = d$
 	belongs to $\mathcal{S}$?
 \end{problem}
 This problem in another generalization of Lemma~\ref{lem:square_container}.
