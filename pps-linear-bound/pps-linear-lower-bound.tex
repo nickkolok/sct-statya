@@ -183,10 +183,12 @@ For building the bound, we also require the following results and notions from~\
 
 \begin{lemma}
 	\label{lem:intervals_cross}
-	If \textbf{open} line segments $M_1 M_2$ and $M_3 M_4$ do not intersect,
+	If open line segments $M_1 M_2$ and $M_3 M_4$ do not intersect,
 	%$M_1 \neq M_2$, $M_3 \neq M_4$,
 	then the set $cr(M_1,M_2) \cap cr(M_3,M_4)$ is either a straight line or contains 2 or 4 points.
 \end{lemma}
+It is important that we consider the intersection of open line segments,
+so e.g. the cases $M_1 = M_3$ and $M_3 \in M_1 M_2$ satisfy the conditions of Lemma~\ref{lem:intervals_cross}.
 
 \begin{lemma}
 	\label{lemma:quadr_diag_edges}
