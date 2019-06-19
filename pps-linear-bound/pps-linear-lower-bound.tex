@@ -83,8 +83,8 @@ An \textit{integral point set} in $m$-dimensional Euclidean space is a point set
 points of $M$ are integers and $M$ is not situated on an $(m-1)$-dimensional hyperplane.
 Erd\"os and Anning proved~\cite{anning1945integral,erdos1945integral} that every integral point set consists of a finite number of points.
 Taking the fact into account, we will denote the set of all integral point sets of $n$ points in $m$-dimensional Euclidean space with
-$\mathfrak{M}(m,n)$ (using the notation in~\cite{our-vmmsh-2018}),
-and let the symbol $\mathfrak{M}(m,\mathbb{N})$ stand for the set of all integral point sets in $m$-dimensional Euclidean space.
+$\mathfrak{M}(m,n)$ (using the notation in~\cite{our-vmmsh-2018})
+and denote the set of all integral point sets in $m$-dimensional Euclidean space with $\mathfrak{M}(m,\mathbb{N})$.
 The symbol $\# M$ will be used for cardinality of $M$, i.e. the quantity of points in $M$ in our case.
 
 For every finite point set, its diameter is naturally defined as
@@ -131,7 +131,7 @@ then, we prove that $l(m,n)=1$ for all possible $m$ and $n$.
 \section{Lower bound for the diameter}
 
 In this section,
-we improve a better lower bound for minimum diameter of planar integral point sets by
+we improve the lower bound for minimum diameter of planar integral point sets by
 involving Point Packing in a Square problem.
 Below we introduce the problem, basic notions and results.
 
@@ -177,7 +177,7 @@ For building the bound, we also require the following results and notions from~\
 \end{lemma}
 
 \begin{definition}
-	\textit{Cross} for points $M_1$ and $M_2$, denoted by $cr(M_1,M_2)$, is union of two straight lines:
+	A \textit{cross} for points $M_1$ and $M_2$, denoted by $cr(M_1,M_2)$, is the union of two straight lines:
 	the line which the points $M_1$ and $M_2$ are situated on,
 	and the bisector of line segment $M_1 M_2$.
 \end{definition}
@@ -213,7 +213,7 @@ Basing on the exact values of $d(2,n)$ for $ 3 \leq n\leq 122$ and the estimate 
 Therefore, we will focus on planar integral points sets of more than 21491 points.
 
 Performing some simple manipulations with the upper bound in Theorem~\ref{thm:varphi_k_bounds},
-one can make the following proposition.
+one can derive the following proposition.
 \begin{proposition}
 	\label{varphi_n_where_n_geq_21492}
 	For $n \geq 21492$ we have
@@ -228,7 +228,7 @@ one can make the following proposition.
 	\end{equation}
 \end{proposition}
 
-Now we need to estimate the quanity of points in an intersection of an integral point set with a line segment.
+Now we need to estimate the cardinality of an intersection of an integral point set with a line segment.
 There is the following estimate for minimum diameter of planar integral point sets with many collinear points.
 \begin{theorem}~\cite[Theorem 4]{kurz2008minimum}
 	For $\delta > 0$, $\varepsilon > 0$, and $P\in\mathfrak{M}(2,n)$ with
@@ -255,7 +255,7 @@ is a branch of a hyperbola for $k\neq 0$ and the bisector of line segment $M_1 M
 	\label{obs:rho_curves}
 	If points $M_1,M_2,M_3,M_4$ are situated on a straight line,
 	and equality $|M_1 M_2| = |M_3 M_4|$ holds but line segments $M_1 M_2$ and $M_3 M_4$ do not coincide,
-	then for a fixed $k$ the $\rho(k,M_1 M_2)$-curve and $\rho(k,M_3 M_4)$-curve
+	then for a fixed $k$ the $\rho(k,M_1 M_2)$-curve and the $\rho(k,M_3 M_4)$-curve
 	do not intersect.
 \end{proposition}
 
@@ -317,7 +317,7 @@ with an integral point set.
 
 \begin{proof}
 	Let $f(k)$ denote the mininal length of a line segment
-	that shares $k$ points with and integral point set.
+	that shares $k$ points with an integral point set.
 	We observe that $f(k) > f (k-1)$.
 	Due to Lemma~\ref{lem:line_segment_with n_squared_plus_one_points},
 	$f(n^2+1) \geq \frac{2}{3}n^3+\frac{1}{2}n^2-\frac{1}{6}n$.
@@ -373,7 +373,7 @@ Now we are ready to prove the main theorem of the section.
 	where
 	\begin{multline}
 		0.46530... =
-		\frac{3^{1/4}}{2^{3/2}} >
+		3^{1/4} \cdot 2^{-3/2} >
 		\\ >
 		\gamma = \frac{\sqrt{16 {{\left( \sqrt{\frac{2}{\sqrt{3}}+\frac{1}{21490}}+\frac{1}{\sqrt{21490}}\right) }^{2}}+\frac{14791716}{{{\left( 2593 \sqrt{647}-5823\right) }^{2}}}}-\frac{3846}{2593 \sqrt{647}-5823}}{8 {{\left( \sqrt{\frac{2}{\sqrt{3}}+\frac{1}{21490}}+\frac{1}{\sqrt{21490}}\right) }^{2}}}
 		>\\
@@ -489,7 +489,7 @@ For given $M\in\mathfrak{M}(2,\mathbb{N})$, the characteristic is determined uni
 
 Facher sets are the simplest ones of planar integral point sets.
 It is shown that for $9\leq n \leq 122$ all the optimal sets are facher~\cite{kurz2008minimum}.
-For every cardinality $n$ and every characteristic $q$
+For every cardinality $n$ and every squarefree number $q$
 there exists a facher set $M\in\mathfrak{M}(2,n)$ with characteristic $q$~\cite[Theorem 5]{our-vmmsh-2018}.
 In~\cite{antonov2008maximal}, the facher sets of characteristic 1 were investigated; they were called \textit{semi-crabs}.
 
@@ -588,7 +588,7 @@ Now we will improve the Solymosi's result.
 		1
 		.
 	\end{equation}
-	Then, one of the distances is
+	Thus, one of the distances is
 	\begin{equation}
 		|M_{H+}  M_{H-}|
 		=
@@ -609,7 +609,7 @@ Now we will improve the Solymosi's result.
 	So, $M = \{ M_{J\pm}, N\}$ is indeed a planar integral point set of $2^k+1$ points,
 	and distance 1 occurs in $M$.
 	Reminding that $k$ can be taken arbitrary large, we conclude that we can construct
-	a planar integral point set of arbitrary large count of points so that the distance 1 occurs in that set.
+	a planar integral point set of arbitrary large cardinality so that the distance 1 occurs in that set.
 \end{construction}
 
 \begin{remark}
@@ -678,7 +678,7 @@ For the sake of completeness, we will give here a slightly rephrased version of 
 	So, suppose the contrary, i.e. both points $M_3$ and $M_4$ belong to $m$.
 
 	The area of the triangle $M_1 M_3 M_4$ is rational because $|M_3 - M_4| \in \mathbb{Z}$.
-	Thus, the set $M$ is of characteristic 1,
+	Thus, the characteristic of $M$ is 1,
 	and there is a Cartesian coordinate system such that $M_1=(-1/2,0)$, $M_2=(1/2,0)$, $M_3=(0, a/2)$
 	(see~\cite[Theorem 4]{our-vmmsh-2018}).
 	It is clear that $a\neq 0$.
@@ -812,10 +812,10 @@ then we can build a bound better than linear.
 \end{problem}
 
 If the answer for Problem~\ref{prb:square_side_length_and_diameter_linear} is not $\delta = 1$ and $h = 0$,
-then the linear estimate can be slightly improved.
+then the linear bound can be slightly improved.
 
 However, Problems~\ref{prb:square_side_length_and_diameter_power} and~\ref{prb:square_side_length_and_diameter_linear}
-do not seem to show the way for improving the estimate
+do not seem to show the way for improving the bound
 due to the following well-known theorem,
 which can be proved by an application of inversion~\cite{solymosi2010question}.
 \begin{theorem}
@@ -835,7 +835,7 @@ Another possibility to increase the constant in our lower bound is introduced by
 	What is the minimal shape $\mathcal{S}$ such that any $M\in\mathfrak{M}(2,\mathbb{N})$ with $\operatorname{diam} M = d$
 	is situated in  $\mathcal{S}$?
 \end{problem}
-This problem in another generalization of Lemma~\ref{lem:square_container}.
+This problem is another generalization of Lemma~\ref{lem:square_container}.
 We know that $\mathcal{S}$ is not a circle of diameter $d$
 (the counterexample is a right triangle of side length $d$)
 and we conjecture that $\mathcal{S}$ is not a Reuleaux triangle of width $d$
@@ -867,7 +867,14 @@ especially the following theorem.
 Such a set can not contain distance 1: due to Theorem~\ref{thm:minimeter_1_planar},
 the points with distance 1 should be $(\pm 1/2, 0)$.
 
-When we talk about integral point sets containing distance 1, another problem arises.
+For planar integral point sets containing distance 1, we can put forward the following problem.
+\begin{problem}
+	For given $n\geq 3$ and squarefree number $q \neq 1$,
+	is there $M\in\mathfrak{M}(2,n)$, such that characteristic of $M$ is $q$
+	and distance 1 occurs in $M$?
+\end{problem}
+
+When we talk about integral point sets containing distance 1 of higher dimensions, another problem arises.
 
 \begin{problem}
 	For $M\in\mathfrak{M}(m,n)$, how many times can the distance 1 occur in $M$?
@@ -879,7 +886,7 @@ For greater $m$, we will be brave enough to put forward the following conjecture
 	Then either $n = m+1$ or $M$ is a ``blowup'' of a facher set and distance 1 occurs in $M$
 	not more than $1+\frac{(m-1)^2 - (m-1)}{2}$ times.
 \end{conjecture}
-Such as estimate is based on the quantity of edges in $(m-2)$-dimensional simplex.
+Such as estimate is based on the quantity of edges in an $(m-2)$-dimensional simplex.
 
 We want to conclude the list of conjectures with the one which looks the easiest to deal with.
 
