@@ -1,0 +1,320 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 15.08.2 ] */
+
+/* [wxMaxima: input   start ] */
+/*
+Итак, гипербола с фокусами в (-c/2; 0) и (c/2; 0),
+разность расстояний q
+*/;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+branch1:sqrt((x+c/2)^2 + y^2) - sqrt((x-c/2)^2 + y^2) =q;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(branch1, y);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+branch2:expand((sqrt((x+c/2)^2 + y^2) - sqrt((x-c/2)^2 + y^2))^2 = q^2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+branch3: +2*y^2+2*x^2+c^2/2 - q^2 = 2*sqrt(y^2+x^2-c*x+c^2/4)*sqrt(y^2+x^2+c*x+c^2/4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+branch4: (2*y^2+2*x^2-q^2+c^2/2)^2 = (2*sqrt(y^2+x^2-c*x+c^2/4)*sqrt(y^2+x^2+c*x+c^2/4))^2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+branch5: expand(branch4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+branch6:4*y^4+8*x^2*y^2-4*q^2*y^2+2*c^2*y^2+4*x^4-4*q^2*x^2+2*c^2*x^2+q^4-c^2*q^2+c^4/4-(4*y^4+8*x^2*y^2+2*c^2*y^2+4*x^4-2*c^2*x^2+c^4/4) = 0;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+branch7:-4*q^2*y^2-4*q^2*x^2+4*c^2*x^2+q^4-c^2*q^2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ex
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+branch8:branch7/(-q^4+c^2*q^2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+branch9: ratsimp(branch8);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+branch10: expand(branch9);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+ratsimp(-q^4/(q^4-c^2*q^2)+(c^2*q^2)/(q^4-c^2*q^2));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+branch11:
+(4*q^2*y^2)/(q^4-c^2*q^2)+(4*q^2*x^2)/(q^4-c^2*q^2)-(4*c^2*x^2)/(q^4-c^2*q^2) - 1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ratsimp(branch10 - branch11);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+branch12:
+(4*y^2)/(q^2-c^2)+(4*q^2*x^2)/(q^4-c^2*q^2)-(4*c^2*x^2)/(q^4-c^2*q^2)-1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+ratsimp(branch10 - branch12);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+branch13:
+(4*y^2)/(q^2-c^2)+ 4 * (q^2 - c^2)*x^2 / (q^2 * (q^2-c^2)) -1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ratsimp(branch10 - branch13);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+branch14:
+x^2 / (q/2)^2 - y^2 / ((c/2)^2-(q/2)^2) -1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+ratsimp(branch10 - branch14);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/*Откуда*/;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+a : q/2; b : sqrt(c^2-q^2)/2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/*Если q = 1, тo a=1/2*/;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+b_min:sqrt(c^2-q^2)/2, q:c-1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+ratsimp(b_min);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+solve(branch14=0,y);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+y1:sqrt(-4*q^2*x^2+4*c^2*x^2+q^4-c^2*q^2)/(2*q);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+dist1:(b*x - a * y1) / sqrt(a^2 + b^2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+assume(c>0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+dist2:radcan(dist1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+eq_dist1: dist2 = sqrt(c-1/4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+eq_dist2: (part(eq_dist1,1))^2 = (part(eq_dist1,2))^2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+eq_dist3:ratsimp(eq_dist2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/*solve(eq_dist3,x);*/;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+eq_dist4: (part(eq_dist3,1)) - (part(eq_dist3,2)) = 0;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+eq_dist5: (part(eq_dist4,1)*4*c^2) - (part(eq_dist4,2)*4*c^2) = 0;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+eq_dist6: ratsimp(eq_dist5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+eq_dist7: -((8*c^2-8*q^2)*x^2+q^4-c^2*q^2-4*c^3+c^2) = (4*q^2-4*c^2)*x*sqrt(2*x-q)*sqrt(2*x+q);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+eq_dist8: (part(eq_dist7,1))^2 = (part(eq_dist7,2))^2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+eq_dist9: expand(ratsimp(eq_dist8));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+eq_dist10: (part(eq_dist9,1)) - (part(eq_dist9,2)) = 0;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+solve(eq_dist10, x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+check1: ev(eq_dist4, x: (%i*c^4-4*%i*c^5-4*%i*c^2*q^2+4*%i*q^4)/(8*c^2*sqrt(4*c*q^2-q^2-4*c^3+c^2)));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+check2:radcan(check1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+check3:expand(check2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+check4:part(check3,1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+check5: (check4)^2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+check6:ratsimp(check5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+(sqrt(-4*c^2*sqrt(4*c-1)*q*sqrt(q-c)*sqrt(q+c)+4*%i*q^4-4*%i*c^2*q^2-4*%i*c^5+%i*c^4)*sqrt(4*c^2*sqrt(4*c-1)*q*sqrt(q-c)*sqrt(q+c)+4*%i*q^4-4*%i*c^2*q^2-4*%i*c^5+%i*c^4))^2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/*Расстояние от вершины до асимптоты*/;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+dist_vert1:b*a/sqrt(a^2 + b^2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+dist_vert2:ratsimp(dist_vert1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+dist_vert_sqr:expand(dist_vert2^2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ex1:ratsimp(4*(dist_vert_sqr - (c-1/4)));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/*Если ex1 всегда меньше нуля, то вершина ужЕ в полосе Солимоси*/;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ex2:ratsimp(ex1*c^2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ev(ex2,q:1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/* Итак, для q = 1 выражение выше меньше нуля. Теперь ищем, где оно может перейти через ноль (и может ли) */;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ex3:-p^2+c^2*p-4*c^3+c^2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+expand(ex2-ev(ex3,p:q^2));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+assume(p>0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/*der:diff(-p^2+c^2*p-4*c^3+c^2, p);*/;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/*solve(der=0,p);*/;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(ex3=0,p);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/* Но q < с, откуда p < c^2 и нужного значения попросту не достигает */;
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$
