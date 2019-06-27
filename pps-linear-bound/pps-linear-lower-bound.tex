@@ -229,7 +229,8 @@ one can derive the following proposition.
 \end{proposition}
 
 Now we need to estimate the cardinality of an intersection of an integral point set with a line segment.
-There is the following estimate for minimum diameter of planar integral point sets with many collinear points.
+Assuming that the planar integral point sets contains many collinear points,
+the following result holds.
 \begin{theorem}~\cite[Theorem 4]{kurz2008minimum}
 	For $\delta > 0$, $\varepsilon > 0$, and $P\in\mathfrak{M}(2,n)$ with
 	at least $n^\delta$ collinear points there exists a $n_0 (\varepsilon)$
@@ -241,10 +242,10 @@ There is the following estimate for minimum diameter of planar integral point se
 \end{theorem}
 However, the estimate is rather unsuitable for our needs,
 as it does not provide the values of all the constants.
-To obtain the desired estimate, we will now prove a generalization of~\cite[lemma 3]{our-vmmsh-2018}.
+To obtain the needed estimate, we now prove a generalization of~\cite[lemma 3]{our-vmmsh-2018}.
 
 \begin{definition}
-	For a line segment $M_1 M_2$ and an integer $k$, $-|M_1 M_2| < k < |M_1 M_2|$,
+	For a line segment $M_1 M_2$ and an integer $k$, such that $-|M_1 M_2| < k < |M_1 M_2|$,
 	we define a $\rho(k,M_1 M_2)$-curve as the set of points $N$
 	for which the equality $|N M_1| - |N M_2| = k$ holds.
 \end{definition}
@@ -254,7 +255,7 @@ is a branch of a hyperbola for $k\neq 0$ and the perpendicular bisector of line 
 \begin{proposition}
 	\label{obs:rho_curves}
 	If points $M_1,M_2,M_3,M_4$ are situated on a straight line,
-	and equality $|M_1 M_2| = |M_3 M_4|$ holds but line segments $M_1 M_2$ and $M_3 M_4$ do not coincide,
+	the equality $|M_1 M_2| = |M_3 M_4|$ holds and line segments $M_1 M_2$ and $M_3 M_4$ do not coincide,
 	then for a fixed $k$ the $\rho(k,M_1 M_2)$-curve and the $\rho(k,M_3 M_4)$-curve
 	do not intersect.
 \end{proposition}
@@ -262,7 +263,7 @@ is a branch of a hyperbola for $k\neq 0$ and the perpendicular bisector of line 
 \begin{lemma}
 	\label{lem:2k-1_segments}
 	Let $M \in \mathfrak{M}(2,\mathbb{N})$ and let $m$ be a straight line.
-	Then for every $k\in\mathbb{N}$ there are at most $2k-1$ segments $\Delta_i \subset m$,
+	Then for every $k\in\mathbb{N}$ there are at most $2k-1$ segments $\Delta_i \subset m$ with endpoints in $M$,
 	such that $|\Delta_i| = k$.
 \end{lemma}
 \begin{proof}
