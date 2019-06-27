@@ -351,8 +351,9 @@ This lemma leads to the following proposition.
 \end{proposition}
 
 \begin{proof}
-	We are interested in integral $t$ such that estimate~\eqref{eq:estimate_for_segment_length}
-	yields to $b > 10000$, because we know the maximum number of points for planar integral point sets of diameters at most $10000$.
+	We know the maximum number of points for planar integral point sets of diameters at most $10000$.
+	Thus, we are interested in integral $t$ such that estimate~\eqref{eq:estimate_for_segment_length}
+	holds for $b > 10000$.
 	So, let us consider $t\geq 647$ and find a coefficient $\gamma_2$,
 	such that the inequality
 	\begin{equation}
@@ -360,10 +361,10 @@ This lemma leads to the following proposition.
 		\frac{2}{3}t^{3/2}-\frac{3}{2}t+\frac{5 }{6}t^{1/2} \geq \frac{t-6}{\gamma_2}
 	\end{equation}
 	holds for all $t\geq 647$.
-	For these $t$,
-	the left part of~\eqref{eq:inequality_for_linear_estimate_of_segment_length} obviously grows faster than the right one.
+	For such $t$,
+	the left-hand side of~\eqref{eq:inequality_for_linear_estimate_of_segment_length} obviously grows faster than the right-hand side.
 	Turning~\eqref{eq:inequality_for_linear_estimate_of_segment_length} into the same equality
-	and solving it for $t=647$, we obtain the claimed estimate.
+	and solving it for $t=647$, we obtain the required estimate.
 \end{proof}
 
 Now we are ready to prove the main theorem of the section.
@@ -385,17 +386,17 @@ Now we are ready to prove the main theorem of the section.
 \end{theorem}
 
 \begin{proof}
-	For $4 \leq n \leq 21491$, the claim of the theorem follows immediately from Proposition~\ref{obs:4_leq_n_leq_21491}.
+	For $4 \leq n \leq 21491$, the assertion of the theorem follows immediately from Proposition~\ref{obs:4_leq_n_leq_21491}.
 	Let us consider $M\in \mathfrak{M}(2,n)$, $n \geq 21492$, $\operatorname{diam} M = b$.
 	Lemma~\ref{lem:square_container} yields that $M$ is situated in a square of side length $b$.
 	Let $M_1, M_2, M_3, M_4$ be points of $M$ such that the distances $|M_1 M_2|$ and $|M_3 M_4|$
-	are minimal in $M$ ($M_2$ and $M_3$ may be the same point).
+	are minimal in $M$ ($M_2$ and $M_3$ may coincide).
 	Then $|M_1 M_2| \leq b\varphi_{n-1}$ and $|M_3 M_4| \leq b\varphi_{n-1}$.
 	Due to Lemma~\ref{lemma:quadr_diag_edges}, open line segments $M_1 M_2$ and $M_3 M_4$ do not intersect
 	(otherwise they are not minimal).
 
 	Let $C = cr(M_1 M_2) \cap cr(M_3 M_4)$.
-	Each point of $N\in M$ satisfies one of the following conditions:
+	Each point $N\in M$ satisfies one of the following conditions:
 
 	a) $N$ belongs to $C$~--- totally at most $\gamma_2 b + 6$ points due to Lemma~\ref{lem:intervals_cross} and Proposition~\ref{obs:estimate_points_on_straight_line};
 
