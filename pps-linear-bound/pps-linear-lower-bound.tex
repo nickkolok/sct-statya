@@ -461,9 +461,14 @@ More precisely, we have the following theorem.
 \begin{theorem}
 	For every $\varepsilon > 0$ there exists a number $n_0$ such that the inequality
 	\begin{equation}
-		d(2,n) \geq n\cdot(3^{1/4}\cdot2^{-3/2} - \varepsilon)
+		d(2,n) \geq n\cdot(3^{1/4}\cdot 2^{-3/2} - \varepsilon)
 	\end{equation}
-	holds for every $n>n_0$.
+	holds for every $n>n_0$,
+	that is
+	\begin{equation}
+		\lim_{n\to\infty} \frac{d(2,n)}{n} \geq 3^{1/4}\cdot 2^{-3/2}
+		.
+	\end{equation}
 \end{theorem}
 
 
@@ -487,10 +492,10 @@ More precisely, we have the following theorem.
 	if for any points $M_1, M_2, M_3 \in M$ the area of triangle $M_1 M_2 M_3$
 	is $p_{1,2,3}\sqrt{q}$ for some rational $p_{1,2,3}$.
 \end{definition}
-For given $M\in\mathfrak{M}(2,\mathbb{N})$, the characteristic is determined uniquely.
+For a given $M\in\mathfrak{M}(2,\mathbb{N})$, the characteristic is determined uniquely.
 
-Facher sets are the simplest ones of planar integral point sets.
-It is shown that for $9\leq n \leq 122$ all the optimal sets are facher~\cite{kurz2008minimum}.
+Facher sets are the simplest planar integral point sets.
+It is known that for $9\leq n \leq 122$ all the optimal sets are facher~\cite{kurz2008minimum}.
 For every cardinality $n$ and every squarefree number $q$
 there exists a facher set $M\in\mathfrak{M}(2,n)$ with characteristic $q$~\cite[Theorem 5]{our-vmmsh-2018}.
 In~\cite{antonov2008maximal}, the facher sets of characteristic 1 were investigated; they were called \textit{semi-crabs}.
@@ -500,11 +505,11 @@ $M\in\mathfrak{M}(2,n)$
 such that equality $|M_1 M_2| = 2$ holds for some $M_1, M_2 \in M$.
 The constructed set has both odd and even distances.
 
-Now we will improve the Solymosi's result.
+Now we improve Solymosi's result.
 
 \begin{construction}
 	\label{con:planar_set_with_minimeter_1}
-	Let us choose a positive integer $k > 1$ and take
+	Let us choose a positive integer $k > 1$ and set
 	\begin{equation}
 		a = 2^{2^k} - 1
 		.
