@@ -529,12 +529,12 @@ Now we improve Solymosi's result.
 		\left(2^{2^{k-1}} + 1\right) \left(2^{2^{k-2}} + 1\right) \cdot ... \cdot \left(2^{2^1} + 1\right) \left(2^2 - 1\right)
 		.
 	\end{multline}
-	We take $d_j = 2^{2^j} + 1$ for $1 \leq j \leq k-1$.
+	We set $d_j = 2^{2^j} + 1$ for $1 \leq j \leq k-1$.
 	Then $d_j \equiv 1 \mod 4$.
 
-	Let $c_J = \prod_{j\in J} d_j$ for every subset of indexes $J\subset I = \{1,2,...,k-1\}$
+	Let $c_J = \prod_{j\in J} d_j$ for every subset of indices $J\subset I = \{1,2,...,k-1\}$
 	(and  $c_\varnothing = 1$).
-	We get
+	We obtain
 	\begin{equation}
 		\label{eq:c_J_equiv_1_mod_4}
 		c_J\equiv 1 \mod{4}
@@ -542,11 +542,11 @@ Now we improve Solymosi's result.
 	and, moreover, $a$ is divisible by $c_J$.
 
 
-	From~\eqref{eq:a_equiv_3_mod_4} and~\eqref{eq:c_J_equiv_1_mod_4} we obtain $a/c_J \equiv 3 \mod 4$.
+	Statements~\eqref{eq:a_equiv_3_mod_4} and~\eqref{eq:c_J_equiv_1_mod_4} yield $a/c_J \equiv 3 \mod 4$.
 	Let $b_J = (c_J - a/c_J)/2$, then $b_J \equiv 1 \mod 2$.
 	Let us further take $g_J = (c_J + a/c_J)/2$, then $g_J \equiv 0 \mod 2$.
 
-	We will now define the coordinates of the points as following:
+	Next we define the coordinates of the points as following:
 	\begin{equation}
 		M_{J\pm} =\left(\pm\frac{b_J}{2}, 0\right)
 		,
