@@ -615,7 +615,7 @@ Now we improve Solymosi's result.
 
 	So, $M = \{ M_{J\pm}, N\}$ is indeed a planar integral point set of $2^k+1$ points,
 	and distance 1 occurs in $M$.
-	Reminding that $k$ can be taken arbitrary large, we conclude that we can construct
+	Since $k$ can be taken arbitrary large, it follows that we can construct
 	a planar integral point set of arbitrary large cardinality so that the distance 1 occurs in that set.
 \end{construction}
 
@@ -623,7 +623,7 @@ Now we improve Solymosi's result.
 	\label{rem:planar_set_with_minimeter_1_of_3_points}
 	Applying Construction~\ref{con:planar_set_with_minimeter_1} to $k=1$ naively,
 	we get $a = 3$, $I=\varnothing$, $b_\varnothing = -1$ and then
-	obtain a right triangle of side length 1.
+	obtain an equilateral triangle of side length 1.
 	This triangle is obviously the optimal set in $\mathfrak{M}(2,3)$.
 \end{remark}
 
@@ -631,7 +631,7 @@ Now we improve Solymosi's result.
 	\label{rem:planar_set_with_minimeter_1_of_4_and_5_points}
 	For $k=2$ in Construction~\ref{con:planar_set_with_minimeter_1},
 	we obtain the optimal set in $\mathfrak{M}(2,5)$ presented in~\cite[Fig. 1]{harborth1993upper}.
-	If we truncate one point from it,
+	If we remove one point from it,
 	then we get one of the two optimal sets in $\mathfrak{M}(2,4)$.
 \end{remark}
 
@@ -653,7 +653,7 @@ Now we improve Solymosi's result.
 
 
 
-If the take $k=1$ in Lemma~\ref{lem:2k-1_segments},
+Setting $k=1$ in Lemma~\ref{lem:2k-1_segments},
 we obtain the following result (which is exactly~\cite[Lemma 3]{our-vmmsh-2018}).
 \begin{corollary}
 	\label{cor:only_one_distance_1_on_straight_line}
@@ -662,14 +662,14 @@ we obtain the following result (which is exactly~\cite[Lemma 3]{our-vmmsh-2018})
 	such that $|M_1 M_2| = 1$.
 \end{corollary}
 
-To describe all the sets $M \in \mathfrak{M}(2,n)$ with distance 1,
-we will need~\cite[Proposition 6]{our-vmmsh-2018}.
-For the sake of completeness, we will give here a slightly rephrased version of it with the proof as the following lemma.
+In order to describe all the sets $M \in \mathfrak{M}(2,n)$ with distance 1,
+we need~\cite[Proposition 6]{our-vmmsh-2018}.
+For the reader's convenience, we will state a slightly rephrased version of it and provide the proof.
 \begin{lemma}
 	\label{lem:no_4_points_in_semigeneral_position_with_distance_1}
-	Let $M=\{M_1,M_2,M_3,M_4\}\in \mathfrak{M}(2,4)$ such that $|M_1 M_2|=1$
-	and let $l$ be the straight line containing points $M_1$ and $M_2$.
-	Then one of the points $M_3$ or $M_4$ belongs to $l$.
+	Let $M=\{M_1,M_2,M_3,M_4\}\in \mathfrak{M}(2,4)$ such that $|M_1 M_2|=1$.
+	If $l$ is the straight line through points $M_1$ and $M_2$,
+	then one of the points $M_3$ or $M_4$ belongs to $l$.
 \end{lemma}
 
 \begin{proof}
@@ -844,7 +844,7 @@ Another possibility to increase the constant in our lower bound is introduced by
 \end{problem}
 This problem is another generalization of Lemma~\ref{lem:square_container}.
 We know that $\mathcal{S}$ is not a circle of diameter $d$
-(the counterexample is a right triangle of side length $d$)
+(the counterexample is an equilateral triangle of side length $d$)
 and we conjecture that $\mathcal{S}$ is not a Reuleaux triangle of width $d$
 (the probable counterexample belongs to a circle of diameter $d$, see Theorem~\ref{thm:rational_set_on_circle}).
 
