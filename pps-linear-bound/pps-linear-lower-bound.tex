@@ -270,7 +270,7 @@ is a branch of a hyperbola for $k\neq 0$ and the perpendicular bisector of line 
 	Consider a point $N\in M \setminus m$.
 	Then for each $\Delta_i$ there is a $\rho(n_i,\Delta_i)$-curve containing $N$.
 	Due to Proposition~\ref{obs:rho_curves}, all $n_i$ are distinct;
-	otherwise $\rho(n_i,\Delta_i)$-curve and $\rho(n_i,\Delta_j)$-curve, $j\neq i$, do not intersect.
+	otherwise the $\rho(n_i,\Delta_i)$-curve and the $\rho(n_i,\Delta_j)$-curve, $j\neq i$, do not intersect.
 	There can be only $2k-1$ distinct values for $n_i$,
 	so there are at most $2k-1$ distinct segments $\Delta_i$.
 \end{proof}
@@ -287,11 +287,11 @@ is a branch of a hyperbola for $k\neq 0$ and the perpendicular bisector of line 
 \end{lemma}
 
 \begin{proof}
-	Any $n^2+1$ points, including the endpoints of $\Delta$, split the segment $\Delta$ into $n^2$
+	Any $n^2+1$ points, including the endpoints of $\Delta$, partition the segment $\Delta$ into $n^2$
 	sequential segments $\Delta_i$.
 	Due to Lemma~\ref{lem:2k-1_segments}, there is at most one segment of length 1,
 	at most three segments of length 2, etc.
-	The following two values of sums conclude the proof:
+	The following two expressions for sums conclude the proof:
 	\begin{equation}
 		1 + \sum_{k=1}^n (2k-1) = n^2 + 1
 		,
@@ -302,8 +302,8 @@ is a branch of a hyperbola for $k\neq 0$ and the perpendicular bisector of line 
 	\end{equation}
 \end{proof}
 
-Now we will estimate the length of a line segment that shares an arbitrary number of points
-with an integral point set.
+Now we will estimate the length of a line segment that intersects an integral point set
+by an arbitrary number of points.
 
 \begin{lemma}
 	Let $\Delta$ be a straight line segment, $|\Delta| = b$ and $M \in \mathfrak{M}(2,\mathbb{N})$.
@@ -318,7 +318,7 @@ with an integral point set.
 
 \begin{proof}
 	Let $f(k)$ denote the mininal length of a line segment
-	that shares $k$ points with an integral point set.
+	that intersects an integral point set by $k$ points.
 	We observe that $f(k) > f (k-1)$.
 	Due to Lemma~\ref{lem:line_segment_with n_squared_plus_one_points},
 	$f(n^2+1) \geq \frac{2}{3}n^3+\frac{1}{2}n^2-\frac{1}{6}n$.
