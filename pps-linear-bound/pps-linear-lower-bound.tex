@@ -56,13 +56,13 @@
 % !!!
 % The text starts here
 
-Avdeev N.N.
-
-On existence and diameter bounds of integral point sets.
+On existence of integral point sets and their diameter bounds.
 \footnote{
 	This work was carried out at Voronezh State University and supported by the Russian Science
-	Foundation under grant 19-11-00197.
+	Foundation grant 19-11-00197.
 }
+
+N.N. Avdeev
 
 \paragraph{Abstract.}
 A point set $M$ in $m$-dimensional Euclidean space is called an integral point set if all the distances between the
@@ -82,39 +82,39 @@ between points $M_1$ and $M_2$ in a finite-dimensional space $\mathbb{R}^m$
 An \textit{integral point set} in $m$-dimensional Euclidean space is a point set $M$ such that all the distances between the
 points of $M$ are integers and $M$ is not situated on an $(m-1)$-dimensional hyperplane.
 Erd\"os and Anning proved~\cite{anning1945integral,erdos1945integral} that every integral point set consists of a finite number of points.
-Taking the fact into account, we will denote the set of all integral point sets of $n$ points in $m$-dimensional Euclidean space with
+Taking this into account, we denote the set of all integral point sets of $n$ points in $m$-dimensional Euclidean space by
 $\mathfrak{M}(m,n)$ (using the notation in~\cite{our-vmmsh-2018})
-and denote the set of all integral point sets in $m$-dimensional Euclidean space with $\mathfrak{M}(m,\mathbb{N})$.
-The symbol $\# M$ will be used for cardinality of $M$, i.e. the quantity of points in $M$ in our case.
+and denote the set of all integral point sets in $m$-dimensional Euclidean space by $\mathfrak{M}(m,\mathbb{N})$.
+The symbol $\# M$ will be used for cardinality of $M$, that is the number of points in $M$ in our case.
 
 For every finite point set, its diameter is naturally defined as
 \begin{equation}
 	\operatorname{diam} M = \max_{A,B\in M} |AB|
 	.
 \end{equation}
-The next emerging question is: how the diameter of an integral point set depends on its cardinality?
+Another emerging question is: how does the diameter of an integral point set depend on its cardinality?
 One can easily see that every $M\in\mathfrak{M}(m,n)$ with $\operatorname{diam} M = h$
 can be dilated to $M_p\in\mathfrak{M}(m,n)$ with $\operatorname{diam} M = ph$
 for every $p\in\mathbb{N}$.
-So, the question above should be rephrased:
-how \textit{the least possible} diameter of an integral point set depends on its cardinality?
-To answer it, the following function was introduced~\cite{kurz2008bounds,kurz2008minimum}:
+So, the above question should be rephrased:
+how does \textit{the least possible} diameter of an integral point set depend on its cardinality?
+In order to answer this question, the following function was introduced~\cite{kurz2008bounds,kurz2008minimum}:
 \begin{equation}
 	d(m,n) = \min_{M\in\mathfrak{M}(m,n)} \operatorname{diam} M = \min_{M\in\mathfrak{M}(m,n)} \max_{A,B\in M} |AB|
 	.
 \end{equation}
 We also refer to~\cite{kurz2008bounds} for a list of known exact values of $d(m,n)$
-and bounds; in the present paper, the case of $m=2$ will mostly be in the focus.
+and its bounds; in the present paper, the case of $m=2$ will mostly be in the focus.
 
 The most significant breakthrough on the planar case was done by Solymosi~\cite{solymosi2003note},
 who proved that $cn \leq d(2,n)$ for a sufficiently small constant $c$.
-Following the details of Solymosi's proof carefully,
+Following Solymosi's proof carefully,
 one can derive that the inequality holds at least for $c = 1/24$.
 (See~\cite[Exercise 2.6]{garibaldi2005erdos} for some remarks.)
 The constant was improved in~\cite{our-mz-rus} to $1/8$ for all $n$ and in~\cite{our-vmmsh-2018}
-to $3/8$ for sufficiently big $n$.
+to $3/8$ for sufficiently large $n$.
 
-The paper~\cite{solymosi2003note} contained one more interesting result.
+The paper~\cite{solymosi2003note} contains one more interesting result.
 Let us define a function which is ``dual'' to $d(m,n)$ in some sense:
 \begin{equation}
 	l(m,n) = \min_{M\in\mathfrak{M}(m,n)} \min_{A,B\in M} |AB|
@@ -123,16 +123,16 @@ Let us define a function which is ``dual'' to $d(m,n)$ in some sense:
 Solymosi proved that $l(2,n)\leq 2$.
 
 In the present paper we improve Solymosi's results:
-firstly, we obtain a greater constant $c = 5/11$ in Theorem~\ref{thm:main_estimate},
+first, we obtain a larger constant $c = 5/11$ in Theorem~\ref{thm:main_estimate},
 using the combined approach with the Point Packing in a Square problem
 (this approach is different from Solymosi's one);
-then, we prove that $l(m,n)=1$ for all possible $m$ and $n$.
+second, we prove that $l(m,n)=1$ for all possible $m$ and $n$.
 
 \section{Lower bound for the diameter}
 
 In this section,
-we improve the lower bound for minimum diameter of planar integral point sets by
-involving Point Packing in a Square problem.
+we improve the lower bound for minimum diameter of planar integral point sets
+employing Point Packing in a Square problem.
 Below we introduce the problem, basic notions and results.
 
 \begin{problem}[Point Packing in a Square (PPS)~\cite{locatelli2002packing,costa2013valid}]
@@ -351,7 +351,7 @@ This lemma leads to the following proposition.
 
 \begin{proof}
 	We are interested in integral $t$ such that estimate~\eqref{eq:estimate_for_segment_length}
-	yields to $b > 10000$, because we know the maximum quantity of points for planar integral point sets of diameters at most $10000$.
+	yields to $b > 10000$, because we know the maximum number of points for planar integral point sets of diameters at most $10000$.
 	So, let us consider $t\geq 647$ and find a coefficient $\gamma_2$,
 	such that the inequality
 	\begin{equation}
@@ -886,7 +886,7 @@ For greater $m$, we will be brave enough to put forward the following conjecture
 	Then either $n = m+1$ or $M$ is a ``blowup'' of a facher set and distance 1 occurs in $M$
 	not more than $1+\frac{(m-1)^2 - (m-1)}{2}$ times.
 \end{conjecture}
-Such as estimate is based on the quantity of edges in an $(m-2)$-dimensional simplex.
+Such as estimate is based on the number of edges in an $(m-2)$-dimensional simplex.
 
 We want to conclude the list of conjectures with the one which looks the easiest to deal with.
 
