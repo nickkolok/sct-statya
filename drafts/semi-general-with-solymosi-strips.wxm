@@ -1,0 +1,199 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 15.08.2 ] */
+
+/* [wxMaxima: input   start ] */
+assume(k>0, d>0, r>0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(k=d / (d^(p/2)*k^(q/2)), d);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/* Итого функция показателя: */
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+fpq1:-2/(p-2)-q/(p-2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+solve([d / (r*d^(1/2)*k^(s*log(k))) = 1], [d]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+d1_0:(k^(1+q)*r)^(1/(1-p))/2^(1/(1-p));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+d1:(k^((1+q)/(1-p)))*(r/2)^(1/(1-p));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+expand(d1_0-d1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(k=(d^p*k^q)^2, d);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/* Итого функция показателя: */
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+fpq2:1/(2*p)-q/p;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(fpq1=fpq2,q);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ev([fpq1,fpq2],p:1,q:-3/4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ev([fpq1,fpq2],p:3/2,q:1,numer);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ev([fpq1,fpq2],p:-4/3,q:10/3,numer);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ev([fpq1,fpq2],p:-1,q:3,numer);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve([q=-(5*p-2)/4,p+q=2],[p,q]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+pc:ratsimp(ev([fpq1,fpq2],q:(5*p-2)/4));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ev(pc,p:7/8);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+
+
+
+
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/* Теперь надо как-то найти максимумы этих функций */
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+fpq1: 1/(1-p)+q/(1-p);
+fpq2: 1/p-q/p;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ev([fpq1,fpq2],p:-300,q:15001);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ev(1/(4^(1/p)*r^(1/p)), p:-200,q:15000);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ev((r/2)^(1/(1-p)), p:-200,q:15000);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+contour_plot (min(fpq1,fpq2), [p, 31/4, 332/5], [q, 31/4, 332/5], [gnuplot_preamble, "set cntrparam levels 6"])$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(fpq1=fpq2,q);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f1:fpq1, q:1-2*p;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+ratsimp(f1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxplot3d(q/(1-p)+1/(1-p), [p,1.1,10], [q,-5,5])$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+plot3d((Graphics), [x,-5,5], [y,-5,5], [plot_format,gnuplot])$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/* fpq1 */;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+dfpq1dp: diff(fpq1,p);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/* Ага, q = -1 - подозрительная точка */;
+/* При q > -1 функция возрастает, при q < -1 - убывает */;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+dfpq1dq: diff(fpq1,q);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/* При p = 1 функция не определена, при p > 1 - убывает, при p < 1 - возрастает */;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+d2:ratsimp((k^(1-q)/r)^(1/p));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+d2_1:d2:ratsimp(((k^((1-q)/p))/r^(1/p)));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+d2-d2_1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(1/p-q/p = (1+q)/(1-p), q);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+fp: ev(1/p-q/p, q:1-2*p);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+fp:ratsimp(fp);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+wxplot2d([(1/4*8)^(1/p),(8/2)^(1/(1-p))], [p,0.2,0.5])$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: hide output   ] */
+/* [wxMaxima: input   start ] */
+wxplot2d([(1/(4*60))^(1/p),(60/2)^(1/(1-p))], [p,1.01,300.8])$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+wxplot2d([(1/(4*r))^(1/p),(r/2)^(1/(1-p))], [p,0.5,0.8]), r:1/7$
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$
