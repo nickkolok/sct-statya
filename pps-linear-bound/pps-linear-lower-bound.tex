@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[russian,english]{babel} %используем русский и английский языки с переносами
 \usepackage{amssymb,amsfonts,amsmath,mathtext,enumerate,float,amsthm} %подключаем нужные пакеты расширений
-\usepackage[pdftex,unicode,colorlinks=true,citecolor=black,linkcolor=black]{hyperref}
+\usepackage[unicode,colorlinks=true,citecolor=black,linkcolor=black]{hyperref}
 %\usepackage[pdftex,unicode,colorlinks=true,linkcolor=blue]{hyperref}
 \usepackage{indentfirst} % включить отступ у первого абзаца
 \usepackage[dvips]{graphicx} %хотим вставлять рисунки?
@@ -27,6 +27,8 @@
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}% Меняем везде перечисления на цифра.цифра
 
 \sloppy
+
+
 
 
 \renewcommand\normalsize{\fontsize{14}{25.2pt}\selectfont}
@@ -56,13 +58,20 @@
 % !!!
 % The text starts here
 
-On existence of integral point sets and their diameter bounds.
-\footnote{
-	This work was carried out at Voronezh State University and supported by the Russian Science
-	Foundation grant 19-11-00197.
+\title{
+	On existence of integral point sets and their diameter bounds
+	\footnote{
+		This work was carried out at Voronezh State University and supported by the Russian Science
+		Foundation grant 19-11-00197.
+	}
 }
 
-N.N. Avdeev
+\author{
+	N.N. Avdeev
+	\footnote{nickkolok@mail.ru, avdeev@math.vsu.ru}
+}
+
+\maketitle
 
 \paragraph{Abstract.}
 A point set $M$ in $m$-dimensional Euclidean space is called an integral point set if all the distances between the
