@@ -1,0 +1,245 @@
+\documentclass[a4paper,14pt]{article} %размер бумаги устанавливаем А4, шрифт 12пунктов
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel} %используем русский и английский языки с переносами
+\usepackage{amssymb,amsfonts,amsmath,mathtext,enumerate,float,amsthm} %подключаем нужные пакеты расширений
+\usepackage[unicode,colorlinks=true,citecolor=black,linkcolor=black]{hyperref}
+%\usepackage[pdftex,unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{indentfirst} % включить отступ у первого абзаца
+\usepackage[dvips]{graphicx} %хотим вставлять рисунки?
+\graphicspath{{illustr/}}%путь к рисункам
+
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.} % Заменяем библиографию с квадратных скобок на точку:
+\makeatother %Смысл этих трёх строчек мне непонятен, но поверим "Запискам дебианщика"
+
+\usepackage{geometry} % Меняем поля страницы.
+\geometry{left=2cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=2cm}% верхнее поле
+\geometry{bottom=2cm}% нижнее поле
+
+\renewcommand{\theenumi}{\arabic{enumi}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumi}{\arabic{enumi}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\theenumii}{.\arabic{enumii}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\theenumiii}{.\arabic{enumiii}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}% Меняем везде перечисления на цифра.цифра
+
+\sloppy
+
+
+
+
+\renewcommand\normalsize{\fontsize{14}{25.2pt}\selectfont}
+
+\usepackage[backend=biber,style=gost-numeric,sorting=none]{biblatex}
+\addbibresource{../common/notmy.bib}
+\addbibresource{../common/my.bib}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{construction}[theorem]{Construction}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{problem}[theorem]{Problem}
+
+\begin{document}
+
+%\renewcommand{\bibname}{Список цитированной литературы}
+%\renewcommand\refname{\bibname}
+% !!!
+% The text starts here
+
+\title{
+	On diameter bounds for planar integral point sets in semi-general position
+	\footnote{
+		This work was carried out at Voronezh State University and supported by the Russian Science
+		Foundation grant 19-11-00197.
+	}
+}
+
+\author{
+	N.N. Avdeev
+	\footnote{nickkolok@mail.ru, avdeev@math.vsu.ru}
+}
+
+\maketitle
+
+\paragraph{Abstract.}
+A point set $M$ in the Euclidean plane is called a planar integral point set if all the distances between the
+elements of $M$ are integers, and $M$ is not situated on a straight line.
+A planar integral point set is called to be in semi-general position, if it does not contain collinear triples.
+The existing bound for mininum diameter of planar integral point sets is linear.
+We prove a new bound for mininum diameter of planar integral point sets in semi-general position
+which is greater than linear.
+
+
+
+\section{Introduction}
+
+Kurz - facher
+Bat-Ochir - circular
+Kurz - precise values
+Kurz - about many collinear points
+
+Kurz - semi-general and general position, precise values
+
+Piepmeyer(?) - upper bound \cite{harborth1993upper}
+
+Particular cases - Huff, Monographies (2?), my-amm, my-ped
+
+
+\section{Preliminary results}
+
+In this section, we give some lemmas which will be used for the proof.
+
+
+\begin{lemma}
+	\cite[Observation 1]{solymosi2003note}
+	If a triangle $T$ has integer side-lengths $a \leq b \leq c$,
+	then the minimal height $m$ of it is at least $\left(a - \frac{1}{4}\right)^{1/2}$.
+\end{lemma}
+
+\begin{definition}
+	The part of a plane between two parallel straight lines with distance $\rho$ between the lines
+	is called a strip of width $\rho$.
+\end{definition}
+
+\begin{lemma}
+	TODO: cite Kvant
+
+	If a triange $T$ with minimal height $\rho$ is situated in a strip,
+	then the width of a strip is at least $\rho$.
+\end{lemma}
+
+\begin{lemma}
+	\cite[Lemma 4]{our-vmmsh-2018};
+	\cite[TODO]{my-pps-linear-bound-2019}
+	\label{lem:square_container}
+	Let $M\in\mathfrak{M}(2,n)$, $\operatorname{diam} M = d$.
+	Then $M$ is situated in a square of side length $d$.
+\end{lemma}
+
+\begin{definition}
+	\cite[TODO]{my-pps-linear-bound-2019}
+	A \textit{cross} for points $M_1$ and $M_2$, denoted by $cr(M_1,M_2)$, is the union of two straight lines:
+	the line through $M_1$ and $M_2$,
+	and the perpendicular bisector of line segment $M_1 M_2$.
+\end{definition}
+
+\begin{lemma}
+	\cite[Theorem TODO]{my-pps-linear-bound-2019}
+	\label{lem:no_distance_one}
+	Each set $M\in\mathfrak{M}(2,n)$
+	such that for some $M_1,M_2 \in M$ equality $|M_1 M_2|=1$ holds,
+	consists of $n-1$ points, including $M_1$ and $M_2$, on a straight line,
+	and one point out of the line, on the perpendicular bisector of line segment $M_1 M_2$.
+\end{lemma}
+
+
+\begin{lemma}
+	\label{lem:count_of_points_on_hyperbolas}
+	Let $\{M_1, M_2, M_3, M_4\} \subset M\in\overline\mathfrak{M}(2,n)$
+	(points $M_2$ and $M_3$ may coincide, other points may not), $n\geq 4$.
+	Then $\# M \leq 4 \cdot |M_1 M_2| \cdot |M_3 M_4|$.
+\end{lemma}
+
+\begin{remark}
+	Lemma~\ref{lem:count_of_points_on_hyperbolas} is one of the variations of~\cite{erdos1945integral},
+	\cite[TODO]{my-pps-linear-bound-2019}, etc.
+\end{remark}
+
+\begin{proof}
+	Each point $N\in M$ satisfies one of the following conditions:
+
+	a) $N$ belongs to $cr(M_1,M_2)$~--- overall at most 4 points;
+
+	b) $N$ belongs to $cr(M_3,M_4)$~--- overall at most 4 points;
+
+	c) $N$ belongs to the intersection of one of $|M_1 M_2| - 1$ hyperbolas
+	with one of $|M_3 M_4| - 1$ hyperbolas~--- overall at most $4 (|M_1 M_2| - 1)(|M_3 M_4| - 1)$ points;
+
+	Due to Lemma~\ref{lem:no_distance_one} we have $|M_1 M_2| \geq 2$ and $|M_3 M_4| \geq 2$.
+	Since
+	\begin{multline}
+		4 (|M_1 M_2| - 1)(|M_3 M_4| - 1) + 4 + 4
+		=
+		4 ( (|M_1 M_2| - 1)(|M_3 M_4| - 1) + 2)
+		=
+		4 ( |M_1 M_2| \cdot |M_3 M_4| + 1 - |M_1 M_2| - |M_3 M_4| + 2)
+		=
+		4 ( |M_1 M_2| \cdot |M_3 M_4| + 1 - |M_1 M_2| - |M_3 M_4| + 2)
+		=
+		4 ( |M_1 M_2| \cdot |M_3 M_4| + (1 - |M_1 M_2|) + (2 - |M_3 M_4|))
+		\leq
+		4 |M_1 M_2| \cdot |M_3 M_4|
+		,
+	\end{multline}
+	we are done.
+\end{proof}
+
+
+\section{The main result}
+
+\begin{theorem}
+	For every $n\in\mathbb{N}$ we have
+	\begin{equation}
+		\overline{d}(2,n) \geq c n^{5/4}
+		,
+	\end{equation}
+	where $c = $ TODO!
+\end{theorem}
+
+\begin{proof}
+	For $n = 3$ we have $\overline{d}(2,n) = 1$.
+	Consider $M\in\overline\mathfrak{M}(2,n)$, $n \geq 4$, $\operatorname{diam} M = p$.
+
+	Let us choose points $M_1, M_2, M_3, M_4 \in M$
+	(points $M_2$ and $M_3$ may coincide, other points may not), such that
+	\begin{equation}
+		\min_{A, B \in M} |AB| = |M_1 M_2|
+		,
+	\end{equation}
+	\begin{equation}
+		\min_{A, B \in M \setminus \{M_1\}} |AB| = |M_3 M_4| = m
+		.
+	\end{equation}
+
+	For $m \leq p^{2/5}$, Lemma~\ref{lem:count_of_points_on_hyperbolas} yields that
+	\begin{equation}
+		n \leq 4 \cdot |M_1 M_2| \cdot |M_3 M_4| \leq  4 p^{4/5}
+		,
+	\end{equation}
+	or, that is the same,
+	\begin{equation}
+		p \geq (n/4) ^ {5/4}
+		.
+	\end{equation}
+
+	So, let us consider $m > p^{2/5}$.
+	Due to Lemma~\ref{}
+
+\end{proof}
+
+\section{Conclusion}
+The presented bound is the first special lower bound for sets in semi-general position.
+Thus, we did not accepted the challenge to make the constant in Theorem~\ref{thm:main_result} as large as possible,
+in order to keep the ideas of the proof clear and understandable.
+A more thorough research can be done in the future to enlarge the constant.
+However, the upper and lower bounds are still not tight.
+
+\section{Acknowledgements}
+Author thanks Dr. Prof. E.M. Semenov for proofreading and valuable advice.
+
+
+\printbibliography
+
+\end{document}
