@@ -79,7 +79,7 @@ elements of $M$ are integers, and $M$ is not situated on a straight line.
 A planar integral point set is called to be in semi-general position, if it does not contain collinear triples.
 The existing bound for mininum diameter of planar integral point sets is linear.
 We prove a new bound for mininum diameter of planar integral point sets in semi-general position
-which is greater than linear.
+which is better than linear.
 
 
 
@@ -92,9 +92,11 @@ Kurz - about many collinear points
 
 Kurz - semi-general and general position, precise values
 
+
+The upper bound
 Piepmeyer(?) - upper bound \cite{harborth1993upper}
 
-Particular cases - Huff, Monographies (2?), my-amm, my-ped
+Particular cases - Huff, Monographies (2?), \cite{our-pmm-2018}, \cite{our-ped-2018}.
 
 
 \section{Preliminary results}
@@ -114,11 +116,17 @@ In this section, we give some lemmas which will be used for the proof.
 \end{definition}
 
 \begin{lemma}
-	TODO: cite Kvant
-
+	\cite{smurov1998stripcoverings}
 	If a triange $T$ with minimal height $\rho$ is situated in a strip,
 	then the width of a strip is at least $\rho$.
 \end{lemma}
+
+\begin{corollary}
+	\label{cor:solymosi_strip}
+	If a triangle $T$ with integer side-lengths $a \leq b \leq c$ is situated in a strip,
+	then the width of a strip is at least $\left(a - \frac{1}{4}\right)^{1/2}$.
+\end{corollary}
+
 
 \begin{lemma}
 	\cite[Lemma 4]{our-vmmsh-2018};
@@ -147,7 +155,7 @@ In this section, we give some lemmas which will be used for the proof.
 
 \begin{lemma}
 	\label{lem:count_of_points_on_hyperbolas}
-	Let $\{M_1, M_2, M_3, M_4\} \subset M\in\overline\mathfrak{M}(2,n)$
+	Let $\{M_1, M_2, M_3, M_4\} \subset M\in\overline{\mathfrak{M}}(2,n)$
 	(points $M_2$ and $M_3$ may coincide, other points may not), $n\geq 4$.
 	Then $\# M \leq 4 \cdot |M_1 M_2| \cdot |M_3 M_4|$.
 \end{lemma}
@@ -174,10 +182,10 @@ In this section, we give some lemmas which will be used for the proof.
 		=
 		4 ( (|M_1 M_2| - 1)(|M_3 M_4| - 1) + 2)
 		=
+		\\=
 		4 ( |M_1 M_2| \cdot |M_3 M_4| + 1 - |M_1 M_2| - |M_3 M_4| + 2)
 		=
-		4 ( |M_1 M_2| \cdot |M_3 M_4| + 1 - |M_1 M_2| - |M_3 M_4| + 2)
-		=
+		\\=
 		4 ( |M_1 M_2| \cdot |M_3 M_4| + (1 - |M_1 M_2|) + (2 - |M_3 M_4|))
 		\leq
 		4 |M_1 M_2| \cdot |M_3 M_4|
@@ -190,17 +198,18 @@ In this section, we give some lemmas which will be used for the proof.
 \section{The main result}
 
 \begin{theorem}
+	\label{thm:main_result}
 	For every $n\in\mathbb{N}$ we have
 	\begin{equation}
 		\overline{d}(2,n) \geq c n^{5/4}
 		,
 	\end{equation}
-	where $c = $ TODO!
+	where $c = 5^{-5/4}$.
 \end{theorem}
 
 \begin{proof}
-	For $n = 3$ we have $\overline{d}(2,n) = 1$.
-	Consider $M\in\overline\mathfrak{M}(2,n)$, $n \geq 4$, $\operatorname{diam} M = p$.
+	For $n = 3$ we have $\overline{d}(2,3) = 1$.
+	Consider $M\in\overline{\mathfrak{M}}(2,n)$, $n \geq 4$, $\operatorname{diam} M = p$.
 
 	Let us choose points $M_1, M_2, M_3, M_4 \in M$
 	(points $M_2$ and $M_3$ may coincide, other points may not), such that
@@ -220,14 +229,38 @@ In this section, we give some lemmas which will be used for the proof.
 	\end{equation}
 	or, that is the same,
 	\begin{equation}
-		p \geq (n/4) ^ {5/4}
+		\label{eq:hyperbolas_5_4}
+		p \geq (n/4) ^ {5/4} > (n/5) ^ {5/4}
 		.
 	\end{equation}
 
 	So, let us consider $m > p^{2/5}$.
-	Due to Lemma~\ref{}
+	Then for any $A,B \in M\setminus\{M_1\}$ the inequality $|AB| > p^{2/5}$ holds.
+	Due to Corollary~\ref{cor:solymosi_strip}, no three points of $M\setminus\{M_1\}$
+	are located in a strip of width $p^{1/5} / 2$.
 
+	Lemma~\ref{lem:square_container} yields that $M$ is situated in a square with side length $p$.
+	Let us partition this square into $q$ strips, $2p^{4/5} \leq q < 2p^{4/5} + 1$, each of width at most $p^{1/5} / 2$.
+	Every strip contains at most two points of  $M\setminus\{M_1\}$,
+	thus
+	\begin{equation}
+		\label{eq:strips_4_5}
+		n \leq 2(2p^{4/5} + 1) + 1
+		= 4p^{4/5}+3
+		\leq 5 p^{4/5}
+		.
+	\end{equation}
+	The latter inequality holds because $\overline{d}(2,n) \geq 4$ for $n\geq 4$ [TODO: Kurz!]
+	and $4^{4/5}>3$.
+	From the inequality~\eqref{eq:strips_4_5} one can easily derive that
+	\begin{equation}
+		\label{eq:strips_5_4}
+		p \geq (n/5) ^ {5/4}
+		.
+	\end{equation}
 \end{proof}
+
+%TODO: a remark on how to easily derive 6/5 from Solymosi's corollary.
 
 \section{Conclusion}
 The presented bound is the first special lower bound for sets in semi-general position.
