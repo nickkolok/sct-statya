@@ -1,0 +1,272 @@
+
+%%%%Page parameters
+\pagestyle{myheadings}
+
+\newtheorem{defin}{\indent {\sc Определение}
+\renewcommand{\thedefin}{\rm \arabic{defin}}}
+
+\newtheorem{theorem}{\indent {\sc Теорема}
+\renewcommand{\thetheorem}{\rm \arabic{theorem}}}
+\newtheorem{Theorem}{\indent {\sc Theorem}}
+\renewcommand{\theTheorem}{\rm \arabic{Theorem}}
+\newtheorem{proposition}{\indent {\sc Proposition}
+\renewcommand{\theproposition}{\rm \arabic{proposition}}}
+\newtheorem{pred}{\indent {\sc Предложение}
+\renewcommand{\thepred}{\rm \arabic{pred}}}
+\newtheorem{lemm}{\indent {\sc Лемма}
+\renewcommand{\thelemm}{\rm \arabic{lemm}}}
+\newtheorem{lemm*}{\indent \sc Лемма}
+
+\newtheorem{lemma}{\indent {\sc Lemma}
+\renewcommand{\thelemma}{\rm \arabic{lemma}}}
+\newtheorem{corollary}{\indent {\sc Следствие}}
+\renewcommand{\thecorollary}{\rm \arabic{corollary}}
+\newtheorem{note}{\indent {\sc Замечание}}
+\renewcommand{\thenote}{\rm \arabic{note}}
+\newtheorem{remark}{\indent {\sc Замечание}}
+\renewcommand{\theremark}{\rm \arabic{remark}}
+\newtheorem{example}{\indent {\sc Замечание}}
+\renewcommand{\theexample}{\rm \arabic{example}}
+\newtheorem{utv}{\indent {\sc Утверждение}
+\renewcommand{\theutv}{\rm \arabic{utv}}}
+\newtheorem{definition}{\indent {\sc Определение}}
+\renewcommand{\thedefinition}{\rm \arabic{definition}}
+\newtheorem{predl}{\indent {\sc Предложение}
+\renewcommand{\thepredl}{\rm \arabic{predl}}}
+\newtheorem{prim}{\indent {\sc Пример}
+\renewcommand{\theprim}{\rm \arabic{prim}}}
+\newtheorem{statement}{Утверждение}
+\newtheorem*{HYP}{Гипотеза}
+
+
+\newtheorem{alg}{\indent {\sc Алгоритм}
+\renewcommand{\thealg}{\rm \arabic{alg}}}
+
+\newcommand{\Li}{\mathop{\mathrm{Li}}\nolimits}
+
+%Добровольский=========================================
+\newcommand{\Doc}{{\sc Доказательство. }}
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+
+\newcommand{\tom}{00}
+\newcommand{\iss}{00}
+
+\textwidth=468pt \textheight=676,4pt
+
+\oddsidemargin -2mm
+\evensidemargin=-2mm
+%\oddsidemargin=-5mm \evensidemargin=-5mm
+
+\topmargin=-10mm
+\makeindex
+
+\tolerance=2000
+
+\def\@seccntformat#1{\csname the#1\endcsname.\ } % точка после номера раздела
+\def\@biblabel#1{#1.} % формат номеров в списке литературы
+
+\newtheoremstyle{ChS}% name of the style to be used
+  {}% measure of space to leave above the theorem. E.g.: 3pt
+  { }% measure of space to leave below the theorem. E.g.: 3pt
+  {\it}% name of font to use in the body of the theorem
+  { }% measure of space to indent
+  {\sc}% name of head font
+  {.}% punctuation between head and body
+  { }% space after theorem head; " " = normal interword space
+  { }% Manually specify head
+
+
+\newcommand{\UDK}[1]{\gdef\@UDK{#1}}
+\newcommand{\DOI}[1]{\gdef\@DOI{#1}}
+\renewcommand{\title}[2]{\gdef\@title{#1}\gdef\@entitle{#2}}
+\renewcommand{\author}[2]{\gdef\@author{#1}\gdef\@enauthor{#2}}
+%\newcommand{\grant}[1]{\gdef\@grant{#1}}
+\newcommand{\Abstract}[2]{\gdef\@abstract{#1}\gdef\@enabstract{#2}}
+\newcommand{\info}[2]{\gdef\@info{#1}\gdef\@eninfo{#2}}
+\newcommand{\keywords}[2]{\gdef\@keywords{#1}\gdef\@enkeywords{#2}}
+\newcommand{\Bibliography}[2]{\gdef\@bibl{#1}\gdef\@enbibl{#2}}
+\newcommand{\Cite}[2]{\gdef\@Cite{#1}\gdef\@enCite{#2}}
+
+\newcommand{\Org}{\noindent}
+
+\renewenvironment{thebibliography}[1]
+     {\section*{\large СПИСОК ЦИТИРОВАННОЙ ЛИТЕРАТУРЫ}%
+      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+\newenvironment{engbibliography}[1]
+     {\section*{\large REFERENCES}%
+      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+
+\newcommand{\prvkolonttl}[1]{%
+     \renewcommand{\@oddhead}%
+          {\raisebox{0pt}[\headheight][0pt]{%
+          {\vbox{\hbox to \textwidth{%
+          {\hfil \strut #1  \hfil}%
+          {\thepage}} \hrule}}%
+          }}}
+
+\newcommand{\levkolonttl}[1]{%
+     \renewcommand{\@evenhead}%
+          {\raisebox{0pt}[\headheight][0pt]{%
+          {\vbox{\hbox to \textwidth{\thepage \hfil \strut #1  \hfil}%
+          \hrule}}%
+          }}}
+
+\newenvironment{oglavlenie}%
+      {\begin{list}{}{\leftmargin=1.5em\itemindent=-1.5em}%
+       \item{}}%
+       {\end{list}}
+%\renewcommand{\theorem@headerfont}{\normalfont\rmseries}
+\if@titlepage
+  \newenvironment{engabstract}{%
+      \titlepage
+      \null\vfil
+      \@beginparpenalty\@lowpenalty
+      \begin{center}%
+        {\bfseries Abstract}
+        \@endparpenalty\@M
+      \end{center}}%
+     {\par\vfil\null\endtitlepage}
+\else
+  \newenvironment{engabstract}{%
+      \if@twocolumn
+        \section*{\abstractname}%
+      \else
+        \small
+        \begin{center}%
+          {\bfseries Abstract\vspace{-.5em}\vspace{\z@}}%
+        \end{center}%
+        \quotation
+      \fi}
+      {\if@twocolumn\else\endquotation\fi}
+\fi
+
+
+\renewcommand{\maketitle}{%
+
+\setcounter{equation}{0}
+
+\setcounter{theorem}{0}
+\setcounter{Theorem}{0}
+\setcounter{lemm}{0}
+\setcounter{lemma}{0}
+\setcounter{corollary}{0}
+
+\setcounter{footnote}{0}
+\setcounter{figure}{0}
+
+\setcounter{section}{0}
+\setcounter{pred}{0}
+\setcounter{defin}{0}
+\setcounter{note}{0}
+
+\newpage
+\begin{center}
+{\Large ЧЕБЫШЕВСКИЙ СБОРНИК
+
+\medskip
+ Том \tom. Выпуск \iss.}
+
+\line(1,0){250}
+\end{center}
+
+\begin{tabular}{p{7.5cm}p{7.5cm}}
+    % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  УДК \@UDK & DOI \@DOI\!\!\! \\
+\end{tabular}
+
+\begin{center}
+{\Large\textbf{\@title
+%\footnote{\@grant}
+}
+}
+\end{center}
+
+\smallskip
+\@info
+
+\begin{abstract}
+\@abstract
+
+\medskip
+{\it Ключевые слова:} \@keywords
+
+\medskip
+{\it Библиография:} \@bibl
+\end{abstract}
+
+\noindent {\bf Для цитирования:}
+
+\noindent \@Cite
+
+}
+
+\newcommand{\enmaketitle}{%
+\begin{center}
+{\Large CHEBYSHEVSKII SBORNIK
+
+\medskip
+ Vol. \tom. No. \iss.}
+
+\line(1,0){250}
+\end{center}
+
+\begin{tabular}{p{7.5cm}p{7.5cm}}
+    % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  UDC \@UDK & DOI \@DOI\!\!\! \\
+\end{tabular}
+
+\begin{center}
+{\Large\textbf{\@entitle}}
+\end{center}
+
+\smallskip
+\@eninfo
+
+\begin{engabstract}
+\@enabstract
+
+\medskip
+{\it Keywords:} \@enkeywords
+
+\medskip
+{\it Bibliography:} \@enbibl
+\end{engabstract}
+
+\noindent {\bf For citation:}
+
+\noindent \@enCite
+
+}

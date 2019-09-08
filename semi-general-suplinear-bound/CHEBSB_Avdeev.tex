@@ -1,0 +1,120 @@
+\documentclass[11pt,twoside,draft
+]{article}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,indentfirst,enumerate,textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage{chebsb}
+\usepackage[russian]{babel}
+\usepackage{indentfirst, array}
+\usepackage{amscd,latexsym}
+\usepackage{mathrsfs}
+%\usepackage[ruled, linesnumbered]{algorithm2e}
+\usepackage{tabularx}
+\usepackage{multirow}
+
+\usepackage{graphicx}
+\usepackage{textcase}% Оформление страниц
+
+
+\label{beg}
+% заглавие стати и аннотация
+
+\levkolonttl{%левый колонтитул - авторы
+И.~И.~Иванов}
+\prvkolonttl{%правый колонтитул - сокращенное название статьи
+О квадратах и кубиках \ldots}
+
+\UDK{% УДК статьи
+517}
+
+\DOI{
+10.22405/2226-8383-2018-\tom-\iss-\pageref{beg}-\pageref{end}
+}
+
+\title
+{%название статьи на русском языке с указанием источника финансирования при необходимости
+О квадратах и кубиках в множествах конечного поля\footnote{Исследование выполнено за счет гранта Российского научного фонда (проект ХХ-ХХ-ХХХХХ).}}
+{%название статьи на английском языке
+On the squares and cubes in the set of finite fields}
+
+\author
+{%авторы статьи с указанием города на русском языке
+И. И. Иванов (г. Москва)}
+{%авторы статьи с указанием города на английском языке
+I. I. Ivanov (Moscow)}
+
+\Cite{
+И. И. Иванов О квадратах и кубиках в множествах конечного поля // Чебышевcкий сборник, 2019, т.~\tom, вып.~\iss, с.~\pageref{beg}--\pageref{end}.
+}
+{I. I. Ivanov, 2019, "On the squares and cubes in the set of finite fields"\,, {\it Che\-by\-shev\-skii sbornik}, vol.~\tom, no.~\iss, pp.~\pageref{beg}--\pageref{end}.
+}
+
+\info
+{%авторы статьи с указанием аффилиации на русском языке
+\noindent {\bf И. И. Иванов}~---
+
+\noindent
+\emph{e-mail: ---}
+
+
+}
+{%авторы статьи с указанием аффилиации на английском языке
+\noindent {\bf I. I. Ivanov}~---
+
+\noindent
+\emph{e-mail: ---}
+
+}
+
+\Abstract
+{%Аннотация статьи на русском языке 150-250 слов с учетом ключевых слов
+В статье...
+}
+{%Аннотация статьи на английском языке
+In paper...
+}
+
+\keywords
+{%ключевые слова на русском языке
+конечные поля, квадраты, суммы.
+}
+{%ключевые слова на английском языке
+finite fields, squares, sums.
+}
+
+%число наименований в библиографии
+\Bibliography{18 названий.}{18 titles.}
+
+\begin{document}
+
+%генерация заглавия статьи
+\maketitle
+
+\enmaketitle
+
+\section{Введение}
+
+\section{Основной текст статьи}
+
+\section{Заключение}
+
+%библиография по ГОСТу
+\begin{thebibliography}{99}
+	
+	\bibitem{1}
+	Banks~W.\,D., Conflitti~A., Shparlinski~I.\,E. Character sums over integers with restricted $g$-ary digits // Illinois J. Math. 2002. Vol. 46, №3. P. 819-836.
+		
+
+\end{thebibliography}
+
+
+%библиография по Гарвардскому стандарту
+\begin{engbibliography}{99}
+	
+	\bibitem{en1}
+	Banks, W.\,D., Conflitti, A. \& Shparlinski, I.\,E. 2002, ``Character sums over integers with restricted $g$-ary digits``, \textit{Illinois J. Math.}, vol. 46, no. 3, pp. 819-836.
+
+\end{engbibliography}
+
+\label{end}
+
+\end{document} 
