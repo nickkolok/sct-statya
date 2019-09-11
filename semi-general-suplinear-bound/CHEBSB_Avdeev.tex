@@ -33,19 +33,23 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Автоматическая нумерация теорем (коль скоро подключен amsthm)
-\theoremstyle{plain}
-%\newtheorem{theorem}{Theorem}[section]
-%\newtheorem{conjecture}[theorem]{Conjecture}
-%\newtheorem{lemma}[theorem]{Lemma}
-%\newtheorem{corollary}[theorem]{Corollary}
-%\newtheorem{proposition}[theorem]{Proposition}
 
-%\theoremstyle{definition}
-%\newtheorem{definition}[theorem]{Definition}
-%\newtheorem{construction}[theorem]{Construction}
-%\newtheorem{remark}[theorem]{Remark}
-%\newtheorem{problem}[theorem]{Problem}
+% К сожалению, английского ``Definition'' в стилевом файле нет.
+% Добавляю по аналогии.
+\newtheorem{Definition}{\indent {\sc Definition}}
+\renewcommand{\theDefinition}{\rm \arabic{Definition}}
+
+\newtheorem{Corollary}{\indent {\sc Corollary}}
+\renewcommand{\theCorollary}{\rm \arabic{Corollary}}
+
+\newtheorem{Remark}{\indent {\sc Remark}}
+\renewcommand{\theRemark}{\rm \arabic{Remark}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
 
 \label{beg}
 % заглавие стати и аннотация
@@ -188,12 +192,12 @@ and even for 4 points out of the line~\cite{huff1948diophantine}.
 For $9\leq n\leq 122$, the minimal possible diameter is achieved at a facher set~\cite{kurz2008bounds}.
 
 
-\begin{definition}
+\begin{Definition}
 	A set $M\in\mathfrak{M}(2,n)$ is called to be in \textit{semi-general position},
 	if no three points of $M$ are collinear.
 	The set of all planar integral point sets in semi-general position
 	is denoted by $\overline{\mathfrak{M}}(2,n)$.
-\end{definition}
+\end{Definition}
 
 Furthermore, the constructions of integral point sets in semi-general position of arbitrary cardinality
 appeared~\cite{harborth1993upper};
@@ -203,12 +207,12 @@ that gives the possible numbers of odd integral distances
 between points in the plane~\cite{piepmeyer1996maximum}.
 
 
-\begin{definition}
+\begin{Definition}
 	A set $M\in\overline{\mathfrak{M}}(2,n)$ is called to be in \textit{general position},
 	if no four points of $M$ are concyclic.
 	The set of all planar integral point sets in general position
 	is denoted by $\dot{\mathfrak{M}}(2,n)$.
-\end{definition}
+\end{Definition}
 
 It remains unknown if there are integral points sets in general position of arbitrary cardinality;
 however, some sets $M\in \dot{\mathfrak{M}}(2,7)$ are known~\cite{kreisel2008heptagon,kurz2013constructing}.
@@ -239,7 +243,7 @@ the largest known value for $c_1$ is $5/11$ for $n\geq 4$~\cite{my-pps-linear-bo
 There are some bounds for minimal diameter of planar integral point sets in some special positions.
 Assuming that the planar integral point sets contains many collinear points,
 the following result holds.
-\begin{theorem}~\cite[Theorem 4]{kurz2008minimum}
+\begin{Theorem}~\cite[Theorem 4]{kurz2008minimum}
 	For $\delta > 0$, $\varepsilon > 0$, and $P\in\mathfrak{M}(2,n)$ with
 	at least $n^\delta$ collinear points, there exists a $n_0 (\varepsilon)$
 	such that for all $n \geq n_0 (\varepsilon)$ we have
@@ -247,7 +251,7 @@ the following result holds.
 		\operatorname{diam} P \geq n^{\frac{\delta}{4 \log 2(1+\varepsilon)}\log \log n}
 		.
 	\end{equation}
-\end{theorem}
+\end{Theorem}
 For diameter bounds for circular sets, we refer the reader to~\cite{bat2018number}.
 
 Particular cases of planar integral point sets are also discussed
@@ -270,10 +274,10 @@ In this section, we give some lemmas which will be used for the proof.
 	then the minimal height $m$ of it is at least $\left(a - \frac{1}{4}\right)^{1/2}$.
 \end{lemma}
 
-\begin{definition}
+\begin{Definition}
 	The part of a plane between two parallel straight lines with distance $\rho$ between the lines
 	is called a strip of width $\rho$.
-\end{definition}
+\end{Definition}
 
 \begin{lemma}
 	\cite{smurov1998stripcoverings}
@@ -281,11 +285,11 @@ In this section, we give some lemmas which will be used for the proof.
 	then the width of a strip is at least $\rho$.
 \end{lemma}
 
-\begin{corollary}
+\begin{Corollary}
 	\label{cor:solymosi_strip}
 	If a triangle $T$ with integer side-lengths $a \leq b \leq c$ is situated in a strip,
 	then the width of a strip is at least $\left(a - \frac{1}{4}\right)^{1/2}$.
-\end{corollary}
+\end{Corollary}
 
 
 \begin{lemma}
@@ -296,12 +300,12 @@ In this section, we give some lemmas which will be used for the proof.
 	Then $M$ is situated in a square of side length $d$.
 \end{lemma}
 
-\begin{definition}
+\begin{Definition}
 	\cite[Definition 2.5]{my-pps-linear-bound-2019}
 	A \textit{cross} for points $M_1$ and $M_2$, denoted by $cr(M_1,M_2)$, is the union of two straight lines:
 	the line through $M_1$ and $M_2$,
 	and the perpendicular bisector of line segment $M_1 M_2$.
-\end{definition}
+\end{Definition}
 
 \begin{lemma}
 	\cite[Theorem 3.10]{my-pps-linear-bound-2019}
@@ -320,9 +324,9 @@ In this section, we give some lemmas which will be used for the proof.
 	Then $\# M \leq 4 \cdot |M_1 M_2| \cdot |M_3 M_4|$.
 \end{lemma}
 
-\begin{remark}
+\begin{Remark}
 	Lemma~\ref{lem:count_of_points_on_hyperbolas} is one of the variations of~\cite{erdos1945integral}.
-\end{remark}
+\end{Remark}
 
 \begin{proof}
 	Each point $N\in M$ satisfies one of the following conditions:
@@ -356,14 +360,14 @@ In this section, we give some lemmas which will be used for the proof.
 
 \section{The main result}
 
-\begin{theorem}
+\begin{Theorem}
 	\label{thm:main_result}
 	For every integer $n \geq 3$ we have
 	\begin{equation}
 		\overline{d}(2,n) \geq (n/5)^{5/4}
 		.
 	\end{equation}
-\end{theorem}
+\end{Theorem}
 
 \begin{proof}
 	For $n = 3$ we have $\overline{d}(2,3) = 1$.
@@ -425,9 +429,9 @@ In this section, we give some lemmas which will be used for the proof.
 
 
 
-\begin{remark}
+\begin{Remark}
 	The following result in known:
-\end{remark}
+\end{Remark}
 
 \begin{lemma}
 	\cite[Corollary 1]{solymosi2003note}
