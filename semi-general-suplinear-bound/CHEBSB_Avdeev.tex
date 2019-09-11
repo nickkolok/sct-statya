@@ -17,21 +17,6 @@
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% {{ biblatex
-%% Команда \Cite (с большой буквы) у biblatex своя.
-%% Сохраняем "нашу"
-\let\CiteChebSb=\Cite
-%% Убираем \Cite
-\let\Cite=\relax
-%% Вот теперь смело загружаем biblatex
-\usepackage[backend=biber,style=gost-numeric,sorting=none,dashed=false]{biblatex}
-%\usepackage[backend=biber,style=bath,sorting=ynt]{biblatex}
-\addbibresource{../common/notmy.bib}
-\addbibresource{../common/my.bib}
-%% Восстанавливаем "нашу" \Cite
-\let\Cite=\CiteChebSb
-%% }} biblatex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Автоматическая нумерация теорем (коль скоро подключен amsthm)
@@ -49,27 +34,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
-
-\defbibenvironment{thebibliography}
-  {\textbackslash begin\{thebibliography\}\{99\}
-   % Page numbers and page headings are not wanted when copying
-   \thispagestyle{empty}
-   \pagestyle{empty}
-   \hyphenpenalty=10000
-   \exhyphenpenalty=10000
-   \renewcommand*{\&}{\textbackslash \symbol{38}}%
-   \renewcommand*{\mkbibemph}[1]{\textbackslash emph\{##1\}}%
-   \renewcommand*{\mkbibitalic}[1]{\textbackslash textit\{##1\}}%
-   \renewcommand*{\mkbibbold}[1]{\textbackslash textbf\{##1\}}%
-   \list{}{}}
-  {\endlist
-   \textbackslash end\{thebibliography\}
-   \thispagestyle{empty}
-   \pagestyle{empty}
-  }
-  {\item\textbackslash bibitem\{\printfield{entrykey}\}\\}
 
 
 
@@ -485,11 +449,6 @@ However, the upper and lower bounds are still not tight.
 Author thanks Dr. Prof. E.M. Semenov for proofreading and valuable advice.
 
 
-%\printbibliography
-
-%\selectlanguage{english}
-%\printbibliography[env=thebibliography]
-
 %библиография по ГОСТу
 
 % Мне библиографию в требуемом формате сгенерировал biblatex:
@@ -497,13 +456,6 @@ Author thanks Dr. Prof. E.M. Semenov for proofreading and valuable advice.
 
 \input{blg-GOST}
 
-%\begin{thebibliography}{99}
-%
-%	\bibitem{1}
-%	Banks~W.\,D., Conflitti~A., Shparlinski~I.\,E. Character sums over integers with restricted $g$-ary digits // Illinois J. Math. 2002. Vol. 46, №3. P. 819-836.
-%
-%
-%\end{thebibliography}
 
 
 %библиография по Гарвардскому стандарту
@@ -511,12 +463,6 @@ Author thanks Dr. Prof. E.M. Semenov for proofreading and valuable advice.
 \input{blg-Harvard}
 
 
-%\begin{engbibliography}{99}
-%
-%	\bibitem{en1}
-%	Banks, W.\,D., Conflitti, A. \& Shparlinski, I.\,E. 2002, ``Character sums over integers with restricted $g$-ary digits``, \textit{Illinois J. Math.}, vol. 46, no. 3, pp. 819-836.
-%
-%\end{engbibliography}
 
 \label{end}
 
