@@ -161,6 +161,9 @@ TSWLatexianTemp*
 # gedit temporary files
 *~
 
+# LibreOffice temporary files
+*.fodt#
+
 # don't know whose temp files these are
 .goutputstream-*
 
