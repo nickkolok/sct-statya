@@ -41,7 +41,7 @@
 
 Avdeev N.N., Zvolinsky R.E., Momot E.A.
 
-Better linear lower bound for integral point sets
+On particular diameter bounds for integral point sets in higher dimensions
 
 
 \section{Introduction}
@@ -176,9 +176,9 @@ There is an important subclassof scissors sets.
 	is called a \textit{pyramid} set.
 \end{dfn}
 
-TODO: rephrase?
+%TODO: rephrase?
 
-TODO: can a scissors set have another axis of symmetry?
+%TODO: can a scissors set have another axis of symmetry?
 
 \subsection{Other integral point sets}
 
@@ -199,7 +199,7 @@ of integral point sets~\cite{harborth1993upper,piepmeyer1996maximum,bat2018numbe
 These six classes dominate among all the known planar integral point sets;
 however, some sophisticated constructions are also known.
 
-TODO: pictures!
+%TODO: pictures!
 
 \section{Bounds based on rails sets}
 
@@ -1067,6 +1067,19 @@ d(m, 4m + 1) \leq 1260
 Figure~\ref{picture_1260_R3.pdf} shows an example for $m = 3$.
 
 \end{itemize}
+
+\section{Final remarks}
+All the given PIPSs were obtained through a combination of computer search an intuition of the authors;
+so, the further search may lead to better bounds employing the same consructions.
+
+There is still no general construction for a rails or scissors PIPS of given cardinality.
+For rails PIPSs, we can conjecture that there exists a set of arbitrary cardinality with 2 points on one line
+and all the rest on the other;
+on the other hand, we still have not found any rails PIPSs with 4 and 5 points on the lines.
+
+As for today, we have found pyramid PIPS of cardinality at most 9.
+
+The source code can be obtained at https://gitlab.com/Nickkolok/ips-algo
 
 \bibliography{literature}
 
