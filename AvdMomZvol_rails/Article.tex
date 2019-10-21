@@ -6,10 +6,16 @@
 \usepackage{dsfont}
 \usepackage{amsthm}
 \inputencoding{utf8}
-\bibliographystyle{unsrt}
+%\bibliographystyle{unsrt}
 \textheight=240mm \textwidth=170mm
 \hoffset=-17mm
 \voffset=-17mm
+
+
+\usepackage[backend=biber,style=gost-numeric,sorting=none]{biblatex}
+\addbibresource{../common/notmy.bib}
+\addbibresource{../common/my.bib}
+
 
 \usepackage{hyperref}
 
@@ -35,13 +41,27 @@
 \selectlanguage{english}
 
 
-\begin{center}
-\emph{Voronezh State University}
-\end{center}
 
-Avdeev N.N., Zvolinsky R.E., Momot E.A.
 
-On particular diameter bounds for integral point sets in higher dimensions
+\title{
+	On particular diameter bounds for integral point sets in higher dimensions
+	%\footnote{
+	%	This work was carried out at Voronezh State University and supported by the Russian Science
+	%	Foundation grant 19-11-00197.
+	%}
+}
+
+%% Прекрасно понимаю, что следующая команда - дичь и вордописчество, но время не ждёт, время жмёт
+\author{
+	Avdeev N.N.
+	\footnote{nickkolok@mail.ru, avdeev@math.vsu.ru}
+	, Zvolinsky R.E., Momot E.A.
+	\\
+	\\
+	\emph{Voronezh State University}
+}
+
+\maketitle
 
 
 \section{Introduction}
@@ -117,8 +137,8 @@ and the following theorem \cite[Theorem 2.1]{kurz2008bounds}.
 
 \begin{theorem}
 	Let $\mathcal{P}$ be a planar integral point set consisting of
-	$n - 2$ points on line $l$ and two points $P_{1}$ and $P_{2}$ on a
-	parallel line $m$ with distance $r$ between $l_{1}$ and $l_{2}$. If there
+	$n - 2$ points on line $l_1$ and two points $P_{1}$ and $P_{2}$ on a
+	parallel line $l_2$ with distance $r$ between $l_{1}$ and $l_{2}$. If there
 	exist positive integers $v$, $w$ with $f^{2} + v^{2}
 	= w^{2}$ and $v < 2r$, where $|P_{1}P_{2}| = f$,
 	then
@@ -1081,6 +1101,7 @@ As for today, we have found pyramid PIPS of cardinality at most 9.
 
 The source code can be obtained at https://gitlab.com/Nickkolok/ips-algo
 
-\bibliography{literature}
+\printbibliography
+%\bibliography{literature}
 
 \end{document}
