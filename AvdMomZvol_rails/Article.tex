@@ -144,7 +144,7 @@ and the following theorem \cite[Theorem 2.1]{kurz2008bounds}.
 	then
 
 	\begin{equation}\label{formula1}
-		d(m, n - 2 + 2(m - 2)) \leq \max(w, \operatorname{diam(\mathcal{P})})
+		d(m, n + 2(m - 2)) \leq \max(w, \operatorname{diam(\mathcal{P})})
 	\end{equation}
 
 \end{theorem}
@@ -237,13 +237,13 @@ Theorem \cite[Theorem 2.1]{kurz2008bounds} can be generalized as follows:
 	then
 
 	\begin{equation}
-		d(m, n - k + k(m - k)) \leq \max(w_{1k}, \operatorname{diam(\mathcal{P})})
+		d(m, n + k(m - 2)) \leq \max(w_{1k}, \operatorname{diam(\mathcal{P})})
 	\end{equation}
 
 \end{theorem}
 
 Below we give the planar integral point sets and the corresponding
-estimates of the function $d(m, n)$ for $n = 2m + k$, $3 \leq k \leq 24$.
+estimates of the function $d(m, n)$ for $n = 2m + k$, $3 \leq k \leq 36$.
 For convenience, we use the notation \cite{our-ped-2018,our-pmm-2018,our-vmmsh-2018}:
 $\sqrt{p}/q * \{ (x_1,y_1), ...,$ $ (x_n, y_n)  \}$,
 which means that each abscissa is multiplied by $1/q$
@@ -257,18 +257,50 @@ $$
 \begin{itemize}
 \setlength{\itemsep}{-1mm}
 
-
 \begin{figure}[htbp]
-	\includegraphics[width=.48\linewidth]{picture_2.png}
+	\includegraphics[width=.48\linewidth]{picture_d17.png}
 	\hfill
-	\includegraphics[width=.48\linewidth]{picture_3.png}
+	\includegraphics[width=.48\linewidth]{picture_d21.png}
 	\\
-	\parbox{.48\linewidth}{\caption{PIPS of cardinality 9 and diameter 158}
-	\label{picture_2.png}}
+	\parbox{.48\linewidth}{\caption{PIPS of cardinality 7 and diameter 17}
+	\label{picture_d17.png}}
 	\hfill
-	\parbox{.48\linewidth}{\caption{PIPS of cardinality 10 and diameter 158}
-	\label{picture_3.png}}
+	\parbox{.48\linewidth}{\caption{PIPS of cardinality 8 and diameter 21}
+	\label{picture_d21.png}}
 \end{figure}
+
+
+\item
+$\mathcal{P}=\sqrt{315}/{2} * \{ (13, 1),
+(29, 1),
+(0, 0),
+(10, 0),
+(16, 0),
+(26, 0),
+(32, 0)\}
+$
+(Figure~\ref{picture_d17.png})
+
+$f = 8$, $v = 6$, $w = 10$, $\operatorname{diam(\mathcal{P})} = 17$,
+
+which gives $d(m, 2m + 3) \leq 17$.
+
+
+\item
+$\mathcal{P}=\sqrt{315}/{2} * \{ (13, 1),
+(29, 1),
+(0, 0),
+(10, 0),
+(16, 0),
+(26, 0),
+(32, 0),
+(42, 0)\}
+$
+(Figure~\ref{picture_d21.png})
+
+$f = 8$, $v = 6$, $w = 10$, $\operatorname{diam(\mathcal{P})} = 21$,
+
+which gives $d(m, 2m + 4) \leq 21$.
 
 
 \item
@@ -282,7 +314,7 @@ $
 
 $f = 88$, $v = 66$, $w = 110$, $\operatorname{diam(\mathcal{P})} = 158$,
 
-which gives $d(m, 2m + 3) \leq 158$.
+which gives $d(m, 2m + 5) \leq 158$.
 
 
 \item
@@ -296,7 +328,20 @@ $
 
 $f = 88$, $v = 66$, $w = 110$, $\operatorname{diam(\mathcal{P})} = 158$,
 
-which gives $d(m, 2m + 4) \leq 158$.
+which gives $d(m, 2m + 6) \leq 158$.
+
+
+\begin{figure}[h!]
+	\includegraphics[width=.48\linewidth]{picture_2.png}
+	\hfill
+	\includegraphics[width=.48\linewidth]{picture_3.png}
+	\\
+	\parbox{.48\linewidth}{\caption{PIPS of cardinality 9 and diameter 158}
+	\label{picture_2.png}}
+	\hfill
+	\parbox{.48\linewidth}{\caption{PIPS of cardinality 10 and diameter 158}
+	\label{picture_3.png}}
+\end{figure}
 
 
 \item
@@ -311,7 +356,7 @@ $
 
 $f = 99$, $v = 20$, $w = 101$, $\operatorname{diam(\mathcal{P})} = 252$,
 
-which gives $d(m, 2m + 5) \leq 252$.
+which gives $d(m, 2m + 7) \leq 252$.
 
 
 \begin{figure}[htbp]
@@ -339,7 +384,7 @@ $
 
 $f = 99$, $v = 20$, $w = 101$, $\operatorname{diam(\mathcal{P})} = 297$,
 
-which gives $d(m, 2m + 6) \leq 297$.
+which gives $d(m, 2m + 8) \leq 297$.
 
 
 \item
@@ -358,12 +403,12 @@ $
 
 $f = 200$, $v = 45$, $w = 205$, $\operatorname{diam(\mathcal{P})} = 1073$,
 
-which gives $d(m, 2m + 7) \leq 1073$.
+which gives $d(m, 2m + 9) \leq 1073$.
 
 
 \begin{figure}[h!]
 \center{\includegraphics[width=0.7\linewidth]{picture_6.png}}
-\parbox{0.7\linewidth}{\caption{IPS of cardinality 13 and diameter 1073}
+\parbox{0.7\linewidth}{\caption{PIPS of cardinality 13 and diameter 1073}
 \label{picture_6.png}}
 \end{figure}
 
@@ -384,7 +429,14 @@ $
 
 $f = 200$, $v = 45$, $w = 205$, $\operatorname{diam(\mathcal{P})} = 1273$,
 
-which gives $d(m, 2m + 8) \leq 1273$.
+which gives $d(m, 2m + 10) \leq 1273$.
+
+
+\begin{figure}[h!]
+\center{\includegraphics[width=0.7\linewidth]{picture_7.png}}
+\parbox{0.7\linewidth}{\caption{PIPS of cardinality 14 and diameter 1273}
+\label{picture_7.png}}
+\end{figure}
 
 
 \item
@@ -404,19 +456,12 @@ $
 
 $f = 1105$, $v = 300$, $w = 1145$, $\operatorname{diam(\mathcal{P})} = 1888$,
 
-which gives $d(m, 2m + 9) \leq 1888$.
-
-
-\begin{figure}[h!]
-\center{\includegraphics[width=0.7\linewidth]{picture_7.png}}
-\parbox{0.7\linewidth}{\caption{IPS of cardinality 14 and diameter 1273}
-\label{picture_7.png}}
-\end{figure}
+which gives $d(m, 2m + 11) \leq 1888$.
 
 
 \begin{figure}[h!]
 \center{\includegraphics[width=0.75\linewidth]{picture_8.png}}
-\parbox{0.75\linewidth}{\caption{IPS of cardinality 15 and diameter 1888}
+\parbox{0.75\linewidth}{\caption{PIPS of cardinality 15 and diameter 1888}
 \label{picture_8.png}}
 \end{figure}
 
@@ -438,12 +483,12 @@ $
 
 $f = 1105$, $v = 300$, $w = 1145$, $\operatorname{diam(\mathcal{P})} = 2189$,
 
-which gives $d(m, 2m + 10) \leq 2189$.
+which gives $d(m, 2m + 12) \leq 2189$.
 
 
 \begin{figure}[h!]
 \center{\includegraphics[width=0.75\linewidth]{picture_9.png}}
-\parbox{0.75\linewidth}{\caption{IPS of cardinality 16 and diameter 2189}
+\parbox{0.75\linewidth}{\caption{PIPS of cardinality 16 and diameter 2189}
 \label{picture_9.png}}
 \end{figure}
 
@@ -466,12 +511,12 @@ $
 
 $f = 1748$, $v = 336$, $w = 1780$, $\operatorname{diam(\mathcal{P})} = 3224$,
 
-which gives $d(m, 2m + 11) \leq 3224$.
+which gives $d(m, 2m + 13) \leq 3224$.
 
 
 \begin{figure}[h!]
 \center{\includegraphics[width=0.85\linewidth]{picture_13.png}}
-\parbox{0.85\linewidth}{\caption{IPS of cardinality 17 and diameter 3224}
+\parbox{0.85\linewidth}{\caption{PIPS of cardinality 17 and diameter 3224}
 \label{picture_13.png}}
 \end{figure}
 
@@ -494,12 +539,12 @@ $
 
 $f = 1748$, $v = 336$, $w = 1780$, $\operatorname{diam(\mathcal{P})} = 3696$,
 
-which gives $d(m, 2m + 12) \leq 3696$.
+which gives $d(m, 2m + 14) \leq 3696$.
 
 
 \begin{figure}[h!]
 \center{\includegraphics[width=0.85\linewidth]{picture_14.png}}
-\parbox{0.85\linewidth}{\caption{IPS of cardinality 18 and diameter 3696}
+\parbox{0.85\linewidth}{\caption{PIPS of cardinality 18 and diameter 3696}
 \label{picture_14.png}}
 \end{figure}
 
@@ -523,12 +568,12 @@ $
 
 $f = 1748$, $v = 336$, $w = 1780$, $\operatorname{diam(\mathcal{P})} = 5141$,
 
-which gives $d(m, 2m + 13) \leq 5141$.
+which gives $d(m, 2m + 15) \leq 5141$.
 
 
 \begin{figure}[h!]
 \center{\includegraphics[width=1\linewidth]{picture_15.png}}
-\parbox{1\linewidth}{\caption{IPS of cardinality 19 and diameter 5141}
+\parbox{1\linewidth}{\caption{PIPS of cardinality 19 and diameter 5141}
 \label{picture_15.png}}
 \end{figure}
 
@@ -552,12 +597,12 @@ $
 
 $f = 1748$, $v = 336$, $w = 1780$, $\operatorname{diam(\mathcal{P})} = 6586$,
 
-which gives $d(m, 2m + 14) \leq 6586$.
+which gives $d(m, 2m + 16) \leq 6586$.
 
 
 \begin{figure}[h!]
 \center{\includegraphics[width=1\linewidth]{picture_16.png}}
-\parbox{1\linewidth}{\caption{IPS of cardinality 20 and diameter 6586}
+\parbox{1\linewidth}{\caption{PIPS of cardinality 20 and diameter 6586}
 \label{picture_16.png}}
 \end{figure}
 
@@ -582,7 +627,7 @@ $
 
 $f = 5244$, $v = 1008$, $w = 5340$, $\operatorname{diam(\mathcal{P})} = 11692$,
 
-which gives $d(m, 2m + 15) \leq 11692$.
+which gives $d(m, 2m + 17) \leq 11692$.
 
 
 \item
@@ -605,12 +650,12 @@ $
 
 $f = 5244$, $v = 1008$, $w = 5340$, $\operatorname{diam(\mathcal{P})} = 12296$,
 
-which gives $d(m, 2m + 16) \leq 12296$.
+which gives $d(m, 2m + 18) \leq 12296$.
 
 
 \begin{figure}[h!]
 \center{\includegraphics[width=0.75\linewidth]{picture_17.png}}
-\parbox{0.75\linewidth}{\caption{IPS of cardinality 21 and diameter 11692}
+\parbox{0.75\linewidth}{\caption{PIPS of cardinality 21 and diameter 11692}
 \label{picture_17.png}}
 \end{figure}
 
@@ -636,12 +681,12 @@ $
 
 $f = 5244$, $v = 1008$, $w = 5340$, $\operatorname{diam(\mathcal{P})} = 16027$,
 
-which gives $d(m, 2m + 17) \leq 16027$.
+which gives $d(m, 2m + 19) \leq 16027$.
 
 
 \begin{figure}[h!]
 \center{\includegraphics[width=0.75\linewidth]{picture_18.png}}
-\parbox{0.75\linewidth}{\caption{IPS of cardinality 22 and diameter 12296}
+\parbox{0.75\linewidth}{\caption{PIPS of cardinality 22 and diameter 12296}
 \label{picture_18.png}}
 \end{figure}
 
@@ -667,12 +712,12 @@ $
 
 $f = 5244$, $v = 1008$, $w = 5340$, $\operatorname{diam(\mathcal{P})} = 19758$,
 
-which gives $d(m, 2m + 18) \leq 19758$.
+which gives $d(m, 2m + 20) \leq 19758$.
 
 
 \begin{figure}[h!]
 \center{\includegraphics[width=0.85\linewidth]{picture_19.png}}
-\parbox{0.85\linewidth}{\caption{IPS of cardinality 23 and diameter 16027}
+\parbox{0.85\linewidth}{\caption{PIPS of cardinality 23 and diameter 16027}
 \label{picture_19.png}}
 \end{figure}
 
@@ -702,20 +747,13 @@ $
 
 $f = 10488$, $v = 1015$, $w = 10537$, $\operatorname{diam(\mathcal{P})} = 32054$,
 
-which gives $d(m, 2m + 19) \leq 32054$.
+which gives $d(m, 2m + 21) \leq 32054$.
 
 
 \begin{figure}[h!]
 \center{\includegraphics[width=0.85\linewidth]{picture_20.png}}
-\parbox{0.85\linewidth}{\caption{IPS of cardinality 24 and diameter 19758}
+\parbox{0.85\linewidth}{\caption{PIPS of cardinality 24 and diameter 19758}
 \label{picture_20.png}}
-\end{figure}
-
-
-\begin{figure}[h!]
-\center{\includegraphics[width=1\linewidth]{picture_21.png}}
-\parbox{1\linewidth}{\caption{IPS of cardinality 25 and diameter 32054}
-\label{picture_21.png}}
 \end{figure}
 
 
@@ -744,13 +782,12 @@ $
 
 $f = 10488$, $v = 1015$, $w = 10537$, $\operatorname{diam(\mathcal{P})} = 39516$,
 
-which gives $d(m, 2m + 20) \leq 39516$.
-
+which gives $d(m, 2m + 22) \leq 39516$.
 
 \begin{figure}[h!]
-\center{\includegraphics[width=1\linewidth]{picture_22.png}}
-\parbox{1\linewidth}{\caption{IPS of cardinality 26 and diameter 39516}
-\label{picture_22.png}}
+\center{\includegraphics[width=1\linewidth]{picture_21.png}}
+\parbox{1\linewidth}{\caption{PIPS of cardinality 25 and diameter 32054}
+\label{picture_21.png}}
 \end{figure}
 
 
@@ -780,13 +817,13 @@ $
 
 $f = 73416$, $v = 2710$, $w = 73466$, $\operatorname{diam(\mathcal{P})} = 254364$,
 
-which gives $d(m, 2m + 21) \leq 254364$.
+which gives $d(m, 2m + 23) \leq 254364$.
 
 
 \begin{figure}[h!]
-\center{\includegraphics[width=1\linewidth]{picture_23.png}}
-\parbox{1\linewidth}{\caption{IPS of cardinality 27 and diameter 254364}
-\label{picture_23.png}}
+\center{\includegraphics[width=1\linewidth]{picture_22.png}}
+\parbox{1\linewidth}{\caption{PIPS of cardinality 26 and diameter 39516}
+\label{picture_22.png}}
 \end{figure}
 
 
@@ -816,7 +853,14 @@ $
 
 $f = 73416$, $v = 2710$, $w = 73466$, $\operatorname{diam(\mathcal{P})} = 276612$,
 
-which gives $d(m, 2m + 22) \leq 276612$.
+which gives $d(m, 2m + 24) \leq 276612$.
+
+
+\begin{figure}[h!]
+\center{\includegraphics[width=1\linewidth]{picture_23.png}}
+\parbox{1\linewidth}{\caption{PIPS of cardinality 27 and diameter 254364}
+\label{picture_23.png}}
+\end{figure}
 
 
 \item
@@ -846,19 +890,19 @@ $
 
 $f = 73416$, $v = 2710$, $w = 73466$, $\operatorname{diam(\mathcal{P})} = 338169$,
 
-which gives $d(m, 2m + 23) \leq 338169$.
+which gives $d(m, 2m + 25) \leq 338169$.
 
 
 \begin{figure}[h!]
 \center{\includegraphics[width=1\linewidth]{picture_24.png}}
-\parbox{1\linewidth}{\caption{IPS of cardinality 28 and diameter 276612}
+\parbox{1\linewidth}{\caption{PIPS of cardinality 28 and diameter 276612}
 \label{picture_24.png}}
 \end{figure}
 
 
 \begin{figure}[h!]
 \center{\includegraphics[width=1\linewidth]{picture_25.png}}
-\parbox{1\linewidth}{\caption{IPS of cardinality 29 and diameter 338169}
+\parbox{1\linewidth}{\caption{PIPS of cardinality 29 and diameter 338169}
 \label{picture_25.png}}
 \end{figure}
 
@@ -890,15 +934,461 @@ $
 
 $f = 73416$, $v = 2710$, $w = 73466$, $\operatorname{diam(\mathcal{P})} = 399726$,
 
-which gives $d(m, 2m + 24) \leq 399726$.
+which gives $d(m, 2m + 26) \leq 399726$.
 
 
 \begin{figure}[h!]
 \center{\includegraphics[width=1\linewidth]{picture_26.png}}
-\parbox{1\linewidth}{\caption{IPS of cardinality 30 and diameter 399726}
+\parbox{1\linewidth}{\caption{PIPS of cardinality 30 and diameter 399726}
 \label{picture_26.png}}
 \end{figure}
 
+
+\item
+$\mathcal{P}=\sqrt{154}/{1} * \{ (\pm 580290, 0),
+(\pm 430360, 0),
+(\pm 388080, 0),
+(\pm 300265, 0),
+$
+
+$
+(\pm 288960, 0),
+(\pm 217560, 0),
+(\pm 188790, 0),
+(\pm 183540, 12600),
+(\pm 178290, 0),
+$
+
+$
+(\pm 128730, 0),
+(\pm 120960, 0),
+(\pm 63280, ),
+(\pm 21000, 0),
+(\pm 11224, 0),
+$
+
+$
+(-1033912, 0),
+(-999315, 0),
+(-691530  , 0)\}
+$
+(Figure~\ref{picture_31.png}).
+
+$f = 367080$, $v = 3206$, $w = 367094$, $\operatorname{diam(\mathcal{P})} = 1614202$,
+
+which gives $d(m, 2m + 27) \leq 1614202$.
+
+
+\begin{figure}[h!]
+\center{\includegraphics[width=1\linewidth]{picture_31.png}}
+\parbox{1\linewidth}{\caption{PIPS of cardinality 31 and diameter 1614202}
+\label{picture_31.png}}
+\end{figure}
+
+
+\item
+$\mathcal{P}=\sqrt{154}/{1} * \{ (\pm 691530, 0),
+(\pm 580290, 0),
+(\pm 430360, 0),
+(\pm 388080, 0),
+$
+
+$
+(\pm 300265, 0),
+(\pm 288960, 0),
+(\pm 217560, 0),
+(\pm 188790, 0),
+(\pm 183540, 12600),
+$
+
+$
+(\pm 178290, 0),
+(\pm 128730, 0),
+(\pm 120960, 0),
+(\pm 63280, 0),
+(\pm 21000, 0),
+$
+
+$
+(\pm 11224, 0),
+(-1033912, 0),
+(-999315, 0)\}
+$
+(Figure~\ref{picture_32.png}).
+
+$f = 367080$, $v = 3206$, $w = 367094$, $\operatorname{diam(\mathcal{P})} = 1725442$,
+
+which gives $d(m, 2m + 28) \leq 1725442$.
+
+
+\begin{figure}[h!]
+\center{\includegraphics[width=1\linewidth]{picture_32.png}}
+\parbox{1\linewidth}{\caption{PIPS of cardinality 32 and diameter 1725442}
+\label{picture_32.png}}
+\end{figure}
+
+
+\item
+$\mathcal{P}=\sqrt{154}/{1} * \{ (\pm 999315, 0),
+(\pm 691530, 0),
+(\pm 580290, 0),
+(\pm 430360, 0),
+$
+
+$
+(\pm 388080, 0),
+(\pm 300265, 0),
+(\pm 288960, 0),
+(\pm 217560, 0),
+(\pm 188790, 0),
+$
+
+$
+(\pm 183540, 12600),
+(\pm 178290, 0),
+(\pm 128730, 0),
+(\pm 120960, 0),
+(\pm 63280, 0),
+$
+
+$
+(\pm 21000, 0),
+(\pm 11224, 0),
+(-1033912, 0)\}
+$
+(Figure~\ref{picture_33.png}).
+
+$f = 367080$, $v = 3206$, $w = 367094$, $\operatorname{diam(\mathcal{P})} = 2033227$,
+
+which gives $d(m, 2m + 29) \leq 2033227$.
+
+
+\begin{figure}[h!]
+\center{\includegraphics[width=1\linewidth]{picture_33.png}}
+\parbox{1\linewidth}{\caption{PIPS of cardinality 33 and diameter 2033227}
+\label{picture_33.png}}
+\end{figure}
+
+
+\item
+$\mathcal{P}=\sqrt{154}/{1} * \{ (\pm 1033912, 0),
+(\pm 999315, 0),
+(\pm 691530, 0),
+(\pm 580290, 0),
+$
+
+$
+(\pm 430360, 0),
+(\pm 388080, 0),
+(\pm 300265, 0),
+(\pm 288960, 0),
+(\pm 217560, 0),
+$
+
+$
+(\pm 188790, 0),
+(\pm 183540, 12600),
+(\pm 178290, 0),
+(\pm 128730, 0),
+(\pm 120960, 0),
+$
+
+$
+(\pm 63280, 0),
+(\pm 21000, 0),
+(\pm 11224, 0)\}
+$
+(Figure~\ref{picture_34.png}).
+
+$f = 367080$, $v = 3206$, $w = 367094$, $\operatorname{diam(\mathcal{P})} = 2067824$,
+
+which gives $d(m, 2m + 30) \leq 2067824$.
+
+
+\begin{figure}[h!]
+\center{\includegraphics[width=1\linewidth]{picture_34.png}}
+\parbox{1\linewidth}{\caption{PIPS of cardinality 34 and diameter 2067824}
+\label{picture_34.png}}
+\end{figure}
+
+
+\item
+$\mathcal{P}=\sqrt{154}/{1} * \{ (\pm 3997260, 0),
+(\pm 2766120, 0),
+(\pm 2321160, 0),
+(\pm 1721440, 0),
+$
+
+$
+(\pm 1552320, 0),
+(\pm 1201060, 0),
+(\pm 1155840, 0),
+(\pm 870240, 0),
+(\pm 755160, 0),
+$
+
+$
+(\pm 734160, 50400),
+(\pm 713160, 0),
+(\pm 514920, 0),
+(\pm 483840, 0),
+(\pm 308175, 0),
+$
+
+$
+(\pm 253120, 0),
+(\pm 84000, 0),
+(\pm 44896, 0),
+(-4135648 , 0)\}
+$
+(Figure~\ref{picture_35.png}).
+
+$f = 1468320$, $v = 12824$, $w = 1468376$, $\operatorname{diam(\mathcal{P})} = 8132908$,
+
+which gives $d(m, 2m + 31) \leq 8132908$.
+
+
+\begin{figure}[h!]
+\center{\includegraphics[width=1\linewidth]{picture_35.png}}
+\parbox{1\linewidth}{\caption{PIPS of cardinality 35 and diameter 8132908}
+\label{picture_35.png}}
+\end{figure}
+
+
+\item
+$\mathcal{P}=\sqrt{154}/{1} * \{ (\pm 4135648, 0),
+(\pm 3997260, 0),
+(\pm 2766120, 0),
+(\pm 2321160, 0),
+$
+
+$
+(\pm 1721440, 0),
+(\pm 1552320, 0),
+(\pm 1201060, 0),
+(\pm 1155840, 0),
+(\pm 870240, 0),
+$
+
+$
+(\pm 755160, 0),
+(\pm 734160, 50400),
+(\pm 713160, 0),
+(\pm 514920, 0),
+(\pm 483840, 0),
+$
+
+$
+(\pm 308175, 0),
+(\pm 253120, 0),
+(\pm 84000, 0),
+(\pm 44896, 0)\}
+$
+(Figure~\ref{picture_36.png}).
+
+$f = 1468320$, $v = 12824$, $w = 1468376$, $\operatorname{diam(\mathcal{P})} = 8271296$,
+
+which gives $d(m, 2m + 32) \leq 8271296$.
+
+
+\begin{figure}[h!]
+\center{\includegraphics[width=1\linewidth]{picture_36.png}}
+\parbox{1\linewidth}{\caption{PIPS of cardinality 36 and diameter 8271296}
+\label{picture_36.png}}
+\end{figure}
+
+
+\item
+$\mathcal{P}=\sqrt{154}/{1} * \{ (\pm 12991095, 0),
+(\pm 8989890, 0),
+(\pm 7543770, 0),
+(\pm 5594680, 0),
+$
+
+$
+(\pm 5045040, 0),
+(\pm 3903445, 0),
+(\pm 3756480, 0),
+(\pm 3694845, 0),
+(\pm 2828280, 0),
+$
+
+$
+(\pm 2454270, 0),
+(\pm 2386020, 163800),
+(\pm 2317770, 0),
+(\pm 1673490, 0),
+(\pm 1572480, 0),
+$
+
+$
+(\pm 822640, 0),
+(\pm 484680, 0),
+(\pm 273000, 0),
+(\pm 145912, 0),
+$
+
+$
+(-13440856, 0)\}
+$
+(Figure~\ref{picture_37.png}).
+
+$f = 4772040$, $v = 41678$, $w = 4772222$, $\operatorname{diam(\mathcal{P})} = 26431951$,
+
+which gives $d(m, 2m + 33) \leq 26431951$.
+
+
+\begin{figure}[h!]
+\center{\includegraphics[width=1\linewidth]{picture_37.png}}
+\parbox{1\linewidth}{\caption{PIPS of cardinality 37 and diameter 26431951}
+\label{picture_37.png}}
+\end{figure}
+
+
+\item
+$\mathcal{P}=\sqrt{154}/{1} * \{ (\pm 13440856, 0),
+(\pm 12991095, 0),
+(\pm 8989890, 0),
+(\pm 7543770, 0),
+$
+
+$
+(\pm 5594680, 0),
+(\pm 5045040, 0),
+(\pm 3903445, 0),
+(\pm 3756480, 0),
+(\pm 3694845, 0),
+$
+
+$
+(\pm 2828280, 0),
+(\pm 2454270, 0),
+(\pm 2386020, 163800),
+(\pm 2317770, 0),
+(\pm 1673490, 0),
+$
+
+$
+(\pm 1572480, 0),
+(\pm 822640, 0),
+(\pm 484680, 0),
+(\pm 273000, 0),
+$
+
+$
+(\pm 145912, 0)\}
+$
+(Figure~\ref{picture_38.png}).
+
+$f = 4772040$, $v = 41678$, $w = 4772222$, $\operatorname{diam(\mathcal{P})} = 26881712$,
+
+which gives $d(m, 2m + 34) \leq 26881712$.
+
+
+\begin{figure}[h!]
+\center{\includegraphics[width=1\linewidth]{picture_38.png}}
+\parbox{1\linewidth}{\caption{PIPS of cardinality 38 and diameter 26881712}
+\label{picture_38.png}}
+\end{figure}
+
+
+\item
+$\mathcal{P}=\sqrt{154}/{1} * \{ (\pm 51964380, 0),
+(\pm 35959560, 0),
+(\pm 30175080, 0),
+(\pm 22378720, 0),
+$
+
+$
+(\pm 20180160, 0),
+(\pm 15613780, 0),
+(\pm 15025920, 0),
+(\pm 14779380, 0),
+(\pm 11313120, 0),
+$
+
+$
+(\pm 9817080, 0),
+(\pm 9544080, 655200),
+(\pm 9271080, 0),
+(\pm 6693960, 0),
+(\pm 6289920, 0),
+$
+
+$
+(\pm 4006275, 0),
+(\pm 3290560, 0),
+(\pm 1938720, 0),
+(\pm 1092000, 0),
+$
+
+$
+(\pm 583648, 0),
+(-53763424 , 0)\}
+$
+(Figure~\ref{picture_39.png}).
+
+$f = 19088160$, $v = 8738$, $w = 19088162$, $\operatorname{diam(\mathcal{P})} = 105727804$,
+
+which gives $d(m, 2m + 35) \leq 105727804$.
+
+
+\begin{figure}[h!]
+\center{\includegraphics[width=1\linewidth]{picture_39.png}}
+\parbox{1\linewidth}{\caption{PIPS of cardinality 39 and diameter 105727804}
+\label{picture_39.png}}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\begin{center}
+	\includegraphics[width=1\linewidth]{picture_40.png}
+	\parbox{1\linewidth}{\caption{PIPS of cardinality 40 and diameter 107526848}
+	\label{picture_40.png}}
+	\end{center}
+\end{figure}
+
+
+\item
+$\mathcal{P}=\sqrt{154}/{1} * \{ (\pm 53763424, 0),
+(\pm 51964380 , 0),
+(\pm 35959560 , 0),
+(\pm 30175080 , 0),
+$
+
+$
+(\pm 22378720 , 0),
+(\pm 20180160 , 0),
+(\pm 15613780 , 0),
+(\pm 15025920 , 0),
+(\pm 14779380 , 0),
+$
+
+$
+(\pm 11313120 , 0),
+(\pm 9817080 , 0),
+(\pm 9544080 , 655200),
+(\pm 9271080 , 0),
+(\pm 6693960 , 0),
+$
+
+$
+(\pm 6289920 , 0),
+(\pm 4006275 , 0),
+(\pm 3290560 , 0),
+(\pm 1938720 , 0),
+(\pm 1092000 , 0),
+$
+
+$
+(\pm 583648 , 0)\}
+$
+(Figure~\ref{picture_40.png}).
+
+$f = 19088160$, $v = 8738$, $w = 19088162$, $\operatorname{diam(\mathcal{P})}
+= 107526848$,
+
+which gives $d(m, 2m + 36) \leq 107526848$.
 
 \end{itemize}
 
