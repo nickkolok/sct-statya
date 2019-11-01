@@ -109,19 +109,19 @@ N. N. Avdeev (Voronezh)}
 включая результаты Солимоси
 из статьи, в которой была впервые доказана линейная оценка снизу
 на диаметр плоских множеств с целочисленными расстояниями.
-Полученная вданной статье оценка всё ещё не точна.
+Полученная в данной статье оценка всё ещё не точна.
 }
 {%Аннотация статьи на английском языке
 A point set $M$ in the Euclidean plane is called a planar integral point set if all the distances between the
 elements of $M$ are integers, and $M$ is not situated on a straight line.
 A planar integral point set is called to be in semi-general position, if it does not contain collinear triples.
-The existing lower bound for mininum diameter of planar integral point sets is linear on its cardinality.
+The existing lower bound for mininum diameter of a planar integral point set is linear with respect to its cardinality.
 There were no known special diameter bounds for planar integral point sets in semi-general position
 (the known upper bound for planar integral point sets is constructive
 and provides planar integral point sets in semi-general position).
 We prove a new lower bound for mininum diameter of planar integral point sets in semi-general position
-that is better than linear (polynomial with power $5/4$).
-The proof is based on several lemmas observations, including the ones provided by Solymosi
+that is better than linear (polynomial of power $5/4$).
+The proof is based on several lemmas and observations, including the ones provided by Solymosi
 while proving the first linear lower bound for diameter of a planar integral point set.
 We have to admit that our bound is still not tight.
 }
@@ -228,7 +228,7 @@ the largest known value for $c_1$ is $5/11$ for $n\geq 4$~\cite{my-pps-linear-bo
 
 
 There are some bounds for minimal diameter of planar integral point sets in some special positions.
-Assuming that the planar integral point sets contains many collinear points,
+Assuming that a planar integral point set contains many collinear points,
 the following result holds.
 \begin{Theorem}~\cite[Theorem 4]{kurz2008minimum}
 	For $\delta > 0$, $\varepsilon > 0$, and $P\in\mathfrak{M}(2,n)$ with
@@ -243,7 +243,7 @@ For diameter bounds for circular sets, we refer the reader to~\cite{bat2018numbe
 
 Particular cases of planar integral point sets are also discussed
 in~\cite[\S 5.11]{brass2006research},~\cite[\S D20]{guy2013unsolved},~\cite{our-pmm-2018},~\cite{our-ped-2018}.
-For generalizaton in higher dimensions and the appropriate bounds, see~\cite{kurz2005characteristic,nozaki2013lower}.
+For generalization to higher dimensions and the appropriate bounds, see~\cite{kurz2005characteristic,nozaki2013lower}.
 
 In the present paper we give a special bound for planar integral point sets in semi-general position.
 The condition of semi-general position is important in the given proof.
@@ -257,7 +257,7 @@ In this section, we give some lemmas which will be used for the proof.
 
 \begin{lemma}
 	\cite[Observation 1]{solymosi2003note}
-	If a triangle $T$ has integer side-lengths $a \leq b \leq c$,
+	If a triangle $T$ has integer side lengths $a \leq b \leq c$,
 	then the minimal height $m$ of it is at least $\left(a - \frac{1}{4}\right)^{1/2}$.
 \end{lemma}
 
@@ -269,13 +269,13 @@ In this section, we give some lemmas which will be used for the proof.
 \begin{lemma}
 	\cite{smurov1998stripcoverings}
 	If a triange $T$ with minimal height $\rho$ is situated in a strip,
-	then the width of a strip is at least $\rho$.
+	then the width of the strip is at least $\rho$.
 \end{lemma}
 
 \begin{Corollary}
 	\label{cor:solymosi_strip}
-	If a triangle $T$ with integer side-lengths $a \leq b \leq c$ is situated in a strip,
-	then the width of a strip is at least $\left(a - \frac{1}{4}\right)^{1/2}$.
+	If a triangle $T$ with integer side lengths $a \leq b \leq c$ is situated in a strip,
+	then the width of the strip is at least $\left(a - \frac{1}{4}\right)^{1/2}$.
 \end{Corollary}
 
 
@@ -374,9 +374,9 @@ In this section, we give some lemmas which will be used for the proof.
 	For $m \leq p^{2/5}$, Lemma~\ref{lem:count_of_points_on_hyperbolas} yields that
 	\begin{equation}
 		n \leq 4 \cdot |M_1 M_2| \cdot |M_3 M_4| \leq  4 p^{4/5}
-		,
+		.
 	\end{equation}
-	or, that is the same,
+	This means that
 	\begin{equation}
 		\label{eq:hyperbolas_5_4}
 		p \geq (n/4) ^ {5/4} > (n/5) ^ {5/4}
@@ -440,7 +440,7 @@ which is less than the one from Theorem~\ref{thm:main_result}.
 
 \section{Conclusion}
 The presented bound is the first special lower bound for sets in semi-general position.
-Thus, we did not accepted the challenge to make the constant in Theorem~\ref{thm:main_result} as large as possible,
+Thus, we have not accepted the challenge to make the constant in Theorem~\ref{thm:main_result} as large as possible,
 in order to keep the ideas of the proof clear and understandable.
 A more thorough research can be done in the future to enlarge the constant.
 However, the upper and lower bounds are still not tight.
