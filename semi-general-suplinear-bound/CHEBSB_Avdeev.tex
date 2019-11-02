@@ -112,18 +112,18 @@ N. N. Avdeev (Voronezh)}
 Полученная в данной статье оценка всё ещё не точна.
 }
 {%Аннотация статьи на английском языке
-A point set $M$ in the Euclidean plane is called a planar integral point set if all the distances between the
+A point set $M$ in the Euclidean plane is said to be a planar integral point set if all the distances between the
 elements of $M$ are integers, and $M$ is not situated on a straight line.
-A planar integral point set is called to be in semi-general position, if it does not contain collinear triples.
-The existing lower bound for mininum diameter of a planar integral point set is linear with respect to its cardinality.
-There were no known special diameter bounds for planar integral point sets in semi-general position
+A planar integral point set is said to be a set in semi-general position, if it does not contain collinear triples.
+The existing lower bound for mininal diameter of planar integral point sets is linear with respect to its cardinality.
+There were no known special diameter bounds for planar integral point sets in semi-general position of given cardinality
 (the known upper bound for planar integral point sets is constructive
-and provides planar integral point sets in semi-general position).
-We prove a new lower bound for mininum diameter of planar integral point sets in semi-general position
+and employs planar integral point sets in semi-general position).
+We prove a new lower bound for minimal diameter of planar integral point sets in semi-general position
 that is better than linear (polynomial of power $5/4$).
-The proof is based on several lemmas and observations, including the ones provided by Solymosi
-while proving the first linear lower bound for diameter of a planar integral point set.
-We have to admit that our bound is still not tight.
+The proof is based on several lemmas and observations, including the ones established by Solymosi
+to prove the first linear lower bound for diameter of a planar integral point set.
+We have to admit that our bound is still not exact.
 }
 
 \keywords
@@ -164,9 +164,9 @@ where $|AB|$ denotes the Euclidean distance.
 The symbol $\# M$ will be used for cardinality of $M$, that is the number of points in $M$ in our case.
 
 Since every integral point set can obviously be dilated to a set of larger diameter,
-minimal possible diameters of sets of given cardinality are in the focus.
+minimal possible diameters of sets of given cardinality are of interest.
 To be precise,
-the following function was introduced~\cite{kurz2008bounds,kurz2008minimum}:
+the following function was introduced in~\cite{kurz2008bounds,kurz2008minimum}:
 \begin{equation}
 	d(2,n) = \min_{M\in\mathfrak{M}(2,n)} \operatorname{diam} M
 	.
@@ -176,7 +176,7 @@ It turned out to be very easy to construct a planar integral point set of $n$ po
 (so-called \textit{facher} sets);
 the same holds for 2 points out of the line (we refer the reader to~\cite{antonov2008maximal}, where some of such sets are called \textit{crabs})
 and even for 4 points out of the line~\cite{huff1948diophantine}.
-For $9\leq n\leq 122$, the minimal possible diameter is achieved at a facher set~\cite{kurz2008bounds}.
+For $9\leq n\leq 122$, the minimal possible diameter is attained at a facher set~\cite{kurz2008bounds}.
 
 
 \begin{Definition}
@@ -187,7 +187,7 @@ For $9\leq n\leq 122$, the minimal possible diameter is achieved at a facher set
 \end{Definition}
 
 Furthermore, the constructions of integral point sets in semi-general position of arbitrary cardinality
-appeared~\cite{harborth1993upper};
+appeared in~\cite{harborth1993upper};
 such sets are situated on a circle.
 Also, there is a sophisticated construction of a circular integral point set of arbitrary cardinality
 that gives the possible numbers of odd integral distances
@@ -195,13 +195,13 @@ between points in the plane~\cite{piepmeyer1996maximum}.
 
 
 \begin{Definition}
-	A set $M\in\overline{\mathfrak{M}}(2,n)$ is called to be in \textit{general position},
+	A set $M\in\overline{\mathfrak{M}}(2,n)$ is said to be a set in \textit{general position},
 	if no four points of $M$ are concyclic.
 	The set of all planar integral point sets in general position
 	is denoted by $\dot{\mathfrak{M}}(2,n)$.
 \end{Definition}
 
-It remains unknown if there are integral points sets in general position of arbitrary cardinality;
+It remains unknown whether there are integral points sets in general position of arbitrary cardinality;
 however, some sets $M\in \dot{\mathfrak{M}}(2,7)$ are known~\cite{kreisel2008heptagon,kurz2013constructing}.
 
 The inequality
@@ -222,8 +222,8 @@ is obvious; however, a more interesting relation holds:
 	c_1 n \leq d(2,n) \leq \overline{d}(2,n) \leq n^{c_2 \log \log n}
 	.
 \end{equation*}
-The upper bound is presented in~\cite{harborth1993upper}.
-The lower bound was firstly introduced in~\cite{solymosi2003note};
+The upper bound is established in~\cite{harborth1993upper}.
+The lower bound firstly appeared in~\cite{solymosi2003note};
 the largest known value for $c_1$ is $5/11$ for $n\geq 4$~\cite{my-pps-linear-bound-2019}.
 
 
@@ -246,7 +246,7 @@ in~\cite[\S 5.11]{brass2006research},~\cite[\S D20]{guy2013unsolved},~\cite{our-
 For generalization to higher dimensions and the appropriate bounds, see~\cite{kurz2005characteristic,nozaki2013lower}.
 
 In the present paper we give a special bound for planar integral point sets in semi-general position.
-The condition of semi-general position is important in the given proof.
+The condition of semi-general position is crucial in the given proof.
 
 
 
@@ -262,7 +262,7 @@ In this section, we give some lemmas which will be used for the proof.
 \end{lemma}
 
 \begin{Definition}
-	The part of a plane between two parallel straight lines with distance $\rho$ between the lines
+	The part of a plane between two parallel straight lines with distance $\rho$ between them
 	is called a strip of width $\rho$.
 \end{Definition}
 
@@ -307,7 +307,7 @@ In this section, we give some lemmas which will be used for the proof.
 \begin{lemma}
 	\label{lem:count_of_points_on_hyperbolas}
 	Let $\{M_1, M_2, M_3, M_4\} \subset M\in\overline{\mathfrak{M}}(2,n)$
-	(points $M_2$ and $M_3$ may coincide, other points may not), $n\geq 4$.
+	(points $M_2$ and $M_3$ may coincide, other points are distinct), $n\geq 4$.
 	Then $\# M \leq 4 \cdot |M_1 M_2| \cdot |M_3 M_4|$.
 \end{lemma}
 
@@ -315,7 +315,7 @@ In this section, we give some lemmas which will be used for the proof.
 	Lemma~\ref{lem:count_of_points_on_hyperbolas} is one of the variations of~\cite{erdos1945integral}.
 \end{Remark}
 
-\begin{proof}
+\begin{proof}[Proof]
 	Each point $N\in M$ satisfies one of the following conditions:
 
 	a) $N$ belongs to $cr(M_1,M_2)$~--- overall at most 4 points;
@@ -341,7 +341,7 @@ In this section, we give some lemmas which will be used for the proof.
 		4 |M_1 M_2| \cdot |M_3 M_4|
 		,
 	\end{multline}
-	we are done.
+	the assertion follows.
 \end{proof}
 
 
@@ -356,12 +356,12 @@ In this section, we give some lemmas which will be used for the proof.
 	\end{equation}
 \end{Theorem}
 
-\begin{proof}
+\begin{proof}[Proof]
 	For $n = 3$ we have $\overline{d}(2,3) = 1$.
 	Consider $M\in\overline{\mathfrak{M}}(2,n)$, $n \geq 4$, $\operatorname{diam} M = p$.
 
 	Let us choose points $M_1, M_2, M_3, M_4 \in M$
-	(points $M_2$ and $M_3$ may coincide, other points may not), such that
+	(points $M_2$ and $M_3$ may coincide, other points are distinct), such that
 	\begin{equation}
 		\min_{A, B \in M} |AB| = |M_1 M_2|
 		,
@@ -376,7 +376,7 @@ In this section, we give some lemmas which will be used for the proof.
 		n \leq 4 \cdot |M_1 M_2| \cdot |M_3 M_4| \leq  4 p^{4/5}
 		.
 	\end{equation}
-	This means that
+	Equivalently,
 	\begin{equation}
 		\label{eq:hyperbolas_5_4}
 		p \geq (n/4) ^ {5/4} > (n/5) ^ {5/4}
@@ -417,12 +417,11 @@ In this section, we give some lemmas which will be used for the proof.
 
 
 \begin{Remark}
-	The following result in known:
+	The following result appeared in~\cite{solymosi2003note} as Corollary 1:
 \end{Remark}
 
 \begin{lemma}
-	\cite[Corollary 1]{solymosi2003note}
-	For $H \in \overline {\mathfrak{M}}(2,n)$, the minimum
+	For $H \in \overline {\mathfrak{M}}(2,n)$, the minimal
 	distance in H is at least $n^{1/3}$.
 \end{lemma}
 Applying the same technique, one can easily derive that
@@ -442,11 +441,11 @@ which is less than the one from Theorem~\ref{thm:main_result}.
 The presented bound is the first special lower bound for sets in semi-general position.
 Thus, we have not accepted the challenge to make the constant in Theorem~\ref{thm:main_result} as large as possible,
 in order to keep the ideas of the proof clear and understandable.
-A more thorough research can be done in the future to enlarge the constant.
-However, the upper and lower bounds are still not tight.
+The more thorough research can be done in the future to improve the constant.
+However, the upper and lower bounds are still not exact.
 
 \section{Acknowledgements}
-Author thanks Dr. Prof. E.M. Semenov for proofreading and valuable advice.
+Author thanks Dr. Prof. E.M. Semenov for proofreading and valuable advices and Dr. A.S. Usachev for proofreading.
 
 
 %библиография по ГОСТу
