@@ -137,6 +137,175 @@ using the combined approach with the Point Packing in a Square problem
 (this approach is different from Solymosi's one);
 second, we prove that $l(m,n)=1$ for all possible $m$ and $n$.
 
+
+\section{Collinear subsets of integral point sets}
+Integral point sets with many collinear ponts are very dominating examples.
+In this section we estimate the cardinality of an intersection of an integral point set with a line segment.
+
+Assuming that the planar integral point set contains many collinear points,
+the following result holds.
+\begin{theorem}~\cite[Theorem 4]{kurz2008minimum}
+	For $\delta > 0$, $\varepsilon > 0$, and $P\in\mathfrak{M}(2,n)$ with
+	at least $n^\delta$ collinear points there exists a $n_0 (\varepsilon)$
+	such that for all $n \geq n_0 (\varepsilon)$ we have
+	\begin{equation}
+		\operatorname{diam} P \geq n^{\frac{\delta}{4 \log 2(1+\varepsilon)}\log \log n}
+		.
+	\end{equation}
+\end{theorem}
+However, the estimate is rather unsuitable for our needs,
+as it does not provide the values of all the constants.
+To obtain the needed estimate, we now prove a generalization of~\cite[lemma 3]{our-vmmsh-2018}.
+
+\begin{definition}
+	For a line segment $M_1 M_2$ and an integer $k$, such that $-|M_1 M_2| < k < |M_1 M_2|$,
+	we define a $\rho(k,M_1 M_2)$-curve as the set of points $N$
+	for which the equality $|N M_1| - |N M_2| = k$ holds.
+\end{definition}
+So, in the planar case a $\rho(k,M_1 M_2)$-curve
+is a branch of a hyperbola for $k\neq 0$ and the perpendicular bisector of line segment $M_1 M_2$ for $k=0$.
+
+\begin{proposition}
+	\label{obs:rho_curves}
+	If points $M_1,M_2,M_3,M_4$ are situated on a straight line,
+	the equality $|M_1 M_2| = |M_3 M_4|$ holds and line segments $M_1 M_2$ and $M_3 M_4$ do not coincide,
+	then for a fixed $k$ the $\rho(k,M_1 M_2)$-curve and the $\rho(k,M_3 M_4)$-curve
+	do not intersect.
+\end{proposition}
+
+\begin{lemma}
+	\label{lem:2k-1_segments}
+	Let $M \in \mathfrak{M}(2,\mathbb{N})$ and let $m$ be a straight line.
+	Then for every $k\in\mathbb{N}$ there are at most $2k-1$ segments $\Delta_i \subset m$ with endpoints in $M$,
+	such that $|\Delta_i| = k$.
+\end{lemma}
+\begin{proof}
+	Consider a point $N\in M \setminus m$.
+	Then for each $\Delta_i$ there is a $\rho(n_i,\Delta_i)$-curve containing $N$.
+	Due to Proposition~\ref{obs:rho_curves}, all $n_i$ are distinct;
+	otherwise the $\rho(n_i,\Delta_i)$-curve and the $\rho(n_i,\Delta_j)$-curve, $j\neq i$, do not intersect.
+	There can be only $2k-1$ distinct values for $n_i$,
+	so there are at most $2k-1$ distinct segments $\Delta_i$.
+\end{proof}
+
+
+Setting $k=1$ in Lemma~\ref{lem:2k-1_segments},
+we obtain the following result (which is exactly~\cite[Lemma 3]{our-vmmsh-2018}).
+\begin{corollary}
+	\label{cor:only_one_distance_1_on_straight_line}
+	Let $M \in \mathfrak{M}(2,\mathbb{N})$ and let $m$ be a straight line.
+	Then there is at most one pair of points $M_1,M_2\in M \cap m$
+	such that $|M_1 M_2| = 1$.
+\end{corollary}
+
+
+\begin{lemma}
+	\label{lem:line_segment_with n_squared_plus_one_points}
+	Let $\Delta$ be a straight line segment, $|\Delta|=l$ and $M \in \mathfrak{M}(2,\mathbb{N})$.
+	Let $\#(\Delta \cap M) = n^2 + 1$.
+	Then
+	\begin{equation}
+		l \geq \frac{2}{3}n^3+\frac{1}{2}n^2-\frac{1}{6}n
+		.
+	\end{equation}
+\end{lemma}
+
+\begin{proof}
+	Any $n^2+1$ points, including the endpoints of $\Delta$, partition the segment $\Delta$ into $n^2$
+	sequential segments $\Delta_i$.
+	Due to Lemma~\ref{lem:2k-1_segments}, there is at most one segment of length 1,
+	at most three segments of length 2, etc.
+	The following two expressions for sums conclude the proof:
+	\begin{equation}
+		1 + \sum_{k=1}^n (2k-1) = n^2 + 1
+		,
+	\end{equation}
+	\begin{equation}
+		\sum_{k=1}^n k(2k-1) = \frac{2}{3}n^3+\frac{1}{2}n^2-\frac{1}{6}n
+		.
+	\end{equation}
+\end{proof}
+
+Now we will estimate the length of a line segment that intersects an integral point set
+by an arbitrary number of points.
+
+\begin{lemma}
+	\label{lem:line_segment_cardinality}
+	Let $\Delta$ be a straight line segment, $|\Delta| = b$ and $M \in \mathfrak{M}(2,\mathbb{N})$.
+	Let $\#(\Delta \cap M) = t$.
+	Then
+	\begin{equation}
+		\label{eq:estimate_for_segment_length}
+		b\geq \frac{2}{3}t^{3/2}-\frac{3}{2}t+\frac{5}{6}t^{1/2}
+		.
+	\end{equation}
+\end{lemma}
+
+\begin{proof}
+	Let $f(k)$ denote the mininal length of a line segment
+	that intersects an integral point set by $k$ points.
+	We observe that $f(k) > f (k-1)$.
+	Due to Lemma~\ref{lem:line_segment_with n_squared_plus_one_points},
+	$f(n^2+1) \geq \frac{2}{3}n^3+\frac{1}{2}n^2-\frac{1}{6}n$.
+
+	%Consider $t$ such that $n^2 + 1 \leq t \leq (n+1)^2$. %,
+	%then $f(t) > f(n^2 +1)$.% and $n \geq \sqrt{t} - 1$.
+	For $t\in\mathbb{N}$ the inequality $(\sqrt{t} - 1)^2 +1 \leq t$ holds,
+	thus
+	%and derive that
+	\begin{equation}
+		\label{eq:line_segment_length}
+		f(t) \geq f((\sqrt{t} - 1)^2 +1) \geq \frac{2}{3}(\sqrt{t} - 1)^3+\frac{1}{2}(\sqrt{t} - 1)^2-\frac{1}{6}(\sqrt{t} - 1)
+		=
+		\frac{2}{3}t^{3/2}-\frac{3}{2}t+\frac{5 }{6}t^{1/2}
+		.
+	\end{equation}
+\end{proof}
+
+
+In~\cite{kurz2008bounds}, thorough investigation of planar integral point sets with diameter at most 10 000
+is carried out;
+thus, we can restrict our attention to intersections of planar integral point sets with lne segments of length more than 10 000.
+
+Lemma~\ref{lem:line_segment_cardinality} leads to the following proposition.
+
+\begin{proposition}
+	\label{obs:estimate_points_on_straight_line}
+	Let $\Delta$ be a straight line segment, $|\Delta| = b$ and $M \in \mathfrak{M}(2,\mathbb{N})$.
+	Let $\#(\Delta \cap M) = k$ and $b>10000$.
+	Then $k \leq \gamma_2 b + 6$,
+	where
+	\begin{equation}
+		\gamma_2 = \frac{3846}{2593 \sqrt{647}-5823} = 0.063958...
+	\end{equation}
+\end{proposition}
+
+\begin{proof}
+	We know the maximum number of points for planar integral point sets of diameters at most $10000$.
+	Thus, we are interested in integral $t$ such that estimate~\eqref{eq:estimate_for_segment_length}
+	holds for $b > 10000$.
+	So, let us consider $t\geq 647$ and find a coefficient $\gamma_2$,
+	such that the inequality
+	\begin{equation}
+		\label{eq:inequality_for_linear_estimate_of_segment_length}
+		\frac{2}{3}t^{3/2}-\frac{3}{2}t+\frac{5 }{6}t^{1/2} \geq \frac{t-6}{\gamma_2}
+	\end{equation}
+	holds for all $t\geq 647$.
+	For such $t$,
+	the left-hand side of~\eqref{eq:inequality_for_linear_estimate_of_segment_length} obviously grows faster than the right-hand side.
+	Turning~\eqref{eq:inequality_for_linear_estimate_of_segment_length} into the same equality
+	and solving it for $t=647$, we obtain the required estimate.
+\end{proof}
+
+Concluding the section, we remark that
+Corollary~\ref{cor:only_one_distance_1_on_straight_line}
+and
+Proposition~\ref{obs:estimate_points_on_straight_line}
+are the only results of this section
+that are used in the proofs below;
+all the other are auxiliary.
+
+
 \section{Lower bound for the diameter}
 
 In this section,
@@ -238,143 +407,6 @@ one can derive the following proposition.
 \end{proposition}
 
 Now we need to estimate the cardinality of an intersection of an integral point set with a line segment.
-Assuming that the planar integral point sets contains many collinear points,
-the following result holds.
-\begin{theorem}~\cite[Theorem 4]{kurz2008minimum}
-	For $\delta > 0$, $\varepsilon > 0$, and $P\in\mathfrak{M}(2,n)$ with
-	at least $n^\delta$ collinear points there exists a $n_0 (\varepsilon)$
-	such that for all $n \geq n_0 (\varepsilon)$ we have
-	\begin{equation}
-		\operatorname{diam} P \geq n^{\frac{\delta}{4 \log 2(1+\varepsilon)}\log \log n}
-		.
-	\end{equation}
-\end{theorem}
-However, the estimate is rather unsuitable for our needs,
-as it does not provide the values of all the constants.
-To obtain the needed estimate, we now prove a generalization of~\cite[lemma 3]{our-vmmsh-2018}.
-
-\begin{definition}
-	For a line segment $M_1 M_2$ and an integer $k$, such that $-|M_1 M_2| < k < |M_1 M_2|$,
-	we define a $\rho(k,M_1 M_2)$-curve as the set of points $N$
-	for which the equality $|N M_1| - |N M_2| = k$ holds.
-\end{definition}
-So, in the planar case a $\rho(k,M_1 M_2)$-curve
-is a branch of a hyperbola for $k\neq 0$ and the perpendicular bisector of line segment $M_1 M_2$ for $k=0$.
-
-\begin{proposition}
-	\label{obs:rho_curves}
-	If points $M_1,M_2,M_3,M_4$ are situated on a straight line,
-	the equality $|M_1 M_2| = |M_3 M_4|$ holds and line segments $M_1 M_2$ and $M_3 M_4$ do not coincide,
-	then for a fixed $k$ the $\rho(k,M_1 M_2)$-curve and the $\rho(k,M_3 M_4)$-curve
-	do not intersect.
-\end{proposition}
-
-\begin{lemma}
-	\label{lem:2k-1_segments}
-	Let $M \in \mathfrak{M}(2,\mathbb{N})$ and let $m$ be a straight line.
-	Then for every $k\in\mathbb{N}$ there are at most $2k-1$ segments $\Delta_i \subset m$ with endpoints in $M$,
-	such that $|\Delta_i| = k$.
-\end{lemma}
-\begin{proof}
-	Consider a point $N\in M \setminus m$.
-	Then for each $\Delta_i$ there is a $\rho(n_i,\Delta_i)$-curve containing $N$.
-	Due to Proposition~\ref{obs:rho_curves}, all $n_i$ are distinct;
-	otherwise the $\rho(n_i,\Delta_i)$-curve and the $\rho(n_i,\Delta_j)$-curve, $j\neq i$, do not intersect.
-	There can be only $2k-1$ distinct values for $n_i$,
-	so there are at most $2k-1$ distinct segments $\Delta_i$.
-\end{proof}
-
-\begin{lemma}
-	\label{lem:line_segment_with n_squared_plus_one_points}
-	Let $\Delta$ be a straight line segment, $|\Delta|=l$ and $M \in \mathfrak{M}(2,\mathbb{N})$.
-	Let $\#(\Delta \cap M) = n^2 + 1$.
-	Then
-	\begin{equation}
-		l \geq \frac{2}{3}n^3+\frac{1}{2}n^2-\frac{1}{6}n
-		.
-	\end{equation}
-\end{lemma}
-
-\begin{proof}
-	Any $n^2+1$ points, including the endpoints of $\Delta$, partition the segment $\Delta$ into $n^2$
-	sequential segments $\Delta_i$.
-	Due to Lemma~\ref{lem:2k-1_segments}, there is at most one segment of length 1,
-	at most three segments of length 2, etc.
-	The following two expressions for sums conclude the proof:
-	\begin{equation}
-		1 + \sum_{k=1}^n (2k-1) = n^2 + 1
-		,
-	\end{equation}
-	\begin{equation}
-		\sum_{k=1}^n k(2k-1) = \frac{2}{3}n^3+\frac{1}{2}n^2-\frac{1}{6}n
-		.
-	\end{equation}
-\end{proof}
-
-Now we will estimate the length of a line segment that intersects an integral point set
-by an arbitrary number of points.
-
-\begin{lemma}
-	Let $\Delta$ be a straight line segment, $|\Delta| = b$ and $M \in \mathfrak{M}(2,\mathbb{N})$.
-	Let $\#(\Delta \cap M) = t$.
-	Then
-	\begin{equation}
-		\label{eq:estimate_for_segment_length}
-		b\geq \frac{2}{3}t^{3/2}-\frac{3}{2}t+\frac{5}{6}t^{1/2}
-		.
-	\end{equation}
-\end{lemma}
-
-\begin{proof}
-	Let $f(k)$ denote the mininal length of a line segment
-	that intersects an integral point set by $k$ points.
-	We observe that $f(k) > f (k-1)$.
-	Due to Lemma~\ref{lem:line_segment_with n_squared_plus_one_points},
-	$f(n^2+1) \geq \frac{2}{3}n^3+\frac{1}{2}n^2-\frac{1}{6}n$.
-
-	%Consider $t$ such that $n^2 + 1 \leq t \leq (n+1)^2$. %,
-	%then $f(t) > f(n^2 +1)$.% and $n \geq \sqrt{t} - 1$.
-	For $t\in\mathbb{N}$ the inequality $(\sqrt{t} - 1)^2 +1 \leq t$ holds,
-	thus
-	%and derive that
-	\begin{equation}
-		\label{eq:line_segment_length}
-		f(t) \geq f((\sqrt{t} - 1)^2 +1) \geq \frac{2}{3}(\sqrt{t} - 1)^3+\frac{1}{2}(\sqrt{t} - 1)^2-\frac{1}{6}(\sqrt{t} - 1)
-		=
-		\frac{2}{3}t^{3/2}-\frac{3}{2}t+\frac{5 }{6}t^{1/2}
-		.
-	\end{equation}
-\end{proof}
-
-This lemma leads to the following proposition.
-
-\begin{proposition}
-	\label{obs:estimate_points_on_straight_line}
-	Let $\Delta$ be a straight line segment, $|\Delta| = b$ and $M \in \mathfrak{M}(2,\mathbb{N})$.
-	Let $\#(\Delta \cap M) = k$ and $b>10000$.
-	Then $k \leq \gamma_2 b + 6$,
-	where
-	\begin{equation}
-		\gamma_2 = \frac{3846}{2593 \sqrt{647}-5823} = 0.063958...
-	\end{equation}
-\end{proposition}
-
-\begin{proof}
-	We know the maximum number of points for planar integral point sets of diameters at most $10000$.
-	Thus, we are interested in integral $t$ such that estimate~\eqref{eq:estimate_for_segment_length}
-	holds for $b > 10000$.
-	So, let us consider $t\geq 647$ and find a coefficient $\gamma_2$,
-	such that the inequality
-	\begin{equation}
-		\label{eq:inequality_for_linear_estimate_of_segment_length}
-		\frac{2}{3}t^{3/2}-\frac{3}{2}t+\frac{5 }{6}t^{1/2} \geq \frac{t-6}{\gamma_2}
-	\end{equation}
-	holds for all $t\geq 647$.
-	For such $t$,
-	the left-hand side of~\eqref{eq:inequality_for_linear_estimate_of_segment_length} obviously grows faster than the right-hand side.
-	Turning~\eqref{eq:inequality_for_linear_estimate_of_segment_length} into the same equality
-	and solving it for $t=647$, we obtain the required estimate.
-\end{proof}
 
 Now we are ready to prove the main theorem of the section.
 
@@ -662,14 +694,6 @@ Now we improve Solymosi's result.
 
 
 
-Setting $k=1$ in Lemma~\ref{lem:2k-1_segments},
-we obtain the following result (which is exactly~\cite[Lemma 3]{our-vmmsh-2018}).
-\begin{corollary}
-	\label{cor:only_one_distance_1_on_straight_line}
-	Let $M \in \mathfrak{M}(2,\mathbb{N})$ and let $m$ be a straight line.
-	Then there is at most one pair of points $M_1,M_2\in M \cap m$
-	such that $|M_1 M_2| = 1$.
-\end{corollary}
 
 In order to describe all the sets $M \in \mathfrak{M}(2,n)$ with distance 1,
 we need~\cite[Proposition 6]{our-vmmsh-2018}.
