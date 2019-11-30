@@ -211,7 +211,7 @@ we obtain the following result (which is exactly~\cite[Lemma 3]{our-vmmsh-2018})
 \end{lemma}
 
 \begin{proof}
-	Any $n^2+1$ points, including the endpoints of $\Delta$, partition the segment $\Delta$ into $n^2$
+	Any $n^2+1$ points, including the endpoints of $\Delta$, split the segment $\Delta$ into $n^2$
 	sequential segments $\Delta_i$.
 	Due to Lemma~\ref{lem:2k-1_segments}, there is at most one segment of length 1,
 	at most three segments of length 2, etc.
@@ -297,7 +297,7 @@ Lemma~\ref{lem:line_segment_cardinality} leads to the following proposition.
 	and solving it for $t=647$, we obtain the required estimate.
 \end{proof}
 
-Concluding the section, we remark that
+To conclude, we remark that
 Corollary~\ref{cor:only_one_distance_1_on_straight_line}
 and
 Proposition~\ref{obs:estimate_points_on_straight_line}
@@ -377,7 +377,7 @@ so e.g. the cases $M_1 = M_3$ and $M_3 \in M_1 M_2$ satisfy the conditions of Le
 \end{lemma}
 
 
-Basing on the exact values of $d(2,n)$ for $ 3 \leq n\leq 122$ and the estimate $d(2,123)>10000$
+Based on the exact values of $d(2,n)$ for $ 3 \leq n\leq 122$ and the estimate $d(2,123)>10000$
 \cite{kurz2008bounds}, we derive the following proposition.
 \begin{proposition}
 	\label{obs:4_leq_n_leq_21491}
@@ -390,7 +390,7 @@ Basing on the exact values of $d(2,n)$ for $ 3 \leq n\leq 122$ and the estimate 
 
 Therefore, we will focus on planar integral points sets of more than 21491 points.
 
-Performing some simple manipulations with the upper bound in Theorem~\ref{thm:varphi_k_bounds},
+By means of some simple manipulations with the upper bound in Theorem~\ref{thm:varphi_k_bounds},
 one can derive the following proposition.
 \begin{proposition}
 	\label{varphi_n_where_n_geq_21492}
@@ -662,7 +662,7 @@ Now we improve Solymosi's result.
 
 \begin{remark}
 	\label{rem:planar_set_with_minimeter_1_of_3_points}
-	Applying Construction~\ref{con:planar_set_with_minimeter_1} to $k=1$ naively,
+	Applying Construction~\ref{con:planar_set_with_minimeter_1} to $k=1$ ad litteram,
 	we get $a = 3$, $I=\varnothing$, $b_\varnothing = -1$ and then
 	obtain an equilateral triangle of side length 1.
 	This triangle is obviously the optimal set in $\mathfrak{M}(2,3)$.
@@ -791,9 +791,9 @@ then it cannot be squashed to an integral point set of the same power and struct
 \begin{proof}
 	Take a facher integral point set according to Construction~\ref{con:planar_set_with_minimeter_1}
 	with sufficiently large height and then apply the ``blowing up'' procedure described in~\cite[Theorem 1.3]{kurz2008bounds},
-	replacing the out-of-line point with an $(m-2)$-dimensional simplex of proper side length.
+	replacing the point that is not situated on the line, with an $(m-2)$-dimensional simplex of proper side length.
 	That simplex will consist of $m-1$ points;
-	we can throw out up to all points $M_J$, except the two points with distance 1.
+	we can exclude practically all $M_J$ points, except the two points with distance 1.
 	So, the set consists of $m+1$ or more points and has distance 1 occuring in it.
 	As distance 1 occurs in the obtained set, it is prime.
 \end{proof}
@@ -907,7 +907,7 @@ especially the following theorem.
 Such a set can not contain distance 1: due to Theorem~\ref{thm:minimeter_1_planar},
 the points with distance 1 should be $(\pm 1/2, 0)$.
 
-For planar integral point sets containing distance 1, we can emphasise on the following problem.
+For planar integral point sets containing distance 1, we can emphasize the following problem.
 \begin{problem}
 	For given $n\geq 3$ and squarefree number $q \neq 1$,
 	is there $M\in\mathfrak{M}(2,n)$, such that characteristic of $M$ is $q$
@@ -942,8 +942,8 @@ Obviously, Theorem~\ref{thm:prime_with_unique_desired_distance} can be generaliz
 
 
 \section{Acknowledgements}
-Author thanks Dr. Prof. E.M. Semenov for the fruitful discussion and ideas,
-A.S. Chervinskaia for the idea of using the term ``facher'' and other linguistic advices,
+The author thanks Dr. Prof. E.M. Semenov for the fruitful discussion and ideas,
+A.S. Chervinskaia for the idea of using the term ``facher'' and proofreading,
 and Dr. A.S. Usachev for proofreading.
 
 
