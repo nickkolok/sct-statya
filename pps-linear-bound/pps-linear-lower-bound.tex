@@ -366,6 +366,30 @@ Now we will estimate the side length of a square which contains a given planar i
 	Then $M$ is situated in a square of side length $d$.
 \end{lemma}
 
+\begin{proof}
+	Consider $M_1, M_2 \in M$ such that $|M_1 - M_2| = d$
+	and a Cartesian coordinate system such that
+	$M_1 = (-d/2; 0)$, $M_2 = (d/2; 0)$.
+
+	Then for $M_i =(x_i, y_i)\in M$, $i > 2$,
+	the inequality $|x_i| < d/2$ holds
+	(otherwise we get $|M_i - M_1| > d$ or $|M_i - M_2| > d$).
+	Moreover, $|y_i| < d$ (otherwise we get $|M_i - M_1| > d$ or $|M_i - M_2| > d$).
+
+	Set $y_{\max} = \max_{i} y_i$, $y_{\min} = \min_{i} y_i$, $M_{\max}=(x_{\max}, y_{\max})$, $M_{\min}=(x_{\min}, y_{\min})$
+	(in case of multiple points providing the maximum or the minimum, the choice is arbitrary).
+	Then
+	\begin{multline}
+		d \geq |M_{\max} - M_{\min}| = \sqrt{(x_{\max} - x_{\min})^2 + (y_{\max} - y_{\min})^2}
+		\geq
+		\\\geq
+		\sqrt{(y_{\max} - y_{\min})^2} =
+		y_{\max} - y_{\min}
+	\end{multline}
+	Thus, the sides of the square that contains $M$ are $x=\pm d/2$,
+	$y=y_{\max}$ and $y=y_{\max} - d$.
+\end{proof}
+
 \subsection{Special results}
 
 Based on the exact values of $d(2,n)$ for $ 3 \leq n\leq 122$ and the estimate $d(2,123)>10000$
