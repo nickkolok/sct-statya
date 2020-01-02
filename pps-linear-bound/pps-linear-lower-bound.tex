@@ -441,8 +441,40 @@ employing the results of two previous sections.
 	%$M_1 \neq M_2$, $M_3 \neq M_4$,
 	then the set $cr(M_1,M_2) \cap cr(M_3,M_4)$ is either a straight line or contains 2 or 4 points.
 \end{lemma}
-It is important that we consider the intersection of open line segments,
-so e.g. the cases $M_1 = M_3$ and $M_3 \in M_1 M_2$ satisfy the conditions of Lemma~\ref{lem:intervals_cross}.
+
+\begin{proof}
+	Consider straight lines $l^1_1$, $l^1_2$, $l^2_1$, $l^2_2$
+	such that $cr(M_1,M_2) = l^1_1 \cup l^1_2$ and $cr(M_3,M_4) = l^2_1 \cup l^2_2$.
+
+	The cases $l^1_1 = l^2_1$, $l^1_2 = l^2_2$ and $l^1_1 = l^2_2$, $l^1_2 = l^2_1$ are impossible,
+	because the centers of open line segments $M_1 M_2$ and $M_3 M_4$ do not coincide as far as
+	the open line segments do not intersect.
+	So, all the possible cases (up to enumeration of the straight lines) are:
+	\begin{itemize}
+		\item
+			$l^1_1 = l^2_1$, $l^1_2 \neq l^2_2$.
+			The straight lines $l^1_2$ and $l^2_2$ are both orthogonal to $l^1_1$ and thus do not intersect;
+			thus, $cr(M_1,M_2) \cap cr(M_3,M_4) = l^1_1 = l^2_1$.
+		\item
+			$l^1_1$ is parallel to $l^2_1$ and $l^1_2$ is parallel to $l^2_2$.
+			Then
+			\begin{equation*}
+				cr(M_1,M_2) \cap cr(M_3,M_4) = (l^1_1 \cup l^1_2)\cap(l^2_1 \cup l^2_2) =
+				\\=
+				(l^1_1 \cap l^2_2) \cup (l^1_2 \cap l^2_1)
+				,
+			\end{equation*}
+			that is two points.
+		\item
+			$l^1_1$ is neither parallel nor orthogonal to $l^2_1$.
+			Then the intersection contains 4 points.
+	\end{itemize}
+\end{proof}
+
+\begin{remark}
+	It is important that we consider the intersection of open line segments in the claim of Lemma~\ref{lem:intervals_cross},
+	so e.g. the cases $M_1 = M_3$ and $M_3 \in M_1 M_2$ satisfy the conditions of Lemma~\ref{lem:intervals_cross}.
+\end{remark}
 
 \begin{lemma}
 	\label{lemma:quadr_diag_edges}
