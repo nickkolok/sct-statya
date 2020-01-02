@@ -137,10 +137,14 @@ using the combined approach with the Point Packing in a Square problem
 (this approach is different from Solymosi's one);
 second, we prove that $l(m,n)=1$ for all possible $m$ and $n$.
 
+TODO: note about Section structure.
+
 
 \section{Collinear subsets of integral point sets}
 Integral point sets with many collinear points are very dominating examples.
 In this section we estimate the cardinality of an intersection of an integral point set with a line segment.
+
+\subsection{General results}
 
 Assuming that the planar integral point set contains many collinear points,
 the following result holds.
@@ -262,6 +266,7 @@ by an arbitrary number of points.
 	\end{equation}
 \end{proof}
 
+\subsection{Special results}
 
 In~\cite{kurz2008bounds}, thorough investigation of planar integral point sets with diameter at most 10~000
 is carried out;
@@ -306,12 +311,15 @@ that are used in the proofs below;
 all the other are auxiliary.
 
 
-\section{Lower bound for the diameter}
 
-In this section,
-we improve the lower bound for minimum diameter of planar integral point sets
-employing Point Packing in a Square problem.
-Below we introduce the problem, basic notions and results.
+\section{Planar integral point set in a square}
+
+In this section, we develop some methods that employ the fact that every planar integral point set is situated in a square.
+Then we establish a connection between distances in integral point sets and the Point Packing in the Square problem.
+
+\subsection{General results}
+
+Let us introduce the Problem, basic notions and results.
 
 \begin{problem}[Point Packing in a Square (PPS)~\cite{locatelli2002packing,costa2013valid}]
 	\label{problem:PPS}
@@ -344,8 +352,7 @@ So, it's impossible to place $k$ points in a unit square in such a way that each
 	\end{equation*}
 \end{theorem}
 
-
-To prove the bound on $d(2,n)$, we also need the following results and notions from~\cite{our-vmmsh-2018}.
+Now we will estimate the side length of a square which contains a given planar integral points set.
 
 \begin{lemma}
 	\cite[Lemma 4]{our-vmmsh-2018}
@@ -354,28 +361,7 @@ To prove the bound on $d(2,n)$, we also need the following results and notions f
 	Then $M$ is situated in a square of side length $d$.
 \end{lemma}
 
-\begin{definition}
-	A \textit{cross} for points $M_1$ and $M_2$, denoted by $cr(M_1,M_2)$, is the union of two straight lines:
-	the line through $M_1$ and $M_2$,
-	and the perpendicular bisector of line segment $M_1 M_2$.
-\end{definition}
-
-\begin{lemma}
-	\label{lem:intervals_cross}
-	If open line segments $M_1 M_2$ and $M_3 M_4$ do not intersect,
-	%$M_1 \neq M_2$, $M_3 \neq M_4$,
-	then the set $cr(M_1,M_2) \cap cr(M_3,M_4)$ is either a straight line or contains 2 or 4 points.
-\end{lemma}
-It is important that we consider the intersection of open line segments,
-so e.g. the cases $M_1 = M_3$ and $M_3 \in M_1 M_2$ satisfy the conditions of Lemma~\ref{lem:intervals_cross}.
-
-\begin{lemma}
-	\label{lemma:quadr_diag_edges}
-	Let $ABCD$ be a convex quadrilateral on the plane.
-	Then $\max\{AC,BD\}>\min\{AB,BC,CD,DA\}$,
-	that is at least one diagonal is greater than at least one side.
-\end{lemma}
-
+\subsection{Special results}
 
 Based on the exact values of $d(2,n)$ for $ 3 \leq n\leq 122$ and the estimate $d(2,123)>10000$
 \cite{kurz2008bounds}, we derive the following proposition.
@@ -406,7 +392,38 @@ one can derive the following proposition.
 	\end{equation}
 \end{proposition}
 
-Now we need to estimate the cardinality of an intersection of an integral point set with a line segment.
+\section{Lower bound for the diameter}
+
+In this section,
+we improve the lower bound for minimum diameter of planar integral point sets
+employing the results of two previous sections.
+
+\subsection{General results}
+
+\begin{definition}
+	A \textit{cross} for points $M_1$ and $M_2$, denoted by $cr(M_1,M_2)$, is the union of two straight lines:
+	the line through $M_1$ and $M_2$,
+	and the perpendicular bisector of line segment $M_1 M_2$.
+\end{definition}
+
+\begin{lemma}
+	\label{lem:intervals_cross}
+	If open line segments $M_1 M_2$ and $M_3 M_4$ do not intersect,
+	%$M_1 \neq M_2$, $M_3 \neq M_4$,
+	then the set $cr(M_1,M_2) \cap cr(M_3,M_4)$ is either a straight line or contains 2 or 4 points.
+\end{lemma}
+It is important that we consider the intersection of open line segments,
+so e.g. the cases $M_1 = M_3$ and $M_3 \in M_1 M_2$ satisfy the conditions of Lemma~\ref{lem:intervals_cross}.
+
+\begin{lemma}
+	\label{lemma:quadr_diag_edges}
+	Let $ABCD$ be a convex quadrilateral on the plane.
+	Then $\max\{AC,BD\}>\min\{AB,BC,CD,DA\}$,
+	that is at least one diagonal is greater than at least one side.
+\end{lemma}
+
+
+\subsection{Special results}
 
 Now we are ready to prove the main theorem of the section.
 
