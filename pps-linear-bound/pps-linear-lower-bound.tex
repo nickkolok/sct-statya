@@ -112,8 +112,8 @@ In order to answer this question, the following function was introduced~\cite{ku
 	d(m,n) = \min_{M\in\mathfrak{M}(m,n)} \operatorname{diam} M = \min_{M\in\mathfrak{M}(m,n)} \max_{A,B\in M} |AB|
 	.
 \end{equation}
-We also refer to~\cite{kurz2008bounds} for a list of known exact values of $d(m,n)$
-and its bounds; in the present paper, the case of $m=2$ will mostly be in the focus.
+We also refer to~\cite{kurz2008bounds} for a list of known exact values of $d(m,n)$ and its bounds.
+In the present paper, the case of $m=2$ will mostly be in the focus.
 
 The most significant breakthrough on the planar case was done by Solymosi~\cite{solymosi2003note},
 who proved that $cn \leq d(2,n)$ for a sufficiently small constant $c$.
@@ -164,7 +164,7 @@ the following result holds.
 \end{theorem}
 However, the estimate is rather unsuitable for our needs,
 as it does not provide the values of all the constants.
-To obtain the needed estimate, we now prove a generalization of~\cite[lemma 3]{our-vmmsh-2018}.
+To obtain the needed estimate, we now prove a generalization of~\cite[Lemma 3]{our-vmmsh-2018}.
 
 \begin{definition}
 	For a line segment $M_1 M_2$ and an integer $k$, such that $-|M_1 M_2| < k < |M_1 M_2|$,
@@ -184,12 +184,12 @@ is a branch of a hyperbola for $k\neq 0$ and the perpendicular bisector of line 
 
 \begin{lemma}
 	\label{lem:2k-1_segments}
-	Let $M \in \mathfrak{M}(2,\mathbb{N})$ and let $m$ be a straight line.
-	Then for every $k\in\mathbb{N}$ there are at most $2k-1$ segments $\Delta_i \subset m$ with endpoints in $M$,
+	Let $M \in \mathfrak{M}(2,\mathbb{N})$ and let $l$ be a straight line.
+	Then for every $k\in\mathbb{N}$ there are at most $2k-1$ segments $\Delta_i \subset l$ with endpoints in $M$,
 	such that $|\Delta_i| = k$.
 \end{lemma}
 \begin{proof}
-	Consider a point $N\in M \setminus m$.
+	Consider a point $N\in M \setminus l$.
 	Then for each $\Delta_i$ there is a $\rho(n_i,\Delta_i)$-curve containing $N$.
 	Due to Proposition~\ref{obs:rho_curves}, all $n_i$ are distinct;
 	otherwise the $\rho(n_i,\Delta_i)$-curve and the $\rho(n_i,\Delta_j)$-curve, $j\neq i$, do not intersect.
@@ -202,8 +202,8 @@ Setting $k=1$ in Lemma~\ref{lem:2k-1_segments},
 we obtain the following result (which is exactly~\cite[Lemma 3]{our-vmmsh-2018}).
 \begin{corollary}
 	\label{cor:only_one_distance_1_on_straight_line}
-	Let $M \in \mathfrak{M}(2,\mathbb{N})$ and let $m$ be a straight line.
-	Then there is at most one pair of points $M_1,M_2\in M \cap m$
+	Let $M \in \mathfrak{M}(2,\mathbb{N})$ and let $l$ be a straight line.
+	Then there is at most one pair of points $M_1,M_2\in M \cap l$
 	such that $|M_1 M_2| = 1$.
 \end{corollary}
 
@@ -405,8 +405,10 @@ Based on the exact values of $d(2,n)$ for $ 3 \leq n\leq 122$ and the estimate $
 
 Therefore, we will focus on planar integral points sets of more than 21491 points.
 
-By means of some simple manipulations with the upper bound in Theorem~\ref{thm:varphi_k_bounds},
-one can derive the following proposition.
+Now we need to estimate $\varphi_n$ with $\beta/\sqrt{n-n_0}$.
+Using the upper bound of Theorem~\ref{thm:varphi_k_bounds},
+one can easily find the values of $\beta$ and $n_0$.
+
 \begin{proposition}
 	\label{varphi_n_where_n_geq_21492}
 	For $n \geq 21492$ we have
@@ -424,7 +426,7 @@ one can derive the following proposition.
 \section{Lower bound for the diameter}
 
 In this section,
-we improve the lower bound for minimum diameter of planar integral point sets
+we improve the lower bound for the minimum diameter of planar integral point sets
 employing the results of two previous sections.
 
 \subsection{General results}
@@ -574,7 +576,7 @@ Now we are ready to prove the main theorem of the section.
 
 We can improve the constant in Theorem~\ref{thm:main_estimate},
 if some new exact values of $d(2,n)$ are found;
-however, the obtained constant is bounded by $3^{1/4}\cdot2^{-3/2}$ above.
+however, the obtained constant is bounded by $3^{1/4}\cdot2^{-3/2}$ from above.
 More precisely, we have the following theorem.
 
 \begin{theorem}
@@ -839,7 +841,7 @@ we obtain the following theorem.
 
 \subsection{Higher dimensions}
 
-Using the ``blowing up'' procedure described in~\cite[theorem 1.3]{kurz2008bounds},
+Using the ``blowing up'' procedure described in~\cite[Theorem 1.3]{kurz2008bounds},
 we can construct an integral point set $M$ in $m$-dimensional Euclidean space, $m\geq 3$,
 with distance 1 occuring in it.
 If we have an integral point set with distance 1 occuring,
