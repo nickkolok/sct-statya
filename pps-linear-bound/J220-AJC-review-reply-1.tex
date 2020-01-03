@@ -1,0 +1,177 @@
+\documentclass[a4paper,14pt]{article} %размер бумаги устанавливаем А4, шрифт 12пунктов
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel} %используем русский и английский языки с переносами
+\usepackage{amssymb,amsfonts,amsmath,mathtext,enumerate,float,amsthm} %подключаем нужные пакеты расширений
+\usepackage[unicode,colorlinks=true,citecolor=black,linkcolor=black]{hyperref}
+%\usepackage[pdftex,unicode,colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{indentfirst} % включить отступ у первого абзаца
+\usepackage[dvips]{graphicx} %хотим вставлять рисунки?
+\graphicspath{{illustr/}}%путь к рисункам
+
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.} % Заменяем библиографию с квадратных скобок на точку:
+\makeatother %Смысл этих трёх строчек мне непонятен, но поверим "Запискам дебианщика"
+
+\usepackage{geometry} % Меняем поля страницы.
+\geometry{left=2cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=2cm}% верхнее поле
+\geometry{bottom=2cm}% нижнее поле
+
+%\renewcommand{\theenumi}{\arabic{enumi}}% Меняем везде перечисления на цифра.цифра
+%\renewcommand{\labelenumi}{\arabic{enumi}}% Меняем везде перечисления на цифра.цифра
+%\renewcommand{\theenumii}{.\arabic{enumii}}% Меняем везде перечисления на цифра.цифра
+%\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}% Меняем везде перечисления на цифра.цифра
+%\renewcommand{\theenumiii}{.\arabic{enumiii}}% Меняем везде перечисления на цифра.цифра
+%\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}% Меняем везде перечисления на цифра.цифра
+
+\sloppy
+
+
+
+
+
+\renewcommand\normalsize{\fontsize{14}{25.2pt}\selectfont}
+
+%\usepackage[backend=biber,style=gost-numeric,sorting=nyt]{biblatex}
+%\addbibresource{../common/notmy.bib}
+%\addbibresource{../common/my.bib}
+
+\begin{document}
+
+Dear Editor and Referees,
+
+Thank you for your attention paid to the paper.
+I've done my best to cover all the remarks and advices,
+and the present document is a detaled description of the improvements done.
+
+First of all, I'd like to say special thanks to Referee 2 for the advice
+to better guide the reader through the long list of technical auxiliary results.
+As it was recommended, I've performed a major revision:
+the structure of the paper has been rearranged.
+Section 2 has been splitted into 3 smaller sections;
+moreover, each section of main part has been divided into subsections
+(see last paragraphs of Introduction for detailed description).
+
+Due to such a rearrangement, numbers of most Lemmas, Theorems etc. have been changed,
+and many results have been permutted to fit the new structure.
+Thus, it is rather impossible to mention the page and line numbers of every change that has been made,
+as it had been requested by the Editor.
+As a possible solution, I've published all the workflow at my GitHub:
+\\
+https://github.com/nickkolok/sct-statya/commits/master
+\\
+As far as I put all my work on the topic into the single repository,
+I've marked the commits concerning this paper with ``[J220]''.
+
+As for Review 1, I agree with all the remarks completely.
+\begin{enumerate}
+	\item
+		> Lemma 2.4: the reference is Russian, you may write a proof of Lemma 2.4 here in English
+
+		Done. Lemma 2.4 is now Lemma 3.4 and has a self-contained proof.
+
+	\item
+
+		> page 10, line 3: $c_j \rightarrow 2c_J$ or you may eliminate this line.
+
+		I've preferred the first option, i.e. replacement $c_j \rightarrow 2c_J$
+\end{enumerate}
+
+As for Review 2, I agree with all the remarks completely, except one.
+
+Medium remarks:
+
+\begin{enumerate}
+	\item
+		> The statement that integral point sets have to be finite is only true if we assume a dimension of at least 2.
+
+		Fixed. Page 1, line -7.
+
+
+	\item
+
+		> As the author’s recent preprint
+		``On diameter bounds for planar integral point sets in semi-general position''
+		is not very long and overlaps the content of the present paper,
+		it might be a good idea to summarize both to a single paper.
+
+		This this the only remark for which I have to write a rebuttal for,
+		and the reason is pretty simple:
+		the paper ``On diameter bounds for planar integral point sets in semi-general position''
+		has already been sent to another journal.
+		Thus, it seems to be impossible to include its content into the present paper.
+		Moreover, if the referees insist, I can
+		\textbf{
+		try to split the present paper into two ones:
+		}
+		one about the lower bound and one about integral point sets with distance 1.
+		The present paper looks rather long, and the requested proofs (see below)
+		have made it even more longer.
+		However, if the paper will be published as a single one, then I'll also be very glad.
+
+
+	\item
+
+		> Please translate the titles of the non-english reference, like [8] and [3],
+		into english or provide a link where those papers can be accessed.
+
+		The translation has been done.
+		However, the numbers of references have been changed, because
+		the Editor requested to put the references in alphabetical order of authors.
+
+
+	\item
+
+		> Please add a self-contained proof for Lemma 2.4 since not all readers, including me, can read the one in [3].
+
+		Done. Lemma 2.4 is now Lemma 3.4 and has a self-contained proof.
+
+
+	\item
+
+		> Is Lemma 2.6 also from [3] or have an obvious proof? Same for Lemma 2.7.
+
+		Lemma 2.6 is now Lemma 4.2 and has a self-contained proof.
+		\\
+		Lemma 2.7 is now Lemma 4.4 and has a self-contained proof.
+
+
+	\item
+
+		> Was the inequality $d(2, 123) \leq d(2, 21491)$ used in the proof of Proposition 2.8?
+
+		Yes, it was.
+		The comment has been added before the proposition (which is now Proposition 3.5).
+
+
+	\item
+
+		> Please add a proof for Proposition 2.12.
+
+		Thank you ver much for this remark.
+		I have to admit that the result is not formulated correctly.
+		The edits affect Definition 2.2 (ex Defintion 2.11), Proposition 2.3 (ex Proposition 2.12) and Lemma 2.4 (ex Lemma 2.13).
+		Proposition 2.3 now has a self-contained proof.
+
+	\item
+
+		> The “blow up” procedure needs an explanation – not everybody is an expert on this.
+
+		Construction 5.10 now provides the explanation.
+
+\end{enumerate}
+
+Minor remarks have been implemented precisely as they had been written.
+As for minor remark 3, a brief proof for the corresponding Proposition 3.6 has been added.
+
+
+
+
+
+
+
+%\printbibliography
+
+\end{document}
