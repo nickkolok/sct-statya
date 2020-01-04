@@ -168,19 +168,58 @@ To obtain the needed estimate, we now prove a generalization of~\cite[Lemma 3]{o
 
 \begin{definition}
 	For a line segment $M_1 M_2$ and an integer $k$, such that $-|M_1 M_2| < k < |M_1 M_2|$,
-	we define a $\rho(k,M_1 M_2)$-curve as the set of points $N$
+	we define a $\rho(k,M_1, M_2)$-curve as the set of points $N$
 	for which the equality $|N M_1| - |N M_2| = k$ holds.
 \end{definition}
-So, in the planar case a $\rho(k,M_1 M_2)$-curve
+So, in the planar case a $\rho(k,M_1, M_2)$-curve
 is a branch of a hyperbola for $k\neq 0$ and the perpendicular bisector of line segment $M_1 M_2$ for $k=0$.
 
 \begin{proposition}
 	\label{obs:rho_curves}
 	If points $M_1,M_2,M_3,M_4$ are situated on a straight line,
-	the equality $|M_1 M_2| = |M_3 M_4|$ holds and line segments $M_1 M_2$ and $M_3 M_4$ do not coincide,
-	then for a fixed $k$ the $\rho(k,M_1 M_2)$-curve and the $\rho(k,M_3 M_4)$-curve
+	the equality $|M_1 M_2| = |M_3 M_4| =h $ holds, line segments $M_1 M_2$ and $M_3 M_4$ do not coincide
+	and vectors $\overrightarrow{M_1 M_2}$ and $\overrightarrow{M_3 M_4}$ are of equal direction,
+	then for a fixed integer $k$, $|k| < h$, the $\rho(k,M_1, M_2)$-curve and the $\rho(k,M_3, M_4)$-curve
 	do not intersect.
 \end{proposition}
+
+\begin{proof}
+	For $k=0$, the claim is obvious.
+	Indeed, in this case the $\rho(k,M_1, M_2)$-curve and the $\rho(k,M_3, M_4)$-curve
+	are distinct hyperplanes orthogonal to $l$ and thus do not intersect.
+
+	For $k\neq 0$, suppose the contrary.
+	Let $N$ be a point in the intersection.
+
+	Consider a plane $\Pi \supset (l \cup \{N\})$
+	with a Cartesian coordinate system such that $M_i = (x_i,0)$ for $1 \leq i \leq 4$.
+	Let $R_1$ and $R_2$ be the projections
+	of the $\rho(k,M_1, M_2)$-curve and the $\rho(k,M_3, M_4)$-curve onto $\Pi$.
+
+	Then $R_1$ is a branch of a hyperbola defined by the equation
+	\begin{equation}
+		x- \frac{x_1+x_2}{2}=a(h,k)\frac{\sqrt{y^2+b^2(h,k)}}{b(h,k)}
+	\end{equation}
+	and $R_2$ is a branch of a hyperbola defined by the equation
+	\begin{equation}
+		x- \frac{x_3+x_4}{2}=a(h,k)\frac{\sqrt{y^2+b^2(h,k)}}{b(h,k)}
+		,
+	\end{equation}
+	where $a(h,k)$ and $b(h,k)$ are coefficients which depend on $h$ and $k$.
+	For $N=(x_N, y_N) \in R_1 \cap R_2$ we have
+	\begin{equation}
+		\begin{cases}
+			x_N- \dfrac{x_1+x_2}{2}=a(h,k)\dfrac{\sqrt{y_N^2+b^2(h,k)}}{b(h,k)}
+			\\[4pt]\\
+			x_N- \dfrac{x_3+x_4}{2}=a(h,k)\dfrac{\sqrt{y_N^2+b^2(h,k)}}{b(h,k)}
+		\end{cases}
+	\end{equation}
+	and, thus, $x_1+x_2 = x_3+x_4$.
+	On the other hand, $x_2 - x_1 = x_4 - x_3 = h$,
+	and we conclude that $x_1 = x_3$ as well as $x_2 = x_4$.
+	So, line segments $M_1 M_2$ and $M_3 M_4$ coincide.
+	The contradiction concludes the proof.
+\end{proof}
 
 \begin{lemma}
 	\label{lem:2k-1_segments}
@@ -190,9 +229,11 @@ is a branch of a hyperbola for $k\neq 0$ and the perpendicular bisector of line 
 \end{lemma}
 \begin{proof}
 	Consider a point $N\in M \setminus l$.
-	Then for each $\Delta_i$ there is a $\rho(n_i,\Delta_i)$-curve containing $N$.
+	Let $\Delta_i = M_i^1 M_i^2$, and
+	let vectors $\overrightarrow{M_i^1 M_i^2}$ and $\overrightarrow{M_j^1 M_j^2}$ be of equal direction for every $i$ and $j$.
+	Then for each $i$ there is a $\rho(n_i, M_i^1, M_i^2)$-curve containing $N$.
 	Due to Proposition~\ref{obs:rho_curves}, all $n_i$ are distinct;
-	otherwise the $\rho(n_i,\Delta_i)$-curve and the $\rho(n_i,\Delta_j)$-curve, $j\neq i$, do not intersect.
+	otherwise the $\rho(n_i,M_i^1, M_i^2)$-curve and the $\rho(n_i,M_j^1, M_j^2)$-curve, $j\neq i$, do not intersect.
 	There can be only $2k-1$ distinct values for $n_i$,
 	so there are at most $2k-1$ distinct segments $\Delta_i$.
 \end{proof}
