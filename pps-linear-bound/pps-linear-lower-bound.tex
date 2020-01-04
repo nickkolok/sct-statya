@@ -954,8 +954,28 @@ we obtain the following theorem.
 
 \subsection{Higher dimensions}
 
-Using the ``blowing up'' procedure described in~\cite[Theorem 1.3]{kurz2008bounds},
-we can construct an integral point set $M$ in $m$-dimensional Euclidean space, $m\geq 3$,
+To build integral points sets with distance 1 in higher dimensions,
+we need the ``blowing up'' procedure described in~\cite[Theorem 1.3]{kurz2008bounds}.
+
+\begin{construction}
+	\label{con:blowing_up}
+	Let $M\in\mathfrak{M}(2,n)$ have many points on a straight line $l_1$
+	and $M\setminus l_1 \subset l_2$ for a straight line $l_2$.
+	Moreover, let $l_1$ be parallel to $l_2$.
+
+	Construct $M' \subset \mathbb{R}^m$ by replacing all the points $M_1,...,M_n\in M \cap l_2$
+	by equal $(m-2)$--dimensional simplices $S_1,...,S_n$
+	in such a way that
+	\begin{equation}
+		\forall(j=1,...,n) \forall(N_i \in M \cap l_1 )\forall\left(M^j_k, M^j_h \in S_j\right)\left[|N_i M^j_k| = |N_i M^j_h|\right].
+	\end{equation}
+	Then under certain conditions (in particular, if $\#(M \cap l_2)=1$ that we actually need)
+	we get $M'\in\mathfrak{M}(m,\mathbb{N})$.
+
+	For further examples we also refer the reader to~\cite{avdeev2019particular}.
+\end{construction}
+
+Now we can construct an integral point set $M$ in $m$-dimensional Euclidean space, $m\geq 3$,
 with distance 1 occuring in it.
 If we have an integral point set with distance 1 occuring,
 then we can easily dilate it to turn 1 into the desired distance.
@@ -987,7 +1007,7 @@ then it cannot be squashed to an integral point set of the same power and struct
 
 \begin{proof}
 	Take a facher integral point set according to Construction~\ref{con:planar_set_with_minimeter_1}
-	with sufficiently large height and then apply the ``blowing up'' procedure described in~\cite[Theorem 1.3]{kurz2008bounds},
+	with sufficiently large height and then apply the ``blowing up'' procedure described in Construction~\ref{con:blowing_up},
 	replacing the point that is not situated on the line, with an $(m-2)$-dimensional simplex of proper side length.
 	That simplex will consist of $m-1$ points;
 	we can exclude practically all $M_J$ points, except the two points with distance 1.
