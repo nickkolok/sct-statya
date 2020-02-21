@@ -33,7 +33,8 @@
 
 \renewcommand\normalsize{\fontsize{14}{25.2pt}\selectfont}
 
-\usepackage[backend=biber,style=gost-numeric,sorting=nyt]{biblatex}
+\usepackage[backend=biber,bibstyle=ieee,citestyle=numeric,sorting=nyt]{biblatex}
+\DeclareFieldFormat{sentencecase}{#1}
 \addbibresource{../common/notmy.bib}
 \addbibresource{../common/my.bib}
 
