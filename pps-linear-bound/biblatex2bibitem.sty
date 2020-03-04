@@ -1,0 +1,64 @@
+% this is my first package
+% 
+% (c) Nikolai Avdeev aka @nickkolok, and @odomanov
+%
+% See also https://github.com/odomanov/biblatex-gost/issues/20
+%
+%% This program can be redistributed and/or modified under the terms
+%% of the LaTeX Project Public License Distributed from CTAN archives
+%% in directory macros/latex/base/lppl.txt.
+% 
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{biblatex2bibitem}
+  [2020/02/24 v0.01 LaTeX package to convert biblatex-generated bibliography to bibitem commands]
+
+\RequirePackage{biblatex}
+
+\defbibenvironment{bibitembibliography}
+  {\textbackslash begin\{thebibliography\}\{99\}
+   % Page numbers and page headings are not wanted when copying
+   \thispagestyle{empty}
+   \pagestyle{empty}
+   \hyphenpenalty=10000
+   \exhyphenpenalty=10000
+   \renewcommand*{\&}{\textbackslash \symbol{38}}%
+   \renewcommand*{\mkbibemph}[1]{\textbackslash emph\{##1\}}%
+   \renewcommand*{\mkbibitalic}[1]{\textbackslash textit\{##1\}}%
+   \renewcommand*{\mkbibbold}[1]{\textbackslash textbf\{##1\}}%
+   %\DeclareFieldFormat{titlecase}{\texttt{\utffriendlydetokenize{#1}}}
+   \list{}{}}
+  {\endlist
+   \textbackslash end\{thebibliography\}
+   \thispagestyle{empty}
+   \pagestyle{empty}
+  }
+  {\item\%\\~\textbackslash bibitem\{\printfield{entrykey}\}\\}
+
+\newcommand{\utffriendlydetokenize}[1]{
+	\scantokens{
+		\catcode`\_=12
+		\catcode`\^=12
+		\catcode`\{=12
+		\catcode`\}=12
+		\catcode`\&=12
+		\catcode`\$=12
+		\catcode`\#=12
+		\catcode`\\=12
+		#1
+	}
+}
+
+
+
+\newcommand{\printbibitembibliography}{
+	\raggedright
+	\DeclareFieldFormat{titlecase}{\utffriendlydetokenize{##1}}
+	%\DeclareDelimFormat[bib]{nametitledelim}{\newline\bibsentence}
+	\printbibliography[env=bibitembibliography]
+}
+
+
+
+\endinput
+%%
+%% End of file `mypackage.sty'.
