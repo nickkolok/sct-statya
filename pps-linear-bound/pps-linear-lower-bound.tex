@@ -73,7 +73,10 @@
 \author{
 	N.N. Avdeev
 	\footnote{nickkolok@mail.ru, avdeev@math.vsu.ru}
+	\\
+	\textit{Voronezh State University, Voronezh, Russia}
 }
+
 
 \maketitle
 
@@ -84,7 +87,7 @@ We improve the linear lower bound for diameter of planar integral point sets.
 This improvement takes into account some results related to the Point Packing in a Square problem.
 Then for arbitrary integers $m \geq 2$, $n \geq m+1$, $d \geq 1$
 we give a construction of an integral point set $M$ of $n$ points in $m$-dimensional Euclidean space,
-where $M$ contains points $M_1$ and $M_2$ such that distance between $M_1$ and $M_2$ is exactly $d$.
+where $M$ contains points $M_1$ and $M_2$ such that the distance between $M_1$ and $M_2$ is exactly $d$.
 
 
 
@@ -98,7 +101,7 @@ Erd{\H{o}}s and Anning proved~\cite{anning1945integral,erdos1945integral} that e
 Taking this into account, we denote the set of all integral point sets of $n$ points in $m$-dimensional Euclidean space by
 $\mathfrak{M}(m,n)$ (using the notation in~\cite{our-vmmsh-2018-translit})
 and denote the set of all integral point sets in $m$-dimensional Euclidean space by $\mathfrak{M}(m,\mathbb{N})$.
-The symbol $\# M$ will be used for cardinality of $M$, that is the number of points in $M$ in our case.
+The symbol $\# M$ will be used for the cardinality of $M$, that is the number of points in $M$ in our case.
 
 For every finite point set, its diameter is naturally defined as
 \begin{equation}
@@ -117,7 +120,7 @@ In order to answer this question, the following function was introduced~\cite{ku
 	.
 \end{equation}
 We also refer to~\cite{kurz2008bounds} for a list of known exact values of $d(m,n)$ and its bounds.
-In the present paper, the case of $m=2$ will mostly be in the focus.
+In the present paper, we mostly focus on the case $m=2$.
 
 The most significant breakthrough on the planar case was done by Solymosi~\cite{solymosi2003note},
 who proved that $cn \leq d(2,n)$ for a sufficiently small constant $c$.
@@ -168,7 +171,7 @@ the following result holds.
 \end{theorem}
 However, the estimate is rather unsuitable for our needs,
 as it does not provide the values of all the constants.
-To obtain the needed estimate, we now prove a generalization of~\cite[Lemma 3]{our-vmmsh-2018-translit}.
+To obtain the required estimate, we now prove a generalization of~\cite[Lemma 3]{our-vmmsh-2018-translit}.
 
 \begin{definition}
 	For a line segment $M_1 M_2$ and an integer $k$, such that $-|M_1 M_2| < k < |M_1 M_2|$,
@@ -980,8 +983,8 @@ we need the ``blowing up'' procedure described in~\cite[Theorem 1.3]{kurz2008bou
 \end{construction}
 
 Now we can construct an integral point set $M$ in $m$-dimensional Euclidean space, $m\geq 3$,
-with distance 1 occuring in it.
-If we have an integral point set with distance 1 occuring,
+with distance 1 occurring in it.
+If we have an integral point set with distance 1 occurring,
 then we can easily dilate it to turn 1 into the desired distance.
 These facts, together with Theorem~\ref{thm:minimeter_1_planar}, give the following theorem.
 
@@ -995,7 +998,7 @@ These facts, together with Theorem~\ref{thm:minimeter_1_planar}, give the follow
 \begin{definition}
 	\cite{noll1989nclusters}
 	We will call an integral point set $M$ \textit{prime}, if the greatest common divisor
-	of all the distances occuring in $M$ is 1.
+	of all the distances occurring in $M$ is 1.
 \end{definition}
 
 If an integral point set is prime,
@@ -1015,7 +1018,7 @@ then it cannot be squashed to an integral point set of the same power and struct
 	replacing the point that is not situated on the line, with an $(m-2)$-dimensional simplex of proper side length.
 	That simplex will consist of $m-1$ points;
 	we can exclude practically all $M_J$ points, except the two points with distance 1.
-	So, the set consists of $m+1$ or more points and has distance 1 occuring in it.
+	So, the set consists of $m+1$ or more points and has distance 1 occurring in it.
 	As distance 1 occurs in the obtained set, it is prime.
 \end{proof}
 
@@ -1125,7 +1128,7 @@ especially the following theorem.
 	and the point $(0,\sqrt{A_n})$,
 	where $b_1,...,b_{n-1}, A_n$ are integer and $\sqrt{A_n}\notin\mathbb{N}$.
 \end{theorem}
-Such a set can not contain distance 1: due to Theorem~\ref{thm:minimeter_1_planar},
+Such a set cannot contain distance 1: due to Theorem~\ref{thm:minimeter_1_planar},
 the points with distance 1 should be $(\pm 1/2, 0)$.
 
 For planar integral point sets containing distance 1, we can emphasize the following problem.
@@ -1147,14 +1150,14 @@ For greater $m$, we will be bold enough to suggest the following conjecture.
 	Then either $n = m+1$ or $M$ is a ``blowup'' of a facher set and distance 1 occurs in $M$
 	no more than $1+\frac{(m-1)^2 - (m-1)}{2}$ times.
 \end{conjecture}
-Such estimate is based on the number of edges in an $(m-2)$-dimensional simplex.
+Such an estimate is based on the number of edges in an $(m-2)$-dimensional simplex.
 
 We want to conclude the list of conjectures with the one which appears the easiest to deal with.
 
 
 \begin{conjecture}
 	\label{hyp:prime_planar}
-	For every $n \geq 3$, $d \geq 1$ there exists an \textbf{prime}
+	For every $n \geq 3$, $d \geq 1$ there exists a \textbf{prime}
 	set $M\in\mathfrak{M}(2,n)$ which
 	contains points $M_1$ and $M_2$ such that distance between $M_1$ and $M_2$ is exactly $d$.
 \end{conjecture}
