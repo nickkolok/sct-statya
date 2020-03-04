@@ -1,4 +1,4 @@
-% this is my first package
+% A workaround to convert biblatex-generated bibliography to bibitems
 % 
 % (c) Nikolai Avdeev aka @nickkolok, and @odomanov
 %
@@ -6,53 +6,79 @@
 %
 %% This program can be redistributed and/or modified under the terms
 %% of the LaTeX Project Public License Distributed from CTAN archives
-%% in directory macros/latex/base/lppl.txt.
+%% https://ctan.org/license/lppl1.3c
 % 
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 \ProvidesPackage{biblatex2bibitem}
-  [2020/02/24 v0.01 LaTeX package to convert biblatex-generated bibliography to bibitem commands]
+  [2020/03/03 v0.2.0 LaTeX package to convert biblatex-generated bibliography to bibitem commands]
 
 \RequirePackage{biblatex}
 
+\newcommand{\printgeneratedbibitemseparator}{\%\\}
+
+\newcommand{\print@begin@thebibliography}{\textbackslash begin\{thebibliography\}\{99\}}
+\newcommand{\print@end@thebibliography  }{\textbackslash   end\{thebibliography\}      }
+
+
 \defbibenvironment{bibitembibliography}
-  {\textbackslash begin\{thebibliography\}\{99\}
+  {
    % Page numbers and page headings are not wanted when copying
    \thispagestyle{empty}
    \pagestyle{empty}
    \hyphenpenalty=10000
    \exhyphenpenalty=10000
+   \raggedright
    \renewcommand*{\&}{\textbackslash \symbol{38}}%
+   \ifcsname mkbibsc\endcsname% Sometimes it is not defined
+    \renewcommand*{\mkbibsc}[1]{\textbackslash textsc\{##1\}}%
+   \fi%
+   \renewcommand*{\texttt}[1]{\textbackslash texttt\{##1\}}%
+   \renewcommand*{\textit}[1]{\textbackslash textit\{##1\}}%
+   \renewcommand*{\textbf}[1]{\textbackslash textbf\{##1\}}%
+   \renewcommand*{\textsc}[1]{\textbackslash textsc\{##1\}}%
+   \renewcommand*{\emph}[1]{\textbackslash emph\{##1\}}%
+   %
+   \providecommand*{\nolinkurl}{\url}
+   \renewcommand*{\nolinkurl}[1]{\textbackslash nolinkurl \{##1\}}%
+   \renewcommand*{\url}[1]{\textbackslash url \{##1\}}%
+   %
+   \ifcsname href\endcsname% Sometimes it is not defined
+    \renewcommand*{\href}[2]{\textbackslash href \{##1\} \{##2\}}%
+   \fi
+   %
    \renewcommand*{\mkbibemph}[1]{\textbackslash emph\{##1\}}%
    \renewcommand*{\mkbibitalic}[1]{\textbackslash textit\{##1\}}%
    \renewcommand*{\mkbibbold}[1]{\textbackslash textbf\{##1\}}%
    %\DeclareFieldFormat{titlecase}{\texttt{\utffriendlydetokenize{#1}}}
+   \print@begin@thebibliography
    \list{}{}}
   {\endlist
-   \textbackslash end\{thebibliography\}
+   \print@end@thebibliography
    \thispagestyle{empty}
    \pagestyle{empty}
   }
-  {\item\%\\~\textbackslash bibitem\{\printfield{entrykey}\}\\}
+  {\item\printgeneratedbibitemseparator\textbackslash bibitem\{\printfield{entrykey}\}\\}
 
-\newcommand{\utffriendlydetokenize}[1]{
-	\scantokens{
-		\catcode`\_=12
-		\catcode`\^=12
-		\catcode`\{=12
-		\catcode`\}=12
-		\catcode`\&=12
-		\catcode`\$=12
-		\catcode`\#=12
-		\catcode`\\=12
-		#1
-	}
+\newcommand{\utffriendlydetokenize}[1]{%
+\scantokens{%
+\catcode`\_=12%
+\catcode`\^=12%
+\catcode`\{=12%
+\catcode`\}=12%
+\catcode`\&=12%
+\catcode`\$=12%
+\catcode`\#=12%
+\catcode`\~=12%
+\catcode`\\=12%
+#1%
+}%
 }
 
 
+\newcommand{\ignorespacesaftertitlecase}{\leavevmode\unskip}
 
 \newcommand{\printbibitembibliography}{
-	\raggedright
-	\DeclareFieldFormat{titlecase}{\utffriendlydetokenize{##1}}
+	\DeclareFieldFormat{titlecase}{\utffriendlydetokenize{##1}\ignorespacesaftertitlecase}
 	%\DeclareDelimFormat[bib]{nametitledelim}{\newline\bibsentence}
 	\printbibliography[env=bibitembibliography]
 }
@@ -61,4 +87,4 @@
 
 \endinput
 %%
-%% End of file `mypackage.sty'.
+%% End of file `biblatex2bibitem.sty'.
