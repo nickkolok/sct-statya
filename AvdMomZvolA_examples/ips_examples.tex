@@ -1,0 +1,302 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian,english]{babel}
+\usepackage{amsmath,amsfonts,amssymb,euscript,graphicx,wrapfig,multirow}
+\usepackage{dsfont}
+\usepackage{amsthm}
+\inputencoding{utf8}
+%\bibliographystyle{unsrt}
+\textheight=240mm \textwidth=170mm
+\hoffset=-17mm
+\voffset=-17mm
+
+
+\usepackage[backend=biber,style=gost-numeric,sorting=none]{biblatex}
+\addbibresource{../common/notmy.bib}
+\addbibresource{../common/my.bib}
+
+
+\usepackage{hyperref}
+
+\makeatletter
+%\renewcommand{\fnum@figure}{Figure \thefigure}
+\renewcommand{\@biblabel}[1]{#1.}
+\makeatother
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}
+\theoremstyle{dfn}
+\newtheorem{dfn}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+%\renewcommand\refname{\centering References}
+
+
+% Переключаем язык на английский.
+% Очень полезно как в плане типографики (в том числе расстановки переносов),
+% так и в плане того, что не надо переименовывать "Рисунок" в "Figure"
+\selectlanguage{english}
+
+
+
+
+\title{
+	On particular examples of planar integral point sets and their classification
+	\footnote{
+		This work was carried out at Voronezh State University and supported by the Russian Science
+		Foundation grant 19-11-00197.
+	}
+}
+
+%% Прекрасно понимаю, что следующая команда - дичь и вордописчество, но время не ждёт, время жмёт
+\author{
+	Avdeev N.N.
+	\footnote{nickkolok@mail.ru, avdeev@math.vsu.ru}
+	, Momot E.A., Zvolinsky A.E.
+	\\
+	\\
+	\emph{Voronezh State University}
+}
+
+\maketitle
+
+
+\section{Introduction}
+
+
+
+\begin{dfn}\label{dfn1}
+	A planar integral point set (PIPS) is a set $\mathcal{P}$
+	of non-collinear points in plane $\mathbb{R}^{2}$ such that
+	for any pair of points $P_{1}, P_{2} \in \mathcal{P}$
+	the Euclidean distance $|P_{1}P_{2}|$
+	between points $P_{1}$ and $P_{2}$ is integral.
+\end{dfn}
+
+How do we characterize an integral point set?
+For example, we can count the number of points in it, which is always finite~\cite{anning1945integral,erdos1945integral}
+and is further called the cardinality;
+alternatively, we can naturally% TODO: naturally/essentially? cf. arxiv/1
+define the diameter of a finite point set.
+
+\begin{dfn}
+	A diameter of the integral point set $\mathcal{P}$ is defined as
+	\begin{equation}
+		\operatorname{diam(\mathcal{P})} = \underset{P_{1}, P_{2} \in
+		\mathcal{P}}{\max} |P_{1}P_{2}|
+	\end{equation}
+\end{dfn}
+
+Every integral point set also has a characteristic~\cite{kemnitz1988punktmengen,kurz2005characteristic}.
+
+
+
+
+
+
+
+
+
+\begin{dfn}
+	The function $d(m, n)$ is the minimum possible diameter of
+	the integral point set $\mathcal{P}$ of $n$ points in
+	$m$-dimensional Euclidean space $\mathbb{R}^{m}$.
+\end{dfn}
+
+
+%For a bit more sophisticated configurations, another functions are presented~\cite{kurz2008minimum,kreisel2008heptagon}.
+%
+%\begin{dfn}
+%	The function $\overline{d}(m, n)$ is the minimum possible diameter of
+%	the integral point set $\mathcal{P}$ of $n$ points in
+%	$m$-dimensional Euclidean space $\mathbb{R}^{m}$
+%	such that no $m+1$ points are located on an $(m-1)$-dimensional hyperplane.
+%\end{dfn}
+
+%\begin{dfn}
+%	The function $\dot{d}(m, n)$ is the minimum possible diameter of
+%	the integral point set $\mathcal{P}$ of $n$ points in
+%	$m$-dimensional Euclidean space $\mathbb{R}^{m}$
+%	such that no three points are located on a straight line
+%	and no four points are located on a circle.
+%\end{dfn}
+
+For the list of known bounds for $d(m, n)$,
+we refer the reader to~\cite[Theorem 1]{kurz2008bounds} or to~\cite{our-vmmsh-2018}.
+We will discuss the following estimations presented at~\cite{kurz2008bounds}:
+\begin{align}
+	d(m, 2m + 1) \leq 8\\
+	d(m, 2m + 2) \leq 13 \hypertarget{d2}\\
+	d(m, 3m) \leq 109
+\end{align}
+and the following theorem \cite[Theorem 2.1]{kurz2008bounds}.
+
+\begin{theorem}
+	Let $\mathcal{P}$ be a planar integral point set consisting of
+	$n - 2$ points on line $l_1$ and two points $P_{1}$ and $P_{2}$ on a
+	parallel line $l_2$ with distance $r$ between $l_{1}$ and $l_{2}$. If there
+	exist positive integers $v$, $w$ with $f^{2} + v^{2}
+	= w^{2}$ and $v < 2r$, where $|P_{1}P_{2}| = f$,
+	then
+
+	\begin{equation}\label{formula1}
+		d(m, n + 2(m - 2)) \leq \max(w, \operatorname{diam(\mathcal{P})})
+	\end{equation}
+
+\end{theorem}
+
+Firstly, we discuss the classification of planar integral points sets;
+then, we present some bounds for $d(m,n)$ based on planar integral point sets of particular types
+and provide some general constructions for such bounds.
+
+\section{Classification of planar integral point sets}
+
+\subsection{Integral point sets situated in two straight lines}
+
+\begin{dfn}
+	A planar integral point sets of $n$ points with $n-1$ points on a straight line is called
+	a \textit{facher} set.
+\end{dfn}
+Facher sets are very dominating examples of planar integral pont sets.
+In~\cite{antonov2008maximal}, facher sets of characteristic 1 are called \textit{semi-crabs}.
+For $9 \leq n \leq 122$, the diameter $d(2,n)$ is reached on a facher point set~\cite{kurz2008minimum}.
+
+For non-facher integral point sets situated in two straight lines,
+we can easily distinct the following three cases:
+
+\begin{dfn}
+	A planar integral point sets situated in two parallel straight lines
+	is called a \textit{rails} set.
+\end{dfn}
+
+Among the rails sets, sets with 2 points on one line and all the other on another line dominate.
+
+\begin{dfn}
+	A planar integral point sets situated in two perpendicular straight lines
+	is called a \textit{cross} set.
+\end{dfn}
+Every cross set has characteristic 1;
+in~\cite{antonov2008maximal}, cross sets with only 2 points out of one of the lines are called \textit{crabs}.
+
+\begin{dfn}
+	A planar integral point sets situated in two straight lines
+	that are not parallel nor perpendicular,
+	is called a \textit{sciccors} set.
+\end{dfn}
+
+There is an important subclassof scissors sets.
+
+\begin{dfn}
+	A scissors set with an axis of symmetry,
+	which is the angle bisector for the straight lines,
+	is called a \textit{pyramid} set.
+\end{dfn}
+
+%TODO: rephrase?
+
+%TODO: can a scissors set have another axis of symmetry?
+
+\subsection{Other integral point sets}
+
+\begin{dfn}
+	A planar integral point sets that is situated on a circle is called a \textit{circular}
+	point set.
+\end{dfn}
+
+Circular sets are very important examples
+of integral point sets~\cite{harborth1993upper,piepmeyer1996maximum,bat2018number}.
+
+
+\begin{dfn}
+	A planar integral point sets that is situated on the conjunction of a circle with its center,
+	is called a \textit{centered-circular} point set.
+\end{dfn}
+
+These six classes dominate among all the known planar integral point sets;
+however, some sophisticated constructions are also known.
+
+%TODO: pictures!
+
+\section{Rails sets}
+
+
+
+
+\begin{figure}[h!]
+%\center{\includegraphics[width=1\linewidth]{picture_12.pdf}}
+\parbox{1\linewidth}{\caption{IPS of cardinality 10 and diameter 56}
+\label{picture_12.pdf}}
+\end{figure}
+
+\begin{figure}[h!]
+%\center{\includegraphics[width=1\linewidth]{picture_1260_R3.pdf}}
+\parbox{1\linewidth}{\caption{IPS of cardinality 13 and diameter 1260}
+\label{picture_1260_R3.pdf}}
+\end{figure}
+
+\begin{itemize}
+\setlength{\itemsep}{-1mm}
+
+
+\item
+$\mathcal{P}=\sqrt{3}/{2} * \{ (\pm 56, 0),
+(14, 0),
+(-34, 0),
+(-10, 24),
+(-21 , 35),
+(35, -21)\}
+$
+(Figure~\ref{picture_56.png}),
+
+where $n = 7$, $\operatorname{diam(\mathcal{P})} = 56$. Using the ``blowing up''
+construction, we obtain
+\begin{equation}\label{result2}
+d(m, 3m + 1) \leq 56
+\end{equation}
+The resulting estimate improves the estimate for $d(m, 3m)$, which is presented
+in \cite{kemnitz1988punktmengen}. Figure~\ref{picture_12.pdf} shows an example
+for $m = 3$.
+
+
+\item
+$\mathcal{P}=\sqrt{39}/{8} * \{ (\pm 5040, 0),
+(1911, 315),
+(2352, 0),
+(944, 0),
+(336, 0),
+(2940, -420),
+(2044, 220),
+$
+
+$
+(735, 1155)\}
+$
+(Figure~\ref{picture_1260.png}),
+
+where $n = 9$, $\operatorname{diam(\mathcal{P})} = 1260$. Using the ``blowing up''
+construction, we obtain
+\begin{equation}\label{result3}
+d(m, 4m + 1) \leq 1260
+\end{equation}
+Figure~\ref{picture_1260_R3.pdf} shows an example for $m = 3$.
+
+\end{itemize}
+
+\section{Final remarks}
+All the given PIPSs were obtained through a combination of computer search an intuition of the authors;
+
+There is still no general construction for a rails or scissors PIPS of given cardinality.
+For rails PIPSs, we can conjecture that there exists a set of arbitrary cardinality with 2 points on one line
+and all the rest on the other;
+on the other hand, we still have not found any rails PIPSs with 4 and 5 points on the lines.
+
+
+The source code can be obtained at https://gitlab.com/Nickkolok/ips-algo
+
+\printbibliography
+%\bibliography{literature}
+
+\end{document}
