@@ -441,7 +441,6 @@ Now we will estimate the side length of a square which contains a given planar i
 	Then
 	\begin{multline}
 		d \geq |M_{\max} - M_{\min}| = \sqrt{(x_{\max} - x_{\min})^2 + (y_{\max} - y_{\min})^2}
-		\geq
 		\\\geq
 		\sqrt{(y_{\max} - y_{\min})^2} =
 		y_{\max} - y_{\min}
@@ -486,19 +485,19 @@ to estimate $\varphi_n$ with $\beta/\sqrt{n-2}$.
 
 \begin{proof}
 	Indeed, for $n \geq 21492$ we have
-	\begin{multline*}
+	\begin{align*}
 		\varphi_n
 		\leq
 		\varphi_{n-1}
 		\leq
 		\frac{1}{n-2} +
+		&
 		\sqrt{
 			\frac{1}{(n-2)^2}
 			+
 			\frac{2}{(n-2)\sqrt{3}}
 		}
-		=
-		\\=
+		\\&=
 		\frac{1}{\sqrt{n-2}}
 		\cdot
 		\frac{1}{\sqrt{n-2}}
@@ -508,8 +507,7 @@ to estimate $\varphi_n$ with $\beta/\sqrt{n-2}$.
 			+
 			\frac{2}{(n-2)\sqrt{3}}
 		}
-		\leq
-		\\ \leq
+		\\&\leq
 		\frac{1}{\sqrt{n-2}}
 		\cdot
 		\frac{1}{\sqrt{21490}}
@@ -519,8 +517,7 @@ to estimate $\varphi_n$ with $\beta/\sqrt{n-2}$.
 			+
 			\frac{2}{(n-2)\sqrt{3}}
 		}
-		=
-		\\=
+		\\&=
 		\frac{1}{\sqrt{n-2}}
 		\left(
 		\frac{1}{\sqrt{21490}}
@@ -531,8 +528,7 @@ to estimate $\varphi_n$ with $\beta/\sqrt{n-2}$.
 			\frac{2}{\sqrt{3}}
 		}
 		\right)
-		\leq
-		\\ \leq
+		\\&\leq
 		\frac{1}{\sqrt{n-2}}
 		\left(
 		\frac{1}{\sqrt{21490}}
@@ -545,7 +541,7 @@ to estimate $\varphi_n$ with $\beta/\sqrt{n-2}$.
 		\;
 		\right)
 		.
-	\end{multline*}
+	\end{align*}
 \end{proof}
 
 \section{Lower bound for the diameter}
@@ -587,7 +583,6 @@ employing the results of two previous sections.
 			Then
 			\begin{equation*}
 				cr(M_1,M_2) \cap cr(M_3,M_4) = (l^1_1 \cup l^1_2)\cap(l^2_1 \cup l^2_2) =
-				\\=
 				(l^1_1 \cap l^2_2) \cup (l^1_2 \cap l^2_1)
 				,
 			\end{equation*}
@@ -628,10 +623,10 @@ Now we are ready to prove the main theorem of the section.
 	where
 	\begin{multline}
 		0.46530... =
-		3^{1/4} \cdot 2^{-3/2} >
+		3^{1/4} \cdot 2^{-3/2}
 		\\ >
 		\gamma = \frac{\sqrt{16 {{\left( \sqrt{\frac{2}{\sqrt{3}}+\frac{1}{21490}}+\frac{1}{\sqrt{21490}}\right) }^{2}}+\frac{14791716}{{{\left( 2593 \sqrt{647}-5823\right) }^{2}}}}-\frac{3846}{2593 \sqrt{647}-5823}}{8 {{\left( \sqrt{\frac{2}{\sqrt{3}}+\frac{1}{21490}}+\frac{1}{\sqrt{21490}}\right) }^{2}}}
-		>\\
+		\\
 		> 0.45557
 		> \frac{5}{11}
 		.
@@ -779,7 +774,6 @@ Now we improve Solymosi's result.
 		a = \left(2^{2^{k-1}}\right)^2 - 1
 		=
 		\left(2^{2^{k-1}} + 1\right) \left(2^{2^{k-1}} - 1\right)
-		=
 		\\=
 		\left(2^{2^{k-1}} + 1\right) \left(2^{2^{k-2}} + 1\right) \cdot ... \cdot \left(2^{2^1} + 1\right) \left(2^2 - 1\right)
 		.
@@ -816,12 +810,10 @@ Now we improve Solymosi's result.
 		\left(\frac{b_J^2}{4} + \frac{a}{4}\right)^{1/2}
 		=
 		\frac{1}{2}\left(\left(\frac{c_J - a/c_J}{2}\right)^2 + a\right)^{1/2}
-		=
 		\\=
 		\frac{1}{2}\left( \left(\frac{c_J}{2}\right)^2 - \frac{a}{2} + \left(\frac{a}{2c_J}\right)^2 + a\right)^{1/2}
 		=
 		\frac{1}{2}\left( \left(\frac{c_J}{2}\right)^2 + \frac{a}{2} + \left(\frac{a}{2c_J}\right)^2    \right)^{1/2}
-		=
 		\\=
 		\frac{1}{2}\left(\left(\frac{c_J + a/c_J}{2}\right)^2\right)^{1/2}
 		=
