@@ -93,132 +93,14 @@ define the diameter of a finite point set.
 Every integral point set also has a characteristic~\cite{kemnitz1988punktmengen,kurz2005characteristic}.
 
 
+While the minimal possible diameter for planar integral point sets of given cardinality was being counted,
+it was noticed~\cite{kurz2008minimum} that such diameter is attained at sets with many points on a straight line;
+for some estimations on this tendency, we also refer the reader to~\cite{solymosi2003note}.
 
 
 
 
 
-
-
-\begin{dfn}
-	The function $d(m, n)$ is the minimum possible diameter of
-	the integral point set $\mathcal{P}$ of $n$ points in
-	$m$-dimensional Euclidean space $\mathbb{R}^{m}$.
-\end{dfn}
-
-
-%For a bit more sophisticated configurations, another functions are presented~\cite{kurz2008minimum,kreisel2008heptagon}.
-%
-%\begin{dfn}
-%	The function $\overline{d}(m, n)$ is the minimum possible diameter of
-%	the integral point set $\mathcal{P}$ of $n$ points in
-%	$m$-dimensional Euclidean space $\mathbb{R}^{m}$
-%	such that no $m+1$ points are located on an $(m-1)$-dimensional hyperplane.
-%\end{dfn}
-
-%\begin{dfn}
-%	The function $\dot{d}(m, n)$ is the minimum possible diameter of
-%	the integral point set $\mathcal{P}$ of $n$ points in
-%	$m$-dimensional Euclidean space $\mathbb{R}^{m}$
-%	such that no three points are located on a straight line
-%	and no four points are located on a circle.
-%\end{dfn}
-
-For the list of known bounds for $d(m, n)$,
-we refer the reader to~\cite[Theorem 1]{kurz2008bounds} or to~\cite{our-vmmsh-2018}.
-We will discuss the following estimations presented at~\cite{kurz2008bounds}:
-\begin{align}
-	d(m, 2m + 1) \leq 8\\
-	d(m, 2m + 2) \leq 13 \hypertarget{d2}\\
-	d(m, 3m) \leq 109
-\end{align}
-and the following theorem \cite[Theorem 2.1]{kurz2008bounds}.
-
-\begin{theorem}
-	Let $\mathcal{P}$ be a planar integral point set consisting of
-	$n - 2$ points on line $l_1$ and two points $P_{1}$ and $P_{2}$ on a
-	parallel line $l_2$ with distance $r$ between $l_{1}$ and $l_{2}$. If there
-	exist positive integers $v$, $w$ with $f^{2} + v^{2}
-	= w^{2}$ and $v < 2r$, where $|P_{1}P_{2}| = f$,
-	then
-
-	\begin{equation}\label{formula1}
-		d(m, n + 2(m - 2)) \leq \max(w, \operatorname{diam(\mathcal{P})})
-	\end{equation}
-
-\end{theorem}
-
-Firstly, we discuss the classification of planar integral points sets;
-then, we present some bounds for $d(m,n)$ based on planar integral point sets of particular types
-and provide some general constructions for such bounds.
-
-\section{Classification of planar integral point sets}
-
-\subsection{Integral point sets situated in two straight lines}
-
-\begin{dfn}
-	A planar integral point sets of $n$ points with $n-1$ points on a straight line is called
-	a \textit{facher} set.
-\end{dfn}
-Facher sets are very dominating examples of planar integral pont sets.
-In~\cite{antonov2008maximal}, facher sets of characteristic 1 are called \textit{semi-crabs}.
-For $9 \leq n \leq 122$, the diameter $d(2,n)$ is reached on a facher point set~\cite{kurz2008minimum}.
-
-For non-facher integral point sets situated in two straight lines,
-we can easily distinct the following three cases:
-
-\begin{dfn}
-	A planar integral point sets situated in two parallel straight lines
-	is called a \textit{rails} set.
-\end{dfn}
-
-Among the rails sets, sets with 2 points on one line and all the other on another line dominate.
-
-\begin{dfn}
-	A planar integral point sets situated in two perpendicular straight lines
-	is called a \textit{cross} set.
-\end{dfn}
-Every cross set has characteristic 1;
-in~\cite{antonov2008maximal}, cross sets with only 2 points out of one of the lines are called \textit{crabs}.
-
-\begin{dfn}
-	A planar integral point sets situated in two straight lines
-	that are not parallel nor perpendicular,
-	is called a \textit{sciccors} set.
-\end{dfn}
-
-There is an important subclassof scissors sets.
-
-\begin{dfn}
-	A scissors set with an axis of symmetry,
-	which is the angle bisector for the straight lines,
-	is called a \textit{pyramid} set.
-\end{dfn}
-
-%TODO: rephrase?
-
-%TODO: can a scissors set have another axis of symmetry?
-
-\subsection{Other integral point sets}
-
-\begin{dfn}
-	A planar integral point sets that is situated on a circle is called a \textit{circular}
-	point set.
-\end{dfn}
-
-Circular sets are very important examples
-of integral point sets~\cite{harborth1993upper,piepmeyer1996maximum,bat2018number}.
-
-
-\begin{dfn}
-	A planar integral point sets that is situated on the conjunction of a circle with its center,
-	is called a \textit{centered-circular} point set.
-\end{dfn}
-
-These six classes dominate among all the known planar integral point sets;
-however, some sophisticated constructions are also known.
-
-%TODO: pictures!
 
 The main purpose of this work is to provide examples of planar integral point sets
 that may give the clue for development of further classification.
