@@ -136,12 +136,13 @@ For convenience, we use the notation \cite{our-ped-2018,our-pmm-2018,our-vmmsh-2
 $\sqrt{p}/q * \{ (x_1,y_1), ...,$ $ (x_n, y_n)  \}$,
 which means that each abscissa is multiplied by $1/q$
 and each ordinate is multiplied by $\sqrt{p}/q$,  i.e.
-$$
+\begin{equation}
+	\label{eq:char_lattice}
 	\sqrt{p}/q * \{ (x_1,y_1), ..., (x_n, y_n)  \}
 	=
 	\left\{ \left(\frac{x_1}{q},\frac{y_1\sqrt{p}}{q}\right), ..., \left(\frac{x_n}{q},   \frac{y_n\sqrt{p}}{q}\right)  \right\}
 	.
-$$
+\end{equation}
 Here $q$ is the characteristic of the PIPS;
 every PIPS can be represented in such way~\cite{our-vmmsh-2018-translit}[Theorem 4].
 
@@ -453,6 +454,26 @@ $
 \parbox{1\linewidth}{\caption{IPS of cardinality 8 and diameter 2535}
 \label{8_2535_1_d680}}
 \end{figure}
+
+The set shown on Figure~\ref{8_2400_42_56f3} has an axis of symmetry, but it is $y$ axis, not $x$ axis
+and due to the fact that its characteristic is not 1,
+the set cannot be rotated by $90^\circ$ but still stay on lattice~\eqref{eq:char_lattice}:
+\begin{equation}
+	\mathcal{P}_{8y}=
+	\sqrt{42}/1*\{( \pm1200 ; 0);
+	( \pm529 ; 182);
+	( \pm814 ; 152);
+	( \pm440 ; 80)
+	\}
+\end{equation}
+
+\begin{figure}[h!]
+	\center{\includegraphics[width=1\linewidth]{./img/8_2400_42_56f33d8dc5df552595e807c438bc0f55_other.png}}
+	\parbox{1\linewidth}{\caption{IPS of cardinality 8 and diameter 2400}
+	\label{8_2400_42_56f3}}
+\end{figure}
+
+
 
 \section{Final remarks}
 All the given planar integral point sets were obtained through a combination of computer search and intuition of the authors.
