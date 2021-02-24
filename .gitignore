@@ -174,3 +174,8 @@ TSWLatexianTemp*
 
 # No binaries in repo by default
 *.pdf
+*.tar.gz
+*.zip
+
+# Temporary files of merge
+*.orig
