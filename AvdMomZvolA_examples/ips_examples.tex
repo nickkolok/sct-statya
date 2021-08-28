@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[11pt,A4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T2A]{fontenc}
 \usepackage[russian,english]{babel}
@@ -7,9 +7,13 @@
 \usepackage{amsthm}
 \inputencoding{utf8}
 %\bibliographystyle{unsrt}
-\textheight=240mm \textwidth=170mm
-\hoffset=-17mm
-\voffset=-17mm
+
+
+\usepackage{geometry} % Меняем поля страницы.
+\geometry{left=1cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1cm}% верхнее поле
+\geometry{bottom=1.5cm}% нижнее поле
 
 
 %\usepackage[backend=biber,style=gost-numeric,sorting=none]{biblatex}
@@ -140,7 +144,7 @@ So, the following constraint appeared.
 \end{dfn}
 
 Planar integral point sets in general position are very difficult to find;
-the first known examples were presented in~\cite{kreisel2008heptagon}.
+the first known examples of such sets with cardinaity 7 were presented in~\cite{kreisel2008heptagon}.
 As for now, there is no known example of PIPS of cardinality 8 in general position.
 
 The main purpose of this work is to provide examples of planar integral point sets
@@ -158,7 +162,7 @@ and each ordinate is multiplied by $\sqrt{p}/q$,  i.e.
 	.
 \end{equation}
 Here $q$ is the characteristic of the PIPS;
-every PIPS can be represented in such way~\cite{our-vmmsh-2018-translit}[Theorem 4].
+every PIPS can be represented in such way~\cite[Theorem 4]{our-vmmsh-2018-translit}.
 
 Note that all examples that are discussed below are
 located on a union of at most three straight lines.
