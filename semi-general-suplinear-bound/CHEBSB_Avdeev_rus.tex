@@ -251,30 +251,32 @@ $.
 
 \section{Вспомогательные утверждения}
 
-In this section, we give some lemmas which will be used for the proof.
+В этом параграфе приводятся определения и леммы, которые в дальнейшем потребуются
+для доказательства основного результата.
 
 
 \begin{lemma}
 	\cite[Observation 1]{solymosi2003note}
-	If a triangle $T$ has integer side lengths $a \leq b \leq c$,
-	then the minimal height $m$ of it is at least $\left(a - \frac{1}{4}\right)^{1/2}$.
+	Пусть стороны треугольник $T$ есть целые числа $a \leq b \leq c$,
+	тогда наимаеньшая из высот $m$ этого треугольника не менее $\left(a - \frac{1}{4}\right)^{1/2}$.
 \end{lemma}
 
 \begin{Definition}
-	The part of a plane between two parallel straight lines with distance $\rho$ between them
-	is called a strip of width $\rho$.
+	Полосой ширины $\rho$ будем называть часть плоскости,
+	заключённую между двумя параллельными прямыми,
+	отстоящими друг от друга на расстояние $\rho$.
 \end{Definition}
 
 \begin{lemma}
 	\cite{smurov1998stripcoverings}
-	If a triangle $T$ with minimal height $\rho$ is situated in a strip,
-	then the width of the strip is at least $\rho$.
+	Пусть треугольник $T$, наименьшая из высот которого равна $\rho$, расположен в полосе.
+	Тогда ширина этой полосы не менее $\rho$.
 \end{lemma}
 
 \begin{Corollary}
 	\label{cor:solymosi_strip}
-	If a triangle $T$ with integer side lengths $a \leq b \leq c$ is situated in a strip,
-	then the width of the strip is at least $\left(a - \frac{1}{4}\right)^{1/2}$.
+	Пусть треугольник $T$ с целыми сторонами $a \leq b \leq c$ лежит в некоторой полосе,
+	тогда ширина этой полосы не менее $\left(a - \frac{1}{4}\right)^{1/2}$.
 \end{Corollary}
 
 
@@ -282,50 +284,50 @@ In this section, we give some lemmas which will be used for the proof.
 	\cite[Lemma 4]{our-vmmsh-2018};
 	\cite[Lemma 2.4]{my-pps-linear-bound-2019}
 	\label{lem:square_container}
-	Let $M\in\mathfrak{M}(2,n)$, $\operatorname{diam} M = d$.
-	Then $M$ is situated in a square of side length $d$.
+	Пусть $M\in\mathfrak{M}(2,n)$ и $\operatorname{diam} M = d$.
+	Тогда $M$ расположено в некотором квадрате со стороной $d$.
 \end{lemma}
 
 \begin{Definition}
 	\cite[Definition 2.5]{my-pps-linear-bound-2019}
-	A \textit{cross} for points $M_1$ and $M_2$, denoted by $cr(M_1,M_2)$, is the union of two straight lines:
-	the line through $M_1$ and $M_2$,
-	and the perpendicular bisector of line segment $M_1 M_2$.
+	Будем называть \textit{крестом} точек $M_1$ и $M_2$ и обозначать через $cr(M_1,M_2)$ объединение двух прямых:
+	прямой, проходящей через точки $M_1$ и $M_2$,
+	и серединного перпендикуляра к отрезку $M_1 M_2$.
 \end{Definition}
 
 \begin{lemma}
 	\cite[Theorem 3.10]{my-pps-linear-bound-2019}
 	\label{lem:no_distance_one}
-	Each set $M\in\mathfrak{M}(2,n)$
-	such that for some $M_1,M_2 \in M$ equality $|M_1 M_2|=1$ holds,
-	consists of $n-1$ points, including $M_1$ and $M_2$, on a straight line,
-	and one point out of the line, on the perpendicular bisector of line segment $M_1 M_2$.
+	Каждое множество $M\in\mathfrak{M}(2,n)$,
+	для некоторых точек которого $M_1,M_2 \in M$ выполнено равенство $|M_1 M_2|=1$,
+	состоит из $n-1$ точек, включая $M_1$ и $M_2$, лежащих на некоторой прямой $m$,
+	и ещё одной точки, лежащей вне $m$ на серединном перпендикуляре к отрезку $M_1 M_2$.
 \end{lemma}
 
 
 \begin{lemma}
 	\label{lem:count_of_points_on_hyperbolas}
-	Let $\{M_1, M_2, M_3, M_4\} \subset M\in\overline{\mathfrak{M}}(2,n)$
-	(points $M_2$ and $M_3$ may coincide, other points are distinct), $n\geq 4$.
-	Then $\# M \leq 4 \cdot |M_1 M_2| \cdot |M_3 M_4|$.
+	Пусть $\{M_1, M_2, M_3, M_4\} \subset M\in\overline{\mathfrak{M}}(2,n)$
+	(точки $M_2$ и $M_3$ могут совпадать, остальные попарно различны), $n\geq 4$.
+	Тогда $\# M \leq 4 \cdot |M_1 M_2| \cdot |M_3 M_4|$.
 \end{lemma}
 
 \begin{Remark}
-	Lemma~\ref{lem:count_of_points_on_hyperbolas} is one of the variations of~\cite{erdos1945integral}.
+	Лемма~\ref{lem:count_of_points_on_hyperbolas} явлется вариацией~\cite{erdos1945integral}.
 \end{Remark}
 
-\begin{proof}[Proof]
-	Each point $N\in M$ satisfies one of the following conditions:
+\begin{proof}[Доказательство]
+	Для каждой точки $N\in M$ выполнено одно из следующих условий:
 
-	a) $N$ belongs to $cr(M_1,M_2)$~--- overall at most 4 points;
+	a) $N$ принадлежит $cr(M_1,M_2)$~--- итого не более 4 точек (не более 2 на каждой из прямых);
 
-	b) $N$ belongs to $cr(M_3,M_4)$~--- overall at most 4 points;
+	b) $N$ принадлежит $cr(M_3,M_4)$~--- итого не более 4 точек (не более 2 на каждой из прямых);
 
-	c) $N$ belongs to the intersection of one of $|M_1 M_2| - 1$ hyperbolas
-	with one of $|M_3 M_4| - 1$ hyperbolas~--- overall at most $4 (|M_1 M_2| - 1)(|M_3 M_4| - 1)$ points;
+	c) $N$ принадлежит пересечению одной из $|M_1 M_2| - 1$ гипербол
+	с одной из $|M_3 M_4| - 1$ гипербол~--- итого не более  $4 (|M_1 M_2| - 1)(|M_3 M_4| - 1)$ точек;
 
-	Due to Lemma~\ref{lem:no_distance_one} we have $|M_1 M_2| \geq 2$ and $|M_3 M_4| \geq 2$.
-	Since
+	По лемме~\ref{lem:no_distance_one} $|M_1 M_2| \geq 2$ и $|M_3 M_4| \geq 2$.
+	Из того, что
 	\begin{multline}
 		4 (|M_1 M_2| - 1)(|M_3 M_4| - 1) + 4 + 4
 		=
@@ -340,7 +342,7 @@ In this section, we give some lemmas which will be used for the proof.
 		4 |M_1 M_2| \cdot |M_3 M_4|
 		,
 	\end{multline}
-	the assertion follows.
+	и следует утверждение леммы.
 \end{proof}
 
 
