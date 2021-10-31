@@ -19,20 +19,6 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Автоматическая нумерация теорем (коль скоро подключен amsthm)
-
-% К сожалению, английского ``Definition'' в стилевом файле нет.
-% Добавляю по аналогии.
-\newtheorem{Definition}{\indent {\sc Definition}}
-\renewcommand{\theDefinition}{\rm \arabic{Definition}}
-
-\newtheorem{Corollary}{\indent {\sc Corollary}}
-\renewcommand{\theCorollary}{\rm \arabic{Corollary}}
-
-\newtheorem{Remark}{\indent {\sc Remark}}
-\renewcommand{\theRemark}{\rm \arabic{Remark}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -181,11 +167,11 @@ $\mathfrak{M}(2,n)$ (придерживаясь обозначений~\cite{our
 Для $9\leq n\leq 122$ минимальный возможный диаметр МЦР мощности $n$ достигаетя именно на веерном множестве~\cite{kurz2008bounds}.
 
 
-\begin{Definition}
+\begin{definition}
 	Множество $M\in\mathfrak{M}(2,n)$ есть МЦР \textit{полуобщего положения},
 	если никакие три точки из $M$ не лежат на одной прямой.
 	Кратко будем писать, что $M\in \overline{\mathfrak{M}}(2,n)$.
-\end{Definition}
+\end{definition}
 
 В~\cite{harborth1993upper} приводится конструкция МЦР полуобщего положения для любой наперёд заданной мощности;
 получаемое МЦР содержится в некоторой окружности.
@@ -193,11 +179,11 @@ $\mathfrak{M}(2,n)$ (придерживаясь обозначений~\cite{our
 содержащегося в окружности,
 для любого возможного количества нечётных расстояний между точками $M$.
 
-\begin{Definition}
+\begin{definition}
 	Множество $M\in\overline{\mathfrak{M}}(2,n)$ есть МЦР \textit{общего положения},
 	если никакие четыре точки из $M$ не лежат на одной окружности.
 	Кратко будем писать, что $M\in \dot{\mathfrak{M}}(2,n)$.
-\end{Definition}
+\end{definition}
 
 Остаётся неясным, любую ли мощность может имет МЦР общего положения;
 однако, известны~\cite{kreisel2008heptagon,kurz2013constructing} примеры МЦР $M\in \dot{\mathfrak{M}}(2,7)$.
@@ -261,11 +247,11 @@ $.
 	тогда наименьшая из высот $m$ этого треугольника не менее $\left(a - \frac{1}{4}\right)^{1/2}$.
 \end{lemma}
 
-\begin{Definition}
+\begin{definition}
 	Полосой ширины $\rho$ будем называть часть плоскости,
 	заключённую между двумя параллельными прямыми,
 	отстоящими друг от друга на расстояние $\rho$.
-\end{Definition}
+\end{definition}
 
 \begin{lemma}
 	\cite{smurov1998stripcoverings}
@@ -273,11 +259,11 @@ $.
 	Тогда ширина этой полосы не менее $\rho$.
 \end{lemma}
 
-\begin{Corollary}
+\begin{corollary}
 	\label{cor:solymosi_strip}
 	Пусть треугольник $T$ с целыми сторонами $a \leq b \leq c$ лежит в некоторой полосе,
 	тогда ширина этой полосы не менее $\left(a - \frac{1}{4}\right)^{1/2}$.
-\end{Corollary}
+\end{corollary}
 
 
 \begin{lemma}
@@ -288,12 +274,12 @@ $.
 	Тогда $M$ расположено в некотором квадрате со стороной $d$.
 \end{lemma}
 
-\begin{Definition}
+\begin{definition}
 	\cite[Определение 2.5]{my-pps-linear-bound-2019}
 	Будем называть \textit{крестом} точек $M_1$ и $M_2$ и обозначать через $cr(M_1,M_2)$ объединение двух прямых:
 	прямой, проходящей через точки $M_1$ и $M_2$,
 	и серединного перпендикуляра к отрезку $M_1 M_2$.
-\end{Definition}
+\end{definition}
 
 \begin{lemma}
 	\cite[Theorem 3.10]{my-pps-linear-bound-2019}
@@ -312,9 +298,9 @@ $.
 	Тогда $\# M \leq 4 \cdot |M_1 M_2| \cdot |M_3 M_4|$.
 \end{lemma}
 
-\begin{Remark}
+\begin{remark}
 	Лемма~\ref{lem:count_of_points_on_hyperbolas} явлется вариацией~\cite{erdos1945integral}.
-\end{Remark}
+\end{remark}
 
 \begin{proof}[Доказательство]
 	Для каждой точки $N\in M$ выполнено одно из следующих условий:
@@ -419,9 +405,9 @@ $.
 
 
 
-\begin{Remark}
+\begin{remark}
 	Известен следующий факт~\cite[Следствие 1]{solymosi2003note}:
-\end{Remark}
+\end{remark}
 
 \begin{lemma}
 	Пусть $H \in \overline {\mathfrak{M}}(2,n)$.
