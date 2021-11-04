@@ -1,0 +1,103 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 15.08.2 ] */
+
+/* [wxMaxima: input   start ] */
+b:sqrt(c^2-q^2)/2; a:q/2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/* q - номер гиперболы (считая от центра),
+a и b - параметры гиперболы из канонического уравнения,
+c оттуда же
+*/;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/* Координаты правого фокуса (0, с), миниметр равен 2с */;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/* Уравнение окружности, задающей зону отчуждения, имеет вид */;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+eq_empty_circle:(x-c)^2+y^2 = 4*c^2;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/* Уравнение q-той гиперболы, считая от центра, имеет вид */;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+eq_q_hyp: x^2/a^2 - y^2/b^2 = 1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/* Ищем точку выхода гиперболы из зоны отчуждения */;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve([eq_empty_circle,eq_q_hyp],[x,y]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+x_exit: (q*sqrt(3*q^2+13*c^2)+2*q^2)/(2*c);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+y_exit: sqrt(c^2*(4*q*sqrt(3*q^2+13*c^2)-5*q^2)-4*q^3*sqrt(3*q^2+13*c^2)-7*q^4+12*c^4)/(2*c);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/* Выпишем для приличия уравнение асимптоты  */;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+eq_asympt:b*x - a*y = 0;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/* Расстояние от заданной точки до асимптоты */;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+rho(x,y) := abs(b*x-a*y)/c;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/*Вот теперь считаем то самое расстояние!*/;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+assume(c>1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+r:rho(x_exit, y_exit);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+r1:ratsimp(r);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/* Итак, кажется, расстояние имеет асимптотику с */;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/* Значит, каждую из 2с гипербол надо порезать всего-то на kc^0.5 полос шириной c^0.5 */;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+/* Итого 2kc^1.5 полос, в каждой по 4 точки...
+   Получаем ограничение мощности в миниметр^1.5 (полуобщее положение).
+   У Солимоси миниметр^3. Это неплохо, очень даже!
+   И отсюда можно построить оценку мощности от ширины покруче: 4/3 вместо 5/4 */;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+"На статью тут есть"
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$
