@@ -102,6 +102,13 @@ define the diameter of a finite point set.
 Every integral point set has also a characteristic~\cite{kemnitz1988punktmengen,kurz2005characteristic}.
 
 \begin{dfn}
+	The characteristic of a PIPS $\mathcal{P}$ is a squarefree number $q$
+	such that the area of any triangle $M_1M_2M_3$, $\{M_1,M_2,M_3\}\subset \mathcal{P}$,
+	is commensurable with $\sqrt{q}$.
+\end{dfn}
+
+
+\begin{dfn}
 	The function $d(m, n)$ is the minimal possible diameter of
 	the integral point set $\mathcal{P}$ of $n$ points in
 	$m$-dimensional Euclidean space $\mathbb{R}^{m}$.
@@ -136,6 +143,7 @@ We will discuss the following ones presented at~\cite{kurz2008bounds}:
 and the following theorem \cite[Theorem 2.1]{kurz2008bounds}.
 
 \begin{theorem}
+	\label{thm:Kurz_blowup}
 	Let $\mathcal{P}$ be a planar integral point set consisting of
 	$n - 2$ points on the line $l_1$ and two points $P_{1}$ and $P_{2}$ on a
 	parallel line $l_2$ with distance $r$ between $l_{1}$ and $l_{2}$. If there
@@ -149,8 +157,9 @@ and the following theorem \cite[Theorem 2.1]{kurz2008bounds}.
 
 \end{theorem}
 
-First, we discuss the classification of planar integral points sets;
-then, we present some bounds for $d(m,n)$ based on planar integral point sets of special types
+In this paper we further study the various features of IPS.
+In Section 2, we discuss the classification of planar integral points sets;
+in Section 3, we present some bounds for $d(m,n)$ based on planar integral point sets of special types
 and provide some general constructions of such bounds.
 
 \section{Classification of planar integral point sets}
@@ -161,19 +170,19 @@ and provide some general constructions of such bounds.
 	A planar integral point sets of $n$ points with $n-1$ points on a straight line is called
 	a \textit{facher} set.
 \end{dfn}
-Facher sets are very dominating examples of planar integral point sets.
+Most of the examples of planar integral point sets turns to be facher sets.
 In~\cite{antonov2008maximal}, facher sets with characteristic 1 are called \textit{semi-crabs}.
-For $9 \leq n \leq 122$, the diameter $d(2,n)$ is reached on a facher point set~\cite{kurz2008minimum}.
+For $9 \leq n \leq 122$, the diameter $d(2,n)$ is attained on a facher point set~\cite{kurz2008minimum}.
 
-For non-facher integral point sets situated in two straight lines,
-we can easily distinct the following three cases:
+Non-facher integral point sets situated in two straight lines
+can be further classificated in the following three cases:
 
 \begin{dfn}
 	A planar integral point set situated in two parallel straight lines
 	is called a \textit{rails} set.
 \end{dfn}
 
-Among the rails sets, sets with 2 points on one line and all the other on another line dominate.
+Among the rails sets, sets with 2 points on one line and all the other on another line prevail.
 
 \begin{dfn}
 	A planar integral point set situated in two perpendicular straight lines
@@ -208,7 +217,9 @@ There is an important subclass of scissors sets.
 \end{dfn}
 
 Circular sets are very important examples
-of integral point sets~\cite{harborth1993upper,piepmeyer1996maximum,bat2018number}.
+of integral point sets~\cite{harborth1993upper,piepmeyer1996maximum,bat2018number};
+for example, the best known upper bound for $d(2,n)$
+is attained on a circular set.
 
 
 \begin{dfn}
@@ -216,8 +227,11 @@ of integral point sets~\cite{harborth1993upper,piepmeyer1996maximum,bat2018numbe
 	is called a \textit{centered-circular} point set.
 \end{dfn}
 
-These six classes dominate among all the known planar integral point sets;
-however, some sophisticated constructions are also known.
+Most of the known planar integral point sets fall into these six classes;
+however, there are some sophisticated examples which do not~\cite{kreisel2008heptagon,kurz2013constructing,avdeev2021particular}.
+A lower bound for the diameter of a PIPS with no collinear triples (so-called PIPS \textit{in semi-general position})
+is presented in~\cite{my-semi-general-5-4-bound-2019}.
+
 
 %TODO: pictures!
 
@@ -269,7 +283,7 @@ $$
 	\label{picture_d21.png}}
 \end{figure}
 
-Below $f$ and $w$ are those from Theorem~\ref{thm:rails_blowup}.
+Below $f$ and $w$ are those from Theorem~\ref{thm:Kurz_blowup}.
 
 \begin{itemize}
 \setlength{\itemsep}{-1mm}
