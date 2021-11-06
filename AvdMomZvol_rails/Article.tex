@@ -92,14 +92,15 @@ Definition \ref{dfn1} can be generalized as follows:
 \begin{dfn}
 	An integral point set $\mathcal{P}$ is a set of $n$ points in
 	the $m$-dimensional Euclidean space $\mathbb{R}^{m}$ with pairwise
-	integral distances.
+	integral distances,
+	such that $\mathcal{P}$ is not contained in a $(m-1)$-dimensional hyperplane.
 \end{dfn}
 
 How can we characterize an integral point set?
 First of all, we can look at its dimension;
 then, we can find its cardinality, which is always finite~\cite{anning1945integral,erdos1945integral};
-finally, we can naturally % TODO: naturally/essentially? cf. arxiv/1
-define the diameter of a finite point set.
+finally, we can compute the diameter of a finite point set,
+which is naturally defined as follows:
 
 \begin{dfn}
 	The diameter of an integral point set $\mathcal{P}$ is defined as
@@ -118,6 +119,7 @@ Every integral point set has also a characteristic~\cite{kemnitz1988punktmengen,
 	is commensurable with $\sqrt{q}$.
 \end{dfn}
 
+The following notion was introduced in~\cite{kurz2008bounds}.
 
 \begin{dfn}
 	The function $d(m, n)$ is the minimal possible diameter of
@@ -125,6 +127,10 @@ Every integral point set has also a characteristic~\cite{kemnitz1988punktmengen,
 	$m$-dimensional Euclidean space $\mathbb{R}^{m}$.
 \end{dfn}
 
+The computation of exact values of $d(m,n)$ is a difficult problem.
+In 2003, Solymosi proved~\cite{solymosi2003note} that $d(2,n) \geq cn$ for some constant $c$;
+now it is known~\cite{my-pps-linear-bound-2019} that $c>5/11$.
+So, even finding the estimates is not easy.
 
 %For a bit more sophisticated configurations, another functions are presented~\cite{kurz2008minimum,kreisel2008heptagon}.
 %
@@ -143,9 +149,9 @@ Every integral point set has also a characteristic~\cite{kemnitz1988punktmengen,
 %	and no four points are located on a circle.
 %\end{dfn}
 
-For the list of known bounds for $d(m, n)$,
-we refer the reader to~\cite[Theorem 1]{kurz2008bounds} or to~\cite{our-vmmsh-2018}.
-We will discuss the following ones presented at~\cite{kurz2008bounds}:
+A long list of known bounds for $d(m, n)$ and some exact values
+can be found in~\cite[Theorem 1]{kurz2008bounds} or in~\cite{our-vmmsh-2018}.
+Below we will discuss the following ones presented at~\cite{kurz2008bounds}:
 \begin{align}
 	d(m, 2m + 1) \leq 8\\
 	d(m, 2m + 2) \leq 13 \label{eq:d_m_2m+2}\\
@@ -163,14 +169,14 @@ and the following theorem \cite[Theorem 2.1]{kurz2008bounds}.
 	then
 
 	\begin{equation}\label{formula1}
-		d(m, n + 2(m - 2)) \leq \max(w, \operatorname{diam(\mathcal{P})})
+		d(m, n + 2(m - 2)) \leq \max(w, \operatorname{diam}(\mathcal{P}))
 	\end{equation}
 
 \end{theorem}
 
 In this paper we further study the various features of IPS.
 In Section 2, we discuss the classification of planar integral points sets;
-in Section 3, we present some bounds for $d(m,n)$ based on planar integral point sets of special types
+in Sections 3 and 4, we present some bounds for $d(m,n)$ based on planar integral point sets of special types
 and provide some general constructions of such bounds.
 
 \section{Classification of planar integral point sets}
