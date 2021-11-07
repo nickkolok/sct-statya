@@ -247,6 +247,25 @@ is attained on a circular set.
 	is called a \textit{centered-circular} point set.
 \end{dfn}
 
+\begin{remark}
+	Every centered-circular point set has characteristic 1.
+	Indeed, let $\mathcal{P} = \{M_0, M_1,$ $ M_2, M_3, ..., M_k\}$ be a centered-circular point set
+	with $M_0$ being the center.
+	According to the sine formula, in the triangle $M_1 M_2 M_3$
+	\begin{equation}
+		\sin \angle M_1 M_2 M_3 = \frac{|M_1M_3|}{2R}
+		,
+	\end{equation}
+	where $R = |M_0 M_1| $ is the radius of the triangle's circumcircle.
+	Then the area of the triangle $M_1 M_2 M_3$ is
+	\begin{equation}
+		S = \frac12 |M_2 M_1| \cdot |M_2 M_3| \cdot \sin \angle M_1 M_2 M_3 =
+		\frac12 |M_2 M_1| \cdot |M_2 M_3| \cdot \frac{|M_1M_3|}{2|M_0 M_1|} \in\mathbb Q
+		.
+	\end{equation}
+\end{remark}
+
+
 Most of the known planar integral point sets fall into these six classes;
 however, there are some sophisticated examples which do not~\cite{kreisel2008heptagon,kurz2013constructing,avdeev2021particular}.
 A lower bound for the diameter of a PIPS with no collinear triples (so-called PIPS \textit{in semi-general position})
