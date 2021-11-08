@@ -69,7 +69,7 @@
 	the $m$-dimensional Euclidean space $\mathbb{R}^{m}$ with pairwise
 	integral distances,
 	such that $\mathcal{P}$ is not contained in a $(m-1)$-dimensional hyperplane.
-	In the present paper we present some classes of planar integral point sets ($m=2$);
+	In the present paper we discuss some classes of planar integral point sets ($m=2$);
 	we mostly focus on the subsets of a union of two straight lines:
 	facher, rails, scissors and pyramid sets.
 	We use rails and pyramid sets to construct lower bounds for a diameter
@@ -78,6 +78,9 @@
 \section{Introduction}
 \label{sec:intro}
 
+The study of integral point sets belongs to the classical analysis.
+It is motivated by both pure theoretical aspects~\cite{ascher2020erdos,solymosi2010question}
+and applications~\cite{kurz2007enumeration}.
 
 
 \begin{dfn}\label{dfn1}
@@ -124,7 +127,7 @@ The following notion was introduced in~\cite{kurz2008bounds}.
 
 \begin{dfn}
 	The function $d(m, n)$ is the minimal possible diameter of
-	the integral point set $\mathcal{P}$ of $n$ points in
+	an integral point set $\mathcal{P}$ of $n$ points in
 	$m$-dimensional Euclidean space $\mathbb{R}^{m}$.
 \end{dfn}
 
@@ -134,30 +137,13 @@ now it is known~\cite{my-pps-linear-bound-2019} that $c>5/11$.
 The most recent advances for higher dimensions can be found in~\cite{nozaki2013lower}.
 So, even finding the estimates is not easy.
 
-%For a bit more sophisticated configurations, another functions are presented~\cite{kurz2008minimum,kreisel2008heptagon}.
-%
-%\begin{dfn}
-%	The function $\overline{d}(m, n)$ is the minimum possible diameter of
-%	the integral point set $\mathcal{P}$ of $n$ points in
-%	$m$-dimensional Euclidean space $\mathbb{R}^{m}$
-%	such that no $m+1$ points are located on an $(m-1)$-dimensional hyperplane.
-%\end{dfn}
-
-%\begin{dfn}
-%	The function $\dot{d}(m, n)$ is the minimum possible diameter of
-%	the integral point set $\mathcal{P}$ of $n$ points in
-%	$m$-dimensional Euclidean space $\mathbb{R}^{m}$
-%	such that no three points are located on a straight line
-%	and no four points are located on a circle.
-%\end{dfn}
-
 A long list of known bounds for $d(m, n)$ and some exact values
 can be found in~\cite[Theorem 1]{kurz2008bounds} or in~\cite{our-vmmsh-2018}.
 Below we will discuss the following ones presented at~\cite{kurz2008bounds}:
 \begin{align}
-	d(m, 2m + 1) \leq 8\\
+	d(m, 2m + 1) \leq 8  \label{eq:d_m_2m+1}\\
 	d(m, 2m + 2) \leq 13 \label{eq:d_m_2m+2}\\
-	d(m, 3m) \leq 109
+	d(m, 3m) \leq 109    \label{eq:d_m_3m}
 \end{align}
 and the following theorem \cite[Theorem 2.1]{kurz2008bounds}.
 
@@ -178,13 +164,15 @@ and the following theorem \cite[Theorem 2.1]{kurz2008bounds}.
 
 In this paper we further study the various features of IPS.
 In Section~\ref{sec:classif}, we discuss the classification of planar integral points sets;
-in Sections~\ref{sec:bounds_rails}~and~\ref{sec:bounds_pyramid}, we present some bounds for $d(m,n)$ based on planar integral point sets of special types
+in Sections~\ref{sec:bounds_rails}~and~\ref{sec:bounds_pyramid}, we present some upper bounds for $d(m,n)$
+based on planar integral point sets of special types
 and provide some general constructions of such bounds.
+All the bounds, like~\eqref{eq:d_m_2m+1}--\eqref{eq:d_m_3m}, are of the form $d(m, km+p)\leq c_{k,p}$.
 
 \section{Classification of planar integral point sets}
 \label{sec:classif}
 
-\subsection{Integral point sets situated in two straight lines}
+\subsection{Integral point sets situated on two straight lines}
 
 \begin{dfn}
 	A planar integral point sets of $n$ points with $n-1$ points on a straight line is called
@@ -194,11 +182,11 @@ Most of the examples of planar integral point sets turns to be facher sets.
 In~\cite{antonov2008maximal}, facher sets with characteristic 1 are called \textit{semi-crabs}.
 For $9 \leq n \leq 122$, the diameter $d(2,n)$ is attained on a facher point set~\cite{kurz2008minimum}.
 
-Non-facher integral point sets situated in two straight lines
+Non-facher integral point sets situated on two straight lines
 can be further classificated in the following three cases:
 
 \begin{dfn}
-	A planar integral point set situated in two parallel straight lines
+	A planar integral point set situated on two parallel straight lines
 	is called a \textit{rails} set.
 \end{dfn}
 
@@ -209,10 +197,8 @@ they include an example of rails sets with 2 points on one line and 38 point on 
 and
 an example of rails set with 4 points on one line and 4 points on the other
 (Fig.~\ref{picture.png}).
-We have no examples of rails set with 4 points on one line and 5 points on the other;
-and we have no examples of rails sets with 3 points on one line and 9 points on the other.
-
-
+We still do not know whether there are rails set with 4 points on one line and 5 points on the other;
+and the same for rails sets with 3 points on one line and 9 points on the other.
 
 For the sake of brevity, we will hereafter use the notation
 $\sqrt{p}/q * \{ (x_1,y_1), ...,$ $ (x_n, y_n)  \}$
@@ -243,8 +229,8 @@ On Fig.~\ref{11_2432_255255_a0a1b7f805cfc93080b4608505a0f45d_rails_3.png} we sho
 \}
 \end{multline*}
 It's notable that $\operatorname{char} \mathcal{P}_{3,8}=255255 = 3 \cdot 5 \cdot 7 \cdot 11 \cdot 13 \cdot 17$
-is a production of the first 6 odd primes,
-and the distances between the three points on the bottom line are $512=2^{9}$, $640=2^7 \cdot 5$ and
+is a product of the first 6 odd primes,
+and the distances between the three points on the lower line are $512=2^{9}$, $640=2^7 \cdot 5$ and
 $512+640 = 1152 = 2^7 \cdot 3^2$.
 
 \begin{figure}[h!]
@@ -255,7 +241,7 @@ $512+640 = 1152 = 2^7 \cdot 3^2$.
 
 Rails sets with 4 and 4 points on the lines are somewhat rather common;
 an example of such a set is shown on Fig.~\ref{8_1111_770_5666c83a03a80e1d3f8f8e8186a145f6__rails_4.png}:
-\begin{multline*}
+\begin{equation*}
 	\sqrt{770}/1*\{
 		( 0 ; 0);
 		( 380 ; 0);
@@ -266,7 +252,7 @@ an example of such a set is shown on Fig.~\ref{8_1111_770_5666c83a03a80e1d3f8f8e
 		( 734 ; -12);
 		( 757 ; -12)%;
 	\}
-\end{multline*}
+\end{equation*}
 
 \begin{figure}[h!]
 	\center{\includegraphics[width=0.9\linewidth]{8_1111_770_5666c83a03a80e1d3f8f8e8186a145f6__rails_4.png}}
@@ -276,14 +262,14 @@ an example of such a set is shown on Fig.~\ref{8_1111_770_5666c83a03a80e1d3f8f8e
 
 
 \begin{dfn}
-	A planar integral point set situated in two perpendicular straight lines
+	A planar integral point set situated on two perpendicular straight lines
 	is called a \textit{cross} set.
 \end{dfn}
 Every cross set has characteristic 1;
-in~\cite{antonov2008maximal}, cross sets with only 2 points out of one of the lines are called \textit{crabs}.
+in~\cite{antonov2008maximal}, cross sets with only 2 points out of one of the lines that have two axes of symmetry are called \textit{crabs}.
 
 \begin{dfn}
-	A planar integral point set situated in two straight lines
+	A planar integral point set situated on two straight lines
 	that are not parallel nor perpendicular,
 	is called a \textit{scissors} set.
 \end{dfn}
@@ -300,7 +286,7 @@ Examples of pyramid sets are given in Section~\ref{sec:bounds_pyramid} on
 Fig.~\ref{picture_56.png} and Fig.~\ref{picture_1260.png}.
 We don't have any examples of pyramid sets with cardinality more than 9.
 
-It still remain unknown whether a scissors set can have another axis of symmetry;
+It still remains unknown whether a scissors set can have another axis of symmetry;
 on Fig.~\ref{15_3364_91_30e991f82a54fb9caeca5b6a6776b981_X.png} the following scissors set with central symmetry is shown:
 \begin{multline*}
 	\sqrt{91}/1*\{
@@ -1763,14 +1749,14 @@ so, the further search may lead to better bounds employing the same construction
 There is still no general construction for a rails or scissors PIPS of arbitrary cardinality.
 For rails PIPSs, we can conjecture that there exists a set of arbitrary cardinality, with 2 points on one line
 and all the rest on the other;
-on the other hand, we still have not found any rails PIPSs with 4 and 5 points on the lines.
+on the other hand, it is still unknown whether there are any rails PIPSs with 4 and 5 points on the lines.
 
 As for today, we have found pyramid PIPS of cardinality at most 9.
 
 The source code can be obtained at https://gitlab.com/Nickkolok/ips-algo
 
 \section{Acknowledgements}
-The author thanks Dr. A.S. Usachev for his help in polishing the text of the paper.
+The authors thank A.S. Usachev for his help in polishing the text of the paper.
 
 \printbibliography
 %\bibliography{literature}
