@@ -7,7 +7,7 @@
 %\usepackage[pdftex,unicode,colorlinks=true,linkcolor=blue]{hyperref}
 \usepackage{indentfirst} % включить отступ у первого абзаца
 \usepackage[dvips]{graphicx} %хотим вставлять рисунки?
-\graphicspath{{illustr/}}%путь к рисункам
+\graphicspath{{img/}}%путь к рисункам
 
 \usepackage{geometry} % Меняем поля страницы.
 \geometry{left=2cm}% левое поле
@@ -66,6 +66,9 @@
 %\mathtoolsset{showonlyrefs=true}
 
 
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\chr}{char}
+
 
 \begin{document}
 
@@ -75,16 +78,18 @@
 % The text starts here
 
 \title{
-	On existence of integral point sets and their diameter bounds
+	On the characteristic and diameter of planar integral point sets
 	\footnote{
-		This work was carried out at Voronezh State University and supported by the Russian Science
-		Foundation grant 19-11-00197.
+		The work of the first author was supported by the Theoretical Physics
+		and Mathematics Advancement Foundation “BASIS”.
 	}
 }
 
 \author{
 	N.N. Avdeev
-	\footnote{nickkolok@mail.ru, avdeev@math.vsu.ru}
+	\footnote{nickkolok@mail.ru, avdeev@math.vsu.ru},
+	E.A. Lushina
+	\footnote{TODO}
 	\\
 	\textit{Voronezh State University, Voronezh, Russia}
 }
@@ -93,83 +98,80 @@
 \maketitle
 
 \paragraph{Abstract.}
-A point set $M$ in $m$-dimensional Euclidean space is called an integral point set if all the distances between the
-elements of $M$ are integers, and $M$ is not situated on an $(m-1)$-dimensional hyperplane.
-We improve the linear lower bound for diameter of planar integral point sets.
-This improvement takes into account some results related to the Point Packing in a Square problem.
-Then for arbitrary integers $m \geq 2$, $n \geq m+1$, $d \geq 1$
-we give a construction of an integral point set $M$ of $n$ points in $m$-dimensional Euclidean space,
-where $M$ contains points $M_1$ and $M_2$ such that the distance between $M_1$ and $M_2$ is exactly $d$.
+A point set $M$ in Euclidean plane is called an integral point set in semi-general position if all the distances between the
+elements of $M$ are integers, and $M$ does not contain collinear triples.
+We improve the linear lower bound for diameter of such sets in the particular case
+when the characteristic of the set is of the form $4k+1$ or $4k+2$.
+To achieve that, we combine hyperbolae-based and grid-based toolsets.
 
-TODO
 
 \section{Introduction}
-Let $\mathbb{N}$ be the set of all positive integers and let $|M_1 M_2|$ denote the Euclidean distance
-between points $M_1$ and $M_2$ in a finite-dimensional space $\mathbb{R}^m$
-(and, more generally, let $|\Delta|$ denote the length of line segment $\Delta$).
-An \textit{integral point set} in $m$-dimensional Euclidean space, $m>2$, is a point set $M$ such that all the distances between the
-points of $M$ are integers and $M$ is not situated on an $(m-1)$-dimensional hyperplane.
-Erd{\H{o}}s and Anning proved~\cite{anning1945integral,erdos1945integral} that every integral point set consists of a finite number of points.
-Taking this into account, we denote the set of all integral point sets of $n$ points in $m$-dimensional Euclidean space by
-$\mathfrak{M}(m,n)$ (using the notation in~\cite{our-vmmsh-2018-translit})
-and denote the set of all integral point sets in $m$-dimensional Euclidean space by $\mathfrak{M}(m,\mathbb{N})$.
-The symbol $\# M$ will be used for the cardinality of $M$, that is the number of points in $M$ in our case.
+	A planar integral point set (IPS) is a set of points in the plane, such that the distance between any pair of its points is an integer, and at least one triple of its points is non-collinear. The latter condition is essential to avoid subsets of a straight line; those are de-facto equivalent to subsets of integer numbers and form a completely different combinatorial object.
 
-For every finite point set, its diameter is naturally defined as
-\begin{equation}
-	\operatorname{diam} M = \max_{A,B\in M} |AB|
-	.
-\end{equation}
-Another emerging question is: how does the diameter of an integral point set depend on its cardinality?
-One can easily see that every $M\in\mathfrak{M}(m,n)$ with $\operatorname{diam} M = h$
-can be dilated to $M_p\in\mathfrak{M}(m,n)$ with $\operatorname{diam} M = ph$
-for every $p\in\mathbb{N}$.
-So, the above question should be rephrased:
-how does \textit{the least possible} diameter of an integral point set depend on its cardinality?
-In order to answer this question, the following function was introduced~\cite{kurz2008bounds,kurz2008minimum}:
-\begin{equation}
-	d(m,n) = \min_{M\in\mathfrak{M}(m,n)} \operatorname{diam} M = \min_{M\in\mathfrak{M}(m,n)} \max_{A,B\in M} |AB|
-	.
-\end{equation}
-We also refer to~\cite{kurz2008bounds} for a list of known exact values of $d(m,n)$ and its bounds.
-In the present paper, we mostly focus on the case $m=2$.
+	In 1945, Erdös gave an elegant proof~\cite{anning1945integral,erdos1945integral} that every IPS is finite.
+	In any IPS he chose a non-collinear triple $\{M_1, M_2, M_3\} \in M$ so that any other point $M_0 \in M$ lies on either the straight line $M_1M_2$, the perpendicular bisector to the segment $M_1M_2$, or one of $|M_1M_2|-1$ hyperbolae, where $|M_1M_2|$ stands for length of line segment $M_1M_2$.  Applying the same argument to the line segment $M_1M_3$, Erdös concluded that $\#M \le 4 \cdot |M_1M_2| \cdot |M_1M_3|$, where $\#M$ stands for cardinality of $M$.
 
-The most significant breakthrough on the planar case was done by Solymosi~\cite{solymosi2003note},
-who proved that $cn \leq d(2,n)$ for a sufficiently small constant $c$.
-Following Solymosi's proof carefully,
-one can derive that the inequality holds at least for $c = 1/24$.
-(See~\cite[Exercise 2.6]{garibaldi2005erdos} for some remarks.)
-The constant was improved in~\cite{our-mz-rus-translit} to $1/8$ for all $n$ and in~\cite{our-vmmsh-2018-translit}
-to $3/8$ for sufficiently large $n$.
+	Thus, we can easily infer the lower bound for diameter of an IPS $M$:
+	$$
+		\operatorname{diam} M \ge \frac{\sqrt{\#M}}{2}.
+	$$
+	That was the first lower bound for the diameter ever;
+	however, Erdös did not only estimate the diameter,
+	but also established the toolset for further investigation, the core of which is a system of cofocal hyperbolae.
 
-The paper~\cite{solymosi2003note} contains one more interesting result.
-Let us define a function which is ``dual'' to $d(m,n)$ in some sense:
-\begin{equation}
-	l(m,n) = \min_{M\in\mathfrak{M}(m,n)} \min_{A,B\in M} |AB|
-	.
-\end{equation}
-Solymosi proved that $l(2,n)\leq 2$.
+	Using this toolset, in 2003 Solymosi proved~\cite{solymosi2003note} that
+	$$
+		\operatorname{diam} M \ge c \cdot \#M.
+	$$
+	Although Solymosi did not give the constant $c$ explicitly,
+	it can be inferred from his proof that $c=\frac{1}{24}$ [TODO].
 
-In the present paper we improve Solymosi's results:
-first, we obtain a larger constant $c = 5/11$ in Theorem~\ref{thm:main_estimate},
-using the combined approach with the Point Packing in a Square problem
-(this approach is different from Solymosi's one);
-second, we prove that $l(m,n)=1$ for all possible $m$ and $n$.
+	In~\cite{our-vmmsh-2018-translit} the constant (for $n\geq 4$) was improved to $0.3457$
+	employing Point Packing in a Square Problem~\cite{markot2005newverified,costa2013valid}.
+	In~\cite{my-pps-linear-bound-2019} the approach has been further developed, and the constant has been tightened to $\frac{5}{11}$.
+	Finally, in~\cite{my-semi-general-5-4-bound-2019} for IPS $M$ in semi-general position (that is an IPS with no collinear triples) it was proved that
+	\begin{equation}
+		\label{eq:chebsb_lower_bound}
+		\diam M \geq \left(\frac n 5 \right)^{5/4}
+	\end{equation}
+	(in assumption that the set has at east 4 points).
+	All these lower bounds are based on the Erdos's framework --- cofocal hyperbolae.
 
-Sections 2--4 are devoted to the linear lower bound.
-Each section consists of 2 subsections: General results and Special results.
-In General results, we do not aim to provide tight estimates;
-they are discussed in Special results.
 
-Section 5 is devoted to integral point sets with distance 1 and has its own structure.
+	Meanwhile in 1988 Kemnitz introduced~\cite{kemnitz1988punktmengen}
+	a characteristic of an IPS, that is a squarefree integer $q$ such as the area
+	of any triangle formed by any triple of points from the IPS is comparable with $\sqrt{q}$.
+	(Indeed, Kemnitz proved this fact for any point set with rational distances ---
+	in contrast with IPS, those can be infinite even they contain non-collinear triples,
+	see~\cite{huff1948diophantine} for an example of construction
+	and~\cite{solymosi2010question} for some known limitations.)
+	In 2000s, Kurz introduced~\cite{kurz2005characteristic} the function $d(2,n)$ that evaluates
+	to the minimal possible diameter of planar IPS of cardinality $n$.
+	Then Kurz employed Kemnitz's results and found~\cite[Subsection 4.2]{kurz2008minimum} exact values of $d(2,n)$
+	up to $n=122$ by exhaustive computer search.
+	(Taking the characteristic into consideration allows to boost such search significantly ---
+	basically because all triples of an IPS form triangles with equal characteristics.)
+
+	For generalization in higher dimensions, we refer the reader to~\cite{nozaki2013lower}.
+
+	In the present paper, we put the power of Erdös and Kemnitz approaches together. Due to squarefree nature of characteristic, it can be of the form $4k+1$, $4k+2$ or $4k+3$, where $k$ is integer.
+	We prove that for a particular case of characteristic $4k+1$ and $4k+2$
+	the bound~\eqref{eq:chebsb_lower_bound} can be improved to
+	\begin{equation}
+		\operatorname{diam} M \ge \left( \frac{25}{36} n \right)^{5/4}
+		.
+	\end{equation}
+
+	In Section 2, we give all the required notions and known results. In Section 3, we discuss some examples of integral point sets in order to demonstrate that none of the classes $4k+1$, $4k+2$, $4k+3$ is too exotic nor pathological. Section 4 is devoted to the connection between Erdös curves and characteristic. In Section 5, we prove some auxiliary results, and we proceed to the main one in Section 6.
+
 
 
 
 \section{Basic Notions and Results}
 
-In this Section, we provide proper definitions and list some known results.
+In this Section, we provide rigorous definitions and list some known results.
 
-For the sake of brevity, the following designations will be used for numeric sets
+For the sake of brevity, the following notations will be used for sets
 of positive integers, non-negative integers and all the integers resp.:
 \begin{equation}
 	\mathbb{N} = \{1,2,3,4,...\},\quad \mathbb{N}_0 = \mathbb{N} \cup \{0\},
@@ -177,28 +179,799 @@ of positive integers, non-negative integers and all the integers resp.:
 	\mathbb{N}_\pm = \{0,\pm 1,\pm 2,\pm 3,\pm 4,...\}
 \end{equation}
 
+For a finite set $M$, we will denote its cardinality by $\#M$.
+
+\begin{definition}
+	\label{def:IPS}
+	A planar integral point set (IPS) is a set $M$
+	of non-collinear points in the plane $\mathbb{R}^{2}$ such that
+	for any pair of points $M_{1}, M_{2} \in \mathcal{P}$
+	the Euclidean distance $|M_{1}M_{2}|$
+	between points $M_{1}$ and $M_{2}$ is integral.
+	Notation: $M\in\mathfrak{M}$, and also $M\in\mathfrak{M}_n$ for $n=\#M$.
+\end{definition}
+
+When we say that a set in non-collinear,
+we mean that it has at least one non-collinear triple.
+If we tighten the condition and require all the triples to be non-collinear,
+we get the next definition.
+
+\begin{definition}
+	\label{def:IPS_semi_general}
+	A planar IPS $M$ is said to be in \emph{semi-general position}
+	if no three points of $M$ are collinear.
+	Notation: $M\in\overline{\mathfrak{M}}$, and also $M\in\overline{\mathfrak{M}}_n$ for $n=\#M$.
+\end{definition}
+
+In the present paper, we mostly focus on IPS in semi-general position.
+However, the next restriction step can be done as the following.
+
+\begin{definition}
+	\label{def:IPS_general}
+	A planar IPS $M$ is said to be in \emph{general position}
+	if no three points of $M$ are collinear
+	and no four points of $M$ are concircular.
+	Notation: $M\in\overline{\mathfrak{M}}$, and also $M\in\overline{\mathfrak{M}}_n$ for $n=\#M$.
+\end{definition}
+
+\begin{definition}
+	The diameter of an integral point set $M$ is defined by setting
+	\begin{equation}
+		\operatorname{diam M} = \underset{M_{1}, M_{2} \in
+		M}{\max} |M_{1}M_{2}|
+		.
+	\end{equation}
+\end{definition}
+
+\begin{definition}
+	Two numbers $a$ and $b$ are \emph{commensurable} if their ratio $a/b$
+	is a rational number.
+\end{definition}
+
+For example, the pair $(7, 2/3)$ is commensurable,
+the pair $(\sqrt3/3, \sqrt{12})$ is also commensurable,
+but the pair $(\sqrt2, \sqrt3)$ is not.
+
+\begin{definition}
+	A number is called \emph{squarefree} if its only perfect square divisor is 1.
+	The first squarefree numbers are: 1, 2, 3, 5, 6, 7, 10, 11, 13,...
+\end{definition}
+
+
+\begin{definition}
+	The characteristic of a planar IPS $\mathcal{M}$ is a squarefree number $q$
+	such that the area of any triangle $M_1M_2M_3$, $\{M_1,M_2,M_3\}\subset M$,
+	is commensurable with $\sqrt{q}$.
+	Notation: $\chr M = q$.
+\end{definition}
+
+\begin{definition}
+	If points $M_1, M_2 \in M \in \mathcal{M}$,
+	then the line segment $M_1 M_2$ is said to be an \emph{edge} of $M$.
+\end{definition}
+
+
+
+The following result is due to Kemnitz:
+
+\begin{theorem}[the Grid Theorem]
+	A set $M \in \mathfrak{M}_n$ with characteristic $p$ can be placed on the grid
+	$$
+	\left\{\left(\frac{a_i}{2m} ; \frac{b_i \sqrt{p}}{2m}\right)\right\},
+	$$
+	where $a_i, b_i \in \mathbb{N}_\pm$, and $m$ can be taken as the length of any edge of the set $M$.
+	\label{tm:1}
+\end{theorem}
+
+For the sake of completeness, we provide the proof for the Grid Theorem below.
+
+\begin{proof}
+	Let $M_1, M_2 \in M \in \mathfrak M$ and $|M_1 M_2| = m$.
+	Set $M_1=(-m/2, 0)$, $M_2=(m/2, 0)$.
+	Then for any $M_i \in M$, $M_i = (x,y)$ one has
+	$|M_i M_1| = k \in \mathbb N_0$, $|M_i M_2| = n \in \mathbb N_0$.
+	The point $M_i$ belongs to the intersection of two circles,
+	whose equations are
+	\begin{gather}
+		\left(-\frac{m}{2} - x\right)^2 + y ^2 = k^2,
+	\\
+		\left( \frac{m}{2} - x\right)^2 + y ^2 = n^2,
+	\end{gather}
+	where $a+b\geq m$.
+
+	The solution is
+	\begin{gather}
+		x = \frac{k^2 - n^2}{2 m} = \frac{a_i}{2m},
+	\\
+	%	y = \frac{\pm \sqrt{-(a^2 - b^2)^2 + m^2 (2 a^2 + 2 b^2  - m^2)} }{2m}.
+		y = \pm\sqrt{k^2 - \left(\frac{m}{2}+x\right)^2} =
+		\pm\sqrt{k^2 - \left(\frac{m}{2}+\frac{a_i}{2m}\right)^2} =
+		\frac{\pm b_i \sqrt{q}}{2m},
+	\end{gather}
+	and the claim follows.
+\end{proof}
+
+\begin{definition}
+	Let $M_1 M_2$ be an edge of $M\in \mathfrak{M}$.
+	For $N\in\mathbb N_\pm$, $|n| < |M_1 M_2|$
+	we will say that the set of points
+	\begin{equation}
+		\{M_0 : |M_0 M_1| - |M_0 M_2| = n\}
+	\end{equation}
+	is called the \emph{$n$-th Erdos curve}.
+\end{definition}
+
+Obviously, the 0-th Erdos curve is the perpendicular bisector of $M_1 M_2$,
+and all the other Erdos curves are branches of cofocal hyperbolae.
+
+On Figure~\ref{fig:Erdos_curves_numbered}, the Erdos curves are shown for an edge of length 3.
+
+\begin{figure}
+\center{\includegraphics[width=0.6\linewidth]{Erdos_curves_numbered.png}}
+\caption{Erdos curves}
+\label{fig:Erdos_curves_numbered}
+\end{figure}
+
+Thus, an edge $M_1 M_2$ generates $2|M_1 M_2| - 1$ Erdos curves.
+For the sake of brevity, Erdos curves with odd numbers are named odd Erdos curves,
+and the ones with even numbers are named even Erdos curves.
+
+Two following definitions are used to classify integral point sets
+with many collinear triples~\cite{avdeev2019particular}:
+
+\begin{definition}
+	A planar integral point sets of $n$ points with $n-1$ points on a straight line is called
+	a \emph{facher} set.
+\end{definition}
+For $9\leq n\leq 122$, the minimal possible diameter is attained at a facher set~\cite{kurz2008bounds}.
+
+\begin{definition}
+	A planar integral point set situated on two parallel straight lines
+	is called a \emph{rails} set.
+\end{definition}
+
+
+\begin{definition}
+	The part of a plane between two parallel straight lines with distance $\rho$ between them
+	is called a strip of width $\rho$.
+\end{definition}
+
+\begin{lemma}
+	\cite{smurov1998stripcoverings}
+	\label{lem:smurov_min_height}
+	If a triangle $T$ with minimal height $\rho$ is situated in a strip,
+	then the width of the strip is at least $\rho$.
+\end{lemma}
+
+
+
+\begin{lemma}
+	\cite[Lemma 4]{our-vmmsh-2018};
+	\cite[Lemma 2.4]{my-pps-linear-bound-2019}
+	\label{lem:square_container}
+	Let $M\in\mathfrak{M}(2,n)$, $\operatorname{diam} M = d$.
+	Then $M$ is situated in a square of side length $d$.
+\end{lemma}
+
+\begin{definition}
+	\cite[Definition 2.5]{my-pps-linear-bound-2019}
+	A \textit{cross} for points $M_1$ and $M_2$, denoted by $cr(M_1,M_2)$, is the union of two straight lines:
+	the line through $M_1$ and $M_2$,
+	and the perpendicular bisector of line segment $M_1 M_2$.
+\end{definition}
+
+\begin{lemma}
+	\cite[Theorem 3.10]{my-pps-linear-bound-2019}
+	\label{lem:no_distance_one}
+	Each set $M\in\mathfrak{M}_n$
+	such that for some $M_1,M_2 \in M$ equality $|M_1 M_2|=1$ holds,
+	consists of $n-1$ points, including $M_1$ and $M_2$, on a straight line,
+	and one point out of the line, on the perpendicular bisector of line segment $M_1 M_2$.
+\end{lemma}
+
+
+
+As far as our attention will be mostly restricted to planar integral point sets
+with characteristic of the form $4k+1$ and $4k+2$ in semi-general position.
+If an IPS $M$ satisfies these conditions,
+we will write that
+$M\in\overline{\mathfrak{M}}'$, and also $M\in\overline{\mathfrak{M}}'_n$ for $n=\#M$
+
+
+
+
+
+%3
+\section{Integral Point Sets with Various Characteristics}
+
+Let us demonstrate that the classes $4k+1$, $4k+2$ nor $4k+3$
+are neither too exotic nor pathological.
+In order to do this, we will provide important examples of IPS for each class.
+
+For convenience, we use the notation \cite{our-ped-2018,our-pmm-2018,our-vmmsh-2018}:
+$\sqrt{p}/q * \{ (x_1,y_1), ...,$ $ (x_n, y_n)  \}$,
+which means that each abscissa is multiplied by $1/q$
+and each ordinate is multiplied by $\sqrt{p}/q$,  i.e.
+\begin{equation}
+	\label{eq:char_lattice}
+	\sqrt{p}/q * \{ (x_1,y_1), ..., (x_n, y_n)  \}
+	=
+	\left\{ \left(\frac{x_1}{q},\frac{y_1\sqrt{p}}{q}\right), ..., \left(\frac{x_n}{q},   \frac{y_n\sqrt{p}}{q}\right)  \right\}
+	,
+\end{equation}
+where $q$ is the characteristic of the IPS.
+Such notation is made possible by the Grid Theorem.
+
+When we think about IPS with characteristic $4k+1$,
+the very first example that comes to our mind is Egyptian triangle,
+that is the triangle with sides $(3;4;5)$.
+Egyptian triangle is obviously an IPS with characteristic $1 = 4 \cdot 0 +1$.
+
+Facher sets with characteristic 1, that are called \emph{semi-crabs},
+are investigated in~\cite{antonov2008maximal}.
+There are also much more complex IPS with characteristic 1;
+for those from $\dot{\mathfrak{M}}_7$, we refer the reader to~\cite{kurz2013constructing}.
+
+Figure~\ref{fig:char385} shows a rails IPS of characteristic $385 = 4 \cdot 96 + 1$ presented in~\cite{avdeev2019particular}.
+Its coordinates are
+\begin{multline}
+	\sqrt{385}/{2} * \{ (\pm 1105, 48),
+	(\pm 2189 ; 0),
+	(\pm 1587 ; 0),
+	(\pm 1269 ; 0),
+	\\
+	(\pm 763 ; 0),
+	(\pm 623 ; 0),
+	(\pm 529 ; 0),
+	(\pm 339 ; 0)\}
+\end{multline}
+
+\begin{figure}
+\center{\includegraphics[width=0.6\linewidth]{char385.png}}
+\caption{IPS of cardinality 16 and diameter 2189}
+\label{fig:char385}
+\end{figure}
+
+In~\cite{kreisel2008heptagon}, the first ever known
+planar integral point set $M_7 \in \dot{\mathfrak{M}}_7$ is given,
+see Fig.~\ref{fig:heptagon2}.
+Its coordinates are
+\begin{multline}
+\sqrt{2002}/2227 * \{ (0;0), (2227^2\cdot10;0), (26127018;932064), (32 142 553; 411 864),
+\\
+	 (17615968;238464), (7 344 908;411 864), (19079044; 54168)\}
+	 ,
+\end{multline}
+and
+$
+	\chr M_7 = 2002 = 4\cdot 500 + 2
+$.
+
+It is noticeable that the second example of an IPS from $\dot{\mathfrak{M}}_7$
+given in the same article has the same characteristic.
+
+Also the largest known rails IPS presented in~\cite{}[TODO:Omsk!]
+that has 104 points on one straight line and the rest 2 on another
+(that is the cardinality of 106) has the characteristic of $154 = 4 \cdot 38 + 2$.
+(We do not list the coordinates of that set here due to its diameter which is 2745754098774581800288844387372160.)
+
+\begin{figure}
+\center{\includegraphics[width=0.6\linewidth]{heptagon2.png}}
+\caption{The heptagon in general position}
+\label{fig:heptagon2}
+\end{figure}
+
+As for characteristic $4k+3$, we should mention that the \emph{upper} bound for the minimal diameter
+of planar integral point set given in~\cite{harborth1993upper} employs IPS with characteristic $3$.
+Moreover, all the IPS of minimal possible diameter provided in~\cite[\S 5, Fig. 1]{harborth1993upper}
+(for cardinalities from 3 to 9) have characteristic of form $4k+3$.
+
+For the sake of completeness, on Fig.~\ref{fig:11_2432_255255_a0a1b7f805cfc93080b4608505a0f45d_rails_3.png}
+we give an example of rails set
+with 3 points on one line and 8 points on the other (first presented in~\cite{})
+whose characteristic is
+\begin{equation}
+	255255 = 3 \cdot 5 \cdot 7 \cdot 11 \cdot 13 \cdot 17
+	 = 4 \cdot 63813  + 3
+\end{equation}
+and whose coordinates are
+\begin{multline}
+\mathcal{P}_{3,8}=\sqrt{255255}/2*\{
+	( 1767 ; -3);
+	( 2791 ; -3);
+	( 4071 ; -3);
+\\
+	( -306 ; 0);
+	( 0 ; 0);
+	( 1798 ; 0);
+	( 2304 ; 0);
+	( 2760 ; 0);
+	( 3534 ; 0);
+	( 4040 ; 0);
+	( 4558 ; 0)
+\}
+\end{multline}
+
+\begin{figure}
+\center{\includegraphics[width=0.6\linewidth]{11_2432_255255_a0a1b7f805cfc93080b4608505a0f45d_rails_3.png}}
+\caption{The heptagon in general position}
+\label{fig:11_2432_255255_a0a1b7f805cfc93080b4608505a0f45d_rails_3.png}
+\end{figure}
+
+%4
+\section{Erdös Curves and Characteristic}
+
+\begin{lemma}
+	\label{lem:pre_weeding_I}
+	Any set $M = {A, B, C} \in \mathfrak{M}_3$ with edge $|AB| = m$, where $|AC| - |BC| = m - s$, $m, s \in \mathbb{N}$, and $s$ is an odd number and $s \leq m$, has a characteristic of the form $p = 4k + 3$, $k \in \mathbb{N}_0$.
+\end{lemma}
+
+\begin{proof}
+	Let $|BC| = n$. Then, from the triangle inequality $|AC| < |AB| + |BC|$, we have that $|AC| = m + n - s$, $s \in \mathbb{N}$ and $s \leq m$. By the Grid Theorem, we introduce such coordinates that $A = (-\frac{m}{2}; 0)$, $B = (\frac{m}{2}; 0)$, and $C = (\frac{a}{2m}; \frac{b\sqrt{p}}{2m})$. We find the distance between points $A$ and $C$, and points $B$ and $C$ in coordinates, and form a system of equations
+	\begin{equation}
+		\left\{
+		\begin{aligned}
+		\frac{\sqrt{(a+m^2)^2+pb^2}}{2m}&=m+n-s.\\
+		\frac{\sqrt{(a-m^2)^2+pb^2}}{2m}&=n
+		\end{aligned}
+		\right.
+		\label{eq:29}
+	\end{equation}
+	Multiply each equation by $2m$ and square both sides of the equations in system (\ref{eq:29})
+	\begin{equation}
+	\left\{
+	\begin{aligned}
+	(a+m^2)^2+pb^2&=4m^2(m+n-s)^2,\\
+	(a-m^2)^2+pb^2&=4m^2n^2
+	\end{aligned}
+	\right.
+	\label{eq: 30}
+	\end{equation}
+	and then subtract the second equation from the first one:
+	\begin{equation}
+	(a+m^2)^2-(a-m^2)^2=4m^2(m+n-s)^2-4m^2n^2,
+	\label{eq: 31}
+	\end{equation}
+	$$
+	4m^2a=4m^2((m+n-s)^2-n^2),
+	$$
+	so
+	\begin{equation}
+	a=(m-s)(m+2n-s).
+	\label{eq: 32}
+	\end{equation}
+	Substitute the obtained expression (\ref{eq:32}) into the second equation of the system (\ref{eq:30}).
+	\begin{equation}
+		((m-s)(m+2n-s)-m^2)^2+pb^2=4m^2n^2,
+	\end{equation}
+	that immediately gives
+	\begin{equation}
+		\label{eq:33}
+		pb^2=s(2m+2n-s)(2n-s)(2m-s).
+	\end{equation}
+	According to the assumption, let $s=2t+1$, where $t\in\mathbb{N}_0$.
+	Then equation (\ref{eq:33}) can be rewritten as:
+	\begin{equation}
+		pb^2=(2t+1)(2m+2n-2t-1)(2n-2t-1)(2m-2t-1).
+		\label{eq:34.2}
+	\end{equation}
+	or
+	\begin{eqnarray}
+		pb^2+1 &=&4(-4t^4+8t^3m+8t^3n-8t^3-4t^2m^2-12t^2mn+12t^2m- {}\nonumber\\
+			 &     &-4t^2n^2+12t^2n-6t^2+4tm^2n-4tmn^2-12tmn+6tm- {}\nonumber\\
+			 &     &-4tn^2+6tn-2t+2m^2n-m^2+2mn^2-3mn+m-n^2+n).{}\nonumber\\
+	\label{eq: 35}
+	\end{eqnarray}
+	For equation (\ref{eq:35}) to have integer solutions, it is necessary for $p$ and $b$ to be odd.
+	The right-hand side is divisible by 4. Then $pb^2\equiv3\operatorname{mod}{4}$.
+	But $b^{2}\equiv1(\operatorname{mod}4)$.
+	Thus, $p=4k+3$, $k\in \mathbb{N}_{0}$.
+\end{proof}
+
+Then the following theorem immediately appears.
+
+\begin{theorem}[The Weeding Theorem I]
+	\label{thm:weeding_I}
+	Let $M = {M_1, M_2, M_3} \in \mathfrak{M}_3$ be an IPS of semi-general position with a characteristic different from $4k+3$, $k \in \mathbb{N}_0$. Then, the length of the edge $M_1 M_2$ and its $n$-th Erdős curve, which contains the point $M_3$, have the same parity.
+\end{theorem}
+
+\begin{proof}
+	Let $|M_1 M_2| = m$, $m \in \mathbb{N}$, and let the $n$-th Erdős curve satisfy $|M_1 M_3| - |M_2 M_3| = n$.
+	If $m$ is an odd number, then by Remark \ref{rm: 2}, the difference $n = |M_1 M_3| - |M_2 M_3| = m - s$, where $s$ is an even number, is also an odd number.
+	Let $m$ be an even number; then $n = |M_1 M_3| - |M_2 M_3| = m - s$ is an even number, as the difference of two even numbers.
+\end{proof}
+
+An even edge is a bit special case.
+
+\begin{lemma}
+	\ref{lem:pre_weeding_II}
+	Every set $M = {A, B, C} \in \mathfrak{M}_3$ with an even edge $|AB| = 2q$, where $|AC| - |BC| = 2q - s$, $q, s \in \mathbb{N}$, $s$ is an odd number and $s \leq 2q$, has a characteristic of the form $p = 8k + 7$, $k \in \mathbb{N}_0$.
+\end{lemma}
+
+\begin{proof}
+	Let us set $m = 2q$ in the Lemma~\ref{lem:pre_weeding_I}.
+	Then equation \eqref{eq:33} turns into
+	\begin{equation}
+		\label{eq:33.1}
+		pb^2 = s(4q + 2n - s)(2n - s)(4q - s).
+	\end{equation}
+	Taking into account that $s = 2t + 1$, $t \in \mathbb{N}_0$,
+	we bring equation (\ref{eq:33.1}) to the form:
+	\begin{equation}
+	pb^2 = (2t + 1)(4q + 2n - 2t - 1)(2n - 2t - 1)(4q - 2t - 1).
+	\label{eq: 34.2}
+	\end{equation}
+	or, after expansion,
+	\begin{eqnarray}
+		pb^2 + 1&=& 8(-2t^4+8t^3q+4t^3n-4t^3-8t^2q^2-12t^2qn+12t^2q- {}\nonumber\\
+			 &     &-2t^2n^2+6t^2n-3t^2+8tq^2n-4tqn^2-12tqn+6tq- {}\nonumber\\
+			 &     &-2tn^2+3tn-t+4q^2n-2q^2+2qn^2-3qn+q)-  {}\nonumber\\
+			   &     &-4n(n-1).
+		\label{eq: 35.1}
+	\end{eqnarray}
+	Among two consecutive natural numbers $n$ and $(n-1)$,
+	exactly one of them is divisible by 2.
+	Therefore, the expression $4n(n-1)\equiv0\pmod{8}$.
+	Thus, the right-hand side of equation (\ref{eq:35.1}) is an even number and a multiple of 8.
+	Then $pb^2\equiv7\pmod{8}$.
+	A necessary condition for the existence of an integer solution to equation (\ref{eq:35.1})
+	is that numbers $p$ and $b$ must be odd.
+	But $b^2\equiv1\pmod{8}$, so $p=8k+7$, $k\in\mathbb{N}_0$.
+\end{proof}
+
+\begin{theorem}[The Weeding Theorem II]
+	\label{thm:weeding_II}
+	Let an IPS in semi-general position $M=\{M_1, M_2, M_3\}\in{\mathfrak{M}_{3}}$ have an even edge length $|M_1 M_2|$, and let point $M_3$ lie on an odd Erdős curve of edge $M_1 M_2$.
+	Then the set $M$ has characteristic $p=8k+7$, $k\in \mathbb{N}_{0}$.
+\end{theorem}
+
+\begin{proof}
+	Indeed, let $|M_1 M_2|=2q$, $q \in \mathbb{N}$.
+	For the $n$-th Erdős curve we have $|M_1 M_3|-|M_2 M_3|=n$.
+	According to Lemma~\ref{lem:pre_weeding_II}, the difference $n=|M_1 M_3|-|M_2 M_3|=2q-s$,
+	where $s$ is an odd number,
+	is also an odd number and $\operatorname{char} M = 8k + 7$, $k\in \mathbb{N}_{0}$.
+\end{proof}
+
+%5
+\section{Auxiliary Results}
+
+\begin{lemma}
+	\label{lem:no_distance_2}
+	Every set $M \in \overline{\mathfrak{M}_n}'$ with an edge $|M_1M_2|=2$ has a cardinality $n=3$.
+\end{lemma}
+
+
+\begin{proof}
+	Let $M \in \overline{\mathfrak{M}_n}'$ and $M_1, M_2 \in M$. Then all points in the set $M$ lie on the circle $cr(M_1, M_2)$. Otherwise, according to Statement 4, $\operatorname{char}{M}={8k+7}$, $k\in \mathbb{N}_0$.
+
+	Assume the opposite. Let $M={M_1, M_2, M_3, M_4} \in \overline{\mathfrak{M}_4}'$. Introduce Cartesian coordinates such that $M_1(-1;0), M_2(1;0), O(0;0)$. Then $M_3$ and $M_4$ lie on the median perpendicular to $M_1M_2$. Since the distance $|M_3M_4|$ is an integer, the area of triangle $M_1M_3M_4$ is a rational number. By Definition 6, this means that $\operatorname{char}{M}={1}$. Then by the theorem about the lattice we have $M_3(0;t/4)$. Without loss of generality, let us assume $t\in\mathbb{N}$. Let $|M_1M_3|=s$. Applying the Pythagorean theorem to triangle $OM_1M_3$, we get
+	$$
+	1+\frac{t^2}{16}=s^2,
+	$$
+	or equivalently,
+	\begin{equation}
+	\label{eq: 42}
+	16s^2-t^2=16.
+	\end{equation}
+	Find the solutions to equation (\ref{eq: 42}) in natural numbers. To do this, we introduce the substitution: $t=4k$, $k\in\mathbb{N}$. Then equation (\ref{eq: 42}) takes the form:
+	\begin{equation}
+	\label{eq: 43}
+	s^2-k^2=1.
+	\end{equation}
+	Break down the left-hand side of equation (\ref{eq: 43}) into factors:
+	\begin{equation}
+	\label{eq: 44}
+	(s-k)(s+k)=1.
+	\end{equation}
+	Since $s,k\in\mathbb{N}$, the number 1 can be represented as the product of two integers in two ways: $1\cdot1$ and $-1\cdot(-1)$. In the first case, $(s-k)=1$ and $(s+k)=1$, which gives $s=1,k=0$, which contradicts that $k\in\mathbb{N}$.
+	In the second case, $(s-k)=-1$ and $(s+k)=-1$, which gives $s=-1,k=0$, which contradicts that $s,k\in\mathbb{N}$.
+
+	Thus, equation (\ref{eq: 42}) has no natural solutions in natural numbers.
+	The obtained contradiction completes the proof of the lemma.
+\end{proof}
+
+The following result is a key detail of bounds presented
+in~\cite{solymosi2003note} and~\cite{my-semi-general-5-4-bound-2019}:
+
+\begin{lemma}
+	\cite[Observation 1]{solymosi2003note}
+	If a triangle $T$ has integer side lengths $a \leq b \leq c$,
+	then the minimal height $m$ of it is at least $\left(a - \frac{1}{4}\right)^{1/2}$.
+\end{lemma}
+
+If we exclude characteristics of the form $4k+3$, this Solymosi's result can be sharpened a bit.
 
 \begin{lemma}
 	\label{lem:triangle_4k_plus_3}
 	Any triangle with sides $a \leq b \leq c$, where $c=a+b-1$ and $a, b, c \in \mathbb{N}$,
-	has a characteristic of the form $p=4k+3$, $k\in \mathbb{N}_0$.
+	has the characteristic of the form $p=4k+3$, $k\in \mathbb{N}_0$.
 \end{lemma}
 
 \begin{proof}
-	Indeed, let the triangle $ABC$ satisfy: $|BC|=a$, $|AC|=b$. Then, from the triangle inequality $|AB| < |BC|+|AC|$, we can represent the length of side $AB$ as: $|AB|=a+b-s$, $s \in \mathbb{N}$ and $s \leq a$. For $s=1$, the conditions of statement 6 are satisfied: $s$ is an odd number and $s \leq a$.
-	Therefore, the triangle with sides $a$, $b$, and $c=a+b-1$ has a characteristic of the form $p=4k+3$, $k\in \mathbb{N}_0$.
+	Indeed, consider the triangle $ABC$ and let $|BC|=a$, $|AC|=b$.
+	From the triangle inequality $|AB| < |BC|+|AC|$,
+	we can represent the length of side $AB$ as $|AB|=a+b-s$, $s \in \mathbb{N}$ and $s \leq a$.
+	For $s=1$, the conditions of TODO are satisfied: $s$ is an odd number and $s \leq a$.
+	Therefore, the triangle with sides $a$, $b$, and $c=a+b-1$
+	has a characteristic of the form $p=4k+3$, $k\in \mathbb{N}_0$.
 \end{proof}
+
+
+\begin{lemma}
+	\label{lem:triangle_height_our}
+	Let a triangle $ABC$ have integer characteristic different from $4k+3$, $k\in \mathbb{N}_0$, with $a\leq b\leq c$. Then the smallest height of the triangle $ABC$ is at least $(2a-1)^{1/2}$.
+\end{lemma}
+
+\begin{proof}
+	By Corollary \ref{cr:3}, a triangle with side $c=a+b-1$ cannot have a characteristic different from $4k+3$, $k\in \mathbb{N}_0$. Therefore, in a triangle with integer sides, we have $a+b\geq c+2.$
+
+	The height $h$ of the triangle $ABC$, dropped onto side $c$, can be found from the formula for its area: $S=hc/2$, which gives $h=2S/c$. To find the area of the triangle, we use the Heron's formula in the following form:
+	$$
+	S=\frac{1}{4} \sqrt{4a^2c^2-(c^2+a^2-b^2)^2}.
+	$$
+	Then
+	\begin{multline}
+		\label{eq:39}
+		h^2=\left( \frac{2}{4c} \cdot \sqrt{4a^2c^2-(c^2+a^2-b^2)^2}\right)^2
+		=
+		\frac{1}{4c^2} \cdot \left( 4a^2c^2-(c^2+a^2-b^2)^2 \right)
+		\\
+		=
+		a^2- \left(\frac{c^2+a^2-b^2}{2c} \right)^2
+	\end{multline}
+
+	From three heights of the triangle, the smallest one is that dropped onto its largest side.
+	For fixed sides $a$ and $b$, let us set $c=a+b-2$. Then
+	\begin{multline}
+		\label{eq: 40}
+		\frac{c^2+a^2-b^2}{c}
+		=
+		c+\frac{a+b}{c}(a-b) = c+\frac{c+2}{c}(a-b)
+		=
+		\\
+		c+\left(1+\frac{2}{c}\right)(a-b) \leq c+a-b=2a-1
+	\end{multline}
+	and this equality is possible when $a=b$. We rewrite expression (\ref{eq: 39}) as follows:
+	$$
+	h^2 \geq a^2- \left(\frac{2a-1}{2} \right)^2=a^2-(a-1)^2=a^2-a^2+2a-1=2a-1.
+	$$
+
+	Thus, the smallest height of the triangle with characteristic different from $4k+3$ is at least $(2a-1)^{1/2}$.
+\end{proof}
+
+
+
+\begin{corollary}
+	\label{cor:sqrt_5_3}
+	For the height of a triangle $ABC$, where ${A, B, C} \subset M \in \overline{\mathfrak{M}_4}'$, with sides $3 \leq a \leq b \leq c$, the following estimate holds:
+	$$
+		(2a-1)^{1/2} \geq \frac{\sqrt{5}}{\sqrt{3}} a^{1/2},
+	$$
+	where the difference between the left and right-hand sides increases with increasing $a$.
+\end{corollary}
+
+%6
+\section{The Main Bound}
+
+The following Lemma is a classic Erdos-style intersection-enumeration one,
+empowered by our Weeding Theorem I.
+
+\begin{lemma}
+	\label{lem:intersection_enumeration}
+	Let ${M_1, M_2, M_3, M_4} \subset M \in \overline{\mathfrak{M}_n}$ (points $M_2$ and $M_3$ may coincide, while the others are distinct), where $n \ge 4$. Then $\# M \le |M_1 M_2| \cdot |M_3 M_4| - 2$.
+\end{lemma}
+
+\begin{proof}
+	We will distinguish three cases: two even edges, two odd edges and two edges with different parity.
+
+
+	Let's consider the first case. Suppose both edges $M_1M_2$ and $M_3M_4$ have even lengths. Then, for each point $N\in M$, one of the following conditions is satisfied:
+
+	a) $N$ belongs to $cr(M_1,M_2)$, which implies that there are no more than 4 points (no more than 2 on each of the lines);
+
+	b) $N$ belongs to $cr(M_3,M_4)$, which implies that there are no more than 4 points (no more than 2 on each of the lines);
+
+	c) $N$ belongs to the intersection of one of the $(|M_1M_2|/2 - 1)$ hyperbolae with one of the $(|M_3M_4|/2 - 1)$ hyperbolae, which implies that there are no more than $4(|M_1M_2|/2 - 1)(|M_3M_4|/2 - 1)$ points.
+
+	Assuming that the edges $M_1M_2$ and $M_3M_4$ have even lengths,
+	we infer that $|M_1M_2|\geq4$ and $|M_3M_4|\geq4$.
+	Then,
+	\begin{multline}
+		4 \left(\frac{|M_1 M_2|}{2} - 1\right) \left(\frac{|M_3 M_4|}{2} - 1 \right) + 4 + 4
+		=
+		\\=
+		 4\left(\frac{|M_1 M_2| \cdot |M_3 M_4|}{4} - \frac{|M_1 M_2|}{2} - \frac{|M_3 M_4|}{2}+1\right) + 4 + 4
+		=
+		\\=
+		|M_1 M_2| \cdot |M_3 M_4| - 2 |M_1 M_2| - 2 |M_3 M_4| + 4 + 4 + 4
+		\leq
+		|M_1 M_2| \cdot |M_3 M_4| - 4 \\
+		<
+		|M_1 M_2| \cdot |M_3 M_4| - 2
+		.
+	\end{multline}
+
+	Let's consider the second case. Suppose both edges $M_1M_2$ and $M_3M_4$ have odd lengths. Then, for each point $N\in M$, one of the following conditions is satisfied:
+
+	a) $N$ belongs to $cr(M_1,M_2)$, which implies that there are no more than 2 points (otherwise, $\operatorname{char} M = 4k+3$);
+
+	b) $N$ belongs to $cr(M_3,M_4)$, which implies that there are no more than 2 points;
+
+	c) $N$ belongs to the intersection of one of $(|M_1 M_2|-1)/2$ hyperbolae with one of $(|M_3M_4|-1)/2$ hyperbolae, which implies that there are no more than $(|M_1 M_2|-1)(|M_3 M_4|-1)$ points.
+
+	Assuming that the edges $M_1M_2$ and $M_3M_4$ have odd lengths,
+	we infer that that $|M_1M_2|\geq3$ and $|M_3M_4|\geq3$.
+	Then,
+	\begin{multline}
+		(|M_1 M_2| - 1)(|M_3 M_4| - 1) + 2 + 2
+		=
+		|M_1 M_2| \cdot |M_3 M_4| - |M_1 M_2| - |M_3 M_4| + 4
+		\leq \\
+		\leq |M_1 M_2| \cdot |M_3 M_4| - 2
+		.
+	\end{multline}
+
+	Let's consider the third case. Suppose the lengths of edges $M_1M_2$ and $M_3M_4$ are different and without loss of generality suppose edge $M_1M_2$ has even length while edge $M_3 M_4$ has odd length.
+	Then, for each point $N\in M$, one of the following conditions is satisfied:
+
+	a) $N$ belongs to $cr(M_1, M_2)$, which implies that there are no more than 4 points (no more than 2 on each of the lines);
+
+	b) $N$ belongs to $cr(M_3,M_4)$, which implies that there are no more than 2 points (otherwise $\operatorname{char} M = 4k+3$);
+
+	c) $N$ belongs to the intersection of one of $(|{M_1 M_2}|/2-1)$ hyperbolae with one of $(|M_3 M_4|-1)/2$ hyperbolae, which implies that there are no more than $4(|M_1 M_2|/2-1)(|M_3 M_4|-1)/2$ points.
+
+	From the parity assumption for edges $M_1 M_2$ and $M_3 M_4$
+	we can infer that $|M_1 M_2|\geq4$ and $|M_3M_4|\geq3$.
+	Then,
+	\begin{multline}
+		4\left(\frac{|M_1 M_2|}{2} - 1\right) \left(\frac{|M_3 M_4| - 1}{2}\right) + 2 + 4
+		=
+		\\=
+		(|M_1 M_2| - 2)(|M_3 M_4| - 1) + 6
+		=
+		\\=
+		|M_1 M_2| \cdot |M_3 M_4| - |M_1 M_2| - 2 |M_3 M_4| + 2 + 6
+		\leq
+		|M_1 M_2| \cdot |M_3 M_4| - 2
+		.
+	\end{multline}
+
+	Thus, the lemma is proved.
+\end{proof}
+
+
+The following function was introduced in~\cite{kurz2008minimum}
+\begin{equation}
+	\overline{d}(2,n) = \min_{M\in\overline{\mathfrak{M}_{n}}} \operatorname{diam} M
+	,
+\end{equation}
+and some values were given:
+
+
+
+
+\begin{eqnarray}
+\label{d}
+\overline{d}(2,3)&=& 1,{}\nonumber\\
+\overline{d}(2,4)&=& 4,{}\nonumber\\
+\overline{d}(2,5)&=&  \overline{d}(2,6)= 8,{}\nonumber\\
+\overline{d}(2,7)&=& 33,{}\nonumber\\
+\overline{d}(2,8)&=&  \overline{d}(2,9)= 56,{}\nonumber\\
+\overline{d}(2,10)&=& ... =\overline{d}(2,12)= 105,{}\nonumber\\
+\overline{d}(2,13)&=&  \overline{d}(2,14)= 532,{}\nonumber\\
+\overline{d}(2,15)&=&  ... = \overline{d}(2,18) = 735,{}\nonumber\\
+\overline{d}(2,19)&=& ... = \overline{d}(2,24) = 1995,{}\nonumber\\
+\overline{d}(2,25)&=&  ... = \overline{d}(2,27)= 9555,{}\nonumber\\
+\overline{d}(2,28)&=& 10672,{}\nonumber\\
+\overline{d}(2,29)&=&  ... = \overline{d}(2,36) = 13975,{}\nonumber\\
+\overline{d}(2,37) &>& 20000.
+\end{eqnarray}
+
+
+Now we are finally ready to proof our main result and improve the bound~\eqref{eq:chebsb_lower_bound}
+in our special case.
+
+\begin{theorem}
+	\label{thm:main_result}
+	Let $M \in \overline{\mathfrak{M}}_n'$, i.e., $M$ is a set in semi-general position with characteristic different from $4k+3$, $k \in \mathbb{N}_0$.
+	Then, for every integer $n \geq 3$, the inequality
+	\begin{equation}
+		\operatorname{diam} M \geq \left( \frac{25n}{36} \right)^{5/4}
+	\end{equation}
+	holds.
+\end{theorem}
+
+\begin{proof}
+	For $n = 3$, we have $\operatorname{diam} M \geq 3$ (achieved by an isosceles triangle with sides 2, 3, 3), and the theorem statement is obvious.
+
+	Let us consider $M \in \overline{\mathfrak{M}_n}'$, $n \geq 4$, $\operatorname{diam} M = p$.
+
+	Choose points $M_1, M_2, M_3, M_4 \in M$ (points $M_2$ and $M_3$ may coincide, while the others must be pairwise distinct) such that
+
+	\begin{equation*}
+		\min_{A,B \in M} |AB| = |M_1 M_2|
+	\end{equation*}
+
+	\begin{equation*}
+		\min_{A,B \in M \setminus {M_1}} |AB| = |M_3 M_4| = m
+	\end{equation*}
+
+	If $m \leq \frac{6}{5}p^{2/5}$, then by Lemma~\ref{lem:intersection_enumeration},
+	\begin{equation*}
+		n \leq |M_1 M_2| \cdot |M_3 M_4| - 2 \leq \frac{36}{25}p^{4/5} - 2
+	\end{equation*}
+	or equivalently
+	\begin{equation}
+		p \geq \left(\frac{25(n+2)}{36}\right)^{5/4} \geq \left(\frac{25n}{36}\right)^{5/4}
+	\end{equation}
+	which is exactly the claim of the theorem.
+
+	Now we have to consider $m > \frac{6}{5}p^{2/5}$.
+	Then for any points $A, B \in M \setminus {M_1}$, we have $|AB| > \frac{6}{5}p^{2/5}$.
+	By Corollary~\ref{cor:sqrt_5_3} and Lemma~\ref{lem:smurov_min_height},
+	no three points from $M \setminus {M_1}$ lie in a strip of width
+	\begin{equation}
+		\frac{\sqrt{5}}{\sqrt{3}} \cdot \sqrt{\frac{6p^{2/5}}{5}} = \sqrt{2} \cdot p^{1/5}
+		.
+	\end{equation}
+
+	By Lemma~\ref{lem:square_container}, the set $M$ lies in a square with side length $p$. We cover this square by $q$ strips, $\frac{p^{4/5}}{\sqrt{2}} \leq q < \frac{p^{4/5}}{\sqrt{2}} + 1$, such that the width of each strip does not exceed $\sqrt{2} \cdot p^{1/5}$.
+	Each of the obtained strips contains no more than two points from $M \setminus {M_1}$, so
+	\begin{equation}
+		\label{eq: 46}
+		n \leq 2 \left( \frac{p^{4/5}}{\sqrt{2}} + 1\right) + 1=\frac{2p^{4/5}}{\sqrt{2}} +3 = \sqrt{2}p^{4/5}+3
+		.
+	\end{equation}
+
+	From inequality (\ref{eq:46}), we obtain
+	\begin{equation}
+		\label{eq:strips_5_4}
+		p \geq \left( \frac{n -3}{\sqrt{2}} \right)^{5/4}
+		.
+	\end{equation}
+
+	According to the results~\eqref{d}, for $3 \leq n \leq 36$ the theorem is true.
+	Moreover, it is known that for all $37 \leq n \leq 7^4$, we have $\overline{d}(2, n) > 20,000$ and our estimate on the diameter is also true.
+	Indeed, $\overline{d}(2, 7^4) \geq \left(\frac{25}{36}\cdot 7^4\right)^{5/4} \approx 10,655$.
+	This estimate is weaker than the available numerical results. Therefore, from now on, we can assume that $n \geq 7^4$.
+
+	For estimation (\ref{eq:strips_5_4}) and $n \geq 7^4$, we have
+	\begin{equation}
+		\label{eq:strips_5_4_7}
+		p \geq \left( \frac{n -3}{\sqrt{2}} \right)^{5/4}  \geq \left( \frac{25n}{36} \right)^{5/4}
+		.
+	\end{equation}
+
+	Thus, for any $n \geq 3$ the inequality $
+		\operatorname{diam} M \geq \left( \frac{25n}{36} \right)^{5/4}
+	$ holds.
+\end{proof}
+
+
+
+\section{Conclusion}
+	The bound proved above (as well as the one (TODO)) may appear to be far from precise values of $\overline{d}(2,n)$.
+	However, it's easy to see that values of $d(2;n)$ tend to repeat often;
+	thus, it is rather not unrealistic that the bounds may converge to the precise values.
+
+	Also, we should notice that our approach and especially Weeding Theorems do not require semi-general position and can be applied to tighten the bound from~\cite{my-pps-linear-bound-2019}
+	in the special case of characteristic $4k+1$ or $4k+2$.
+	However, we are not ready to accept this tedious challenge yet.
+
+	Another research area that is able to utilize our results fruitfully is the maximization of IPS.
+	The Weeding Theorems I and II can sometimes make the exhaustive search up to 4 times faster.
 
 
 
 
 \section{Acknowledgements}
 The author thanks Dr. Prof. E.M. Semenov for the fruitful discussion and ideas,
-A.S. Chervinskaia for the idea of using the term ``facher'' and proofreading,
+Dr. A.S. Chervinskaia for the idea of using the term ``facher'' and proofreading,
 Dr.~A.S.~Usachev for proofreading,
 and E.A. Momot for the ``SciLexic'' project that helped the author with some word usage issues.
-Also the author would like to owe a special thanks to the anonymous referees
-for their helpful comments and suggestions on the paper.
+%Also the author would like to owe a special thanks to the anonymous referees
+%for their helpful comments and suggestions on the paper.
 
 
 \printbibliography
