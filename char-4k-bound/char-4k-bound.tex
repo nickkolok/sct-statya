@@ -705,11 +705,11 @@ If we exclude characteristics of the form $4k+3$, this Solymosi's result can be 
 
 \begin{lemma}
 	\label{lem:triangle_height_our}
-	Let a triangle $ABC$ have integer characteristic different from $4k+3$, $k\in \mathbb{N}_0$, with $a\leq b\leq c$. Then the smallest height of the triangle $ABC$ is at least $(2a-1)^{1/2}$.
+	Let a triangle $ABC$ have the characteristic different from $4k+3$, $k\in \mathbb{N}_0$, with $a\leq b\leq c$. Then the smallest height of the triangle $ABC$ is at least $(2a-1)^{1/2}$.
 \end{lemma}
 
 \begin{proof}
-	By Corollary \ref{cr:3}, a triangle with side $c=a+b-1$ cannot have a characteristic different from $4k+3$, $k\in \mathbb{N}_0$. Therefore, in a triangle with integer sides, we have $a+b\geq c+2.$
+	By Lemma~\ref{lem:triangle_4k_plus_3}, a triangle with a side $c=a+b-1$ cannot have a characteristic different from $4k+3$, $k\in \mathbb{N}_0$. Therefore, in a triangle with integer sides, we have $a+b\geq c+2.$
 
 	The height $h$ of the triangle $ABC$, dropped onto side $c$, can be found from the formula for its area: $S=hc/2$, which gives $h=2S/c$. To find the area of the triangle, we use the Heron's formula in the following form:
 	$$
@@ -759,7 +759,7 @@ If we exclude characteristics of the form $4k+3$, this Solymosi's result can be 
 %6
 \section{The Main Bound}
 
-The following Lemma is a classic Erdos-style intersection-enumeration one,
+The following lemma is a classical Erdos-style intersection-enumeration one,
 empowered by our Weeding Theorem I.
 
 \begin{lemma}
@@ -806,7 +806,7 @@ empowered by our Weeding Theorem I.
 	c) $N$ belongs to the intersection of one of $(|M_1 M_2|-1)/2$ hyperbolae with one of $(|M_3M_4|-1)/2$ hyperbolae, which implies that there are no more than $(|M_1 M_2|-1)(|M_3 M_4|-1)$ points.
 
 	Assuming that the edges $M_1M_2$ and $M_3M_4$ have odd lengths,
-	we infer that that $|M_1M_2|\geq3$ and $|M_3M_4|\geq3$.
+	we infer that $|M_1M_2|\geq3$ and $|M_3M_4|\geq3$.
 	Then,
 	\begin{multline}
 		(|M_1 M_2| - 1)(|M_3 M_4| - 1) + 2 + 2
@@ -817,7 +817,7 @@ empowered by our Weeding Theorem I.
 		.
 	\end{multline}
 
-	Let's consider the third case. Suppose the lengths of edges $M_1M_2$ and $M_3M_4$ are different and without loss of generality suppose edge $M_1M_2$ has even length while edge $M_3 M_4$ has odd length.
+	Let's consider the third case. Suppose the lengths of edges $M_1M_2$ and $M_3M_4$ are different. Without loss of generality suppose the edge $M_1M_2$ has even length while edge $M_3 M_4$ has odd length.
 	Then, for each point $N\in M$, one of the following conditions is satisfied:
 
 	a) $N$ belongs to $cr(M_1, M_2)$, which implies that there are no more than 4 points (no more than 2 on each of the lines);
@@ -842,7 +842,7 @@ empowered by our Weeding Theorem I.
 		.
 	\end{multline}
 
-	Thus, the lemma is proved.
+	This proves the assertion.
 \end{proof}
 
 
@@ -870,11 +870,12 @@ and some values were given:
 \overline{d}(2,25)&=&  ... = \overline{d}(2,27)= 9555,{}\nonumber\\
 \overline{d}(2,28)&=& 10672,{}\nonumber\\
 \overline{d}(2,29)&=&  ... = \overline{d}(2,36) = 13975,{}\nonumber\\
-\overline{d}(2,37) &>& 20000.
+\overline{d}(2,37) &>& 20\ 000.
 \end{eqnarray}
 
 
-Now we are finally ready to proof our main result and improve the bound~\eqref{eq:chebsb_lower_bound}
+Now we are finally ready to proof our main result.
+It improves the bound~\eqref{eq:chebsb_lower_bound}
 in our special case.
 
 \begin{theorem}
@@ -888,7 +889,7 @@ in our special case.
 \end{theorem}
 
 \begin{proof}
-	For $n = 3$, we have $\operatorname{diam} M \geq 3$ (achieved by an isosceles triangle with sides 2, 3, 3), and the theorem statement is obvious.
+	For $n = 3$, we have $\operatorname{diam} M \geq 3$ (achieved by an isosceles triangle with sides 2, 3, 3), and the assertion is obvious.
 
 	Let us consider $M \in \overline{\mathfrak{M}_n}'$, $n \geq 4$, $\operatorname{diam} M = p$.
 
@@ -937,7 +938,7 @@ in our special case.
 	\end{equation}
 
 	According to the results~\eqref{d}, for $3 \leq n \leq 36$ the theorem is true.
-	Moreover, it is known that for all $37 \leq n \leq 7^4$, we have $\overline{d}(2, n) > 20,000$ and our estimate on the diameter is also true.
+	Moreover, it is known that for all $37 \leq n \leq 7^4$, we have $\overline{d}(2, n) > 20\ 000$  and our estimate on the diameter is also true.
 	Indeed, $\overline{d}(2, 7^4) \geq \left(\frac{25}{36}\cdot 7^4\right)^{5/4} \approx 10,655$.
 	This estimate is weaker than the available numerical results. Therefore, from now on, we can assume that $n \geq 7^4$.
 
@@ -960,7 +961,7 @@ in our special case.
 	However, it's easy to see that values of $d(2;n)$ tend to repeat often;
 	thus, it is rather not unrealistic that the bounds may converge to the precise values.
 
-	Also, we should notice that our approach and especially Weeding Theorems do not require semi-general position and can be applied to tighten the bound from~\cite{my-pps-linear-bound-2019}
+	Also, we should notice that our approach and  specifically Weeding Theorems do not require semi-general position and can be applied to tighten the bound from~\cite{my-pps-linear-bound-2019}
 	in the special case of characteristic $4k+1$ or $4k+2$.
 	However, we are not ready to accept this tedious challenge yet.
 
