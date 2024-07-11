@@ -89,7 +89,7 @@
 	N.N. Avdeev
 	\footnote{nickkolok@mail.ru, avdeev@math.vsu.ru},
 	E.A. Lushina
-	\footnote{TODO}
+	%\footnote{TODO}
 	\\
 	\textit{Voronezh State University, Voronezh, Russia}
 }
@@ -100,7 +100,7 @@
 \paragraph{Abstract.}
 A point set $M$ in Euclidean plane is called an integral point set in semi-general position if all the distances between the
 elements of $M$ are integers, and $M$ does not contain collinear triples.
-We improve the linear lower bound for diameter of such sets in the particular case
+We improve the lower bound for diameter of such sets in the particular case
 when the characteristic of the set is of the form $4k+1$ or $4k+2$.
 To achieve that, we combine hyperbolae-based and grid-based toolsets.
 
@@ -124,7 +124,7 @@ To achieve that, we combine hyperbolae-based and grid-based toolsets.
 		\operatorname{diam} M \ge c \cdot \#M.
 	$$
 	Although Solymosi did not give the constant $c$ explicitly,
-	it can be inferred from his proof that $c=\frac{1}{24}$ [TODO].
+	it can be inferred~\cite{our-vmmsh-2018-translit} from his proof that $c=\frac{1}{24}$.
 
 	In~\cite{our-vmmsh-2018-translit} the constant (for $n\geq 4$) was improved to $0.3457$
 	employing Point Packing in a Square Problem~\cite{markot2005newverified,costa2013valid}.
@@ -140,21 +140,21 @@ To achieve that, we combine hyperbolae-based and grid-based toolsets.
 
 	Meanwhile in 1988 Kemnitz introduced~\cite{kemnitz1988punktmengen}
 	a characteristic of an IPS, that is a squarefree integer $q$ such as the area
-	of any triangle formed by any triple of points from the IPS is comparable with $\sqrt{q}$.
+	of a triangle formed by any triple of points from the IPS is comparable with $\sqrt{q}$.
 	(Indeed, Kemnitz proved this fact for any point set with rational distances ---
-	in contrast with IPS, those can be infinite even they contain non-collinear triples,
-	see~\cite{huff1948diophantine} for an example of construction
+	in contrast with IPS, those can be infinite even if they contain non-collinear triples,
+	see~\cite{huff1948diophantine} for an example construction
 	and~\cite{solymosi2010question} for some known limitations.)
 	In 2000s, Kurz introduced~\cite{kurz2005characteristic} the function $d(2,n)$ that evaluates
 	to the minimal possible diameter of planar IPS of cardinality $n$.
 	Then Kurz employed Kemnitz's results and found~\cite[Subsection 4.2]{kurz2008minimum} exact values of $d(2,n)$
 	up to $n=122$ by exhaustive computer search.
 	(Taking the characteristic into consideration allows to boost such search significantly ---
-	basically because all triples of an IPS form triangles with equal characteristics.)
+	basically because all triples of an IPS form triangles with equal characteristic.)
 
 	For generalization in higher dimensions, we refer the reader to~\cite{nozaki2013lower}.
 
-	In the present paper, we put the power of Erdös and Kemnitz approaches together. Due to squarefree nature of characteristic, it can be of the form $4k+1$, $4k+2$ or $4k+3$, where $k$ is integer.
+	In the present paper, we put the power of Erdös's and Kemnitz's approaches together. Due to squarefree nature of characteristic, it can be of the form $4k+1$, $4k+2$ or $4k+3$, where $k$ is integer.
 	We prove that for a particular case of characteristic $4k+1$ and $4k+2$
 	the bound~\eqref{eq:chebsb_lower_bound} can be improved to
 	\begin{equation}
@@ -185,7 +185,7 @@ For a finite set $M$, we will denote its cardinality by $\#M$.
 	\label{def:IPS}
 	A planar integral point set (IPS) is a set $M$
 	of non-collinear points in the plane $\mathbb{R}^{2}$ such that
-	for any pair of points $M_{1}, M_{2} \in \mathcal{P}$
+	for any pair of points $M_{1}, M_{2} \in M$
 	the Euclidean distance $|M_{1}M_{2}|$
 	between points $M_{1}$ and $M_{2}$ is integral.
 	Notation: $M\in\mathfrak{M}$, and also $M\in\mathfrak{M}_n$ for $n=\#M$.
@@ -200,7 +200,7 @@ we get the next definition.
 	\label{def:IPS_semi_general}
 	A planar IPS $M$ is said to be in \emph{semi-general position}
 	if no three points of $M$ are collinear.
-	Notation: $M\in\overline{\mathfrak{M}}$, and also $M\in\overline{\mathfrak{M}}_n$ for $n=\#M$.
+	Notation: $M\in\dot{\mathfrak{M}}$, and also $M\in\dot{\mathfrak{M}}_n$ for $n=\#M$.
 \end{definition}
 
 In the present paper, we mostly focus on IPS in semi-general position.
@@ -217,7 +217,7 @@ However, the next restriction step can be done as the following.
 \begin{definition}
 	The diameter of an integral point set $M$ is defined by setting
 	\begin{equation}
-		\operatorname{diam M} = \underset{M_{1}, M_{2} \in
+		\operatorname{diam} M = \underset{M_{1}, M_{2} \in
 		M}{\max} |M_{1}M_{2}|
 		.
 	\end{equation}
@@ -234,7 +234,7 @@ but the pair $(\sqrt2, \sqrt3)$ is not.
 
 \begin{definition}
 	A number is called \emph{squarefree} if its only perfect square divisor is 1.
-	The first squarefree numbers are: 1, 2, 3, 5, 6, 7, 10, 11, 13,...
+	The first squarefree numbers are: 1, 2, 3, 5, 6, 7, 10, 11, 13, ...
 \end{definition}
 
 
@@ -246,13 +246,13 @@ but the pair $(\sqrt2, \sqrt3)$ is not.
 \end{definition}
 
 \begin{definition}
-	If points $M_1, M_2 \in M \in \mathcal{M}$,
+	If points $M_1, M_2 \in M \in \mathfrak{M}$,
 	then the line segment $M_1 M_2$ is said to be an \emph{edge} of $M$.
 \end{definition}
 
 
 
-The following result is due to Kemnitz:
+The following result is due to Kemnitz~\cite{kemnitz1988punktmengen}:
 
 \begin{theorem}[the Grid Theorem]
 	A set $M \in \mathfrak{M}_n$ with characteristic $p$ can be placed on the grid
@@ -263,7 +263,7 @@ The following result is due to Kemnitz:
 	\label{tm:1}
 \end{theorem}
 
-For the sake of completeness, we provide the proof for the Grid Theorem below.
+For the sake of completeness, we sketch the proof for the Grid Theorem below.
 
 \begin{proof}
 	Let $M_1, M_2 \in M \in \mathfrak M$ and $|M_1 M_2| = m$.
@@ -277,7 +277,7 @@ For the sake of completeness, we provide the proof for the Grid Theorem below.
 	\\
 		\left( \frac{m}{2} - x\right)^2 + y ^2 = n^2,
 	\end{gather}
-	where $a+b\geq m$.
+	where $k+n\geq m$.
 
 	The solution is
 	\begin{gather}
@@ -303,11 +303,10 @@ For the sake of completeness, we provide the proof for the Grid Theorem below.
 
 Obviously, the 0-th Erdos curve is the perpendicular bisector of $M_1 M_2$,
 and all the other Erdos curves are branches of cofocal hyperbolae.
-
 On Figure~\ref{fig:Erdos_curves_numbered}, the Erdos curves are shown for an edge of length 3.
 
 \begin{figure}
-\center{\includegraphics[width=0.6\linewidth]{Erdos_curves_numbered.png}}
+\center{\includegraphics[width=0.95\linewidth]{Erdos_curves_numbered.png}}
 \caption{Erdos curves}
 \label{fig:Erdos_curves_numbered}
 \end{figure}
@@ -346,7 +345,7 @@ For $9\leq n\leq 122$, the minimal possible diameter is attained at a facher set
 
 
 \begin{lemma}
-	\cite[Lemma 4]{our-vmmsh-2018};
+	\cite[Lemma 4]{our-vmmsh-2018-translit};
 	\cite[Lemma 2.4]{my-pps-linear-bound-2019}
 	\label{lem:square_container}
 	Let $M\in\mathfrak{M}(2,n)$, $\operatorname{diam} M = d$.
@@ -371,11 +370,11 @@ For $9\leq n\leq 122$, the minimal possible diameter is attained at a facher set
 
 
 
-As far as our attention will be mostly restricted to planar integral point sets
+Our attention will be mostly restricted to planar integral point sets
 with characteristic of the form $4k+1$ and $4k+2$ in semi-general position.
-If an IPS $M$ satisfies these conditions,
+Thus, if an IPS $M$ satisfies these conditions,
 we will write that
-$M\in\overline{\mathfrak{M}}'$, and also $M\in\overline{\mathfrak{M}}'_n$ for $n=\#M$
+$M\in\overline{\mathfrak{M}}'$, and also $M\in\overline{\mathfrak{M}}'_n$ for $n=\#M$.
 
 
 
@@ -427,14 +426,14 @@ Its coordinates are
 \end{multline}
 
 \begin{figure}
-\center{\includegraphics[width=0.6\linewidth]{char385.png}}
+\center{\includegraphics[width=0.95\linewidth]{char385.png}}
 \caption{IPS of cardinality 16 and diameter 2189}
 \label{fig:char385}
 \end{figure}
 
 In~\cite{kreisel2008heptagon}, the first ever known
 planar integral point set $M_7 \in \dot{\mathfrak{M}}_7$ is given,
-see Fig.~\ref{fig:heptagon2}.
+see Figure~\ref{fig:heptagon2}.
 Its coordinates are
 \begin{multline}
 \sqrt{2002}/2227 * \{ (0;0), (2227^2\cdot10;0), (26127018;932064), (32 142 553; 411 864),
@@ -450,25 +449,25 @@ $.
 It is noticeable that the second example of an IPS from $\dot{\mathfrak{M}}_7$
 given in the same article has the same characteristic.
 
-Also the largest known rails IPS presented in~\cite{}[TODO:Omsk!]
-that has 104 points on one straight line and the rest 2 on another
-(that is the cardinality of 106) has the characteristic of $154 = 4 \cdot 38 + 2$.
+Also the largest known rails IPS presented in~\cite{momot2022example}
+with 104 points on one straight line and the rest 2 on another
+(that gives the cardinality of 106) has the characteristic of $154 = 4 \cdot 38 + 2$.
 (We do not list the coordinates of that set here due to its diameter which is 2745754098774581800288844387372160.)
 
 \begin{figure}
-\center{\includegraphics[width=0.6\linewidth]{heptagon2.png}}
+\center{\includegraphics[width=0.95\linewidth]{heptagon2.png}}
 \caption{The heptagon in general position}
 \label{fig:heptagon2}
 \end{figure}
 
 As for characteristic $4k+3$, we should mention that the \emph{upper} bound for the minimal diameter
 of planar integral point set given in~\cite{harborth1993upper} employs IPS with characteristic $3$.
-Moreover, all the IPS of minimal possible diameter provided in~\cite[\S 5, Fig. 1]{harborth1993upper}
+Moreover, all the IPS of minimal possible diameter provided in~\cite[\S 5, Figure 1]{harborth1993upper}
 (for cardinalities from 3 to 9) have characteristic of form $4k+3$.
 
-For the sake of completeness, on Fig.~\ref{fig:11_2432_255255_a0a1b7f805cfc93080b4608505a0f45d_rails_3.png}
+For the sake of completeness, on Figure~\ref{fig:11_2432_255255_a0a1b7f805cfc93080b4608505a0f45d_rails_3.png}
 we give an example of rails set
-with 3 points on one line and 8 points on the other (first presented in~\cite{})
+with 3 points on one line and 8 points on the other (first presented in~\cite[Figure 1]{avdeev2019particular})
 whose characteristic is
 \begin{equation}
 	255255 = 3 \cdot 5 \cdot 7 \cdot 11 \cdot 13 \cdot 17
@@ -493,8 +492,8 @@ and whose coordinates are
 \end{multline}
 
 \begin{figure}
-\center{\includegraphics[width=0.6\linewidth]{11_2432_255255_a0a1b7f805cfc93080b4608505a0f45d_rails_3.png}}
-\caption{The heptagon in general position}
+\center{\includegraphics[width=0.95\linewidth]{11_2432_255255_a0a1b7f805cfc93080b4608505a0f45d_rails_3.png}}
+\caption{The rails set with characteristic 255255}
 \label{fig:11_2432_255255_a0a1b7f805cfc93080b4608505a0f45d_rails_3.png}
 \end{figure}
 
@@ -503,29 +502,25 @@ and whose coordinates are
 
 \begin{lemma}
 	\label{lem:pre_weeding_I}
-	Any set $M = {A, B, C} \in \mathfrak{M}_3$ with edge $|AB| = m$, where $|AC| - |BC| = m - s$, $m, s \in \mathbb{N}$, and $s$ is an odd number and $s \leq m$, has a characteristic of the form $p = 4k + 3$, $k \in \mathbb{N}_0$.
+	Any set $M = \{A, B, C\} \in \mathfrak{M}_3$ with edge $|AB| = m$, where $|AC| - |BC| = m - s$, $m, s \in \mathbb{N}$, and $s$ is an odd number and $s \leq m$, has a characteristic of the form $p = 4k + 3$, $k \in \mathbb{N}_0$.
 \end{lemma}
 
 \begin{proof}
 	Let $|BC| = n$. Then, from the triangle inequality $|AC| < |AB| + |BC|$, we have that $|AC| = m + n - s$, $s \in \mathbb{N}$ and $s \leq m$. By the Grid Theorem, we introduce such coordinates that $A = (-\frac{m}{2}; 0)$, $B = (\frac{m}{2}; 0)$, and $C = (\frac{a}{2m}; \frac{b\sqrt{p}}{2m})$. We find the distance between points $A$ and $C$, and points $B$ and $C$ in coordinates, and form a system of equations
 	\begin{equation}
-		\left\{
-		\begin{aligned}
+		\label{eq:29}
+		\begin{cases}
 		\frac{\sqrt{(a+m^2)^2+pb^2}}{2m}&=m+n-s.\\
 		\frac{\sqrt{(a-m^2)^2+pb^2}}{2m}&=n
-		\end{aligned}
-		\right.
-		\label{eq:29}
+		\end{cases}
 	\end{equation}
 	Multiply each equation by $2m$ and square both sides of the equations in system (\ref{eq:29})
 	\begin{equation}
-	\left\{
-	\begin{aligned}
-	(a+m^2)^2+pb^2&=4m^2(m+n-s)^2,\\
-	(a-m^2)^2+pb^2&=4m^2n^2
-	\end{aligned}
-	\right.
-	\label{eq: 30}
+		\label{eq:30_pre_weeding_I}
+		\begin{cases}
+		(a+m^2)^2+pb^2&=4m^2(m+n-s)^2,\\
+		(a-m^2)^2+pb^2&=4m^2n^2
+		\end{cases}
 	\end{equation}
 	and then subtract the second equation from the first one:
 	\begin{equation}
@@ -537,10 +532,11 @@ and whose coordinates are
 	$$
 	so
 	\begin{equation}
-	a=(m-s)(m+2n-s).
-	\label{eq: 32}
+		\label{eq:32_pre_weeding_I}
+		a=(m-s)(m+2n-s).
 	\end{equation}
-	Substitute the obtained expression (\ref{eq:32}) into the second equation of the system (\ref{eq:30}).
+	Substitute the obtained expression~\eqref{eq:32_pre_weeding_I}
+	into the second equation of the system~\eqref{eq:30_pre_weeding_I}:
 	\begin{equation}
 		((m-s)(m+2n-s)-m^2)^2+pb^2=4m^2n^2,
 	\end{equation}
@@ -552,17 +548,17 @@ and whose coordinates are
 	According to the assumption, let $s=2t+1$, where $t\in\mathbb{N}_0$.
 	Then equation (\ref{eq:33}) can be rewritten as:
 	\begin{equation}
-		pb^2=(2t+1)(2m+2n-2t-1)(2n-2t-1)(2m-2t-1).
 		\label{eq:34.2}
+		pb^2=(2t+1)(2m+2n-2t-1)(2n-2t-1)(2m-2t-1)
 	\end{equation}
 	or
 	\begin{eqnarray}
 		pb^2+1 &=&4(-4t^4+8t^3m+8t^3n-8t^3-4t^2m^2-12t^2mn+12t^2m- {}\nonumber\\
 			 &     &-4t^2n^2+12t^2n-6t^2+4tm^2n-4tmn^2-12tmn+6tm- {}\nonumber\\
-			 &     &-4tn^2+6tn-2t+2m^2n-m^2+2mn^2-3mn+m-n^2+n).{}\nonumber\\
-	\label{eq: 35}
+			 &     &-4tn^2+6tn-2t+2m^2n-m^2+2mn^2-3mn+m-n^2+n).%{}\nonumber\\
+	\label{eq:35}
 	\end{eqnarray}
-	For equation (\ref{eq:35}) to have integer solutions, it is necessary for $p$ and $b$ to be odd.
+	If equation (\ref{eq:35}) has integer solutions, then both $p$ and $b$ are odd.
 	The right-hand side is divisible by 4. Then $pb^2\equiv3\operatorname{mod}{4}$.
 	But $b^{2}\equiv1(\operatorname{mod}4)$.
 	Thus, $p=4k+3$, $k\in \mathbb{N}_{0}$.
@@ -572,20 +568,20 @@ Then the following theorem immediately appears.
 
 \begin{theorem}[The Weeding Theorem I]
 	\label{thm:weeding_I}
-	Let $M = {M_1, M_2, M_3} \in \mathfrak{M}_3$ be an IPS of semi-general position with a characteristic different from $4k+3$, $k \in \mathbb{N}_0$. Then, the length of the edge $M_1 M_2$ and its $n$-th Erdős curve, which contains the point $M_3$, have the same parity.
+	Let $M = \{M_1, M_2, M_3\} \in \mathfrak{M}_3$ be an IPS of semi-general position with a characteristic different from $4k+3$, $k \in \mathbb{N}_0$. Then, the length of the edge $M_1 M_2$ and its $n$-th Erdős curve, which contains the point $M_3$, have the same parity.
 \end{theorem}
 
 \begin{proof}
 	Let $|M_1 M_2| = m$, $m \in \mathbb{N}$, and let the $n$-th Erdős curve satisfy $|M_1 M_3| - |M_2 M_3| = n$.
-	If $m$ is an odd number, then by Remark \ref{rm: 2}, the difference $n = |M_1 M_3| - |M_2 M_3| = m - s$, where $s$ is an even number, is also an odd number.
+	If $m$ is an odd number, then by Lemma~\ref{lem:pre_weeding_I}, the difference $n = |M_1 M_3| - |M_2 M_3| = m - s$, where $s$ is an even number, is also an odd number.
 	Let $m$ be an even number; then $n = |M_1 M_3| - |M_2 M_3| = m - s$ is an even number, as the difference of two even numbers.
 \end{proof}
 
 An even edge is a bit special case.
 
 \begin{lemma}
-	\ref{lem:pre_weeding_II}
-	Every set $M = {A, B, C} \in \mathfrak{M}_3$ with an even edge $|AB| = 2q$, where $|AC| - |BC| = 2q - s$, $q, s \in \mathbb{N}$, $s$ is an odd number and $s \leq 2q$, has a characteristic of the form $p = 8k + 7$, $k \in \mathbb{N}_0$.
+	\label{lem:pre_weeding_II}
+	Every set $M = \{A, B, C\} \in \mathfrak{M}_3$ with an even edge $|AB| = 2q$, where $|AC| - |BC| = 2q - s$, $q, s \in \mathbb{N}$, $s$ is an odd number and $s \leq 2q$, has a characteristic of the form $p = 8k + 7$, $k \in \mathbb{N}_0$.
 \end{lemma}
 
 \begin{proof}
@@ -607,7 +603,7 @@ An even edge is a bit special case.
 			 &     &-2t^2n^2+6t^2n-3t^2+8tq^2n-4tqn^2-12tqn+6tq- {}\nonumber\\
 			 &     &-2tn^2+3tn-t+4q^2n-2q^2+2qn^2-3qn+q)-  {}\nonumber\\
 			   &     &-4n(n-1).
-		\label{eq: 35.1}
+		\label{eq:35.1}
 	\end{eqnarray}
 	Among two consecutive natural numbers $n$ and $(n-1)$,
 	exactly one of them is divisible by 2.
@@ -692,7 +688,7 @@ If we exclude characteristics of the form $4k+3$, this Solymosi's result can be 
 	Indeed, consider the triangle $ABC$ and let $|BC|=a$, $|AC|=b$.
 	From the triangle inequality $|AB| < |BC|+|AC|$,
 	we can represent the length of side $AB$ as $|AB|=a+b-s$, $s \in \mathbb{N}$ and $s \leq a$.
-	For $s=1$, the conditions of TODO are satisfied: $s$ is an odd number and $s \leq a$.
+	For $s=1$, the conditions of Lemma~\ref{lem:pre_weeding_I} are satisfied: $s$ is an odd number and $s \leq a$.
 	Therefore, the triangle with sides $a$, $b$, and $c=a+b-1$
 	has a characteristic of the form $p=4k+3$, $k\in \mathbb{N}_0$.
 \end{proof}
@@ -951,7 +947,7 @@ in our special case.
 
 
 \section{Conclusion}
-	The bound proved above (as well as the one (TODO)) may appear to be far from precise values of $\overline{d}(2,n)$.
+	The bound proved above (as well as~\eqref{eq:chebsb_lower_bound}) may appear to be far from precise values of $\overline{d}(2,n)$.
 	However, it's easy to see that values of $d(2;n)$ tend to repeat often;
 	thus, it is rather not unrealistic that the bounds may converge to the precise values.
 
