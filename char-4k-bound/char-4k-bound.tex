@@ -239,6 +239,7 @@ but the pair $(\sqrt2, \sqrt3)$ is not.
 
 
 \begin{definition}
+	\label{def:char}
 	The characteristic of a planar IPS $\mathcal{M}$ is a squarefree number $q$
 	such that the area of any triangle $M_1M_2M_3$, $\{M_1,M_2,M_3\}\subset M$,
 	is commensurable with $\sqrt{q}$.
@@ -506,7 +507,8 @@ and whose coordinates are
 \end{lemma}
 
 \begin{proof}
-	Let $|BC| = n$. Then, from the triangle inequality $|AC| < |AB| + |BC|$, we have that $|AC| = m + n - s$, $s \in \mathbb{N}$ and $s \leq m$. By the Grid Theorem, we introduce such coordinates that $A = (-\frac{m}{2}; 0)$, $B = (\frac{m}{2}; 0)$, and $C = (\frac{a}{2m}; \frac{b\sqrt{p}}{2m})$. We find the distance between points $A$ and $C$, and points $B$ and $C$ in coordinates, and form a system of equations
+	Let $|BC| = n$. Then, from the triangle inequality $|AC| < |AB| + |BC|$, we have that $|AC| = m + n - s$, $s \in \mathbb{N}$ and $s \leq m$.
+	By the Grid Theorem, we can assume that $A = (-\frac{m}{2}; 0)$, $B = (\frac{m}{2}; 0)$, and $C = (\frac{a}{2m}; \frac{b\sqrt{p}}{2m})$. We find the distance between points $A$ and $C$, and points $B$ and $C$ in coordinates, and form a system of equations
 	\begin{equation}
 		\label{eq:29}
 		\begin{cases}
@@ -545,7 +547,7 @@ and whose coordinates are
 		\label{eq:33}
 		pb^2=s(2m+2n-s)(2n-s)(2m-s).
 	\end{equation}
-	According to the assumption, let $s=2t+1$, where $t\in\mathbb{N}_0$.
+	Since $s$ is assumed to be odd, let $s=2t+1$, where $t\in\mathbb{N}_0$.
 	Then equation (\ref{eq:33}) can be rewritten as:
 	\begin{equation}
 		\label{eq:34.2}
@@ -559,12 +561,11 @@ and whose coordinates are
 	\label{eq:35}
 	\end{eqnarray}
 	If equation (\ref{eq:35}) has integer solutions, then both $p$ and $b$ are odd.
-	The right-hand side is divisible by 4. Then $pb^2\equiv3\operatorname{mod}{4}$.
-	But $b^{2}\equiv1(\operatorname{mod}4)$.
-	Thus, $p=4k+3$, $k\in \mathbb{N}_{0}$.
+	The right-hand side is divisible by 4, which implies that  $pb^2\equiv3\operatorname{mod}{4}$.
+	Since $b^{2}\equiv1(\operatorname{mod}4)$, it follows that $p=4k+3$, $k\in \mathbb{N}_{0}$.
 \end{proof}
 
-Then the following theorem immediately appears.
+The following theorem follows immediately.
 
 \begin{theorem}[The Weeding Theorem I]
 	\label{thm:weeding_I}
@@ -573,11 +574,12 @@ Then the following theorem immediately appears.
 
 \begin{proof}
 	Let $|M_1 M_2| = m$, $m \in \mathbb{N}$, and let the $n$-th Erdős curve satisfy $|M_1 M_3| - |M_2 M_3| = n$.
-	If $m$ is an odd number, then by Lemma~\ref{lem:pre_weeding_I}, the difference $n = |M_1 M_3| - |M_2 M_3| = m - s$, where $s$ is an even number, is also an odd number.
-	Let $m$ be an even number; then $n = |M_1 M_3| - |M_2 M_3| = m - s$ is an even number, as the difference of two even numbers.
+	If $m$ is an odd number, then by Lemma~\ref{lem:pre_weeding_I}, the difference $n = |M_1 M_3| - |M_2 M_3|$ equals $m - s$, where $s$ is an even number, is also an odd number.
+	Let $m$ be an even number; then $n = |M_1 M_3| - |M_2 M_3| = m - s$ is an even number, as a difference of two even numbers.
 \end{proof}
 
-An even edge is a bit special case.
+%An even edge is a bit special case.
+The case when the length of an edge is even is slightly more specific and allows a more precise statement.
 
 \begin{lemma}
 	\label{lem:pre_weeding_II}
@@ -605,14 +607,14 @@ An even edge is a bit special case.
 			   &     &-4n(n-1).
 		\label{eq:35.1}
 	\end{eqnarray}
-	Among two consecutive natural numbers $n$ and $(n-1)$,
-	exactly one of them is divisible by 2.
+	Among two consecutive natural numbers,
+	exactly one is even.
 	Therefore, the expression $4n(n-1)\equiv0\pmod{8}$.
-	Thus, the right-hand side of equation (\ref{eq:35.1}) is an even number and a multiple of 8.
+	Thus, the right-hand side of equation (\ref{eq:35.1}) is a multiple of 8.
 	Then $pb^2\equiv7\pmod{8}$.
 	A necessary condition for the existence of an integer solution to equation (\ref{eq:35.1})
 	is that numbers $p$ and $b$ must be odd.
-	But $b^2\equiv1\pmod{8}$, so $p=8k+7$, $k\in\mathbb{N}_0$.
+	Since $b^2\equiv1\pmod{8}$, it follows that $p=8k+7$, $k\in\mathbb{N}_0$.
 \end{proof}
 
 \begin{theorem}[The Weeding Theorem II]
@@ -641,7 +643,12 @@ An even edge is a bit special case.
 \begin{proof}
 	Let $M \in \overline{\mathfrak{M}_n}'$ and $M_1, M_2 \in M$. Then all points in the set $M$ lie on the circle $cr(M_1, M_2)$. Otherwise, according to Statement 4, $\operatorname{char}{M}={8k+7}$, $k\in \mathbb{N}_0$.
 
-	Assume the opposite. Let $M={M_1, M_2, M_3, M_4} \in \overline{\mathfrak{M}_4}'$. Introduce Cartesian coordinates such that $M_1(-1;0), M_2(1;0), O(0;0)$. Then $M_3$ and $M_4$ lie on the median perpendicular to $M_1M_2$. Since the distance $|M_3M_4|$ is an integer, the area of triangle $M_1M_3M_4$ is a rational number. By Definition 6, this means that $\operatorname{char}{M}={1}$. Then by the theorem about the lattice we have $M_3(0;t/4)$. Without loss of generality, let us assume $t\in\mathbb{N}$. Let $|M_1M_3|=s$. Applying the Pythagorean theorem to triangle $OM_1M_3$, we get
+	Suppose, to the contrary, that $M={M_1, M_2, M_3, M_4} \in \overline{\mathfrak{M}_4}'$.
+	Employ th Grid Theorem and set $M_1(-1;0), M_2(1;0), O(0;0)$.
+	Then $M_3$ and $M_4$ lie on the perpendicular bisector to $M_1M_2$.
+	Since the distance $|M_3M_4|$ is an integer, the area of triangle $M_1M_3M_4$ is a rational number.
+	By Definition~\ref{def:char}, this means that $\operatorname{char}{M}={1}$.
+	Then by the Grid Theorem we have $M_3(0;t/4)$. Without loss of generality, let us assume that $t\in\mathbb{N}$. Let $|M_1M_3|=s$. Applying the Pythagorean theorem to triangle $OM_1M_3$, we get
 	$$
 	1+\frac{t^2}{16}=s^2,
 	$$
@@ -650,7 +657,9 @@ An even edge is a bit special case.
 	\label{eq: 42}
 	16s^2-t^2=16.
 	\end{equation}
-	Find the solutions to equation (\ref{eq: 42}) in natural numbers. To do this, we introduce the substitution: $t=4k$, $k\in\mathbb{N}$. Then equation (\ref{eq: 42}) takes the form:
+	Now, we find the solutions to equation (\ref{eq: 42}) in natural numbers.
+	To do this, we introduce the substitution: $t=4k$, $k\in\mathbb{N}$.
+	Then equation (\ref{eq: 42}) takes the form:
 	\begin{equation}
 	\label{eq: 43}
 	s^2-k^2=1.
@@ -661,22 +670,22 @@ An even edge is a bit special case.
 	(s-k)(s+k)=1.
 	\end{equation}
 	Since $s,k\in\mathbb{N}$, the number 1 can be represented as the product of two integers in two ways: $1\cdot1$ and $-1\cdot(-1)$. In the first case, $(s-k)=1$ and $(s+k)=1$, which gives $s=1,k=0$, which contradicts that $k\in\mathbb{N}$.
-	In the second case, $(s-k)=-1$ and $(s+k)=-1$, which gives $s=-1,k=0$, which contradicts that $s,k\in\mathbb{N}$.
+	In the second case, $(s-k)=-1$ and $(s+k)=-1$, which gives $s=-1$, $k=0$, which also contradicts that $s,k\in\mathbb{N}$.
 
-	Thus, equation (\ref{eq: 42}) has no natural solutions in natural numbers.
-	The obtained contradiction completes the proof of the lemma.
+	Thus, equation (\ref{eq: 42}) has no natural solutions.
+	The obtained contradiction completes the proof.
 \end{proof}
 
-The following result is a key detail of bounds presented
+The following result is a key element for bounds presented
 in~\cite{solymosi2003note} and~\cite{my-semi-general-5-4-bound-2019}:
 
 \begin{lemma}
 	\cite[Observation 1]{solymosi2003note}
 	If a triangle $T$ has integer side lengths $a \leq b \leq c$,
-	then the minimal height $m$ of it is at least $\left(a - \frac{1}{4}\right)^{1/2}$.
+	then its minimal height $m$ is at least $\left(a - \frac{1}{4}\right)^{1/2}$.
 \end{lemma}
 
-If we exclude characteristics of the form $4k+3$, this Solymosi's result can be sharpened a bit.
+If we exclude characteristics of the form $4k+3$, this Solymosi's result can be sharpened slightly.
 
 \begin{lemma}
 	\label{lem:triangle_4k_plus_3}
@@ -686,7 +695,7 @@ If we exclude characteristics of the form $4k+3$, this Solymosi's result can be 
 
 \begin{proof}
 	Indeed, consider the triangle $ABC$ and let $|BC|=a$, $|AC|=b$.
-	From the triangle inequality $|AB| < |BC|+|AC|$,
+	Using the triangle inequality $|AB| < |BC|+|AC|$,
 	we can represent the length of side $AB$ as $|AB|=a+b-s$, $s \in \mathbb{N}$ and $s \leq a$.
 	For $s=1$, the conditions of Lemma~\ref{lem:pre_weeding_I} are satisfied: $s$ is an odd number and $s \leq a$.
 	Therefore, the triangle with sides $a$, $b$, and $c=a+b-1$
