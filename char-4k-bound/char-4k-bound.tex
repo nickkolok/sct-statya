@@ -102,14 +102,14 @@ A point set $M$ in Euclidean plane is called an integral point set in semi-gener
 elements of $M$ are integers, and $M$ does not contain collinear triples.
 We improve the lower bound for diameter of such sets in the particular case
 when the characteristic of the set is of the form $4k+1$ or $4k+2$.
-To achieve that, we combine hyperbolae-based and grid-based toolsets.
+To achieve that, we combine hyperbolas-based and grid-based toolsets.
 
 
 \section{Introduction}
 	A planar integral point set (IPS) is a set of points in the plane, such that the distance between any pair of its points is an integer, and at least one triple of its points is non-collinear. The latter condition is essential to avoid subsets of a straight line; those are de-facto equivalent to subsets of integer numbers and form a completely different combinatorial object.
 
 	In 1945, Erdös gave an elegant proof~\cite{anning1945integral,erdos1945integral} that every IPS is finite.
-	In any IPS he chose a non-collinear triple $\{M_1, M_2, M_3\} \in M$ so that any other point $M_0 \in M$ lies on either the straight line $M_1M_2$, the perpendicular bisector to the segment $M_1M_2$, or one of $|M_1M_2|-1$ hyperbolae, where $|M_1M_2|$ stands for length of line segment $M_1M_2$.  Applying the same argument to the line segment $M_1M_3$, Erdös concluded that $\#M \le 4 \cdot |M_1M_2| \cdot |M_1M_3|$, where $\#M$ stands for cardinality of $M$.
+	In any IPS he chose a non-collinear triple $\{M_1, M_2, M_3\} \in M$ so that any other point $M_0 \in M$ lies on either the straight line $M_1M_2$, the perpendicular bisector to the segment $M_1M_2$, or one of $|M_1M_2|-1$ hyperbolas, where $|M_1M_2|$ stands for length of line segment $M_1M_2$.  Applying the same argument to the line segment $M_1M_3$, Erdös concluded that $\#M \le 4 \cdot |M_1M_2| \cdot |M_1M_3|$, where $\#M$ stands for cardinality of $M$.
 
 	Thus, we can easily infer the lower bound for diameter of an IPS $M$:
 	$$
@@ -117,7 +117,7 @@ To achieve that, we combine hyperbolae-based and grid-based toolsets.
 	$$
 	That was the first lower bound for the diameter ever;
 	however, Erdös did not only estimate the diameter,
-	but also established the toolset for further investigation, the core of which is a system of cofocal hyperbolae.
+	but also established the toolset for further investigation, the core of which is a system of cofocal hyperbolas.
 
 	Using this toolset, in 2003 Solymosi proved~\cite{solymosi2003note} that
 	$$
@@ -135,7 +135,7 @@ To achieve that, we combine hyperbolae-based and grid-based toolsets.
 		\diam M \geq \left(\frac n 5 \right)^{5/4}
 	\end{equation}
 	(in assumption that the set has at east 4 points).
-	All these lower bounds are based on the Erdos's framework --- cofocal hyperbolae.
+	All these lower bounds are based on the Erdos's framework --- cofocal hyperbolas.
 
 
 	Meanwhile in 1988 Kemnitz introduced~\cite{kemnitz1988punktmengen}
@@ -303,7 +303,7 @@ For the sake of completeness, we sketch the proof for the Grid Theorem below.
 \end{definition}
 
 Obviously, the 0-th Erdos curve is the perpendicular bisector of $M_1 M_2$,
-and all the other Erdos curves are branches of cofocal hyperbolae.
+and all the other Erdos curves are branches of cofocal hyperbolas.
 On Figure~\ref{fig:Erdos_curves_numbered}, the Erdos curves are shown for an edge of length 3.
 
 \begin{figure}
@@ -779,7 +779,7 @@ empowered by our Weeding Theorem I.
 
 	b) $N$ belongs to $cr(M_3,M_4)$, which implies that there are no more than 4 points (no more than 2 on each of the lines);
 
-	c) $N$ belongs to the intersection of one of the $(|M_1M_2|/2 - 1)$ hyperbolae with one of the $(|M_3M_4|/2 - 1)$ hyperbolae, which implies that there are no more than $4(|M_1M_2|/2 - 1)(|M_3M_4|/2 - 1)$ points.
+	c) $N$ belongs to the intersection of one of the $(|M_1M_2|/2 - 1)$ hyperbolas with one of the $(|M_3M_4|/2 - 1)$ hyperbolas, which implies that there are no more than $4(|M_1M_2|/2 - 1)(|M_3M_4|/2 - 1)$ points.
 
 	Assuming that the edges $M_1M_2$ and $M_3M_4$ have even lengths,
 	we infer that $|M_1M_2|\geq4$ and $|M_3M_4|\geq4$.
@@ -805,7 +805,7 @@ empowered by our Weeding Theorem I.
 
 	b) $N$ belongs to $cr(M_3,M_4)$, which implies that there are no more than 2 points;
 
-	c) $N$ belongs to the intersection of one of $(|M_1 M_2|-1)/2$ hyperbolae with one of $(|M_3M_4|-1)/2$ hyperbolae, which implies that there are no more than $(|M_1 M_2|-1)(|M_3 M_4|-1)$ points.
+	c) $N$ belongs to the intersection of one of $(|M_1 M_2|-1)/2$ hyperbolas with one of $(|M_3M_4|-1)/2$ hyperbolas, which implies that there are no more than $(|M_1 M_2|-1)(|M_3 M_4|-1)$ points.
 
 	Assuming that the edges $M_1M_2$ and $M_3M_4$ have odd lengths,
 	we infer that $|M_1M_2|\geq3$ and $|M_3M_4|\geq3$.
@@ -826,7 +826,7 @@ empowered by our Weeding Theorem I.
 
 	b) $N$ belongs to $cr(M_3,M_4)$, which implies that there are no more than 2 points (otherwise $\operatorname{char} M = 4k+3$);
 
-	c) $N$ belongs to the intersection of one of $(|{M_1 M_2}|/2-1)$ hyperbolae with one of $(|M_3 M_4|-1)/2$ hyperbolae, which implies that there are no more than $4(|M_1 M_2|/2-1)(|M_3 M_4|-1)/2$ points.
+	c) $N$ belongs to the intersection of one of $(|{M_1 M_2}|/2-1)$ hyperbolas with one of $(|M_3 M_4|-1)/2$ hyperbolas, which implies that there are no more than $4(|M_1 M_2|/2-1)(|M_3 M_4|-1)/2$ points.
 
 	From the parity assumption for edges $M_1 M_2$ and $M_3 M_4$
 	we can infer that $|M_1 M_2|\geq4$ and $|M_3M_4|\geq3$.
