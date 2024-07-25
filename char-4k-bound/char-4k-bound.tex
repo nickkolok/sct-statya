@@ -596,7 +596,7 @@ The case when the length of an edge is even is slightly more specific and allows
 	Taking into account that $s = 2t + 1$, $t \in \mathbb{N}_0$,
 	we bring equation \eqref{eq:33.1} to the form:
 	\begin{equation}
-	pb^2 = (2t + 1)(4q + 2n - 2t - 1)(2n - 2t - 1)(4q - 2t - 1).
+	pb^2 = (2t + 1)(4q + 2n - 2t - 1)(2n - 2t - 1)(4q - 2t - 1)
 	\label{eq: 34.2}
 	\end{equation}
 	or, after expansion,
@@ -608,9 +608,9 @@ The case when the length of an edge is even is slightly more specific and allows
 		\label{eq:35.1}
 	\end{eqnarray}
 	Among two consecutive natural numbers,
-	exactly one is even.
-	Therefore, the expression $4n(n-1)\equiv0\pmod{8}$.
-	Thus, the right-hand side of equation (\ref{eq:35.1}) is a multiple of 8.
+	exactly one is even,
+	so $4n(n-1)\equiv0\pmod{8}$.
+	Thus, the right-hand side of equation~\eqref{eq:35.1} is a multiple of 8.
 	Then $pb^2\equiv7\pmod{8}$.
 	A necessary condition for the existence of an integer solution to equation~\eqref{eq:35.1}
 	is that numbers $p$ and $b$ must be odd.
@@ -641,10 +641,12 @@ The case when the length of an edge is even is slightly more specific and allows
 
 
 \begin{proof}
-	Let $M \in \overline{\mathfrak{M}_n}'$ and $M_1, M_2 \in M$. Then all points in the set $M$ lie on the circle $cr(M_1, M_2)$. Otherwise, according to Statement 4, $\operatorname{char}{M}={8k+7}$, $k\in \mathbb{N}_0$.
+	Let $M \in \overline{\mathfrak{M}_n}'$ and $M_1, M_2 \in M$.
+	Then all points in the set $M$ lie on $cr(M_1, M_2)$.
+	Otherwise, according to Lemma~\ref{lem:pre_weeding_II}, $\operatorname{char}{M}={8k+7}$, $k\in \mathbb{N}_0$.
 
 	Suppose, to the contrary, that $M={M_1, M_2, M_3, M_4} \in \overline{\mathfrak{M}_4}'$.
-	Employ th Grid Theorem and set $M_1(-1;0), M_2(1;0), O(0;0)$.
+	Employ the Grid Theorem and set $M_1(-1;0), M_2(1;0), O(0;0)$.
 	Then $M_3$ and $M_4$ lie on the perpendicular bisector to $M_1M_2$.
 	Since the distance $|M_3M_4|$ is an integer, the area of triangle $M_1M_3M_4$ is a rational number.
 	By Definition~\ref{def:char}, this means that $\operatorname{char}{M}={1}$.
