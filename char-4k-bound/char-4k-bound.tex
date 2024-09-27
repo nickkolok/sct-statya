@@ -109,7 +109,7 @@ To achieve that, we combine hyperbolas-based and grid-based toolsets.
 	A planar integral point set (IPS) is a set of points in the plane, such that the distance between any pair of its points is an integer, and at least one triple of its points is non-collinear. The latter condition is essential to avoid subsets of a straight line; those are de-facto equivalent to subsets of integer numbers and form a completely different combinatorial object.
 
 	In 1945, Erdös gave an elegant proof~\cite{anning1945integral,erdos1945integral} that every IPS is finite.
-	In any IPS he chose a non-collinear triple $\{M_1, M_2, M_3\} \in M$ so that any other point $M_0 \in M$ lies on either the straight line $M_1M_2$, the perpendicular bisector to the segment $M_1M_2$, or one of $|M_1M_2|-1$ hyperbolas, where $|M_1M_2|$ stands for length of line segment $M_1M_2$.  Applying the same argument to the line segment $M_1M_3$, Erdös concluded that $\#M \le 4 \cdot |M_1M_2| \cdot |M_1M_3|$, where $\#M$ stands for cardinality of $M$.
+	He considered an arbitrary IPS $M$ and chose a non-collinear triple $\{M_1, M_2, M_3\} \in M$ so that any other point $M_0 \in M$ lies on either the straight line $M_1M_2$, the perpendicular bisector to the segment $M_1M_2$, or one of $|M_1M_2|-1$ hyperbolas, where $|M_1M_2|$ stands for length of line segment $M_1M_2$.  Applying the same argument to the line segment $M_1M_3$, Erdös concluded that $\#M \le 4 \cdot |M_1M_2| \cdot |M_1M_3|$, where $\#M$ stands for cardinality of $M$.
 
 	Thus, we can easily infer the lower bound for diameter of an IPS $M$:
 	$$
@@ -126,13 +126,13 @@ To achieve that, we combine hyperbolas-based and grid-based toolsets.
 	Although Solymosi did not give the constant $c$ explicitly,
 	it can be inferred~\cite{our-vmmsh-2018-translit} from his proof that $c=\frac{1}{24}$.
 
-	In~\cite{our-vmmsh-2018-translit} the constant (for $n\geq 4$) was improved to $0.3457$
+	In~\cite{our-vmmsh-2018-translit} the constant (for $\# M \geq 4$) was improved to $0.3457$
 	employing Point Packing in a Square Problem~\cite{markot2005newverified,costa2013valid}.
 	In~\cite{my-pps-linear-bound-2019} the approach has been further developed, and the constant has been tightened to $\frac{5}{11}$.
 	Finally, in~\cite{my-semi-general-5-4-bound-2019} for IPS $M$ in semi-general position (that is an IPS with no collinear triples) it was proved that
 	\begin{equation}
 		\label{eq:chebsb_lower_bound}
-		\diam M \geq \left(\frac n 5 \right)^{5/4}
+		\diam M \geq \left(\frac {\# M} 5 \right)^{5/4}
 	\end{equation}
 	(in assumption that the set has at east 4 points).
 	All these lower bounds are based on the Erdos's framework --- cofocal hyperbolas.
@@ -240,7 +240,7 @@ but the pair $(\sqrt2, \sqrt3)$ is not.
 
 \begin{definition}
 	\label{def:char}
-	The characteristic of a planar IPS $\mathcal{M}$ is a squarefree number $q$
+	The characteristic of a planar IPS $M$ is a squarefree number $q$
 	such that the area of any triangle $M_1M_2M_3$, $\{M_1,M_2,M_3\}\subset M$,
 	is commensurable with $\sqrt{q}$.
 	Notation: $\chr M = q$.
