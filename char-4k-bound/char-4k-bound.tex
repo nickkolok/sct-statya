@@ -108,7 +108,7 @@ To achieve that, we combine hyperbolas-based and grid-based toolsets.
 \section{Introduction}
 	A planar integral point set (IPS) is a set of points in the plane, such that the distance between any pair of its points is an integer, and at least one triple of its points is non-collinear. The latter condition is essential to avoid subsets of a straight line; those are de-facto equivalent to subsets of integer numbers and form a completely different combinatorial object.
 
-	In 1945, Erdös gave an elegant proof~\cite{anning1945integral,erdos1945integral} that every IPS is finite.
+	In 1945, Erdős gave an elegant proof~\cite{anning1945integral,erdos1945integral} that every IPS is finite.
 	He considered an arbitrary IPS $M$ and chose a non-collinear triple $\{M_1, M_2, M_3\} \in M$ so that any other point $M_0 \in M$ lies on either the straight line $M_1M_2$, the perpendicular bisector to the segment $M_1M_2$, or one of $|M_1M_2|-1$ hyperbolas, where $|M_1M_2|$ stands for length of line segment $M_1M_2$.  Applying the same argument to the line segment $M_1M_3$, Erdös concluded that $\#M \le 4 \cdot |M_1M_2| \cdot |M_1M_3|$, where $\#M$ stands for cardinality of $M$.
 
 	Thus, we can easily infer the lower bound for diameter of an IPS $M$:
@@ -116,7 +116,7 @@ To achieve that, we combine hyperbolas-based and grid-based toolsets.
 		\operatorname{diam} M \ge \frac{\sqrt{\#M}}{2}.
 	$$
 	That was the first lower bound for the diameter ever;
-	however, Erdös did not only estimate the diameter,
+	however, Erdős did not only estimate the diameter,
 	but also established the toolset for further investigation, the core of which is a system of cofocal hyperbolas.
 
 	Using this toolset, in 2003 Solymosi proved~\cite{solymosi2003note} that
@@ -135,7 +135,7 @@ To achieve that, we combine hyperbolas-based and grid-based toolsets.
 		\diam M \geq \left(\frac {\# M} 5 \right)^{5/4}
 	\end{equation}
 	(in assumption that the set has at east 4 points).
-	All these lower bounds are based on the Erdos's framework --- cofocal hyperbolas.
+	All these lower bounds are based on the Erdős's framework --- cofocal hyperbolas.
 
 
 	Meanwhile in 1988 Kemnitz introduced~\cite{kemnitz1988punktmengen}
@@ -154,7 +154,7 @@ To achieve that, we combine hyperbolas-based and grid-based toolsets.
 
 	For generalization in higher dimensions, we refer the reader to~\cite{nozaki2013lower}.
 
-	In the present paper, we put the power of Erdös's and Kemnitz's approaches together. Due to squarefree nature of characteristic, it can be of the form $4k+1$, $4k+2$ or $4k+3$, where $k$ is integer.
+	In the present paper, we put the power of Erdős's and Kemnitz's approaches together. Due to squarefree nature of characteristic, it can be of the form $4k+1$, $4k+2$ or $4k+3$, where $k$ is integer.
 	We prove that for a particular case of characteristic $4k+1$ and $4k+2$
 	the bound~\eqref{eq:chebsb_lower_bound} can be improved to
 	\begin{equation}
@@ -299,22 +299,22 @@ For the sake of completeness, we sketch the proof for the Grid Theorem below.
 	\begin{equation}
 		\{M_0 : |M_0 M_1| - |M_0 M_2| = n\}
 	\end{equation}
-	is called the \emph{$n$-th Erdos curve}.
+	is called the \emph{$n$-th Erdős curve}.
 \end{definition}
 
-Obviously, the 0-th Erdos curve is the perpendicular bisector of $M_1 M_2$,
-and all the other Erdos curves are branches of cofocal hyperbolas.
-On Figure~\ref{fig:Erdos_curves_numbered}, the Erdos curves are shown for an edge of length 3.
+Obviously, the 0-th Erdős curve is the perpendicular bisector of $M_1 M_2$,
+and all the other Erdős curves are branches of cofocal hyperbolas.
+On Figure~\ref{fig:Erdos_curves_numbered}, the Erdős curves are shown for an edge of length 3.
 
 \begin{figure}
 \center{\includegraphics[width=0.95\linewidth]{Erdos_curves_numbered.png}}
-\caption{Erdos curves}
+\caption{Erdős curves}
 \label{fig:Erdos_curves_numbered}
 \end{figure}
 
-Thus, an edge $M_1 M_2$ generates $2|M_1 M_2| - 1$ Erdos curves.
-For the sake of brevity, Erdos curves with odd numbers are named odd Erdos curves,
-and the ones with even numbers are named even Erdos curves.
+Thus, an edge $M_1 M_2$ generates $2|M_1 M_2| - 1$ Erdős curves.
+For the sake of brevity, Erdős curves with odd numbers are named odd Erdős curves,
+and the ones with even numbers are named even Erdős curves.
 
 Two following definitions are used to classify integral point sets
 with many collinear triples~\cite{avdeev2019particular}:
@@ -499,7 +499,7 @@ and whose coordinates are
 \end{figure}
 
 %4
-\section{Erdös Curves and Characteristic}
+\section{Erdős Curves and Characteristic}
 
 \begin{lemma}
 	\label{lem:pre_weeding_I}
@@ -761,7 +761,7 @@ If we exclude characteristics of the form $4k+3$, this Solymosi's result can be 
 %6
 \section{The Main Bound}
 
-The following lemma is a classical Erdos-style intersection-enumeration one,
+The following lemma is a classical Erdős-style intersection-enumeration one,
 empowered by our Weeding Theorem I.
 
 \begin{lemma}
