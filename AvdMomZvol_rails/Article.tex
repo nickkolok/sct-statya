@@ -12,13 +12,13 @@
 \voffset=-17mm
 
 
-%\usepackage[backend=biber,style=gost-numeric,sorting=none]{biblatex}
-%\addbibresource{../common/notmy.bib}
-%\addbibresource{../common/my.bib}
+\usepackage[backend=biber,style=gost-numeric,sorting=none]{biblatex}
+\addbibresource{../common/notmy.bib}
+\addbibresource{../common/my.bib}
 
-%\usepackage{../../../biblatex2bibitem/biblatex2bibitem}
+\usepackage{../../../biblatex2bibitem/biblatex2bibitem}
 
-\usepackage{cite}
+%\usepackage{cite}
 
 
 \usepackage{hyperref}
@@ -1335,145 +1335,22 @@ The source code can be obtained at https://gitlab.com/Nickkolok/ips-algo
 \section{Acknowledgements}
 The authors thank A.S. Usachev for his help in polishing the text of the paper.
 
-%\printbibliography
-%\printbibitembibliography
+
+
+
+\makeatletter
+\ltx@iffilelater{biblatex-gost.def}{2017/02/01}%
+{\toggletrue{bbx:gostbibliography}%
+\renewcommand*{\revsdnamepunct}{\addcomma}}{}
+\makeatother
+
+\printbibliography
+\printbibitembibliography
 %\bibliography{literature}
 
 
-\begin{thebibliography}{99}
-{}
-\bibitem{ascher2020erdos}
-\emph{Ascher} \emph{K.}, \emph{Braune} \emph{L.}, \emph{Turchet} \emph{A.}
-The Erdős–Ulam problem, Lang’s conjecture and uniformity // Bulletin of the London
-Mathematical Society. — 2020. — Vol. 52, no. 6. — Pp. 1053–1063. — arXiv: \href
-{http://arxiv.org/abs/1809.02037} {\nolinkurl {1809.02037}}.
-{}\bibitem{solymosi2010question}
-\emph{Solymosi} \emph{J.}, \emph{De Zeeuw} \emph{F.} On a question of Erdős
-and Ulam // Discrete \& Computational Geometry. — 2010. — Vol. 43, no. 2. —
-Pp. 393–401. — arXiv: \href {http://arxiv.org/abs/0806.3095} {\nolinkurl
-{0806.3095}}.
-{}
-\bibitem{kurz2007enumeration}
-\emph{Kurz} \emph{S.} Enumeration of Integral Tetrahedra // Journal of Integer
-Sequences. — 2007. — Vol. 10, no. 2. — P. 3.
-{}
-\bibitem{anning1945integral}
-\emph{Anning} \emph{N. H.}, \emph{Erdős} \emph{P.} Integral distances //
-Bulletin of the American Mathematical Society. — 1945. — Vol. 51, no. 8. —
-Pp. 598–600. — DOI: \href {https://doi.org/10.1090/S0002-9904-1945-08407-9}
-{\nolinkurl {10.1090/S0002-9904-1945-08407-9}}.
-{}
-\bibitem{erdos1945integral}
-\emph{Erdős} \emph{P.} Integral distances // Bulletin of the American Mathematical
-Society. — 1945. — Vol. 51, no. 12. — P. 996. — DOI: \href
-{https://doi.org/10.1090/S0002-9904-1945-08490-0} {\nolinkurl
-{10.1090/S0002-9904-1945-08490-0}}.
-{}
-\bibitem{kemnitz1988punktmengen}
-\emph{Kemnitz} \emph{A.} Punktmengen mit ganzzahligen Abständen. — 1988.
-{}
-\bibitem{kurz2005characteristic}
-\emph{Kurz} \emph{S.} On the characteristic of integral point sets in {$\mathbb
-{E}^m$} // Australasian Journal of Combinatorics. — 2006. — Vol. 36. —
-Pp. 241–248. — arXiv: \href {http://arxiv.org/abs/math/0511704} {\nolinkurl
-{math/0511704}}.
-{}
-\bibitem{kurz2008bounds}
-\emph{Kurz} \emph{S.}, \emph{Laue} \emph{R.} Bounds for the minimum diameter
-of integral point sets // Australasian Journal of Combinatorics. — 2007. — Vol. 39. —
-Pp. 233–240. — arXiv: \href {http://arxiv.org/abs/0804.1296} {\nolinkurl
-{0804.1296}}.
-{}
-\bibitem{solymosi2003note}
-\emph{Solymosi} \emph{J.} Note on integral distances // Discrete \& Computational
-Geometry. — 2003. — Vol. 30, no. 2. — Pp. 337–342. — DOI: \href
-{https://doi.org/10.1007/s00454-003-0014-7} {\nolinkurl {10.1007/s00454-003-0014-7}}.{}
-\bibitem{my-pps-linear-bound-2019}
-\emph{Avdeev} \emph{N.} On existence of integral point sets and their diameter
-bounds // Australasian Journal of Combinatorics. — 2020. — Vol. 77, no. 1. —
-Pp. 100–116. — arXiv: \href {http://arxiv.org/abs/1906.11926} {\nolinkurl
-{1906.11926}}. — URL: \url
-{https://ui.adsabs.harvard.edu/abs/2019arXiv190611926A/abstract}.
-{}
-\bibitem{nozaki2013lower}
-\emph{Nozaki} \emph{H.} Lower bounds for the minimum diameter of integral point
-sets // Australasian Journal of Combinatorics. — 2013. — Vol. 56. — Pp. 139–143.
-{}
-\bibitem{our-vmmsh-2018}
-\emph{Авдеев} \emph{Н. Н.}, \emph{Семёнов} \emph{Е. М.} Множества точек с
-целочисленными расстояниями на плоскости и в евклидовом пространстве //
-Математический форум (Итоги науки. Юг России). — 2018. — Pp. 217–236.
-{}
-\bibitem{antonov2008maximal}
-\emph{Antonov} \emph{A. R.}, \emph{Kurz} \emph{S.} Maximal integral point sets
-over {$\mathbb {Z}^2$} // International Journal of Computer Mathematics. —
-2008. — Vol. 87, no. 12. — Pp. 2653–2676. — DOI: \href
-{https://doi.org/10.1080/00207160902993636} {\nolinkurl
-{10.1080/00207160902993636}}. — arXiv: \href {http://arxiv.org/abs/0804.1280}
-{\nolinkurl {0804.1280}}.
-{}
-\bibitem{kurz2008minimum}
-\emph{Kurz} \emph{S.}, \emph{Wassermann} \emph{A.} On the minimum diameter
-of plane integral point sets // Ars Combinatoria. — 2011. — Vol. 101. — Pp. 265–287. —
-arXiv: \href {http://arxiv.org/abs/0804.1307} {\nolinkurl {0804.1307}}.
-{}
-\bibitem{our-ped-2018}
-\emph{Авдеев} \emph{Н. Н.} On integral point sets in special position // Некоторые
-вопросы анализа, алгебры, геометрии и математического образования: материалы
-международной молодежной научной школы «Актуальные направления
-математического анализа и смежные вопросы». — 2018. — Vol. 8. — Pp. 5–6.
-{}
-\bibitem{our-pmm-2018}
-\emph{Авдеев} \emph{Н. Н.} Об отыскании целоудалённых множеств
-специального вида // Актуальные проблемы прикладной математики,
-информатики и механики - сборник трудов Международной научной
-конференции. — Научно-исследовательские публикации, 2018. — Pp. 492–498.
-{}\bibitem{harborth1993upper}
-\emph{Harborth} \emph{H.}, \emph{Kemnitz} \emph{A.},
-\emph{Möller} \emph{M.} An upper bound for the minimum diameter of integral
-point sets // Discrete \& Computational Geometry. — 1993. — Vol. 9, no. 4. —
-Pp. 427–432. — DOI: \href {https://doi.org/10.1007/bf02189331} {\nolinkurl
-{10.1007/bf02189331}}.
-{}
-\bibitem{piepmeyer1996maximum}
-\emph{Piepmeyer} \emph{L.} The maximum number of odd integral distances
-between points in the plane // Discrete \& Computational Geometry. — 1996. —
-Vol. 16, no. 1. — Pp. 113–115. — DOI: \href {https://doi.org/10.1007/bf02711135}
-{\nolinkurl {10.1007/bf02711135}}.
-{}
-\bibitem{bat2018number}
-\emph{Bat-Ochir} \emph{G.} On the number of points with pairwise integral
-distances on a circle // Discrete Applied Mathematics. — 2018. — Vol. 254. —
-Pp. 17–32. — DOI: \href {https://doi.org/10.1016/j.dam.2018.07.004} {\nolinkurl
-{10.1016/j.dam.2018.07.004}}.
-{}
-\bibitem{kreisel2008heptagon}
-\emph{Kreisel} \emph{T.}, \emph{Kurz} \emph{S.} There are integral heptagons, no
-three points on a line, no four on a circle // Discrete \& Computational Geometry. —
-2008. — Vol. 39, no. 4. — Pp. 786–790. — DOI: \href
-{https://doi.org/10.1007/s00454-007-9038-6} {\nolinkurl {10.1007/s00454-007-9038-6}}.
-{}
-\bibitem{kurz2013constructing}
-Constructing $7$-clusters / S. Kurz [et al.] // Serdica Journal of Computing. — 2014. —
-Vol. 8, no. 1. — Pp. 47–70. — arXiv: \href {http://arxiv.org/abs/1312.2318} {\nolinkurl
-{1312.2318}}.
-{}
-\bibitem{avdeev2021particular}
-\emph{Avdeev} \emph{N.}, \emph{Momot} \emph{E.},
-\emph{Zvolinsky} \emph{A.} On particular examples of planar integral point sets and
-their classification. —. — arXiv: \href {http://arxiv.org/abs/2102.12462 [math.CO]}
-{\nolinkurl {2102.12462 [math.CO]}}.
-{}
-\bibitem{my-semi-general-5-4-bound-2019}
-\emph{Avdeev} \emph{N.} On diameter bounds for planar integral point sets in
-semi-general position. — 2019. — arXiv: \href {http://arxiv.org/abs/1907.09331}
-{\nolinkurl {1907.09331}}. — URL: \url
-{https://ui.adsabs.harvard.edu/abs/2019arXiv190709331A/abstract}.
-{}\bibitem{guy2013unsolved}
-\emph{Guy} \emph{R.} Unsolved problems in number theory. Vol. 1. — Springer
-Science \& Business Media, 2013. — DOI: \href
-{https://doi.org/10.1007/978-1-4757-1738-9} {\nolinkurl {10.1007/978-1-4757-1738-9}}.
-\end{thebibliography}
+%\begin{thebibliography}{99}
+%\end{thebibliography}
 
 
 \end{document}
