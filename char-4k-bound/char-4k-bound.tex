@@ -574,11 +574,14 @@ The following theorem follows immediately.
 
 \begin{theorem}[The Weeding Theorem I]
 	\label{thm:weeding_I}
-	Let $M = \{M_1, M_2, M_3\} \in \mathfrak{M}_3$ be an IPS with a characteristic different from $4k+3$, $k \in \mathbb{N}_0$. Then, the length of the edge $M_1 M_2$ and its $n$-th Erdős curve, which contains the point $M_3$, have the same parity.
+	Let $M = \{M_1, M_2, M_3\} \in \mathfrak{M}_3$
+	be an IPS with a characteristic different from $4k+3$, $k \in \mathbb{N}_0$,
+	ant let $M_3$ belong to the $n$-th Erdős curve of the edge $M_1 M_2$.
+	Then, $n$ and the length of $M_1M_2$ have the same parity.
 \end{theorem}
 
 \begin{proof}
-	Let $|M_1 M_2| = m$, $m \in \mathbb{N}$, and let the $n$-th Erdős curve satisfy $|M_1 M_3| - |M_2 M_3| = n$.
+	Let $|M_1 M_2| = m$, $m \in \mathbb{N}$, and $n = |M_1 M_3| - |M_2 M_3|$.
 	If $m$ is an odd number, then by Lemma~\ref{lem:pre_weeding_I}, the difference $n = |M_1 M_3| - |M_2 M_3|$ equals $m - s$, where $s$ is an even number, is also an odd number.
 	Let $m$ be an even number; then $n = |M_1 M_3| - |M_2 M_3| = m - s$ is an even number, as a difference of two even numbers.
 \end{proof}
