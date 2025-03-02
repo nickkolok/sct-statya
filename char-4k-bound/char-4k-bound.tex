@@ -644,16 +644,16 @@ The case when the length of an edge is even is slightly more specific and allows
 
 \begin{lemma}
 	\label{lem:no_distance_2}
-	Every set $M \in \overline{\mathfrak{M}_n}'$ with an edge $|M_1M_2|=2$ has a cardinality $n=3$.
+	Every set $M \in \overline{\mathfrak{M}}'_n$ with an edge $|M_1M_2|=2$ has the cardinality $n=3$.
 \end{lemma}
 
 
 \begin{proof}
-	Let $M \in \overline{\mathfrak{M}_n}'$ and $M_1, M_2 \in M$.
+	Let $M \in \overline{\mathfrak{M}}'_n$ and $M_1, M_2 \in M$.
 	Then all points in the set $M$ lie on $cr(M_1, M_2)$.
 	Otherwise, according to Lemma~\ref{lem:pre_weeding_II}, $\operatorname{char}{M}={8k+7}$, $k\in \mathbb{N}_0$.
 
-	Suppose, to the contrary, that $M={M_1, M_2, M_3, M_4} \in \overline{\mathfrak{M}_4}'$.
+	Suppose, to the contrary, that $M={M_1, M_2, M_3, M_4} \in \overline{\mathfrak{M}}'_4$.
 	Employ the Grid Theorem and set $M_1(-1;0), M_2(1;0), O(0;0)$.
 	Then $M_3$ and $M_4$ lie on the perpendicular bisector to $M_1M_2$.
 	Since the distance $|M_3M_4|$ is an integer, the area of triangle $M_1M_3M_4$ is a rational number.
@@ -759,7 +759,7 @@ If we exclude characteristics of the form $4k+3$, this Solymosi's result can be 
 
 \begin{corollary}
 	\label{cor:sqrt_5_3}
-	In a triangle $ABC$ with sides $3 \leq a \leq b \leq c$, where ${A, B, C} \subset M \in \overline{\mathfrak{M}_4}'$, the smallest height is at least $(2a-1)^{1/2}$.
+	In a triangle $ABC$ with sides $3 \leq a \leq b \leq c$, where ${A, B, C} \subset M \in \overline{\mathfrak{M}}'_4$, the smallest height is at least $(2a-1)^{1/2}$.
 \end{corollary}
 
 \begin{proof}
@@ -779,7 +779,7 @@ empowered by our Weeding Theorem I.
 
 \begin{lemma}
 	\label{lem:intersection_enumeration}
-	Let ${M_1, M_2, M_3, M_4} \subset M \in \overline{\mathfrak{M}_n}'$ (points $M_2$ and $M_3$ may coincide, while the others are distinct), where $n \ge 4$. Then $\# M \le |M_1 M_2| \cdot |M_3 M_4| - 2$.
+	Let ${M_1, M_2, M_3, M_4} \subset M \in \overline{\mathfrak{M}}'_n$ (points $M_2$ and $M_3$ may coincide, while the others are distinct), where $n \ge 4$. Then $\# M \le |M_1 M_2| \cdot |M_3 M_4| - 2$.
 \end{lemma}
 
 \begin{proof}
@@ -897,7 +897,7 @@ in our special case.
 
 \begin{theorem}
 	\label{thm:main_result}
-	Let $M \in \overline{\mathfrak{M}}_n'$, i.e., $M$ is a set in semi-general position with characteristic different from $4k+3$, $k \in \mathbb{N}_0$.
+	Let $M \in \overline{\mathfrak{M}}'_n$, i.e., $M$ is a set in semi-general position with characteristic different from $4k+3$, $k \in \mathbb{N}_0$.
 	Then, for every integer $n \geq 3$, the inequality
 	\begin{equation}
 		\operatorname{diam} M \geq \left( \frac{25n}{36} \right)^{5/4}
@@ -908,7 +908,7 @@ in our special case.
 \begin{proof}
 	For $n = 3$, we have $\operatorname{diam} M \geq 3$ (achieved by an isosceles triangle with sides 2, 3, 3), and the assertion is obvious.
 
-	Let us consider $M \in \overline{\mathfrak{M}_n}'$, $n \geq 4$, $\operatorname{diam} M = p$.
+	Let us consider $M \in \overline{\mathfrak{M}}'_n$, $n \geq 4$, $\operatorname{diam} M = p$.
 
 	Choose points $M_1, M_2, M_3, M_4 \in M$ (points $M_2$ and $M_3$ may coincide, while the others must be pairwise distinct) such that
 
