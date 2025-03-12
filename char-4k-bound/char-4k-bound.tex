@@ -100,15 +100,15 @@
 \paragraph{Abstract.}
 A point set $M$ in Euclidean plane is called an integral point set in semi-general position if all the distances between the
 elements of $M$ are integers, and $M$ does not contain collinear triples.
-We improve the lower bound for diameter of such sets in the particular case
+In this paper we improve the lower bound for diameter of such sets in the particular case
 when the characteristic of the set is of the form $4k+1$ or $4k+2$.
 To achieve that, we combine hyperbolas-based and grid-based toolsets.
 
 
 \section{Introduction}
-	A planar integral point set (IPS) is a set of points in the plane, such that the distance between any pair of its points is an integer, and at least one triple of its points is non-collinear. The latter condition is essential to avoid subsets of a straight line; those are de-facto equivalent to subsets of integer numbers and form a completely different combinatorial object.
+	A planar integral point set (IPS) is a set of points in the plane, such that the distance between any pair of its points is an integer, and at least one triple of its points is non-collinear. The latter condition is essential to avoid subsets of a straight line; those are de-facto equivalent to subsets of integers and form a completely different combinatorial object.
 
-	In 1945, Erdős gave an elegant proof~\cite{anning1945integral,erdos1945integral} that every IPS is finite.
+	In 1945, Erdős gave an elegant proof that every IPS is finite~\cite{anning1945integral,erdos1945integral} .
 	He considered an arbitrary IPS $M$ and chose a non-collinear triple $\{M_1, M_2, M_3\} \in M$ so that any other point $M_0 \in M$ lies on either the straight line $M_1M_2$, the perpendicular bisector to the segment $M_1M_2$, or one of $|M_1M_2|-1$ hyperbolas, where $|M_1M_2|$ stands for length of line segment $M_1M_2$.  Applying the same argument to the line segment $M_1M_3$, Erdös concluded that $\#M \le 4 \cdot |M_1M_2| \cdot |M_1M_3|$, where $\#M$ stands for cardinality of $M$.
 
 	Thus, we can easily infer the lower bound for diameter of an IPS $M$:
@@ -117,13 +117,14 @@ To achieve that, we combine hyperbolas-based and grid-based toolsets.
 	$$
 	That was the first lower bound for the diameter ever;
 	however, Erdős did not only estimate the diameter,
-	but also established the toolset for further investigation, the core of which is a system of cofocal hyperbolas.
+	but also established the toolset for further investigation.
+	The core of this approach is a system of cofocal hyperbolas.
 
 	Using this toolset, in 2003 Solymosi proved~\cite{solymosi2003note} that
 	$$
 		\operatorname{diam} M \ge c \cdot \#M.
 	$$
-	Although Solymosi did not give the constant $c$ explicitly,
+	Although Solymosi did not state the value of $c$ explicitly,
 	it can be inferred~\cite{our-vmmsh-2018-translit} from his proof that $c=\frac{1}{24}$.
 
 	In~\cite{our-vmmsh-2018-translit} the constant (for $\# M \geq 4$) was improved to $0.3457$
@@ -134,7 +135,7 @@ To achieve that, we combine hyperbolas-based and grid-based toolsets.
 		\label{eq:chebsb_lower_bound}
 		\diam M \geq \left(\frac {\# M} 5 \right)^{5/4}
 	\end{equation}
-	(in assumption that the set has at east 4 points).
+	(assuming that the set has at least 4 points).
 	All these lower bounds are based on the Erdős's framework --- cofocal hyperbolas.
 
 
@@ -146,15 +147,15 @@ To achieve that, we combine hyperbolas-based and grid-based toolsets.
 	see~\cite{huff1948diophantine} for an example construction
 	and~\cite{solymosi2010question} for some known limitations.)
 	In 2000s, Kurz introduced~\cite{kurz2005characteristic} the function $d(2,n)$ that evaluates
-	to the minimal possible diameter of planar IPS of cardinality $n$.
-	Then Kurz employed Kemnitz's results and found~\cite[Subsection 4.2]{kurz2008minimum} exact values of $d(2,n)$
-	up to $n=122$ by exhaustive computer search.
+	the minimal possible diameter of planar IPS of cardinality $n$.
+	Then Kurz employed Kemnitz's results and found the exact values of $d(2,n)$
+	up to $n=122$ by exhaustive computer search~\cite[Subsection 4.2]{kurz2008minimum}.
 	(Taking the characteristic into consideration allows to boost such search significantly ---
 	basically because all triples of an IPS form triangles with equal characteristic.)
 
 	For generalization in higher dimensions, we refer the reader to~\cite{nozaki2013lower}.
 
-	In the present paper, we put the power of Erdős's and Kemnitz's approaches together. Due to squarefree nature of characteristic, it can be of the form $4k+1$, $4k+2$ or $4k+3$, where $k$ is integer.
+	In the present paper, we combine the power of Erdős's and Kemnitz's approaches together. Due to squarefree nature of characteristic, it can be of the form $4k+1$, $4k+2$ or $4k+3$, where $k$ is integer.
 	We prove that for a particular case of characteristic $4k+1$ and $4k+2$
 	the bound~\eqref{eq:chebsb_lower_bound} can be improved to
 	\begin{equation}
@@ -162,7 +163,7 @@ To achieve that, we combine hyperbolas-based and grid-based toolsets.
 		.
 	\end{equation}
 
-	In Section 2, we give all the required notions and known results. In Section 3, we discuss some examples of integral point sets in order to demonstrate that none of the classes $4k+1$, $4k+2$, $4k+3$ is too exotic nor pathological. Section 4 is devoted to the connection between Erdős curves and the characteristic. In Section 5, we prove some auxiliary results, and we proceed to the main one in Section 6.
+	In Section 2, we give all the required notions and known results. In Section 3, we discuss some examples of integral point sets in order to demonstrate that none of the classes $4k+1$, $4k+2$, $4k+3$ is too exotic nor pathological. Section 4 describes a connection between Erdős curves and the characteristic. In Section 5, we prove some auxiliary results, and we proceed to the main one in Section 6.
 
 
 
@@ -171,7 +172,7 @@ To achieve that, we combine hyperbolas-based and grid-based toolsets.
 
 In this section, we provide rigorous definitions and list some known results.
 
-For the sake of brevity, the following notations will be used for sets
+For the sake of brevity, the following notations are used for sets
 of positive integers, non-negative integers and all the integers resp.:
 \begin{equation}
 	\mathbb{N} = \{1,2,3,4,...\},\quad \mathbb{N}_0 = \mathbb{N} \cup \{0\},
@@ -179,7 +180,7 @@ of positive integers, non-negative integers and all the integers resp.:
 	\mathbb{N}_\pm = \{0,\pm 1,\pm 2,\pm 3,\pm 4,...\}
 \end{equation}
 
-For a finite set $M$, we will denote its cardinality by $\#M$.
+For a finite set $M$, we denote its cardinality by $\#M$.
 
 \begin{definition}
 	\label{def:IPS}
@@ -191,10 +192,10 @@ For a finite set $M$, we will denote its cardinality by $\#M$.
 	Notation: $M\in\mathfrak{M}$, and also $M\in\mathfrak{M}_n$ for $n=\#M$.
 \end{definition}
 
-When we say that a set in non-collinear,
+When we say that a set is non-collinear,
 we mean that it has at least one non-collinear triple.
 If we tighten the condition and require all the triples to be non-collinear,
-we get the next definition.
+we obtain the next definition.
 
 \begin{definition}
 	\label{def:IPS_semi_general}
@@ -248,8 +249,8 @@ but the pair $(\sqrt2, \sqrt3)$ is not.
 The characteristic of an IPS always exists and is unique.
 
 \begin{definition}
-	If points $M_1, M_2 \in M \in \mathfrak{M}$,
-	then the line segment $M_1 M_2$ is said to be an \emph{edge} of $M$.
+	For any two points $M_1, M_2 \in M \in \mathfrak{M}$,
+	the line segment $M_1 M_2$ is said to be an \emph{edge} of $M$.
 \end{definition}
 
 
@@ -296,7 +297,7 @@ For the sake of completeness, we sketch the proof for the Grid Theorem below.
 \begin{definition}
 	Let $M_1 M_2$ be an edge of $M\in \mathfrak{M}$.
 	For an integer $n$, $|n| < |M_1 M_2|$,
-	we will call the set of points
+	we call the set of points
 	\begin{equation}
 		\{M_0 : |M_0 M_1| - |M_0 M_2| = n\}
 	\end{equation}
@@ -375,7 +376,7 @@ For $9\leq n\leq 122$, the minimal possible diameter is attained at a facher set
 Our attention will be mostly restricted to planar integral point sets
 with characteristic of the form $4k+1$ and $4k+2$ in semi-general position.
 Thus, if an IPS $M$ satisfies these conditions,
-we will write that
+we write that
 $M\in\overline{\mathfrak{M}}'$, and also $M\in\overline{\mathfrak{M}}'_n$ for $n=\#M$.
 
 
@@ -387,7 +388,7 @@ $M\in\overline{\mathfrak{M}}'$, and also $M\in\overline{\mathfrak{M}}'_n$ for $n
 
 Let us demonstrate that the classes $4k+1$, $4k+2$ nor $4k+3$
 are neither too exotic nor pathological.
-In order to do this, we will provide important examples of IPS for each class.
+In order to do this, we provide important examples of IPS for each class.
 
 For convenience, we use the notation \cite{our-ped-2018,our-pmm-2018,our-vmmsh-2018-translit}:
 $\sqrt{p}/q * \{ (x_1,y_1), ...,$ $ (x_n, y_n)  \}$,
@@ -414,7 +415,7 @@ Egyptian triangle is obviously an IPS with characteristic $1 = 4 \cdot 0 +1$.
 
 Facher sets with characteristic 1, that are called \emph{semi-crabs},
 are investigated in~\cite{antonov2008maximal}.
-There are also much more complex IPS with characteristic 1;
+There are also significantly more complex IPS with characteristic 1;
 for those from $\dot{\mathfrak{M}}_7$, we refer the reader to~\cite{kurz2013constructing}.
 
 Figure~\ref{fig:rails_2_14} shows a rails IPS of characteristic $385 = 4 \cdot 96 + 1$ presented in~\cite{avdeev2019particular}.
@@ -517,19 +518,21 @@ and whose coordinates are
 	\begin{equation}
 		\label{eq:29}
 		\begin{cases}
-		\frac{\sqrt{(a+m^2)^2+pb^2}}{2m}&=m+n-s.\\
-		\frac{\sqrt{(a-m^2)^2+pb^2}}{2m}&=n
+		\frac{\sqrt{(a+m^2)^2+pb^2}}{2m}&=~m+n-s,\\
+		\frac{\sqrt{(a-m^2)^2+pb^2}}{2m}&=~n
+		.
 		\end{cases}
 	\end{equation}
-	Multiply each equation by $2m$ and square both sides of the equations in system~\eqref{eq:29}
+	Multiplying each equation by $2m$ and squaring both sides, we obtain
 	\begin{equation}
 		\label{eq:30_pre_weeding_I}
 		\begin{cases}
-		(a+m^2)^2+pb^2&=4m^2(m+n-s)^2,\\
-		(a-m^2)^2+pb^2&=4m^2n^2
+		(a+m^2)^2+pb^2&=~4m^2(m+n-s)^2,\\
+		(a-m^2)^2+pb^2&=~4m^2n^2
+		.
 		\end{cases}
 	\end{equation}
-	and then subtract the second equation from the first one:
+	Subtract the second equation from the first one:
 	\begin{equation}
 	(a+m^2)^2-(a-m^2)^2=4m^2(m+n-s)^2-4m^2n^2,
 	\label{eq: 31}
@@ -542,12 +545,12 @@ and whose coordinates are
 		\label{eq:32_pre_weeding_I}
 		a=(m-s)(m+2n-s).
 	\end{equation}
-	Substitute the obtained expression~\eqref{eq:32_pre_weeding_I}
-	into the second equation of the system~\eqref{eq:30_pre_weeding_I}:
+	Substitute the expression~\eqref{eq:32_pre_weeding_I}
+	into the second equation of~\eqref{eq:30_pre_weeding_I}:
 	\begin{equation}
-		((m-s)(m+2n-s)-m^2)^2+pb^2=4m^2n^2,
+		((m-s)(m+2n-s)-m^2)^2+pb^2=4m^2n^2.
 	\end{equation}
-	that immediately gives
+	This immediately gives
 	\begin{equation}
 		\label{eq:33}
 		pb^2=s(2m+2n-s)(2n-s)(2m-s).
@@ -570,7 +573,7 @@ and whose coordinates are
 	Since $b^{2}\equiv1(\operatorname{mod}4)$, it follows that $p=4k+3$, $k\in \mathbb{N}_{0}$.
 \end{proof}
 
-The following theorem follows immediately.
+The next theorem follows immediately.
 
 \begin{theorem}[The Weeding Theorem I]
 	\label{thm:weeding_I}
@@ -582,8 +585,8 @@ The following theorem follows immediately.
 
 \begin{proof}
 	Let $|M_1 M_2| = m$, $m \in \mathbb{N}$, and $n = |M_1 M_3| - |M_2 M_3|$.
-	If $m$ is an odd number, then by Lemma~\ref{lem:pre_weeding_I}, the difference $n = |M_1 M_3| - |M_2 M_3|$ equals $m - s$, where $s$ is an even number, is also an odd number.
-	Let $m$ be an even number; then $n = |M_1 M_3| - |M_2 M_3| = m - s$ is an even number, as a difference of two even numbers.
+	If $m$ is odd, then by Lemma~\ref{lem:pre_weeding_I}, the difference $n = |M_1 M_3| - |M_2 M_3|$ equals $m - s$, where $s$ is even. Thus, $n$ is odd.
+	If $m$ is even, then $n = |M_1 M_3| - |M_2 M_3| = m - s$ is even, as a difference of two even numbers.
 \end{proof}
 
 %An even edge is a bit special case.
@@ -591,7 +594,7 @@ The case when the length of an edge is even is slightly more specific and allows
 
 \begin{lemma}
 	\label{lem:pre_weeding_II}
-	Every set $M = \{A, B, C\} \in \mathfrak{M}_3$ with an even edge $|AB| = 2q$, where $|AC| - |BC| = 2q - s$, $q, s \in \mathbb{N}$, $s$ is an odd number and $s \leq 2q$, has a characteristic of the form $p = 8k + 7$, $k \in \mathbb{N}_0$.
+	Every set $M = \{A, B, C\} \in \mathfrak{M}_3$ with an even edge $|AB| = 2q$, where $|AC| - |BC| = 2q - s$, $q, s \in \mathbb{N}$, $s$ is odd and $s \leq 2q$, has a characteristic of the form $p = 8k + 7$, $k \in \mathbb{N}_0$.
 \end{lemma}
 
 \begin{proof}
@@ -635,8 +638,8 @@ The case when the length of an edge is even is slightly more specific and allows
 	Indeed, let $|M_1 M_2|=2q$, $q \in \mathbb{N}$.
 	For the $n$-th Erdős curve we have $|M_1 M_3|-|M_2 M_3|=n$.
 	According to Lemma~\ref{lem:pre_weeding_II}, the difference $n=|M_1 M_3|-|M_2 M_3|=2q-s$,
-	where $s$ is an odd number,
-	is also an odd number and $\operatorname{char} M = 8k + 7$, $k\in \mathbb{N}_{0}$.
+	where $s$ is odd,
+	is also odd and $\operatorname{char} M = 8k + 7$, $k\in \mathbb{N}_{0}$.
 \end{proof}
 
 %5
@@ -654,11 +657,11 @@ The case when the length of an edge is even is slightly more specific and allows
 	Otherwise, according to Lemma~\ref{lem:pre_weeding_II}, $\operatorname{char}{M}={8k+7}$, $k\in \mathbb{N}_0$.
 
 	Suppose, to the contrary, that $M={M_1, M_2, M_3, M_4} \in \overline{\mathfrak{M}}'_4$.
-	Employ the Grid Theorem and set $M_1(-1;0), M_2(1;0), O(0;0)$.
+	We employ the Grid Theorem and set $M_1(-1;0), M_2(1;0), O(0;0)$.
 	Then $M_3$ and $M_4$ lie on the perpendicular bisector to $M_1M_2$.
 	Since the distance $|M_3M_4|$ is an integer, the area of triangle $M_1M_3M_4$ is a rational number.
 	By Definition~\ref{def:char}, this means that $\operatorname{char}{M}={1}$.
-	Then by the Grid Theorem we have $M_3(0;t/4)$. Without loss of generality, let us assume that $t\in\mathbb{N}$. Let $|M_1M_3|=s$. Applying the Pythagorean theorem to triangle $OM_1M_3$, we get
+	Then by the Grid Theorem we have $M_3(0;t/4)$. Without loss of generality, let us assume that $t\in\mathbb{N}$. Let $|M_1M_3|=s$. Applying the Pythagorean theorem to triangle $OM_1M_3$, we obtain
 	$$
 	1+\frac{t^2}{16}=s^2,
 	$$
@@ -667,20 +670,20 @@ The case when the length of an edge is even is slightly more specific and allows
 	\label{eq: 42}
 	16s^2-t^2=16.
 	\end{equation}
-	Now, we find the solutions to equation~\eqref{eq: 42} in positive integers.
-	To do this, we introduce the substitution: $t=4k$, $k\in\mathbb{N}$.
+	To find the solutions to equation~\eqref{eq: 42} in positive integers,
+	we introduce the substitution: $t=4k$, $k\in\mathbb{N}$.
 	Then equation~\eqref{eq: 42} takes the form:
 	\begin{equation}
 	\label{eq: 43}
 	s^2-k^2=1.
 	\end{equation}
-	Break down the left-hand side of equation~\eqref{eq: 43} into factors:
+	Factorising the left-hand side of equation~\eqref{eq: 43} yields:
 	\begin{equation}
 	\label{eq: 44}
 	(s-k)(s+k)=1.
 	\end{equation}
-	Since $s,k\in\mathbb{N}$, the number 1 can be represented as the product of two integers in two ways: $1\cdot1$ and $-1\cdot(-1)$. In the first case, $(s-k)=1$ and $(s+k)=1$, which gives $s=1,k=0$, which contradicts that $k\in\mathbb{N}$.
-	In the second case, $(s-k)=-1$ and $(s+k)=-1$, which gives $s=-1$, $k=0$, which also contradicts that $s,k\in\mathbb{N}$.
+	Since $s,k\in\mathbb{N}$, the number 1 can be represented as the product of two integers in two ways: $1\cdot1$ and $-1\cdot(-1)$. In the first case, $(s-k)=1$ and $(s+k)=1$, which gives $s=1,k=0$. This contradicts that $k\in\mathbb{N}$.
+	In the second case, $(s-k)=-1$ and $(s+k)=-1$, which gives $s=-1$, $k=0$. This also contradicts that $s,k\in\mathbb{N}$.
 
 	Thus, equation~\eqref{eq: 42} has no positive integer solutions.
 	The obtained contradiction completes the proof.
@@ -704,10 +707,10 @@ If we exclude characteristics of the form $4k+3$, this Solymosi's result can be 
 \end{lemma}
 
 \begin{proof}
-	Indeed, consider the triangle $ABC$ and let $|BC|=a$, $|AC|=b$.
+	Consider the triangle $ABC$ and let $|BC|=a$, $|AC|=b$.
 	Using the triangle inequality $|AB| < |BC|+|AC|$,
 	we can represent the length of side $AB$ as $|AB|=a+b-s$, $s \in \mathbb{N}$ and $s \leq a$.
-	For $s=1$, the conditions of Lemma~\ref{lem:pre_weeding_I} are satisfied: $s$ is an odd number and $s \leq a$.
+	For $s=1$, the conditions of Lemma~\ref{lem:pre_weeding_I} are satisfied: $s$ is odd and $s \leq a$.
 	Therefore, the triangle with sides $a$, $b$, and $c=a+b-1$
 	has a characteristic of the form $p=4k+3$, $k\in \mathbb{N}_0$.
 \end{proof}
@@ -763,7 +766,7 @@ If we exclude characteristics of the form $4k+3$, this Solymosi's result can be 
 \end{corollary}
 
 \begin{proof}
-	Indeed, for $a\geq 3$ the inequality
+	For $a\geq 3$ the inequality
 	$$
 		(2a-1)^{1/2} \geq \frac{\sqrt{5}}{\sqrt{3}} a^{1/2}
 	$$
@@ -774,7 +777,7 @@ If we exclude characteristics of the form $4k+3$, this Solymosi's result can be 
 %6
 \section{The Main Bound}
 
-The following lemma is a classical Erdős-style intersection-enumeration one,
+The following result is a classical Erdős-style intersection-enumeration lemma,
 empowered by our Weeding Theorem I.
 
 \begin{lemma}
@@ -783,10 +786,10 @@ empowered by our Weeding Theorem I.
 \end{lemma}
 
 \begin{proof}
-	We will distinguish three cases: two even edges, two odd edges and two edges with different parity.
+	Consider three cases: two even edges, two odd edges and two edges with different parity.
 
 
-	Let's consider the first case. Suppose both edges $M_1M_2$ and $M_3M_4$ have even lengths. Then, for each point $N\in M$, one of the following conditions is satisfied:
+	\paragraph{Case 1.} Suppose that both edges $M_1M_2$ and $M_3M_4$ have even lengths. Then, for each point $N\in M$, one of the following conditions is satisfied:
 
 	a) $N$ belongs to $cr(M_1,M_2)$, which implies that there are no more than 4 points (no more than 2 on each of the lines);
 
@@ -812,7 +815,7 @@ empowered by our Weeding Theorem I.
 		.
 	\end{multline}
 
-	Let's consider the second case. Suppose both edges $M_1M_2$ and $M_3M_4$ have odd lengths. Then, for each point $N\in M$, one of the following conditions is satisfied:
+	\paragraph{Case 2.} Suppose that both edges $M_1M_2$ and $M_3M_4$ have odd lengths. Then, for each point $N\in M$, one of the following conditions is satisfied:
 
 	a) $N$ belongs to $cr(M_1,M_2)$, which implies that there are no more than 2 points (otherwise, $\operatorname{char} M = 4k+3$);
 
@@ -832,7 +835,7 @@ empowered by our Weeding Theorem I.
 		.
 	\end{multline}
 
-	Let's consider the third case. Suppose the lengths of edges $M_1M_2$ and $M_3M_4$ are different. Without loss of generality suppose the edge $M_1M_2$ has even length while edge $M_3 M_4$ has odd length.
+	\paragraph{Case 3.} Suppose that the lengths of edges $M_1M_2$ and $M_3M_4$ are different. Without loss of generality suppose the edge $M_1M_2$ has even length while edge $M_3 M_4$ has odd length.
 	Then, for each point $N\in M$, one of the following conditions is satisfied:
 
 	a) $N$ belongs to $cr(M_1, M_2)$, which implies that there are no more than 4 points (no more than 2 on each of the lines);
@@ -928,7 +931,7 @@ in our special case.
 	\begin{equation}
 		p \geq \left(\frac{25(n+2)}{36}\right)^{5/4} \geq \left(\frac{25n}{36}\right)^{5/4}
 	\end{equation}
-	which is exactly the claim of the theorem.
+	which is exactly the assertion of the theorem.
 
 	If $n\geq 4$ and $p < 10$, then the claim of the theorem follows immediately from~\eqref{d}.
 	So now we have to consider $m > \frac{6}{5}p^{2/5} > 3$.
@@ -955,8 +958,8 @@ in our special case.
 		.
 	\end{equation}
 
-	According to the results~\eqref{d}, for $3 \leq n \leq 36$ the theorem is true.
-	Moreover, it is known that for all $37 \leq n \leq 7^4$, we have $\overline{d}(2, n) > 20\ 000$  and our estimate on the diameter is also true.
+	According to the results~\eqref{d}, for $3 \leq n \leq 36$ the assertion follows.
+	Moreover, it is known that for all $37 \leq n \leq 7^4$, we have $\overline{d}(2, n) > 20\ 000$  and our estimate on the diameter also holds.
 	Indeed, $\overline{d}(2, 7^4) \geq \left(\frac{25}{36}\cdot 7^4\right)^{5/4} \approx 10 655$.
 	This estimate is weaker than the available numerical results. Therefore, from now on, we can assume that $n \geq 7^4$.
 
@@ -984,7 +987,7 @@ in our special case.
 	However, we are not ready to accept this tedious challenge yet.
 
 	Another research area that is able to utilize our results fruitfully is the maximization of IPS.
-	The Weeding Theorems I and II can sometimes make the exhaustive search up to 4 times faster.
+	The Weeding Theorems I and II can sometimes make the exhaustive search up to four times faster.
 
 
 
