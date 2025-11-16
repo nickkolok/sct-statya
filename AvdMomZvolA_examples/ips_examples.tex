@@ -16,13 +16,13 @@
 \geometry{bottom=1.5cm}% нижнее поле
 
 
-%\usepackage[backend=biber,style=gost-numeric,sorting=none]{biblatex}
-%\addbibresource{../common/notmy.bib}
-%\addbibresource{../common/my.bib}
-%\usepackage{../../../biblatex2bibitem/biblatex2bibitem}
+\usepackage[backend=biber,style=gost-numeric,sorting=none]{biblatex}
+\addbibresource{../common/notmy.bib}
+\addbibresource{../common/my.bib}
+\usepackage{../../../biblatex2bibitem/biblatex2bibitem}
 
 \usepackage{hyperref}
-\usepackage{cite}
+%\usepackage{cite}
 
 \makeatletter
 %\renewcommand{\fnum@figure}{Figure \thefigure}
@@ -605,8 +605,10 @@ The source code can be obtained at https://gitlab.com/Nickkolok/ips-algo
 \section{Acknowledgements}
 The authors thank Dr. Prof. E.M. Semenov and Dr.~A.S.~Usachev for proofreading.
 
-%\printbibliography
-%\printbibitembibliography
+\printbibliography
+\printbibitembibliography
+
+\end{document}
 
 \begin{thebibliography}{99}
 %
