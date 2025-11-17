@@ -29,10 +29,7 @@
 \renewcommand{\@biblabel}[1]{#1.}
 \makeatother
 
-
-\theoremstyle{dfn}
-\newtheorem{dfn}{Definition}
-
+\newcommand{\Definition}[1]{\smallskip{\sc Definition#1.}}
 
 
 
@@ -149,13 +146,13 @@ MSC 52C10
 
 
 
-\begin{dfn}\label{dfn1}
+\Definition{ 1}\label{dfn1}
 	A planar integral point set (PIPS) is a set $\mathcal{P}$
 	of non-collinear points in plane $\mathbb{R}^{2}$ such that
 	for any pair of points $P_{1}, P_{2} \in \mathcal{P}$
 	the Euclidean distance $|P_{1}P_{2}|$
 	between points $P_{1}$ and $P_{2}$ is integral.
-\end{dfn}
+
 
 How do we describe an integral point set?
 For example, by the number of points in it, which is always finite~\cite{anning1945integral,erdos1945integral}
@@ -163,21 +160,21 @@ and is said to be the \emph{cardinality} of the IPS.
 Furthermore, we can naturally
 define the diameter of a finite point set.
 
-\begin{dfn}
+\Definition{ 2}
 	The diameter of the integral point set $\mathcal{P}$ is defined as
 	$
 		\operatorname{diam(\mathcal{P})} = \underset{P_{1}, P_{2} \in
 		\mathcal{P}}{\max} |P_{1}P_{2}|
 		.
 	$
-\end{dfn}
 
 
-\begin{dfn}(\cite{kemnitz1988punktmengen,kurz2005characteristic})
+
+\Definition{ 3}(\cite{kemnitz1988punktmengen,kurz2005characteristic})
 	The characteristic of a planar integral point set $M$ is the least positive integer $q$
 	such that the area of any triangle with vertices $M_1, M_2, M_3 \in M$
 	is commensurable with $\sqrt{q}$.
-\end{dfn}
+
 Characteristic of an IPS does not change if the set is moved, dilated ot flipped;
 moreover, even addition or deletion of a point does not change the characteristic of IPS.
 
@@ -188,23 +185,26 @@ for some estimations on this tendency, we also refer the reader to~\cite{solymos
 (For the recently established connection between the characteristic and minimal possible diameter,
 see~\cite{avdeev-lushina2025australas}.)
 Thus, the following classification was introduced:
-\begin{dfn}
+
+\Definition{ 4}
 	A PIPS $M$ is said to be in \emph{semi-general position}
 	if no three points of $M$ are located in a straight line.
-\end{dfn}
+
 
 The most dominating examples of PIPS in semi-general position are circular sets.
-\begin{dfn}
+
+\Definition{ 5}
 	A planar integral point sets that is situated on a circle is said to be a \textit{circular}
 	point set.
-\end{dfn}
+
 
 So, the following constraint appeared.
-\begin{dfn}
+
+\Definition{ 6}
 	A planar integral point set $M$ is said to be in \emph{general position}
 	if no three points of $M$ are located in a straight line
 	and no four points of $M$ are located in a circle.
-\end{dfn}
+
 
 Planar integral point sets in general position are very difficult to find;
 the first known examples of such sets with cardinaity 7 were presented in~\cite{kreisel2008heptagon}.
@@ -249,18 +249,18 @@ because each seven points are located on a union of a circle and two straight li
 
 \section{Rails sets}
 
-\begin{dfn}
+\Definition{ 7}
 	A planar integral point sets of $n$ points with $n-1$ points on a straight line is called
 	a \textit{facher} set.
-\end{dfn}
+
 Facher sets are predominant examples of planar integral point sets.
 In~\cite{antonov2008maximal}, facher sets of characteristic 1 are called \textit{semi-crabs}.
 %For $9 \leq n \leq 122$, the diameter $d(2,n)$ is reached on a facher point set~\cite{kurz2008minimum}.
 
-\begin{dfn}[\cite{avdeev2019particular}]
+\Definition{ 8}[\cite{avdeev2019particular}]
 	A non-facher planar integral point sets situated in two parallel straight lines
 	is called a \textit{rails} set.
-\end{dfn}
+
 
 Among the rails sets, sets with 2 points on one line and all the other on another line dominate.
 
