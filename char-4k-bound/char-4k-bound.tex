@@ -108,15 +108,15 @@ To achieve that, we combine hyperbolas-based and grid-based toolsets.
 \section{Introduction}
 	A planar integral point set (IPS) is a set of points in the plane, such that the distance between any pair of its points is an integer, and at least one triple of its points is non-collinear. The latter condition is essential to avoid subsets of a straight line; those are de-facto equivalent to subsets of integers and form a completely different combinatorial object.
 
-	In 1945, Erdős gave an elegant proof that every IPS is finite~\cite{anning1945integral,erdos1945integral} .
-	He considered an arbitrary IPS $M$ and chose a non-collinear triple $\{M_1, M_2, M_3\} \in M$ so that any other point $M_0 \in M$ lies on either the straight line $M_1M_2$, the perpendicular bisector to the segment $M_1M_2$, or one of $|M_1M_2|-1$ hyperbolas, where $|M_1M_2|$ stands for length of line segment $M_1M_2$.  Applying the same argument to the line segment $M_1M_3$, Erdös concluded that $\#M \le 4 \cdot |M_1M_2| \cdot |M_1M_3|$, where $\#M$ stands for cardinality of $M$.
+	In 1945, Erd{\H o}s gave an elegant proof that every IPS is finite~\cite{anning1945integral,erdos1945integral} .
+	He considered an arbitrary IPS $M$ and chose a non-collinear triple $\{M_1, M_2, M_3\} \in M$ so that any other point $M_0 \in M$ lies on either the straight line $M_1M_2$, the perpendicular bisector to the segment $M_1M_2$, or one of $|M_1M_2|-1$ hyperbolas, where $|M_1M_2|$ stands for the length of the line segment $M_1M_2$.  Applying the same argument to the line segment $M_1M_3$, Erd{\H o}s concluded that $\#M \le 4 \cdot |M_1M_2| \cdot |M_1M_3|$, where $\#M$ stands for cardinality of $M$.
 
 	Thus, we can easily infer the lower bound for diameter of an IPS $M$:
 	$$
 		\operatorname{diam} M \ge \frac{\sqrt{\#M}}{2}.
 	$$
 	That was the first lower bound for the diameter ever;
-	however, Erdős did not only estimate the diameter,
+	however, Erd{\H o}s did not only estimate the diameter,
 	but also established the toolset for further investigation.
 	The core of this approach is a system of cofocal hyperbolas.
 
@@ -155,7 +155,7 @@ To achieve that, we combine hyperbolas-based and grid-based toolsets.
 
 	For generalization in higher dimensions, we refer the reader to~\cite{nozaki2013lower}.
 
-	In the present paper, we combine the power of Erdős's and Kemnitz's approaches together. Due to squarefree nature of characteristic, it can be of the form $4k+1$, $4k+2$ or $4k+3$, where $k$ is integer.
+	In the present paper, we combine the power of Erd{\H o}s's and Kemnitz's approaches together. Due to the squarefree nature of the characteristic, it can be of the form $4k+1$, $4k+2$ or $4k+3$, where $k$ is integer.
 	We prove that for a particular case of characteristic $4k+1$ and $4k+2$
 	the bound~\eqref{eq:chebsb_lower_bound} can be improved to
 	\begin{equation}
@@ -163,7 +163,7 @@ To achieve that, we combine hyperbolas-based and grid-based toolsets.
 		.
 	\end{equation}
 
-	In Section 2, we give all the required notions and known results. In Section 3, we discuss some examples of integral point sets in order to demonstrate that none of the classes $4k+1$, $4k+2$, $4k+3$ is too exotic nor pathological. Section 4 describes a connection between Erdős curves and the characteristic. In Section 5, we prove some auxiliary results, and we proceed to the main one in Section 6.
+	In Section 2, we give all the required notions and known results. In Section 3, we discuss some examples of integral point sets in order to demonstrate that none of the classes $4k+1$, $4k+2$, $4k+3$ is too exotic nor pathological. Section 4 describes a connection between Erd{\H o}s curves and the characteristic. In Section 5, we prove some auxiliary results, and we proceed to the main one in Section 6.
 
 
 
@@ -301,22 +301,22 @@ For the sake of completeness, we sketch the proof for the Grid Theorem below.
 	\begin{equation}
 		\{M_0 : |M_0 M_1| - |M_0 M_2| = n\}
 	\end{equation}
-	the \emph{$n$-th Erdős curve}.
+	the \emph{$n$-th Erd{\H o}s curve}.
 \end{definition}
 
-Obviously, the 0-th Erdős curve is the perpendicular bisector of $M_1 M_2$,
-and all the other Erdős curves are branches of cofocal hyperbolas.
-On Figure~\ref{fig:Erdos_curves_numbered}, the Erdős curves are shown for an edge of length 3.
+Obviously, the 0-th Erd{\H o}s curve is the perpendicular bisector of $M_1 M_2$,
+and all the other Erd{\H o}s curves are branches of cofocal hyperbolas.
+In Figure~\ref{fig:Erdos_curves_numbered}, the Erd{\H o}s curves are shown for an edge of length 3.
 
 \begin{figure}
 \center{\includegraphics[width=0.95\linewidth]{Erdos_curves_numbered.png}}
-\caption{Erdős curves}
+\caption{Erd{\H o}s curves}
 \label{fig:Erdos_curves_numbered}
 \end{figure}
 
-Thus, an edge $M_1 M_2$ generates $2|M_1 M_2| - 1$ Erdős curves.
-For the sake of brevity, Erdős curves with odd numbers are named odd Erdős curves,
-and the ones with even numbers are named even Erdős curves.
+Thus, an edge $M_1 M_2$ generates $2|M_1 M_2| - 1$ Erd{\H o}s curves.
+For the sake of brevity, Erd{\H o}s curves with odd numbers are named odd Erd{\H o}s curves,
+and the ones with even numbers are named even Erd{\H o}s curves.
 
 Two following definitions are used to classify integral point sets
 with many collinear triples~\cite{avdeev2019particular}:
@@ -505,7 +505,7 @@ and whose coordinates are
 \end{figure}
 
 %4
-\section{Erdős Curves and Characteristic}
+\section{Erd{\H o}s Curves and Characteristic}
 
 \begin{lemma}
 	\label{lem:pre_weeding_I}
@@ -579,7 +579,7 @@ The next theorem follows immediately.
 	\label{thm:weeding_I}
 	Let $M = \{M_1, M_2, M_3\} \in \mathfrak{M}_3$
 	be an IPS with a characteristic different from $4k+3$, $k \in \mathbb{N}_0$,
-	ant let $M_3$ belong to the $n$-th Erdős curve of the edge $M_1 M_2$.
+	ant let $M_3$ belong to the $n$-th Erd{\H o}s curve of the edge $M_1 M_2$.
 	Then, $n$ and the length of $M_1M_2$ have the same parity.
 \end{theorem}
 
@@ -632,13 +632,13 @@ The case when the length of an edge is even is slightly more specific and allows
 
 \begin{theorem}[The Weeding Theorem II]
 	\label{thm:weeding_II}
-	Let an IPS $M=\{M_1, M_2, M_3\}\in{\mathfrak{M}_{3}}$ have an even edge length $|M_1 M_2|$, and let point $M_3$ lie on an odd Erdős curve of edge $M_1 M_2$.
+	Let an IPS $M=\{M_1, M_2, M_3\}\in{\mathfrak{M}_{3}}$ have an even edge length $|M_1 M_2|$, and let point $M_3$ lie on an odd Erd{\H o}s curve of edge $M_1 M_2$.
 	Then $\operatorname{char} M=8k+7$, $k\in \mathbb{N}_{0}$.
 \end{theorem}
 
 \begin{proof}
 	Indeed, let $|M_1 M_2|=2q$, $q \in \mathbb{N}$.
-	For the $n$-th Erdős curve we have $|M_1 M_3|-|M_2 M_3|=n$.
+	For the $n$-th Erd{\H o}s curve we have $|M_1 M_3|-|M_2 M_3|=n$.
 	According to Lemma~\ref{lem:pre_weeding_II}, the difference $n=|M_1 M_3|-|M_2 M_3|=2q-s$,
 	where $s$ is odd,
 	is also odd and $\operatorname{char} M = 8k + 7$, $k\in \mathbb{N}_{0}$.
@@ -779,7 +779,7 @@ If we exclude characteristics of the form $4k+3$, this Solymosi's result can be 
 %6
 \section{The Main Bound}
 
-The following result is a classical Erdős-style intersection-enumeration lemma,
+The following result is a classical Erd{\H o}s-style intersection-enumeration lemma,
 empowered by our Weeding Theorem I.
 
 \begin{lemma}
