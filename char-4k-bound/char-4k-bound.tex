@@ -136,12 +136,12 @@ To achieve that, we combine hyperbolas-based and grid-based toolsets.
 		\diam M \geq \left(\frac {\# M} 5 \right)^{5/4}
 	\end{equation}
 	(assuming that the set has at least 4 points).
-	All these lower bounds are based on the Erdős's framework --- cofocal hyperbolas.
+	All these lower bounds are based on Erd{\H o}s's framework: cofocal hyperbolas.
 
 
-	Meanwhile in 1988 Kemnitz introduced~\cite{kemnitz1988punktmengen}
-	a characteristic of an IPS, that is a squarefree integer $q$ such as the area
-	of a triangle formed by any triple of points from the IPS is comparable with $\sqrt{q}$.
+	Meanwhile in 1988, Kemnitz~\cite{kemnitz1988punktmengen} introduced a characteristic for an IPS.
+	The charateristic of an IPS is the one and only squarefree integer $q$ which is comparable
+	with the area of the triangle formed by any triple of points from the IPS.
 	(Indeed, Kemnitz proved this fact for any point set with rational distances ---
 	in contrast with IPS, those can be infinite even if they contain non-collinear triples,
 	see~\cite{huff1948diophantine} for an example construction
@@ -150,10 +150,10 @@ To achieve that, we combine hyperbolas-based and grid-based toolsets.
 	the minimal possible diameter of planar IPS of cardinality $n$.
 	Then Kurz employed Kemnitz's results and found the exact values of $d(2,n)$
 	up to $n=122$ by exhaustive computer search~\cite[Subsection 4.2]{kurz2008minimum}.
-	(Taking the characteristic into consideration allows to boost such search significantly ---
+	(Taking the characteristic into consideration allows one to boost such search significantly; this is
 	basically because all triples of an IPS form triangles with equal characteristic.)
 
-	For generalization in higher dimensions, we refer the reader to~\cite{nozaki2013lower}.
+	For generalization to higher dimensions, we refer the reader to~\cite{nozaki2013lower}.
 
 	In the present paper, we combine the power of Erd{\H o}s's and Kemnitz's approaches together. Due to the squarefree nature of the characteristic, it can be of the form $4k+1$, $4k+2$ or $4k+3$, where $k$ is integer.
 	We prove that for a particular case of characteristic $4k+1$ and $4k+2$
@@ -172,8 +172,8 @@ To achieve that, we combine hyperbolas-based and grid-based toolsets.
 
 In this section, we provide rigorous definitions and list some known results.
 
-For the sake of brevity, the following notations are used for sets
-of positive integers, non-negative integers and all the integers resp.:
+For the sake of brevity, the following notation is used for sets
+of positive integers, non-negative integers and all the integers respectively:
 \begin{equation}
 	\mathbb{N} = \{1,2,3,4,...\},\quad \mathbb{N}_0 = \mathbb{N} \cup \{0\},
 	\quad
@@ -205,7 +205,7 @@ we obtain the next definition.
 \end{definition}
 
 In the present paper, we mostly focus on IPS in semi-general position.
-However, the next restriction step can be done as the following.
+However, the next restriction step can be done as follows.
 
 \begin{definition}
 	\label{def:IPS_general}
@@ -409,8 +409,8 @@ instead, the denominator is appended to both coordinates,
 but the square root multiplier is appended only to the second one.
 
 When we think about IPS with characteristic $4k+1$,
-the very first example that comes to our mind is Egyptian triangle,
-that is the triangle with sides $(3;4;5)$.
+the very first example that comes to our mind is the Egyptian triangle,
+that is the triangle with sides $(3;4;5)$. The
 Egyptian triangle is obviously an IPS with characteristic $1 = 4 \cdot 0 +1$.
 
 Facher sets with characteristic 1, that are called \emph{semi-crabs},
@@ -495,7 +495,7 @@ and whose coordinates are
 	( 3534 ; 0);
 	( 4040 ; 0);
 	( 4558 ; 0)
-\}
+\}.
 \end{multline}
 
 \begin{figure}
@@ -684,11 +684,11 @@ The case when the length of an edge is even is slightly more specific and allows
 	\label{eq: 44}
 	(s-k)(s+k)=1.
 	\end{equation}
-	Since $s,k\in\mathbb{N}$, the number 1 can be represented as the product of two integers in two ways: $1\cdot1$ and $-1\cdot(-1)$. In the first case, $(s-k)=1$ and $(s+k)=1$, which gives $s=1,k=0$. This contradicts that $k\in\mathbb{N}$.
-	In the second case, $(s-k)=-1$ and $(s+k)=-1$, which gives $s=-1$, $k=0$. This also contradicts that $s,k\in\mathbb{N}$.
+	Since $s,k\in\mathbb{N}$, the number 1 can be represented as the product of two integers in two ways: $1\cdot1$ and $-1\cdot(-1)$. In the first case, $(s-k)=1$ and $(s+k)=1$, which gives $s=1,k=0$. This contradicts the fact that $k\in\mathbb{N}$.
+	In the second case, $(s-k)=-1$ and $(s+k)=-1$, which gives $s=-1$, $k=0$. This also contradicts $s,k\in\mathbb{N}$.
 
 	Thus, equation~\eqref{eq: 42} has no positive integer solutions.
-	The obtained contradiction completes the proof.
+	This contradiction completes the proof.
 \end{proof}
 
 The following result is a key element for bounds presented
@@ -739,6 +739,7 @@ If we exclude characteristics of the form $4k+3$, this Solymosi's result can be 
 		\\
 		=
 		a^2- \left(\frac{c^2+a^2-b^2}{2c} \right)^2
+		.
 	\end{multline}
 
 	From three heights of the triangle, the smallest one is that dropped onto its largest side.
@@ -805,10 +806,10 @@ empowered by our Weeding Theorem I.
 	\begin{multline}
 		4 \left(\frac{|M_1 M_2|}{2} - 1\right) \left(\frac{|M_3 M_4|}{2} - 1 \right) + 4 + 4
 		=
-		\\=
+		\\
 		 4\left(\frac{|M_1 M_2| \cdot |M_3 M_4|}{4} - \frac{|M_1 M_2|}{2} - \frac{|M_3 M_4|}{2}+1\right) + 4 + 4
 		=
-		\\=
+		\\
 		|M_1 M_2| \cdot |M_3 M_4| - 2 |M_1 M_2| - 2 |M_3 M_4| + 4 + 4 + 4
 		\leq
 		|M_1 M_2| \cdot |M_3 M_4| - 4 \\
@@ -833,7 +834,7 @@ empowered by our Weeding Theorem I.
 		=
 		|M_1 M_2| \cdot |M_3 M_4| - |M_1 M_2| - |M_3 M_4| + 4
 		\leq \\
-		\leq |M_1 M_2| \cdot |M_3 M_4| - 2
+		|M_1 M_2| \cdot |M_3 M_4| - 2
 		.
 	\end{multline}
 
@@ -852,10 +853,10 @@ empowered by our Weeding Theorem I.
 	\begin{multline}
 		4\left(\frac{|M_1 M_2|}{2} - 1\right) \left(\frac{|M_3 M_4| - 1}{2}\right) + 2 + 4
 		=
-		\\=
+		\\
 		(|M_1 M_2| - 2)(|M_3 M_4| - 1) + 6
 		=
-		\\=
+		\\
 		|M_1 M_2| \cdot |M_3 M_4| - |M_1 M_2| - 2 |M_3 M_4| + 2 + 6
 		\leq
 		|M_1 M_2| \cdot |M_3 M_4| - 2
@@ -884,13 +885,13 @@ and some values were given:
 		\overline{d}(2,5)&=&  \overline{d}(2,6)= 8,{} \\
 		\overline{d}(2,7)&=& 33,{} \\
 		\overline{d}(2,8)&=&  \overline{d}(2,9)= 56,{} \\
-		\overline{d}(2,10)&=& ... =\overline{d}(2,12)= 105,{} \\
+		\overline{d}(2,10)&=& \dots =\overline{d}(2,12)= 105,{} \\
 		\overline{d}(2,13)&=&  \overline{d}(2,14)= 532,{}\\
-		\overline{d}(2,15)&=&  ... = \overline{d}(2,18) = 735,{} \\
-		\overline{d}(2,19)&=& ... = \overline{d}(2,24) = 1995,{} \\
-		\overline{d}(2,25)&=&  ... = \overline{d}(2,27)= 9555,{} \\
+		\overline{d}(2,15)&=& \dots = \overline{d}(2,18) = 735,{} \\
+		\overline{d}(2,19)&=& \dots = \overline{d}(2,24) = 1995,{} \\
+		\overline{d}(2,25)&=&  \dots = \overline{d}(2,27)= 9555,{} \\
 		\overline{d}(2,28)&=& 10672,{} \\
-		\overline{d}(2,29)&=&  ... = \overline{d}(2,36) = 13975,{} \\
+		\overline{d}(2,29)&=&  \dots = \overline{d}(2,36) = 13975,{} \\
 		\overline{d}(2,37) &>& 20\ 000.
 	\end{array}
 \end{equation}
@@ -919,10 +920,12 @@ in our special case.
 
 	\begin{equation*}
 		\min_{A,B \in M} |AB| = |M_1 M_2|
+		,
 	\end{equation*}
 
 	\begin{equation*}
 		\min_{A,B \in M \setminus {M_1}} |AB| = |M_3 M_4| = m
+		.
 	\end{equation*}
 
 	If $m \leq \frac{6}{5}p^{2/5}$, then by Lemma~\ref{lem:intersection_enumeration},
@@ -980,8 +983,8 @@ in our special case.
 
 
 \section{Conclusion}
-	The bound proved above (as well as~\eqref{eq:chebsb_lower_bound}) may appear to be far from precise values of $\overline{d}(2,n)$.
-	However, it's easy to see that values of $d(2;n)$ tend to repeat often;
+	The bound proved above (as well as~\eqref{eq:chebsb_lower_bound}) may appear to be far from the precise values of $\overline{d}(2,n)$.
+	However, it is easy to see that values of $d(2;n)$ tend to repeat often;
 	thus, it is rather not unrealistic that the bounds may converge to the precise values.
 
 	Also, we should notice that our approach and  specifically Weeding Theorems do not require semi-general position and can be applied to tighten the bound from~\cite{my-pps-linear-bound-2019}
@@ -1003,10 +1006,108 @@ Also the authors owe special thanks to the anonymous referees
 for their helpful comments and suggestions on the paper.
 
 
-%\printbibliography
-
-%\printbibitembibliography{}
-
-\input{references.tex}
+\begin{thebibliography}{99}
+%
+\bibitem{anning1945integral}
+N. H. Anning and P. Erdős, Integral distances, \emph{Bull. Amer. Math. Soc.} 51.\textbf{8} (1945), 598–600, \textsc{doi}: \href
+{https://doi.org/10.1090/S0002-9904-1945-08407-9} {\nolinkurl {10.1090/S0002-9904-1945-08407-9}}.
+%
+\bibitem{antonov2008maximal}
+A. R. Antonov and S. Kurz, Maximal integral point sets over {$\mathbb {Z}^2$}, \emph{Int. J. Comput. Math.} 87.\textbf{12}
+(2008), 2653–2676, \textsc{doi}: \href {https://doi.org/10.1080/00207160902993636} {\nolinkurl {10.1080/00207160902993636}},
+arXiv: \href {http://arxiv.org/abs/0804.1280} {\nolinkurl {0804.1280}}.
+%
+\bibitem{our-vmmsh-2018-translit}
+N. N. Avdeev and E. M. Semenov, Integral point sets in the plane and Euclidean space (Множества точек с целочисленными
+расстояниями на плоскости и в евклидовом пространстве), \emph{Matematicheskij forum (Itogi nauki. Yug Rossii)} (2018),
+217–236.
+%
+\bibitem{avdeev2019particular}
+N. N. Avdeev, R. E. Zvolinsky, and E. A. Momot, On particular diameter bounds for integral point sets in higher dimensions
+Proceedings of Voronezh State University. Series: Physics. Mathematics. 2025. No 1. Pp. 62-77.
+arXiv: \href {http://arxiv.org/abs/1909.10386} {\nolinkurl {1909.10386}}.
+%
+\bibitem{my-semi-general-5-4-bound-2019}
+N. Avdeev, On diameter bounds for planar integral point sets in semi-general position (2019), arXiv: \href
+{http://arxiv.org/abs/1907.09331} {\nolinkurl {1907.09331}}, \textsc{url}: \url
+{https://ui.adsabs.harvard.edu/abs/2019arXiv190709331A/abstract}.%
+\bibitem{my-pps-linear-bound-2019}
+N. Avdeev, On existence of integral point sets and their diameter bounds, \emph{Australas. J. Combin.} 77.\textbf{1} (2020),
+100–116, arXiv: \href {http://arxiv.org/abs/1906.11926} {\nolinkurl {1906.11926}}, \textsc{url}: \url
+{https://ui.adsabs.harvard.edu/abs/2019arXiv190611926A/abstract}.
+%
+\bibitem{costa2013valid}
+A. Costa, Valid constraints for the point packing in a square problem, \emph{Discrete Appl. Math.} 161.\textbf{18} (2013),
+2901–2909.
+%
+\bibitem{erdos1945integral}
+P. Erdős, Integral distances, \emph{Bull. Amer. Math. Soc.} 51.\textbf{12} (1945), 996, \textsc{doi}: \href
+{https://doi.org/10.1090/S0002-9904-1945-08490-0} {\nolinkurl {10.1090/S0002-9904-1945-08490-0}}.
+%
+\bibitem{harborth1993upper}
+H. Harborth, A. Kemnitz, and M. Möller, An upper bound for the minimum diameter of integral point sets, \emph{Discrete
+Comput. Geom.} 9.\textbf{4} (1993), 427–432, \textsc{doi}: \href {https://doi.org/10.1007/bf02189331} {\nolinkurl
+{10.1007/bf02189331}}.
+%
+\bibitem{huff1948diophantine}
+G. B. Huff, Diophantine problems in geometry and elliptic ternary forms, \emph{Duke Math. J.} 15.\textbf{2} (1948), 443–453,
+\textsc{doi}: \href {https://doi.org/10.1215/S0012-7094-48-01543-9} {\nolinkurl {10.1215/S0012-7094-48-01543-9}}.
+%
+\bibitem{kemnitz1988punktmengen}
+A. Kemnitz, Punktmengen mit ganzzahligen Abständen, 1988.
+%
+\bibitem{kreisel2008heptagon}
+T. Kreisel and S. Kurz, There are integral heptagons, no three points on a line, no four on a circle, \emph{Discrete Comput.
+Geom.} 39.\textbf{4} (2008), 786–790, \textsc{doi}: \href {https://doi.org/10.1007/s00454-007-9038-6} {\nolinkurl
+{10.1007/s00454-007-9038-6}}.
+%
+\bibitem{kurz2005characteristic}
+S. Kurz, On the characteristic of integral point sets in {$\mathbb {E}^m$}, \emph{Australas. J. Combin.} 36 (2006), 241–248,
+arXiv: \href {http://arxiv.org/abs/math/0511704} {\nolinkurl {math/0511704}}.
+%
+\bibitem{kurz2008bounds}
+S. Kurz and R. Laue, Bounds for the minimum diameter of integral point sets, \emph{Australas. J. Combin.} 39 (2007), 233–240,
+arXiv: \href {http://arxiv.org/abs/0804.1296} {\nolinkurl {0804.1296}}.
+%
+\bibitem{kurz2008minimum}
+S. Kurz and A. Wassermann, On the minimum diameter of plane integral point sets, \emph{Ars Combin.} 101 (2011), 265–287,
+arXiv: \href {http://arxiv.org/abs/0804.1307} {\nolinkurl {0804.1307}}.
+%
+\bibitem{kurz2013constructing}
+S. Kurz et al., Constructing $7$-clusters, \emph{Serdica J. Comput.} 8.\textbf{1} (2014), 47–70, arXiv: \href
+{http://arxiv.org/abs/1312.2318} {\nolinkurl {1312.2318}}.
+%
+\bibitem{markot2005newverified}
+M. C. Markót and T. Csendes, A new verified optimization technique for the "packing circles in a unit square" problems,
+\emph{SIAM J. Optim.} 16.\textbf{1} (2005), 193–219.
+%
+\bibitem{momot2022example}
+E. A. Momot, R. E. Zvolinskiy, and A. E. Zvolinskiy, An example of rails integral point set with cardinality 106, Прикладная
+математика и фундаментальная информатика, 2022, 114–115.
+%
+\bibitem{nozaki2013lower}
+H. Nozaki, Lower bounds for the minimum diameter of integral point sets, \emph{Australas. J. Combin.} 56 (2013), 139–143.
+%
+\bibitem{solymosi2003note}
+J. Solymosi, Note on integral distances, \emph{Discrete Comput. Geom.} 30.\textbf{2} (2003), 337–342, \textsc{doi}: \href
+{https://doi.org/10.1007/s00454-003-0014-7} {\nolinkurl {10.1007/s00454-003-0014-7}}.
+%
+\bibitem{solymosi2010question}
+J. Solymosi and F. De Zeeuw, On a question of Erdős and Ulam, \emph{Discrete Comput. Geom.} 43.\textbf{2} (2010), 393–401,
+arXiv: \href {http://arxiv.org/abs/0806.3095} {\nolinkurl {0806.3095}}.
+%
+\bibitem{our-ped-2018}
+Н. Н. Авдеев, On integral point sets in special position, \emph{Некоторые вопросы анализа, алгебры, геометрии и
+математического образования: материалы международной молодежной научной школы «Актуальные направления
+математического анализа и смежные вопросы»} 8 (2018), 5–6.%
+%
+\bibitem{our-pmm-2018}
+Н. Н. Авдеев, Об отыскании целоудалённых множеств специального вида, Актуальные проблемы прикладной математики,
+информатики и механики - сборник трудов Международной научной конференции. Научно-исследовательские публикации,
+2018, 492–498.
+%
+\bibitem{smurov1998stripcoverings}
+М. Смуров and А. Спивак, Покрытия полосками, \emph{Квант} \textbf{5} (1998), 6–12.
+\end{thebibliography}
 
 \end{document}
